@@ -1,0 +1,87 @@
+THE_URL:http://web.textfiles.com/computers/john.dox
+THE_TITLE:john.dox
+
+ John the Ripper -- THE replacement for your old Cracker Jack
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+I assume that you have already seen Cracker Jack, which had been the best
+UNiX password cracker for DOS until I coded this one. That's why I'm only
+going to cover the differences between these two crackers now.
+
+ FAQ
+ÄÄÄÄÄ
+
+Q: Why "John"?
+A: Why not? ;)
+
+Q: Why "the Ripper"?
+A: That was Lost Soul's idea. Ask him. ;)
+
+Q: Why is John the Ripper better than Jack the Cracker?
+A: John runs much faster than Jack on Pentiums and somewhat faster on 486s.
+
+Q: Does John support all the Jack's features?
+A: Sure. It has all Jack's features and also some new ones. However, some
+   features (for example, the single crack mode) are not the same as Jack's.
+
+Q: Should I replace my good old Jack the Cracker with John the Ripper?
+A: If you have a 486 or better CPU, then you definitely should.
+
+Q: How should I install John?
+A: Just copy all its files into your Jack's directory and use JOHN.COM
+   instead of JACK.EXE.
+
+Q: What if I don't have the original Cracker Jack package?
+A: Well, you can also use John separately. :)
+
+Q: Why shouldn't I run John on my old 386?
+A: John's crypt() routine requires a CPU with internal cache to run fast.
+
+Q: Should I run JOHN.EXE or JOHN.COM? They seem to work the same.
+A: I recommend to use JOHN.COM since it loads JOHN.EXE at a suitably aligned
+   address and runs it so you always get the best performance. BTW, when you
+   type JOHN at your DOS prompt, JOHN.COM is used.
+
+Q: Why does John sometimes load less accounts than Jack? All the files
+   (including JACK.POT and JOHN.POT) are the same.
+A: John doesn't load dupes, while Jack does. :)
+
+Q: How can I test John's crypt() for proper encryption?
+A: John always tests itself when you run it and reports if an error occurs.
+
+Q: How do I use John's single crack mode? It doesn't seem to use a wordlist.
+A: Right. John's single crack mode only requires that you specify several
+   passwd files and the -single option on the command line. It automatically
+   applies lots of rules to login/GECOS information to try that as passwords.
+   It also checks all the accounts with the same salt as the one's login/GECOS
+   was taken from. Additionally, it tries cracked passwords on the entire
+   accounts list. This makes John's single crack mode both powerful and fast.
+
+Q: What's that incremental mode?
+A: It's the most powerful and the slowest cracking method supported by John.
+   It can try all possible character combinations as passwords. However, in
+   most cases it succeeds much earlier than regular incremental crackers due
+   to its ability to try different combinations in a reasonable order.
+
+Q: Why do character sets in the JOHN.INI file look so strange?
+A: The order of characters is based on their frequencies in actually used
+   passwords. I used a list of over 10000 cracked passwords from different
+   machines all over the world to sort the characters.
+
+Q: Did you code John entirely?
+A: Actually, some parts of crypt() are not of my own: the assembly version
+   of XForm() is based on the one by Roman Rusakov (but I optimized it even
+   more and adapted for usage here) and the crypt() initialization routine
+   is from Crack v4.1 by Alec Muffett. John has been compiled using DJGPP v2
+   by DJ Delorie with GCC 2.7.2, the DPMI server is by Charles W Sandmann
+   (sandmann@clio.rice.edu; 102 Hurst Ct, Destrehan, LA 70047), its source code
+   is at ftp://x2ftp.oulu.fi/pub/msdos/programming/djgpp/v2misc/csdpmi1s.zip.
+   Everything else (most of the code) is by me.
+
+Q: How can I contact you?
+A: Send your mail to solar@ideal.ru or 2:5020/398.9, or catch me on IRC,
+   my IRC nick is Solar_Diz.
+
+Have phun,
+Solar Designer
+

@@ -1,0 +1,433 @@
+THE_URL:http://web.textfiles.com/computers/arrov2.txt
+THE_TITLE:arrov2.txt
+Destroying Arrivo Select v1.2
+in the manner Atti2d would
+
+OVERVIEW
+
+I am in hopes that this tutorial will help some newbees with their starting adventures in more complicate
+d crackings; you know, something other than the bpx GetWindowTextA here and the bpr on the serial string
+and wham bam thank you winice for the string with the correct serial number.  This document is to help gi
+ve some insight on the little bit more complicated methods of getting the job done.
+
+FOREWORDS
+
+I am not a gifted genius as some crackers are or make you believe.  So I am taking a different approach i
+n this tutorial.  I am not just going to pick a program and say, "here this is how you crack this baby."
+ Instead Im going to go over most of my relevant procedures for getting a program cracked.  That mostly i
+ncludes, my starting, the "wish I never did that", and intuition attempts.  There might be better ways of
+ going about this crack, but this tutorial is primarily to show that there are no set techniques and that
+ all methods need to be taken advantage of when cracking a program; also Im trying to show a realistic ap
+proach from an intermediate point of view, not something where I pretend that I can read a whole disassem
+bled program and completely tell you what is going on without even running it (little exaggerated, but yo
+u get the point).
+
+MATERIALS
+
+Ok you are probably wondering what program I was going to use to give a diverse example of little bit mor
+e in-depth cracking, this will be:
+
+        Arrivo Select v1.2 for Win95
+
+This is basically a collection of 3 plugins for photoshop 4.0, so you will also need:
+
+        PhotoShop 4.0
+
+Arrivo Select can be directly found at www.arrivo.com just go to the download section, which will ask for
+ a form to be filled out.  Just put something bogus in and you are set.  But if you are like me, you migh
+t fill more comfortable with a file search of arrsel.exe.  No matter, just get the program.  And about Ph
+otoShop 4.0, if you don't have it and don't know how to get it, then I feel sorry for you.
+
+Now for the programs that I used for my cracking adventures:
+
+        SoftIce 3.01,
+        W32Dasm 8.9 *REG*,      (Any previous cracked ones should do)
+        UltraEdit 32 4.40a,     (Need something to read with)
+        RegEdit,                        (Or your favorite one)
+        and Explorer.           (Yes this actually came in quite handy)
+
+PREPARATION
+
+First thing is first, you must look at what is going to be entailed to get this program registered and wo
+rking without any annoying notices and such.  First good place to start is to install the program and the
+n look at the help file or the text files include for info on registering the program.  So now load up ar
+rsel.exe, glance over the license agreement just in case there is something important there.  Well, damn
+there isn't so Ill continue with 'yes'.  Now we are at the common Name, Company, and Serial fields, which
+ the serial can usually be ignore with installations with demos.  Anyway, I put in all my info and leave
+the serial number number blank.  But what's this ugly message?
+
+        You have entered an incorrect Serial Number ()
+        Select Back and check your serial number entry.
+        Arrivo Products will not function until your serial number is provided
+
+Talk about a mean message for a demo install.  So hit ok and what's this?  It still lets me go through th
+e rest of the install procedure.  So I do it anyhow, despite the warning.  Now it is done, so I fire up p
+hotoshop to use the plugins.  But after searching every menu option, I don't see any references to the pl
+ugins except in the About Plugins in the Help selection.  I see 3 new plugins by arrivo.  Hmm.. At least
+I know they installed, I guess the warning was for a reason.  Next logical step for me is to do some simp
+le research why the serial number is needed to demo this program.  First I go to the installed directorie
+s to find any readme's or help files.  I find both.  I go ahead and read the text first.  Walla, an impor
+tant clue it found, it tells me to pay for an unlock code within 15 days of demo-ing the program or it wi
+ll not work.  Ok this tells me the program has protection to be defeated when I actually get it installed
+.  Next is to look in the help file, which I find that it give info on the serial number:
+
+        "Your installation serial number is located on the title page of your ArrivoSelect User Manual"
+
+What the hell?  User Manual, this was just a demo off the net..  Screw it, Ill just load up my browser an
+d check the web site out of info.  I go to www.arrivo.com then to the download section.  Found it!!
+
+        "Arrivo software will run in demo-mode for 15 days. You will need a serial number which will be p
+rovided after you have completed the registration process."
+
+The registration process is by filling out the form on the web page.  Well, Im lazy and this program is f
+or my personal trial, so I filled the form out to get my serial number.  Ok, now after waiting for 2 hour
+s for the serial number, it never comes.  This pisses me off to no end, while I keep thinking I could of
+cracked it already.  So that is just what I end up doing.  Now I have all the key info to knowing how to
+get this puppy cracked.  I need a serial number to install properly and an unlock code to get it working
+with out being hassled with time limits.
+
+WORKING ON THE SERIAL
+
+Just to let it be known, this was opening up a can of worms.
+
+Well, usually serial numbers for installation programs are very easy to defeat so I uninstalled my earlie
+r doings and reloaded the install program.  I got back to the menu asking for input.  This time I put in
+my favorite 45454545 string as the serial number.  Now I do Ctrl-D and do bpx CompareStringA to start off
+.  Ok, just to let you know I've notice that doing a bpx CompareStringA will usually do the trick with in
+stall compares (this is something from experience, if you didn't know about this, now you do).  Well, thi
+s was not the case.  I get that ugly incorrect notice immediately without a break.  So first thing I do n
+ow is load up w32dsm and disassemble arrsel.exe.  When that is done I search for the keyword serial.  Not
+ Found is the reply I get.  Ok no problem, Ill just do the normal bpx GetWindowTextA in winice and see wh
+at happens.  Bam!  Looking good now.  To make this very long useless boring part short, I did the normal
+bpr's on every GetWindowTextA break on the serial number; I ran and traced this thing with no signs of ge
+tting anywhere.  Ugly message after ugly message was all I was getting.  I was getting to the point of ca
+lling it defeat.  But then I wasn't going let the author get the best of me, especially knowing that the
+install program is made by some big money hungry company, probably Microsoft.  I decide to think more abo
+ut my approach instead of just jumping in head first.  Then intuition kicked in (Im sure the 6 pack of be
+er help too), I bet the original install program is just an exe loader for a compressed program.  It prob
+ably uncompresses and then loads up the main install program.  This really came to me after watching the
+"ArrivoSelect Preparing Install" status bar over and over again.  I was just about to load up file monito
+r to check this out, but instead I figured because of the laziness of corporate programmers that it would
+ either uncompress in the current directory or to the windows temp directory.  Now after loading back up
+arrsel.exe I alt-tab to explorer and checked out the current directory to find nothing and then I go to t
+he \win95\temp to find 2 new directories and 3 new files.  Shit I was right, Im back in the ball game.  S
+o what do I look for now I ask myself?  Lets just explore the directories.  First I go into is the newest
+ directory, ~exb0000 (might be different depending on systems), because I guess that is were the first pl
+ace arrivo would be uncompressed (this is just a guess, not even educated).  Hmm what's this I find direc
+tory disk1 and disk2.  Now I go with the obvious disk1.  Couple of files are found in there, which looks
+like the normal setup for installsheild, except for the odd ball file called ArrivoInstall.dll.  It is th
+e only thing that looks interesting.  All I can think of doing with it though is disassembling it.  And t
+hat is just what I do after I make a backup copy of all the files and directories to another area on the
+drive (so the install program won't delete the file on me).  Now I do a search for the keyword Serial aga
+in.  The fish took the bait on this go around. First I find
+
+        Addr:10001770 Ord:   2 (0002h) Name: InstallIsValidSerialNumber
+
+This is just re-insurance that Im on the right track, but I continue on with my search for the ugly messa
+ge, because finding that would be easier to deal with; below are my original comments on the lines withou
+t running winince:
+
+* Possible StringData Ref from Data Obj ->"Serial"
+                                  |
+:100018AC 6874440010              push 10004474
+:100018B1 50                      push eax
+
+* Reference To: ADVAPI32.RegQueryValueExA, Ord:00E1h
+                                  |
+:100018B2 FF1508510010            Call dword ptr [10005108] ; Ok now I know, were are getting
+:100018B8 85C0                    test eax, eax             ; serial number from registry
+:100018BA 740E                    je 100018CA               ; No error continue to serial check
+        <skip>
+
+* Referenced by a Jump at Address 100018BA(C)
+|
+:100018CA 8B45F0                  mov eax, dword ptr [ebp-10]
+:100018CD 50                      push eax
+
+* Reference To: ADVAPI32.RegCloseKey, Ord:00C2h
+                                  |
+:100018CE FF1500510010            Call dword ptr [10005100]
+:100018D4 8D8D9CF8FFFF            lea ecx, dword ptr [ebp+FFFFF89C]
+:100018DA 8D45E0                  lea eax, dword ptr [ebp-20]
+:100018DD 8D55DC                  lea edx, dword ptr [ebp-24]
+:100018E0 894DEC                  mov dword ptr [ebp-14], ecx
+:100018E3 8D4DEC                  lea ecx, dword ptr [ebp-14]
+:100018E6 51                      push ecx                  ; since I have not run winice yet
+:100018E7 50                      push eax                  ; I don't kow which refers to serial
+:100018E8 52                      push edx                  ; number
+:100018E9 8D8D14FFFFFF            lea ecx, dword ptr [ebp+FFFFFF14]
+:100018EF 51                      push ecx
+:100018F0 E8FB030000              call 10001CF0             ; best guess as being serial check
+:100018F5 83C410                  add esp, 10
+:100018F8 85C0                    test eax, eax             ; is true?
+:100018FA 7533                    jne 1000192F                  ; yes, continue, if not jump
+:100018FC 8D8514FFFFFF            lea eax, dword ptr [ebp+FFFFFF14]
+:10001902 8D8DFCE8FFFF            lea ecx, dword ptr [ebp+FFFFE8FC]
+:10001908 50                      push eax
+
+* Possible StringData Ref from Data Obj ->"You have entered an incorrect "
+                                        ->"Serial Number ( %s )"
+                                  |
+:10001909 688C430010              push 1000438C             ; ugly message, so now we know we
+:1000190E 51                      push ecx                  ; want eax to equal 0
+:1000190F FFD6                    call esi
+
+Ok things are flowing smoother for now than they were earlier.  Only two good choices come to mind on how
+ to approach this.  The first is find which push above the check routine is the fake serial number and to
+ bpr it, or I can try stepping through the serial checking function.  Typically I choose to always go wit
+h bpr to see if there is a quick easy reference to the real serial number.  But if that doesn't work I st
+ep through to see if I can find any other relevant methods of approaching the task.  Anyways this brings
+up another issue.  I think because the file above is a DLL that the address reference will not be the sam
+e in softice so I just cant do a bpx 100018E6.  Instead I need to find a key reference to do a bpx on.  O
+k now look above, what looks like it would be good to reference?  How about 'Reference To: ADVAPI32.RegQu
+eryValueExA, Ord:00E1h' that looks like something that shouldn't be too common and will get me right were
+ I want to be if it works the way I hope.  Ctrl-D the sucker and put bpx ReqQueryValueExA (btw, make sure
+ you have winice.dat set with the export for ADVAPI32.DLL).  Now we want to run the program till we are i
+n the ArrivoInstall.dll code.  So we hit F5, then F12.  Walla!  We now should see ARRIVOINSTALL below the
+ code window.  So this means we are were we want to be.  BTW, if you are running other programs that also
+ use the ReqQueryValueExA then you might have to do F5, F12 several times before you get here.  You may n
+otice that the address pointed to in winice is different than what is in winice for the DLL.  Mine says 1
+37:013718D4 in winice and 100018D4 in disassembled text.  Maybe I have something set wrong in winice, but
+ for now I just make a note that cross-references 137 <-> 1000.
+
+Now I step through with F10 to get to the pushes above what I suspect is the call to the serial check rou
+tine.  I do a db ecx as my first try and what luck Im having.  There it is!  So a bpr ecx ecx+7 r is done
+.  Let run the sucker and see what happens next.  Well it did not take us far, we might as well just of t
+raced into the call, anyway we end up:
+
+* Referenced by a Jump at Address 10001D58(U)
+|
+:10001D17 83FB1E                  cmp ebx, 1E               ; Done with loop?
+:10001D1A 773E                    ja 10001D5A
+
+* Referenced by a Jump at Address 10001D4E(U)
+|
+:10001D1C 803F2D                  cmp byte ptr [edi], 2D    ; * HERE * <now read paragraph below>
+        <skip>
+
+:10001D3F 0FBE17                  movsx edx, byte ptr [edi] ; *SECOND*
+
+        <skip>
+
+:10001D50 8A07                    mov al, byte ptr [edi]    ; * THIRD STOP*
+:10001D52 47                      inc edi
+:10001D53 88441C24                mov byte ptr [esp+ebx+24], al
+:10001D57 43                      inc ebx
+:10001D58 EBBD                    jmp 10001D17
+
+Ok that doesn't look to important to use so hit F5 again to see where we end up.  We end up at the second
+ stop which seems to get the first character from the serial number.  Do F5 again, third stop does the sa
+me.  Ok F5 and we are starting the process all over again.  We are in a loop doing stuff to the whole str
+ing.  I bet this sucker only ends when the string is completely read.  So lets just F5 till we are at the
+ last character of the string and then step from there to see what happens.  Shit I was wrong.  I should
+of just went with the obvious that when looping I was noticing the ebx was incrementing by 1 every time i
+t went to next byte.  So by looking at 10001D17 which is the only compare to ebx in loop you will notice
+that the loop will only finish when it has read 1E (30) bytes no matter what.  But just to make things ea
+sier on me I just redid me serial to 4545454545454545454545454545454 (size of 31).  Now since 10001D1A ju
+mps to 10001D5A when the loop is done, I will just put a bpx 1371D5A.  Ok Ill run the new serial number n
+ow after doing bd 0,1 (disabling our first 2 breaks).  Oh boy this isnt good; winice does not break and I
+ know good and well it should.  Honostly I don't know if it is something wrong with winice or if there is
+ some extra protection in the install program, but I found out that for the break on 1371d5a to work, I h
+ave to have to be in the code of ARRIVOINSTALL already (maybe someone else can explain why).  So I be 0 t
+o get the first break back.  I run the serial through again; winice breaks.  I hit F12, F5 and now Im at
+the break I want to be.  Strange, huh?  But it works.  From here Im just going to step through to see if
+I notice anything interesting right off, if not Ill use the bpr again.  BTW, there is a difference betwee
+n stepping and tracing.  Tracing (F8) let you go into calls and stepping (F10) does all the routines in t
+he call and returns to the next line below call.  Tracing would be to tedious to do, so stepping is the b
+est bet for now.
+
+While I do this I am looking for any interesting cmp's or test's.  I do this till something catches my ey
+e or until I get the ugly message again.  And if I get the ugly message very quickly, then I look harder;
+ but if I have to go through a shit load of steps then I rethink my game plan, but since this dll is so s
+mall I have a good feeling that something will come up quick.  And sure enough I find some interesting cm
+p's.  I had to step for about 2 minutes till I got:
+
+:10001E8B 8B4C2420                mov ecx, dword ptr [esp+20]
+:10001E8F 83C410                  add esp, 10
+:10001E92 394C2414                cmp dword ptr [esp+14], ecx   ; * HERE *
+:10001E96 751A                    jne 10001EB2
+:10001E98 8B442418                mov eax, dword ptr [esp+18]
+:10001E9C 3944241C                cmp dword ptr [esp+1C], eax
+:10001EA0 7510                    jne 10001EB2
+:10001EA2 B801000000              mov eax, 1                            ; You are the Man!
+        <skip>
+
+:10001EB1 C3                      ret
+
+
+
+* Referenced by a Jump at Addresses 10001EA0(C)
+|
+:10001EB2 33C0                    xor eax, eax                  ; Something here stinks!
+        <skip>
+
+:10001EBE C3                      ret
+
+Alright now I just look at ecx to see that it is equal to 45, which is then compared to [esp+14].  By doi
+ng a dd esp+14 since it is a double word I found that it is 00.  Hmmm.. I say screw it Ill just change ec
+x to 0 with r ecx=0 to see what happens.  Now I get a cmp with eax to [esp+1C].  This is comparing 45 (ea
+x) to 48 (esp+1c).  Ok I got it now, ecx and eax are 2 digits taken from the bogus serial number I inputt
+ed and it compared with some calculation.  This brings a problem.  I have like 15 pairs of 45's in my ser
+ial number.  This is easy to remedy by putting totally different pairs in the serial string.  So I go bac
+k to the serial field and input 1234567890ABCDEF13467924680ACEB.  Now I go back to were I was (you should
+ be able to do this on your own, now).  This time you will noticed with the first compare that we are com
+paring 34 with 08, and second cmp is 90 with A0.  You should know what this means, and that is we need to
+ change 34 to 08 and 90 to A0 in our serial string.  Lets do that and see what happens.  Oh Yeah!  We are
+ good!  We have obliterated the ugly message window.  Now go and load up photoshop, were you should find
+the arrivo options under the selection menu.  Ok lets use it.  Load up your favorite pic and start a plug
+in.
+
+DAMN THE SERIAL NUMBER TO HELL
+
+Well, you are probably upset now, because you cant use the plug on your favorite XXX pic, because all we
+get now is a different ugly message.  Saying something about the plugin was not installed properly.  Well
+ this program looks like a decently made piece of coding, so Im willing to bet that this error message ha
+s something else to do with the serial number we have inputted.  Well, I have no clue as to what other ki
+nd of protection Im going to find, but I am willing to bet that the protection will be very similar to th
+e one in the section above.  My reasoning for this is because greedy programmers are usually lazy.  Ok le
+ts disassemble a plugin to find any references of install.  I used the holefiller.8bs plugin because it i
+s smaller and will probably take less time to disassemble.  Now I search for install.  Hmm.. I find 4 ref
+erences to it.  Before I check them all out Ill do a search on serial just to see if I can find that too.
+  What luck again I find 2.  But that still doesn't narrow it down.  Let me think about this.  How about
+I use the serial statement that is closes to another install reference.  That would be the first one at 1
+000374E.  Notice how I put some thought in trying to solve this problem before jumping in.  I learned my
+lesson on starting with the serial number above (remember).  This will save me lots of time instead of tr
+acing if it works, but then again it might not.  Now Ill do the same thing I did in the last section by d
+oing a bpx RegQueryValueExA because a reference is made 2 lines above the serial string.  Now lets rock.
+
+* Reference To: ADVAPI32.RegQueryValueExA, Ord:00E1h
+                                  |
+:10003744 8B1D94B20210            mov ebx, dword ptr [1002B294]
+:1000374A 896C2420                mov dword ptr [esp+20], ebp
+
+* Possible StringData Ref from Data Obj ->"Serial"
+                                  |
+:1000374E 6834110210              push 10021134
+:10003753 50                      push eax
+:10003754 FFD3                    call ebx            ; get serial from reg
+
+Once I set the break and run holefiller (btw, you might want to read the help file on how to use it).  It
+ will break and then I hit F12.  Notice how the segment refers to 0226???? (might be different on yours)
+as disassembler text refers to 1000????.  Make a note of that for cross referencing.  Ok we want to do F1
+2 on the breaks and make sure we end up somewhere very close to 1000374E.  If not we need to F5 then F12
+till we do or get that ugly message screen.  Oh yeah, doing good, we end up right at 2263756.  That's wer
+e I want to be.  Lets do a stepping like we did on the first one and see if we get the same thing or get
+that bad message again.  Boy I guess the author is just getting lazy now.  This one only takes about 5 se
+conds to find:
+
+:10003775 E8D6020000              call 10003A50       ; serial check
+:1000377A 83C410                  add esp, 10
+:1000377D 85C0                    test eax, eax
+:1000377F 0F8493000000            je 10003818
+:10003785 8B84242C030000          mov eax, dword ptr [esp+32C]
+:1000378C 8B4C2414                mov ecx, dword ptr [esp+14]
+:10003790 3BC8                    cmp ecx, eax                  ; * HERE *
+:10003792 0F8580000000            jne 10003818
+:10003798 8B842430030000          mov eax, dword ptr [esp+330]
+:1000379F 8B4C2418                mov ecx, dword ptr [esp+18]
+:100037A3 3BC8                    cmp ecx, eax                  ; another check
+:100037A5 7C71                    jl 10003818
+
+* Possible StringData Ref from Data Obj ->"Good"
+                                  |
+:100037A7 682C110210              push 1002112C
+:100037AC E88FF7FFFF              call 10002F40
+
+As you can notice ecx is being compared to eax.  So it is comparing 12 with 9F.  I have a bad feeling abo
+ut this.  I bet when I change 12 to 9F that the pairs that we changed on the first part of our crack will
+ be useless.  We will check this later.  Lets go ahead and change 12 to 9F and see what the rest does.  O
+h wait, how the hell do I change the serial number?  I don't even know where it is.  My best thought is t
+hat it is either stored in a text file or in the registry.  Sure way to do this is to get a file monitori
+ng and registry monitoring program that tracks what the plugin does.  But for me, I already know where it
+ is with out doing that, just from experience that if the program is using the RegQueryValueExA function
+then it is reading something from the registry and that is most likely Serial.  BTW, if you don't know an
+ything about registries, then learn.  That is a must for cracking.  Ok fire up trusty regedit.  I first l
+ook under HKCU/Software but didnt find any references to arrivo, I then looked under HKLM/SOFTWARE and fo
+und arrivo then I went in all the way in to find the Serial reference with my serial number as the value.
+  Now change it and continue on.
+
+Lets cross our fingers and hope this change works.  Well sorry, but it wont.  And before I start stepping
+ through again, I want to make sure that changing the 12 pair to 9F didn't mess up something with the sec
+ond and fifth pair (08 and A0).  Because Im want to be sure, I go ahead and re-install the program and do
+ the same procedures I did in the first section.  Now my serial number is 9F745678BCABCDEF13467924680ACEB
+.  BTW, going into call 10003A50 would of worked too, but I didn't want to take the chance and spend more
+ time on a different routine.  But as far as I can tell it is the same.  Reason I know now is because of
+doing this tutorial.  Anyway, lets try to use holefiller again and see what happens.  Hell yeah!  It work
+ed.  Should be happy, now we can actually use the program, but now what about the unlock code that we wer
+e warned about?
+
+COMMENT: If you noticed, you might of seen that the programmer got really lazy with the serial number, pr
+obably guessed if we got this far, then there was no stopping us.  Reason I say this is because of the St
+ringData Reference that says "Good".  There is even one that says "Bad" when it fails.  Makes you wonder.
+
+MYSTERIOUS TIME PROTECTION
+
+Should be proud, the serial number is done and over with, or at least I hope.  Anyways, time to get on wi
+th the real protection that the help file mentions.  Well it is getting late and I need to wrap this arti
+cle up, so let me sum this one up.  I did just about everything imaginable to try to get the registration
+ menu to come up.  I set the time forward, backwards, sideways, etc.. Hehehe...  But really I tried using
+ multiple files, using a large amount of different files.  I mean everything I could possible think of an
+d I still got no menu for registering the program.  But one thing I did find was that in the disassembled
+ plugin was:
+
+   Import Module 006: tl32v20.dll
+
+ Addr:80000008 hint(0008) Name: showMainDialogEx
+ Addr:80000009 hint(0009) Name: trialEnvironmentOpen
+ Addr:8000000A hint(000A) Name: trialEnvironmentClose
+ Addr:80000002 hint(0002) Name: verifyTimeLock32
+
+So I figured this program was protected with the worn out scheme of TimeLock.  So I went ahead and made a
+ keygen for it just in case the day every came when I see the Purchase button.  And there is no need for
+me to show you how to make a keygen for it when there are plenty of well written articles on how to defea
+t this puppy.
+
+Here are two thoughts that come to mind with this.  Maybe our serial number was so good that the plugins
+won't ever ask for an unlock code.  But I don't think that is it.  Second, this might be the reason why t
+he author never mailed the serial number, because the author screwed up on implementing this protection.
+
+BYE BYE BLUE SKY'S
+
+Well this is it.. We are done with this program and remember that if you like this program and use it for
+ more than 15 days, buy it; or else, delete it.
+
+I enjoyed writing this article especially in hopes that it will help someone out in the future.  I tried
+to make something that was a little different from the rest, by trying to shine some light on cracking fr
+om a different direction.  Enjoy.
+
+Greets to my pals...  Yall know who you are.
+
+MISCELLANEOUS THOUGHTS AND HINTS
+
+Here are some little things I thought of when typing this tutorial and didn't feel they fitted anywhere e
+lse, they are in no particular order:
+
+*       Adding a monochrome card and monitor as a secondary display makes a worlds difference when used w
+ith softice.  I learn that trick long ago and have never regretted it.  And nowadays if you can actually
+find such a beast, Im sure it can be gotten dirt cheap or even for free.  Trust me, its worth the investm
+ent.
+*       I personally do not care for patching any program that can be simply defeated by a registration n
+umbers or such.  I know patching can save about 3/4 of the time for most programs.  But registering by pa
+tching instead of getting the registration code seems like such a desecration.  Gives me a mental picture
+ of a self proclaimed artist putting a mustache on the Mona Lisa.  Anyway, why do it half ass?  Do it rig
+ht.  Just my thoughts!
+*       Support the Authors!!!  This is very important.  If you like the program and use it, pay for it!
+ The primary reason I crack programs is to try it out just like it was shareware but in a manner without
+the annoyances.  Honestly the nag screens and stuff can easily be deterrents for me paying for software.
+ But if I use something more than 30 days and like it, then I pay for it.  Hell as bad as it sounds I eve
+n payed for Windows95.  I don't like it, but I use it day to day.
+*       Please don't ask me to join any groups or do special cracks for you.  I don't mean to sound harse
+ by that, but I get so many requests for those two.  First of all Im with a cracking group already that I
+ love and appreciate and I don't think Ill give them up unless something majorly bad happens.  And about
+requests, I never mind doing them (in fact I like to), but I just never have enough time in a day.  I wor
+k and go to school full-time, have a girlfriend that requires a lot of time (which I don't mind) and I ju
+st crack on the side.  Hope this is understandable.
+*       It saddens me to see programs where the author spends more time, money, and effort to develop the
+ protection scheme like in this case.  Hell even when doing this tutorial, I found a blacklist too and no
+ telling what else has been done.  Should understand that if a cracker wants to crack this program it wil
+l get done, especially when s/he gets pissed by not getting there legit serial number to begin with.  If
+more time is spent on developing the code than the protect, they might even increase there sales.  I like
+ these plugin and all but I cant justify the cost, so after cracking them and writing this tutorial, they
+ are being deleted.
+
+

@@ -1,0 +1,331 @@
+THE_URL:http://web.textfiles.com/computers/tutopera.txt
+THE_TITLE:tutopera.txt
+Ok......so here we go!!
+
+Fellow cracker ytc_ gave me the opportunity to show to the whole web world (whoa! let's say to the ones a
+mong you that enjoy cracking proggies now and then :) how to crack Opera 3.50 in order to get a FULLY fun
+ctional version, without any limitations of any sort. As you probably already know, there is of course a
+not-so-pretty side of the story :)...what I mean is that you won't get a valid name/organization/code com
+bination for the next versions of Opera using the procedure I describe here....in order to obtain a worki
+ng serial number, you'll need either:
+
+ 1 - To send 35$ to Opera Software or
+ 2 - To read ytc_'s part of this tutorial and fish a valid serial number...
+
+Heh...guess I already know which one you're gonna choose....:)
+
+Anyway, please DO NOT FORGET that these guys WORK HARD to bring you a FANTASTIC browser, probably the BES
+T and FASTEST one you can find on the net...so please....if you really like it and USE it, REGISTER IT!!
+
+ok, enough intro....LET'S CRACK!!! :)
+
+***
+
+TOOLS USED:
+
+ - W32Dasm v8.93
+ - Hacker's view v6.00
+
+***
+
+
+PART ONE: PREPARING THE SESSION
+_______________________________
+
+
+Well well well.....so you downloaded this fast, little browser...and you like it a lot....but you can't r
+eally stand that ugly nag screen that pops up when you start it, right !? Well, nothing strange, you're a
+ normal human being like almost everyone, then :)
+Ok, the first thing to do is to poke around a bit to fully understand the many fantastic peculiarities of
+ this browser (and btw if you're wondering, NO, Opera Software does NOT pay me to say that ;) : click on
+"EVALUATE", take a good look around, and learn how most things work (you should do that EVERYTIME when cr
+acking a program! KNOW YOUR ENEMY, as master Fravia+ always says!)...when you finish your browsing, click
+ on HELP/ABOUT OPERA....oh! what do I see ! a bug ! it says "REGISTERED : NO"....hmmm well it looks like
+we'll have to fix that immediately, or it might have some dangerous consequences !!! ;)
+
+PART TWO: LET'S GO FOR IT !!! :)
+_____________________________
+
+Close the help window and click on HELP/REGISTER OPERA...you will get a dialog that asks you to enter you
+ name, organization and reg code...and since you have no clue on what to type in the third field, just en
+ter bogus data...now I don't know how our good ytc_ has performed his serial catching crack, (perhaps he
+used a TASK/HWND procedure, or maybe he breakpointed some crucial API instructions like GetDlgItemTextA o
+r GetWindowTextA), since none of us two has seen the other's tutorial:), but anyway I'd really like to sh
+ow you how the programmers intended to protect the front door of the protection scheme but left the back
+door pratically open to a strong cracking attack :)
+Disassemble Opera.exe with your honestly bought ( sure! ;p ) copy of W32Dasm....now what do you always lo
+ok for when you disassemble a program??
+The usual, boring, annoying invalid-code-beggar-off-string....so let's do it! click on SEARCH, and type i
+n "IS INVALID" or any other word combination you remember from that nasty message that tells you to begga
+r off and find somewhere a good serial number :)...what do you see ?? NOTHING!!! %-/
+no match, no way!!....ok...
+The first time I took a look at Opera's disassembly, I thought "WOO! THAT'S GOTTA BE AN INCREDIBLY THOUGH
+ PROT SCHEME!! LET'S ROCK!!" but I was soon disappointed by the dumbness of the programmers (dumbness tha
+t I see only in the protecting method, no way I would judge their FANTASTIC program (and, again, NO THEY
+DO NOT PAY ME ;)...
+SO ! let's stop and THINK! <-- good quality in a cracker :)
+WHEN does the program recognize us as poor unregistered guys for the FIRST time?!? hmm...YEAH! the beginn
+ing...there's that small, white and brief pseudo-splash screen at the beginning that says:
+
+ /--------------------\
+|  Opera 3.50 blah blah|
+|  Copyright  blah blah|
+|                      |
+|  Registered to:      |
+|  (unregistered)      |  <-- A-HA!!! ;)
+ \--------------------/
+
+hmm...cool...let's see.....click again on SEARCH and this time type in "(unregistered)"....
+BINGO!! 2 matches !! :)
+
+let's examine the first one...
+
+
+
+:0045F882 7532                    jne 0045F8B6
+:0045F884 6A40                    push 00000040
+:0045F886 56                      push esi
+
+* Possible Reference to String Resource ID=21110: "Opera 3.50"
+                                  |
+:0045F887 6876520000              push 00005276
+:0045F88C E8400B0000              call 004603D1
+:0045F891 56                      push esi
+:0045F892 E8F9CA0700              call 004DC390
+:0045F897 59                      pop ecx
+:0045F898 A344555000              mov dword ptr [00505544], eax
+:0045F89D 6A40                    push 00000040
+:0045F89F 59                      pop ecx
+:0045F8A0 2BC8                    sub ecx, eax
+:0045F8A2 8D8090555000            lea eax, dword ptr [eax+00505590]
+:0045F8A8 51                      push ecx
+:0045F8A9 50                      push eax
+
+* Possible Reference to String Resource ID=21428: " (unregistered)" <-- OUR
+                                  |                                   MATCH
+:0045F8AA 68B4530000              push 000053B4
+:0045F8AF 8BCF                    mov ecx, edi
+:0045F8B1 E81B0B0000              call 004603D1
+
+
+beautiful, ain't it ? :)
+
+well...what's your first thought ?? Yes, I know...that JNE at 45F882....
+but please....let's put inside this a LITTLE bit of ZEN.....there's NO jump between the pushing of the tw
+o strings...what the heck could that mean ?!? When you run the browser, you see "Opera 3.50 (unregistered
+)" in the main program bar....so, considered that the JNE at 45F882 brings to NO string pushing in the de
+ad listing, if you jump there you should see NOTHING in the program bar....and that's quite impossible is
+n't it ?! :)
+Therefore you should easily understand that we are NOT near the ProtHQ :)
+So....let's keep on SEARCHING!! Press F3 and stop by the second match...
+here is it:
+
+
+* Possible Reference to String Resource ID=21110: "Opera 3.50"
+                                  |
+:00491E84 6876520000              push 00005276
+:00491E89 FF3528595000            push dword ptr [00505928]
+:00491E8F FFD7                    call edi
+
+* Reference To: USER32.SetDlgItemTextA, Ord:022Ch
+                                  |
+:00491E91 8B35A4C44E00            mov esi, dword ptr [004EC4A4]
+:00491E97 8D85C4FEFFFF            lea eax, dword ptr [ebp+FFFFFEC4]
+:00491E9D 50                      push eax
+:00491E9E 53                      push ebx
+:00491E9F FF7508                  push [ebp+08]
+:00491EA2 FFD6                    call esi
+:00491EA4 8D8540FBFFFF            lea eax, dword ptr [ebp+FFFFFB40]
+:00491EAA 83C3FE                  add ebx, FFFFFFFE
+:00491EAD 50                      push eax
+:00491EAE 53                      push ebx
+:00491EAF FF7508                  push [ebp+08]
+:00491EB2 FFD6                    call esi
+:00491EB4 8D856CFCFFFF            lea eax, dword ptr [ebp+FFFFFC6C]
+:00491EBA 50                      push eax
+
+* Possible Reference to Dialog: SPLASH, CONTROL_ID:2B26, "Text"
+                                  |
+:00491EBB 68262B0000              push 00002B26
+:00491EC0 FF7508                  push [ebp+08]
+:00491EC3 FFD6                    call esi
+:00491EC5 833DB45D500000          cmp dword ptr [00505DB4], 00000000
+:00491ECC 7526                    jne 00491EF4
+:00491ECE 8D85C4FEFFFF            lea eax, dword ptr [ebp+FFFFFEC4]
+:00491ED4 68FF000000              push 000000FF
+:00491ED9 50                      push eax
+
+* Possible Reference to String Resource ID=21428: " (unregistered)" <-- OUR
+                                  |                                   MATCH
+:00491EDA 68B4530000              push 000053B4
+:00491EDF FF3528595000            push dword ptr [00505928]
+:00491EE5 FFD7                    call edi
+:00491EE7 8D85C5FEFFFF            lea eax, dword ptr [ebp+FFFFFEC5]
+:00491EED 50                      push eax
+:00491EEE 53                      push ebx
+:00491EEF FF7508                  push [ebp+08]
+:00491EF2 FFD6                    call esi
+
+* Referenced by a (U)nconditional or (C)onditional Jump at Addresses:
+|:00491C03(U), :00491CFE(U), :00491ECC(C)
+|
+:00491EF4 6A01                    push 00000001
+:00491EF6 58                      pop eax
+
+* Referenced by a (U)nconditional or (C)onditional Jump at Addresses:
+|:00491BF9(U), :00491C8A(U), :00491D08(U)
+|
+:00491EF7 5F                      pop edi
+:00491EF8 5E                      pop esi
+:00491EF9 5B                      pop ebx
+:00491EFA C9                      leave
+:00491EFB C21000                  ret 0010
+
+
+WOOOOW! MAN!!! QUITE A LOT OF CODE HERE !! DO YOU WANT ME TO GET MAD!? :))
+Nope....just read the whole block one more time, please....
+It's E*A*S*Y!! c'mon!
+use your intelligence! the program pushes "Opera 3.50" at first...then we have some junk operations....an
+d then the IMPORTANT pushing of the "(unregistered)" string.....but think about it...DO YOU SEE THAT JNE
+BEFORE THIS LAST PUSHING ?!? YEAH!! IT'S IT!....
+take a closer look :
+
+
+:00491EC5 833DB45D500000          cmp dword ptr [00505DB4], 00000000
+:00491ECC 7526                    jne 00491EF4
+:00491ECE 8D85C4FEFFFF            lea eax, dword ptr [ebp+FFFFFEC4]
+:00491ED4 68FF000000              push 000000FF
+:00491ED9 50                      push eax
+
+* Possible Reference to String Resource ID=21428: " (unregistered)" <-- OUR
+                                  |                                   MATCH
+:00491EDA 68B4530000              push 000053B4
+
+
+the JNE at 491ECC is what us crackers call a GOOD JUMP, because it (in this case) doesn't allow the progr
+am to print "(unregistered)" in the program bar...so this time WE HAVE A CONDITIONAL JUMP BETWEEN THE TWO
+ PUSHING!!! You dig it ?!!?
+ZEN cracking is the solution to all of your problems, guys....ZEN! :)
+OK....so now we know that if the program takes that jump, then it is REGISTERED and we have a little more
+ time to evaluate it before sending out our 35$ to Opera Software :)...
+but WHAT do we need to TAKE THAT JUMP ?! hmm...let's take an even CLOSER look:
+
+
+:00491EC5 833DB45D500000          cmp dword ptr [00505DB4], 00000000
+:00491ECC 7526                    jne 00491EF4
+
+
+As clear as caribbean water, ain't it ? :)
+It compares the value stored inside [00505DB4] with ZERO....if it's NOT zero, it takes the jump, otherwis
+e....we are UNREGISTERED ! :)
+What now ??
+Easy! we must scan the disassembly for every occurrance where the program puts something inside ptr [0050
+5DB4]....
+to do so, get to the beginning of the disassembly, click on SEARCH and type in "mov dword ptr [00505DB4],
+"....
+you wait, and you wait, and you wait, and you wait (my computer is a bit slow, ya know ;) until.........
+
+YEAH !!! A MATCH!!! (btw the ONLY match...in other words, this is the only place where [00505DB4] is modi
+fied...)
+there u go:
+
+:00491D58 E8DE1A0200              call 004B383B
+:00491D5D 3BC6                    cmp eax, esi
+:00491D5F A3B45D5000              mov dword ptr [00505DB4], eax <--OUR
+                                                                 MATCH
+
+Nevermind about the CMP, the two important instructions here are the CALL and the MOV...
+So, we know now that it MOVes the value of EAX inside our pointer after CALLING the procedure at 4B383B..
+.we know that this is the ONLY time that the pointer is being affected, so if EAX is a ZERO now, WE'LL BE
+ UNREGISTERED LATER! it would be much better to get a 01, or whatever else don't u think ?? :)
+so...LET'S ENTER the call....yeah....do you feel it ? we're inside the ProtHQ...watch your back from now
+on...;)
+our brave W32Dasm will make us land right HERE:
+
+
+:004B383B 8D8138010000            lea eax, dword ptr [ecx+00000138]
+:004B3841 85C0                    test eax, eax
+:004B3843 741A                    je 004B385F            <--- JUMP NUMBER 1
+:004B3845 803800                  cmp byte ptr [eax], 00
+:004B3848 7415                    je 004B385F            <--- JUMP NUMBER 2
+:004B384A 81C190030000            add ecx, 00000390
+:004B3850 51                      push ecx
+:004B3851 E82FA5FDFF              call 0048DD85
+:004B3856 85C0                    test eax, eax
+:004B3858 59                      pop ecx
+:004B3859 7404                    je 004B385F            <--- JUMP NUMBER 3
+:004B385B 6A01                    push 00000001
+:004B385D 58                      pop eax
+:004B385E C3                      ret
+
+* Referenced by a (U)nconditional or (C)onditional Jump at Addresses:
+|:004B3843(C), :004B3848(C), :004B3859(C)
+|
+:004B385F 33C0                    xor eax, eax
+:004B3861 C3                      ret
+
+
+
+WOOHO!! THIS IS THE HEART OF THE PROTECTION SCHEME !! WE GOT IT NAKED, AT LAST!!! :)
+
+so CALM DOWN!!!
+and proceed slowly....we said that we must get a NON ZERO value inside EAX at the end of this call, right
+ ?!? let's look....
+if we take the first jump (at 4B3843), we will land at 4B385F, where that nasty "XOR EAX, EAX" will put a
+ ZERO inside our EAX! SO JUMP NUMBER ONE IS AN EVIL JUMP!
+if we take the second jump (at 4B3848), we get the same result...SO JUMP NUMBER TWO IS EVIL TOO!!
+finally, if we take the third one (at 4B3859) nothing changes at all...we get, again, a ZERO inside EAX..
+.but if we DO NOT TAKE ANY OF THESE JUMPS, we'll get to the part of the code where "01" is PUSHed and the
+n POPped inside EAX.....EEEEHAA!! WE WOULD BE THEREFORE REGISTERED!!
+what should we do in order to skip those 3 nasty jumps !? we must PHYSICALLY MODIFY THE EXE FILE !!!
+
+
+PART THREE: THE PATCHING
+________________________
+
+write down the OFFSETS of both THE FIRST JUMP and the PUSH 00000001 instruction.....they should be B3843
+and B385B respectively.
+CLOSE W32DASM !! We don't need it anymore!
+Run HIEW (Hacker's View) and open Opera.exe.
+Change to DECODE MODE and GO to the first offset....
+Press F3 to edit the bytes, and then F2 to modify the assembly instruction...change
+
+JE 0000B385F
+
+into
+
+JMPS 0000B385B
+
+...press F9 to save the change, and exit Hiew...
+
+IMPORTANT: DO YOU UNDERSTAND WHAT WE HAVE DONE? (geez I guess this tutorial has turned out to be a bit to
+o much NEWBIE-ORIENTED...hope ytc_ won't be upset with me for that :))
+WE HAVE MODIFIED THE PROGRAM, TELLING IT TO *ALWAYS* JUMP TO THE PLACE WHERE "01" IS PUSHED....THEREFORE,
+ WE'LL ALWAYS BE REGISTERED!!!
+
+run Opera.exe....AND YES !! IT'S REGISTERED!!! phew...we made it :)
+
+
+
+
+PART FOUR: LAST WORDS
+_____________________
+
+Well a BIG BIG "THANK YA BROTHA!!" goes to fellow cracker -MeMorY_LosT...it was together with him that I
+first cracked the beta version of Opera 3.50!!!
+
+MANY MANY THANKS to ytc_ for giving me the opportunity to write this tutorial!!!! D00D, I WON'T FORGET TH
+IS !! :)
+
+GREETINGS to all the fantastic people at #cracking4newbies !!! Guys, yew RULE! :)
+
+AND, last but not least, personal GREETINGS go to TIN (il cracker americano che parla meglio l'italiano :
+)), ZOLTAN (my favourite robot ! :)) and L0KE (man, where the hell have ya disappeared !? ;))
+
+.......THAT'S ALL, FOLKS!!!! :)
+
+
+If you want to contact me, send email to neural_noise@hotmail.com
+
+-NeuRaL_NoiSE
+

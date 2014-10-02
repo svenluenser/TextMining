@@ -1,0 +1,396 @@
+THE_URL:http://web.textfiles.com/computers/crark.trd
+THE_TITLE:crark.trd
+THIS WAS A MACHINE TRANSLATION!
+
+---------------------------------------------------------------
+Changes in the versions:
+
+2.0
+   - Password indication added (about 1 of 200000). Multimedia
+compressed files (-mm) bug fixed.
+
+1.99
+    - RAR 2.0 support is finally included. Older RAR versions are
+not supported.
+
+1.5a
+     - Library Password Cracking Library (PCL) v. 1.1 added,  al-
+lowing  multifunctional  dictionary  attacks,  brute force attack
+with known  symbols, recovery  of the  incorrectly typed password
+and much more. An error,  in connection with small (less  than 10
+bytes)  files,  is  corrected.  Documentation is complemented and
+corrected.
+
+1.02
+     - Error, causing the result faulty in 0.5 % of the cases, is
+corrected. The speed is increased by 5 %.
+
+1.01
+    - Insignificant  error  in  an  initial code  UNRAR 1.01 (see
+what's new in RAR 2.0) is corrected
+
+1.00:
+    - First version released.
+
+----------------------------------------------------------------
+
+
+
+                           c R A R k
+                   (First Again RAR Cracker)
+                            v. 2.0
+
+         (c) Copyright PSW-soft 1995-97 by P. Semjanov
+
+
+    THIS BETA-VERSION of  the PROGRAM IS  DISTRIBUTED " AS  IS ".
+You CAN USE  IT AT YOUR  OWN RISK. ANY  CLAIMS ON WORKING  of the
+PROGRAM WILL NOT BE ACCEPTED. ALSO the AUTHOR DOES NOT  GUARANTEE
+FURTHER SUPPORT and UPDATING of future VERSIONS of THIS  PROGRAM.
+This program is FREEWARE and can be distributed freely under fol-
+lowing conditions: the  program code may  not be changed  and the
+program is distributed with two files: CRARK.EXE and CRARK.TRD.
+
+
+1. Purpose and characteristics.
+
+    The program cRARk is intended for the determination of  "for-
+gotten" password for RAR-archives. The program works with  archi-
+ves RAR of versions 2.0 - 2.0.
+ATTENTION: Some RAR 2.0 BETA archives may be not supported.
+    In order to work the program cRARk needs a computer with  the
+processor above 80386 and 2M of working memory. Thus it is recom-
+mended to use the program  on as powerful as possible  processor.
+This program is specially optimized for  Pentium.
+  At brute force cracking  the program makes more than
+   800
+---------  pass/sec on a Pentium/120 class computer, where
+[(n+1)/2]
+
+   n - password length;
+  [x] - ceil (x),
+
+so finding a 6-character  password (constructed with small  Latin
+letters will need about a  week. Working speed of dictionary  at-
+tack is about 200 pass/sec.
+
+2. Requirement to entrance archive.
+
+   For the  program to  successfully work  the given  RAR-archive
+should meet the following requirements:
+
+  - There is at least one ciphered file.
+  - The file was not stored (-m0 option).
+  - The file was not split in a several archives using the -v option.
+
+  In case  of solid-archives,  these requirements  should satisfy
+the first file. Therefore, if the files in archive were  ciphered
+with the different passwords, the one found first, will match the
+first found file.
+
+3. Working with the program.
+
+For the program to  work in a desirable  mode it is necessary  to
+create a password description file (see item 4). After that start
+the program using the following command:
+
+CRARK [options] archive
+
+The found password is printed on the screen as:
+
+truepass - CRC OK
+Totally passwords tested = XXXXXXX, slow tests = XXXXX
+
+All other messages are intended as progress indication of the program.
+
+Options in this mode are:
+
+   -lXX - establishes  minimum length of  a regular symbol  "*" ,
+where XX ranges from  0 to 24, (by  default = 0). See  item 4.1.1
+for explanations
+
+   -gXX - establishes  maximum length of  a regular symbol  " * "
+where XX ranges from 0 to 24, (by default = 6).
+In  degenerating  cases  (when  brute  force is conducted without
+known symbols), these options mean smallest and largest length of
+the password accordingly.
+
+-sXXXXX  -  establishes  an  own  character  set  for brute force
+(created  with  the  help  macro  $o).  This  set  can consist of
+non-standard symbols, and  can be truncated  of standard sets  of
+symbols.
+
+-dXXX  -  to  set  a  name  of  the  basic dictionary (by default
+"MAIN.DIC)
+
+-uXXX  -  To  set  a  name  of  the  user  dictionary (by default
+"USER.DIC)
+
+-pXXX - sets a name of the password description file (by  default
+"PASSWORD.DEF).
+
+4. Choice of operation mode and  password set with the help of  a
+password description file.
+
+The password definition file is a main managing file. Its  compi-
+lation and processing is purely the basic problem of library PCL.
+Its format  is independent  of the  application, to  which PCL is
+connected, therefore this library can be used with any
+
+4.1. Format of the password description file.
+
+The password description file consists of textual lines, each  of
+which sets the set of the passwords and working mode , i.e. which
+algorithm will be used. Each line is independent and is processed
+separately, thus the total number of the checked The basic compo-
+nents of the  password description file  are: character sets  and
+words from  the dictionaries.  They set  one or  several symbols,
+which will be in the  password on appropriate places. Blanks  and
+tabulations are ignored and can separate any component.
+
+4.1.1. Character sets.
+
+The character set (charset) is set of symbols, which can be on  a
+actual place in the password  (but there is, naturally, only  one
+of them). To can be the following:
+
+ 1) Simple single symbols (a, b, and etc.). Meaning, that in  the
+given  position  of  the  password  there  is just this symbol.
+
+ 2) Shielded symbols. The special symbols, if they are met in the
+password, they should be shielded. The sense coincides with  pre-
+vious. They are:
+
+  \$, \., \*, \?         - "$", ".", "*", "?"
+  \], \[, \ , \}, \(, \) - appropriate brackets
+  \ (space)              - space
+  \\                     - "\"
+  \XX, where X is hex-digit - any symbol in hex-code
+  \0 - empty symbol (absence of a symbol). Is usually applied  in
+association with the "present" symbol (see examples below).
+
+Basically, any symbol can be  shielded , if they are  not hex-di-
+gits.
+
+  3) Symbol set macros.  Meaning, that in a current  position
+of the  password there  is any  symbols, determined  by following
+macros:
+
+  $a - Small Latin letters, in total 26 possibilities;
+  $A - large Latin letters, in total 26 possibilities;
+  $! - special marks ~!@#$%^&*()_+`-=\|{}:"<>?[];',./ - 32 possibilities;
+  $1 - Figures, 10 possibilities;
+  $o - User set (see an option -s);
+  ?  - Any symbol (except $o), i.e. a total of 94 symbols;
+
+4) The combination of any of the listed symbols above. Is written
+down with the help of  square brackets. The sense coincides  with
+previous.
+
+Examples:
+
+[$a $A] - any Latin letter;
+[abc] - or a, or b, or c;
+[$1 abcdef] - hex-digit;
+[s \0] - or s, or anything;
+[$a $A $! $1] - is equivalent to ?.
+
+5) Regular symbol of recurrence "*". Means that the previous cha-
+racter set needs to be repeated 0 or more time in the appropriate
+positions of the password. Examples:
+
+$a * - password of any length from the small Latin letters;
+[ab] * - is empty, a, b, aa, ab, ba, bb, aaa...
+[$a $A] [$a $A $1] * - "identifier" - sequence of the letters and
+figures, and first letter.
+
+The symbol of  recurrence by default  has a length  from 0 to  5.
+Using the  -g and  -l options  can change  these defaults. In the
+first and second example recurrence length is equal to length  of
+the password (as the  known part of the  password is not k  It is
+recommended to use "*" as often if possible due to the fact  that
+it will create the most effective brute force attack.
+Current restriction - "*" can only be the last element of a line.
+
+4.1.2. The word dictionaries and their modifiers.
+
+Contrary to a character set, the word set uses not one, but a few
+symbols of the password  in succession. The PCL  library supports
+two dictionaries : basic (where more often used words are found )
+and user (where the  specific information such as  The dictionary
+is a textual file, consisting of  words, divided by end of a  li-
+ne(EOL) symbols. Files such as DOS- (CR/LF), and UNIX-format (LF)
+can be used. It is  desirable (including brute force s  Thus, two
+macros exist:
+
+$w - Word from the basic dictionary
+$u - Word from the user dictionary.
+
+Also the words  can have special  character, since they  can have
+any length. They are designated $s(1), $s(2),... And are determi-
+ned to be specific to a problem. For this program are unnecessary
+and not supported.
+
+As is frequently known the passwords are altered words. Therefore
+for determining such  passwords the whole  set of modified  words
+are entered. Use following switches:
+
+.u (upper) - to translate a word in the top register
+             (password ->PASSWORD)
+.l (lower) - to translate a word in the bottom register
+.t (title) - to translate a word in heading (Password)
+.i (tail) - to translate in the top register the last letter
+(passworD);
+.c (cool1) - to translate in the top register the odd letter(PaSsWoRd)
+.d (cool2) - to translate in the top register the even letter(pAsSwOrD)
+.v (reverse) - word on the contrary (drowssap)
+.s (shrink) - to reduce a word, by cleaning(removing) all vowels, if it(she) not first (password - > pssw
+rd,offset - > offset);
+.1, .2,... (cut) - to cut off a word up to given length;
+.o (own) - a modifier determined by the user (until is supported).
+
+Naturally the modifier must not be unique (their number is restricted in succession - 63, which hardly pr
+obable to overcome).
+ Examples (let $w - password):
+
+$w.t.i - PassworD
+$w.s.4 - pssw
+$w.4.s - pss
+
+
+4.1.3. Permutation brackets.
+
+In case, you remember the  password, but it does not  match. Pro-
+bably, you  were mistaken  in its  set. For  restoration of  such
+passwords, the program has its own proper algorithm . It conside-
+res, the errors in a set can be following: two next letter To in-
+dicate  the  start  and  end  of  a  possible  permutation in the
+password permutation brackets "{" and  "}" are applied . "}  " is
+followed  by  the  permutation  number  (by  default - 1), separa
+Examples:
+
+{abc} - will receive 182 (different) passwords, such as:
+  bac, acb - 2 rearrangements;
+  bc, ac, bc - 3 removals;
+  aabc, babc... - 4 * 26 - 3 inserts;
+  bbc, cbc... - 3 * 25 replacements;
+  abc - a word;
+
+{Password}.2 or {Password}(2) - in particular(personally), words, as:
+ psswrod, passwdro and paasswor will be received;
+
+{$w} - all words with one error from the basic dictionary.
+
+Notes:
+1) It is normal, that some passwords will not be found at once, and, the higher the permutation number is
+, the more recurrences there will be. Efforts on reduction of recurrences were made in the program, but t
+hey are purely empirical and are only checked for permutation numbers, not greater 2. There is no guarant
+ee for larger numbers that any password will not be thrown out by fault. The combinatory fans suggest to
+count the exact number, for example, {password}.3, and then compare it with result of the program.
+2) For insert and replacement it is necessary to know, which set of symbols to insert.
+If for a given program the character sets already exists, proceed with inserting the set into the standar
+d set these symbols belong(i.e.{password} should be inserted - $a, {Password} - [$a $A]).
+For words the similar operation must be carried out on the first word from the dictionary, thus modifiers
+ are taken into account.
+3) Current restrictions:
+- The symbol "{" should without error be first in a line. The expressions as good_{password} until {good}
+_password are supported - please.
+
+
+4.2. Useful examples of password descriptions.
+
+1) Let me give you a fragment from the documentation on the program ZEXPL2L: " I assume, that you have ar
+chive with a password, similar to " Heaven!!!", but you have forgotten, how many '!' stood at the end of
+a word, and which - lower/upper case letters were used in a word: "HeAvEn!!!", " Heaven!" Or "HeAven!!!!"
+. But you remember, that the password was not longer, than 10 symbols, and  no shorter 7. "
+This password would be written down in PCL language as such:
+ " He [aA] v [eE] n! * " + option -g4.
+We shall assume in addition, that you were mistaken about a set of the basic part of the password.
+Then it is necessary to try following: "{He [aA] v [eE] n} ! * " + option -g4.
+2) Another citation : " Assuming, you have two variants of a line of the password: "myprog", "MyProg","my
+_prog" and "My_Prog".
+It should be written down as:"[mM] y [_ \0] [pP] rog".
+
+3) Often passwords consist of two intelligent words, separated by some sign. The appropriate description:
+ "$w [$1 $!] $w" or
+ "$w.t [$1 $!] $w.t"
+It is important to note, that both $w are not equal here , and will generate a total of (if there are 200
+00 words in the dictionary): 20000 * 42 * 20000 = 1.68E10 passwords, i.e. on the average it takes about 5
+00 days to decode of the passwords, I admit  rather difficult to break.
+Accordingly, it is simple two words separated by a number break in 42 times faster.
+
+4) You remember, that your password was "MyVeryLongGoodPassword", but it does not match for some reason.
+Try these combinations:
+"{MyVeryLongGoodPassword}"   - 2382 passwords, 30 sec
+"{MyVeryLongGoodPassword}.2" - 2836413 pass., 8 hours
+
+
+5. Possible problems.
+
+5.1. How to interrupt and to continue the account is farther.
+
+The algorithm  of brute  force (without  known symbols)  is such,
+that  resolving  the  nth-symbolical  password includes resolving
+(n-1)th-symbolical password. Therefore  the program can  be pain-
+lessly be interrupted after a conclusion of the message " Testing
+XX-chars passwords... " and continued with the help of an  option
+-lXX (here both XX are equal).
+
+5.2. The program counts 10-th day, but nothing was found.
+
+Alas! There is no help here. Either the password is too long,  or
+it  is  incorrectly  described.  Additional  information  on  the
+password is necessary.
+
+
+6. Conclusions and prospects.
+
+The crypto-resistance without the plain text equals, IMHO,
+min (255^128, 256! * 2^128).
+
+
+7. Concerning library PCL.
+
+The  author distributes  the library PCL as
+FREEWARE files .LIB (under Borland, Watcom C) or .a (under DJGPP)
+with the requirement of the certitude of reference of it in  your
+programs. Receipt of the sources is a separate subject.
+
+
+8. How to contact to the author.
+
+Only on e-mail.
+e-mail: Psw@ssl.stu.neva.ru
+FIDO:   2:5030/145.17
+Relcom: Psw@ssl.stu.neva.ru
+WWW;    http://www.ssl.stu.neva.ru.
+
+Though,  as  I  already  have  told,  I will not accept defective
+claims, I shall  be grateful to  here about obvious  errors, such
+as:
+
+- the program hangs  at brute force (the  fact, that it does  not
+disappear from the screen, is not an attribute of lag);
+
+- the  program does  not find  the password  of a  given archive,
+though the set of symbols for brute force is given correctly:
+
+As I shall be glad  to any constructive offers on  improvement of
+the working of the program.  I shall not refuse if  someone, whom
+this program  has rescued  his or  her life,  and as  a gratitude
+wants to correct this file to good English. The discussion  about
+the algorithm of the program  and initial texts is possible  only
+if you're interested in development of this program. Do not  ask,
+that I should have made services such as continuation brute force
+from the current password  or displaying of the  current password
+or interruption at any moment on Ctrl-Break.
+
+9. Special thanks.
+
+  To John Vandermeersch <vanderme@tornado.be> for correcting this
+docs.
+
+Good luck!
+
+Pavel Semjanov, St.-Petersburg.
+

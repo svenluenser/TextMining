@@ -1,0 +1,184 @@
+THE_URL:http://web.textfiles.com/computers/ucp.txt
+THE_TITLE:ucp.txt
+-----------------------------------------------------------------------------
+
+      Ultra Crack Pro v1.2  Copyright (c) 1996  Animadei[T]  08-16-1996
+
+                                UCP DOCUMENT
+
+                          Last updated on 8-14-1996
+
+-----------------------------------------------------------------------------
+
+
+UCC requirements:  8086 CPU compatible.
+                   22k of disk space.
+                   137k free DOS memory.
+
+
+TABLE OF CONTENTS
+
+  1.  INTRODUCTION
+  2.  FEATURES
+  3.  USAGES
+  4.  TROUBLE SHOOTING
+  5.  UNKNOWN PROBLEMS
+
+
+(1)  INTRODUCTION
+
+     At one time or another a very creative individual may have wanted to cr-
+eate a cheat, crack, program bug updates, or other data manipulating things.
+Now with the help of Ultra Crack Pro that individual may find that creating
+a patch program will not take 30+ minutes, or for some of you talented indiv-
+iduals, 5- minutes.  Why create another patch program when a STANDARD may be
+a good choice?!  For your information, many patches fail to adjust their pat-
+ch location to the correct bytes when files are uncompressed with different
+uncompressors.
+
+
+(2)  FEATURES
+
+     *  Using different seaching techniques to find your data!  (Search by
+        address or search throughout file "lightening" fast!)
+
+     *  Quick 'n easy "find closest match" or "find all matches" if search
+        by address fails, or other search failures!
+
+     *  Capable of compression!  Include cracks, cheats, unprotects, and
+        game "spoilers" in a small compact packet!
+
+     *  Flexible patch updates; libraries of patches can be made or used by
+        authors everywhere!  A Ultra Crack Compiler included!!!
+
+     *  And many other functions novice to intermediate "crackers" will find
+        useful!  Serious professional crackers may find UC (tm) a simple
+        too to keep around!
+
+     *  IT'S FREE, COMMERCIALLY!  (See LICENSE.TXT for details).  Any release
+        groups can include UC (tm) any time w/o restrictions what-so-ever!
+
+
+(3)  USAGES
+
+     Format:  UCP.EXE (/A) (/L{log file}) (path)[patch file](.CRK)
+
+              /A - Automatic mode (choose the most logical methods).
+              /L - Log all errors to UCP.LOG in the current directory.
+                   User may define path and name to new log file.  (All
+                   log files will be overwritten, so back it up!)
+
+
+     UC (tm) may open a crack file two ways:  1) use .CRK patch file specifi-
+ed on the command-line  2) use DEFAULT.CRK located in the same directory whe-
+re UCP.EXE is located (ie. you may execute UCP.EXE anywhere and UCP will use
+DEFAULT.CRK in it's current directory)
+
+  Examples:
+
+    Method 1:  C:\> UCP.EXE C:\UC.LIB\PATCH.CRK
+
+    Method 2:  Assume UCP.EXE and DEFAULT.CRK are in C:\NEW directory.
+               C:\GAME\> C:\NEW\UCP.EXE
+
+
+(4)  TROUBLE SHOOTING
+
+     If you need to log all the errors, on the command-line type:
+
+       C:\> UCP.EXE /A /L
+
+     This will make UC (tm) to automatic mode and log all errors to UCP.LOG.
+     UCP.LOG will be overwritten if already exists! - back-up UCP.LOG if you
+     need it!
+
+
+     Main options (when debugging "trouble-shooting"):
+
+       [S]kip  - Skip to next file; all remaining patches are skipped for
+                 the current file.
+
+       [ENTER] - Next action or overwrite; skips to the next available
+                 patch or if create, then overwrite existing file.
+
+       [A]     - Automatic; automatically use the safest methods for all
+                 errors.  It will skip if file not found, skip create if file
+                 exists, skip patches that aren't found, and report number
+                 of errors at the end.  (Must use /L on command-line to log
+                 all errors to disk!)
+
+
+     This document will only explain common errors; there are far too many
+dos errors that can be reported!  UC (tm) will report errors in the following
+format:  Error type (system, network, memory, serial, etc.), ";," dos error
+messege, and if errors is unknown then ";" with exit code.  You may check the
+exit code with the Microsoft (tm) DOS manual, Ralf Brown's Interrupt List
+(tm), or any other exit code "look-up" tables.
+
+     Normally the errors you will encounter are "string not found."  This
+means that the string of bytes are slightly shifted and it's not in the
+exact position in the file, or not in the file at all!
+
+
+     Here are general tips for find the missing bytes!
+
+       *  Number 1, always BACK-UP YOUR FILES!  No telling what may happen!
+
+       *  If file not found, then you are missing files necessary for
+          patching!  If you are not sure that "S" skipping the missing file
+          won't cause any problems, then press escape to abort or press
+          skip to find out which files are missing manually.
+
+          Be sure that you are in the directory of the files to be patched!
+          -- Patch authors should put instructions for usages of their
+             patches if they are non-standard (unusual).
+
+       *  If you encounter a "file aready exists" when UC (tm) is trying to
+          create a file, then you may want to abort and back-up the copy of
+          the file.
+
+       *  You are brought up a menu when "string not found."  Choose "1st
+          find" if you think that the bytes are after the current position,
+          or you may press "R" to reset the file and search from the
+          beginning.  "E" exact and "C" case sensitive are also available if
+          you still can't find the string.  Experiment around; there's always
+          the "hope" that you will find it!
+
+          You can also press the TAB key to bring up the second debugging
+          menu.  Press SPACE to find all the possible matches.  (ESC to
+          return to the menu at anytime).  You will prompted for the match
+          number.  Pick a number from 1 to the numbers listed.  An ENTER w/o
+          anything or ESC will bring you back to the debugging menu.
+
+
+     Rare cases:
+
+            If you have these following problems, then reboot clean!  Also,
+       you may want to scan for virii and test for disk errors with softwares
+       like Norton Utilities (tm).
+
+       *  Can't open file.  File may be shared by network or unknown.
+
+       *  Can't create file.  Already exists, not enough disk space,
+          disk write protected, or unknown.
+
+       *  Can't read from disk.  Bad script file or an unknown media error.
+
+       *  Can't write to disk.  Disk may be full or write protected.  In a
+          rare case, the script may "seek" to a negative location or a
+          location larger than the disk size, thus causing a write error.
+
+       *  Can't close file.  Causes may be by network file sharing, not
+          enough disk space, badly programmed virii, or unknown.
+
+
+(5)  UNKNOWN PROBLEMS
+
+     If you have a problem that is not solved from the "TROUBLE SHOOTING"
+section, then feel free to contact the author at animadei@juno.com,
+animadei@geocities.com, or tcwhq@geocities.com.  All questions will be
+answered as quickly as possible.
+
+
+<EOF>
+

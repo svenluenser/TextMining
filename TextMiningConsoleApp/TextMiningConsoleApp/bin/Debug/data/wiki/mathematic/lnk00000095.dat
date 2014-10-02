@@ -1,0 +1,143 @@
+THE_URL:http://web.textfiles.com/computers/cel_assebmler.txt
+THE_TITLE:cel_assebmler.txt
+                          How to crack Cel Assembler
+
+
+
+Program    : Cel Assembler 1.2, is a graphical way to put
+             together animating GIF files.
+
+
+Protection : Will expire in 30 days unless you enter a Name + Registration
+             code.
+
+
+WWW : http://www.gamani.com/tools/
+
+Tools : Soft-Ice, WS32DASM and a brain
+
+
+The Cracking Bit
+
+
+Their are 2 ways of cracking this, the first one is the easiest requiring no knowledge
+in assembly language just a bit of thinking.  The second part is following the code to
+see what happens to the data you entered.
+
+
+
+First approach
+
+
+Step 1 :  The first thing I do before I use Soft-Ice is load the exe into WS32DASM.
+          I do the because I like to look for unusual strings in this case their is
+          one, but in most cases there isn't.
+
+Step 2 :  After you've loaded celasm.exe into WS32DASM do a string search.
+
+Step 3 :  After looking at the string data, do you see something weird?  Under "KERNEL32"
+          their is a string data called "LamaLo".
+
+Step 4 :  Hmmmm why is LamaLo in, WHAT is LamaLo?  I loaded the program up and looked at
+          the menu to find any reference to do with this word and I couldn't.
+
+Step 5 :  So I decided to try something I went to Help, Register Now... I entered :
+
+          Name : GrimL0ck [C4n '97]
+          Reg code : LamaLo
+
+Step 6 :  It didn't come up with a text box saying Vaild/Invaild Reg code.  So I exited
+          and reloaded
+
+
+Step 7 :  HEY!!!!  Where has the nag screen gone?   I tried to reg it again but
+          when I went to help the option of registering had gone!!!!!!
+
+Step 8 :  Click on About and you should see your Name + LamaLo in the box.  It's
+          registered :)
+
+
+
+Conclusion :
+
+
+I decided to try this again, I had to edit my registry (I don't recommend this unless
+you know what your doing).  I deleted my reg code and re-entered under a different name
+but with the same reg code.  HEY it worked, so you can put ANY name as long as you put
+LamaLo as the code.  This is the first time I've seen a static code when you've suppose
+to enter a name + code.  So it pays to be curious and try things which seem unethical.
+
+
+Second approach
+
+
+Step 1 :  Load Cel Assembler, goto Help then Register Now.
+
+Step 2 :  Enter a name and a reg code I entered GrimL0ck [C4n '97] 12345
+          DON'T press <Enter> yet.
+
+Step 3 :  Press Ctrl D and enter soft-ice
+
+Step 4 :  We need to set a breakpoint just after the information has just been read.
+          So enter :
+
+          BPX GetWindowTextA
+
+Step 5 :  Get out of sofe-ice with either Ctrl-D, F5 or g
+
+Step 6 :  Click on OK to accept the information you've entered
+
+Step 7 :  BLAM!!!  Your back in soft-ice.  The program has just read in your name
+
+
+Step 8 :  Press F5 so your reg code can read in, press F11 to Step of of the function
+          you should be at the following code :
+
+
+          LEA EAX,[ESP+00000088]  <-------------  Your Code
+          LEA ECX,[ESP+24]        <-------------  Your Name
+          PUSH EAX
+          PUSH ECX
+          CALL 004F950            <-------------  Get correct code????
+
+
+Step 9 :  Press F10 a couple of times to step through the program until you reach CALL 004F950
+
+Step 10 :  We now want to know what's going to happen at address 004F950.   Press CTRL up until you
+           reach this code :
+
+           PUSH ESI
+           MOV ECX,00000007
+           MOV EDX,[ESP+0C]
+           PUSH EDI
+           MOV EDI,0041D894   <----------------  Hmmm What's been move to 0041D894 ???
+           MOV ESI,EDX
+           REPZ CMPSD         <----------------  Return back to previous code
+
+Step 10 :  Lets find out whats been moved into 0041D894, by entering D 0041D894, in the Data window
+           you should be able to see the correct code "LamaLo".
+
+Step 11 :  Press F10, so the CALL 0041D894 function has been executed you should know be at this
+           point :
+
+           ADD ESP,08         <--------  Erase saved information
+           TEST EAX,EAX       <--------  Check function return (The CALL 004F950)
+           JZ 0040FDEF        <--------  Jump on zero (EAX = 0 Wrong  (EAX = <> 0 Correct)
+
+Conclusion :
+
+So if their was some sort of calculation for the code it would probably be stored in 041D894
+but I'm not sure, anyway that explains 2 different ways of cracking a program.
+
+That's wraps that up :)   I'd just like to thank people on #Cracking4Newbies who without their help
+none of this would be possible.
+
+If you need help with anything join #Cracking4Newbies on EfNet
+
+WWW: http://c4n.home.ml.org
+
+
+
+                                                GrimL0ck
+
+

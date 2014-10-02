@@ -1,0 +1,92 @@
+THE_URL:http://web.textfiles.com/computers/popcrack.txt
+THE_TITLE:popcrack.txt
+                               PopCrack  v1.0
+
+                      U of MN Popmail Password Cracker
+                      Copyright (c) 1996 Ethan Galstad
+                             All rights reserved.
+                  Commercial use without license prohibited.
+
+
+
+CONTENTS
+-----------------------------------------------------------------------------
+o  DISTRIBUTION INFORMATION
+o  LICENSING INFORMATION
+o  DISCLAIMER
+o  WHAT POPCRACK DOES
+o  HOW TO RUN POPCRACK
+
+
+
+DISTRIBUTION INFORMATION
+-----------------------------------------------------------------------------
+The freeware version of PopCrack may be freely distributed, as long
+as all the supporting documentation and files are copied along with it.
+The registered version of PopCrack may NOT be distributed and may only
+be used on the machine(s) it is registered for.  Once you register your
+version of PopCrack ($3), you will receive the latest registered version
+of PopCrack along with my other password recovery software and utilities.
+Send checks, money orders, bug reports, suggestions, comments, flames,
+etc. to:
+
+        Ethan Galstad
+        6971 Balsam Rd.
+        Eau Claire, WI 54701
+
+
+
+LICENSING INFORMATION
+-----------------------------------------------------------------------------
+Commercial use of the freeware or registered version PopCrack requires
+a license which is available for a small fee.  Contact me at the address
+above for further information about obtaining a license for PopCrack.
+
+
+
+DISCLAIMER
+-----------------------------------------------------------------------------
+The author of PopCrack hereby expressly disclaims all warranties,
+expressed or implied, including any implied warranty of merchantability
+or fitness for a particular purpose, with respect to the PopCrack
+software and documentation.  The author also disclaims any liability for
+any damages or loss of any type that any user of said software may incur.
+This includes, but is not limited to, financial, electrical, magnetic,
+or mechanical damages or losses.  All software and documentation is
+provided "as is" and is to be used at your own risk.
+
+
+
+WHAT POPCRACK DOES
+-----------------------------------------------------------------------------
+PopCrack will recover lost email passwords that are used by the University
+of Minnesota's POPMAIL program.  Forgetting one's email password, especially
+when it's saved on disk, seems to be a common problem for many people, so I
+decided to help out by writing this password recovery utility.
+
+
+
+HOW TO RUN POPCRACK
+-----------------------------------------------------------------------------
+In order to recover a lost or forgotten POPMAIL email password, simply type
+the following on the DOS command line:
+
+   POPCRACK <config_file>
+
+Replace the <config_file> parameter with the name of the POPMAIL configuration
+file.  This file is called 'POPMAIL.INI' and usually resides in your \WINDOWS
+directory or \POPMAIL directory.
+
+POPCRACK will read the POPMAIL configuration file and print the email username,
+mail server, and password that are used when fetching email.
+
+
+
+*** Notes ***
+
+(a) POPCRACK has only been tested with version 1.06 of POPMAIL, so if
+    you find a version that it doesn't work with, let me know.
+
+
+<END>
+

@@ -1,0 +1,2839 @@
+\documentclass{article}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\usepackage{filecontents}
+\usepackage{pdflscape}
+\usepackage{environ}
+\usepackage{pgfplotstable}
+
+\usepackage{ifthen}
+\usepackage{comment}
+\pgfplotsset{compat=newest}
+
+
+\newcommand{\EmptyPlot}
+{%
+	%Empty Plot
+    \nextgroupplot[xtick=\empty,ytick=\empty]
+    \addplot[opacity=0, only marks] coordinates {(0,2)};	
+}
+
+\newcommand{\scatterplot}[8]
+{%
+	\nextgroupplot[xtick pos=left, ytick pos=left, 
+		extra x ticks={#1, #2, #3},
+        extra x tick labels={$Q_{0,3}$, $Q_{0,5}$, $Q_{0,75}$},
+        extra x tick style={grid=major,grid style={solid,black!40},
+		tick label style={black,xshift=-0cm, yshift=0.25cm},
+		extra y ticks={#4,#5,#6},
+		extra y tick labels={1,2,3},
+		scatter/classes ={%
+			0={mark=x, blue},
+			1={mark=x, orange},
+			2={mark=x, red},
+			3={mark=x, violet},
+			4={mark=x, green},
+			5={mark=x, gray}
+		}
+				}]
+	\addplot [only marks,mark=+] table [x=#7, y=#8, meta=CLUSTER] from\datatable;
+}
+
+
+\NewEnviron{scatterplotmatrix}[1]
+{
+	\pgfplotstableread{#1}{\datatable}
+	\begin{tikzpicture}
+		\begin{groupplot}
+[			group style={%
+			group size=5 by 5,				
+        	horizontal sep=0pt, 
+        	vertical sep=0pt
+     		},
+     		height=4cm,
+     		width=5.5cm,
+     		%grid = major,
+        	%grid style={dashed, gray!30}
+]
+		\BODY
+		\end{groupplot}
+	\end{tikzpicture}
+
+}
+
+\begin{document}
+
+\pgfplotstableread[col sep=" "]{test.csv}\datatable
+
+\begin{scatterplotmatrix}{TestCluster.csv}
+	\EmptyPlot
+	\scatterplot{22}{55}{77}{15}{30}{60}{COSINE}{JACCARD}
+	\scatterplot{22}{55}{77}{15}{30}{60}{LEVENSTHEIN}{JACCARD}
+	\scatterplot{22}{55}{77}{15}{30}{60}{LCS}{JACCARD}
+	\scatterplot{22}{55}{77}{15}{30}{60}{LCSUBSTR}{JACCARD}
+	
+	\scatterplot{22}{55}{77}{15}{30}{60}{JACCARD}{COSINE}
+	\EmptyPlot
+	\scatterplot{22}{55}{77}{15}{30}{60}{LEVENSTHEIN}{COSINE}
+	\scatterplot{22}{55}{77}{15}{30}{60}{LCS}{COSINE}
+	\scatterplot{22}{55}{77}{15}{30}{60}{LCSUBSTR}{COSINE}
+	
+	
+	\node at (group c1r1.center) { JACCARD};
+	\node at (group c2r2.center) { COSINE};
+	%\node at (group c3r3.center) { LEVENSTEIN};
+	%\node at (group c4r4.center) { LCS};
+	%\node at (group c5r5.center) { LCSUBSTR};
+	
+\end{scatterplotmatrix}
+
+
+\begin{comment}
+
+\begin{landscape}
+\begin{figure}[!H]
+
+\begin{tikzpicture}
+%\pgfplotsset{group/xticklabels at=edge bottom ,group/yticklabels at=edge right}
+
+\begin{groupplot}
+[	group style=
+	{
+        group size=5 by 5,				
+        horizontal sep=0pt, 
+        vertical sep=0pt
+     },
+     	height=4cm,
+     	width=5.5cm,
+     	%grid = major,
+        grid style={dashed, gray!30},
+        legend to name=leg
+]
+
+    %\nextgroupplot[group/empty plot]
+    \nextgroupplot[xtick=\empty,ytick=\empty]
+    \addplot[opacity=0, only marks] coordinates {(0,2)};	
+	\nextgroupplot[xtick pos=right, ytick =\empty, extra x ticks={26, 55, 73},
+        extra x tick labels={$Q_{0,3}$, $Q_{0,5}$, $Q_{0,75}$},
+        extra x tick style={grid=major,grid style={solid,black!40},
+				tick label style={black,xshift=-0cm, yshift=0.25cm}}]
+	\addplot [color=black,only marks,mark=+,] table [x=COSINE, y  = JACCARD] from \datatable;
+	\nextgroupplot[xtick=\empty,ytick=\empty]
+	\addplot [color=black,only marks,mark=+,] table [x=LEVENSTHEIN, y = JACCARD] from \datatable;
+	\draw[color=cyan] ({axis cs:44,0}|-{rel axis cs:0,0}) -- ({axis cs:44,0}|-{rel axis cs:0,1});
+	\addplot [green, no markers] coordinates (50,0) (50,100);
+	\addlegendentry{A}
+	\draw[color=magenta] ({axis cs:77,0}|-{rel axis cs:0,0}) -- ({axis cs:77,0}|-{rel axis cs:0,1});
+	\addlegendentry{D}
+	
+    \nextgroupplot[xtick pos=right, ytick =\empty]
+    \addplot [color=black,only marks,mark=+,] table [x=LCS ,y = JACCARD ] from \datatable;
+    \nextgroupplot[xtick =\empty ,ytick pos=right]
+    \addplot [color=black,only marks,mark=+,] table [x=LCSUBSTR,y = JACCARD ] from \datatable;
+    
+     \nextgroupplot[xtick=\empty,ytick pos=left]
+    \addplot coordinates {(0,2) (1,1) (2,0)};
+     %Empty Plot
+     \nextgroupplot[xtick=\empty,ytick=\empty]
+    \addplot[opacity=0, only marks] coordinates {(0,2)};	
+     \nextgroupplot[xtick=\empty,ytick=\empty]
+   \addplot coordinates {(0,2) (1,1) (2,0)};
+     \nextgroupplot[xtick=\empty,ytick=\empty]
+   \addplot coordinates {(0,2) (1,1) (2,0)};
+     \nextgroupplot[xtick=\empty,ytick=\empty]
+   \addplot coordinates {(0,2) (1,1) (2,0)};
+   
+    \nextgroupplot[xtick=\empty,ytick=\empty]
+    \addplot coordinates {(0,2) (1,1) (2,0)};	
+     \nextgroupplot[xtick=\empty,ytick=\empty]
+   \addplot coordinates {(0,2) (1,1) (2,0)};
+   %Empty Plot
+      \nextgroupplot[xtick=\empty,ytick=\empty]
+    \addplot[opacity=0, only marks] coordinates {(0,2)};
+     \nextgroupplot[xtick=\empty,ytick=\empty]
+   \addplot coordinates {(0,2) (1,1) (2,0)};
+     \nextgroupplot[xtick =\empty ,ytick pos=right]
+   \addplot coordinates {(0,2) (1,1) (2,0)};
+   
+   \nextgroupplot[xtick=\empty,ytick pos=left]
+    \addplot coordinates {(0,2) (1,1) (2,0)};	
+     \nextgroupplot[xtick=\empty,ytick=\empty]
+   \addplot coordinates {(0,2) (1,1) (2,0)};
+     \nextgroupplot[xtick=\empty,ytick=\empty]
+   \addplot coordinates {(0,2) (1,1) (2,0)};
+     %Empty Plot
+      \nextgroupplot[xtick=\empty,ytick=\empty]
+    \addplot[opacity=0, only marks] coordinates {(0,2)};
+     \nextgroupplot[xtick=\empty,ytick=\empty]
+   \addplot coordinates {(0,2) (1,1) (2,0)};
+   
+    \nextgroupplot[ytick=\empty,xtick pos=left]
+    \addplot coordinates {(0,2) (1,1) (2,0)};	
+     \nextgroupplot[xtick=\empty,ytick=\empty]
+   \addplot coordinates {(0,2) (1,1) (2,0)};
+     \nextgroupplot[ytick=\empty,xtick pos=left]
+   \addplot coordinates {(0,2) (1,1) (2,0)};
+     \nextgroupplot[xtick=\empty,ytick=\empty]
+   \addplot coordinates {(0,2) (1,1) (2,0)};
+    %Empty Plot
+      \nextgroupplot[xtick pos=left,ytick pos=right]
+    \addplot[opacity=0, only marks] coordinates {(0,0)(50,50)(100,100)};
+\end{groupplot}
+
+%\draw[thick,>=latex,->,red](group c1r1.center) node {JACCARD} -- (group c2r1.center)node{B};
+\node at (group c1r1.center) { JACCARD};
+\node at (group c2r2.center) { COSINE};
+\node at (group c3r3.center) { LEVENSTEIN};
+\node at (group c4r4.center) { LCS};
+\node at (group c5r5.center) { LCSUBSTR};
+\ref{leg}
+%\draw[black](group c1r1.south west)rectangle(3.5cm,7cm);
+%\begin{axis}[
+%axis y line*=right,
+%scaled  ticks = true,
+%ylabel near ticks,
+%xlabel = x pos-right,
+%ylabel = y pos
+%]
+%\end{axis}
+\end{tikzpicture}
+
+\end{figure}
+\end{landscape}
+
+\begin{landscape}
+\begin{figure}
+\begin{tikzpicture}
+\begin{axis}[name=plot1,height=3cm,width=3cm]
+\addplot coordinates{(0,0) (1,1) (2,2)};
+\end{axis}
+\begin{axis}[name=plot2,at={($(plot1.east)+(1cm,0)$)},anchor=west,height=3cm,width=3cm]
+\addplot coordinates {(0,2) (1,1) (2,0)};
+\end{axis}
+\begin{axis}[name=plot3,at={($(plot1.south)-(0,1cm)$)},anchor=north,height=3cm,width=3cm]
+\addplot coordinates {(0,2) (1,1) (2,1)};
+\end{axis}
+\begin{axis}[name=plot4, at={($(plot2.south)-(0,1cm)$)},anchor=north,height=3cm,width=3cm]
+\addplot coordinates {(0,2) (1,1) (1,0)};
+\end{axis}
+\end{tikzpicture}
+\end{figure}
+\end{landscape}
+\begin{comment}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        extra x ticks={26, 55, 73},
+        extra x tick labels={$Q_{0,3}$, $Q_{0,5}$, $Q_{0,75}$},
+        extra x tick style={grid=major,grid style={solid,black!40},
+				tick label style={black,xshift=-0cm, yshift=11.3cm}},
+        %extra y ticks={3000},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+    \addplot [color=cyan, mark=+] table [y = LCSubstr ] from \datatable;
+ 
+    \addplot [ycomb,color=cyan] coordinates {(78,4000) };
+ 
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{SS12\_HA09\_SearchTree}
+\end{figure}
+\end{landscape}
+
+
+
+\begin{comment}
+
+\pgfplotstableread{SS12_HA09_SearchTree.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+    
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{SS12\_HA09\_SearchTree}
+\end{figure}
+\end{landscape}
+
+\pgfplotstableread{SS12_HA09_SearchTree.java.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{axis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        %ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        legend entries ={ COSINE, LEVENSTHEIN, LCS, LCSUBSTR}]
+        
+    \addplot [color=blue,mark=+, only marks] table [x=LEVENSTHEIN, y  = COSINE] from \datatable; 
+    \addplot [color=red,mark=+, only marks] table [x=LEVENSTHEIN,y  = JACCARD] from \datatable;
+     \addplot [color=green,mark=+, only marks] table [x=LEVENSTHEIN,y  = LCS] from \datatable; 
+     \addplot [color=yellow,mark=+, only marks] table [x=LEVENSTHEIN,y  = LCSUBSTR] from \datatable; 
+     
+    
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{axis}
+\end{tikzpicture}
+\caption{SS12\_HA09\_SearchTree} 
+\end{figure}
+\end{landscape}
+
+\pgfplotstableread{SS12_HA09_SearchTree.java.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{axis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        %ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        legend entries ={ COSINE, LEVENSTHEIN, LCS, LCSUBSTR}]
+        
+    \addplot3 [color=blue,mark=+, only marks] table [x=JACCARD, y  = COSINE, z=LEVENSTHEIN] from \datatable; 
+    \addplot3 [color=red,mark=+, only marks] table [x=JACCARD,y  = COSINE, z=LCSUBSTR] from \datatable;
+     \addplot3 [color=yellow,mark=+, only marks] table [x=JACCARD,y  = COSINE, z= LCS] from \datatable;   
+      
+ %    \addplot [color=yellow,mark=+, only marks] table [x=LEVENSTHEIN,y  = LCSUBSTR] from \datatable; 
+     
+    
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{axis}
+\end{tikzpicture}
+\caption{SS12\_HA09\_SearchTree} 
+\end{figure}
+\end{landscape}
+
+
+
+\begin{comment}
+\pgfplotstableread{SS12_HA08_HeapSort.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{SS12\_HA08\_HeapSort}
+\end{figure}
+\end{landscape}
+
+\pgfplotstableread{SS12_HA08_HeapSort.java.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{axis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        %ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        legend entries ={ COSINE, LEVENSTHEIN, LCS, LCSUBSTR}]
+        
+    \addplot [color=blue,mark=+, only marks] table [ y  = COSINE] from \datatable; 
+    \addplot [color=red,mark=+, only marks] table [y  = LEVENSTHEIN] from \datatable;
+     \addplot [color=green,mark=+, only marks] table [y  = LCS] from \datatable; 
+     \addplot [color=yellow,mark=+, only marks] table [y  = LCSUBSTR] from \datatable;
+    
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{axis}
+\end{tikzpicture}
+\caption{SS12\_HA08\_HeapSort} 
+\end{figure}
+\end{landscape}
+
+
+\end{comment}
+
+\begin{comment}
+
+\pgfplotstableread{SS12_HA0607_TestDoppel.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{SS12\_HA0607\_TestDoppel}
+\end{figure}
+\end{landscape}
+
+\pgfplotstableread{SS12_HA0607_TestDoppel.java.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{axis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        %ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        legend entries ={ COSINE, LEVENSTHEIN, LCS, LCSUBSTR}]
+        
+    \addplot [color=blue,mark=+, only marks] table [ y  = COSINE] from \datatable; 
+    \addplot [color=red,mark=+, only marks] table [y  = LEVENSTHEIN] from \datatable;
+     \addplot [color=green,mark=+, only marks] table [y  = LCS] from \datatable; 
+     \addplot [color=yellow,mark=+, only marks] table [y  = LCSUBSTR] from \datatable;
+    
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{axis}
+\end{tikzpicture}
+\caption{SS12\_HA0607\_TestDoppel} 
+\end{figure}
+\end{landscape}
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{axis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        %ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        legend entries ={ COSINE, LEVENSTHEIN, LCS, LCSUBSTR}]
+        
+    \addplot3 [color=blue,mark=+, only marks] table [x=JACCARD, y  = COSINE, z=LEVENSTHEIN] from \datatable; 
+    \addplot3 [color=red,mark=+, only marks] table [x=JACCARD,y  = COSINE, z=LCSUBSTR] from \datatable;
+     \addplot3 [color=yellow,mark=+, only marks] table [x=JACCARD,y  = COSINE, z= LCS] from \datatable;   
+      
+ %    \addplot [color=yellow,mark=+, only marks] table [x=LEVENSTHEIN,y  = LCSUBSTR] from \datatable; 
+     
+    
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{axis}
+\end{tikzpicture}
+\caption{SS12\_HA09\_SearchTree} 
+\end{figure}
+\end{landscape}
+
+
+
+\pgfplotstableread{SS12_HA0607_DoubleLinkedList.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{SS12\_HA0607\_DoubleLinkedList}
+\end{figure}
+\end{landscape}
+
+
+\pgfplotstableread{SS12_HA0607_DoubleLinkedList.java.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{axis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        %ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        legend entries ={ COSINE, LEVENSTHEIN, LCS, LCSUBSTR}]
+        
+    \addplot [color=blue,mark=+, only marks] table [ y  = COSINE] from \datatable; 
+    \addplot [color=red,mark=+, only marks] table [y  = LEVENSTHEIN] from \datatable;
+     \addplot [color=green,mark=+, only marks] table [y  = LCS] from \datatable; 
+     \addplot [color=yellow,mark=+, only marks] table [y  = LCSUBSTR] from \datatable;
+    
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{axis}
+\end{tikzpicture}
+\caption{SS12\_HA0607\_DoubleLinkedList} 
+\end{figure}
+\end{landscape}
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{axis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        %ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        legend entries ={ COSINE, LEVENSTHEIN, LCS, LCSUBSTR}]
+        
+    \addplot3 [color=blue,mark=+, only marks] table [x=JACCARD, y  = COSINE, z=LEVENSTHEIN] from \datatable; 
+    \addplot3 [color=red,mark=+, only marks] table [x=JACCARD,y  = COSINE, z=LCSUBSTR] from \datatable;
+     \addplot3 [color=yellow,mark=+, only marks] table [x=JACCARD,y  = COSINE, z= LCS] from \datatable;   
+      
+ %    \addplot [color=yellow,mark=+, only marks] table [x=LEVENSTHEIN,y  = LCSUBSTR] from \datatable; 
+     
+    
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{axis}
+\end{tikzpicture}
+\caption{SS12\_HA09\_SearchTree} 
+\end{figure}
+\end{landscape}
+
+
+\pgfplotstableread{SS12_HA0607_Baum.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{SS12\_HA0607\_Baum}
+\end{figure}
+\end{landscape}
+
+
+
+\pgfplotstableread{SS12_HA0607_Baum.java.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{axis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        %ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        legend entries ={ COSINE, LEVENSTHEIN, LCS, LCSUBSTR}]
+        
+    \addplot [color=blue,mark=+, only marks] table [ y  = COSINE] from \datatable; 
+    \addplot [color=red,mark=+, only marks] table [y  = LEVENSTHEIN] from \datatable;
+     \addplot [color=green,mark=+, only marks] table [y  = LCS] from \datatable; 
+     \addplot [color=yellow,mark=+, only marks] table [y  = LCSUBSTR] from \datatable;
+    
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{axis}
+\end{tikzpicture}
+\caption{SS12\_HA0607\_Baum} 
+\end{figure}
+\end{landscape}
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{axis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        %ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        legend entries ={ COSINE, LEVENSTHEIN, LCS, LCSUBSTR}]
+        
+    \addplot3 [color=blue,mark=+, only marks] table [x=JACCARD, y  = COSINE, z=LEVENSTHEIN] from \datatable; 
+    \addplot3 [color=red,mark=+, only marks] table [x=JACCARD,y  = COSINE, z=LCSUBSTR] from \datatable;
+     \addplot3 [color=yellow,mark=+, only marks] table [x=JACCARD,y  = COSINE, z= LCS] from \datatable;   
+      
+ %    \addplot [color=yellow,mark=+, only marks] table [x=LEVENSTHEIN,y  = LCSUBSTR] from \datatable; 
+     
+    
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{axis}
+\end{tikzpicture}
+\caption{SS12\_HA09\_SearchTree} 
+\end{figure}
+\end{landscape}
+
+
+\begin{comment}
+
+\pgfplotstableread{SS12_HA0203_Artikel.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{SS12\_HA0203\_Artikel}
+\end{figure}
+\end{landscape}
+
+
+\pgfplotstableread{SS12_HA0203_Artikel.java.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{axis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        %ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        legend entries ={ COSINE, LEVENSTHEIN, LCS, LCSUBSTR}]
+        
+    \addplot [color=blue,mark=+, only marks] table [ y  = COSINE] from \datatable; 
+    \addplot [color=red,mark=+, only marks] table [y  = LEVENSTHEIN] from \datatable;
+     \addplot [color=green,mark=+, only marks] table [y  = LCS] from \datatable; 
+     \addplot [color=yellow,mark=+, only marks] table [y  = LCSUBSTR] from \datatable;
+    
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{axis}
+\end{tikzpicture}
+\caption{SS12\_HA0203\_Artikel} 
+\end{figure}
+\end{landscape}
+
+
+
+\pgfplotstableread{SS12_HA0203_BinaereSuche.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{SS12\_HA0203\_BinaereSuche}
+\end{figure}
+\end{landscape}
+
+
+\pgfplotstableread{SS12_HA0203_BinaereSuche.java.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{axis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        %ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        legend entries ={ COSINE, LEVENSTHEIN, LCS, LCSUBSTR}]
+        
+    \addplot [color=blue,mark=+, only marks] table [ y  = COSINE] from \datatable; 
+    \addplot [color=red,mark=+, only marks] table [y  = LEVENSTHEIN] from \datatable;
+     \addplot [color=green,mark=+, only marks] table [y  = LCS] from \datatable; 
+     \addplot [color=yellow,mark=+, only marks] table [y  = LCSUBSTR] from \datatable;
+    
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{axis}
+\end{tikzpicture}
+\caption{SS12\_HA0203\_BinaereSuche} 
+\end{figure}
+\end{landscape}
+
+
+\begin{comment}
+
+\pgfplotstableread{WS1213_Betrag.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        %ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=none] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=none] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=none] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=none] table [y = LCS ] from \datatable;
+    \addplot [ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{Betrag}
+\end{figure}
+\end{landscape}
+
+\pgfplotstableread{WS1213_Notenvergabe.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        %ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=none] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=none] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=none] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=none] table [y = LCS ] from \datatable;
+    \addplot [ycomb,color=cyan,mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{Notenvergabe}
+\end{figure}
+\end{landscape}
+
+\pgfplotstableread{WS1213_Wahrheitstabelle.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        %ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=none] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=none] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=none] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=none] table [y = LCS ] from \datatable;
+    \addplot [ycomb,color=cyan] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{Wahrheitstabelle}
+\end{figure}
+\end{landscape}
+
+\pgfplotstableread{WS1213_Bus.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        %ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=none] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=none] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=none] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=none] table [y = LCS ] from \datatable;
+    \addplot [ycomb,color=cyan] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{Bus}
+\end{figure}
+\end{landscape}
+
+
+\pgfplotstableread{WS1213_Datum.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        %ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=none] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=none] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=none] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=none] table [y = LCS ] from \datatable;
+    \addplot [ycomb,color=cyan] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{Datum}
+\end{figure}
+\end{landscape}
+
+
+\pgfplotstableread{WS1213_CDTrack.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        %ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=none] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=none] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=none] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=none] table [y = LCS ] from \datatable;
+    \addplot [ycomb,color=cyan] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{CDTrack}
+\end{figure}
+\end{landscape}
+
+
+\pgfplotstableread{WS1213_CDTest.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        %ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=none] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=none] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=none] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=none] table [y = LCS ] from \datatable;
+    \addplot [ycomb,color=cyan] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{CDTest}
+\end{figure}
+\end{landscape}
+
+
+\pgfplotstableread{WS1213_CD.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        %ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=none] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=none] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=none] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=none] table [y = LCS ] from \datatable;
+    \addplot [ycomb,color=cyan] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{CD}
+\end{figure}
+\end{landscape}
+
+\pgfplotstableread{WS1213_BusTest.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        %ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=none] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=none] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=none] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=none] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{BusTest}
+\end{figure}
+\end{landscape}
+
+\pgfplotstableread{WS1213_TestStudent.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        %ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=none] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=none] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=none] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=none] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan] table [y = LCSubstr ] from \datatable;
+    %\addplot+[color=cyan,mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{TestStudent}
+\end{figure}
+\end{landscape}
+
+\pgfplotstableread{WS1213_Student.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        %ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=none] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=none] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=none] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=none] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan] table [y = LCSubstr ] from \datatable;
+    %\addplot+[hist={bins=100},color=cyan, fill=cyan] table [y = LCSubstr ] from \datatable;
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{Student}
+\end{figure}
+\end{landscape}
+
+\pgfplotstableread{WS1213_Rechteck.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,only marks] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+, only marks] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{Rechteck}
+\end{figure}
+\end{landscape}
+
+\pgfplotstableread{WS1213_PotenzDynamisch.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{PotenzDynamisch}
+\end{figure}
+\end{landscape}
+
+\pgfplotstableread{WS1213_TestDatum.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{TestDatum}
+\end{figure}
+\end{landscape}
+
+\pgfplotstableread{WS1213_TestPotenzDynamisch.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{TestPotenzDynamisch}
+\end{figure}
+\end{landscape}
+
+
+\pgfplotstableread{WS1213_Datum1.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{Datum1}
+\end{figure}
+\end{landscape}
+
+\pgfplotstableread{WS1213_TestGeometrie.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{TestGeometrie}
+\end{figure}
+\end{landscape}
+
+\pgfplotstableread{WS1213_TestPotenzStatisch.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{TestPotenzStatisch}
+\end{figure}
+\end{landscape}
+
+\pgfplotstableread{WS1213_Figur.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{Figur - Vorgabe}
+\end{figure}
+\end{landscape}
+
+\pgfplotstableread{WS1213_DeutschesDatum.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{DeutschesDatum}
+\end{figure}
+\end{landscape}
+
+
+
+\pgfplotstableread{SS12_HA04_TestSorter.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{SS12\_HA04\_TestSorter}
+\end{figure}
+\end{landscape}
+
+
+
+\pgfplotstableread{SS12_HA04_QuickSorter.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{SS12\_HA04\_QuickSorter}
+\end{figure}
+\end{landscape}
+
+
+\pgfplotstableread{SS12_HA04_Sorter.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{SS12\_HA04\_Sorter \emph{(Vorgabe)}}
+\end{figure}
+\end{landscape}
+
+
+\pgfplotstableread{SS12_HA0203_Artikel.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{SS12\_HA0203\_Artikel}
+\end{figure}
+\end{landscape}
+
+
+\pgfplotstableread{SS12_HA0203_BinaereSuche.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{SS12\_HA0203\_BinaereSuche}
+\end{figure}
+\end{landscape}
+
+\pgfplotstableread{SS12_HA0203_Parser.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{SS12\_HA0203\_Parser}
+\end{figure}
+\end{landscape}
+
+
+\pgfplotstableread{SS12_HA0203_Musikladen.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{SS12\_HA0203\_Musikladen}
+\end{figure}
+\end{landscape}
+
+
+\pgfplotstableread{SS12_HA05_SingleLinkedList.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{SS12\_HA05\_SingleLinkedList}
+\end{figure}
+\end{landscape}
+
+\pgfplotstableread{SS12_HA05_TestListe.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{SS12\_HA05\_TestListe}
+\end{figure}
+\end{landscape}
+
+
+
+
+
+
+
+
+\pgfplotstableread{SS12_HA0607_TestBaum.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{SS12\_HA0607\_TestBaum}
+\end{figure}
+\end{landscape}
+
+\pgfplotstableread{SS12_HA0607_Queue.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{SS12\_HA0607\_Queue}
+\end{figure}
+\end{landscape}
+
+
+\pgfplotstableread{SS12_HA0607_TestQueue.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{SS12\_HA0607\_TestQueue}
+\end{figure}
+\end{landscape}
+
+
+
+
+\pgfplotstableread{SS12_HA08_TestSorter.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{SS12\_HA08\_TestSorter}
+\end{figure}
+\end{landscape}
+
+
+
+
+\pgfplotstableread{SS12_HA09_Test.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{SS12\_HA09\_Test}
+\end{figure}
+\end{landscape}
+
+\pgfplotstableread{SS12_HA09_Test.csv}
+\datatable
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+, only marks] table [x=Cosine,y=Jaccard] from \datatable;
+ %   \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+ %   \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+ %   \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+ %   \addplot+[ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{SS12\_HA09\_Test}
+\end{figure}
+\end{landscape}
+
+
+
+
+
+\begin{comment}
+
+\pgfplotstableread{HA03.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        %ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Jaccard-Coefficient,
+        tick align=outside,
+        legend entries ={Betrag, Notenvergabe, Wahrheitstabelle}]
+        
+    \addplot [color=blue,mark=none] table [y  = Betrag] from \datatable;
+    \addplot [color=green,mark=none] table [y = Notenvergabe ] from \datatable;
+    \addplot [color=yellow,mark=none] table [y = Wahrheitstabelle ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\end{landscape}
+
+\pgfplotstableread{HA07.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        %ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Jaccard-Coefficient,
+        tick align=outside,
+        legend entries ={Bus, Datum,CDTrack, TestBus, CDTest, CD, BusTest, TestStudent, Student}]
+        
+    \addplot [color=blue,mark=none] table [y  = Bus] from \datatable;
+    \addplot [color=green,mark=none] table [y = Datum ] from \datatable;
+    \addplot [color=red,mark=none] table [y = CDTrack ] from \datatable;
+    \addplot [color=brown,mark=none] table [y = TestBus ] from \datatable;
+    \addplot [color=magenta,mark=none] table [y = CDTest ] from \datatable;
+    \addplot [color=cyan,mark=none] table [y = CD ] from \datatable;
+    \addplot [color=black,mark=none] table [y = BusTest ] from \datatable;
+    \addplot [color=orange,mark=none] table [y = TestStudent ] from \datatable;
+    \addplot [color=yellow,mark=none] table [y = Student ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\end{landscape}
+
+\pgfplotstableread{HA08.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        %ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Jaccard-Coefficient,
+        tick align=outside,
+        legend entries ={MehrwegFlasche, Flasche (Vorgabe),DispoKonto, Konto, TestKonto, JugendKonto, EinwegFlasche, ZinsKonto, KontoTest, FlaschenTest (Teilvorgabe)}]
+        
+    \addplot [color=blue,mark=none] table [y  = MehrwegFlasche] from \datatable;
+    \addplot [color=green,mark=none] table [y = Flasche ] from \datatable;
+    \addplot [color=red,mark=none] table [y = DispoKonto ] from \datatable;
+    \addplot [color=brown,mark=none] table [y = Konto ] from \datatable;
+    \addplot [color=magenta,mark=none] table [y = TestKonto ] from \datatable;
+    \addplot [color=cyan,mark=none] table [y = JugendKonto ] from \datatable;
+    \addplot [color=black,mark=none] table [y = EinwegFlasche ] from \datatable;
+    \addplot [color=orange,mark=none] table [y = ZinsKonto ] from \datatable;
+    \addplot [color=gray,mark=none] table [y = KontoTest ] from \datatable;
+    \addplot [color=yellow,mark=none] table [y = FlaschenTest ] from \datatable;
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\end{landscape}
+
+\pgfplotstableread{HA09.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=1,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Jaccard-Coefficient,
+        tick align=outside,
+        legend entries ={TestDatum, Datum,  DeutschesDatum, Statistik (Vorgabe), ISODatum, ArrayStatistik, TestStatistik, AmerikanischesDatum}]
+        
+
+   
+    \addplot [color=blue,mark=none] table [y = TestDatum ] from \datatable;
+    \addplot [color=green,mark=none] table [y = Datum ] from \datatable;
+    \addplot [color=brown,mark=none] table [y = DeutschesDatum ] from \datatable;
+    \addplot [color=cyan,mark=none] table [y = Statistik ] from \datatable;
+    \addplot [color=black,mark=none] table [y = ISODatum ] from \datatable;
+    \addplot [color=orange,mark=none] table [y = ArrayStatistik ] from \datatable;
+    \addplot [color=red,mark=none] table [y = TestStatistik ] from \datatable;
+    \addplot [color=gray,mark=none] table [y = AmerikanischesDatum ] from \datatable;
+    
+    \node[coordinate,pin = {[rotate=90,color=blue]right:Median}] at (axis cs:15,4500) { };
+     \addplot[color=blue,mark=square*,only marks] coordinates {(15,166)};
+    \node[coordinate,pin = {[rotate=90,color=green]right:Median}] at (axis cs:30,4500) { };
+     \addplot[color=green,mark=square*,only marks] coordinates {(30,994)};
+    \node[coordinate,pin = {[rotate=90,color=brown]right:Median}] at (axis cs:22,4500) { };
+     \addplot[color=brown,mark=square*,only marks] coordinates {(22,659)};
+    \node[coordinate,pin = {[rotate=90,color=cyan]right:Median}] at (axis cs:100,4500) { };
+     \addplot[color=cyan,mark=square*,only marks] coordinates {(100,11189)};
+    \node[coordinate,pin = {[rotate=90,color=black]right:Median}] at (axis cs:22,4500) { };
+    \addplot[color=black,mark=square*,only marks] coordinates {(22,609)};
+    
+    \node[coordinate,pin = {[rotate=90,color=orange]right:Median}] at (axis cs:12,4500) { };
+    \addplot[color=orange,mark=square*,only marks] coordinates {(12,557)};
+    \node[coordinate,pin = {[rotate=90,color=red]right:Median}] at (axis cs:11,4500) { };
+    \addplot[color=red,mark=square*,only marks] coordinates {(11,1404)};
+    \node[coordinate,pin = {[rotate=90,color=gray]right:Median}] at (axis cs:22,4500) { };
+    \addplot[color=gray,mark=square*,only marks] coordinates {(22,512)};
+  
+\end{semilogyaxis}
+\end{tikzpicture}
+\end{landscape}
+
+\begin{landscape}
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=1,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Jaccard-Coefficient,
+        tick align=outside,
+        legend style={at={(1.01, 1)}, anchor=north west}
+        %legend entries ={Rechteck, PotenzDynamisch,TestPotenzDynamisch, TestGeometrie, TestPotenzStatisch, Figur (Vorgabe),  Kreis, PotenzStatisch, Quadrat}
+        ]
+        
+    %Verteilungen
+    \addplot [color=blue,mark=none, smooth] table [y  = Rechteck] from \datatable;
+    
+    \addplot [color=green,mark=none, smooth] table [y = PotenzDynamisch ] from \datatable;
+    \addplot [color=brown,mark=none, smooth] table [y = TestPotenzDynamisch ] from \datatable;
+    \addplot [color=cyan,mark=none, smooth] table [y = TestGeometrie ] from \datatable;
+    \addplot [color=black,mark=none, smooth] table [y = TestPotenzStatisch ] from \datatable;
+    \addplot [color=orange,mark=none, smooth] table [y = Figur ] from \datatable;
+    \addplot [color=red,mark=none, smooth] table [y = Kreis ] from \datatable;
+    \addplot [color=gray,mark=none, smooth] table [y = PotenzStatisch ] from \datatable;
+    \addplot [color=magenta,mark=none, smooth] table [y = Quadrat ] from \datatable;
+    
+    \legend {Rechteck, PotenzDynamisch,TestPotenzDynamisch, TestGeometrie, TestPotenzStatisch, Figur (Vorgabe),  Kreis, PotenzStatisch, Quadrat}
+ 
+ 	%Mean-Value
+    \addplot[ycomb, mark=square*, color=blue, style=dashed] coordinates {(38, 1122)};
+    \addplot[ycomb, mark=square*, color=green, style=dashed] coordinates {(21, 889)};
+    \addplot[ycomb, mark=square*, color=brown, style=dashed] coordinates {(16,331)};
+    \addplot[ycomb, mark=square*, color=cyan, style=dashed] coordinates {(27,1450)};
+    \addplot[ycomb, mark=square*, color=black, style=dashed] coordinates {(18,627)};
+    \addplot[ycomb, mark=square*, color=orange, style=dashed] coordinates {(94,194)};
+    \addplot[ycomb, mark=square*, color=red, style=dashed] coordinates {(37,1050)};
+    \addplot[ycomb, mark=square*, color=gray, style=dashed] coordinates {(23,872)};
+    \addplot[ycomb, mark=square*, color=magenta, style=dashed] coordinates {(36,854)};
+    
+    
+\end{semilogyaxis}
+\end{tikzpicture}
+\end{landscape}
+
+\end{comment}
+
+\end{document}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            OŒ½$ã™?ù¬Õ Ùÿq-üæžÄò¥¸3€óS
+ÄXDL8ïëŒê:•þA0)Jmuì|øÌŽRþ`„}KW1fé?¡â6KV¡ìˆ:õ»‰Á:CT´¨òªÀR}‡‰8!@Ý#ß´M„MÞ*[®&NŽ“ô”DEº.\ñHè›V®Íe¤ÈªB¥î 2¦¡°ùHG‰;Å”rr`ÅDˆzH¹CyË¨ð¼Œà,µ ‰
+'‚g¸_úÙ^gÜô‡üï›¹üèä
+Å¨³Ÿ˜_Õ–ºú[q–æ×ÏÓ¯t
+¨ì_ÛÍ³/“íŠÐ85„ÄzC6—bŠ»Pôój¢¼Ü»\œùTíÔ™:æ^–E2«k±>ºÒmA´tnôäU‡¡žb9¹XA÷‡Îù·L¦y‘gõ%ÞF/(Û4Pì•ŒÐÏuÙŽ VRžàC$ÈY/ÏÿèlÜo¥7õ²©Bÿ«Ó•#ªÙëyÐ×Þ¿U‡d'Ú¦p¤ñÍbFFþ4Ø~dU~á>÷þ6Ï]ÏDÌo«IãÕN/ð[™‹ˆgr„è²iá°“ØüÓ˜\ÉŠßÌ!Læu‹yþt–h'Ýù±`ºuòa3ôYºòrõÚó®µU	oÃr.þÈ¹l))Ë:_¹¤•*ìÃ‘*0¿múýk°FlccpàÒïR_8.kÛö›;Ö<¯ÑŒÐwê›,U³Ž‹£À­nõŒ]šs\ßBï´]§m.ÐuŠ4âù/Õ`a¢töÏ…jºü?\ò¦ ÑïDOôºes­’yø~. ]3[àà-›Çó¿ÁÜæîùsžE‰‹¡áÛÉåàçUtøR‚Aìç®P?ŽFcñ‚[RnG½àQõ¨€ã¬]óÃÃœgXyì.ø.e¤ráwS$Â(7am’þí…'ý.ñÓ¡ !µV˜>Â?*Š"V39æýÒ×¹pQŽôvpC¼<ß~·©ÝŠ©<"Å
+mdhñú}›þÌqÃ	|í ÖQË!Eà'ËÛöh‚¤'ãâ á	½%$þ›0}J5 ZU×s¬š&½eð„iaP²‘XŒz§¯Bñ´th¾¾<¢?~ßµÕÅžDâûú+&âŽõp^¬vº0þnØšÔ>D2ÚCTŸÙ`(2Þ±_qáoïsînóœw+¯Š ‰ð¯äj&.¦d4›Î/Ÿ–ê­?ÊË‰âþ‘mñÑæâhÉÄG†\6²WŸ‹¨WÌW—¤5D€5_F±íâ@›šoÕ+¦>GèÀ‹’Ž4BM@ò¢ÆSŒˆç÷X$¼ƒŽ“0¥ôWO’ÝþR»vÍ†ïR`2ü,µÿ´Ë~ðµ„@«½Å[›)ã#³ãÎ8I;èu’òŽ{Q†&Í3¤qû™~ÈàãHPæx!'ŸÅP•)‰ÇS!I¦jrÓUq•2ì,!jkL4+½­ìëÒGû+¼'ÊrãÂ«–mñß•™½ù{Ô†ŽS7SY˜YãähŽ¸5ñ$­?—¬“”dGX/ô,Mhn³Hp’›ðûð	?ÓdÛ*Ú[¥ EPŸO'[dwt“¼ùø¯ï !qÈ÷æ#>@&k1`+ÚùÎÚÀT‚×ˆ_­’6 ¯é—rRB­.nE²*z35©ž³‚ŸRZIIä (`œ˜æú^~*mø=áC>EŒ…
+Y p¼ðÈ2ú®V‰ç~
+¯ÏJæ¥(í£ùssýñÊÒÂ¡«ï}Å	Ø¸SÐ‘qõ\‘&½ÖËQf¿ÐZ’¤ä-ÿBÜ`éôÚ}Âxä•ãg}8ù¤ös¢5“@ŒŽIŽmVÝø!Z£ìÅ„}5 $ãÑæŒÉæ
+ßëð×²Ž«UØ¨'8‰UkŸ/¡u.V–ÿTRB6{Ü=©}Ó°/Vä’l_ÒOO¤…”HiU¯ª¦×ŠS+‹ÃÊ{]ýijáÝç€måæ¼ÅO`%qÕ®½¾m£ò@»Û_üåNÛßœ¥\ªà™à6ZœM…Â]].+¸óy½J%çã öŒ7ø±Q/j¤¹ÙŽåß5!íû»÷zóbk¬Œxfåéf2±ãÚ¬+{+H\èê †ªšwÃ…5jœTIE÷„4ëEâÃ®.ä|»Æh%3‘Šk@Ý]‚B\|8ñÝDÂ!›Y»?êŸ:½w97Ã´Çg‡|b¬I2µ‡Ìðu¿Â"'“ºO{ó”ìÂ¡Û¯ä;¸£ó-"ú`;:°P$Ž	—ÈÊ(¶N›Õ æRíÉEpdÝÝÊoE–ìjÀßebn­±æÌgÈéþé¡ß9Rh”Ï7… ñ1H”Pœ¦õÞëÝS±¿ÆÞ†âñõU"’šØ‡áîÜíÞ—†ãúc¾`dô>¡ßO´¹wº÷¿ËþzÍ±ÊOq‡E`×÷?u1 y•ÑàÀˆçÉð…W"ÙÜŒ[ƒ¿Qª—åÝ[ÓKí>úÕ²'ÕH¬Ôåî¿?¸«B™¢vÛpÞÓ< Ä‘t…fƒßÔŽ ñÄí€òuˆ%ªƒíi\Év3›Ñr·œVNãŽK÷Ãœ9é<Tç5K8£5ÚT¾æœkÃ ·UŸ
+ªg%=^#^ƒ=^ãÌ“V\X¡½¨÷ÐÜ‹Iœýß˜xŒõ2¯éÕRÝþx¬lH²×ÉûL¯›QãHÀ‚ìf±í¥UÐCPRÝ.$V?›Ùªð·È]ýÐáµð½(/œì
+„æêœUJgnç=4 öa¶èM|<8«’ãMÊÝÉÔë+-RwP#ü‚8m§bªh¾é°‰„ãWuS|{²g*`Ñ™U!¬Ï0ð#\!AeÓ&Ìá9`¾hf²	ú-qfžøäŒÁFäD¤Nkoü 2ÞŠNVà¿'Ý$#–òL7W†JQIJ:­8ˆ–I3ã˜.Æ„m8äò‡1WÞ†ïPÈ@5ˆµ•h8©~§“ÐÑšöÇLEÕ–Þ÷•!@èx1òÇÖ¡vÙ¬Ýˆ³ì»Ä‹\¨ø|gé¦èå«e™åï+yÐ¬4´ªkIœ-ñËùzFy_¼DòKîK—ÛÅÍwÄ·‚ö'ªÒl‡Â%3ˆ]ý@Q?“WÏs¤1N·‹ «ö¼f:Ú·j˜f!ß‹²¬¾Ux™Žš:DHìÈ¾zÃÕcÆÚm£O¾THÒ$_ß~+«-‚ÚdÈjë*cÑ¥ÆÖd ¿ÈWqw>7TF|•Î,gÈ_:oéMMF}²¸Ëµ¯âƒ§ÜqªðEÓó	¬uŠ)E¬.àó:6Û½­>Õ€HÇ!“C>´ÎýyBùNhË¥{ñ|®§Ls2xN‚%N…*uvèäW¡RoŸZgûÒ8ÿme”‰œ®Åv¿ÇÆQ
+–0ÄV
+%¸	,•rÞ%QÉf àu;‰Ó× w†K[¥0µHK;žHDø^.þÔ× ˜áªÀ®é¶––ö:=ÇMX¼Ë(ÓÀ—+PÚ	ŽøOÅ¥ün*ÊÙ…£ÿòðà’_Ü‹J_C½àÓ‚òR¿³@}b#ìÏO£ÙBãÝ´¨°1™ÔÅ$WöÚ]ãžQ—,N¸ª·ƒÓÒãùÛÛ¸^Ý(…#°3GZpüLt6Ï§™n§Ü¾6¬¸×ÒaÂÇ'*í”áx!¥m7¿C,˜†œ
+Ñnhƒ›¹1s¡O‰V„qì¯«BºôŽ"½ô"Hä“ûäªŸ ;üwÙÁÑxÀ¿Pár²J#ø:Ç¥QÒ†©7 ýÎ32¤0SC9¦ú
+ÐÒÄj‹U—S1…þª… KGkû,ö˜¦ÍÚ¹€4ñ@÷8Ò#ü²4åøvw¬¡]×¦ÜP’uöj…þ¢¢„ðsÿ“µL¾wõ˜F¡\_.ý¬gf»é£W´ÍeÉyS þ€r©.”gö.<—nrW¯S¢ØÁÐ{Ëß;€³ä@:’*‚^(ý´œYDÖ_Š7^¤¹Të‡‰ë…æÑZ<`RÒ®YuÏ'¶‰t­E*M&BZ²PÚÛèˆæö€¥Öº¹¸úÍ1år
+5{GL¢'O+g˜¥âeC@E~Å5rÂŠïð‘OK`m Y½`dW\V€'bz”$ïÔHyêMÇ¶	Ý¦}–ÓÄÑ¡oÊÞOž›{0ÒU¨öTOƒ<çMÈRŽÞÇ€˜s5¶§äÖ}Â&Ï‚MA…§Ì<÷@YµXÿlòµ9	>ç•½½@3–\þcSXú…Ä¾(¸ð‹°'#Zgß,Ë±>éVÂÁÙ²˜"”ëÁX7l”±ybEÓÙ`=ƒV<h˜eV.Ð[ÿª>á5>Ëg	Z2~G\©#jŽ¨}¸F±tíli[Ò–êY.æíÁæ¥¡å°K79Ù¡0ß€:Žô©$»ýfžäD'ØûÜö¾«%¡$&ï¿êTZñª[Bt\›w-[…Ãe¿™N½r‹&s,C»Úp$ãæ›Ç,ºÚ¼^‰ó3ôzÔM¦ålË¶Ð×û:j«]ðAo²Í8¡™Ë¥a:r#8ÕJœž©3‹‰¢¯~áeßs:/‰z³t²güó„ƒ¢šbVwjLè75‰ÃwYy8TF|y›¢põ(+¿ß6°9Á€Ô¦“1çNÉýÈi3÷Ž–EÏZ|´ú¥ìø­±Ü¾gçÀ_¯Ìã—øþÛB:‚Þ6Åñï©ÀA¿ må´ÁæàAV_›,E8ŒKbø‰êm¡\<µ-î&®Ý5:úar#ÙËüÂ~¢“Û ­ÄÉ9+áäÇ;Õm³¬“Mkœq“9ÓR‚ƒAáUñChO[ÿŠk_5(È¯€Y8¥$wgÂ‚RW~ØÀA$[}&ý+=†¼ËÃ˜­èuî©,®ò¥îÐÆ™F‰¶ÂFŒ‹‹¤¾¥Ylÿ¸!›X%
+­Mú‡XŒ{B¾gž3ºcD¼2÷ÄE½ê[KoÝv,;¬uuÆ–\‘`ÓO8Æ:¢K$îSÏ'8)™ˆºSA[ÝB¶´îÙ-°þÕQ±7 µHÍ\°2 üùP²Aˆ?>–^<×Ij|Y =ú„\ž[ïûD<×~a•ÐÛ×x–’çë…#3Pù]¿‘i¾ÎR¸Ü»Ç¾³Ü?+w=pô±#éšq»/ñO¥‹bßöº½‚~„<8$°žîÀ{•Å»Ì±¸@Óªþ_ÿÖ¨V‰œU[‘±ó„†Þo¹,•×±¿’š/ÆmjÝ¨®1½¬–ôõ“éLŠP¶¿Ñ×•PvªåºåÏà¿Øi²bD©4gþˆºtýîÕÊ»±ûP¶ðj#7Bá	60nÃ’ÿPe_$¼‹•tì¼ïlÓpÜªñ	ƒea”Ýcï(,nb-lg–îÂk}Û*Ž9`²Þòóøó/²nžù®(_ÒŒ9Ã-xXÐ$I£¢½%Ü¿,ÚE{H&“¤Þö.²è’½4‚¹—åZ	PrG±o¼µÑ’,_¦æs"Å mþ@ Gäøér¡+*jÙ5
+Š‹vr%rÐº­W¨Ì0#•ò—rÏ•Ñf[ëô»ž£CÁˆ2uhË½q&^èûˆüÀ*BÛ¡mèõC;RSU—NÊCü¨7›ÆT2×|[b¨w;[æ	¯OÚ1‰0Òàî+?$•NÍZÒ#o	ç@›z>'(L|OøÀàGÆmÏÄpg4)¢ò xÜ¢~7#…è‰AÎÇ’—Â;FL-gÇË\È¡òî†å.ÇûWé#J¾ÕÒ¦”ÚSÔ-ù"6qÌ=>Ú“íùX>£<Æ2Ê›¡v‡•¥]FÖ
+W{„rÐÕçü BÈïµ˜o±ŒwZ%:è\Õå`Š	þ9 üŽ“ˆAùÜƒisl/pÞÃ$¨%Èþ½š„”°4Ò2½[¸µöŽ
+Ì8íÍcBWN%Ò  Ž ³>õ®cä‘¼ÄùÞœÎ¦òèËú´Þ= ž{òé—Ç¿úŒcY‚d‰¢A’~>¥´ëí¬;B­È×	—÷éy;n_`-ûþO‰”HÊÁIœÍË}ËoßùŒá«H ‰Œô#Ö•°‹¾£gh'Ž&µ†³K†¸¸Ûþ—z;v5é¶«Á«a¤ŠëÂÅÄàˆ²¼ô)ºÃhÂ/¿+Éþùb_ÂL9mO'Z#Ô\ÛÉV°’NÛï~%ÙÆÿ_|0K@:¥•1µòx}-ÐÇ´± +%²$ïÝ‰!ç5é‡%ô’obƒNôÂÅ»T±[¿Ÿƒ“˜¨Z——˜-eÕ)—N’’w>æ“n*º	©Ãõtvã–HòA«æt<”ÊæÄ
+¹*Ò½¿B¤|ÒâyWV›F0³íCÎ5¶ù=öhRÉ,oë;¯3öÔ¬¡ÕÅðÚ$7Dij¯\H~+	iŽÚÔçïãg‰è;*Í‰ÚàXœ!Þøù;ÛNõ‹‹û]Êæ¬Ak~ÑÖ»••Ø”µgæåDˆŽÓh»QÓ­ˆfµKdkÙ¢|ó%ÁeÝT¶8ã,‘“AoÌÂÔeÖœ+Ï¼Èvö›²óò(ªLE)®JšsâÅÏcG=Ë‚Á“ wr¦Ø¬zX~Òˆœâw«®ÜXÏöáD4øÃwÇÚ=¸¿â¸Q¶©¨Ÿæÿ¶?ÅŠS	ßQg9X01œ	S3]Ún2u°zƒ&ˆ“63K† mŠO¶šR½ûì"ä£nÊÛ©!~cmQ*;O‹Ìh?E|þ.ï;mR ]J-3â37;æPyíKd}Zf*Ëõ	8´T±bt$@Eð‹Ž#ÜÑŠ›3³Óƒ6@bA€¸"’ex“­ÖãÀ¿É4‚¡¯_a'õð!8_o÷yÄÀ™\)6Û¨7ªÜÎ¨é6ßÖà%@·vúÿ¨à%à`ü>®çç2µü”‡ŠA~z¹Q„-f`‡™à³»˜!¹é?7H"IÊ7e9éÍG	È@Pzhþ‘°ä"”Šñ˜ÚI”ÓÚa¦÷‹Ð~Í¿Þ–Éx¸q’wgù$$4¾¦ß)Çbªa×ýƒÞŽNC+§œZáÊ'}Ù3Ø„Êä—"<»_+²ò*š{c‹²½j…À¤@»VÉŠMÜu®víšyŠÏYÿL·Ùè`Ç2­ÂÅgIú‹ô¿ØµæV‘…Tbkæ‰œž…ò3Håo‘.äŠ×MÒÀ;‘õÁ´>£1¥`}6·bî˜¨[Ð&i ¥Qpø¹@4Fcï*ñ¤ù¡ê€Flh
+F¥õ£ÊòQ¢È‡ä.ztL)¦^ö“,Y¡˜µ%µÞ–	"pÊ¿K±(Ö1³Š·Pû³†'2qß17¥ÙR{tHUS1‰.}{…„Ka†)2ó†÷ß —q€ŒH8ùqo8"glåÑi¤„›8¸mJ[YÉ4	™#­ŒÃ:_/Hï4Ss2ÓùffKôÙíœ%‚ ˆ_ÐÖpÄžÁÇ³r‰ãC&½ñ[`ÈÛ‹¿
+ÔîŽžHÍËƒÑVBK;Êóã)!"šhå-Èš6%UÙŽ½Y›å0¾»_XÜèëì2LV‚ôì¼K2ØFð4ÿÀ'ð£?†rõþ#‘¾Ž<Ì½x%‰êbü³¢Öj06¶.5vIÑß¶µÃ5ü®áÞÓwjúVG..¾‘ê¶ˆY–¦MÒÌxLfh#ÖÊ›!~2è¯K:=·—üjÐÃ7ÆªÖ7øC…”´tTÚ1í·2gPN|Øýý‰¶±hçJ0ÇT=3Wàâªø`¯é¡]È,Óú?ëz¥/9Ç;;®kƒ°ébAÞiª©*‡»
+Ç=ìÙ«ÖŠ„Ò¢úXÓk¼Äˆiõ¢:¨Î"
+Dk‹<PÉèÁñAf½qÎÁÅ#-j
+{ºÂ(–±Y³ºð’Û·>ëNv½<a1Uû0=9ÃT`TªoÓ:ï¹õ„å…4­Ç‹ð¼žYG{A5!C„©EÏ©Î¦¼RÜ²cxNï#|~!Jíù”ÙÕÚÝµ¿0ý,dbR`Åm.ŸµÓæø‰Ö”z«24«ñçáÈK6â±vÁú	jhd‚Ï[4äÞL'60ºd¬›.»:«DMû·;ð Äø„¸žL²èM2Dl	26eC)Æ¼.öè§îa-¾oIY«Õ©0Ç—pb|¾µÆËµÃÎlðÃ~ÇÄ®½›#2‡ec
+ä(q,ó¤ÿXhø$0Y÷W³ .CSÜ„Å¾5—<åžÕÁ!.\GðÀ7-á+ýW‰úØ›WåP©{"ž™lŒW)$DC:=î=ïP>¾#[Ø¾ñàÉÅ©êüah7>c…@r‘¾÷ã®Òî¬—1€¢ËzÓÔ¨öòj¸ðñ¯Ž¦‰äGŸšÒ@MþÔÆ_Ú ÌË‡w-R®¿ËÝ7èµÝ^Q¤JO²kÍŠ:ÚÐ®è[Æ…óNš=ô}=÷šbíâà–í?x2$¸=MmÏé_pðÒÁ!T^Ó“ªõª„{©Äff¤)ˆ£Ó‘k\=ÞÆ¿dL+
+…%s¢ÄÁ6+'0W°:E—ghRWÍCåœIk}·XÓ‚ÎbŠHŸ5Ê d•ÇÂ™xg<Œu8¨¸Ng@&ÖT) ÒƒbÁ(®¤™2·ôÏ³òrÁnÎ!®=d‘1§Ÿ¨í¡€§…ÅT³D¼Èp¢[°
+ª3‚ûõE)¢•×}Pýè£¾·¼=~WÅ åçà ïÏeŽïòÀ”'Ù‡9]Ç%C{É+$ß¯QÄ‹n¥Câj{=8Ã°ƒUÙì|Óý>„¿`O¦_LM¶õ`<k¯A½©LÚ	‹nuL¹æ2¸‘bXeZ7÷q\0RKÅóyLaM‚°c)â¥½…ëŸÃgä"Ÿ	_»MQÃ4¶¿Ì˜Òzè½ÅñC—}2%³„œD¾SžàqI®Pö”cFÐŽBý¯Z±9c×Ca9G¿Ào¥""ˆ©X‰z¶Ì™Ëø¿dŠÂ'ÂÇ 0zQRR_ðf	°œÚ(PXç±îòW]Ûo CßåÝb!ÍIk1aÔ.2Úöá0í9ª¾×r«ôd6"8d¹›ïuAô²ªÐbª5`ØØ,L+KúsÞÕîœaaqµëœ]ÓŠ…¹o¶Ä\Ñ ˆOˆµè|l†5Êr”¶`¹Bz5ñ·X¡cB8RÓD‘þñSLðL É=:"¦öéI"dMY&ÂMcÄ{!üÃ+|z ›ª±;ýìÏÇÒ1
+ÎdÇ»œ8µm»/"kÓÕKo0³7ë{J¸›Á¹Ä²¥5HŒŠã-ŸCÒÏQ¿*]Ð‚¬òÉècõX·óüo®]pqøÉ;:©ë“•ÁÒ­!–¸"7sÑ´È÷Ž<SÆ²„ö®¢Á–×xÿcÞ?td_€Z°ûÕýq˜îÆ\bŠk±-'ÈcN½1#Ñ}ªmÙõ¾ãÁNùCˆÝ¬Döó“8žÔ‚Äö0çƒËÿ*­@U÷š"3ÐÐôp$s
+f„YêFÞ—Í©¦u2b7á¯4©Ñ_JÛiÓ¾È|*ÈáÎPfÉu¨¦ì>œ@ùÇ.¢—´ë¸v7u”5ÂžŽ«àŽÁ ]w]÷†<Êd4À¾å†Är::8”v”%ðTê(ÄÆHÜú3ÞÂcyº{‡¹EB;znØâ”è³³¤¢ràþVÃÕ¸<ä²ýªíØbCf¥Ú·ÊüK"¦Üù%Xjî,„f¾=¢pƒ&	(šŽ°)Ð#Û©+E9IwÃŽB”ûJ¼t£ñWêiy³E…GCÿìßI]MÛþØXýöË˜½0‡;Ã—f5ÿ—KÔ€é·î³KÒ¯@]Ê'ÔwNh¶ÐEbô	1zÉ.ÓÏƒûPô<±5=SŠ¾ÔãHËXwŸä­ÂÖ°ZoâK16mê®Q»FWï»ÊÚÕ†ÒÀ²®ü@41è0‹ûKI Ý¸åÊ÷«4RWÁÔKMƒAŠ$¢ë˜¦†èãä,_çÝ?^1§z¥œ¬­—®øw¼v}ë¨®0°ž’KZüþ+¡Ê-yr‘ù\ÉV•ÒÄÞÅö¾*óÌ¬Â4½3Ýß‡·@†ÎRÝûz=ã~ÐÁl”ËïjÓÎÇ&0kfMÙ`î³½ ÷=)ßÌ|!†Y+,b®
+ý3Â`7­ÐŽÍj»¼9U¯œXñþ·„	Xú¢Ä G²N!%Ä$ ©­¥6©vî—Ôx7VC—äüø%ß×ˆÐÈ\â·mrW¬_šC1o’.írŽ-†ëm¼°÷|ùò”ÒÝîJÝÎFÞÁØª°1e$ã¿¹9º<¶nëpýÍRÎØÓ¡GKIº÷ô‡‰þÓ1ÁÕÖaãÆ0æWâñþec‘9QeáOüõÊ+.¤¯vÕ+Àô)jý¦.Kø÷T¦º(ù&·î¦}£
+ý8xÀ&&'ŒßŒ×æXöÀZ¨w_Õžxrq‹œäu©Ieû	¾Ppìiv°2­±@I’Òs¢Š¸±ó˜â]ïö0„·y#ªú 6ZDÃPû–vÃ¡Çü»ÖÒ7¸ïÇ×öÏCŒ0‹±ž¢®$?&ïÓª!+¶Uðj©Ÿ!h€ŽDt7×q>w¯¤€Ö‚¥ŒWõ6GÔþ–èPÒÛ#7)Âòê“e$ôsŒx1µ:š¨¾8£5²ŸÙÓ·ØÉÃTá\9š` ÃeøÖØÔ¹³Åòî9RçK[‚âÜg~¸>÷G8³±´W*Y4’‡MQw'ÍþŒø›QˆòKæóÃE«û»²l«	º™b7À/EtöWí­¦á}\G=ûÈµ¡­XÏY4ˆžL†Õ7—-îî®ãÆ$Ñ†$p]B,îÂ	yéìä–#<ìè	ÏvI¹vú§póè‰íÇð 1:œT1¹X‘ÂÃÜ=cM†×sc\ÈþœÔŸç¦	 ËMWÔš­´e8®›®7›êÖèèmÏnœc‚å[eEx¶ð#·ž.êò¥`¬ä¦—U£F‚–Ä­ØýäÁÈ‡„_yCïÚ[Y£{ ¢'
+€ÖØû ‚¨eY±!÷3ý¹2ä±ò×ãµöŸæ¿÷(nL[ Jù‡7ä%+¯oªcT›Û&RÍ/”ów‡ä,X¹ï'm£1}Ýålz’ô: )à Ã(ó‰Ä›FÕ/žÛU ½Ehu$“¦%^¥­õ_c!ÜRÒy~ÝºX)3ÐÔ8`×ðÆ‰9e5‡Ë=ß•ÉÒù/¾®å÷`xkdXN¸BIÞîÁƒ®Á]³ÿá“÷`9®?”dÃ´Íõ…{ñ¦­pEŽÐ—÷îKƒ ÑŠ¨,™Hw›Âú~)¨Øxè„ñ‡Ái'ÍO³D)ð—ÏÁôÂYµ»•½wö CA<Ž¬W3?öhÑr"ÁòðÐc@)T`Á•¦‹½zµA´
+åo›ìXllve¡hžªðÈ!ôý1ã•tŽóA,Vz"/ÊæcŸûºDp¾»Žß‡)£ÉüGx8‰Ä¬Jg8¯ºbÌH·0Ÿ`9žùAIŒ,³ðrNÙFF½eºµ-Õ:\¥qä=,há‘ý°œsßÿ]¢P›Í-o$ôD…èobûPÅ7ãH[(N—A¹E´mNO÷/9?.` V²hfòÊÜ|FGð„ãøðm	Õ2ûÁšžC§ìŠ­môåBŽè#4äêŒKj¹e!šé<XœWµ9åBÞ†«Ö–¸Ë[JgÝƒnúìK«jÑ2òô¬KÒ[È ‘òÃÞ„ iÁ„×ÑqÏP¬þl5ä¼;l›Ó+ÿØ.ú+J×îÞY¥$‚·|ns};GÚÜ3d7k/-ènÙq&ëK÷15å.³¢7fÐ“º-Ì®òôÞö[œ§fFÄ¥S³äDË’Ñ%¥º–õZq½hÕ¬’z5Ëî§h<;Ž¤8RÈôÖ¡8r2cÔŽI=N¼M]MŒiÝÒù3¨>;š~é	IEõeIäVPüï€‡ÅöRb„@€œîfx[‹‡Þ”®j…Œ2ÓNëz€œE²4¼¢ô9Žðå*¤ÜÛ5ÝIh†^N¤ŠYÄôñ£VÏuÒmoB«Õ2±]t³É“ÑÝî"üB5¾ó§åd!™Ügqó"Pø-ÉÖžçyÜš&‘÷öyKË	R·†‚7|‹ÍêT©ÀA¦Taš—­ ´.ÁŽ^bˆ1§V@ÓÞYÜ ¥T®ò óYàNA÷]õxØZ]ûŒaL}Ot	ŸC¾Ø¤$Â_¨ûvY4ì‹!ôŽ)êúb­gýð–PE1c·žm¶þ²Ùà:4{Õß°æ^×Ú S/MDZ	ðú®	‡õŒfÛŽ1ì`F“<=ùrßŽÝÔ c¸ÎxH?!?¬§+´öå5ÄqÉ*“ëÒã[c âyÆº†\¯l*±íL‡þ€¡Ú’èõw›*E $7ó	wÔƒšu¶›¾MATöàá*Ü¥¼ÒÔÃWmó6pFz/Ýù-5yD¨`¶ÿc†BÔ$ Äß±›þÏ‰gV3ËÂÌ')¡Š2SIjÝK.°ó÷¿~“À–™÷²+ãr z{[p¡É¯FÒ¦0ì2¹™Š:¡è½Ûei<(?XGà_í_êXhŸþx.ñòY¨#½4†g—J©:êÃg[qÝÂg\á'Ý‘ê†ôÚ¨œX4.¾™í"%ah¡ûý‚† Lì…{ä³>³Ö »Töuñ·çuÓØ–ì1ê„¾”˜B‘:¡|—¸è5Ø‡¿^ï?ù2èa¶ K¡lâ¬¬ø@­Î¡kýîø*N„ ê¡¦ZËU{1ÊØõøÐgA×ÒAk-Õ¿÷Úß¯ZÖCf„ž³û$ï½2D¤$™kD’ô¬Omû‹_ˆÄµý@®ø$¼AÚ¸Â¤Bòë2W?½K(*»³Fˆg‘{ùâZ’ïä¬èŒò%€~Ö†fyQ–\% ’¤ÝÚ–ÔàyãÁ%Š«ir[Ôi.;¨5V«’½W	z´©	ÎùÓ*Lš \P©A[ž. Š8åœ°™6ªò(µIŠ°&Ts>0gˆ¥`£‡\ï¬“Ž×Ô‰úlcþ¬n€Úâûˆ—²¼S„®ž*öÏÜàZç"%íÃff¡ë‘}È˜´ã¾Xaè;Ûîz¼q5vô&'àI,sóÃˆXÙc¿ärtl_W9=“ŒëfËV ÏÊAu¿ŒÅW¿¥©;å2"i‚©Åß
+Z4&ŒÞ± 8Cµ+½ØùFŽˆ
+P2çõ.XO&%àDÜ[.¨z¾p¸Á*Ò©Ü¡³<+ôaÅœsWŒXHéw5Ïª@‚›½ùza;Ý …D‚›!A«¾·4†¹pâãtÓË”ÏÐ$}CÛö¼Á!;Ei™‹7Áv€à#-ÔóØZè:Þ²gNÖKÃ£;Ù	É„ˆ Õj¯GÔÙRÖßUÏC¬rÒÕ*;o_<lÔ~té4~–½JjbÔC ßÊj´Ç'1!¯ÁP§nø[«í¬·ƒÌ~é»§²Û;\xÊ³Y¯­0ç\Îô&øºÃ’ä3ƒ]˜¢¸³·9<ÐÏÜWÜ]ÃÒÝÝÏé¥£Á( Š£6–éÛ<mÉë72ŽñÖAkûÇÉÚs\}±ËÍ6l5¦¬tÔ°-r—ýÿú{$@[ÒFâ‘T"T¤zàr½”û^uò“¡,ôÏ„)0ñ Ž‡Ü~ÜP=žhÔ¨¤v, m F:‰ùê(Äöqû	3Æ÷ïÝc\ÿŸè-ØÚº—’>v¤Š[*÷qE§%m?‡’‰Ô1ºè‚Œ´[ú§ìk¶QFõpÚd¬!§> Õk³pÅ7Múpþ"zôöÑ¾ÍÂì¾™Mš›HÒ£<ŸeMXvDtÜ]LN²q¥zQzY£c8VÀ)>ò¢¾—+l7œ˜ª—ð9(dO§SÝâ‰ƒŸÖ#Û :Çe"ŠÛM*¸-šîæo4±Ìã"@÷
+Ä#[ßÔP¢C÷/gü•ØòÀ|¨µà’ªs¥»ãhì™ŠÅyþ¬_˜ó{ÙÒÖ¾„ÌÏ¬@•KGÜ”ªŸ˜:´œW_h‡y#Ei‚@Þ(IËX<S’DÓ¯Y4oRý°Â¶¯Ç¨³kã-ZÊ²í8Ûu“+$¶`üU•¨ìŽ¤}[z•~	J1­

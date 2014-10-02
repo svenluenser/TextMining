@@ -1,0 +1,242 @@
+THE_URL:http://web.textfiles.com/computers/ataris.txt
+THE_TITLE:ataris.txt
+/|\  How to Connect to the Atari BBS's
+-=-=-=-=-=-=-=--==-=--===--=-=-=
+
+> Hi Doc,
+> If you can make me a step by step manual, I give it a go!
+> Cheers,
+> Sijmen. / Mr Atari
+
+     That is the least I can do for someone who made a movie player for the
+Atari 8-bit and the MyIde interface.  To matter the fact, this message is
+being sent out as a general invitation to a few that may or may not have
+known about the growing number of Atari BBS's that are being set up over
+telnet.  (Or didn't know there was a movie player for the 800xl or ide
+interface I suppose as well.)  :)
+    This is also my submission for the A-One online newsletter and IMAGE
+newsletter at the same time!  ;)
+
+    The next big part of this will talk about what a BBS is and how to
+connect.  If you have a good grasp on all that, and just want to know the
+actual BBS locations and what to find on them, skip past on this next part
+till you find the big Atari symbol made in ASCII art and the title heading
+³Here are the addresses and what to look for once there.²
+
+/|\   WHAT IS A BBS?
+
+    I always feel I should just put this blurb in when talking about the
+BBS's.   I mean, though many Atari users are fully aware of what they are, I
+am happy to say that we have such a new crowd, many brought in by the
+internet, that they don't know.  In short, we have new blood and that is a
+very good thing.
+     A BBS, plain and simple, is some hobbyist setting up their own computer
+to answer incoming calls from other hobby computers.  The visiting person
+leaves messages on this computer for other visitors, plays games while
+visiting, sends and receives files, and all that.
+     Oh, and BBS stands for "Bulletin Board System."  Think of a cork board
+where notes are thumb tacked to it throughout the day and that is a good
+visual idea of what this is.
+
+/|\  WHAT IS THE DIFFERENCE BETWEEN THAT AND THE INTERNET?
+
+    Probably not much.  So let's look at what an Atari BBS has to offer.
+    First off, the internet!  Since all the BBS's are connected through the
+internet, they are actually better in a way than their "good ole days"
+counterparts where the BBS was either local or a long distance charge was
+involved.  At one time you might have found five Atari BBS's in a local
+dialing area and hundreds of other BBS's.  Today, that feeling is there once
+again, thanks to the internet as hundreds of BBS's are springing up like
+weeds, and at least five BBS's (so far) are within dialing range once more,
+so to speak.  ;)
+     The Atari BBS's offer a segway of the internet that the Atari 8-bit
+computers can easily understand and use.  They are usually 40 column, and
+feature ATASCII characters, which was the Atari special type of ASCII
+character set.   Because of this, having a real Atari or Atari emulator to
+visit the Atari BBS's is nice to see the creative ATASCII art that has been
+created.  And even more fun is the ATASCII "Break Type" movies where people
+have taken this art and made short cartoons.
+     In truth, when you are on Atari BBS's you will be and see things that
+few will ever see.  That road less traveled will make all the difference.
+;)
+
+     It is important to briefly note that through BBS's, both Atari and
+non-Atari, you can read E-mail, check newsgroups (like the Atari 8 and ST
+newsgroups), and other activities are possible.  And there are BBS's and
+services out there that have a web browser online that you can call with the
+Atari computer and surf the web with.  The browser is all text and might
+take a bit of getting used to; however, it is interesting to search Google
+using an Atari 400.  :D
+
+HOW DO I GET THERE?
+
+     At the end of this brief introduction, I will feature the locations on
+how to get to the various Atari BBS's.  But the ways to get there would
+include...
+
+1) finding a local BBS that has both a dial in number and the means to
+"telnet" out.  In this way, you are borrowing the internet connection of
+another computer that you will connect the Atari computer to via phone.
+Once you connect to that other computer, you would select the telnet option,
+and enter in the address like "telnet://bfbbs.no-ip.com" getting you to
+where you need to go.  In this case, that other BBS acts as a bridge.  If
+you want to try this option and don't mind a long distance call, let me
+suggest the following numbers...
+
+Collin County   972-562-8064
+    Log in, from main menu hit A for Arcade, 8 for other places
+    And then 7 or 8 chooses already listed Atari BBS's.
+
+Family-Net BBs 972-496-0650
+    Log in, and at the main prompt type "Telnet" and then at the next prompt
+type the address, for example "bfbbs.no-ip.com"
+
+    The best mostly accurate list for looking up such a service close to
+you, if there is one (and they can be rare) can best be found at
+www.bbsmates.com.
+
+    Trick in these cases is to call using bobterm in ASCII.  Once you have
+telnetted to the other BBS and connected, you can then switch your term
+program to ATASCII and enjoy the Atari BBS as it was meant to be enjoyed.
+When you exit the Atari BBS and return to the host BBS you called to get
+that Atari BBS, make sure to switch back to ASCII.
+
+2) Use a more modern Computer (or non-Atari)
+    This is perhaps the easiest way to start and try this out.  Alan Sharkis
+is a well known Atari user who has logged on for quite some time with this
+method.  First, for about any modern computer go to your internet browser
+and enter in the address line something like "Telnet://bfbbs.no-ip.com" and
+the browser will open (hopefully) the right program to take you to that BBS
+location.  It will be understandable, though not with the ATASCII character
+set.
+     There are solutions for seeing ATASCII characters on the PC.  One is
+found at http://www.atarimax.com called the Atari Terminal Simulator (ATS)
+which is freely downloadable.  This will only view Atari 40 column ATASCII
+BBS's, but does a fine job of it.    There is one question...
+
+"Dr. Clu,
+I quickly see that for me to access BF BBS this computer seems to need to
+emulate a terminal program!  Might you suggest one?  Using Windows XP, the
+connection is not the best; was able to connect once out of 5 or 6 attempts.
+Of the 4 options to use the BBS, which one should be chosen?
+Be well.
+ Sparky!"
+
+      Well Sparky, I have to admit, I have been able to use the ATS on Win
+98 and 2000 very well, but have run into trouble with it under XP.  I'm sure
+this can be worked out, and will tinker with at work when my boss isn't
+looking.  :D  But in the meantime, try logging on with Hyperterm.  Check it
+out, have fun writing to Atari users, and we'll work out the rest in time.
+For now, we would love and even need your company so come on over!  ;)
+
+3) APE interface PC gateway.
+     Speaking of www.atarimax.com, Stever Tucker made this wonderful ability
+in the windows version of APE (the program and cable that lets you make a PC
+an Atari's bit...er..slave.  :D)  there is a great ability to tap into the
+PC's internet.  Bring up the APE program on the PC, Bobterm on the Atari,
+and Bobterm will notice the internet out there.  Now you can enter in a
+telnet address and it will take you right to it.  Nice and basically cheap
+setup, and great way to take advantage of the internet setup on your PC.
+
+4) Serial to ethernet interfaces.  (UDS-10/ MSS-1, etc)
+     The buzz word in Atari BBS'ing these days is a fabulous device that
+allows your Atari to connect to it via the serial port.  The device has a
+serial port on one end, and a lan port on the other.  This device will add
+your Atari to your home internet network.
+
+      "Internet what?  Hold on pilgram... What in tarnation are you talking
+about?"
+
+      Ok, at home, maybe you have cable modem or DSL.  Maybe you have one of
+those little fangled routers that let you share this service with more than
+one computer.  That is what I'm talking about.  From that router, you have
+cables going to your PC, and a few other PC's, and now you can have a cable
+that goes to your Atari computer as well.
+      These serial to ethernet interfaces emulate a modem.  You say "AT" in
+the term program, the interface, like a modem, will say "OK".  I have the
+UDS-10, and I was able to set the interface up using an Atari computer and
+nothing else.  The interface has enough smarts to give you a menu to set it
+up.  Setting it up might take some work, but I, or Marius or anyone else
+with a UDS-10/100 or MSS-1 would be willing to help if you ask nicely.
+      Once this interface is setup, you hit a macro on Bobterm, and quicker
+than dialing in, instantly you are on.  And all that macro has to say is
+"ATDT213.10.217.144/8888"  Just like you were dialing a phone number, but in
+this case it is the Atari BBS's IP address over the internet.  Kewl eh?
+
+
+       ._,-,_.
+       ||| |||     ³HERE ARE THE ADDRESSES...
+       ||| |||
+       ;|| ||:     ... AND WHAT TO LOOK FOR ONCE THERE...²
+     ./ /| |\ \.
+     |./ :_: \.|
+
+Current Atari BBS List 01/12/2005
+
+Atari Inside            telnet://213.10.217.144/8888
+Boot Factory            telnet://bfbbs.no-ip.com
+Closer To Home          telnet://cth.dtdns.net
+Mousenet BBS            telnet://atari-bbs.kicks-ass.net
+Inside the 8-bit        telnet://216.78.138.17/8888 or 8889 (two lines)
+
+CHAT ONLY  (This BBS is not run on a Atari or Atari emulation but
+            makes a simple chat room to reach with an Atari computer)
+Www.atarinews.org       telnet://216.240.173.22
+    (ANSI terminal like Ice-T suggested)
+Tuesday chat at  8 pm CST
+Thurday chat at  8 pm CST
+Sunday  chat at 10 am CST (Also known as the Europe chat)
+
+    What you will find when you arrive at these BBS¹s are usually a nice
+ATASCII drawing if you have a term program that supports that.  If not, they
+usually have a creative non-ATASCII one.
+    Being Pro! BBS¹s (the type of BBS program they are running) most of them
+have a ³Q² command which will give you a quick scan of the messages other
+have written.  It will say you are on message 1 of 50... Skip to like 45 by
+hitting either a ³J² for jump to number, or ³G² for goto number.  Just be
+careful that the G is not for ³Goodbye².  :)  Read the last ten messages,
+maybe read the rest later or not.  But see what has been written there.
+     Then you can hit sometime like R for reply, or P for Post a new
+message, and that is how you jump in and have fun.  Leave your message, and
+hopefully in turn others will write back.
+
+     Cartoons at the main menu is where those ATASCII ³break type² cartoons
+are.  Usually quite entertaining.  Just remember, these are not regular
+graphics, but key characters placed around each other to look like a picture
+or graphics.  A fun artform in it¹s own self.
+
+     Games section at the main menu usually has a selection of simple games
+like Kingdom, online Chess, and so on.
+
+SO ONE BIG QUESTION... WHY?!?
+                      -------
+
+     And the question comes up again.. Why?
+     These places make a great place to leave messages to other Atari users.
+But then you can do that in E-mail.
+     These places offer a great place for discussions... But then there are
+newsgroups for that.
+     These offer a place to share files, but the you can do that on the
+internet too.
+
+     But you know what is really fun?  Turning off the rest of the world for
+a bit, and turning on a Atari computer, and only that.  And with whatever
+means listed above, or others not listed, calling BBS¹s, checking mail and
+the newsgroups, and then stopping off in that bit of Atari with the ATASCII
+graphics and just being off in another rarely seen world.  A world that
+belongs to you a few others.
+     And then you realize that your Atari computer is connected to another
+Atari computer on the other side.  A fun thought.
+
+     And maybe you¹ll turn on the rest of the world... Or maybe a day will
+go by when you don¹t have to if you don¹t want to.  Just you and your Atari
+computer taking care of business.  Always fun to dream.
+
+
+(I know you¹ll questions, to matter the fact, I¹m hoping on it.  ;)  Write
+me at greg.goodwin ( A T ) rdfig (D O T ) net.)
+
+(Oh yeh, ST Users, I know these are mainly 8-bit BBS¹s, but please do
+stretch your ST¹s legs and come by and visit.  And there is talk on a ST BBS
+making a return, so stay tuned...)
+

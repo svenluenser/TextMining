@@ -1,0 +1,249 @@
+THE_URL:http://web.textfiles.com/computers/npad_tut.txt
+THE_TITLE:npad_tut.txt
+"REVERSE ENGINEERING ISN'T ALWAYS BYPASSING PROTECTION SCHEMES."
+=================================================================================================
+
+DATE: 08/3/98
+AUTHOR: Quantico  Mexelite'98
+EDITOR: Full screen notepad with wordrap on
+LEVEL: Intermediate
+
+TARGET PROGRAM:  Windows Notepad
+WHERE?:  MS Windows CD-ROM
+PROTECTION(s): Size limit (not done here) & nag asking if you want to run wordpad.
+SOLUTION:  Patch
+
+TOOLS: Good old softice (i used 3.00), w32dasm 8.9, hex editor (hex workshop) and a patch               g
+enerator like patchit by Qapla or rtd_patch by Mr. Wicked, or write your own.
+
+EXTRAS: A large text file.
+
+NOTES:  I don't know if the file sizes etc. are the same for every notepad but you will get the
+general idea how to crack it by reading this.  The notepad I use is 34,304 bytes and the         file ver
+sion is 4.00.950.
+
+=================================================================================================
+
+This little program had been annoying me for ages so I decided a few days ago to crack it.  In my own opi
+nion, there should be an option to automatically launch wordpad if the 32k size limit is exceeded.  Unfor
+tunately there isn't so lets make one :)
+
+(By the way....I have not checked the size limit, I was told by a friend that it was 32k).
+
+After having tried to crack the size limit, I got quite confused and gave up.  I used wdasm to try to rem
+ove all possible routes to the messagebox telling me that the file was too large but it still came up.  I
+f someone knows how to do this, please tell me.  I will keep trying though and if I do find out how to do
+ it, I will update this tutorial.
+
+For now, I will explain how to bypass the 'run wordpad?' nag.
+
+Lets start.  We will first make notepad run wordpad automatically and AFTER that we will take out the mes
+sagebox itself.
+
+Start by finding yourself a large text file and try to open it with notepad (by the way, I have notepad i
+n my 'send to' section.).  You will see there are two options, open it with wordpad or not.  If you choos
+e not then the program ends and if you choose yes then wordpad opens it.  For something like this to work
+, there must be a flag set somewhere so the program knows which button you pressed.
+
+By the way, when a messagebox is created, the windows USER module waits for the person to press a button
+and only then does the control go back to the app (in this case notepad) to do what is wishes with the re
+sult.  Someone please tell me if I am incorrect :)
+
+The 'too big' dialog looks like a standard messagebox so do a
+
+:bpx messageboxa
+
+and then try to open the big file.
+
+Softice will snap and you will be at the beginning of the messageboxa function.  Press F12 to return to t
+he calling function and you will be at this point in the notepad code, you will have to press a button on
+ the messagebox first.....press NO.
+
+:00402D5A FF35B0604000            push dword ptr [004060B0]
+:00402D60 56                      push esi
+
+* Reference To: USER32.MessageBoxA, Ord:0176h
+                                  |
+:00402D61 FF1530744000            Call dword ptr [00407430]
+:00402D67 83F806                  cmp eax, 00000006 <========= you land here
+:00402D6A 0F85A9000000            jne 00402E19     <=== and whats this???
+:00402D70 6804010000              push 00000104
+:00402D75 8D85B8FEFFFF            lea eax, dword ptr [ebp+FFFFFEB8]
+:00402D7B 50                      push eax
+
+Remember I said code only returns to the program again after a messagebox once the user has pressed a but
+ton and that a flag must be set?  Well this is it.  Here the program decides what to do depending on what
+ button you pressed.  If you followed my instructions and pressed the NO button, then the code should wan
+t to take the jump at :00402D6A because eax = 7, not 6.  This is where is goes to.
+
+* Referenced by a (U)nconditional or (C)onditional Jump at Address:
+|:00402D6A(C)
+|
+:00402E19 B882000000              mov eax, 00000082  <===== the jump goes here
+
+* Referenced by a (U)nconditional or (C)onditional Jump at Addresses:
+|:00402E10(U), :00402E17(U)
+|
+:00402E1E 5F                      pop edi
+:00402E1F 5E                      pop esi
+:00402E20 5B                      pop ebx
+:00402E21 8BE5                    mov esp, ebp
+:00402E23 5D                      pop ebp
+:00402E24 C20C00                  ret 000C
+
+
+Nothing interesting happens here but if you continue to trace through the code you will eventually come t
+o an exitprocess call which quits notepad.  This section therefore is the one which does not run wordpad.
+  If the program does not take the original jump, it must run wordpad.
+
+Run notepad again and when you enter softice use the 'a' command to change the line :00402d67 from,
+
+:00402D67 83F806                  cmp eax, 00000006
+
+to
+
+:00402D67 83F807                  cmp eax, 00000007
+
+or else change the  :00402D6A 0F85A9000000      jne 00402E19 to nops or inc eax, dec eax.
+
+(NOTE 90 = nop       40 = inc eax       48 = dec eax.)
+
+And then let it run.  You will find that wordpad now runs and opens the large file.
+
+That's that part done.  Open up your hex editor and make those changes.
+Run the cracked notepad again and try opening the large file.  This time press the yes button and check t
+hat it works and then press the no button.  They both work.
+
+Now to remove the messagebox itself.  Remember this code?
+
+:00402D53 6A24                    push 00000024
+:00402D55 8B7508                  mov esi, dword ptr [ebp+08]
+:00402D58 6A00                    push 00000000
+:00402D5A FF35B0604000            push dword ptr [004060B0]
+:00402D60 56                      push esi
+
+* Reference To: USER32.MessageBoxA, Ord:0176h  <==== want to jump over this
+                                  |
+:00402D61 FF1530744000            Call dword ptr [00407430]
+:00402D67 83F806                  cmp eax, 00000006  <=== if yes button then eax = 6 (no = 7)
+:00402D6A 0F85A9000000            jne 00402E19    <====== have to remove this
+:00402D70 6804010000              push 00000104
+:00402D75 8D85B8FEFFFF            lea eax, dword ptr [ebp+FFFFFEB8]
+:00402D7B 50                      push eax
+
+* Reference To: USER32.LoadStringA, Ord:0168h
+                                  |
+:00402D7C 8B1DB0734000            mov ebx, dword ptr [004073B0]
+:00402D82 837D1001                cmp dword ptr [ebp+10], 00000001
+:00402D86 1BFF                    sbb edi, edi
+
+* Possible Reference to String Resource ID=00056: "wordpad.exe"
+                                  |
+:00402D88 6A38                    push 00000038
+:00402D8A FF3570514000            push dword ptr [00405170]
+:00402D90 FFD3                    call ebx  <=== loadstring wordpad.exe
+
+
+We want to make a jump somewhere BEFORE the messageboxa call so it goes straight to the
+'load wordpad' section.  I will explain how to do it with and without softice.
+
+Since the jump we will put in will be 2 bytes (EBXX) we want a space where there is already a 2 byte inst
+ruction so we dont create absolute havoc with something like an 'invalid opcode' fault. So lines :00402D5
+3 and :00402D58 look good.  I will chose the second one as it is not doing much anyway (push 00000000).
+
+The two byte jumps all come in the format:  75XX  (jne XX)
+                                            74XX  (je XX)
+                                            EBXX  (jmp XX)
+
+In these cases, the XX stands for the number of bytes, in hex, to jump to.
+
+Example:  EB01 = jump one byte away
+
+OK, say we want to jump to the start of our inc eax, dec eax sequence at line :00402D6A (I am using the o
+riginal disassembled listing above, not the patched one.) we need to count how many bytes there are from
+the end of the 6A00 instruction until the first inc eax (or the jump in the listing above).  I count 16 b
+ytes.  Convert 16 ==> hex and we get 10 so the opcode to replace 6A00 with is EB10.  Go patch it.
+        If you want to do it in softice, bpx on messageboxa, then F12, press NO on the messagebox and the
+n clear your breakpoints with 'bc *' and set a new one on line :00402D58, the push 00 instruction.  Then
+exit notepad, try to run it and open the large file again.  Softice will snap at that line, then use the
+'a' command to change the
+
+push 00000000
+
+to
+
+jmp  00402D6A
+
+and write down the new opcode and then go and patch it.
+
+You could also leave out the inc eax, dec eax section we patched earlier and jump to the end of it instea
+d of the start.
+
+There are various other ways of patching this but I will let you figure them out and try them.
+
+This is how the final disassembled listing should look.
+
+:00402D53 6A24                    push 00000024
+:00402D55 8B7508                  mov esi, dword ptr [ebp+08]
+:00402D58 EB0D                    jmp 00402D67
+:00402D5A FF35B0604000            push dword ptr [004060B0]
+:00402D60 56                      push esi
+
+* Reference To: USER32.MessageBoxA, Ord:0176h
+                                  |
+:00402D61 FF1530744000            Call dword ptr [00407430]
+
+* Referenced by a (U)nconditional or (C)onditional Jump at Address:
+|:00402D58(U)
+|
+:00402D67 83F806                  cmp eax, 00000006
+:00402D6A 40                      inc eax
+:00402D6B 48                      dec eax
+:00402D6C 40                      inc eax
+:00402D6D 48                      dec eax
+:00402D6E 40                      inc eax
+:00402D6F 48                      dec eax
+:00402D70 6804010000              push 00000104
+:00402D75 8D85B8FEFFFF            lea eax, dword ptr [ebp+FFFFFEB8]
+:00402D7B 50                      push eax
+
+* Reference To: USER32.LoadStringA, Ord:0168h
+                                  |
+:00402D7C 8B1DB0734000            mov ebx, dword ptr [004073B0]
+:00402D82 837D1001                cmp dword ptr [ebp+10], 00000001
+:00402D86 1BFF                    sbb edi, edi
+
+* Possible Reference to String Resource ID=00056: "wordpad.exe"
+                                  |
+:00402D88 6A38                    push 00000038
+:00402D8A FF3570514000            push dword ptr [00405170]
+:00402D90 FFD3                    call ebx
+
+Thats all for now!
+
+*****************
+*****************
+**             **
+**  Quantico   **
+** Mexelite'98 **
+**   08/3/98   **
+**             **
+*****************
+*****************
+
+http://mex98.home.ml.org
+http://cracking.home.ml.org
+http://fantom.home.ml.org
+http://greythorne.home.ml.org
+http://quantico.home.ml.org
+
+#cracking4newbies  (IRC EFNET)
+
+
+
+
+
+
+
+
+

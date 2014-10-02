@@ -1,0 +1,945 @@
+THE_URL:http://web.textfiles.com/computers/alt4.lst
+THE_TITLE:alt4.lst
+Date: 9 Aug 1996 22:11:32 -0400
+From: newgroups-request@uunet.uu.net (David C Lawrence)
+Newsgroups: news.lists,news.groups,news.announce.newgroups,news.answers
+Subject: Alternative Newsgroup Hierarchies (Part 4)
+
+Archive-name: alt-hierarchies/part4
+
+clari
+-----
+
+The ClariNet hierarchy consists of newsgroups gatewayed from
+commercial news services and other ``official'' sources.  A feed of
+the ClariNet groups requires payment of a fee and execution of a
+license.  More information may be obtained by sending mail to
+"info@clarinet.com".
+
+clari.apbl.review       Daily review of the news. (Moderated)
+clari.biz.briefs        Business newsbriefs. (Moderated)
+clari.biz.currencies    Currency news, interest rates. (Moderated)
+clari.biz.currencies.misc       World currency news, interest rates. (Moderated)
+clari.biz.currencies.us_dollar  U.S. currency news, interest rates. (Moderated)
+clari.biz.earnings      Businesses' earnings, profits, losses. (Moderated)
+clari.biz.earnings.releases     Press releases: earnings, profits, losses. (Moderated)
+clari.biz.economy       Economic news and indicators. (Moderated)
+clari.biz.economy.usa   News of the U.S. economy. (Moderated)
+clari.biz.economy.world Economy stories for non-US countries. (Moderated)
+clari.biz.features      Business feature stories. (Moderated)
+clari.biz.front_page    Top five business stories each day. (Moderated)
+clari.biz.headlines     Two-line summaries of top business stories. (Moderated)
+clari.biz.industry      News covering industry. (Moderated)
+clari.biz.industry.agriculture  Agriculture, fishing, forestry. (Moderated)
+clari.biz.industry.agriculture.releases Releases: ag, fishing, forestry. (Moderated)
+clari.biz.industry.automotive   The car and truck industry. (Moderated)
+clari.biz.industry.automotive.cbd       Automotive, tractors, components. (Moderated)
+clari.biz.industry.automotive.releases  Releases: automobile industry. (Moderated)
+clari.biz.industry.aviation     Airlines and airports. (Moderated)
+clari.biz.industry.aviation.releases    Press releases: airlines and airports. (Moderated)
+clari.biz.industry.banking      Banks and S&Ls. (Moderated)
+clari.biz.industry.banking.releases     Press releases: banks and S&Ls. (Moderated)
+clari.biz.industry.conglomerates        Conglomerates and holding companies. (Moderated)
+clari.biz.industry.construction.cbd.acquisition Purchasing facilities. (Moderated)
+clari.biz.industry.construction.cbd.architect+eng       Architecture/engineering. (Moderated)
+clari.biz.industry.construction.cbd.hardware    Hardware and abrasives. (Moderated)
+clari.biz.industry.construction.cbd.maintenance Maintenance, alteration. (Moderated)
+clari.biz.industry.construction.cbd.misc        Building structures/facilities. (Moderated)
+clari.biz.industry.construction.cbd.supplies    Tools, other supplies. (Moderated)
+clari.biz.industry.energy       Oil, gas, coal, alternatives. (Moderated)
+clari.biz.industry.energy.releases      Releases: oil, gas, coal, alternatives. (Moderated)
+clari.biz.industry.food Food processing, markets, restaurants. (Moderated)
+clari.biz.industry.food.cbd     Food and agricultural supplies. (Moderated)
+clari.biz.industry.food.releases        Releases: food processing and products. (Moderated)
+clari.biz.industry.food.retail.releases Releases: restaurants and markets. (Moderated)
+clari.biz.industry.health       The health care business. (Moderated)
+clari.biz.industry.health.care  Health care business, hospitals, doctors. (Moderated)
+clari.biz.industry.health.care.releases Releases: hospitals, doctors. (Moderated)
+clari.biz.industry.health.cbd   Medical, dental and veterinary supplies. (Moderated)
+clari.biz.industry.health.pharma        Pharmaceutical industry. (Moderated)
+clari.biz.industry.health.pharma.releases       News releases: drugs, equipment. (Moderated)
+clari.biz.industry.household    Furniture, recreation equip, cleaning equip, etc. (Moderated)
+clari.biz.industry.household.cbd        Furniture, misc  items, food prep equip. (Moderated)
+clari.biz.industry.information.cbd      Books, maps and other publications. (Moderated)
+clari.biz.industry.insurance    The insurance industry. (Moderated)
+clari.biz.industry.insurance.releases   Releases: the insurance industry. (Moderated)
+clari.biz.industry.machinery    Machine tools and general machinery. (Moderated)
+clari.biz.industry.machinery.cbd.components     Bearings, cables, rope. (Moderated)
+clari.biz.industry.machinery.cbd.engines        Engine accessories. (Moderated)
+clari.biz.industry.machinery.cbd.misc   Miscellaneous machinery. (Moderated)
+clari.biz.industry.manufacturing.releases       Press releases: manufacturing. (Moderated)
+clari.biz.industry.media        Publishing, journalism and other media. (Moderated)
+clari.biz.industry.media.entertainment  Film, TV, other entertainment. (Moderated)
+clari.biz.industry.media.entertainment.releases Entertainment releases. (Moderated)
+clari.biz.industry.media.releases       Press releases covering the media. (Moderated)
+clari.biz.industry.metals+mining        Mining and metals processing. (Moderated)
+clari.biz.industry.metals+mining.cbd    Ores, metals and minerals. (Moderated)
+clari.biz.industry.metals+mining.releases       Releases: mining, metals. (Moderated)
+clari.biz.industry.misc Miscellaneous industries. (Moderated)
+clari.biz.industry.misc.cbd.electric    Power equipment, lighting, security. (Moderated)
+clari.biz.industry.misc.cbd.equip_maint Maintenance, repair, rebuilding. (Moderated)
+clari.biz.industry.misc.cbd.equip_services      Quality control, modification. (Moderated)
+clari.biz.industry.misc.cbd.housekeeping        Utilities, housekeeping services. (Moderated)
+clari.biz.industry.misc.cbd.lab_supplies        Lab supplies and equipment. (Moderated)
+clari.biz.industry.misc.cbd.management  Admin, management support. (Moderated)
+clari.biz.industry.misc.cbd.misc_services       Operation of gov't facilities. (Moderated)
+clari.biz.industry.misc.cbd.misc_supplies       Misc supplies and equipment. (Moderated)
+clari.biz.industry.misc.cbd.research    Research and Development. (Moderated)
+clari.biz.industry.misc.cbd.studies     Special Studies and Analyses. (Moderated)
+clari.biz.industry.misc.releases        Press releases covering other industries. (Moderated)
+clari.biz.industry.others       News of other industries (Moderated)
+clari.biz.industry.real_est+const       Real estate and construction. (Moderated)
+clari.biz.industry.real_est+const.releases      Releases: real estate,const. (Moderated)
+clari.biz.industry.retail       Retail stores and shops. (Moderated)
+clari.biz.industry.retail.releases      Releases about shops. (Moderated)
+clari.biz.industry.textiles     Textile industry. (Moderated)
+clari.biz.industry.textiles.cbd Textiles, leather, fur, clothing. (Moderated)
+clari.biz.industry.transportation       Trains, buses, transit, shipping. (Moderated)
+clari.biz.industry.transportation.cbd   Ship, marine and railway equipment. (Moderated)
+clari.biz.industry.transportation.releases      Releases: trains, buses, etc. (Moderated)
+clari.biz.industry.travel+leisure       The travel and leisure industries. (Moderated)
+clari.biz.industry.travel+leisure.cbd   CBD: travel, hotels. (Moderated)
+clari.biz.industry.travel+leisure.releases      Releases: travel & leisure. (Moderated)
+clari.biz.industry.utilities    Utilities. (Moderated)
+clari.biz.market.commodities    Commodity reports. (Moderated)
+clari.biz.market.commodities.agricultural       Agricultural commodit reports. (Moderated)
+clari.biz.market.commodities.misc       Base metals, general commodity info. (Moderated)
+clari.biz.market.misc   Bonds, money market funds, other instruments. (Moderated)
+clari.biz.mergers       Mergers and acquisitions. (Moderated)
+clari.biz.mergers.releases      Press releases: mergers, acquisitions, spinoffs. (Moderated)
+clari.biz.misc          Other business news. (Moderated)
+clari.biz.misc.releases Releases on general business topics. (Moderated)
+clari.biz.personnel.releases    Press releases: personnel changes, layoffs. (Moderated)
+clari.biz.privatization Privatizations and nationalizations. (Moderated)
+clari.biz.stocks        Stock and stock markets. (Moderated)
+clari.biz.stocks.corporate_news Corporate stocks, dividends. (Moderated)
+clari.biz.stocks.dividend.releases      Dividend announcements. (Moderated)
+clari.biz.stocks.report.asia    Asian stock market reports. (Moderated)
+clari.biz.stocks.report.elsewhere       International stock market reports. (Moderated)
+clari.biz.stocks.report.europe.eastern  Eastern European stock reports. (Moderated)
+clari.biz.stocks.report.europe.western  Western European stock reports. (Moderated)
+clari.biz.stocks.report.top     Overview of the stock markets. (Moderated)
+clari.biz.stocks.report.usa     U.S. stock market reports including nyse. (Moderated)
+clari.biz.stocks.report.usa.misc        U.S. stock market reports. (Moderated)
+clari.biz.stocks.report.usa.nyse        New York Stock Exchange reports. (Moderated)
+clari.biz.top           Top business news. (Moderated)
+clari.biz.tradeshows.releases   Press releases covering trade shows. (Moderated)
+clari.biz.world_trade   GATT, free trade, trade disputes. (Moderated)
+clari.editorial.cartoons.toles  Editorial cartoons from Tom Toles. (Moderated)
+clari.editorial.cartoons.worldviews     Views of the World editorial cartoons. (Moderated)
+clari.editorial.commentary.misc Commentaries and opinion on various subjects. (Moderated)
+clari.editorial.commentary.political    Political opinion & commentary. (Moderated)
+clari.feature.dave_barry        Columns of humourist Dave Barry. (Moderated)
+clari.feature.dilbert   The daily comic strip "Dilbert". (MIME/uuencoded GIF). (Moderated)
+clari.feature.experimental      New trial and experimental features. (Moderated)
+clari.feature.forbetter Lynn Johnston's For Better or For Worse. (Moderated)
+clari.feature.mike_royko        Chicago Opinion Columnist Mike Royko. (Moderated)
+clari.living            Fashion, leisure, lifestyle. (Moderated)
+clari.living.animals    Human interest stories about animals. (Moderated)
+clari.living.arts       News of the arts. (Moderated)
+clari.living.bizarre    Unusual or funny news stories. (Moderated)
+clari.living.books      News about books and authors. (Moderated)
+clari.living.celebrities        Famous people in the news. (Moderated)
+clari.living.columns.joebob     Joe Bob Briggs: Drive-in movie critic. (Moderated)
+clari.living.columns.lipton     Columns of humorist  Eric F. Lipton. (Moderated)
+clari.living.columns.miss_manners       Etiquette advice from Miss Manners. (Moderated)
+clari.living.comics.bizarro     Dan Piraro's bizarre comic panel. (Moderated)
+clari.living.comics.cafe_angst  Comic by Hans Bjordahl & Holley Irvine. (Moderated)
+clari.living.comics.doonesbury  Garry Trudeau's classic political comic. (Moderated)
+clari.living.comics.forbetter   Lynn Johnston's For Better or For Worse. (Moderated)
+clari.living.comics.foxtrot     Bill Amend's Foxtrot. (Moderated)
+clari.living.comics.ozone_patrol        Holley Irvine's unique Ozone Patrol. (Moderated)
+clari.living.consumer   Consumer issues and products. (Moderated)
+clari.living.entertainment      Entertainment news. (Moderated)
+clari.living.entertainment.briefs       Entertainment news summaries. (Moderated)
+clari.living.entertainment.misc Miscellaneous entertainment news. (Moderated)
+clari.living.fashion    Fashion, clothing. (Moderated)
+clari.living.history    News and human interest about history. (Moderated)
+clari.living.history.today      Today in History feature. (Moderated)
+clari.living.human_interest     General Human interest stories. (Moderated)
+clari.living.leisure    Leisure, the outdoors, games. (Moderated)
+clari.living.misc       Miscellaneous lifestyle stories. (Moderated)
+clari.living.movies     News of film and movies. (Moderated)
+clari.living.music      News of the music scene. (Moderated)
+clari.living.royalty    The world's royal families. (Moderated)
+clari.living.tv         News of television programs and events. (Moderated)
+clari.local.alabama     News of Alabama. (Moderated)
+clari.local.alaska      News of Alaska. (Moderated)
+clari.local.arizona     News of Arizona. (Moderated)
+clari.local.arkansas    News of Arkansas. (Moderated)
+clari.local.california.briefs   UPI California news briefs. (Moderated)
+clari.local.california.gov      California state government news. (Moderated)
+clari.local.california.los_angeles      News of Los Angeles. (Moderated)
+clari.local.california.lottery  California state lottery news. (Moderated)
+clari.local.california.misc     News covering California generally. (Moderated)
+clari.local.california.northern News of Northern California. (Moderated)
+clari.local.california.sfbay.biz        San Francisco Bay Area business news. (Moderated)
+clari.local.california.sfbay.briefs     San Francisco Bay Area daily brief. (Moderated)
+clari.local.california.sfbay.crime      San Francisco Bay Area crime news. (Moderated)
+clari.local.california.sfbay.education  Education in the San Francisco Bay Area. (Moderated)
+clari.local.california.sfbay.fire       San Francisco Bay Area fire news. (Moderated)
+clari.local.california.sfbay.gov        Bay Area local government news. (Moderated)
+clari.local.california.sfbay.health     Health care & services in the Bay Area. (Moderated)
+clari.local.california.sfbay.law        San Francisco Bay Area laws and lawsuits. (Moderated)
+clari.local.california.sfbay.living     Entertainment, human interest. (Moderated)
+clari.local.california.sfbay.misc       General news for San Francisco Bay area. (Moderated)
+clari.local.california.sfbay.transport  Bay Area transit and road news. (Moderated)
+clari.local.california.sfbay.transport.conditions       Road and transit status. (Moderated)
+clari.local.california.sfbay.trouble    San Francisco Bay Area accidents. (Moderated)
+clari.local.california.sfbay.weather    Bay Area weather. (Moderated)
+clari.local.california.southern News of Southern California. (Moderated)
+clari.local.california.southern.misc    News of Southern California. (Moderated)
+clari.local.colorado    News of Colorado. (Moderated)
+clari.local.connecticut News of Connecticut. (Moderated)
+clari.local.delaware    News of Delaware. (Moderated)
+clari.local.florida     News of Floria. (Moderated)
+clari.local.georgia     News of Georgia. (Moderated)
+clari.local.hawaii      News of Hawaii. (Moderated)
+clari.local.idaho       News of Idaho. (Moderated)
+clari.local.illinois.chicago    News of the Chicago area. (Moderated)
+clari.local.illinois.misc       News of Illinois. (Moderated)
+clari.local.indiana     News of Indiana. (Moderated)
+clari.local.iowa        News of Iowa. (Moderated)
+clari.local.kansas      News of Kansas. (Moderated)
+clari.local.kentucky    News of Kentucky. (Moderated)
+clari.local.louisiana   News of Louisiana. (Moderated)
+clari.local.maine       News of Maine. (Moderated)
+clari.local.maryland    News of Maryland. (Moderated)
+clari.local.massachusetts       News of Massachusetts. (Moderated)
+clari.local.michigan    News of Michican. (Moderated)
+clari.local.minnesota   News of Minnesota. (Moderated)
+clari.local.mississippi News of Mississippi. (Moderated)
+clari.local.missouri    News of Missouri. (Moderated)
+clari.local.montana     News of Montana. (Moderated)
+clari.local.nebraska    News of Nebraska. (Moderated)
+clari.local.nevada      News of Nevada. (Moderated)
+clari.local.new_hampshire       News of New Hampshire. (Moderated)
+clari.local.new_jersey  News of New Jersey. (Moderated)
+clari.local.new_mexico  News of New Mexico. (Moderated)
+clari.local.new_york.misc       News of New York state. (Moderated)
+clari.local.new_york.nyc        News of Greater New York City. (Moderated)
+clari.local.north_carolina      News of North Carolina. (Moderated)
+clari.local.north_dakota        News of North Dakota. (Moderated)
+clari.local.ohio        News of Ohio. (Moderated)
+clari.local.oklahoma    News of Oklahoma. (Moderated)
+clari.local.oregon      News of Oregon. (Moderated)
+clari.local.pennsylvania        News of Pennsylvania. (Moderated)
+clari.local.rhode_island        News of Rhode Island. (Moderated)
+clari.local.south_carolina      News of South Carolina. (Moderated)
+clari.local.south_dakota        News of South Dakota. (Moderated)
+clari.local.tennessee   News of Tennessee. (Moderated)
+clari.local.texas       News of Texas. (Moderated)
+clari.local.utah        News of Utah. (Moderated)
+clari.local.vermont     News of Vermont. (Moderated)
+clari.local.virginia+dc News of Virginia and Washington DC. (Moderated)
+clari.local.washington  News of Washington State. (Moderated)
+clari.local.west_virginia       News of West Virginia. (Moderated)
+clari.local.wisconsin   News of Wisconsin. (Moderated)
+clari.local.wyoming     News of Wyoming. (Moderated)
+clari.net.admin         Announcements for news admins at ClariNet sites. (Moderated)
+clari.net.announce      Announcements for all ClariNet readers. (Moderated)
+clari.net.info          Occasional announcements for readers. (Moderated)
+clari.net.newusers      Online info about ClariNet. (Moderated)
+clari.net.newusers.group_info.edu       What each group is about. (Moderated)
+clari.net.newusers.group_info.four-star What each group is about. (Moderated)
+clari.net.newusers.group_info.three-star        What each group is about. (Moderated)
+clari.net.newusers.group_info.two-star  What each group is about. (Moderated)
+clari.net.talk          Discussion of ClariNet -- NOT moderated.
+clari.news.aging        News of senior citizens and aging. (Moderated)
+clari.news.alcohol+drugs        News of alcohol and drugs, use and abuse. (Moderated)
+clari.news.blacks       Black news. (Moderated)
+clari.news.briefs       Regular news summaries. (Moderated)
+clari.news.childrn+family       Children and families, adoption, marriage. (Moderated)
+clari.news.conflict     War, conflict, peace talks. (Moderated)
+clari.news.conflict.misc        War and conflict. (Moderated)
+clari.news.conflict.peace_talks Peace talks and cease-fires. (Moderated)
+clari.news.conflict.peacekeeping        U.N. & other international peacekeeping. (Moderated)
+clari.news.corruption   Corruption in government. (Moderated)
+clari.news.crime        News of crimes. (Moderated)
+clari.news.crime.abductions     Kidnappings, hostage-taking. (Moderated)
+clari.news.crime.assaults       Assaults. (Moderated)
+clari.news.crime.fraud+embezzle Fraud, embezzlement, white-collar crime. (Moderated)
+clari.news.crime.general        Corruption, assaults, theft. (Moderated)
+clari.news.crime.hate   Hate crimes. (Moderated)
+clari.news.crime.juvenile       Crimes by children and teenagers. (Moderated)
+clari.news.crime.misc   Other crimes. (Moderated)
+clari.news.crime.murders        Murders and shootings. (Moderated)
+clari.news.crime.murders.misc   Murders and shootings. (Moderated)
+clari.news.crime.murders.political      Political murders and shootings. (Moderated)
+clari.news.crime.organized      Organized crime. (Moderated)
+clari.news.crime.sex    Sex crimes, child pornography. (Moderated)
+clari.news.crime.theft  Thefts and robberies. (Moderated)
+clari.news.crime.top    Well-known crimes. (Moderated)
+clari.news.crime.war    War crimes and tribunals. (Moderated)
+clari.news.disabilities News of the disabled. (Moderated)
+clari.news.education    Primary and secondary education. (Moderated)
+clari.news.education.higher     Colleges and Universities. (Moderated)
+clari.news.education.misc       Primary and secondary education. (Moderated)
+clari.news.education.releases   Press releases covering education. (Moderated)
+clari.news.features     Unclassified feature stories. (Moderated)
+clari.news.flash        Ultra-important once-a-year news flashes. (Moderated)
+clari.news.front_page   The top five news stories of the day. (Moderated)
+clari.news.gays         Homosexuality and gay rights. (Moderated)
+clari.news.immigration  Refugees, immigration, migration. (Moderated)
+clari.news.immigration.misc     Immigration, migration. (Moderated)
+clari.news.issues       Social issues. (Moderated)
+clari.news.issues.censorship    Censorship, government control of media. (Moderated)
+clari.news.issues.death_penalty Death-penalty, executions. (Moderated)
+clari.news.issues.guns  Gun control and other gun news. (Moderated)
+clari.news.issues.human_rights  Freedom, civil rights, human rights. (Moderated)
+clari.news.issues.misc  Miscellaneous social issues. (Moderated)
+clari.news.issues.poverty       Poverty, homelessness, hunger. (Moderated)
+clari.news.issues.reproduction  Abortion, fertility, reproduction. (Moderated)
+clari.news.issues.smoking       Smoking and tobacco issues. (Moderated)
+clari.news.jews         Jewish news. (Moderated)
+clari.news.labor        Unions, strikes. (Moderated)
+clari.news.labor.employment     Layoffs, hiring and employment statistics. (Moderated)
+clari.news.labor.misc   Labor and union news. (Moderated)
+clari.news.labor.strike Strikes. (Moderated)
+clari.news.law_enforce  Police officers, prisons, law enforcement. (Moderated)
+clari.news.minorities   News of ethnic minorities, gays, aging, the disabled. (Moderated)
+clari.news.minorities.misc      Ethnicity issues, news of minorities. (Moderated)
+clari.news.misc.releases        Releases on general topics. (Moderated)
+clari.news.obituaries   Obituaries and notable deaths. (Moderated)
+clari.news.photos       Photos from the general news. (Moderated)
+clari.news.protests     Protest movements and actions. (Moderated)
+clari.news.refugees     Refugees, involuntary migrations. (Moderated)
+clari.news.religion     Religion, religious leaders, televangelists. (Moderated)
+clari.news.sex          Sexual issues, sex-related political stories. (Moderated)
+clari.news.trouble      Less major accidents, problems & mishaps. (Moderated)
+clari.news.trouble.accidents    Accidents and mishaps. (Moderated)
+clari.news.trouble.disaster     Major disasters. (Moderated)
+clari.news.trouble.misc Miscellaneous trouble. (Moderated)
+clari.news.usa.terrorism        Terrorism within the USA. (Moderated)
+clari.news.weather      Weather and temperature reports. (Moderated)
+clari.news.women        Womens' issues: sexism, harassment. (Moderated)
+clari.sports.baseball   Baseball scores, stories, stats. (Moderated)
+clari.sports.baseball.major     News of Major League Baseball. (Moderated)
+clari.sports.baseball.major.al.games    AL previews, recaps, box scores. (Moderated)
+clari.sports.baseball.major.al.stats    AL stats and standings. (Moderated)
+clari.sports.baseball.major.nl.games    NL previews, recaps, box scores. (Moderated)
+clari.sports.baseball.major.nl.stats    NL stats and standings. (Moderated)
+clari.sports.baseball.minor     Minor league baseball. (Moderated)
+clari.sports.basketball Basketball coverage. (Moderated)
+clari.sports.basketball.college College basketball coverage. (Moderated)
+clari.sports.basketball.college.men     News of men's college basketball. (Moderated)
+clari.sports.basketball.college.men.games       Previews, recaps, box scores. (Moderated)
+clari.sports.basketball.college.men.stats       Stats, standings, summaries. (Moderated)
+clari.sports.basketball.college.women   Women's college basketball. (Moderated)
+clari.sports.basketball.minor   News of minor league basketball. (Moderated)
+clari.sports.basketball.nba     News of NBA basketball. (Moderated)
+clari.sports.basketball.nba.games       NBA previews, recaps, box scores. (Moderated)
+clari.sports.basketball.nba.stats       NBA stats and standings. (Moderated)
+clari.sports.bowling    Bowling coverage. (Moderated)
+clari.sports.boxing     Boxing coverage. (Moderated)
+clari.sports.briefs     General sports scoreboard. (Moderated)
+clari.sports.championships      World Series, Superbowl, NCAA Final Four, etc. (Moderated)
+clari.sports.features   Sports feature stories. (Moderated)
+clari.sports.football   Pro football coverage. (Moderated)
+clari.sports.football.cfl       Coverage of the Canadian Football League. (Moderated)
+clari.sports.football.college   College football coverage. (Moderated)
+clari.sports.football.college.games     Football previews, recaps, box scores. (Moderated)
+clari.sports.football.college.stats     Football stats, standings, summaries. (Moderated)
+clari.sports.football.nfl       Coverage of the National Football League. (Moderated)
+clari.sports.football.nfl.games NFL previews, recaps, box scores. (Moderated)
+clari.sports.football.nfl.stats NFL stats and standings. (Moderated)
+clari.sports.golf       Golf coverage. (Moderated)
+clari.sports.hockey     NHL coverage. (Moderated)
+clari.sports.hockey.ahl Coverage of the American Hockey League. (Moderated)
+clari.sports.hockey.ihl Coverage of the International Hockey League. (Moderated)
+clari.sports.hockey.nhl Coverage of the National Hockey League. (Moderated)
+clari.sports.hockey.nhl.games   NHL previews, recaps, box scores. (Moderated)
+clari.sports.hockey.nhl.stats   NHL stats, standings, summaries. (Moderated)
+clari.sports.horse_racing       Coverage of horse racing. (Moderated)
+clari.sports.hot.olympic.boating        Canoeing, yachting, rowing. (Moderated)
+clari.sports.hot.olympic.combat Boxing, judo, wrestling, fencing. (Moderated)
+clari.sports.hot.olympic.court  Tennis, badminton, volleyball, handball, etc. (Moderated)
+clari.sports.hot.olympic.cycling        Mountain, road, track cycling. (Moderated)
+clari.sports.hot.olympic.equestrian     Dressage, jumping, three-day event. (Moderated)
+clari.sports.hot.olympic.gymnastics     Rhythmic & artistic gymnastics. (Moderated)
+clari.sports.hot.olympic.misc_news      Features, ceremonies, schedules, etc. (Moderated)
+clari.sports.hot.olympic.others Shooting, archery, weightlifting, pentathlon. (Moderated)
+clari.sports.hot.olympic.swim+diving    Olympic pool sports. (Moderated)
+clari.sports.hot.olympic.team   Baseball, soccer, basketball, hockey, softball. (Moderated)
+clari.sports.hot.olympic.top    Medal roundups, other important stories. (Moderated)
+clari.sports.hot.olympic.track+field    Track and field ("athletics"). (Moderated)
+clari.sports.local.canada.atlantic_provs        Atlantic Province athletics. (Moderated)
+clari.sports.local.canada.brit_columbia News of British Columbia athletics. (Moderated)
+clari.sports.local.canada.eastern       News of Eastern Canada athletics. (Moderated)
+clari.sports.local.canada.ontario       News of Ontario athletics. (Moderated)
+clari.sports.local.canada.ontario.misc  News of Ontario athletics. (Moderated)
+clari.sports.local.canada.ontario.toronto       News of Toronto athletics. (Moderated)
+clari.sports.local.canada.prairie_provs News of Prarie Province athletics. (Moderated)
+clari.sports.local.canada.quebec        News of Quebec athletics. (Moderated)
+clari.sports.local.mid-atlantic.new_jersey      News of New Jersey athletics. (Moderated)
+clari.sports.local.mid-atlantic.new_york        News of New York state athletics. (Moderated)
+clari.sports.local.mid-atlantic.new_york.nyc    New York City athletics. (Moderated)
+clari.sports.local.mid-atlantic.pennsylvania    News of Pennsyvania athletics. (Moderated)
+clari.sports.local.mid-atlantic.pennsylvania.philadelphia       Phila. sports. (Moderated)
+clari.sports.local.midwest      Other Midwest athletics. (Moderated)
+clari.sports.local.midwest.illinois     News of Illinois athletics. (Moderated)
+clari.sports.local.midwest.indiana      News of Indiana athletics. (Moderated)
+clari.sports.local.midwest.michigan     News of Michigan athletics. (Moderated)
+clari.sports.local.midwest.minnesota    News of Minnesota athletics. (Moderated)
+clari.sports.local.midwest.misc Other Midwest athletics. (Moderated)
+clari.sports.local.midwest.missouri     News of Missouri athletics. (Moderated)
+clari.sports.local.midwest.ohio News of Ohio athletics. (Moderated)
+clari.sports.local.midwest.wisconsin    News of Wisconsin athletics. (Moderated)
+clari.sports.local.new_england  New England athletics. (Moderated)
+clari.sports.local.new_england.connecticut      Connecticut athletics. (Moderated)
+clari.sports.local.new_england.massachusetts    Massachusetts athletics. (Moderated)
+clari.sports.local.new_england.misc     Other athletics in New England. (Moderated)
+clari.sports.local.northwest    Athletics in the Northwest. (Moderated)
+clari.sports.local.northwest.misc       Athletics in the Pacific Northwest. (Moderated)
+clari.sports.local.northwest.washington News of Washington athletics. (Moderated)
+clari.sports.local.south        Athletics in other areas of the South. (Moderated)
+clari.sports.local.south.florida        News of other Florida athletics. (Moderated)
+clari.sports.local.south.florida.miami  News of Miami athletics. (Moderated)
+clari.sports.local.south.florida.misc   News of other Florida athletics. (Moderated)
+clari.sports.local.south.florida.tampa_bay      News of Tampa Bay athletics. (Moderated)
+clari.sports.local.south.georgia        News of Georgia athletics. (Moderated)
+clari.sports.local.south.maryland       News of Maryland athletics. (Moderated)
+clari.sports.local.south.maryland+dc    News of Maryland and D.C. athletics. (Moderated)
+clari.sports.local.south.north_carolina News of North Carolina athletics. (Moderated)
+clari.sports.local.south.washington_dc  Washington D.C. athletics. (Moderated)
+clari.sports.local.southwest    News of other southwest athletics. (Moderated)
+clari.sports.local.southwest.arizona    News of Arizona athletics. (Moderated)
+clari.sports.local.southwest.california News of other California athletics. (Moderated)
+clari.sports.local.southwest.california.los_angeles     Los Angeles sports. (Moderated)
+clari.sports.local.southwest.california.sfbay   Bay Area sports. (Moderated)
+clari.sports.local.southwest.colorado   Colorado athletics. (Moderated)
+clari.sports.local.southwest.misc       News of other southwest athletics. (Moderated)
+clari.sports.local.southwest.texas.dallas-fw    Sports in Dallas and Fort Worth. (Moderated)
+clari.sports.local.southwest.texas.misc Sports in most of Texas. (Moderated)
+clari.sports.local.southwest.utah       News of Utah athletics. (Moderated)
+clari.sports.misc       Other sports, plus general sports news. (Moderated)
+clari.sports.motor      Racing, Motor Sports. (Moderated)
+clari.sports.olympic    The Olympic Games. (Moderated)
+clari.sports.others     Other sports news. (Moderated)
+clari.sports.photos     Sports photographs. (Moderated)
+clari.sports.releases   Press releases: sports products and equipment. (Moderated)
+clari.sports.schedules  Upcoming sports schedules. (Moderated)
+clari.sports.soccer     Coverage of soccer. (Moderated)
+clari.sports.tennis     Tennis news & scores. (Moderated)
+clari.sports.top        Top sports news. (Moderated)
+clari.tw.aerospace      Aerospace industry and companies. (Moderated)
+clari.tw.aerospace.cbd.components       Aircraft components. (Moderated)
+clari.tw.aerospace.cbd.misc     Space vehicles, miscellaneous aircraft equip. (Moderated)
+clari.tw.aerospace.releases     Releases covering the aerospace industry. (Moderated)
+clari.tw.briefs         Daily summary of computer and technical news. (Moderated)
+clari.tw.chemicals      Chemical firms and technology. (Moderated)
+clari.tw.chemicals.cbd  Chemicals and chemical products. (Moderated)
+clari.tw.chemicals.releases     Releases covering the chemical industry. (Moderated)
+clari.tw.columns.imprb_research The Annals of Improbable Research. (Moderated)
+clari.tw.computers.apple        Apple corporate and product news. (Moderated)
+clari.tw.computers.apple.releases       Releases: Apple Corp. and products. (Moderated)
+clari.tw.computers.cbd  Data processing and telecommunication. (Moderated)
+clari.tw.computers.entertainment.releases       Releases: computer entertain. (Moderated)
+clari.tw.computers.in_use       Using computers in industry, education. (Moderated)
+clari.tw.computers.industry_news        News of the computer industry. (Moderated)
+clari.tw.computers.misc Miscellaneous computer news. (Moderated)
+clari.tw.computers.networking   Computer networking products. (Moderated)
+clari.tw.computers.networking.releases  Releases:computer networking. (Moderated)
+clari.tw.computers.pc.hardware  Intel-based computer hardware. (Moderated)
+clari.tw.computers.pc.hardware.releases Releases: Intel-based hardware. (Moderated)
+clari.tw.computers.pc.software  MSDOS & Windows software. (Moderated)
+clari.tw.computers.pc.software.releases Releases: Windows software. (Moderated)
+clari.tw.computers.peripherals.releases Releases :computer peripherals. (Moderated)
+clari.tw.computers.releases     Releases: miscellaneous computer news. (Moderated)
+clari.tw.computers.retail.releases      Releases : the retail computer industry. (Moderated)
+clari.tw.computers.unix News of UNIX and similar operating systems. (Moderated)
+clari.tw.computers.unix.releases        Press releases covering UNIX. (Moderated)
+clari.tw.defense        Defense industry issues. (Moderated)
+clari.tw.defense.cbd    Weapons, ammunition, nuclear ordinance. (Moderated)
+clari.tw.electronics    Electronics makers and sellers. (Moderated)
+clari.tw.electronics.cbd        Electrical and electronic equip, components. (Moderated)
+clari.tw.electronics.releases   Releases: electronics industry. (Moderated)
+clari.tw.environment    Environmental news, hazardous waste, forests. (Moderated)
+clari.tw.environment.cbd        Natural resources and conservation services. (Moderated)
+clari.tw.environment.releases   Press releases on the environment. (Moderated)
+clari.tw.features       Features about technical industries and computers. (Moderated)
+clari.tw.health         Disease, medicine, health care, sick celebs. (Moderated)
+clari.tw.health.aids    AIDS stories, research, political issues. (Moderated)
+clari.tw.health.misc    Disease, medicine, health care research. (Moderated)
+clari.tw.issues         Technology and society; privacy, computer porn. (Moderated)
+clari.tw.misc           General technical industry stories. (Moderated)
+clari.tw.new_media      Online services, multimedia, the Internet. (Moderated)
+clari.tw.new_media.matrix_news  Journal of the internetworking world. (Moderated)
+clari.tw.new_media.online.releases      Releases: online services, products. (Moderated)
+clari.tw.new_media.releases     Press releases: new media, multimedia. (Moderated)
+clari.tw.nuclear        Nuclear power & waste. (Moderated)
+clari.tw.science        General science stories. (Moderated)
+clari.tw.science+space  General science stories (incl. space). (Moderated)
+clari.tw.space          NASA, Astronomy & spaceflight. (Moderated)
+clari.tw.stocks         Regular reports on computer & technology stock prices. (Moderated)
+clari.tw.telecom        Phones, Satellites, Media & general Telecom. (Moderated)
+clari.tw.telecom.cbd    Telecommunication equipment and materials. (Moderated)
+clari.tw.telecom.misc   Satellites, telecommunications. (Moderated)
+clari.tw.telecom.phone_service  Long-distance, local, cell service. (Moderated)
+clari.tw.telecom.releases       Press releases: the telecommunications industry. (Moderated)
+clari.tw.top            Top technical stories. (Moderated)
+clari.usa.briefs        USA briefs. (Moderated)
+clari.usa.gov           Miscellaneous U.S. government news. (Moderated)
+clari.usa.gov.briefs    USA government briefs. (Moderated)
+clari.usa.gov.general   Miscellaneous U.S. government news. (Moderated)
+clari.usa.gov.misc      Miscellaneous U.S. government news. (Moderated)
+clari.usa.gov.personalities     Personalities and privative lives. (Moderated)
+clari.usa.gov.policy.biz        U.S. business and economic policy. (Moderated)
+clari.usa.gov.policy.financial  U.S. financial policy. (Moderated)
+clari.usa.gov.policy.foreign    U.S. foreign policy. (Moderated)
+clari.usa.gov.policy.foreign.mideast    U.S. Middle Eastern foreign policy. (Moderated)
+clari.usa.gov.policy.foreign.misc       U.S. foreign policy. (Moderated)
+clari.usa.gov.policy.misc       Miscellaneous U.S. government policy. (Moderated)
+clari.usa.gov.policy.social     U.S. social policy. (Moderated)
+clari.usa.gov.politics  Party politics and electioneering. (Moderated)
+clari.usa.gov.releases  Press releases: state, local, federal government. (Moderated)
+clari.usa.gov.state+local       State and local governments. (Moderated)
+clari.usa.gov.white_house       Presidential news. (Moderated)
+clari.usa.hot.election.clinton  The Clinton campaign for the presidency. (Moderated)
+clari.usa.hot.election.congress U.S. House and Senate races. (Moderated)
+clari.usa.hot.election.dole     The Dole presidential campaign. (Moderated)
+clari.usa.law           Legal news, U.S. lawsuits, U.S. Supreme Court. (Moderated)
+clari.usa.law.misc      Legal news and U.S. lawsuits. (Moderated)
+clari.usa.law.supreme   The U.S. Supreme Court. (Moderated)
+clari.usa.military      News of the U.S. military. (Moderated)
+clari.usa.misc          Other U.S. news. (Moderated)
+clari.usa.politics      Party politics and electioneering. (Moderated)
+clari.usa.politics.personalities        Personalities and privative lives. (Moderated)
+clari.usa.terrorism     News of terrorism in the U.S. (Moderated)
+clari.usa.top           Top U.S. news. (Moderated)
+clari.world.africa.eastern      Sudan through Tanzania. (Moderated)
+clari.world.africa.northwestern Morocco, Algeria, Libya, Sahara countries. (Moderated)
+clari.world.africa.south_africa News from South Africa. (Moderated)
+clari.world.africa.southern     From Angola and Zambia southward. (Moderated)
+clari.world.africa.western      Gulf of Guinea states, Congo, Zaire. (Moderated)
+clari.world.americas    News of Canada, South and Meso America. (Moderated)
+clari.world.americas.argentina  News of Argentina. (Moderated)
+clari.world.americas.brazil     News of Brazil. (Moderated)
+clari.world.americas.canada     General Canadian news. (Moderated)
+clari.world.americas.canada.biz Canadian business news. (Moderated)
+clari.world.americas.canada.briefs      Canadian news briefs. (Moderated)
+clari.world.americas.canada.general     General Canadian news. (Moderated)
+clari.world.americas.caribbean  News of the Caribbean island nations. (Moderated)
+clari.world.americas.central    News of Central America. (Moderated)
+clari.world.americas.meso       Caribbean, Central America, Mexico. (Moderated)
+clari.world.americas.mexico     News of Mexico. (Moderated)
+clari.world.americas.peru       News of Peru. (Moderated)
+clari.world.americas.south      News of South America. (Moderated)
+clari.world.americas.south.misc News of South America. (Moderated)
+clari.world.asia+oceania        News of Asia and Oceania. (Moderated)
+clari.world.asia.central        Ex-Soviet republics in Central Asia. (Moderated)
+clari.world.asia.central+south  South and Central Asia. (Moderated)
+clari.world.asia.china  News of China. (Moderated)
+clari.world.asia.china.biz      Chinese business news. (Moderated)
+clari.world.asia.hong_kong      News of Hong Kong. (Moderated)
+clari.world.asia.india  News of India. (Moderated)
+clari.world.asia.indochina      Thailand, Laos, Cambodia, Myanmar. (Moderated)
+clari.world.asia.indochina.misc Thailand, Laos, Cambodia, Myanmar. (Moderated)
+clari.world.asia.japan  News of Japan. (Moderated)
+clari.world.asia.japan.biz      Japanese business news. (Moderated)
+clari.world.asia.koreas News of North and South Korea. (Moderated)
+clari.world.asia.philippines    News of the Philippines. (Moderated)
+clari.world.asia.south  News of South Asia (Pakistan, Bangladesh, etc.). (Moderated)
+clari.world.asia.southeast      News of Southeast Asia. (Moderated)
+clari.world.asia.taiwan News of the Republic of China (Taiwan). (Moderated)
+clari.world.asia.vietnam        News of Vietnam. (Moderated)
+clari.world.briefs      Brief of world events. (Moderated)
+clari.world.europe      News of Europe. (Moderated)
+clari.world.europe.alpine       Austria, Switzerland, Liechtenstein. (Moderated)
+clari.world.europe.balkans      Former Yugoslavia, Romania, Bulgaria. (Moderated)
+clari.world.europe.benelux      Belgium, the Netherlands, Luxembourg. (Moderated)
+clari.world.europe.british_isles        News of the British Isles. (Moderated)
+clari.world.europe.british_isles.biz    Business news of the British Isles. (Moderated)
+clari.world.europe.british_isles.ireland        News of Ireland. (Moderated)
+clari.world.europe.british_isles.uk     News of the UK. (Moderated)
+clari.world.europe.british_isles.uk.biz Business news of the UK. (Moderated)
+clari.world.europe.british_isles.uk.n-ireland   News of Northern Ireland. (Moderated)
+clari.world.europe.central      Poland, Czech Rep., Slovakia, Hungary. (Moderated)
+clari.world.europe.eastern      Translated reports from Eastern Europe. (Moderated)
+clari.world.europe.france       News of France and Monaco. (Moderated)
+clari.world.europe.france.biz   French business news. (Moderated)
+clari.world.europe.germany      News of Germany. (Moderated)
+clari.world.europe.germany.biz  German business news. (Moderated)
+clari.world.europe.greece       News of Greece. (Moderated)
+clari.world.europe.iberia       Spain, Portugal, and Andorra. (Moderated)
+clari.world.europe.italy        News of Italy and San Marino. (Moderated)
+clari.world.europe.northern     Scandinavia, Finland, Iceland. (Moderated)
+clari.world.europe.russia       News of Russia. (Moderated)
+clari.world.europe.union        News about the European Union. (Moderated)
+clari.world.gov.budgets National budgets, deficits, loans and debt. (Moderated)
+clari.world.gov.intl.relations  International relations (non-U.S.). (Moderated)
+clari.world.gov.intl_relations  Relations between governments. (Moderated)
+clari.world.gov.politics        World politics. (Moderated)
+clari.world.law         Non-U.S. laws and lawsuits. (Moderated)
+clari.world.mideast     News from the Middle East. (Moderated)
+clari.world.mideast+africa      News of the Middle East and Africa. (Moderated)
+clari.world.mideast.arabia      News of the Arabian Peninsula. (Moderated)
+clari.world.mideast.egypt       News of Egypt. (Moderated)
+clari.world.mideast.iran        News of Iran. (Moderated)
+clari.world.mideast.iraq        News of Iraq. (Moderated)
+clari.world.mideast.israel      News of Israel and occupied lands. (Moderated)
+clari.world.mideast.kuwait      News of Kuwait. (Moderated)
+clari.world.mideast.misc        News of other Mideastern countries. (Moderated)
+clari.world.mideast.palestine   News of the West Bank and Gaza. (Moderated)
+clari.world.mideast.turkey      News of Turkey. (Moderated)
+clari.world.military    News of militaries from around the world. (Moderated)
+clari.world.oceania     News of Oceania. (Moderated)
+clari.world.oceania.australia   News of Australia. (Moderated)
+clari.world.oceania.new_zealand News of New Zealand. (Moderated)
+clari.world.organizations       The UN and other organizations. (Moderated)
+clari.world.organizations.misc  News of international organizations. (Moderated)
+clari.world.organizations.un    News of the United Nations. (Moderated)
+clari.world.organizations.un.conferences        UN summits and conferences. (Moderated)
+clari.world.terrorism   Terrorist actions and related news (non-U.S.). (Moderated)
+clari.world.top         Top news from around the world. (Moderated)
+
+eye
+---
+
+EYE magazine, based in Toronto, Ontario, Canada, is a free newspaper
+issued once a week.  The scope of articles is greater than just
+Toronto, so the hierarchy is available on a worldwide basis.  For more
+information, contact eye@interlog.com (Ken Campbell).  NNTP feeds can
+be arranged through him if you cannot get the groups from your regular
+feeds.
+
+eye.config              Proposals for new eye.* newsgroups, etc.
+eye.general             eye Followups and General Discussions.
+eye.letters             eye readers write. (Moderated)
+eye.news                eye News articles. (Moderated)
+
+gnu
+---
+
+gnUSENET (gnUSENET is Not USENET) is a set of newsgroups that are
+gated bi-directionally with the Internet mailing lists of the GNU
+Project of the Free Software Foundation.  GNU (GNU's Not Unix) will be
+a complete operating system, including application programs, with
+freely redistributable source code.  Please use ONLY gnu.misc.discuss
+for discussion of topics considered contrary to GNU aims and political
+philosophy (e.g., porting of GNU code to Apple machines, usefulness of
+intellectual property laws, etc.).
+
+The GNU mailing lists and newsgroups, like the GNU project itself,
+exist to promote the freedom to share software.  So please don't use
+these newsgroups (or the other GNU lists) to promote or recommend
+non-free software.  (Using them to post ordering information is the
+ultimate faux pas.)  If there is no free program to do a certain task,
+then somebody should write one!
+
+If one of your USENET feeds cannot provide you with a feed of the
+gnUSENET newsgroups, send mail to gnu.gnusenet.config@prep.ai.mit.edu
+to ask for a feed.
+
+Questions about GNU can be directed to gnu@prep.ai.mit.edu or:
+        Free Software Foundation
+        675 Massachusetts Avenue
+        Cambridge, MA  02139
+        USA
+        +1-617-876-3296
+
+Special notes about some of the groups:
+
+Use gnu.emacs.help to discuss software on gnu.emacs.sources and to ask
+for sources.  gnu.emacs.sources is archived by many sites and they
+want sources ONLY!
+
+The gnu.*.bug groups are pseudo-moderated (that is, the group is
+marked moderated so that postings are mailed to prep.ai.mit.edu and
+then redistributed to the both the mailing list and newsgroup from
+there).  The gnu.*announce groups are all fully moderated.
+
+gnu.announce            Status and announcements from the Project. (Moderated)
+gnu.bash.bug            Bourne Again SHell bug reports and suggested fixes. (Moderated)
+gnu.chess               Announcements about the GNU Chess program.
+gnu.emacs.announce      Announcements about GNU Emacs. (Moderated)
+gnu.emacs.bug           GNU Emacs bug reports and suggested fixes. (Moderated)
+gnu.emacs.gnews         News reading under GNU Emacs using Weemba's Gnews.
+gnu.emacs.gnus          News reading under GNU Emacs using GNUS (in English).
+gnu.emacs.help          User queries and answers.
+gnu.emacs.sources       ONLY (please!) C and Lisp source code for GNU Emacs.
+gnu.emacs.vm.bug        Bug reports on the Emacs VM mail package.
+gnu.emacs.vm.info       Information about the Emacs VM mail package.
+gnu.emacs.vms           VMS port of GNU Emacs.
+gnu.epoch.misc          The Epoch X11 extensions to Emacs.
+gnu.g++.announce        Announcements about the GNU C++ Compiler. (Moderated)
+gnu.g++.bug             g++ bug reports and suggested fixes. (Moderated)
+gnu.g++.help            GNU C++ compiler (G++) user queries and answers.
+gnu.g++.lib.bug         g++ library bug reports/suggested fixes. (Moderated)
+gnu.gcc.announce        Announcements about the GNU C Compiler. (Moderated)
+gnu.gcc.bug             GNU C Compiler bug reports/suggested fixes. (Moderated)
+gnu.gcc.help            GNU C Compiler (gcc) user queries and answers.
+gnu.gdb.bug             gcc/g++ DeBugger bugs and suggested fixes. (Moderated)
+gnu.ghostscript.bug     GNU Ghostscript interpreter bugs. (Moderated)
+gnu.gnusenet.config     GNU's Not Usenet administration and configuration.
+gnu.gnusenet.test       GNU's Not Usenet alternative hierarchy testing.
+gnu.groff.bug           Bugs in the GNU roff programs. (Moderated)
+gnu.misc.discuss        Serious discussion about GNU and freed software.
+gnu.smalltalk.bug       Bugs in GNU Smalltalk. (Moderated)
+gnu.utils.bug           GNU utilities bugs (e.g., make, gawk. ls). (Moderated)
+
+hepnet
+------
+
+HEPnet is a collections of networks interconnecting high-energy and
+nuclear physics research sites.  The HEPnet netnews hierarchy was
+created to facilitate discussions in the HEP and NP communitites.  The
+hierarchy is is maintained by National HEPnet Management.  All groups
+are bi-directionally gatewayed to mailing lists and automatically
+archived.  Questions, requests for feeds, and group deletions/additions
+should be sent to netnews@hep.net (Internet), netnews@hepnet (BITNET),
+or hepnet::netnews (HEP-ES DECnet).
+
+hepnet.admin            Discussions among hepnet.* netnews administrators.
+hepnet.announce         Announcement of general interest.
+hepnet.conferences      High Energy Physics conference & workshops.
+hepnet.freehep          The freehep High Energy Physics archives.
+hepnet.general          General interest items for High Energy Physics.
+hepnet.hepix            The use of Unix for High Energy Physics work.
+hepnet.heplib           The HEPLIB High Energy Physics library.
+hepnet.jobs             High Energy Physics job announcements and discussions.
+hepnet.lang.c++         The use of C++ for High Energy Physics work.
+hepnet.test             Test postings in the hepnet.* distribution.
+hepnet.videoconf        Video conferencing High Energy Physics researchers.
+
+ieee
+----
+
+The IEEE newsgroups concern the IEEE -- the Institute of Electrical
+and Electronics Engineers.  The IEEE is willing to distribute these
+newsgroups via NNTP to any site that desires to carry them; contact
+usenet@ieee.org for details.
+
+ieee.announce           General Announcements for IEEE community.
+ieee.bbs.help           Help Discussion regarding IEEE Bulletin Boards.
+ieee.bbs.info           Info on IEEE Bulletin Boards.
+ieee.ces.audio-visual   Consumer Electronics Society - Digital Audio/Video.
+ieee.config             Postings about managing the ieee.* groups.
+ieee.eab.announce       Educational Activities - Announcements.
+ieee.eab.general        Educational Activities - General Discussion.
+ieee.general            IEEE - General discussion.
+ieee.pcnfs              Discussion & tips on PC-NFS.
+ieee.pcs.general        IEEE Professional Communication Society discussions.
+ieee.pub.announce       Publishing Activities - Announcements.
+ieee.pub.general        Publishing Activities - General Discussion.
+ieee.rab.announce       Regional Activities Board - Announcements.
+ieee.rab.general        Regional Activities Board - General discussion.
+ieee.region1            Region 1 Announcements.
+ieee.stds.announce      Standards Department - Announcements.
+ieee.stds.general       Standards Department - General Discussion.
+ieee.students           IEEE Student Activities.
+ieee.tab.announce       Technical Activities Board - Announcements.
+ieee.tab.general        Technical Activities Board - General discussion.
+ieee.tcos               The Technical Committee on Operating Systems. (Moderated)
+ieee.usab.announce      USAB - Announcements.
+ieee.usab.general       USAB - General discussion.
+
+inet/ddn
+--------
+
+Another alternative hierarchy is the "inet/ddn" distribution.  This
+consists of many newsgroups bearing names similar to traditional
+Usenet groups and corresponding to Internet discussion lists.  These
+groups are circulated using the NNTP transport mechanism amongst sites
+on the Internet in an attempt to reduce the number of copies of these
+groups flowing through the mail (some sites get these groups via UUCP
+and other transport mechanisms, but the volume can be substantial and
+load may be significant without a high-speed link).
+
+The ddn groups, ddn.mgt-bulletin and ddn.newsletter, are no longer
+valid.  According to nic@nic.ddn.mil (Page Carter), the US Department
+of Defense removed all non-*.mil addresses from the associated mailing
+lists for these groups.  A *.mil gateway will not be established
+because that again exposes the traffic to non-*.mil sites via news
+propagation.
+
+Erik Fair <fair@apple.com> led the creation of inet groups.
+
+comp.ai.edu             Applications of Artificial Intelligence to Education.
+comp.ai.vision          Artificial Intelligence Vision Research. (Moderated)
+comp.dcom.lans.hyperchannel     Hyperchannel networks within an IP network.
+comp.edu.composition    Writing instruction in computer-based classrooms.
+comp.lang.asm370        Programming in IBM System/370 Assembly Language.
+comp.lang.clu           The CLU language & related topics.
+comp.lang.forth.mac     The CSI MacForth programming environment.
+comp.lang.icon          Topics related to the ICON programming language.
+comp.lang.idl           IDL (Interface Description Language) related topics.
+comp.lang.lisp.franz    The Franz Lisp programming language.
+comp.lang.lisp.x        The XLISP language system.
+comp.lang.rexx          The REXX command language.
+comp.lang.scheme.c      The Scheme language environment.
+comp.lsi.cad            Electrical Computer Aided Design.
+comp.mail.multi-media   Multimedia Mail.
+comp.networks.noctools.announce Info and announcements about NOC tools. (Moderated)
+comp.networks.noctools.bugs     Bug reports and fixes for NOC tools.
+comp.networks.noctools.d        Discussion about NOC tools.
+comp.networks.noctools.submissions      New NOC tools submissions.
+comp.networks.noctools.tools    Descriptions of available NOC tools. (Moderated)
+comp.networks.noctools.wanted   Requests for NOC software.
+comp.org.isoc.interest  Discussion about the Internet Society.
+comp.os.aos             Topics related to Data General's AOS/VS.
+comp.os.cpm.amethyst    Discussion of Amethyst, CP/M-80 software package.
+comp.os.msdos.4dos      The 4DOS command processor for MS-DOS.
+comp.os.rsts            Topics related to the PDP-11 RSTS/E operating system.
+comp.os.v               The V distributed operating system from Stanford.
+comp.periphs.printers   Information on printers.
+comp.protocols.iso.dev-environ  The ISO Development Environment.
+comp.protocols.iso.x400 X400 mail protocol discussions.
+comp.protocols.iso.x400.gateway X400 mail gateway discussions. (Moderated)
+comp.protocols.pcnet    Topics related to PCNET (a personal computer network).
+comp.protocols.snmp     The Simple Network Management Protocol.
+comp.protocols.tcp-ip.domains   Topics related to Domain Style names.
+comp.protocols.time.ntp The network time protocol.
+comp.security.announce  Announcements from the CERT about security. (Moderated)
+comp.soft-sys.andrew    The Andrew system from CMU.
+comp.soft-sys.nextstep  The NeXTstep computing environment.
+comp.std.announce       Announcements about standards activities. (Moderated)
+comp.sys.cdc            Control Data Corporation Computers (e.g., Cybers).
+comp.sys.handhelds      Handheld computers and programmable calculators.
+comp.sys.intel.ipsc310  Anything related to the Intel 310.
+comp.sys.northstar      Northstar microcomputer users.
+comp.sys.super          Supercomputers.
+comp.sys.ti.explorer    The Texas Instruments Explorer.
+comp.sys.zenith         Heath terminals and related Zenith products.
+comp.terminals.bitgraph The BB&N BitGraph Terminal.
+comp.terminals.tty5620  AT&T Dot Mapped Display Terminals (5620 and BLIT).
+comp.theory             Theoretical Computer Science.
+comp.theory.cell-automata       Discussion of all aspects of cellular automata.
+comp.theory.dynamic-sys Ergodic Theory and Dynamical Systems.
+comp.theory.self-org-sys        Topics related to self-organization.
+comp.unix.cray          Cray computers and their operating systems.
+comp.unix.solaris       Discussions about the Solaris operating system.
+comp.windows.x.motif    The Motif GUI for the X Window System.
+rec.games.vectrex       The Vectrex game system.
+sci.bio.technology      Any topic relating to biotechnology.
+sci.math.num-analysis   Numerical Analysis.
+sci.philosophy.meta     Discussions within the scope of "MetaPhilosophy."
+soc.culture.esperanto   The neutral international language Esperanto.
+
+info
+----
+
+The "info" hierarchy is a collection of mailing lists gatewayed into
+news at the University of Illinois.  The lists are selected based on
+local interests but have proven popular at a number of sites.  Groups
+are removed when they become available via more mainstream
+hierarchies.  Sites are encouraged to mark *'ed groups as 'n' in their
+active file.  These groups are generally concerned with getting real
+work done and readers dislike extraneous postings.  Postings can still
+be made by emailing to the listed contact address.
+
+info.admin              Administrative messages regarding info.* groups (usenet@ux1.cso.uiuc.edu). (Moder
+ated)
+info.big-internet       *Issues facing a huge Internet (big-internet@munnari.oz.au). (Moderated)
+info.bind               *The Berkeley BIND server (bind@arpa.berkeley.edu). (Moderated)
+info.brl-cad            BRL's Solid Modeling CAD system (cad@arl.army.mil). (Moderated)
+info.bsdi.users         BSDI user forum (bsdi-users@bsdi.com). (Moderated)
+info.bytecounters       *NSstat network analysis program. (bytecounters@venera.isi.edu). (Moderated)
+info.firearms           Non-political firearms discussions (firearms@ns1.rutgers.edu). (Moderated)
+info.firearms.politics  Political firearms discussions (firearms-politics@ns1.rutgers.edu). (Moderated)
+info.gated              *Cornell's GATED program (gated-people@gated.cornell.edu). (Moderated)
+info.grass.programmer   GRASS geographic information system programmer issues (grassp-list @moon.cecer.ar
+my.mil). (Moderated)
+info.grass.user         GRASS geographic information system user issues (grassu-list@moon.cecer.army.mil)
+. (Moderated)
+info.ietf               *Internet Engineering Task Force (IETF) discussions (ietf@venera.isi.edu). (Moder
+ated)
+info.ietf.hosts         *IETF host requirements discussions (ietf-hosts@nnsc.nsf.net). (Moderated)
+info.ietf.isoc          *Internet Society discussions (isoc-interest@relay.sgi.com). (Moderated)
+info.ietf.njm           *Jo-MAAN - the Joint Monitoring Access between Adjacent Networks IETF working gro
+up (njm@merit.edu). (Moderated)
+info.ietf.smtp          *IETF SMTP extension discussions (ietf-smtp@dimacs.rutgers.edu). (Moderated)
+info.isode              *The ISO Development Environment package (isode@nic.ddn.mil). (Moderated)
+info.jethro-tull        Discussions about Jethro Tull's music (jtull@remus.rutgers.edu). (Moderated)
+info.labmgr             Computer lab managers list (labmgr@ukcc.uky.edu). (Moderated)
+info.mach               The Mach operating system (info-mach@cs.cmu.edu). (Moderated)
+info.mh.workers         *MH development discussions (mh-workers@ics.uci.edu). (Moderated)
+info.nets               Inter-network connectivity (info-nets@rg.net). (Moderated)
+info.nsf.grants         *NSF grant notes (grants@note.nsf.gov). (Moderated)
+info.nsfnet.cert        *Computer Emergency Response Team announcements (nsfnet-cert@merit.edu). (Moderat
+ed)
+info.nsfnet.status      NSFnet status reports. (Moderated)
+info.nupop              Northwestern University's POP for PCs (nupop@casbah.acns.nwu.edu). (Moderated)
+info.nysersnmp          *The SNMP software distributed by PSI (nysersnmp@nisc.nyser.net). (Moderated)
+info.ph                 Qi, ph, sendmail/phquery discussions (info-ph@postoffice.cso.uiuc.edu). (Moderate
+d)
+info.rfc                *Announcements of newly released RFCs (rfc-request@nic.ddn.mil). (Moderated)
+info.slug               Care and feeding of Symbolics Lisp machines (slug@iu.ai.sri.com). (Moderated)
+info.snmp               *SNMP (Simple Gateway/Network Monitoring Protocol) (snmp@psi.com). (Moderated)
+info.solbourne          Discussions & info about Solbourne computers (info-solbourne@acsu.buffalo.edu). (
+Moderated)
+info.sun-managers       *Sun-managers digest (sun-managers@rice.edu). (Moderated)
+info.sun-nets           *Sun-nets (nee Sun Spots) digest (sun-nets@umiacs.umd.edu). (Moderated)
+info.theorynt           Theory list (theorynt@vm1.nodak.edu). (Moderated)
+info.unix-sw            Software available for anonymous FTP (unix-sw-request@wsmr-simtel20.army.mil). (M
+oderated)
+info.wisenet            Women In Science and Engineering NETwork (wisenet@uicvm.uic.edu). (Moderated)
+
+k12
+---
+
+K12Net is a collection of conferences devoted to K-12 educational
+curriculum, language exchanges with native speakers, and
+classroom-to-classroom projects designed by teachers.  The
+conferences are privately distributed among FidoNet-compatible
+electronic bulletin board systems in Africa, Asia, Australia,
+Europe, and North America, as well as available from uunet.uu.net
+as Usenet newsgroups in the hierarchy k12.*
+
+Classroom-to-classroom projects are featured in the K12 "Channels"
+which are periodically reassigned based on usage and appropriate
+project length.  They comprise the k12.sys hierarchy.
+
+Forums for casual conversation among students are divided by grade
+level in the k12.chat hierarchy; there is also an area for teachers to
+exchange general ideas about using telecommunications in education.
+
+For more information, contact one of the members of
+the K12Net Council of Coordinators:
+
+Terry Bowden      <bowden@vnet.ibm.com>
+Robert Brault     <braultr@csmanoirs.qc.ca>
+Wolfgang Hofmeier <whofmeie@cln.etc.bc.ca>
+George Perkins    <ggperk01@homer.louisville.edu>
+Geoff Shearsby    <g.shearsby@edfac.usyd.edu.au>
+Les Turner        <lturner@uranus.esc.k12.in.us>
+Louis Van Geel    <elvege@cybcobe.cybco.be>
+
+Mr. Brault is currently the chairman of the council, so he is probably
+the best one to contact first.
+
+k12.chat.teacher        Casual conversation for teachers of grades K-12.
+k12.ed.art              Arts & crafts curricula in K-12 education.
+k12.ed.business         Business education curricula in grades K-12.
+k12.ed.comp.literacy    Teaching computer literacy in grades K-12.
+k12.ed.health-pe        Health and Physical Education curricula in grades K-12.
+k12.ed.life-skills      Home Economics, career education, and school counseling.
+k12.ed.math             Mathematics curriculum in K-12 education.
+k12.ed.music            Music and Performing Arts curriculum in K-12 education.
+k12.ed.science          Science curriculum in K-12 education.
+k12.ed.soc-studies      Social Studies and History curriculum in K-12 education.
+k12.ed.special          Educating students with handicaps and/or special needs.
+k12.ed.tag              K-12 education for gifted and talented students.
+k12.ed.tech             Industrial arts & vocational education in grades K-12.
+k12.lang.art            The art of teaching language skills in grades K-12.
+k12.lang.deutsch-eng    Bilingual German/English practice with native speakers.
+k12.lang.esp-eng        Bilingual Spanish/English practice with native speakers.
+k12.lang.francais       French practice with native speakers.
+k12.lang.japanese       Bilingual Japanese/English ith native speakers.
+k12.lang.russian        Bilingual Russian/English practice with native speakers.
+k12.library             Implementing info technologies in school libraries.
+k12.sys.channel0        Current projects.
+k12.sys.channel1        Current projects.
+k12.sys.channel10       Current projects.
+k12.sys.channel11       Current projects.
+k12.sys.channel12       Current projects.
+k12.sys.channel2        Current projects.
+k12.sys.channel3        Current projects.
+k12.sys.channel4        Current projects.
+k12.sys.channel5        Current projects.
+k12.sys.channel6        Current projects.
+k12.sys.channel7        Current projects.
+k12.sys.channel8        Current projects.
+k12.sys.channel9        Current projects.
+k12.sys.projects        Discussion of potential projects.
+

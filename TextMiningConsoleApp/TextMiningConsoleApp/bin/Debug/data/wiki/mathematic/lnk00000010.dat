@@ -1,0 +1,805 @@
+THE_URL:http://web.textfiles.com/computers/EDDYHAWK/cipher.txt
+THE_TITLE:cipher.txt
+EddyHawk's Info List
+---
+Eddyhawk's Cipher List
+---
+SECRET KEY:
+---
+-AES (Advanced Encryption Standard)
+ .initiated by NIST on 1997
+  -3rd public encryption standard
+  -to replace DES
+ .NIST asked public cryptography community for
+  specification, submission & evaluation
+ .5 candidates were selected on Round 1:
+  -TwoFish, Rijndael, Serpent, MARS, RC6
+ .requirement:
+  -128 bit data block
+  -no weak keys
+  -128, 192, 256 bit key
+  -suitable as stream cipher, hash function & MAC
+  -simple design
+  -publicly disclosed, royalty-free, worldwide
+
+-BLOWFISH
+ .by Bruce Schneier ('93)
+ .proposed as alternative to DES
+ .Feistel
+ .has weak keys
+ .16 round
+  -best attack: 4 round
+ .four 8x32 bit, 256 entries S-boxes
+  repeat its iteration to create S-boxes
+ .64-bit block size
+ .max 448 bit (56 byte) key length
+ .total subkeys 4168 byte
+ .operation: XOR & ADD
+ .unbroken after 1 year of cryptanalyst sponsored by Dr.Dobb's Journal
+ .public domain
+
+-CAST (CArlisle & STafford), CAST-128, CAST-256
+ .by Carlisle M. Adams & Stafford E. Tavares of Northern Telecom (Nortel)
+ .patented by Nortel, but available for anyone on royalty-free basis
+ .128 bit key
+ .64 bit data block
+ .Feistel
+ .designed to specifically resist all known attacks
+  -very conservative
+  -strongly believed to be immune against linear & differential cryptanalysis
+ .no (semi)weak keys
+ .used in PGP V5.0+/Philip Zimmerman in 64 bit CFB mode
+ .very fast (?)
+ .CAST-256 is
+  -based on CAST-128
+  -AES submission
+
+-COBRA
+ .by Christian Schneider ('96)
+ .Blowfish mutation + extending techniques
+ .128-bit data block
+ .24 round
+ .key size 32 byte
+ .used in Markus Hahn's BFA7 (shareware file crypter)
+
+-DES: Data Encryption Standard
+ .designer: Walt Tuchman, Carl Meyer et al/IBM ('70)/USA government
+ .chosen by NBS (now is NIST) as
+  USA (Federal?) goverment first encryption standard (1976)
+ .not for classified document
+ .most well-known & widely used encryption
+  -ciphers after DES following its design: Feistel network, S-boxes,
+   product cipher, etc: Khufu, BlowFish, etc
+ .for hardware implementation
+  -excellent on hardware
+  -the initial & final permutation is considered cryptographically useless
+   (needed to load to hardware registers?)
+  -slow on software (5 to 10 times)
+ .Feistel
+ .originally 128 bit key, reduced by NSA to 56 bit
+  the passphrase usually becomes the key
+ .64 bit block size
+ .16 round
+ .simple key schedule
+ .8 6x4 bit S-boxes, content changed by NSA
+  -content optimized against differential cryptanalysis
+  -differential cryptanalysis already found by IBM while creating DES &
+   Lucifer, but NSA classified their research
+ .vulnerable to
+  -wealthy enemy+brute force (key size is too short)
+  -differential cryptanalysis
+  -linear cryptanalysis
+   .best attack: 2^43 or 64 tera bytes ciphertext/plaintext under 1 key
+ .has weak keys
+ .not a group
+  crypt with 2 key <> crypt with 1 key
+ .variant: Triple-DES (3DES)
+  -the same data is processed by 3 keys:
+   .encrypt with 1st key
+   .decrypt with 2nd key
+   .encrypt with 3rd key (or 1st key)
+  -key length: 168 bit (or 112 bit)
+   there's an attack with 2^56 blocks memory that reduces effective key size
+    to 112 bit (or 55 bit)
+  -if 2 or 3 keys are the same, equal to crypt with only 1 key
+  -no patent
+ .export approval is almost impossible, even DES already spread overseas
+  but now is exportable due to new regulation & new standard (AES)?
+ .can be used in several officially defined modes:
+  -ECB: Electronic CodeBook
+   .crypt each 64-bit block of plaintext
+   .weakest mode
+  -CBC: Cipher Block Chaining
+   .each 64-bit plaintext block is XORed with the previous ciphertext block
+    before being crypted
+   .more secure than ECB, but not against differential cryptanalysis
+   .most widely used
+  -CFB: Cipher FeedBack (CFB-1, CFB-8?)
+   .can crypt block <= 64 bit
+   .previous ciphertext bit is also used to produce next ciphertext bit
+   .ciphertext error affects current & next ciphertext variables
+   .preferred
+  -OFB: Output FeedBack
+   .can crypt block <= 64 bit
+   .the input bit is also used to produce next ciphertext bit
+   .no chaining = vulnerable to certain attacks
+   .1 bit ciphertext error only affects 1 bit in plaintext
+  -PCBC: Propagating Cipher Block Chaining
+   .not official mode, used in Kerberos V4
+   .single bit error affect the rest of decrypted stream
+
+-DESX or DES-X
+ .by Ronald Rivest/RSA
+ .DES+whitening
+ .whitening is independently invented by Ronald Rivest
+ .used in RSA (?) MailSafe & BSafe encryption products
+ .RSA holds copyright on its own implementation
+
+-DESV
+ .by G. Carter, E. Dawson, L. Nielsen ('95)
+ .uses latin square
+
+-NewDES
+ .by R. Scott ('85)
+ .despite its name, it's neither DES variant nor new algorithm based on DES
+ .S-boxes is derived from Declaration of Independence -> weak
+
+-Biham-DES
+ .by Eli Biham?
+ .generate key-dependent S-boxes from known secure S-boxes & a series of
+   strict math rules
+
+-Ladder-DES
+
+-DES-80
+ .by Carlisle Adams
+
+-FEAL: Fast data Encipherment ALgorithm (FEAL-4)
+ .by A. Shimizu & S. Miyaguchi ('87)
+ .proposed as alternative of DES
+ .Feistel
+ .64 bit block
+ .128 bit key
+ .broken (by differential cryptanalysis?)
+  -updated version proposed
+ .variable number of iterations (2^x, x >= 5)
+ .FEAL-4: 20 chosen plaintext attack is exist
+ .FEAL-32: secure against differential & linear cryptanalysis
+
+-GOST (GOST 28147-89)
+ .by Soviet government
+ .similar to DES
+ .Feistel
+ .for software implementation
+ .variable/no S-boxes, maybe key-dependent
+  4x4 bit S-boxes
+  S-boxes content aren't defined -> each application defines its own
+ .32 bit word length & 64 bit block size
+ .max key size 32 byte (256 bit)
+ .32 rounds
+ .used by Robert K. Jung's ARJ archiver (in CFB mode)
+
+-IDEA: International Data Encryption Algorithm
+ .other name IPES
+ .successor of PES
+ .designers: Xuejia Lai & James L. Massey at ETH in Zurich ('90)
+ .patented by Ascom Systec, not available for anyone on royalty-free basis
+ .block-cipher
+ .SP-network
+ .design concept: mixing operations from different algebraic groups
+  -combine xor mod 216, add mod 216, mul mod 216+1
+ .resists attacks better than FEAL, REDOC-II, LOKI, Khafre, Snefru
+  immune to differential cryptanalysis
+ .oldest unbroken cipher after DES
+ .128 bit key
+ .8? round
+ .64-bit data block
+ .used in PGP/Phillip Zimmerman
+ .can use DES modes: CBC & CFB
+
+-KHAFRE
+ .by Ralph C. Merkle ('90)
+ .name taken from Pharoah
+ .to replace DES in software
+ .optimized for 32bit register microprocessor
+ .designed for bulk encryption of small data
+ .Khufu's little brother
+ .Feistel
+ .product cipher
+ .patented by Xerox
+ .fixed S-boxes
+  value taken from RAND tables, vulnerable to differential cryptanalysis
+ .whitening
+  XOR text block with key material at beginning & end of the algorithm
+  whitening is invented by Ralph C. Merkle
+ .differential cryptanalysis + a chosen-plaintext attack using:
+  -1500 different encryptions, can break 16 round
+  -2^53 different encryptions, can break 24 round
+
+-KHUFU
+ .by Ralph C. Merkle ('90)
+ .name taken from Pharoah
+ .to replace DES in software
+ .optimized for 32bit register microprocessor
+ .designed for fast bulk encryption of large data
+ .Khafre's big brother
+ .Feistel
+ .64 bit block cipher
+ .product cipher
+ .patented by Xerox
+ .variable number of iterations
+  -n*8 round, n=1..8
+  -8 round can be broken by several attacks
+  -best attack: 16 round
+ .256-entry 32 bit wide key-dependent S-boxes
+  -constructed specifically to avoid identical entries
+  -immune to differential cryptanalysis
+ .whitening
+  XOR text block with key material at beginning & end of the algorithm
+  whitening is invented by Ralph C. Merkle
+ .hashed key -> large number of subkeys
+ .unbroken
+
+-LOKI (LOKI89, LOKI91, LOKI93, LOKI97)
+ .by L. Brown, J. Pieprzyk, J. Seberry ('89)
+ .Feistel
+ .64 bit block
+ .64 bit key
+ .16 round
+ .LOKI97
+  by L. Brown ('98)
+  is AES submission
+
+-LUCIFER
+ .by Horst Feistel/IBM (1973), who also invented Feistel network
+ .Feistel
+  -basis of next ciphers:
+   FEAL, Khufu, Khafre, GOST, LOKI, CAST-128, Blowfish, RC5
+ .128 bit block
+ .128 bit key
+  -flat keyspace (also followed by next ciphers)
+ .16 round
+ .2 S-boxes
+  LUCIFER is the 1st cipher to use S-boxes
+
+-MARS:
+ .by IBM
+ .1 of 5 AES finalists
+ .heterogeneous structure
+ .16 core round
+  -amplified boomerang attack  breaks 11 round
+ .32 (full?/mixing?) round
+ .key size up to 1248 bit
+  -but with some equivalent keys
+
+-MMB
+ .by John Daemen, R. Govaerts, J. Vande? ('94)
+ .32 bit word length, 128 bit block size
+ .combine xor mod 232 & mul mod 232-1
+
+-PES
+ .predecessor of IDEA
+ .product cipher
+ .64 bit block
+ .128 bit key
+ .8 round
+
+-RC: Ronald/Rivest Crypt? (RC2, RC4, RC4-128, RC5, RC6)
+ .designer: Ronald L. Rivest/RSA
+ .variable key size
+ .RC2
+  2x faster than DES in software
+  is designed for 16bit microprocessor
+ .RC4 [1987]
+  stream cipher
+  10x or more faster than DES in software
+  encrypts per byte (1 mb/sec on 33mhz)
+  transforms pass phrase into 256 byte internal state or
+   permutation vector contains 0..255
+ .simplified export approval if the key size limited to 40 bit
+  used in NetScape SSL
+ .proprietary (by RSA)
+  -but disassembling of RC2 & RC4 (Alleged) are published on sci.crypt
+ .RC5 [1994/1995]
+  1 round = 2 Feistel round
+  data-dependent rotation
+  56 bit key broken by brute-force attack
+  variable number of rounds
+ .RC6 is 1 of 5 AES finalists
+  -fast in software, slow in hardware
+  -algorithm is simple enough to memorize
+  -no S-boxes
+   data dependent rotation
+  -20 round
+   .some people recommends 34 round
+   .statistical attack on data-dependent rotation breaks 15-17 round
+  -max key size is 1248 bit
+   .but with some equivalent keys
+  -key size, block size, round are fully parameterized
+
+-REDOC II
+ .by T. Cusick & M.C. Woods ('90)
+ .patented
+ .randomly created S-boxes
+ .unbroken
+
+-REDOC III
+ .256 entry, 32 bit wide S-box
+
+-SAFER (SAFER K-64, SAFER+)
+ .by James L. Massey?
+ .SP-network
+ .first to use PHT?
+ .MDS matrices + extensive 8-bit PHT for diffusion
+ .SAFER K-64
+  -byte-oriented block cipher
+  -variable number of rounds
+ .SAFER+ is AES submission
+
+-SEAL (Software-optimized Encryption Algorithm)
+ .by P. Rodaway & D. Coppersmith ('94)
+ .patented by IBM
+ .stream cipher
+ .designed to be efficient on 32bit microprocessor
+  5 machine instructions per byte
+ .uses SHA to create key-dependent S-boxes (3kb)
+
+-S-1
+ .early version of Skipjack or another military cipher?
+ .key schedule is seriously flawed
+ .posted on sci.crypt around 9 Aug 1995
+
+-SKIPJACK
+ .USA government 2nd encryption standard
+ .by NSA
+  -the 1st NSA algorithm ever seen
+ .part of Capstone Project/Clipper Chip
+ .80 bit key length
+ .64 bit block size
+ .32 round
+  -31 round broken by impossible cryptanalysis
+ .2x faster than DES in 32bit processor
+ .fast on smartcard & efficient in hardware
+ .no key setup time
+ .classified
+  -hi-risk of compromise (NSA is suspected not seriously design it)
+ .only available in government-authorized hardware manufacturers
+  -the hardware is called Fortezza (PCMCIA card & reader)
+   used in classified DMS (Defense Messaging System)
+   .incapable to supply enough Fortezza, Skipjack is declassified in 1998
+ .unbalanced Feistel network
+ .simple, no weird constant
+ .small modification can break it
+
+-SP networks
+ .product cipher
+ .variant of Feistel network
+  uniform transformation structures
+
+-OTP (One Time Pad)
+ .proposed by Gilbert Vernam at AT&T (1935)
+ .the only proven unbreakable encryption
+  -analyzed by Shannon
+  -no statistical attack able to extract plaintext from (plaintext xor pad)
+   if the pad is truly random
+ .the key called pad, must be truly random numbers at equal length with the
+  plaintext, and only for one plaintext
+  -hence the name: one time pad = key that only used once
+  -if not truly random, reduce the security to near 0%
+  -true random numbers can be obtained by feeding cosmic background
+   radiation through strong one-way hash function (example: MD5)
+ .pad sent via secure channel (example: face to face on floppy disk)
+ .pad used by xor each bit of pad with each bit of (plain/cipher)text
+ .after used, pad must be destroyed
+ .lose its security if pads used more than one (can't be re-used)
+
+-TSS
+ .block cipher?
+
+-TWOFISH
+ .by Bruce Schneier, Doug Whiting, John Kelsey, Chris Hall, David Wagner ('98)
+ .1 of 5 AES finalists
+ .based on Blowfish
+ .key-dependent S-boxes
+ .accept any key up to 256 bit
+ .1 bit rotation
+ .Feistel
+ .non-algebraic representation
+ .MDS matrix & 32 bit PHT (Pseudo-Hadamard Transform) are used for diffusion
+ .fast in hardware & software
+ .security/performance trade-off modes
+ .16 round
+  -best attack: 6 round
+
+-RIJNDAEL
+ .by John Daemen & Vincent Rijment
+ .based on SQUARE cipher
+ .1 of 5 AES finalists
+ .fast in hardware & software
+  -can take advantage of PII's MMX instruction set
+ .straightforward design & conservative choice
+ .non-linear S-boxes
+ .10/12/14 round for 128/192/256 bit key
+  -best attack: 7 round
+  -some people recommends 18 round
+
+-WAKE:
+ .stream cipher
+ .by D. Wheeler ('94)
+ .S-boxes are constructed specifically to avoid identical entries
+ .key-dependent S-boxes
+
+-TEA: Tiny Encryption Algorithm
+ .by D. Wheeler & R. Needham
+ .no cryptanalysis published, except for key schedule
+
+-VINO:
+ .by A. Di Porto & W. Wolfowicz
+ .no cryptanalysis published
+
+-Akelarre:
+ .by G. Alvarez, D. De la Guia, F. Montoya, A. Peinado ('96)
+ .block cipher
+ .severely broken
+
+-Serpent:
+ .by Ross Anderson, Eli Biham, Lars Knudsen ('98)
+ .1 of 5 AES finalists
+  -highest security margin
+ .fast in hardware, slow in software
+ .32 rounds
+  authors doubles rounds than they think is secure
+  -amplified boomerang attack breaks 9 round
+ .straightforward design & very conservative choice
+ .uses DES S-boxes
+
+-BEAR & LION
+ .by Ross Anderson & Eli Biham ('96)
+ .block cipher
+ .unbalanced Feistel
+
+-MacGuffin
+ .by M. Blaze & Bruce Schneier
+ .unbalanced Feistel
+
+-PANAMA
+ .by John Daemen & C. Clapp
+ .stream cipher?
+
+-SQUARE
+ .by John Daemen, Lars Knudsen, Vincent Rijmen ('97)
+ .first to use MDS matrices?
+ .PHTs
+ .single fixed S-box
+ .inspires next ciphers like TwoFish & Rijndael
+
+-3-WAY
+ .block cipher
+
+-ICE
+ .by M. Kwan
+
+-MISTY
+ .by M. Matsui ('97)
+ .designed to specifically resist all known attacks
+
+-SNAKE
+ .by C.-H. Lee & Y.-T. Cha ('97)
+ .Feistel
+ .provably secure against differential & linear cryptanalysis
+ .successfully broken under interpolation attack
+
+-SHARK
+ .by Vincent Rijmen, B. Preneel, A. Bosselaers, E. DeWin
+ .SP-network
+ .MDS matrices
+
+-CS-Cipher
+ .by J. Stern & S. Vaudenay ('98)
+
+-SPEED
+ .by Yulian Zheng ('97)
+ .variable number of rounds
+ .slower than previous existing ciphers
+
+-Manta
+ .block cipher
+ .unpublished
+ .large block size
+ .SP-like network
+ .DES as S-boxes, MDS matrices for permutation
+
+-CRISP
+ .by M. Leech ('96)
+ .Feistel
+
+-SOBER
+ .by G. Rose ('98)
+ .stream cipher
+ .designed for 8bit microprocessor
+
+-Zhu-Guo
+ .by F. Zhu & B. A. Guo ('97)
+ .slower than previous existing ciphers
+
+-Travois
+ .by G. Yuval ('97)
+
+-S-WAY
+
+-TIGER
+ .by Ross Anderson & Eli Biham
+ .8x64 bit S-boxes
+
+-TWOPRIME
+ .by C. Ding, V. Niemi, A. Renvall, A. Salomaa ('97)
+ .block cipher
+
+-DIAMOND
+ .by Michael Paul Johnson
+ .block cipher
+
+-SAPPHIRE (SAPPHIRE II)
+ .by Michael Paul Johson
+ .stream cipher
+ .similar with RC4
+  -permutation vector contains 0..255 being shuffled
+
+-RUBY
+ .by Michael Paul Johnson/ExaByte
+
+-A5
+ .GSM encryption algorithm
+ .stream cipher
+ .effective key length = 5 bytes
+---
+PUBLIC KEY:
+---
+invented by Whitfield Diffie & Martin E. Hellman
+independently? invented by Ralph C. Merkle
+GCHQ, British-NSA like claimed to find public-key cryptography before
+ America, but kept the discovery secret:
+ -Clifford Cook (a British spook) published (essentially) RSA in 1973
+ -M.J. Williamson invented (remarkably similar to) Diffie-Hellman in 1974
+NSA sometimes claimed to find public-key cryptography before learning it
+ from British or press
+
+-Diffie-Hellman ('70)
+ .by Whitfield Diffie & Martin E. Hellman
+ .discrete logarithm problem
+ .requires dynamic key exchange for every sender-receiver pair
+  -A's public key is combined with B's secret key to produce a session key to
+   encrypt plaintext
+   The ciphertext can only be decrypted by the sesssion key of
+   B's public key & A's secret key
+
+-KEA (Key Exchange Algorithm)
+ .by NSA
+ .part of Capstone Project/Clipper Chip
+ .classified
+  -incapable to supply enough Fortezza, it's declassified on 1998
+ .straightforward design
+ .enhanced Diffie-Hellman
+  -(longterm/onetime) (public/secret) keys -> 4 keys for each party
+  -A's longterm secret key is combined with B's onetime public key
+   A's onetime secret key is combined with B's longterm public key
+  -each session creates 2 unique (combinations & keys)
+  -2 Diffie-Hellman-generated keys (2 x 80 bits) are hashed to single 80 bits
+   which becomes the key
+
+-Knapsack
+ .easy to perform, hard to invert
+
+-ElGamal
+ .by T. ElGamal
+ .discrete logarithm problem
+
+-Elliptic Curve Discrete Logarithm Problem
+ .believed to be as secure as RSA with smaller key size
+ .all analysis on discrete logarithm problem also applied to it
+
+-Rabin-Williams
+ .integer factorization problem
+
+-RSA: (Ronald L.) Rivest, (Adi) Shamir, (Leonard) Adleman
+ .developed at MIT, funded by US federal
+ .integer factorization problem
+ .Rivest: sometimes being used by US government to protect its nuclear weapon
+ .cryptanalyzed without success since 1978
+ .requires trusted authority to certificate public key
+ .verifying is faster than signing
+ .used in PGP/Phillip Zimmerman (at least to 2.63?)
+ .various attacks has been found
+  -side channel/timing attack: private key can be recovered by measuring
+   the relative times cryptographic operations took (1995)
+  -implementation attack: on PKCSI #1
+  -adaptive chosen plaintext/reaction attack
+   .by Daniel Bleichenbacher/Bell Labs
+   .can recover a message from 300,000 - 2M related (reaction) messages
+    -doesn't recover the key
+    -to read another message, require another 300,000 - 2M related messages
+
+-Cramer-Shoup
+ .by IBM
+ .provable resistance to adaptive chosen ciphertext attack
+  -but the proof is based on Diffie-Hellman Decision Problem, which is
+   much weaker
+ .ciphertext is 4x plaintext
+ .2x slower than ElGamal
+
+-Master-Key Cryptosystems
+ .by M. Blaze, J. Feigenbaum, F. T. Leighton ('96)
+---
+MAC (Message Authentication Code) or
+ MDC (Manipulation Detection Code) or
+ MD (Message Digest) or
+ Strong One-Way Hash Function
+---
+-Davies-Meyer tandem?
+ .use block cipher as hash function
+
+-HAVAL
+ .by Yuliang Zheng ('92)
+ .larger hash length than SHA
+ .variable length of output
+
+-MAC: Message Authentication Code
+ .hash calculated from a block of data & a secret key
+
+-MD: Message Digest (MD2, MD4, MD5, MD5a)
+ .designer: Ronald L. Rivest/RSA
+ .128 bit hash length
+ .MD4: 1991
+ .MD5: 1992
+  is broken by Hans Dobbertin, a German cryptographer (1996)
+  not completely broken, but serious weaknesses are discovered
+
+-MDC: Manipulation Detection Code (MDC-1, MDC-2, MDC-4)
+ .by Robert R. Jueneman (?)/IBM ('86?)
+
+-RIPEMD
+ .used in RIPEM?
+ .RIPEMD-160
+  -by H. Dobbertin, A. Bosselaers, B. Preneel
+  -modified MD for larger hash length?
+
+-SHA: Secure Hash Algorithm (SHA-0, SHA-1, SHA-2)
+ .USA goverment standard
+ .part of Capstone Project/Clipper Chip
+ .designed by NSA for NIST ('93)
+  -extremely well-designed
+  -has design innovations that overcome message digest observed weaknesses
+ .160 bit hash length
+
+-SNEFRU/Xerox Secure Hash Function (Snefru-8?)
+ .by Ralph C. Merkle ('90)
+ .name taken from Pharoah
+ .used by Xerox?
+ .public domain
+ .Ralph Lemke offering $1000 to anyone who can break Snefru-4?
+ .Snefru-4: vulnerable to differential cryptanalysis
+ .Snefru-8: 8 round
+ .hash > 16 byte
+ .2 parameter: number of iterations & hash size
+---
+DIGITAL SIGNATURE:
+---
+-DSA: Digital Signature Algorithm
+ .USA government standard ('94)
+ .discrete logarithm problem
+ .based on cryptosystem proposed by C. P. Schnorr's modification of ElGamal
+  work
+ .no key exchange
+ .verifying is slower than signing
+
+-Lucas function?
+---
+???:
+---
+-A5
+-FISH
+-N-hash
+-Purdy Hash
+-RIPE-MAC1
+-RIPE-MAC3
+-Atjai-Dwork
+ .by IBM
+ .provably secure
+ .3 breaks (which attack the assumption, not the proof)
+-Kerberos
+ .secret-key authentication protocol
+ .uses PCBC mode
+ .requires frequent random numbers to challenge user
+ .implemented in Windows2000
+-GCHQ
+ .British NSA-like
+---
+OLD ENCRYPTION
+---
+Atbash
+ simple substitution cipher over Hebrew alphabet thousand years ago
+WWII crypto devices:
+ Sigaba
+ Russian Espionage Cipher
+ German Enigma (rotor?) machine & Japan Purple (machine?)
+  cracked by Allies during World War 2 & sold to third world countries
+  while keeping the break classified
+---
+BOOKS
+---
+The Codebreakers: best book of cryptology history
+ David Khan
+---
+FAMOUS QUOTATIONS
+---
+-A secure cryptosystem must have several properties
+ (ex: long enough key, random-like output)
+ but having those properties doesn't mean that the cryptosystem is secure
+-A chain is only as strong as its weakest link
+-compromise
+-block-cipher: crypt per block of data (64/128 bit/etc)
+-product-cipher: crypt is iterates weak operations
+-Feistel: product-cipher that swaps halves of ciphertext each round
+-symmetric: secret-key
+-asymmetric: public-key
+-s-boxes: substitution boxes
+---
+ATTACK
+---
+-Key
+ .Known Plaintext
+ .Chosen Plaintext
+ .Adaptive Chosen Plaintext (Differential Cryptanalysis)
+  by Eli Biham & Adi Shamir, 2 Israeli cryptographers (1990)
+  -Conditional Differential
+   by Ben Aroya & Eli Biham
+  -Impossible Differential
+   by Eli Biham & Adi Shamir (1998?)
+  -Higher Order Differential
+   by X. Lai
+  -Truncated Differential
+   by Lars R. Knudsen
+ .Linear
+  by M. Matsui
+  -Multiple Appromixations
+ .Differential-Linear
+  by S. Langford & M. Hellman
+-Plaintext
+ .CipherText Only
+
+-Birthday attack
+-Boomerang
+ .Amplified
+-Interpolation
+ by T. Jakobsen & L. Knudsen
+-Mod n
+-Related Key
+ -Rotational Related Key
+ -Differential Related Key
+-Slide
+-Side Channel
+ attacks on other than algorithm's input/output
+ .Timing
+ .Power Consumption
+  Differential Power
+ .Radiation
+ .NMR scanning
+ .Electronic emanations (TEMPEST)
+-Fault
+-Partitioning
+ by C. Harpes & J. Massey ('97)
+---
+Advice:
+---
+-longer key size than designed is worthless because:
+ .it isn't designed that way
+  the designer doesn't take account of longer key
+ .maybe must change the algorithm, which will be insecure
+ .if the cipher is broken by design, 1 million bit key wouldn't protect
+  the plaintext anymore, while it already wasting time & space & power for
+  each key initialization & encrypt/decrypt process
+-you should only put crypt elements to your cipher which is proved to be
+ hard/impossible to break, instead of scrambling it too much further or
+ excessively more complex until it blurred you to trace it anymore & then
+ believe it to be secure
+

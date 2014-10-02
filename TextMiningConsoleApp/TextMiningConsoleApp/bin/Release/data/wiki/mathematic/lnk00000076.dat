@@ -1,0 +1,142 @@
+THE_URL:http://web.textfiles.com/computers/beeps.txt
+THE_TITLE:beeps.txt
+BIOS POST Tone Error Codes
+
+What is all that beep, beep, supposed to mean?
+Last modified:
+
+ADVERTISE on COMPUTERCRAFT!
+
+LET US HELP YOU SELL YOUR COMPUTER RELATED ITEMS!
+E-mail aolsz@computercraft.com for more information
+
+This material is presented only as a description of how I go about working
+on a system. It is not meant to encourage unqualified personnel to attempt
+computer repair. In any event, you assume all responsibility and liability
+for injury or damage. This material may be reprinted by any non-commercial
+entities. Full credit must be given to the author. The authors name,
+address, e-mail address, phone numbers, web site, AND THIS NOTICE must
+appear with any distributions. The document may not be edited, condensed,
+annotated, or modified in any way. Any translations must state that fact
+and the translators name must be listed. COPYRIGHT 1996
+
+Anthony Olszewski
+470 Grand St.
+Jersey City, NJ 07302
+201-795-0909
+201-946-1178
+aolsz@computercraft.com
+COMPUTERCRAFT Web page:
+http://www.computercraft.com
+
+  AMI BIOS Tone POST Codes - Fatal Errors
+
+   TONE              CONDITION
+ 1 short  DRAM refresh
+ 2 short  Parity circuit
+ 3 short  Base 64K RAM
+ 4 short  System timer
+ 5 short  Processor
+ 6 short  Keyboard controller gate A20
+ 7 short  Virtual mode exception
+ 8 short  Display memory read/write test
+ 9 short  ROM BIOS checksum
+ 10 short CMOS shutdown read/write
+ 11 short Cache memory
+
+  AMI BIOS Tone POST Codes - Non-Fatal Errors
+
+      TONE                 CONDITION
+ 1 long, 3 short Conventional/extended memory
+ 1 long, 8 short Display/retrace test
+
+     Phoenix BIOS Tone POST Codes - Fatal Errors
+
+ TONE                   CONDITION
+ None  CPU register test
+ None  First 64K RAM test
+ None  Interrupt vector loading proceeding
+ None  CMOS power failure/checksum calculation
+ None  Display configuration validation proceeding
+ None  Display running with video ROM
+ None  Display functional
+ None  Mononchrome display functional
+ None  CGA display functional
+ 1-1-3 CMOS write/read
+ 1-1-4 ROM BIOS checksum
+ 1-2-1 Programmable interval timer
+ 1-2-2 DMA Initialization
+ 1-2-3 DMA page register write/read
+ 1-3-1 RAM refresh verification
+ 1-3-3 First 64K RAM chip or data line
+ 1-3-4 First 64K RAM odd/even logic
+ 1-4-1 Address line first 64K RAM
+ 1-4-2 Parity failure first 64K RAM
+ 2-1-1 Bit 0, first 64K RAM
+ 2-1-2 Bit 1, first 64K RAM
+ 2-1-3 Bit 2, first 64K RAM
+ 2-1-4 Bit 3, first 64K RAM
+ 2-2-1 Bit 4, first 64K RAM
+ 2-2-2 Bit 5, first 64K RAM
+ 2-2-3 Bit 6, first 64K RAM
+ 2-2-4 Bit 7, first 64K RAM
+ 2-3-1 Bit 8, first 64K RAM
+ 2-3-2 Bit 9, first 64K RAM
+ 2-3-3 Bit 10, first 64K RAM
+ 2-3-4 Bit 11, first 64K RAM
+ 2-4-1 Bit 12, first 64K RAM
+ 2-4-2 Bit 13, first 64K RAM
+ 2-4-3 Bit 14, first 64K RAM
+ 2-4-4 Bit 15, first 64K RAM
+ 3-1-1 Slave DMA register
+ 3-1-2 Master DMA register
+ 3-1-3 Master interrupt mask register
+ 3-1-4 Slave interrupt mask register
+ 3-2-4 Keyboard controller
+ 3-3-4 Display initialization
+ 3-4-1 Display retrace
+ 3-4-2 Search for video ROM proceeding
+
+    Phoenix BIOS POST Tone Codes - Non-Fatal
+                     Errors
+
+  TONE                CONDITION
+ 4-2-1  Timer tick interrupt test
+ 4-2-2  Shutdown test
+ 4-2-3  Gate A20 Failure
+ 4-2-4  Unexpected interrupt in protected moe
+ 4-3-1  RAM test (address failure >FFFFh)
+ 4-3-3  Interval timer channel 2
+ 4-3-4  Real time clock
+ 4-4-1  Serial Port
+ 4-4-2  Parallel Port
+ 4-4-3  Math Co-processor test
+ 1-1-2* System board select
+ 1-1-3* Extender CMOS RAM
+*audio code pattern preceded by low pitched tone
+
+             IBM POST Tone Codes
+
+      TONE                CONDITION
+ NONE            System board, power supply
+ 1 short         System passed all tests
+ 2 short         Display error
+ continuous      System board, power supply
+ 1 long, 1 short System board
+ 1 long, 2 short Video adapter
+ 1 long, 3 short EGA
+ 3 long          3270 keyboard card
+Return to COMPUTERCRAFT main menu
+
+METRO COMPUTER REPAIR
+470 GRAND STREET, JERSEY CITY, NJ 07303
+Near NJ TURNPIKE EXIT 14C (GRAND - MONTGOMERY)
+About 5 blocks from the GROVE STREET PATH subway station
+201-946-1178 or 201-795-0909
+
+Apartment for rent - Jersey City
+Duplex 3br, 2 bath, Laundry room
+$1085 (includes heat & hot water)
+201-946-1178 or 201-795-0909
+or e-mail aolsz@computercraft.com
+

@@ -1,0 +1,356 @@
+THE_URL:http://web.textfiles.com/computers/axm_tut2.txt
+THE_TITLE:axm_tut2.txt
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::: AxMan Cracking Tutorial - Part Two ::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::           A Key Generator          ::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::              by Vizion             ::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Hi! After reading bulll's first tutorial on AxMan, I downloaded AxMan. Why? Dunno! Just wanted to take a
+look at the target. I followed his tutorial and was able to crack the babe - *CHEER* - after tracing and
+studying the code a bit more I came up with the next idea : a Key Generator!
+
+Ok, I used the following tools : SoftIce 3.01, W32Dasm 8.9, Notepad (word wrap on) - and my brain ;).
+
+For all who don't like code snippets in there tutorials - my apologies right now - cause the following te
+xt contains quite a lot of it. Another thing, due to all the code we have to trace to get to the complete
+ "create_good_serial" construction I won't explain the code in detail, I'll just explain it where I think
+ it's necessary and I tell you what the result is of the code.
+
+So let's get to work! Load the target, and load SoftIce (SI). Press "Agree_and_Register" button.
+Fill out the 3 information fields, I used the following information,
+
+Name    : Vizion
+Company : MeX/C4N
+Serial  : 12121212
+
+Get in SI and set a breakpoint on GetDlgItem, get out SI. Press "Ok" button.
+This should bring you back in SI, press F11 and you should see the following piece of code (*),
+
+* Reference To: USER32.GetDlgItem, Ord:00F3h
+                                  |
+:0040246A 8B3D6C144200            mov edi, dword ptr [0042146C]        <--- load GetDlgItem in edi
+:00402470 8D8518FFFFFF            lea eax, dword ptr [ebp+FFFFFF18]
+:00402476 50                      push eax
+:00402477 6A64                    push 00000064
+:00402479 6A0D                    push 0000000D
+:0040247B 6813040000              push 00000413
+:00402480 53                      push ebx
+:00402481 FFD7                    call edi                             <--- read user name
+
+* Reference To: USER32.SendMessageA, Ord:01DAh
+                                  |
+:00402483 8B3568144200            mov esi, dword ptr [00421468]        <--- you should be here (*)
+:00402489 50                      push eax
+:0040248A FFD6                    call esi
+:0040248C 8D4580                  lea eax, dword ptr [ebp-80]
+:0040248F 50                      push eax
+:00402490 6A64                    push 00000064
+:00402492 6A0D                    push 0000000D
+:00402494 680F040000              push 0000040F
+:00402499 53                      push ebx
+:0040249A FFD7                    call edi                             <--- read company name
+:0040249C 50                      push eax
+:0040249D FFD6                    call esi
+:0040249F 8D45E8                  lea eax, dword ptr [ebp-18]
+:004024A2 50                      push eax
+:004024A3 6A14                    push 00000014
+:004024A5 6A0D                    push 0000000D
+:004024A7 6814040000              push 00000414
+:004024AC 53                      push ebx
+:004024AD FFD7                    call edi                             <--- read serial number
+:004024AF 50                      push eax
+:004024B0 FFD6                    call esi
+:004024B2 8D45E8                  lea eax, dword ptr [ebp-18]          <--- addr : entered serial
+:004024B5 50                      push eax
+:004024B6 8D4580                  lea eax, dword ptr [ebp-80]          <--- addr : company
+:004024B9 50                      push eax
+:004024BA 8D8518FFFFFF            lea eax, dword ptr [ebp+FFFFFF18]    <--- addr : name
+:004024C0 50                      push eax
+:004024C1 E886000000              call 0040254C                        <--- here_it_happens
+:004024C6 83C40C                  add esp, 0000000C
+:004024C9 85C0                    test eax, eax                        <--- is entered serial ok
+:004024CB 7D15                    jge 004024E2                         <--- yes? jmp_good_buyer
+:004024CD 6A30                    push 00000030
+
+...
+
+I suggest, that you check the lines at 004024B2, 004024B6 and 004024BA in SI, just use "db eax". You shou
+ld see the information you entered. So if you like to crack/patch this target I suggest you read the tuto
+rial by bulll. Let's take a look at the call to 400254C (trace this call in SI),
+
+* Referenced by a CALL at Address:
+|:004024C1
+|
+:0040254C 55                      push ebp
+:0040254D 8BEC                    mov ebp, esp
+:0040254F 83EC18                  sub esp, 00000018
+:00402552 8D45E8                  lea eax, dword ptr [ebp-18]
+:00402555 50                      push eax
+:00402556 FF750C                  push [ebp+0C]
+:00402559 FF7508                  push [ebp+08]
+:0040255C E8D7020000              call 00402838                        <--- calculate_good_serial
+:00402561 83C40C                  add esp, 0000000C
+:00402564 8D45E8                  lea eax, dword ptr [ebp-18]
+:00402567 FF7510                  push [ebp+10]
+:0040256A 50                      push eax
+:0040256B E8605F0000              call 004084D0                        <--- compare_entered_good_serial
+:00402570 59                      pop ecx
+:00402571 F7D8                    neg eax
+:00402573 59                      pop ecx
+:00402574 1BC0                    sbb eax, eax
+:00402576 C9                      leave
+:00402577 C3                      ret
+
+...
+
+What you want me to explain on the above code - get in "calculate_good_serial" call - we should see the f
+ollowing code,
+
+* Referenced by a CALL at Addresses:
+|:0040255C   , :004026F6
+|
+:00402838 55                      push ebp
+:00402839 8BEC                    mov ebp, esp
+:0040283B 81ECEC000000            sub esp, 000000EC
+:00402841 56                      push esi
+:00402842 57                      push edi
+:00402843 FF7508                  push [ebp+08]
+:0040255C E8D7020000              call 00402838
+:00402846 8D8514FFFFFF            lea eax, dword ptr [ebp+FFFFFF14]
+:0040284C 50                      push eax
+:0040284D E87E5D0000              call 004085D0                        <--- (1)
+:00402852 59                      pop ecx
+:00402853 8D8514FFFFFF            lea eax, dword ptr [ebp+FFFFFF14]
+:00402859 59                      pop ecx
+:0040285A FF750C                  push [ebp+0C]
+:0040285D 50                      push eax
+:0040285E E87D5D0000              call 004085E0                        <--- (2)
+:00402863 59                      pop ecx
+:00402864 8D8514FFFFFF            lea eax, dword ptr [ebp+FFFFFF14]
+:0040286A 59                      pop ecx
+
+* Possible StringData Ref from Data Obj ->"SweetHeart"                 <--- sweet_str
+|
+:0040286B 68147C4100              push 00417C14
+:00402870 50                      push eax
+:00402871 E86A5D0000              call 004085E0                        <--- (3)
+:00402876 59                      pop ecx
+:00402877 8D4508                  lea eax, dword ptr [ebp+08]
+:0040287A 59                      pop ecx
+:0040287B 50                      push eax
+:0040287C 8D8514FFFFFF            lea eax, dword ptr [ebp+FFFFFF14]
+:00402882 50                      push eax
+:00402883 E8A8590000              call 00408230                         <--- (4)
+:00402888 59                      pop ecx
+:00402889 8D45E8                  lea eax, dword ptr [ebp-18]
+:0040288C 59                      pop ecx
+:0040288D FF7508                  push [ebp+08]
+
+...
+
+Ok, after calls (1), (2) and (3) we've got the following string in memory : VizionMeX/C4NSweetHeart - you
+ should be able to recognize the following parts : <name><company><sweet_str>. Call (4) will calculate th
+e serial from the string mentioned above, so lets take a look at call (4),
+
+* Referenced by a CALL at Address:
+|:00402883
+|
+:00408230 8B542404                mov edx, dword ptr [esp+04]
+:00408234 56                      push esi
+:00408235 33F6                    xor esi, esi                         <--- esi = 0
+:00408237 803A00                  cmp byte ptr [edx], 00
+:0040823A 7423                    je 0040825F
+
+* Referenced by a (U)nconditional or (C)onditional Jump at Address:
+|:0040825D(C)
+|
+:0040823C C1E604                  shl esi, 04                          <--- start creating serial
+:0040823F 42                      inc edx
+:00408240 0FBE42FF                movsx eax, byte ptr [edx-01]
+:00408244 03F0                    add esi, eax
+:00408246 8BC6                    mov eax, esi
+:00408248 25000000F0              and eax, F0000000
+:0040824D 7407                    je 00408256
+:0040824F 8BC8                    mov ecx, eax
+:00408251 C1E918                  shr ecx, 18
+:00408254 33F1                    xor esi, ecx
+
+* Referenced by a (U)nconditional or (C)onditional Jump at Address:
+|:0040824D(C)
+|
+:00408256 F7D0                    not eax
+:00408258 23F0                    and esi, eax
+:0040825A 803A00                  cmp byte ptr [edx], 00               <--- end of string?
+:0040825D 75DD                    jne 0040823C                         <--- no, go on with creation
+
+* Referenced by a (U)nconditional or (C)onditional Jump at Address:
+|:0040823A(C)
+|
+:0040825F 8B44240C                mov eax, dword ptr [esp+0C]
+:00408263 6A00                    push 00000000
+:00408265 8930                    mov dword ptr [eax], esi
+:00408267 E814000000              call 00408280                        <--- not important
+:0040826C 83C404                  add esp, 00000004
+:0040826F 33C0                    xor eax, eax
+:00408271 5E                      pop esi
+:00408272 C3                      ret
+
+After the calculation of code lines 0040823C to 0040825D we got the following serial number : 211003668.
+You can try this number - just like I did - but it won't work. So exit the call, we're back at 00402888 (
+see above). Here is the code that follows after call (4), this part of the serial creation consist of 6 p
+arts -OR- 6 calls. I just tell you what they do, if you like to take a closer look at them go ahead,
+
+* Possible StringData Ref from Data Obj ->"%u"
+                                  |
+:00402890 6828724100              push 00417228
+:00402895 50                      push eax
+:00402896 E8C55C0000              call 00408560                        <--- number to string conversion
+:0040289B 83C40C                  add esp, 0000000C
+:0040289E 8D45E8                  lea eax, dword ptr [ebp-18]
+
+* Possible Reference to String Resource ID=00001: "Welcome to AxMan v2.11 (Official Release).  You..."
+                                  |
+:004028A1 6A01                    push 00000001
+:004028A3 6A09                    push 00000009
+:004028A5 6A30                    push 00000030
+:004028A7 50                      push eax
+:004028A8 E853540000              call 00407D00                        <--- not important (I think ;)
+:004028AD 8B7510                  mov esi, dword ptr [ebp+10]
+:004028B0 83C410                  add esp, 00000010
+:004028B3 8D45E8                  lea eax, dword ptr [ebp-18]
+
+* Possible Reference to String Resource ID=00003: "DFEND CORP DISCLAIMS ALL WARRANTIES RELATING TO..."
+                                  |
+:004028B6 6A03                    push 00000003
+:004028B8 50                      push eax
+:004028B9 56                      push esi
+:004028BA E861600000              call 00408920                        <--- 1st part : xxx
+:004028BF 80660300                and byte ptr [esi+03], 00
+:004028C3 83C40C                  add esp, 0000000C
+
+* Possible StringData Ref from Data Obj ->"-"                          <--- ! VERY interesting !
+                                  |
+:004028C6 BF107C4100              mov edi, 00417C10
+:004028CB 57                      push edi
+:004028CC 56                      push esi
+:004028CD E80E5D0000              call 004085E0                        <--- adds "-" : xxx-
+:004028D2 59                      pop ecx
+:004028D3 8D45EB                  lea eax, dword ptr [ebp-15]
+:004028D6 59                      pop ecx
+
+* Possible Reference to String Resource ID=00003: "DFEND CORP DISCLAIMS ALL WARRANTIES RELATING TO..."
+                                  |
+:004028D7 6A03                    push 00000003
+:004028D9 50                      push eax
+:004028DA 56                      push esi
+:004028DB E8906D0000              call 00409670                        <--- 2nd part : xxx-xxx
+:004028E0 80660700                and byte ptr [esi+07], 00
+:004028E4 83C40C                  add esp, 0000000C
+:004028E7 57                      push edi
+:004028E8 56                      push esi
+:004028E9 E8F25C0000              call 004085E0                        <--- adds "-" : xxx-xxx-
+:004028EE 59                      pop ecx
+:004028EF 8D45EE                  lea eax, dword ptr [ebp-12]
+:004028F2 59                      pop ecx
+
+* Possible Reference to String Resource ID=00003: "DFEND CORP DISCLAIMS ALL WARRANTIES RELATING TO..."
+                                  |
+:004028F3 6A03                    push 00000003
+:004028F5 50                      push eax
+:004028F6 56                      push esi
+:004028F7 E8746D0000              call 00409670                        <--- 3rd part : xxx-xxx-xxx
+:004028FC 83C40C                  add esp, 0000000C
+:004028FF 80660B00                and byte ptr [esi+0B], 00
+:00402903 5F                      pop edi
+:00402904 5E                      pop esi
+:00402905 C9                      leave
+:00402906 C3                      ret
+
+So, now we got the following serial in memory : 211-003-668. This time it works! When we leave this call,
+ we arrive back at 00402561 (see above), what follows is a simple string compare in call 004084D0.
+
+Well now we got the complete solution to our "create_good_serial" construction, here follows a piece of c
+ode in Turbo Pascal 7.0 - ofcourse you could write this in C, ASM (if you're suicidal ;) or any language
+you like most (this code is not a perfect solution, just a quick example),
+
+--------------------------------------------------------------------------------------------------------
+program AxMan;
+
+const
+ sweet        : string[10] = 'SweetHeart';
+
+var
+ uname,
+ ucomp   : string;
+ unaml   : byte absolute uname;
+ ucoml   : byte absolute ucomp;
+
+ i,                                          { edx }
+ j       : byte;
+
+ dumm0,                                      { esi }
+ dumm1,                                      { eax }
+ dumm2   : longint;                          { ecx }
+
+ result,
+ temp    : string;
+ templ   : byte absolute temp;
+
+begin
+ writeln('AxMan v2.11 - Key Generator by Vizion [MeX/C4N]');
+ write('Enter Name : ');
+ readln(uname);
+ write('Enter Company : ');
+ readln(ucomp);
+
+ uname := uname + ucomp + sweet;
+
+ for i := 1 to unaml do
+  begin
+   dumm0 := dumm0 shl $4;
+   dumm0 := dumm0 + byte(uname[i]);
+
+   dumm1  := dumm0;
+   dumm1  := dumm1 and $F0000000;
+
+   if (dumm1 <> 0)
+    then begin
+          dumm2 := dumm1 shr $18;
+          dumm0 := dumm0 xor dumm2
+         end;
+
+   dumm0 := dumm0 and (not dumm1)
+  end;
+
+ Str(dumm0, temp);
+
+ j := 1;
+
+ for i := 1 to templ do
+  begin
+   if i in [4,7]
+    then begin
+          result[j] := '-';
+          Inc(j);
+          result[j] := temp[i];
+         end
+    else result[j] := temp[i];
+   Inc(j)
+  end;
+ result[0] := #11;
+
+ write('Registration key : ', result)
+end.
+--------------------------------------------------------------------------------------------------------
+
+If there is someone, who can do this key generator in assembly, please tell me and show me the source cod
+e. Would be very appreciated! I could use some teaching in assembly programming.
+
+So, that's all folks, I hope you enjoyed this "little" tutorial,
+
+Vizion, 09/97.
+
+::::::::::::::::::::::::::::: GREETS FLY 2 ALL SiT AND MEMBERS OF MeX/C4N ::::::::::::::::::::::::::::::
+
+.EOF.

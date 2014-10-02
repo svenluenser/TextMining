@@ -1,0 +1,225 @@
+THE_URL:http://web.textfiles.com/computers/EDDYHAWK/chdir.txt
+THE_TITLE:chdir.txt
+EddyHawk's Info List
+---
+List of Change Dir programs:
+----------------------------
+If you want a suitable & good chdir program so bad, this list
+can help to confuse you more :-)
+Where to complain about this list: Alien
+
+Note:
+index-based path switcher doesn't need multiple dirname feature
+Some *standard* enhancements over DOS CD:
+-can switch drive+dir at the same time
+-partial dirname matching
+-back switching .., ...
+-*free* delimiter (\,/,' ')
+-error level
+-network compatible
+Non standard enhancements:
+-can switch to file-attributed-dir (for example hidden dir)
+
+001
+---
+ID: GD
+Name: Go to Directory
+Package: rlgd11.zip
+Version: 1.1
+Author: Randall T. Long
+Year: 1993
+Type: non-index
+Size: 7128
+Status: freeware?
+Language: Turbo C++ V3.0 [COM] '90
+Features:
+-current drive only
+-can't switch drive
+-recursive (multiple dirname isn't neccessary)
+-partial dirname matching (using wildcard)
+
+002
+---
+ID: G, TO
+Name: Go to Directory
+Package: asmlib40.zip
+Version: 2.1
+Author: Jeff Owens
+Year: 1994
+Type: non-index
+Size: 5165 byte
+Status: freeware
+Language: assembly
+Features:
+-can switch drive+dir
+-can switch to root dir
+-partial dirname matching
+ *exact, lengthening
+-multiple dirname
+-multiple back switching (. , ..)
+-delimiters can be ' ' or '\'
+-doesn't preserve current drive on another drive
+Unique feature:
+-optional built-in (color) (sorted) DIR- & MEM-like command & quote display
+
+003
+---
+ID: ZeroIn
+Name: ZeroIn
+Package: zeroin26.zip
+Version: 2.6
+Latest known version: 2.8
+Author: Simon A. Carter - Crystal Software
+Year: 1997 (1999)
+Type: non-index
+Size: 49696 byte
+Status: shareware
+Language: Borland Pascal 7
+Features:
+-can switch drive+dir
+-partial dirname matching
+ *exact, lengthening, shortening, mispelling
+-multiple dirname
+-history & alias support (stored in executable)
+-create dir
+-LFN support
+-multiple back switching (.., ...)
+-selection list
+-free select of delimiter (' ','\','/')
+-error level
+-network compatible
+-preserves current path on another drive
+
+004
+---
+ID: GO
+Name: GO
+Package: go320.zip
+Version: 3.20
+Author: Uber A. Calderon Alfaro
+Year: 1995
+Type: hybrid
+Size: 18286, (12672 w/o debug info)
+Status: shareware
+Language: Borland Pascal 7
+Features:
+-index
+ *each drive gets one index
+ *doesn't scan other than current drive unless specified
+-can be non-index (scan only)
+-can switch drive (but scan first)
+-partial dirname matching (no wildcard)
+
+005
+---
+ID: ACD
+Name: Another Change Directory
+Package: acd303.zip?
+Version: 3.03
+Latest known version: 3.50
+Author: A. Merckens
+Year: 1998
+Type: index
+Size: 66752
+Status: freeware
+Language: Borland Pascal 7
+Features:
+-index
+-LFN support
+-partial dirname matching
+-selection list
+-scan other drives
+-internal RD & MD
+
+006
+---
+ID: TO
+Name: TODIR
+Package: todir22.zip
+Version: 2.2
+Author: Andrea Steffanoni, Tim Frost, William Luitje
+Year: 1995
+Type: index
+Size: 21585
+Status: public domain
+Language: Microsoft C
+Features:
+-index
+ *NCD-index compatible
+
+007
+---
+ID: SDC
+Name: Smart Directory Changer
+Version: 1.2
+Author: Christian Junge
+Year: 1996
+Type: index
+Size: 19392
+Status: cardware
+Language: Borland Pascal 7
+Features:
+-partial dirname matching
+-can't list hidden dir
+
+008
+---
+ID: CDQ
+Name: Change Directory Quick
+Package: cdq310.zip
+Version: 3.10
+Author: Brian J. Daugherty <briandoc@webboyz.com>
+Year: 1998
+Type: hybrid
+Size: 32560
+Status:
+Language: Borland Pascal 7.0
+Features:
+-optional index
+-can place index to different location
+-faster than NCD?
+-freeware?
+-big external RD & MD
+-LFN support
+-partial name support
+ *lengthening, shortening
+-only scan current drive (unless specified)
+-can switch drive (preserve path)
+-can switch to file-attribute-ed dir
+
+009
+---
+ID: DRUN
+Name: Directory Runner
+Package: drun203.zip
+Version: 2.03
+Author: Martin T. Flack <mflack@peganet.com>
+Year: 1996
+Type: index
+Size: 45348 (39408 w/o debug info)
+Status: shareware
+Language: Borland C++ [1991]
+Features:
+-index
+-max store: 1000 dirs
+-scan only last scanned/current drive (unless specified)
+ *BUG: scan multi drive, dirs on current drive isn't stored
+-quick match
+-selection list
+-executable & tree dir display
+
+010
+---
+ID: GD
+Name: Goto Directory
+Package:
+Version: 3.5
+Author: Sverre H. Huseby (Norway) <sverrehu@ifi.uio.no>
+Year: 1990
+Type:
+Size:
+Status: freeware
+Language: Borland C++ [1991]
+Features:
+----
+

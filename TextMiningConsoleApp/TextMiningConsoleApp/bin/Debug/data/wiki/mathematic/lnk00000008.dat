@@ -1,0 +1,193 @@
+THE_URL:http://web.textfiles.com/computers/EDDYHAWK/chdir2.txt
+THE_TITLE:chdir2.txt
+EddyHawk's Info List
+---
+Directory Changer
+-----------------
+If you want a suitable & good chdir program so bad, this list
+can help to confuse you more :-)
+---
+Note
+---
+index-based path switcher doesn't need multiple dirname feature
+Some *standard* enhancements over DOS CD:
+-can switch drive+dir at the same time
+-partial dirname matching
+-back switching .., ...
+-*free* delimiter (\,/,' ')
+-error level
+-network compatible
+Non standard enhancements:
+-can switch to file-attributed-dir (for example hidden dir)
+---
+-GD (Go to Directory)
+ by: Randall T. Long
+ Type: non-index
+ Package: rlgd11.zip
+ Compiler: Turbo C++ V3.0 [COM] [1990]
+ V1.1 [1993]
+  Size = 7,128b
+  free?
+ Features:
+ -current drive only
+ -can't switch drive
+ -recursive (multiple dirname isn't neccessary)
+ -partial dirname matching (using wildcard)
+
+-G or TO (Go TO directory)
+ by: Jeff Owens
+ Type: non-index
+ Package: asmlib40.zip
+ Compiler: asm
+ V2.1 [1994]
+  size = 5,165b
+  free
+ Features:
+ -can switch drive+dir
+ -can switch to root dir
+ -partial dirname matching
+  *exact, lengthening
+ -multiple dirname
+ -multiple back switching (. , ..)
+ -delimiters can be ' ' or '\'
+ -doesn't preserve current drive on another drive
+ Unique feature:
+ -optional built-in (color) (sorted) DIR- & MEM-like command & quote display
+
+-ZeroIn
+ by: Simon A. Carter/Crystal Software (Australia)
+ Type: non-index
+ Package: zeroin26.zip
+ Compiler: BP V7.0
+ disadv: shareware
+ V2.6 [1997]
+  Size = 49,696b
+ V2.8 [1999]
+ Features:
+ -can switch drive+dir
+ -partial dirname matching
+  *exact, lengthening, shortening, mispelling
+ -multiple dirname
+ -history & alias support (stored in prog x)
+ -create dir
+ -LFN support
+ -multiple back switching (.., ...)
+ -selection list
+ -free select of delimiter (' ','\','/')
+ -error level
+ -network compatible
+ -preserves current path on another drive
+
+-GO
+ by: Uber A. Calderon Alfaro (Spain?)
+ Type: hybrid
+ Package: go320.zip
+ disadv: shareware
+ Compiler: BP V7.0
+ V3.20 [1995]
+  Size = 18,286b (12,672b w/o debug info)
+ Features:
+ -index
+  *each drive gets one index
+  *doesn't scan other than current drive unless specified
+ -can be non-index (scan only)
+ -can switch drive (but scan first)
+ -partial dirname matching (no wildcard)
+
+-ACD (Another Change Directory)
+ by: A. Merckens
+ Package: acd303.zip?
+ Compiler: BP V7.0
+ adv: free
+ V3.03 [1998]
+  Size = 66,752b
+ V3.50
+ Features:
+ -index
+ -LFN support
+ -partial dirname matching
+ -selection list
+ -scan other drives
+ -internal RD & MD
+
+-TO (TOdir)
+ by: Andrea Steffanoni, Tim Frost, William Luitje
+ Type: index
+ Package: todir22.zip
+ Compiler: MSC
+ adv: pub domain
+ V2.2 [1995]
+  Size = 21,585b
+ Features:
+ -index
+  *NCD-index compatible
+
+-SDC (Smart Directory Changer)
+ by: Christian Junge
+ Type: index
+ Compiler: BP V7.0
+ adv: cardware
+ V1.2 [1996]
+  Size = 19,392b
+ Features:
+ -partial dirname matching
+ -can't list hidden dir
+
+-CDQ (Change Directory Quick)
+ by: Brian J. Daugherty <briandoc@webboyz.com>
+ Type: hybrid
+ Package: cdq310.zip
+ Compiler: BP V7.0
+ V3.10 [1998]
+  Size = 32,560b
+ Features:
+ -optional index
+ -can place index to different location
+ -faster than NCD?
+ -freeware?
+ -big external RD & MD
+ -LFN support
+ -partial name support
+  *lengthening, shortening
+ -only scan current drive (unless specified)
+ -can switch drive (preserve path)
+ -can switch to file-attribute-ed dir
+
+-DRUN (Directory Runner)
+ by: Martin T. Flack <mflack@peganet.com>
+ Type: index
+ Package: drun203.zip
+ Compiler: BC++ [1991]
+ disadv: shareware
+ V2.03 [1996]
+  Size = 45,348b (39,408b w/o debug info)
+ Features:
+ -index
+ -max store: 1000 dirs
+ -scan only last scanned/current drive (unless specified)
+  *BUG: scan multi drive, dirs on current drive isn't stored
+ -quick match
+ -selection list
+ -executable & tree dir display
+
+-GD (Goto Directory)
+ by: Sverre H. Huseby (Norway) <sverrehu@ifi.uio.no>
+ adv: free
+ Compiler: BC++ [1991]
+ V3.5 [1990]
+
+-sCD_rE (spacyChangeDirectory & runExecutable)
+ by: EddyHawk
+ year: 1999-2001
+ Compiler: BP V7.0
+ adv: free
+ 4 Apr 2001
+ EdH: anybody dares to review or should I? :)
+
+-PSRE (Path Switcher & Run Executable)
+ by: EddyHawk
+ Compiler: BP V7.0
+ adv: free
+ V0.23a [Nov 2000]
+ EdH: anyone dares to review or should I? :)
+

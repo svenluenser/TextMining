@@ -1,0 +1,68 @@
+THE_URL:http://web.textfiles.com/computers/wsping32.txt
+THE_TITLE:wsping32.txt
+WSPING32   -  Copyright 1994-1996 Ipswitch, Inc.  All rights reserved.
+
+  This program is not shareware.  This program may be used without fee
+  by educational staff, faculty and students; United States Government
+  users; and non-commercial home use.  All other uses and all
+  redistribution requests MUST be coordinated with Ipswitch, Inc.
+  Look at http://www.ipswitch.com or send e-mail to <info@ipswitch.com>
+  or call (617)-676-5700.
+
+  Please refer to the ABOUT box in the program for more information
+  and the actual license.
+
+Description
+
+  This is a network diagnostic tool that implements PING, Traceroute
+  and DNS lookups specifically for Windows 95 and Windows NT.  It may
+  work on Windows for Workgroups (Window 3.x) with some network stacks
+  when Win32s is installed.
+
+  PING is a network diagnostic tool that verifies connectivity to a
+  particular system on the network.  PING sends an ICMP "echo request"
+  in the form of a data packet to a remote host, and displays the
+  results for each "echo reply".  In essence, PING asks, "Hello host,
+  are you there?", and waits for a response.  PING sends one packet
+  per second and prints one line of output for every response received.
+  When PING terminates, it displays a brief summary of round-trip
+  times and packet loss statistics.  When using PING to isolate
+  hardware or software problems, first PING "127.0.0.1" (or "localhost")
+  to verify that the local network is up and running.  Then, ping
+  hosts and gateways further and further away.
+
+  TRACEROUTE is a network diagnostic tool that lets you trace and view
+  the actual route an IP packet follows to an Internet host.  It also
+  displays response times (in milliseconds), which identify the amount
+  of time it takes the packet to travel the route.  Response times will
+  vary depending on network load.  TRACEROUTE is useful for finding
+  potential trouble spots on large and complex networks that are
+  connected together with routers.
+
+  LOOKUP is a tool that lets you query Internet domain servers for
+  information about hosts and name servers.  You can use LOOKUP to
+  query the name server for information about various hosts and
+  domains.
+
+Changes
+
+  96.10.11
+    Changed design of main window.
+    Fixed tabbing in main window.
+    Fixed DNS lookup for type ALL.
+    Fixed ping sequence numbers on Microsoft stacks.
+    Fixed ping and traceroute on Microsoft Windows NT 4.0.
+    Added save of last 10 names entered.
+    Added license and ordering information.
+    Added help dialog.
+
+Testing
+
+   This version of this program has ONLY been tested on:
+
+   Windows NT 3.51 with Microsoft TCP/IP
+   Windows NT 4.0 with Microsoft TCP/IP
+   Windows 95 with Microsoft TCP/IP
+
+
+

@@ -1,0 +1,623 @@
+THE_URL:http://web.textfiles.com/computers/mailingl.lst
+THE_TITLE:mailingl.lst
+Date: 25 Nov 1996 18:16:19 -0500
+From: newgroups-request@uunet.uu.net (David C Lawrence)
+Newsgroups: news.lists,news.groups,news.announce.newgroups,bit.admin,news.answers
+Subject: Mailing Lists Available in Usenet
+
+Archive-name: mail/news-gateways/part1
+Last-change: 20 Nov 1996 by newgroups-request@uunet.uu.net (David C Lawrence)
+
+This article documents known gateways between public mailing lists and
+network newsgroups in the seven Usenet hierarchies and other worldwide
+alternative hierarchies.  Not every newsgroup is available via a
+standard mail gateway.
+
+Gateways exist in several forms.  They can be fully bi-directional between
+the list and the group, one way from the list to the group, or only
+partially passed from the group to the list and back, with the list
+moderator selecting articles which are appropriate.  Lists can also be
+packaged as digests --- multiple messages bound in a single collection ---
+and possibly appear as such in the corresponding group.
+
+Traffic on mailing lists whose incoming traffic from the corresponding
+newsgroup is unrestricted is often very unlike that which comes to lists
+that solely exist in the mail realm. This is because of differences of
+the two overall environments and how they are used by people. Both list
+members and group participants should be wary of it and try to be
+sympathetic with the other side, but this is often a point missed by the
+group users who don't even realise their articles are being redistributed
+via an automatic gateway.
+
+Gateways that have moderators which review submissions are listed in a
+companion posting, "List of Moderators for Usenet".  As noted in that
+article, most modern news system software supports automatic submission
+to the moderator of articles posted to the group.  If that mechanism
+does not work at your site you will have to directly mail your article
+to the submission address.
+
+Mailing lists also have administrative contact addresses for reaching the
+people who run them.  These addresses are meant to be used for issues
+pertaining to the operation of the lists, rather than for messages which
+are meant to be published in the list.
+
+You can subscribe or unsubscribe most mailing lists by writing to an
+address formed by putting "-request" after the list name but before
+the "@"; eg, to subscribe to apl-l@unb.ca, send a request to
+apl-l-request@unb.ca.  Some lists do not support the -request
+convention, but support automated subscription.  If the -request
+address fails, try mailing "subscribe LISTNAME YOURNAME" in the body
+of a message to "listserv" at the site.  That is, to subscribe to
+swl-l@cuvmb.cc.columbia.edu, send "subscribe swl-l YOURNAME" to
+listserv@cuvmb.columbia.edu, substituting your full name in for YOURNAME.
+
+Also note that moderators of Usenet groups may not be in charge of the
+corresponding mailing list or gateway.  For example, the moderator of
+comp.sources.unix does not have anything to do with the unix-sources
+mailing list; matters concerning the mailing list should be addressed to
+unix-sources-request@arl.army.mil.
+
+Nearly all of the groups in the bionet network news hierarchy are
+available via mail.  The current "BIOSCI Electronic Newsgroup Network
+Information Sheet", which describes how to access the forums, is
+available by sending a message to biosci@net.bio.net.  Anything sent to
+that address is answered automatically with the information sheet.
+
+Status key:
+
+< one way gateway from the maillist to the newsgroup
+> one way gateway from the newsgroup to the maillist
+M moderated newsgroup
+D both the maillist and the newsgroup appear in digest form
+d just the maillist appears in digest form
+* possibly broken gateway; information on its status would be appreciated
+
+The absence of a "<" means the mailing list is bi-directional.
+
+Newsgroup                       Mailing list                            Status
+------------                    -------------                           ------
+alt.aquaria.killies             killies@mejac.palo-alto.ca.us
+alt.bigfoot.research            bigfoot@teleport.com                      M
+alt.cd-rom                      cdrom-l@uccvma.ucop.edu
+alt.clearing.technology         clear-l@vm.ucs.ualberta.ca
+alt.fan.tom-robbins             magic-l@american.edu
+alt.health.cfids-action         cfids-l@american.edu                      M
+alt.med.cfs                     cfs-l@list.nih.gov                        M
+alt.med.cfs.chat                cfs-chat@sjuvm.stjohns.edu                M
+alt.med.cfs.info                cfs-gate@sjuvm.stjohns.edu                M
+alt.med.cfs.open                cfs-open@sjuvm.stjohns.edu                M
+alt.med.fibromyalgia            fibrom-l@mitvma.mit.edu
+alt.music.amy-grant             art@ipc.uni-tuebingen.de
+alt.music.blues-traveler        blues-traveler@cs.umd.edu
+alt.music.filk                  filk-l@bdragon.shore.net                  d
+alt.music.jewish                jewish-music@israel.nysernet.org
+alt.paranet.abduct              paranet@psuvm.psu.edu
+alt.paranet.ufo                 altufo-l@psuvm.psu.edu
+alt.religion.scientology        lrh-l@cornell.edu
+alt.rock-n-roll.stones          undercover@snowhite.cis.uoguelph.ca       <
+alt.sports.college.ohio-state   ohio-state@world.std.com
+alt.support.hemophilia          hemofact@sjuvm.stjohns.edu
+alt.support.mult-sclerosis      mslist-l@techunix.technion.ac.il
+alt.support.post-polio          polio@sjuvm.stjohns.edu
+alt.sys.intergraph              alt-sys-intergraph@ingr.ingr.com
+alt.sys.pc-clone.gateway2000    gateway2000-request@sei.cmu.edu
+alt.tv.vr5                      vr5@server.microserve.net                 <d
+alt.winsock                     winsock@microdyne.com
+
+bit.databases.mssql-l           mssql-l%dukefsb.bitnet@sysa.adm.duke.edu
+bit.lang.neder-l                neder-l@hearn.nic.surfnet.nl              M
+bit.listproc.stockphoto         stockphoto@info.curtin.edu.au             M
+bit.listserv.2000ad-l           2000ad-L@usc.edu                          M
+bit.listserv.9370-l             9370-l@hearn.nic.surfnet.nl
+bit.listserv.ada-law            ada-law@vm1.nodak.edu
+bit.listserv.advanc-l           advanc-l@idbsu.idbsu.edu
+bit.listserv.advise-l           advise-l@listserv.acsu.buffalo.edu
+bit.listserv.aect-l             aect-l@wvnvm.wvnet.edu
+bit.listserv.aera               aera@asuvm.inre.asu.edu                   M
+bit.listserv.aix-l              aix-l@pucc.princeton.edu
+bit.listserv.albanian           albanian@listserv.acsu.buffalo.edu        M
+bit.listserv.allmusic           allmusic@auvm.american.edu
+bit.listserv.apar-l             apar-l@ubvm.cc.buffalo.edu                M
+bit.listserv.apple2-l           apple2-l@brownvm.brown.edu
+bit.listserv.arie-l             arie-l@idbsu.idbsu.edu
+bit.listserv.arlis-l            arlis-l@lsv.uky.edu                       M
+bit.listserv.ashe-l             ashe-l@american.edu
+bit.listserv.asis-l             asis-l@asis.org
+bit.listserv.asm370             asm370@uga.cc.uga.edu
+bit.listserv.atlas-l            atlas-l@tcuvbm.is.tcu.edu
+bit.listserv.authorware         aware@cc1.kuleuven.ac.be
+bit.listserv.autism             autism@sjuvm.stjohns.edu
+bit.listserv.autocat            autocat@ubvm.cc.buffalo.edu
+bit.listserv.axslib-l           axslib-l@sjuvm.stjohns.edu
+bit.listserv.banyan-l           banyan-l@akronvm.uakron.edu
+bit.listserv.basque-l           basque-l@cunyvm.cuny.edu                  M
+bit.listserv.berita             berita-l@postoffice.cso.uiuc.edu          M
+bit.listserv.berita.d           berita-d@postoffice.cso.uiuc.edu          M
+bit.listserv.bgrass-l           bgrass-l@lsv.uky.edu                      M
+bit.listserv.big-lan            big-lan@listserv.syr.edu
+bit.listserv.billing            billing@hearn.nic.surfnet.nl
+bit.listserv.biomch-l           biomch-l@nic.surfnet.nl                   M
+bit.listserv.bitnews            bitnews@uga.cc.uga.edu
+bit.listserv.blindnws           blindnws@listserv.nodak.edu               M
+bit.listserv.blues-l            blues-l@brownvm.brown.edu                 M
+bit.listserv.bosnet             bosnet@applicom.com                       M
+bit.listserv.buslib-l           buslib-l@idbsu.idbsu.edu
+bit.listserv.c370-l             c370-l@cmuvm.csv.cmich.edu
+bit.listserv.calc-ti            calc-ti@peach.ease.lsoft.com
+bit.listserv.candle-l           candle-l@ua1vm.ua.edu
+bit.listserv.catala             catala@aliga.cesca.es
+bit.listserv.catholic           catholic@auvm.american.edu                M
+bit.listserv.cdromlan           cdromlan@idbsu.idbsu.edu
+bit.listserv.celiac             celiac@sjuvm.stjohns.edu                  M
+bit.listserv.cfs.newsletter     cfs-news@list.nih.gov                     M
+bit.listserv.christia           christia@asuvm.inre.asu.edu               M
+bit.listserv.cics-l             cics-l@uga.cc.uga.edu
+bit.listserv.cinema-l           cinema-l@auvm.american.edu
+bit.listserv.circplus           circplus@idbsu.idbsu.edu
+bit.listserv.clayart            clayart@lsv.uky.edu                       M
+bit.listserv.cloaks-daggers     cloaks@sjuvm.stjohns.edu                  M
+bit.listserv.cmspip-l           cms-pipelines@vm.marist.edu
+bit.listserv.coco               coco@pucc.princeton.edu
+bit.listserv.confocal           confocal@listserv.acsu.buffalo.edu
+bit.listserv.croatia            croatian-news@bagan.srce.hr               M
+bit.listserv.cumrec-l           cumrec-l@listserv.nodak.edu               M
+bit.listserv.cw-email           cw-email@gumncc.earn.net
+bit.listserv.cwis-l             cwis-l@msu.edu
+bit.listserv.cyber-l            cyber-l@uga.cc.uga.edu
+bit.listserv.dasig              dasig@cause.colorado.edu
+bit.listserv.db2-l              db2-l@auvm.american.edu
+bit.listserv.deaf-l             deaf-l@siu.edu
+bit.listserv.decnews            decnews@ubvm.cc.buffalo.edu
+bit.listserv.dectei-l           dectei-l@ubvm.cc.buffalo.edu
+bit.listserv.devel-l            devel-l@auvm.american.edu
+bit.listserv.devmedia           devmedia@listserv.uoguelph.ca             M
+bit.listserv.disarm-l           disarm-l@cnsibm.albany.edu
+bit.listserv.dorothyl           dorothyl@listserv.kent.edu                M
+bit.listserv.down-syn           down-syn@listserv.nodak.edu
+bit.listserv.dsshe-l            dsshe-l@listserv.acsu.buffalo.edu
+bit.listserv.e-europe           e-europe@pucc.princeton.edu               M
+bit.listserv.earntech           earntech@bitnic.educom.edu
+bit.listserv.edi-l              edi-l@uccvma.ucop.edu
+bit.listserv.edpolyan           edpolyan@asuvm.inre.asu.edu               M
+bit.listserv.edtech             edtech@msu.edu                            M
+bit.listserv.edusig-l           edusig-l@listserv.acsu.buffalo.edu
+bit.listserv.envbeh-l           envbeh-l@vm.poly.edu
+bit.listserv.ethics-l           ethics-l@uga.cc.uga.edu
+bit.listserv.euearn-l           euearn-l@listserv.acsu.buffalo.edu
+bit.listserv.film-l             film-l@itesmvf1.rzs.itesm.mx
+bit.listserv.fire-l             fire-l@cornell.edu                        M
+bit.listserv.fnord-l            fnord-l@ubvm.cc.buffalo.edu
+bit.listserv.frac-l             frac-l@gitvm1.gatech.edu
+bit.listserv.free-l             free-l@listserv.iupui.edu
+bit.listserv.freemasonry        freemasonry@indy.cms                      M
+bit.listserv.games-l            games-l@brownvm.brown.edu
+bit.listserv.gaynet             gaynet@queernet.org                       MD
+bit.listserv.gddm-l             gddm-l@polyvm.poly.edu
+bit.listserv.geodesic           geodesic@listserv.acsu.buffalo.edu
+bit.listserv.geograph           geograph@segate.sunet.su
+bit.listserv.govdoc-l           govdoc-l@psuvm.psu.edu
+bit.listserv.graph-ti           graph-ti@lists.ppp.ti.com                 M
+bit.listserv.gutnberg           gutnberg@vmd.cso.uiuc.edu
+bit.listserv.hdesk-l            hdesk-l@wvnvm.wvnet.edu
+bit.listserv.hellas             hellas@auvm.american.edu                  M
+bit.listserv.help-net           help-net@vm.temple.edu
+bit.listserv.history            history@ukanvm.cc.ukans.edu
+bit.listserv.hrvatska           hrvatski-vjesnik@bagan.srce.hr            M
+bit.listserv.humage-l           humage-l@geroserver.iog.wayne.edu         M
+bit.listserv.hungary            hungary@gwuvm.gwu.edu
+bit.listserv.hytel-l            hytel-l@library.berkeley.edu              M
+bit.listserv.i-amiga            i-amiga@listserv.acsu.buffalo.edu
+bit.listserv.ibm-hesc           ibm-hesc@freya.cc.pdx.edu
+bit.listserv.ibm-main           ibm-main@ua1.ua.edu
+bit.listserv.ibm-nets           ibm-nets@bitnic.educom.edu
+bit.listserv.ibm7171            ibm7171@irlearn.ucd.ie
+bit.listserv.ibmtcp-l           ibmtcp-l@vm.marist.edu
+bit.listserv.idms-l             idms-l@uga.cc.uga.edu
+bit.listserv.imagelib           imagelib@arizvm1.ccit.arizona.edu         M
+bit.listserv.info-gcg           info-gcg@vm.utcc.utoronto.ca
+bit.listserv.ioob-l             ioob-l@uga.cc.uga.edu
+bit.listserv.ipct-l             ipct-l@listserv.georgetown.edu            M
+bit.listserv.ispf-l             ispf-l@vma.cc.nd.edu
+bit.listserv.japan              japan@pucc.princeton.edu                  M
+bit.listserv.jes2-l             jes2-l@listserv.vt.edu
+bit.listserv.jnet-l             jnet-l@uga.cc.uga.edu
+bit.listserv.l-hcap             l-hcap@listserv.nodak.edu                 M
+bit.listserv.l-vmctr            l-vmctr@akronvm.uakron.edu
+bit.listserv.labmgr             labmgr@lsv.uky.edu                        M
+bit.listserv.lawsch-l           lawsch-l@auvm.american.edu
+bit.listserv.lawsch.internships legalint-l@sunbird.usd.edu
+bit.listserv.liaison            liaison@uga.cc.uga.edu
+bit.listserv.libref-l           libref-l@listserv.kent.edu                M
+bit.listserv.libres             libres@listserv.kent.edu                  M
+bit.listserv.linkfail           linkfail@uga.cc.uga.edu
+bit.listserv.lis-l              lis-l@vmd.cso.uiuc.edu
+bit.listserv.literary           literary@ucf1vm.cc.ucf.edu
+bit.listserv.lsoft-announce     lsoft-announce@searn.sunet.se             M
+bit.listserv.lstsrv-l           lstsrv-l@uga.cc.uga.edu
+bit.listserv.mail-l             mail-l@uga.cc.uga.edu
+bit.listserv.mailbook           mailbook@ricevm1.rice.edu
+bit.listserv.makedon            makedon@listserv.acsu.buffalo.edu         M
+bit.listserv.mba-l              mba-l@vm.marist.edu
+bit.listserv.mbu-l              mbu-l@unicorn.acs.ttu.edu
+bit.listserv.mdphd-l            mdphd-l@ubvm.cc.buffalo.edu               M
+bit.listserv.medforum           medforum@listserv.arizona.edu             M
+bit.listserv.medlib-l           medlib-l@listserv.acsu.buffalo.edu
+bit.listserv.mednews            mednews@asuvm.inre.asu.edu                M
+bit.listserv.mideur-l           mideur-l@listserv.acsu.buffalo.edu
+bit.listserv.mla-l              mla-l@iubvm.ucs.indiana.edu
+bit.listserv.movie.memorabilia  mopo-l@american.edu
+bit.listserv.museum-l           museum-l@home.dc.lsoft.com
+bit.listserv.muslims            muslims@psuvm.psu.edu                     M
+bit.listserv.netnws-l           netnws-l@listserv.nodak.edu
+bit.listserv.nettrain           nettrain@listserv.acsu.buffalo.edu        M
+bit.listserv.new-list           new-list@listserv.nodak.edu               M
+bit.listserv.nodmgt-l           nodmgt-l@uga.cc.uga.edu
+bit.listserv.notabene           notabene@vm.tau.ac.il
+bit.listserv.notis-l            notis-l@uicvm.cc.uic.edu
+bit.listserv.novell             novell@listserv.syr.edu                   M
+bit.listserv.nppa-l             nppa-l@cmuvm.csv.cmich.edu                M
+bit.listserv.opers-l            opers-l@akronvm.uakron.edu
+bit.listserv.os2-l              os2-l@hearn.nic.surfnet.nl
+bit.listserv.pacs-l             pacs-l@uhupvm1.uh.edu                     M
+bit.listserv.page-l             page-l@ucf1vm.cc.ucf.edu
+bit.listserv.pagemakr           pagemakr@indycms.iupui.edu
+bit.listserv.pakistan           pakistan@psuvm.psu.edu                    M
+bit.listserv.pchealth           pchealth@listserv.aol.com                 M
+bit.listserv.pmail              pmail@ua1vm.ua.edu
+bit.listserv.pmdf-l             pmdf-l@irlearn.ucd.ie
+bit.listserv.pns-l              pns-l@psuvm.psu.edu                       M
+bit.listserv.politics           politics@villvm.vill.edu
+bit.listserv.postcard           postcard@idbsu.idbsu.edu
+bit.listserv.power-l            power-l@listserv.nodak.edu
+bit.listserv.powerh-l           powerh-l@listserv.unb.ca
+bit.listserv.psycgrad           psycgrad@listserv.uottawa.ca
+bit.listserv.quaker-p           quaker-p@earlham.edu                      M
+bit.listserv.quality            quality@pucc.princeton.edu                M
+bit.listserv.qualrs-l           qualrs-l@uga.cc.uga.edu
+bit.listserv.radio-l            radio-l@tc.umn.edu                        M
+bit.listserv.railroad           railroad@cunyvm.cuny.edu                  M
+bit.listserv.relusr-l           relusr-l@vtvm1.cc.vt.edu
+bit.listserv.rra-l              rra-l@listserv.kent.edu                   M
+bit.listserv.rscs-l             rscs-l@pucc.princeton.edu
+bit.listserv.rscsmods           rscsmods@uga.cc.uga.edu
+bit.listserv.screen-l           screen-l@ua1vm.ua.edu                     M
+bit.listserv.script-l           script-l@uga.cc.uga.edu
+bit.listserv.scuba-l            scuba-l@brownvm.brown.edu                 M
+bit.listserv.seasia-l           seasia-l@msu.edu
+bit.listserv.seds-l             seds-l@tamvm1.tamu.edu
+bit.listserv.sfs-l              sfs-l@searn.sunet.se
+bit.listserv.sganet             sganet@ipe.cc.vt.edu
+bit.listserv.simula             simula@uga.cc.uga.edu
+bit.listserv.skeptic            skeptic@jhuvm.hcf.jhu.edu                 M
+bit.listserv.skywarn            skywarn@po.uiuc.edu
+bit.listserv.slart-l            slart-l@cunyvm.cuny.edu                   M
+bit.listserv.slovak-l           slovak-l@listserv.acsu.buffalo.edu
+bit.listserv.snamgt-l           snamgt-l@tornado.cc.umr.edu
+bit.listserv.snurse-l           snurse-l@listserv.acsu.buffalo.edu
+bit.listserv.sos-data           sos-data@gibbs.oit.unc.edu
+bit.listserv.spires-l           spires-l@uga.cc.uga.edu
+bit.listserv.sportpsy           sportpsy@vm.temple.edu
+bit.listserv.sqlinfo            sqlinfo@uicvm.cc.uic.edu
+bit.listserv.sthcult            sthcult@unc.edu
+bit.listserv.superguy           superguy@ucf1vm.cc.ucf.edu                M
+bit.listserv.tbi-support        tbi-sprt@sjuvm.stjohns.edu                M
+bit.listserv.techwr-l           techwr-l@listserv.okstate.edu
+bit.listserv.tesl-l             tesl-l@cunyvm.cuny.edu                    M
+bit.listserv.test               test@psuvm.psu.edu
+bit.listserv.tex-l              tex-l@ubvm.cc.buffalo.edu
+bit.listserv.tn3270-l           tn3270-l@rutvm1.rutgers.edu
+bit.listserv.toolb-l            toolb-l@listserv.arizona.edu
+bit.listserv.transplant         trnsplnt@wuvmd.wustl.edu
+bit.listserv.travel-l           travel-l@vm.ege.edu.tr
+bit.listserv.tsorexx            tso-rexx@vm.marist.edu
+bit.listserv.urep-l             urep-l@psuvm.psu.edu
+bit.listserv.uus-l              uus-l@ubvm.cc.buffalo.edu                 <
+bit.listserv.vfort-l            vfort-l@jhuvm.hcf.jhu.edu
+bit.listserv.vm-util            vm-util@utarlvm1.uta.edu
+bit.listserv.vmesa-l            vmesa-l@uafsysb.uark.edu
+bit.listserv.vmxa-l             vmxa-l@uga.cc.uga.edu
+bit.listserv.vnews-l            vnews-l@listserv.acsu.buffalo.edu
+bit.listserv.vocnet             vocnet@cmsa.berkeley.edu
+bit.listserv.vpiej-l            vpiej-l@vtvm1.cc.vt.edu
+bit.listserv.vse-l              vse-l@lehigh.edu
+bit.listserv.wac-l              wac-l@postoffice.cso.uiuc.edu
+bit.listserv.words-l            words-l@uga.cc.uga.edu
+bit.listserv.wpcorp-l           wpcorp-l@listserv.acsu.buffalo.edu
+bit.listserv.wpwin-l            wpwin-l@listserv.acsu.buffalo.edu
+bit.listserv.www-vm             www-vm@sjuvm.stjohns.edu
+bit.listserv.wx-chase           wx-chase@po.uiuc.edu
+bit.listserv.wx-talk            wx-talk@po.uiuc.edu
+bit.listserv.x400-l             x400-l@uga.cc.uga.edu
+bit.listserv.xedit-l            xedit-l@uga.cc.uga.edu
+bit.listserv.xmailer            xmailer@uga.cc.uga.edu
+bit.listserv.xtropy-l           xtropy-l@listserv.acsu.buffalo.edu
+bit.mailserv.word-pc            word-pc@ufobi2.uni-forst.gwdg.de
+bit.med.mxdiag-l                mxdiag-l@health.state.ny.us
+bit.med.resp-care.world         rc_world@listserv.iupui.edu
+bit.org.peace-corps             pcorps-l@cmuvm.csv.cmich.edu
+bit.sci.purposive-behavior      csgnet@postoffice.cso.uiuc.edu
+bit.software.international      insoft-l@cis.vutbr.cz                     M
+bit.tech.africana               africana-l@listserv.cc.wm.edu
+
+comp.ai.fuzzy                   fuzzy-mail@vexpert.dbai.tuwien.ac.at
+comp.arch.fpga                  comp-arch-fpga@super.org                  d
+comp.compilers                  compil-l@auvm.american.edu                M
+comp.compilers.tools.pccts      pccts-users@ahpcrc.umn.edu
+comp.databases.ingres           info-ingres@math.ams.com
+comp.databases.progress         progress-news@peg.happmis.com
+comp.dcom.modems                modems-l@vm.its.rpi.edu
+comp.dcom.sys.cisco             cisco@spot.colorado.edu                   <
+comp.dcom.telecom               telecom@massis.lcs.mit.edu                Md
+comp.emacs                      unix-emacs@bbn.com
+comp.emacs.xemacs               xemacs@cs.uiuc.edu
+comp.graphics.apps.wavefront    wavefr-l@psuvm.psu.edu
+comp.graphics.gnuplot           info-gnuplot@dartmouth.edu
+comp.graphics.packages.alias    alias-l@uga.cc.uga.edu
+comp.groupware.groupwise        ngw@tribble.uvsc.edu
+comp.groupware.lotus-notes.misc lnotes-l@nda.com
+comp.home.misc                  home-l@coco.ini.ku.dk                     M
+comp.infosystems.gis            gis-l@urisa.org
+comp.infosystems.kiosks         kiosks-l@lanl.gov                         M
+comp.lang.ada                   info-ada@listserv.nodak.edu
+comp.lang.apl                   apl-l@unb.ca
+comp.lang.c                     info-c@arl.army.mil
+comp.lang.c++                   help-g++@prep.ai.mit.edu                  <
+comp.lang.c++                   info-g++@prep.ai.mit.edu                  <
+comp.lang.forth                 umforth@weizmann.bitnet
+comp.lang.modula2               info-m2@ucf1vm.bitnet
+comp.lang.mumps                 mumps-l@uga.cc.uga.edu
+comp.lang.pascal                info-pascal@arl.army.mil
+comp.lang.prolog                prolog@score.stanford.edu                 *
+comp.lang.prograph              info-prograph@grove.iup.edu
+comp.lang.rexx                  rexxlist@uga.cc.uga.edu
+comp.lang.smalltalk             info-cls@vm.gmd.de
+comp.mail.mh                    mh-users@ics.uci.edu
+comp.mail.pine                  pine-info@cac.washington.edu
+comp.mail.sendmail              comp-mail-sendmail@dl.ac.uk
+comp.music                      music-research@prg.oxford.ac.uk           <
+comp.newprod                    newprod-request@chinacat.unicom.com       M
+comp.org.acm                    acm-l@listserv.kent.edu
+comp.org.eff.news               eff-news@eff.org                          M
+comp.org.eff.talk               eff-talk@eff.org
+comp.os.coherent                coherent@vma.cc.nd.edu
+comp.os.cpm                     cpm-l@vm.its.rpi.edu
+comp.os.linux.admin             linux-admin@news-digests.mit.edu
+comp.os.linux.announce          linux-announce@news-digests.mit.edu       M
+comp.os.linux.development       linux-devel@news-digests.mit.edu
+comp.os.linux.help              linux-help@news-digests.mit.edu
+comp.os.linux.misc              linux-misc@news-digests.mit.edu
+comp.os.minix                   info-minix@udel.edu
+comp.os.msdos.4dos              4dos@vma.cc.nd.edu
+comp.os.vms                     info-vax@mvb.saic.com
+comp.programming.literate       litprog@shsu.edu
+comp.protocols.kerberos         kerberos@athena.mit.edu
+comp.protocols.tcp-ip           tcp-ip@nic.ddn.mil
+comp.protocols.tcp-ip.ibmpc     pcip@list.nih.gov
+comp.research.japan             res-japan-group@cs.arizona.edu            M
+comp.risks                      risks@csl.sri.com                         MD
+comp.society                    comsoc@auvm.american.edu                  M
+comp.society.cu-digest          tk0jut2@mvs.cso.niu.edu                   D
+comp.society.privacy            comp-privacy@pica.army.mil                M
+comp.soft-sys.nextstep          nextstep@vma.cc.nd.edu
+comp.soft-sys.sas               sas-l@vtvm1.cc.vt.edu
+comp.soft-sys.spss              spssx-l@uga.cc.uga.edu
+comp.sources.misc               unix-sources@arl.army.mil                 M
+comp.sources.unix               unix-sources@pa.dec.com                   M
+comp.specification.z            zforum@comlab.ox.ac.uk
+comp.sys.amiga                  csys-ami%mainecs@cunyvm.cuny.edu          *
+comp.sys.amiga.hardware         ami-hard%mainecs@cunyvm.cuny.edu          *
+comp.sys.amiga.tech             ami-tech%mainecs@cunyvm.cuny.edu          *
+comp.sys.apollo                 apollo@umix.cc.umich.edu
+comp.sys.apple2                 info-apple@apple.com
+comp.sys.atari.st               info-atari16-request@pine.cse.nau.edu
+comp.sys.atari.8bit             info-atari8-request@pine.cse.nau.edu
+comp.sys.hp.mpe                 hp3000-l@raven.utc.edu
+comp.sys.misc                   micro-l@vm.its.rpi.edu
+comp.sys.next.advocacy          next-advocacy-d@antigone.com
+comp.sys.next.announce          next-announce-d@antigone.com              M
+comp.sys.next.bugs              next-bugs-d@antigone.com
+comp.sys.next.hardware          next-hardware-d@antigone.com
+comp.sys.next.marketplace       next-marketplace-d@antigone.com
+comp.sys.next.misc              next-misc-d@antigone.com
+comp.sys.next.programmer        next-programmer-d@antigone.com
+comp.sys.next.software          next-software-d@antigone.com
+comp.sys.next.sysadmin          next-sysadmin-d@antigone.com
+comp.sys.prime                  info-prime@blx-a.prime.com
+comp.sys.stratus                info-stratus@mike.lrc.edu
+comp.sys.ibm.pc.digest          info-ibmpc@arl.mil                        MD
+comp.sys.tahoe                  info-tahoe@csd1.milw.wisc.edu
+comp.sys.xerox                  info-1100@tut.cis.ohio-state.edu
+comp.terminals                  info-terms@mc.lcs.mit.edu                 *
+comp.text.desktop               dtp-l@antigone.com
+comp.text.sgml                  comp-text-sgml@naggum.no                  d
+comp.text.tex                   info-tex@shsu.edu                         <
+comp.text.tex                   texhax@cs.washington.edu                  <
+comp.unix.sco.announce          scoann@xenitec.on.ca                      M
+comp.unix.sco.misc              scomsc@xenitec.on.ca
+comp.unix.sco.programmer        scoprg@xenitec.on.ca
+comp.unix.solaris               solaris@vma.cc.nd.edu
+comp.virus                      virus-l@lehigh.edu                        M
+comp.windows.interviews         interviews@interviews.stanford.edu
+comp.windows.x                  xpert@x.org
+comp.windows.x.announce         xannounce@x.org                           M
+
+gnu.announce                    info-gnu@prep.ai.mit.edu                  M
+gnu.bash.bug                    bug-bash@prep.ai.mit.edu                  M
+gnu.chess                       info-gnu-chess@prep.ai.mit.edu
+gnu.chess.bug                   bug-gnu-chess@prep.ai.mit.edu             M
+gnu.emacs.announce              info-gnu-emacs@prep.ai.mit.edu            M
+gnu.emacs.bug                   bug-gnu-emacs@prep.ai.mit.edu             M
+gnu.emacs.gnews                 info-gnews@ics.uci.edu
+gnu.emacs.gnus                  info-gnus-english@cis.ohio-state.edu
+gnu.emacs.help                  help-gnu-emacs@prep.ai.mit.edu
+gnu.emacs.sources               gnu-emacs-sources@prep.ai.mit.edu
+gnu.emacs.vm.bug                bug-vm@uunet.uu.net
+gnu.emacs.vm.info               info-vm@uunet.uu.net
+gnu.emacs.vms                   vms-gnu-emacs@prep.ai.mit.edu
+gnu.g++.announce                info-g++@prep.ai.mit.edu                  M
+gnu.g++.bug                     bug-g++@prep.ai.mit.edu                   M
+gnu.g++.help                    help-g++@prep.ai.mit.edu
+gnu.g++.lib.bug                 bug-lib-g++@prep.ai.mit.edu               M
+gnu.gcc.announce                info-gcc@prep.ai.mit.edu                  M
+gnu.gcc.bug                     bug-gcc@prep.ai.mit.edu                   M
+gnu.gcc.help                    help-gcc@prep.ai.mit.edu
+gnu.gdb.bug                     bug-gdb@prep.ai.mit.edu                   M
+gnu.ghostscript.bug             bug-ghostscript@prep.ai.mit.edu           M
+gnu.groff.bug                   bug-groff@prep.ai.mit.edu                 M
+gnu.misc.discuss                gnu-misc-discuss@cis.ohio-state.edu
+gnu.smalltalk.bug               bug-gnu-smalltalk@prep.ai.mit.edu         M
+gnu.utils.bug                   bug-gnu-utils@prep.ai.mit.edu             M
+
+info.big-internet               big-internet@munnari.oz.au                M
+info.bind                       bind@arpa.berkeley.edu                    M
+info.brl-cad                    cad@arl.army.mil                          M
+info.bsdi.users                 bsdi-users@bsdi.com                       M
+info.bytecounters               bytecounters@venera.isi.edu               M
+info.firearms                   firearms@ns1.rutgers.edu                  M
+info.firearms.politics          firearms-politics@ns1.rutgers.edu         M
+info.gated                      gated-people@gated.cornell.edu            M
+info.grass.programmer           grassp-list@moon.cecer.army.mil           M
+info.grass.user                 grassu-list@moon.cecer.army.mil           M
+info.ietf                       ietf@venera.isi.edu                       M
+info.ietf.hosts                 ietf-hosts@nnsc.nsf.net                   M
+info.ietf.isoc                  isoc-interest@relay.sgi.com               M
+info.ietf.njm                   njm@merit.edu                             M
+info.ietf.smtp                  ietf-smtp@dimacs.rutgers.edu              M
+info.isode                      isode@nic.ddn.mil                         M
+info.jethro-tull                jtull@remus.rutgers.edu                   M
+info.labmgr                     labmgr@ukcc.uky.edu                       M
+info.mach                       info-mach@cs.cmu.edu                      M
+info.mh.workers                 mh-workers@ics.uci.edu                    M
+info.nets                       info-nets@rg.net                          M
+info.nsf.grants                 grants@note.nsf.gov                       M
+info.nsfnet.cert                nsfnet-cert@merit.edu                     M
+info.nupop                      nupop@casbah.acns.nwu.edu                 M
+info.nysersnmp                  nysersnmp@nisc.nyser.net                  M
+info.osf                        roma@uiuc.edu                             M
+info.pem-dev                    pem-dev@tis.com                           M
+info.ph                         info-ph@uxc.cso.uiuc.edu                  M
+info.rfc                        rfc-request@nic.ddn.mil                   M
+info.slug                       slug@iu.ai.sri.com                        M
+info.snmp                       snmp@psi.com                              M
+info.solbourne                  info-solbourne@acsu.buffalo.edu           M
+info.sun-managers               sun-managers@rice.edu                     M
+info.sun-nets                   sun-nets@umiacs.umd.edu                   M
+info.theorynt                   theorynt@vm1.nodak.edu                    M
+info.unix-sw                    unix-sw-request@wsmr-simtel20.army.mil    M
+info.wisenet                    wisenet@uicvm.uic.edu                     M
+
+misc.emerg-services             emerg-l@vm.marist.edu
+misc.taxes                      fedtax-l@shsu.edu
+misc.transport.air-industry.cargo       aircargo@cris.com
+misc.transport.urban-transit    transit-l@cc.umanitoba.ca
+
+news.software.anu-news          anu-news@vm1.nodak.edu
+
+rec.arts.anime                  anime-l@vtvm1.cc.vt.edu
+rec.arts.bonsai                 bonsai@home.ease.lsoft.com
+rec.arts.cinema                 rec-arts-cinema-d@antigone.com            M
+rec.arts.dance                  ballroom@mitvma.mit.edu
+rec.arts.drwho                  drwho-l@east-london.ac.uk
+rec.arts.marching.drumcorps     drumcorps-digest@cisco.com
+rec.arts.sf.misc                sf-lovers@rutgers.edu                     *
+rec.arts.startrek.reviews       trek-review-l@cornell.edu                 M
+rec.audio.high-end              info-high-audio@introl.com                M
+rec.crafts.jewelry              jewelry@mishima.mn.org
+rec.food.recipes                recipes@vistachrome.com                   M*
+rec.games.diplomacy             dipl-l@nda.com
+rec.hunting                     hunting@tamvm1.tamu.edu                   Md
+rec.hunting.dogs                gundog-l@tamvm1.tamu.edu                  Md
+rec.juggling                    juggling@pnfi.forestry.ca
+rec.music.dylan                 hwy61-l@listserv.acsu.buffalo.edu
+rec.music.early                 earlym-l@aearn.edvz.univie.ac.at
+rec.music.gaffa                 love-hounds@uunet.uu.net                  M
+rec.music.gdead                 dead-flames@virginia.edu
+rec.music.makers.choral         choraltalk@lists.colorado.edu
+rec.music.makers.synth          synth-l@auvm.auvm.edu
+rec.music.phish                 phish@phish.net
+rec.org.sca                     sca@mc.lcs.mit.edu
+rec.radio.amateur.misc          info-hams@ucsd.edu
+rec.radio.amateur.packet        packet-radio@ucsd.edu
+rec.radio.amateur.policy        ham-policy@ucsd.edu
+rec.radio.broadcasting          journal@airwaves.chi.il.us                M
+rec.radio.info                  radio-info@ucsd.edu                       M
+rec.radio.shortwave             swl-l@cuvmb.cc.columbia.edu               *
+rec.skiing.nordic               nordic-ski@graphics.cornell.edu
+rec.sport.basketball.women      wbball-l@psuvm.psu.edu
+rec.sport.disc                  ultimate-list@doe.carleton.ca
+rec.sport.golf                  golf-l@listserv.acsu.buffalo.edu
+rec.sport.orienteering          orienteering-request@graphics.cornell.edu
+rec.video                       videotech@wsmr-simtel20.army.mil          *
+rec.video.satellite.dbs         dbssat@listserv.nodak.edu
+rec.video.satellite.misc        miscsat@listserv.nodak.edu
+rec.video.satellite.tvro        homesat@listserv.nodak.edu
+rec.woodworking                 woodwork%ipfwvm@indycms.iupui.edu
+
+sci.aeronautics.airliners       airliners@chicago.com                     M
+sci.astro.fits                  fitsbits@nrao.edu
+sci.bio.ecology                 ecolog-l@umdd.umd.edu
+sci.bio.entomology.lepidoptera  leps-l@yalevm.cis.yale.edu
+sci.bio.ethology                ethology@segate.sunet.se
+sci.bio.evolution               evolution@pogo.cqs.washington.edu         M
+sci.bio.herp                    herp-l@xtal200.harvard.edu
+sci.bio.technology              biotech@umdd.umd.edu
+sci.econ.research               pol-econ@shsu.edu                         M
+sci.energy.hydrogen             hydrogen@uriacc.uri.edu                   *
+sci.lang.japan                  nihongo@mitvma.mit.edu                    <
+sci.math                        scimath@superprism.net
+sci.med.aids                    aids@rutvm1.rutgers.edu
+sci.med.telemedicine            hspnet-l@health.state.ny.us
+sci.physics                     physics@unix.sri.com
+sci.physics.fusion              fusion@zorch.sf-bay.org
+sci.psychology.digest           psyc@pucc.princeton.edu                   M
+sci.space                       space@uga.cc.uga.edu
+sci.space                       space@isu.isunet.edu
+sci.stat.consult                stat-l@vm1.mcgill.ca
+sci.stat.edu                    edstat-l@jse.stat.ncsu.edu
+sci.systems                     wholesys@netcom.com
+sci.virtual-worlds              virtu-l@listserv.uiuc.edu                 M
+
+soc.college.org.aiesec          int-voice@lists.aiesec.org
+soc.culture.bolivia             llajta@msu.edu
+soc.culture.chile               chile-l@tamvm1.tamu.edu
+soc.culture.esperanto           esperanto-l@netcom.com
+soc.culture.jewish              scj@nysernet.org
+soc.culture.jewish.parenting    scj-parenting@shamash.org                 M
+soc.culture.nepal               nepal@mp.cs.niu.edu
+soc.culture.rep-of-georgia      georgia@bioc02.uthscsa.edu
+soc.culture.soviet              scs-l@indycms.iupui.edu
+soc.culture.vietnamese          vietnet@usc.edu
+soc.feminism                    feminism-digest@netcom.com                M
+soc.genealogy.computing         gencmp-l@rootsweb.com
+soc.genealogy.french            gen-fr-l@mail.eworld.com
+soc.genealogy.german            gen-de-l@mail.eworld.com
+soc.genealogy.jewish            jewgen@mail.eworld.com                    >
+soc.genealogy.methods           genmtd-l@mail.eworld.com                  M
+soc.genealogy.misc              genmsc-l@mail.eworld.com
+soc.genealogy.slavic            gen-slavic@mail.eworld.com
+soc.genealogy.surnames          gennam-l@mail.eworld.com                  M
+soc.genealogy.uk+ireland        genuki-l@mail.eworld.com
+soc.org.nonprofit               usnonprofit-l@rain.org
+soc.politics.arms-d             arms-l@buacca.bu.edu                      M
+soc.religion.bahai              bahai-faith@oneworld.wa.com               M
+soc.religion.christian.bible-study      bible-study@spss.com              M
+soc.support.youth.gay-lesbian-bi glb-youth-l@netcom.com
+
+talk.politics.soviet            tps-l@indycms.iupui.edu
+
+vmsnet.infosystems.gopher       vmsgopher-l@trln.lib.unc.edu
+vmsnet.internals                macro32@wkuvx1.wku.edu
+vmsnet.mail.mx                  mx-list@wkuvx1.wku.edu
+vmsnet.networks.desktop.pathworks       lanworks@miamiu.acs.muohio.edu
+vmsnet.networks.tcp-ip.cmu-tek  cmu-openvms-ip@drycas.club.cc.cmu.edu
+vmsnet.networks.tcp-ip.multinet info-multinet@tgv.com
+vmsnet.networks.tcp-ip.wintcp   wintcp-l@ubvm.cc.buffalo.edu
+vmsnet.tpu                      info-tpu@shsu.edu
+vmsnet.uucp                     vmsnet@drycas.club.cc.cmu.edu
+
+This article is based on a list which Gene Spafford <spaf@cs.purdue.edu>
+maintained until May 1993.  Jim McIntosh <jim@american.edu> is a major
+contributor, and the maintainer of most gateways between listserv lists
+and network news.  Please send additions and changes to David C Lawrence
+<tale@uunet.uu.net>.
+

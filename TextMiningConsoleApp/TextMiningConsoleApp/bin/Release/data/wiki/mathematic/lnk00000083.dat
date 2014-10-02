@@ -1,0 +1,72 @@
+THE_URL:http://web.textfiles.com/computers/c4n-digiday.txt
+THE_TITLE:c4n-digiday.txt
+Solution of app_of_the_week [DigiDay Clock] by Vizion, 09/97.
+
+Thanks a lot to |Fresh| for explaining me the following things :
+
+ - cmp eax, 1  is the same as  sub eax, 1 (not stored) and CF = 1 if eax = 0
+ - how sbb and neg works
+ - and sending me a very interesting file on ASM
+
+So here we go with the important code snippet (from W32Dasm),
+
+:00404056 50                      push eax                       ;;
+:00404057 E8A47A0000              call 0040BB00                  ;; get the key entered by user
+:0040405C 83C404                  add esp, 00000004              ;;
+:0040405F 8BF8                    mov edi, eax                   ;; put entered key in edi
+:00404061 E818200000              call 0040607E                  ;; get serial and put it in eax
+                                                
+:00404066 33C7                    xor eax, edi                   ;; eax = eax xor edi
+:00404068 2D5D190000              sub eax, 0000195D              ;; eax = eax - 195Dh
+:0040406D 83F801                  cmp eax, 00000001              ;; sub eax, 1 (not saved), CF = 1 if eax
+ = -1
+:00404070 1BC0                    sbb eax, eax                   ;; if (CF = 1) then eax = -1 else eax =
+0
+:00404072 F7D8                    neg eax                        ;; eax = -eax if not equal to 0
+:00404074 A328674100              mov dword ptr [00416728], eax  ;;
+:00404079 85C0                    test eax, eax                  ;; sets ZF = 1 if eax = 0
+:0040407B 7431                    je 004040AE                    ;; jumps if ZF = 1
+
+Ok, here follows what "should be" happening if we entered the right serial number,
+
+xor eax, edi   --> eax = 195D
+sub eax, 195D  --> eax = 0
+cmp eax, 1     --> eax = 0, CF = 1
+sbb eax, eax   --> eax = -1
+neg eax        --> eax = 1
+mov dword...   --> not important
+test eax, eax  --> ZF = 0, because eax = 1
+je 004040AE    --> no jump performed because ZF = 0
+
+I did this from starting with "je 004040AE" and worked my way up.
+
+So, how do we get edi ?
+The value of eax after call 0040607E is given by the Register MsgBox, and is always the same (1164 for me
+).
+
+ #1 eax = eax xor edi --> 195D = 48C xor edi        (1164 = 48C)
+                      --> edi  = 48C xor 195D       (thx to |KAiRN| on #cracking ;)
+
+And that's all we need for our key generator....
+So here follows a possible solution for the key generator in Pascal,
+
+----------------------------------------------------------------------
+
+program DDClock;
+
+var
+ serial, result : longint;
+
+begin
+ writeln('DigiDay Clock v1.6 - Key Generator by Vizion [VC97]');
+ write('The serial number [see About] : ');
+ readln(serial);
+
+ result := serial xor $195D;
+
+ writeln('Your registration key : ', result)
+end.
+
+----------------------------------------------------------------------
+
+.EOF.

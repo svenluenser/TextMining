@@ -1,0 +1,945 @@
+THE_URL:http://web.textfiles.com/computers/john.txt
+THE_TITLE:john.txt
+
+    John the Ripper v1.3
+   ----------------------
+
+==========================
+ What is John the Ripper?
+==========================
+
+John the Ripper is a UNIX password cracker, currently available for UNIX
+(tested with Linux x86, Solaris 2.x SPARC, OSF/1 Alpha), DOS, WinNT/Win95.
+
+I assume that you have already used some UNIX password crackers, so I'll
+only describe the things specific to John.
+
+==========
+ Overview
+==========
+
+John the Ripper is designed to be both powerful and fast. It combines
+several cracking modes in one program, and is fully configurable for your
+particular needs (you can even code a custom cracking mode using the built
+in C compiler). Also, John is available for several different platforms,
+which enables you to use the same cracker everywhere (for example even
+continue a cracking session that you started on another platform).
+
+John's crypt() routine is highly optimized for faster operation, which
+makes John run much faster than other crackers. This applies to both the
+x86 assembly version, and the portable pure C one.
+
+John the Ripper supports the following cracking modes:
+- wordlist with or without rules;
+- "single crack", makes use of the login/GECOS information;
+- incremental, tries all character combinations;
+- external, allows you to define your own cracking mode.
+
+================
+ How to install
+================
+
+With binary distributions, just copy all the files to a separate directory.
+Then extract there the common files (supplied in a separate archive). You
+might also need a 'chmod +x john' depending on the archive type used.
+
+To compile the sources, just enter the directory you extracted them to, and
+type 'make'. You'll get a list of systems supported. Select one of those,
+or try 'make generic' if your system is not listed. Be sure to use GCC and
+GNU make (you might have to type the full path to 'make', since '/bin/make'
+is often also present and is not what you need).
+
+============
+ How to use
+============
+
+I intentionally made John's command line interface be a lot like Cracker
+Jack's so that it's easier to start using John for those who have used
+Cracker Jack before. Anyway, here's a short description of John's features
+including those that are the same as Cracker Jack's.
+
+To use John the Ripper, you need to supply it some password files, and a
+cracking mode. Cracked passwords will be printed on the screen and saved
+in file called ~/john.pot (in this text '~' means John's "home directory",
+i.e. the directory you put John's binary in). This file is also used not
+to load the accounts you already cracked if you run John again on the same
+password file. To retrieve the cracked passwords from ~/john.pot, use the
+'-show' option.
+
+While cracking, you can press the Enter key for status, or Ctrl+C to abort
+the session, saving point information to a file (~/restore by default).
+By the way, if you press Ctrl+C twice John will abort immediately without
+saving. The point information is also saved every 10 minutes in case of a
+crash.
+
+ Command line options
+----------------------
+
+You can specify some of the following options on John's command line (all
+of them are case sensitive, and can be abbreviated):
+
+       -pwfile:<file>[,..]     specify passwd file(s) (wildcards allowed)
+
+This option is used to specify the password files to be cracked (actually,
+anything on the command line that is not starting with a dash will be used
+as a password file name).
+
+       -wordfile:<file> -stdin wordlist mode, read words from <file> or stdin
+
+These are used to enable the wordlist mode.
+
+       -rules                  enable rules for wordlist mode
+
+Enables rules (like in Crack by Alec Muffett). The rules are stored in
+~/john.ini, in section [List.Rules:Wordlist].
+
+       -incremental[:<mode>]   incremental mode [using john.ini entry <mode>]
+
+Enables the incremental mode, using the specified ~/john.ini definition
+(section [Incremental:<mode>], where <mode> is what you specify on the
+command line, [Incremental:All] by default).
+
+       -single                 single crack mode
+
+Enables the "single crack" mode, using rules from [List.Rules:Single].
+
+       -external:<mode>        external mode, using john.ini entry <mode>
+
+Enables an external mode, using external functions defined in ~/john.ini's
+[List.External:<mode>].
+
+       -restore[:<file>]       restore session [from <file>]
+
+Continues an interrupted cracking session, reading point information from
+the specified file (~/restore by default).
+
+       -makechars:<file>       make a charset, <file> will be overwritten
+
+Generates a charset file, based on character frequencies from ~/john.pot,
+for use with the incremental mode. The entire ~/john.pot will be used for
+the charset file unless you specify some password files. You can also use
+an external filter() routine with this option.
+
+       -show                   show cracked passwords
+
+Shows the cracked passwords in a convenient form. You should also specify
+the password files.
+
+       -test                   perform a benchmark
+
+Benchmarks the performance critical routines and prints a table of estimated
+cracking speed values for different number of accounts and salts.
+
+For those unfamiliar with password crackers internals: xform1() and xform2()
+are the actual encryption routines, called for each key/salt pair, while
+setkey() is called for each word only, meaning that xform1() or xform2()
+(depending on the cracking mode used) are the only routines that will affect
+cracking speed if there're enough salts loaded. By the way, setkey() is
+benchmarked assuming that words differ by 1 character in length, and 1 more
+character replaced -- when using with xform2(), and that passwords are 8
+characters long and are totally different (no matching characters) -- when
+using with xform1().
+
+       -users:<login|uid>[,..] crack this (these) user(s) only
+
+Allows you to filter a few accounts for cracking, or for '-show'.
+
+       -shells:[!]<shell>[,..] crack users with this (these) shell(s) only
+
+This option is useful to crack/show accounts with the required shell only,
+or not to crack/show accounts with a bad shell ('!' before a shell name
+means 'not'). You can omit the path before a shell name, so '-shells:csh'
+will match both '/bin/csh' and '/usr/bin/csh', while '-shells:/bin/csh' will
+only match '/bin/csh'.
+
+       -salts:[!]<count>       crack salts with at least <count> accounts only
+
+This feature sometimes allows to achieve better performance. For example
+you can crack only some salts using '-salts:2' faster, and then crack the
+rest using '-salts:!2'. Total cracking time will be about the same, but
+you will get some accounts cracked earlier, and may not need the rest.
+
+       -lamesalts              assume cleartext passwords were used as salts
+
+Don't use this option unless you know what you're doing.
+
+       -timeout:<time>         abort session after a period of <time> minutes
+
+This will cause John to terminate after the specified time has elapsed.
+
+       -list                   list each word
+
+Prints each word being checked on the standard output. This is useful for
+checking if your custom cracking mode works correctly.
+
+       -beep -quiet            beep or don't beep when a password is found
+
+The default can be altered in ~/john.ini.
+
+       -noname -nohash         don't use memory for login names or hash tables
+
+You might need these if you don't have enough RAM. Note that '-noname' will
+not work with the "single crack" mode, since login names are used while
+cracking.
+
+ Additional utilities
+----------------------
+
+There're some symlinks to John's binary that might also be useful:
+
+       xtract [source] [> <target>]
+
+Extracts words from a text file (or stdin), to be used as a wordlist. Dupes
+are not removed, you'll also need to do a 'sort -u' on the output (in UNIX).
+
+       unshadow <passwd> <shadow> [> <target>]
+
+Combines the passwd and shadow files (when you already have access to both)
+for use with John. You might need this since if you only used shadow file,
+the GECOS information wouldn't be used by the "single crack" mode, and also
+you wouldn't be able to use the '-shells' option.
+
+================
+ Cracking modes
+================
+
+The mode descriptions here are short, and only cover the basic things.
+You should check the "Customizing" section below for more information.
+
+ Wordlist mode
+---------------
+
+This is the simplest cracking mode supported by John. All you need is
+specify a wordlist (text file containing one word per line), and some
+password files. You can enable rules (which are used to modify words) if
+desired, they will then be applied to every word in the list.
+
+The wordlist should not contain dupes. John doesn't sort the words not
+to use too much RAM, since that would require at least loading the entire
+wordlist to memory, while now it's read from disk while cracking. Also,
+leaving the words order as it is allows you to put frequent words first.
+However, if you don't place words in a reasonable order, it is better if
+you sort the wordlist alphabetically (John runs a bit faster if each word
+it tries only differs from the previous one by a few characters, this is
+especially noticable when cracking only a few accounts at a time).
+
+However, you shouldn't bother about words longer than 8 characters being
+effectively the same password if their first 8 characters match. John can
+handle this situation (and only try the password once) if such words are
+going one immediately after the other (i.e. when the wordlist is sorted).
+You'd better not truncate words to 8 characters in your wordlist, since
+the rest may be needed when you use the rules.
+
+ "Single crack" mode
+---------------------
+
+This is the mode you should start cracking with. It will try using the
+login/GECOS information as passwords. Since the information is only used
+on the account it was taken from (and on accounts with the same salt,
+which takes almost no extra time), "single crack" mode is much faster
+than the wordlist mode, which allows using a lot of rules (they are
+always enabled for this mode) in a reasonable time. Of course, this will
+only get those passwords that are based on the information used.
+
+Note that running this mode on many password files at the same time may
+sometimes get more accounts cracked than you would get if you ran it on
+the files separately.
+
+It might be a good idea not to run through all the rules, but specify a
+timeout, and then go to other modes. The rules should be sorted by the
+number for successful cracks for this case.
+
+Cracker Jack users must also note that John's "single crack" mode is
+totally different (better) from Jack's. It doesn't require a special
+wordlist since the rules support is built into John.
+
+ Incremental mode
+------------------
+
+This is the most powerful cracking mode, it can try all possible character
+combinations as passwords. However, it is assumed that cracking with this
+mode will never terminate due to the number of combinations being too large
+(actually, it will terminate if you set a low password length limit, or let
+it use a small charset), and you'll have to interrupt it earlier.
+
+That's why this mode deals with character frequency tables -- to get as many
+passwords as possible within a limited time.
+
+To use the mode you need a specific definition for the mode's parameters
+(including password length limits and the charsets). These parameters are
+defined in ~/john.ini's sections called [Incremental:<mode>], where <mode>
+is any identifier that you assign to the mode (it's the one you'll have to
+specify on John's command line). You can use a pre-defined incremental mode
+definition, or define a custom one.
+
+Once you have the definition, all you need is specify the incremental mode
+option, the mode's identifier and some password files on the command line.
+
+ External mode
+---------------
+
+You can define an external cracking mode for use with John. This is done
+with ~/john.ini's sections called [List.External:<mode>], where <mode> is
+any identifier that you assign to the mode. The section should contain some
+functions that John will use to generate the words it tries. These functions
+are coded in a subset of the C language, and are compiled by John at startup
+(if you enable the mode on John's command line).
+
+=============
+ Customizing
+=============
+
+John the Ripper's behavior can be customized by editing its configuration
+file, ~/john.ini. You can specify defaults for command line options, some
+other John's options that are not accessible from its command line, define
+parameters for incremental modes, define rules for wordlist and "single
+crack" modes, or even define a new cracking mode.
+
+The configuration file consists of several sections. Each section starts
+with a line containing its name, in brackets. Sections consist of either
+value assignments to some variables (in form 'variable = value'), or some
+other text specific to particular section's type (names of such sections
+start with a 'list.'). Section and variable names are not case sensitive.
+Lines starting with '#' or ';' and empty lines are ignored, you can use
+them for comments, or to comment out lines that you don't want to delete
+completely.
+
+ General options
+-----------------
+
+Defaults for some command line options can be defined in the [Defaults]
+section. You can define the following variables:
+
+Wordfile   Set to your wordlist file name. This will assume the wordlist
+           mode by default - no need to use the '-wordfile' command line
+           option unless you want to override this default value.
+
+Timeout    Set to the value in minutes. This will enable the timeout for
+           all modes by default.
+
+Beep       Set to something starting with 'Y' or 'N' (I hope the meaning
+           is clear) to specify whether to beep when a password is found or
+           not. This default can be overridden with the '-beep' and '-quiet'
+           command line options. If you omit this variable definition, the
+           default will be not to beep.
+
+Some other options can be defined in the [Options] section:
+
+Realtime   Set to 'Y' to show elapsed time as D:HH:MM:SS instead of just
+           seconds (as Jack does).
+
+Percent    Set to 'Y' to show the progress indicator.
+
+ Incremental mode parameters
+-----------------------------
+
+To define the incremental mode parameters you need to create a section
+called [Incremental:<mode>], where <mode> is any identifier that you assign
+to the mode. There're some pre-defined incremental modes in the default
+configuration file supplied with John, you can use them as templates. The
+following parameters are supported:
+
+CharCount  Allows you to limit the number of different characters used, to
+           make John start trying longer passwords earlier. This can also
+           expand the charsets to the specified size when using an external
+           charset file which only defines less than CharCount characters.
+           By default (when this parameter is not defined) all the defined
+           characters will be used.
+
+MinLen     Minimum password length, in characters (1 by default).
+
+MaxLen     Maximum password length, in characters (8 by default).
+
+Wordlike   Set to 'Y' to enable a simple built in word filter (words with
+           more than one vowel in a row, or more than two non-vowels in a
+           row, will get filtered out).
+
+File       External charset file name (the file is loaded from ~ unless full
+           path is specified). Setting this parameter disables the charsets
+           defined inside the configuration file.
+
+CharsetNM  (where N and M are digits, 1 <= N <= 8, 1 <= M <= N) Defines a
+           charset for password length N, character position M. The order
+           of characters is important, more frequent characters should be
+           placed first. The charsets don't have to be the same size.
+
+ Wordlist rules
+----------------
+
+The rules for wordlist and "single crack" modes are defined in separate
+sections called [List.Rules:Wordlist] and [List.Rules:Single] respectively.
+I used an extended Crack (by Alec Muffett) syntax, since many of you might
+be already familiar with it. I added some more rules, and (most important)
+a preprocessor, which generates multiple rules from a single source line.
+When defining rules, simply place one rule (which may include preprocessor
+commands) per line. Each rule consists of one or more simple commands. The
+following commands are supported (most of the descriptions are copied from
+Crack's dicts.rules, however the code is my own, and is faster than that
+from Crack):
+
+Ordinary commands:
+:       no-op - do nothing to the input word
+<n      reject word unless it is < n characters long, where n = 0-9
+>n      reject word unless it is > n characters long, where n = 0-9
+^x      prepend character 'x' to word
+$y      append character 'y' to word
+l       force word to be lowercase
+u       force word to be uppercase
+c       force word to be capitalized
+r       reverse word: "Fred" -> "derF"
+d       duplicate word: "Fred" -> "FredFred"
+f       reflect word: "Fred" -> "FredderF"
+p       make best attempt to pluralize a lowercase word
+onx     overstrike character in position n (start at 0) with character 'x'
+inx     insert character 'x' in position n (start at 0) and shift the rest
+        of the input string right
+        nb: if n > strlen(input), character 'x' will be appended
+xnm     extract substring from position n (start at 0) for up to m characters
+
+Commands which may use character classes:
+sxy     replace (swap) all characters 'x' in the word with 'y'
+s?cy    replace all characters of class 'c' in the word with 'y'
+@x      purge all characters 'x' from the word
+@?c     purge all characters of class 'c' from the word
+!y      reject word if it contains character 'y'
+!?c     reject word if it contains a character in class 'c'
+/x      reject word unless it contains character 'x'
+/?c     reject word unless it contains a character in class 'c'
+=nx     reject word unless character at position n is equal to 'x'
+=n?c    reject word unless character at position n is in class 'c'
+        nb: the word always starts at position 0
+
+Character classes for use in the above commands:
+??      matches '?'
+?v      matches vowels: "aeiouAEIOU"
+?c      matches consonants: "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ"
+?w      matches whitespace: " \t"
+?p      matches punctuation: ".,:;'\"?!`"
+?s      matches symbols "$%^&*()-_+=|\\<>[]{}#@/~"
+?l      matches lowercase letters ('a' to 'z')
+?u      matches uppercase letters ('A' to 'Z')
+?d      matches digits ('0' to '9')
+?a      matches letters ('a' to 'z' and 'A' to 'Z')
+?x      matches letters and digits ('a' to 'z', 'A' to 'Z' and '0' to '9')
+The complement of a class may be matched by the uppercase of its letter,
+i.e.: where ?d == DIGITS, ?D == NON-DIGITS, and so on.
+
+All the commands described above are the same as in Crack v4.1, while the
+following ones are added in John (not very useful, I admit, most of the
+required stuff was already implemented in Crack v4.1):
+
+{       shift word left: "jsmith" -> "smithj", etc
+}       shift word right: "smithj" -> "jsmith", etc
+Dn      delete character in position n (start at 0) and shift the rest of
+        the input string left
+P       "crack" -> "cracked", etc (lowercase only)
+G       "crack" -> "cracking", etc (lowercase only)
+~i      invert case, by keyboard: "Crack96" -> "cRACK(^", etc
+~I      invert case: "Crack96" -> "cRACK96", etc
+~v      lowercase vowels: "Crack96" -> "CRaCK96", etc
+~>      shift each character right, by keyboard: "Crack96" -> "Vtsvl07", etc
+~<      shift each character left, by keyboard: "Crack96" -> "Xeaxj85", etc
+
+Extra "single crack" mode commands for word pairs support, to control if
+other commands are applied to the first, second, or both words:
+
+1       first word only
+2       second word only
++       the concatenation of both (should only be used after a '1' or '2')
+
+If you use some of the above commands in a rule, it will only process word
+pairs (full names, from the GECOS information), and reject single words.
+A '+' is assumed at the end of any rule that uses some of these commands,
+unless you specify it manually. For example, '1l2u' will convert the first
+word to lowercase, the second one to uppercase, and use the concatenation
+of both. The use for a '+' might be to apply some more commands: '1l2u+r'
+will reverse the concatenation of both words, after applying some commands
+to them separately.
+
+[ Crack v5.0 wasn't out by the time I was coding rule support for John, so
+I extended the syntax my own way. Actually, the new Crack v5.0's rules seem
+redundant, or match with what I already added to John ([ == D0, ] == rD0r,
+C == c~I, t == ~I, (x == =0x, )x == r=0xr, 'n == x0n). The only rule left
+is %nx, or %n?c (rejects the word unless it contains at least n instances
+of character 'x', or of members of class 'c'). Anyway, I added all these to
+John, for compatibility reasons. Be sure to prefix '[' and ']' with a '\'
+if you use them, since they're control characters for the preprocessor. ]
+
+If a rule (line of commands) doesn't change a word, it is rejected, unless
+the entire rule was a plain ':'. This assumes you have a ':' somewhere in
+your rules list.
+
+The preprocessor is used to combine similar rules into one source line. For
+example, if you need to make John try lowercased words with digits appended,
+you could write a rule for each digit, 10 rules total. Now imagine appending
+two-digit numbers -- the configuration file would get large and ugly.
+
+With the preprocessor you can do these things easier. Simply write one
+source line containing the common part of these rules, and the list of
+characters you would have put into separate rules, in brackets (the way
+you would do in a regular expression). The preprocessor will then generate
+the rules for you (at John's startup). For the examples above, the source
+lines will be 'l$[0-9]' (lowercase and append a digit) and 'l$[0-9]$[0-9]'
+(lowercase and append two digits). These source lines will be expanded to
+10 and 100 rules respectively. By the way, the preprocessor's commands are
+processed right-to-left, and the characters are processed left-to-right,
+which gets a normal order of numbers in such cases as in the example with
+appending two-digit numbers. Note that I only used character ranges in these
+examples, however you can combine them with character lists, like '[aeiou]'
+will use vowels, and '[aeiou0-9]' will use vowels and digits.
+
+There're some control characters in rules ('[' starts a preprocessor's
+character list, '-' marks a range inside the list, etc). You should prefix
+them with a '\' if you want to put them inside a rule without using their
+special meaning. Of course, the same applies to '\' itself. Also, if you
+need to start a preprocessor's character list at the very beginning of a
+line, you'll have to prefix it with a ':', or it would be treated as a new
+section start.
+
+ Defining an external mode
+---------------------------
+
+To define an external cracking mode you need to create a section called
+[List.External:<mode>], where <mode> is any identifier that you assign to
+the mode. The section should contain some functions that are coded in a
+subset of the C language. John will compile and use them if you enable the
+mode on its command line. The compiler produces virtual machine code which
+is then either interpreted or converted into machine executable code (this
+is currently done for x86 hardware only).
+
+The following functions are currently used by John:
+
+init()     called at startup, should initialize global variables
+filter()   called for each word to be tried, can filter some words out
+generate() called to generate words, when no other cracking modes used
+restore()  called when restoring an interrupted session
+
+All of them are of type 'void', with no arguments, and should use global
+variable 'word' (which is pre-defined as 'int word[9]'), except for init()
+which is called before 'word' is initialized. The 'word' variable contains
+current word to be tried, in ASCIIZ. filter() can modify it, or zero out
+'word[0]' to skip it. generate() shouldn't assume any particular value of
+'word' when it gets called, but should put there the next word to be tried,
+or zero out 'word[0]' when cracking is complete (this will cause John to
+terminate). restore() should set global variables to continue from the
+supplied 'word'.
+
+You can either use an external mode separately, or with some other cracking
+mode, in which case only init() and filter() will be used (and only filter()
+will be required). Using an external filter is compatible with all the other
+cracking modes and '-makechars' command line option.
+
+It is recommended that you don't use filter(), or at least don't filter too
+many words out when using an external mode with your own generate(). Better
+modify generate() not to generate words that would get filtered out.
+
+As I already mentioned above, the compiler supports a subset of C. John is
+a cracker, not a compiler, so I don't think it needs anything else. Here's
+a list of C features that are missing in John's compiler:
+
+- only standard functions supported, you can't define your own ones;
+- only 'while' loops are supported;
+- only 'int' and 'void' data types supported;
+- only single dimensional arrays supported;
+- structs/unions are not supported;
+- pointers are not supported (right, more about arrays below);
+- probably something else...
+
+Some of the supported features differ from those of C:
+
+- array name alone refers to its first element (the one with zero index),
+  not the array's address;
+- '++' and '--' operations are performed while the expression is being
+  calculated, not pre/post-calculated; this will give the same result as in
+  C in most cases (like 'i = j++;' is equal to 'i = j; j = j + 1;' in both
+  C and John's compiler), but if the variable these operations are applied
+  to is used more than once in one expression, the result will differ from
+  that of C (like 'i = j++ - j++;' is equal to 'i = j - (j + 1); j = j + 2;'
+  in John's compiler, but 'i = j - j; j = j + 2;' in C);
+- I hope nothing else differs...
+
+However, the powerful C expression syntax (all the integer operations),
+'if'/'else' and 'while' are still available for use. It should be enough
+for coding almost anything. You can use the external mode example in the
+configuration file supplied with John as a template.
+
+================
+ Usage examples
+================
+
+These examples are to give you some tips on what John's features can be
+used for. Some of them may not be obvious, I'm sorry if others are, but
+anyway, I just got tired of answering questions.
+
+ Command line
+--------------
+
+1. Assume you just got a password file, 'passwd.1', and want to crack it.
+It is wise to start with the "single crack" mode:
+
+   john -single passwd.1
+
+or, since options can be abbreviated (however, I'll be using full names for
+most options in these examples):
+
+   john -si passwd.1
+
+If you have more files to crack, better to load them at the same time:
+
+   john -single passwd.1 passwd.2
+
+or even:
+
+   john -single passwd.*
+
+2. Now, you got some passwords cracked, they are saved in ~/john.pot. You
+want to retrieve them:
+
+   john -show passwd.1
+
+If the account list gets large and doesn't fit on the screen, you can of
+course use output redirection, like:
+
+   john -show passwd.1 | more
+
+Now, you may notice that many accounts have a disabled shell, you can make
+John ignore these (assume that shell is called '/etc/expired'):
+
+   john -show -shells:!/etc/expired passwd.1
+
+or, shorter, but will also match '/any/path/expired':
+
+   john -show -shells:!expired passwd.1
+
+or, if you also want to ignore some other shell, say '/etc/newuser':
+
+   john -show -shells:!expired,!newuser passwd.1
+
+To check if any root (uid 0) accounts cracked:
+
+   john -show -users:0 passwd.1
+
+or, to check for cracked root (uid 0) accounts in all the files:
+
+   john -show -users:0 passwd.*
+
+To display the root (login 'root') account only:
+
+   john -show -users:root passwd.1
+
+3. When the "single crack" mode doesn't give enough accounts, you can use
+more powerful cracking modes, like the wordlist one. Assume your wordlist
+file is called 'words.lst':
+
+   john -w:words.lst passwd.1
+
+or, with rules enabled (slower, but more powerful):
+
+   john -w:words.lst -rules passwd.1
+
+To only crack accounts with a good shell (in general, both the '-shells'
+and '-users' filters described above work for all the cracking modes also):
+
+   john -w:words.lst -rules -shells:sh,csh,tcsh,bash passwd.1
+
+Like with all the other cracking modes, faster to crack all the files you
+need cracked simultaneously:
+
+   john -w:words.lst -rules passwd.*
+
+You can crack some accounts only. This will try cracking all root (uid 0)
+accounts in all the password files:
+
+   john -w:words.lst -rules -users:0 passwd.*
+
+However, I don't recommend cracking root passwords only, since it usually
+takes longer to crack the password (often impossible within a reasonable
+time) than to hack root using security holes. If you are cracking your own
+password file to ensure the passwords are uncrackable, better select a good
+root password, and only crack the rest.
+
+Sometimes it is useful to split your password files into two parts which
+you crack separately, like:
+
+   john -w:words.lst -rules -salts:2 passwd.*
+   john -w:words.lst -rules -salts:!2 passwd.*
+
+This will make John try salts with two or more accounts faster, and then
+try the rest. Total cracking time will be about the same, but you will get
+some accounts cracked earlier, and may not need the rest. Also, you might
+want to try all the accounts with a small wordlist, and only those that you
+can try faster (with '-salts:2') with a larger one. Often it is better to
+use a larger value than 2 for '-salts' (sometimes even as high as 1000 will
+do), adjust it for your particular case.
+
+Note that the default wordlist rules include ':' (which means 'try words
+as they are in the list') as the first line. If you already ran through a
+wordlist without using rules, and then decided to try the same wordlist
+with rules also, you'd better comment this line out.
+
+4. The most powerful cracking mode in John is incremental. You can simply
+run:
+
+   john -i passwd.1
+
+This will use the default incremental mode parameters, which are defined in
+~/john.ini's [Incremental:All] section. In the configuration file supplied
+with John these parameters are to use the full 95 character charset, and to
+try all possible password lengths, from 1 to 8 characters. Don't expect this
+to terminate in a reasonable time (unless all the passwords were weak and
+got cracked).
+
+In many cases it is faster to use some other pre-defined incremental mode
+parameters and only crack simpler passwords, from a limited charset. The
+following command will try 26 different characters only, passwords from
+'a' to 'zzzzzzzz':
+
+   john -i:alpha passwd.1
+
+Again, you can crack root accounts only and use some other John's features
+with the incremental mode. This command will try cracking all root (uid 0)
+accounts in all the password files, and only those of them that produce
+matching salts, so you get at least twice the performance -- if you have a
+lot of password files (like 1000 of them, named '*.pwd'), otherwise there
+will be no roots with matching salts:
+
+   john -i -users:0 -salts:2 *.pwd
+
+5. If you got a password file and already have a lot of accounts cracked
+and/or sniffed (but need some more), and the passwords are unusual, then
+you might want to generate a new charset file, based on characters from
+that password file only:
+
+   john -makechars:custom.chr passwd.1
+
+Then use that new file for the incremental mode.
+
+If you got several password files from the same country, it might be useful
+to use all of them for the charset file that you then use to crack more
+accounts in these files or some other password files from that country:
+
+   john -makechars:custom.chr passwd.1 passwd.2
+   <add your custom incremental mode definition to ~/john.ini>
+   john -i:custom passwd.3
+
+In the example above, I assume that 'passwd.1' and 'passwd.2' are password
+files from the same country that you already have a lot of accounts for,
+and 'passwd.3' is the password file you need cracked.
+
+You can use some pre-defined or custom word filters when generating the
+charset file, to make it only try some simpler words:
+
+   john -makechars:my_alpha.chr -external:filter_alpha passwd.1
+
+If your ~/john.pot file got large enough (or if you don't have any charset
+files at all), you might want to use it for the new charset files:
+
+   john -makechars:all.chr
+   john -makechars:alpha.chr -external:filter_alpha
+   john -makechars:digits.chr -external:filter_digits
+
+In the example above, John will overwrite the charset files (if they already
+exist) with the ones based on your entire ~/john.pot (John uses the entire
+file if you don't specify any password files). Note that the word filters
+used are pre-defined in ~/john.ini supplied with John for your convenience.
+
+ Configuration file
+--------------------
+
+1. Assume you notice that in some password file a lot of users have their
+passwords set to login names with '?!' appended. Then you just make a new
+"single crack" mode rule, and place it somewhere in the beginning:
+
+   [List.Rules:Single]
+   $?$!
+
+Hint: if you want to temporary comment out all the default rules, you can
+simply rename the section to something John doesn't use, and define a new
+one with its old name, but be sure to leave the 'list.' part of the name,
+so you don't get a parse error.
+
+All the same applies to the wordlist rules also.
+
+2. If you generate a custom charset file (described above) you will also
+need to define a ~/john.ini section with the incremental mode parameters.
+In the simplest case it will be like this (where 'Custom' can be replaced
+with any name you like):
+
+   [Incremental:Custom]
+   File = custom.chr
+
+This will make John use characters that were in passwords used to generate
+the charset file only. If you want to use all the 95 characters, you will
+also need to add:
+
+   CharCount = 95
+
+Adding this line will tell John to expand the charsets if some of the 95
+characters (ASCII codes 32 to 126) didn't occur while generating the file.
+The characters are added in that order: a-z, A-Z, 1-9, 0, the rest.
+
+You can also use CharCount to limit the number of different characters that
+John tries:
+
+   CharCount = 25
+
+If you didn't use any filters when generating the charset file, setting
+CharCount that low will most likely disable some rare characters, and make
+John try complicated long passwords earlier.
+
+To make John try passwords of some lengths only, use the following lines:
+
+   MinLen = 6
+   MaxLen = 8
+
+Setting 'MinLen' high, as in the example above, is reasonable if shorter
+passwords weren't allowed to set on the machine you got the password file
+from (however, note that root can usually set any password for any user).
+
+On the contrary, you might want to set 'MaxLen' low if you think there are
+enough short passwords.
+
+When using alphabetical characters only, it may be useful to enable the
+simple built in word filter, if many passwords are simple enough:
+
+   [Incremental:Wordlike]
+   CharCount = 26
+   MinLen = 3
+   Wordlike = Yeah
+   File = alpha.chr
+
+3. When using John on machines with only 4Mb (or less) of RAM installed, you
+may need to use smaller charsets, since the ones generated with '-makechars'
+require a lot of memory when expanded (for faster operation). You might also
+need this if you load a lot of password files, and don't have enough memory
+left, or to make John run a little faster when cracking only a few (or one)
+salt. This happens because John can take the advantage of each word it tries
+being like the previous one, with only some characters changed. When it uses
+large external charset files, the words are tried in a different order than
+when using smaller charsets inside of ~/john.ini, and are too different from
+each other. However, note that a little increase of comparisons/second does
+not always mean you get your passwords cracked faster, the better order of
+tries when using the larger external charsets is also important. So it is
+wise to only use the smaller charsets if there's no other choice, or if you
+will be trying all the character combinations anyway.
+
+I intentionally left the smaller charsets inside of ~/john.ini supplied with
+John so you can just comment out the 'File =' lines, and they will be used
+instead of the large external ones.
+
+4. Another use of the smaller charsets may be to define them manually for
+some special cases. For example, if you know a place where users often
+suffix their passwords with '1':
+
+   [Incremental:Suffix1]
+   MinLen = 6
+   MaxLen = 6
+   Charset61 = abcdefghijklmnopqrstuvwxyz
+   Charset62 = abcdefghijklmnopqrstuvwxyz
+   Charset63 = abcdefghijklmnopqrstuvwxyz
+   Charset64 = abcdefghijklmnopqrstuvwxyz
+   Charset65 = abcdefghijklmnopqrstuvwxyz
+   Charset66 = 1
+
+Of course, you can do the same for other lengths. It is also wise to sort
+the characters by their frequencies. If you're too lazy to actually do that,
+you can simply take the charsets from a pre-defined incremental mode. For
+example, if you take Charset61 to 65 in the example above from the default
+[Incremental:Alpha] definition's Charset51 to 55, you will get almost what
+you would get if calculating the frequencies for 6 character long passwords
+with first 5 characters being alphabetical, and '1' at the end.
+
+5. You can do the same thing as in the example above by coding an external
+word filter:
+
+   [List.External:Filter1]
+   void filter() {
+     int i;
+
+     i = 0;
+     while (word[i] && word[i] >= 'a' && word[i] <= 'z') i++;
+     if (word[i] != '1' || word[i + 1]) word = 0;
+   }
+
+This filter will only leave words with some alphabetical characters and '1'
+at the end. You can now use it with some other cracking modes, but this will
+most likely be slow, since most words will get filtered out. Better to use
+it for generating the charsets, and use them (if you have enough passwords
+cracked that will pass the filter).
+
+If you can't use the frequency tables for some reason, you can do the same
+by coding a totally new external mode:
+
+   [List.External:Suffix1]
+   int len, current[9];
+
+   void init() {
+     int i;
+
+     current[len = 6] = 0; current[i = len - 1] = '1';
+     while (i--) current[i] = 'a';
+   }
+
+   void generate() {
+     int i;
+
+     i = len + 1;
+     while (i--) word[i] = current[i];
+
+     i = len - 2;
+     while (++current[i] > 'z')
+     if (i) current[i--] = 'a'; else current = -1;
+   }
+
+   void restore() {
+     int i;
+
+     i = len + 1;
+     while (i--) current[i] = word[i];
+   }
+
+=========
+ Credits
+=========
+
+While developing John, I used some ideas from other password crackers:
+
+- Crack by Alec Muffett --
+    wordlist rules syntax;
+- Cracker Jack by Jackal --
+    user interface;
+- Star Cracker by The SOrCErEr --
+    thanks for proving the large charset files are worth implementing.
+
+The crypt() routine is based on the old one by Alec Muffett, that came
+with Crack v4.1. Only some initialization routines (which are not time
+critical) remained almost unchanged now, the rest is re-coded using my
+own ideas and some from other crypt() implementations (actually, there
+are now several different algorithms supported with #ifdef's to better
+match your architecture).
+
+I'd like to thank Roman Rusakov for the x86 assembly version of crypt()
+that my implementation is based on. His optimization hints are great.
+
+The DOS version is compiled with DJGPP v2 by DJ Delorie with GCC 2.7.2
+(http://www.delorie.com), the DPMI server is by Charles W Sandmann
+(sandmann@clio.rice.edu; 1206 Braelinn, Sugar Land, TX 77479), its source
+code is at ftp://ftp.simtel.net/pub/simtelnet/gnu/djgpp/v2misc/csdpmi3s.zip.
+
+Cygnus Developer's Kit (http://www.cygnus.com/gnu-win32) was used to compile
+the Win32 version.
+
+========================
+ How can I contact you?
+========================
+
+Send your mail to solar@ideal.ru or 2:5020/398.9, or catch me on EFnet IRC,
+my nick is Solar_Diz.
+
+Please, don't ask me questions until you read this entire file (and some
+FAQs on password cracking in general, if you're unfamiliar with it). Also,
+do not send me password files, I'm not a cracking service.
+
+Signed,
+Solar Designer
+

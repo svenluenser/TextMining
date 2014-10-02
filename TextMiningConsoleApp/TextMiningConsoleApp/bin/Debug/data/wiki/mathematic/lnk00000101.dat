@@ -1,0 +1,1475 @@
+THE_URL:http://web.textfiles.com/computers/crackz.txt
+THE_TITLE:crackz.txt
+THE NEWBIES GUIDE TO CRACKING - Part I, By CrackZ
+
+THE EXAMPLE PROGRAM'S
+
+Windows Enforcer v4.1, (http://posum.com).
+Start Clean v1.0. (http://users.aol.com/felhasan/index.htm).
+BS/1 Small Business v1.1h, (Davis Business Systems, http://www.dbsonline.com).
+Spear Internet Marketing Tool Beta Release 1, (http://www.metafuse.com).
+Premia Codewright Professional v5.1, (http://www.premia.com).
+Cygnus v1.5, (http://www.softcircuits.com).
+Vulcan Notes v2.13, (http://www.webcom.com/vulcan).
+WinHacker 95 v2.0 (http://www.winhacker.com).
+DiskCopy v4.0 (http://members.aol.com/ron2222).
+Emulive Wave Audio Encoder v2.2 (http://www.emulive.com).
+Space Monitor v1.1a (http://dialspace.dial.pipex.com/parasoft/spacemon).
+Any Speed v1.3 (http://www.pysoft.com).
+ScrnSaveSwitch/Plus v4.50 (http://www.ssswitch.com).
+File-Ex v2.00c (http://www.cottonwoodsw.com).
+Jot Note Manager 32-bit v1.3 (http://www.mjmarshall.demon.co.uk).
+
+BONUS - Virtual Gibbs v4.23.13 (http://info@gibbsnc.com).
+
+BRIEF INTRODUCTION
+
+Welcome to my first document about the subject of cracking, this tutorial is aimed at a target audience o
+f people taking their first steps into the world of cracking although a few of the cracks may interest mo
+re experienced crackers.  Experienced crackers or those with programming knowledge may like to skip this
+tutorial as most of the cracks covered are fairly basic.
+
+You should familiarise yourself with the many Internet search engines (I recommend Yahoo / AltaVista) in
+order to track these programs down, I've tried to give url's where I can but they will no doubt expire du
+ring my writing of this document, if you are lucky enough to find me on EFNET I may be persuaded to provi
+de you with the files.  Remember that later versions of these programs may and often do use the same prot
+ection mechanism.
+
+May I just personally greet all those people I've seen on #cracking4newbies and other channels who inspir
+ed me to write this document (in no particular order).
+
+WHAT IS CRACKING?
+
+Well, Cracking is essentially the process of understanding how computer programs operate, its traditional
+ use has been for disabling or beating the numerous protection schemes which are placed upon many applica
+tions and games today.  I am legally obliged to say that I do not support software piracy in any of its g
+uises and that this document is purely for educational use.
+
+TOOLS
+
+One of the first things you will need to do in order to crack is to equip yourself with a good set of too
+ls, the better you prepare the better you will crack.  At the minimum you will need a Windows debugger, a
+ HEX editor and a good Windows Disassembler plus other auxiliary tools for specific cracks.  Copies of Bo
+rland C++, Visual Basic & Visual C++ are also useful even if you are not yet able to program.  I have sug
+gested those tools you obtain below.
+
+NuMega's Softice - The best windows debugger.  I use v3.22 for Windows 95, get v2.8 /2.6 for DOS also.
+Hackers View or any other good HEX editor.
+WinDASM v8.9, alternatively Sourcer, IDA Professional.
+NaTzGUL's InstallShield Disassembler - now an essential tool.
+
+OPTIONAL
+
+QuickView or QuickView Plus - Included with Windows 95.
+Windows API 32 Guide - Help file covering all of the Windows functions or Help PC.
+A Windows 95 registry monitoring tool.  (Registry Monitor).
+NuMega's SmartCheck v5.0 - Useful for VB5 applications.
+
+SOFTICE & HOW TO USE IT
+
+If you ask most crackers which tool they recommend or have the highest regard for, the answer will inevit
+ably be Softice, from NuMega Technologies (ftp://ftp.numega.com).  Softice is the windows debugger of cho
+ice.
+
+When installed it is loaded through autoexec.bat as a TSR program, usually as WINICE.EXE, when you restar
+t Windows it will be activated.  Before you reboot you should familiarise yourself with the file WINICE.D
+AT in the installation directory.  You should open this file in a standard text editor e.g. Notepad and m
+ake the following changes to enhance Softice's usability.
+
+1.  Firstly ensure that you have removed all of the semi-colon's from the section that says "Examples of
+export symbols.....".  This will ensure that you can set breakpoints on the common set of Windows functio
+ns known as the Win32 API (Application Programming Interface).
+
+2.  You should also ensure that the INIT line looks like this below:
+INIT="CODE ON; X;"  This ensures that HEX values are displayed.
+
+To toggle between Windows & Softice we use the key combination Ctrl+D, try it now, if you are unable to r
+eturn to Windows with Ctrl+D again then the most likely problem is with your display card configuration.
+ When you first enter SI the top of the screen should look something like this:
+
+EAX             EBX             ECX             EDX             ESI
+EDI             EBP             ESP             EIP             o d I s Z A P C
+
+These show the CPU registers and their contents as well as the various flags.  The most important of thes
+e is the Z or zero flag as it is used by conditional jump statements.  The 'r' command allows you to edit
+ registers contents, the Insert key will then change the status of the flag and the registers window can
+be toggled on and off with the wr command.  The various other flags are as follows, read the Intel guides
+ for more information.
+
+o = Overflow.           d = Direction.          I = Interrupt.
+s = Sign Flag.          Z = Zero Flag.          A = Auxilary Carry Flag.
+P = Parity Flag.                C = Carry Flag.
+
+The Data Window follows, it looks something like this (toggle command wd):
+
+0157:406030     20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 - HEX values, there are 16.
+0157:406040     20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20
+
+You can use 'd memory address' e.g. d 00406030 to view the contents of a memory location, or use 'e memor
+y address' to edit those contents.  This applies also to the registers e.g. 'e eax'.
+
+Finally the code window (toggle command wc), which shows you all of the assembler level code that is curr
+ently in progress, the 'a' command, covered later allows you to change instructions.
+
+Other useful keys include:
+
+'h' or F1 for Help.
+F2 to toggle the CPU registers, mine are always on.
+F8 to step instructions and into functions.  F10 to step over functions or step through code.
+F11 to step out of a function i.e. return to the caller.
+
+BREAKPOINTS
+
+Most cracking begins by establishing the location of the protection scheme, to do this we use carefully c
+hosen breakpoints, the idea being that we wish to be in Softice just at the point the protection 'snaps'
+and then start examining the code.  In SI we break at protection schemes using breakpoints on functions,
+so for example a serial # protection we know must read in the contents of what we entered to verify it, h
+ence the use of the function GetWindowTextA.  The following breakpoint commands are used in SI.
+
+'bpx' (sets a break point on execution e.g. bpx GetWindowTextA).
+'bl' (lists all currently set break-points).
+'bc' (clears the most recently set breakpoint or use bc * to clear all).
+'be' (enables breakpoints).
+'bd' (disables breakpoints).
+
+There are other SI tutorials which may explain this in greater detail, I suggest you also obtain the SI d
+ocumentation from NuMega's ftp, both the manual and command reference and study them.
+
+SERIAL # CRACKS
+
+Without further ado lets move into the cracking.  Serial # cracks tend to be the easiest to start with, h
+owever they will vary in their operation with most programmers using techniques such as byte shifting, xo
+ring and arithmetic operations to try and confuse or disguise the operation of these routines, essentiall
+y these routines are merely a hindrance and as a cracker they will waste lots of your time.
+
+Serial # checks are usually implemented upon one of these lines.
+
+1.  The program either compares your code with a universally good code (hard coded-in), or..
+2.  The program computes your individual code based upon information provided by you or obtained from you
+r registry.  (These tend to require that you produce a keygen if you want to make a general purpose distr
+ibution).
+
+I start this tutorial with a program which has 1 universally acceptable code.  (After reading this exampl
+e you may like to attempt WorkStation Lock (also from Posum Software)) or Norton's TaskLock as their seri
+al # system is very similar to the one shown here.
+
+Windows Enforcer v4.1 (enfset.exe, 176,128 bytes)
+
+To start this cracking tutorial I thought I would select a fairly small and simple serial # protection.
+With cracking, any information is power so I recommend you always read any help files or readme.txt files
+ that are provided with an application, just to see what information you can gain.  I found by reading th
+e help file that this program has both single user and site licence options and that these are enabled by
+ entering a serial # in a registration box.
+
+It seemed likely to me that this program was coded by a single programmer being so small and fairly simpl
+e in function, so in theory at least there is unlikely to be a very powerful protection scheme.  So lets
+start our cracking approach.
+
+You should quickly use QuickView upon the file enfset.exe file and take a look at the section entitled Im
+port Table and just check which dll's are imported by the program (you should always do this with any pro
+gram).  I get the following, I've also illustrated what these files are actually responsible for:
+
+Winmm.dll               Multimedia API.
+Kernel32.dll
+User32.dll
+Gdi32.dll
+Comdlg32.dll            Common Dialog's.
+Winspool.drv            Printing.
+Advapi32.dll            Registry Access.
+Shell32.dll
+
+All of these dll's are shipped with Windows 95 as standard components, Kernel, User, Shell & Gdi make up
+a core part of the Windows 95 OS and handle I/O operations as well as memory allocation.  A you can see t
+his program imports standard Windows dll's only and thus it is safe to assume that only functions from th
+e Win 32 API are being used.
+
+QuickView will also tell you that this is a 32-bit program so already we know that 32-bit standard Win 32
+ API functions are being used.  Notice that GetDlgItemTextA is imported from User32.dll.
+
+So lets launch the program, and look at the register option.  You should see a standard dialog box asking
+ you to input a registration code.  So let's enter something in the box (there's no set length), don't pu
+sh OK yet, just Ctrl+D into SI and start setting some breakpoints on likely functions used to read a valu
+e from a dialog box.
+
+As it's 32-bit our choices are restricted to GetWindowTextA & GetDlgItemTextA (note that we know which of
+ these is used from our research earlier).  So set a breakpoint on GetDlgItemTextA as you have been shown
+ in the Softice section (>bpx getdlgitemtexta) and then Ctrl+D to return to the box.
+
+Now when you click the OK button, you should be returned to Softice with a break on GetDlgItemTextA, you
+should immediately push F11 to find out which program actually called this function.  (It should be enfse
+t.exe).  Now you should be looking at the following code fragment:  Using Ctrl+Up you can see previous li
+nes of code.
+
+CALL    [USER32!GetDialogItemTextA]     The function call.
+JMP     004123A5                                A compulsory jmp.
+POP     EBP                             Pop EBP from the stack.
+RET     000C                            Return from function.
+
+LEA     EAX,[EBP-68]                    EAX = EBP-68
+PUSH    EAX                             Push EAX on to the stack.
+CALL    00402439
+ADD     ESP,04                          Tidy up stack after function.
+LEA     EAX,[EBP-68]                    EAX = EBP-68.  (EAX now holds good serial #).
+PUSH    EAX                             Save EAX.
+PUSH    EDI                             Save EDI.
+CALL    00404F60
+ADD     ESP,08                          Tidy up stack after function.
+TEST    EAX,EAX                         Check function return.
+JNZ     00403C6F                                Jump if not zero.
+
+This code fragment should be fairly simple to understand, at the 2nd LEA EAX,[EBP-68] the good serial num
+ber can be viewed by typing 'd eax', at this stage there is no need to really understand the functions at
+ 00402439 & 00404F60 seeing as the TEST EAX,EAX is the only check for a valid serial # and we know what t
+hat is already.  Windows Enforcer 4.1 serial # 5434343543435431354.
+Start Clean v1.0 (startcln.exe, 29,184 bytes)
+
+My next target introduces the concept of the key generator although you may only like to do this when you
+ have examined some of the later cracks in this tutorial.  When you start this program it pops up a nag s
+creen saying register, and when you click the register button you are confronted with a please insert nam
+e and code screen.  Prior to this you should have identified this program as 32-bit and using Win 32 func
+tions.
+
+So lets set some SI breakpoints.  Enter some information into both of the boxes, now Ctrl+D into Softice
+and set a breakpoint on GetDlgItemTextA, after leaving Softice with Ctrl+D you should click O.K. in the r
+egister dialog box and instantly be returned to SI.
+
+Now lets push F11 and see what called this function, (now, important, remember that this program uses 2 d
+ialog boxes and GetDlgItemTextA fetches only 1 at a time, so you should press Ctrl+D again to read in the
+ second dialog box contents), then again push F11.  You should be looking at the following code.
+
+PUSH    00406030                                Push correct serial # to 00406030.
+PUSH    00406130                                Push the # entered to 00406130.
+CALL    00401280
+LEA     EAX,[ESP+18]                    EAX=ESP+18.
+ADD     ESP,08                          Tidy up stack.
+PUSH    EAX                             Push EAX onto the stack.
+PUSH    00406030                                Push correct # onto the stack.
+CALL    [Kernel32!lstrcmp]                      Call String Compare function.
+TEST    EAX,EAX
+JNZ     00401271                                The classic sequence.
+
+So, here we can see that the program pushes both the serial you entered and the correct serial number to
+memory addresses, use 'd 00406030' and 'd 00406130' to view them.  Then the values are pushed to the stac
+k and compared, if you are a good buyer then eax=0.  The function LStrCmpA is worth noting as you could h
+ave set a breakpoint on that to get quickly to the code, however not all programs would use it so its mer
+ely an option not a strategy.
+
+As a point of interest, a disassembly of this program shows you that this value is stored in the registry
+, and is verified at run-time.  I'll now just highlight how you might make a key generator for this progr
+am should you want to.  Note that my code was 3478-33826-2377-461, with name Cracking Tutorial.
+
+Key Generator Outline
+
+Well, we know that if you allow 2 breaks the serial # has already been calculated.  However if you take j
+ust one break on GetDlgItemTextA you will be able to trace the function used to compute the registration
+code.
+The relevant function is 00401280, I've just commented the first part of the function below, note that I'
+ve taken the live Softice listing so there may be one or 2 notation differences if you use the disassembl
+er.
+
+PUSH    00406130                                Holds name.
+CALL    00401280                                F8 to trace.
+SUB     ESP,00000100                    Sub 100 decimal from the stack.
+MOV     AL,[00406264]                   Move contents of memory location 00406264 into AL.
+MOV     [ESP+00],AL
+PUSH    EBX                             Push EBX to the stack.
+PUSH    ESI                             Push ESI to the stack.
+XOR     EAX,EAX                         XOR EAX, (EAX=0).
+PUSH    EDI                             Push EDI to the stack.
+MOV     ECX,0000003F                    Move ECX to 3F (63 decimal)
+LEA     EDI,[ESP+0D]
+PUSH    EBP
+REPZ    STOSD
+STOSW                                           Store AX to memory location ES:DI.
+MOV     EBP,0000006A                    EBP now = 106 decimal.
+.....
+MOV     ESI,[ESP+0000011C]
+PUSH    ESI
+CALL    [User32!wsprintfA]                      Function to store strings in a buffer.
+MOV     EBX,[ESP+0000011C]              EBX now holds the name you entered.
+ADD     ESP,08                          Tidy the stack.
+MOV     EAX,EBX                         EAX now holds EBX.
+MOV     EDI,[user32!CharNextA]          Move EDI to the next character.
+CMP     BYTE PTR [EBX], 00              Was a name actually entered? i.e. does EBX = 0.
+JZ      004012E1                                If not then jump.
+MOVSX   ECX,BYTE PTR [EAX]              Move the names first letter ASCII value into ECX.
+PUSH    EAX                             Save EAX on the stack.
+LEA     EBP,[ECX*2+EBP+00]              Calculation, place the result in EBP.
+CALL    EDI                             Have we reached the end of the string, if not repeat.
+
+So, this first section of the 00401280 function call calculates the first part of the code, for example w
+hen you work out the inner workings of a protection scheme use very short names.  Note the key section is
+ the latter part, the rest merely sets up the memory and stack.
+
+So, if our name was A we can see that the first part of our code would be as follows:
+
+A = 65 ASCII (65 * 2) + 106 (EBP) = 236
+
+Below you will find how the program computes the next 3 parts of the code, I've highlighted below the rel
+evant pieces of code using our example name of A as before.
+
+2nd Part
+
+MOVSX   ECX,BYTE PTR[EAX]               ECX now holds decimal 65 i.e. A.
+ADD     ECX,ECX                         ECX = ECX + ECX (130).
+LEA     EDX,[ECX*8+ECX]         EDX = 9 * ECX = 1170.
+ADD     EBP,EDX                         EBP+EDX = 236 (1st part + 1170 = 1406).
+
+3rd Part
+
+MOVSX   ECX,BYTE PTR[EAX]               ECX now holds decimal 65 i.e. A.
+.....
+LEA     EBP,[ECX*4+ECX]         EBP = 5 * 65 = 325.
+LEA     ECX,[EBP*2+ECX]         ECX = (325 * 2) + 65 = 715.
+LEA     EBP,[ECX*2+00000001]            EBP =  (715 * 2) + 1 = 1431.
+
+4rth Part
+
+MOVSX   ECX,BYTE PTR[EAX]               ECX now holds decimal 65 i.e. A.
+.....
+LEA     EBP,[ECX*4+0000001D]            EBP = (4 * 65) + 1D (decimal 29) = 289.
+
+So for the letter A we can see that the correct code is 236-1406-1431-289.  As this isn't a programming t
+utorial the coders amongst you may like to convert this into a key generator.
+
+A different approach to the Key Generator
+
+In the above example we can see by analysing the assembly code how the program computes our good serial #
+, but if we are going to distribute our crack that means work making a key generator, why not have the pr
+ogram actually do all that work for you.
+Lets look again:
+
+JNZ     00401271                The test for serial # validity.
+
+Now lets see what happens when we put in a bad serial.
+
+XOR     EAX,EAX         Clean up EAX.
+POP     EDI
+POP     ESI
+ADD     ESP,0000020C
+RET                             Return.
+
+ADD     ESP,04
+TEST    EAX,EAX
+JZ      004021E1
+
+PUSH    00
+PUSH    00
+PUSH    004063A8                Push "Invalid Key" message as parameter to MessageBoxA
+PUSH    ESI
+CALL    [User!MessageBoxA]      Displays "Invalid Key"
+
+So, you see, what if the PUSH 004063A8 instruction gets changed to PUSH 00406030 (the good serial #), use
+r enters a bad number and the message box pops up with the correct one!.  This eliminates the need for a
+key generator as well being a general purpose distribution.
+
+BS/1 Small Business v1.1h/g - Davis Business Systems (bs1.exe, 1,818,624 bytes)
+
+So far in this tutorial, I have concentrated on fairly small shareware programs that are fairly easy to c
+rack, the next program however is much more a commercial product with a larger executable file and I'm go
+ing to introduce a new strategy, the disassembler as well as showing you why when one approach fails you
+should try another.
+
+Well, lets start, so the first thing I did was take a look with QuickView and then disassemble bs1.exe (t
+hat takes time), I looked around and found that standard import functions were being used.  In the Help/A
+bout menu the program offers you a License Upgrade option, you must then enter 2 pieces of information, C
+ompany Name and License Number and we know from the help file that there are several licensing options.
+
+I took the approach we used before.  The program broke only once on GetWindowTextA (you should realise th
+at only one of the boxes was actually read by the program), I then traced through the code with F10 looki
+ng for a compare/test conditional jump sequence only to step around 20 instructions and then step over th
+e function call at 0040379C which returned me to the screen saying invalid registration, I recommend you
+try this just to see.  Incidentally you could have noted the functions that you passed down and attempted
+ to trace them but that's painful in this example as there are 6 of them.
+
+So we are going to need a different approach, or at least one that allows us to approach the actual compa
+re code from behind.  Lets introduce another useful Windows function, that of Hmemcpy, it is called when
+strings i.e. serial #'s, names are copied into memory.  So lets clear the other breakpoints and set a 'bp
+x hmemcpy' in SI (follow the procedure below).
+
+So, you should first enter some details in the boxes, Ctrl+D into SI, type 'bpx hmemcpy', Ctrl+D out of S
+I and then click OK in the registration box.  You are returned to SI so hit F11 to return to the calling
+function, now as there are 2 boxes you should press Ctrl+D again and then F11 again to ensure that both d
+ialog boxes contents were copied into memory.
+
+So you are now looking at something like this:
+
+PUSH    DWORD PTR [DI]
+CALL    KERNEL!LOCALUNLOCK
+
+This code is in User, and most codes are checked from the program executable file i.e. Bs1.exe, so lets s
+tart stepping with F10 (make sure you disable all breakpoints before you do this), you should step throug
+h a lot of instructions (maybe 50 or more), and you will probably go through Kernel32!_freqasm before you
+ reach the code that looks like this:
+
+MOV     [ESI+0C],EAX                    1st instruction inside BS1!CODE+........
+.....
+Now lets start stepping slowly with F10 until we reach this:
+
+MOV     EAX,[EBP-10]                    EAX=EBP-10.
+MOV     ECX,00000001                    ECX=00000001.
+MOV     EDX,00000001                    EDX=00000001.
+CALL    004037DC                                Function Call.
+
+Here you should check the contents of EAX with 'd eax', it should contain the name you entered so the nex
+t compare sequence or function is obviously interesting.  Not long after you hit this code:
+
+CALL    004036E8                                Another function call.
+JNZ     004EBA62                        The first conditional jump inside the Bs1.exe.
+
+So this JNZ instruction is suspicious because our number was just placed in EAX, but without analysing th
+e function at 004036E8 in detail you can't be sure and when you crack you want to find the easiest soluti
+on not trace functions all day, remember that with this sort of scheme there is most likely a function to
+ check whether you actually input anything in the box, so lets skip this call for now.
+
+If you continue stepping you will start hitting lots of function calls and conditional jump statements, n
+ow its just not practical to start tracing all of these purely because of the time aspect but lets see if
+ our disassembler can be of any assistance.  Lets introduce the concept of 'using' the program's nag mess
+age, quit Softice and proceed:
+
+Now, when your code is rejected by the program it says "Registration Code is invalid", try and see, so le
+ts have a search in our disassembler for "Registration", and you should find this:
+
+* Possible StringData Ref from Code Obj -> "Registration Code is invalid"
+
+:004EC722       B9DCCA4E00              MOV ECX,004ECADC                You screwed up message.
+
+A little below you should also see something interesting about users.ini, so it looks possible that our r
+egistration information is stored in the file users.ini.  Further down you'll find that address 004EC776
+is linked to RegisteredTo, so its likely that any bad numbers will find themselves at the code at 004EC72
+2, but good buyers will go to 004EC776.  So with this information in hand lets go back to SI and start tr
+ying to get the program to the good guy code.
+
+Once inside Softice, start stepping and you will start seeing a lot of this type of code:
+
+CALL    004036E8                                This function is called a lot.
+JNZ     somewhere
+
+The function at 004036E8 as it turns out is called many times (it obviously verifies the license code), h
+owever we have our strategy so lets start stepping.  We need the code to avoid 004EC722 at all costs, so
+you should step a long time before hitting the following code.
+MOV     EDX,[EBP-14]
+POP     EAX                             Pop EAX from the stack.
+CALL    004036E8                                The function we've seen a lot of.
+
+014F:004EC6FA   JNZ     004EC717        This is suspicious <--.
+
+This code is suspicious because the jnz (if it happens) takes you dangerously close to the dreaded 004EC7
+22 instruction, a quick look with Ctrl+Down Arrow should confirm your fears, it looks like if this jnz ac
+tually jumps to 004EC717 then 004EC722 occurs, so we need to change this instruction or modify the status
+ of the zero flag.
+
+So in Softice, step to the call 004036E8 instruction and stop, now lets change that instruction, do that
+in Softice by typing 'a 014F:004EC6FA' (obviously this memory address may be different on your PC), now l
+ets type 'jz 004EC717' to reverse that nasty instruction.  Push Return and hit escape, and now step over
+the new instruction with F10, you will see that the next jmp statement 'jumps' the bad registration code
+and after several more steps finishes at this:
+
+MOV     ECX,004ECB18
+MOV     EDX,004ECB30
+
+At this point we know that we have reached the good registration number part so we can stop using SI, cle
+ar all the breakpoints and Ctrl+D back to Windows and check about, you should now be the proud owner of a
+ 10 network user licence.
+
+Now, lets take a look at users.ini in the DATA subdirectory, mine looks like this:
+
+[General]
+CurrentUsers=0
+RegisteredTo=CrackZ
+License=f25xfs
+
+So, is our job done?, well we didn't see where f25fxs came from so lets look in the disassembler for it,
+you should find it, now lets scroll around, a whole load of 6 character StringRefs, I wonder what are the
+y all for.
+
+Well, I'll leave it to you to locate all of the codes and try them in users.ini, I found the following bu
+t there may be more.  Advanced crackers may like to work out the internal workings of the notorious 00403
+6E8 function but there's really no point because the program only checks the serial # before entering one
+ of these default codes in the initialisation file.
+
+b935k4 (Single User)            a9tr24 (2-user)         c9kk42 (3-User)
+a3ab6y (4-User)         285rer (5-User)         298bb3 (6-User)
+k2w6tt (7-User)                 2h9gt5 (8-User)         9j5att (9-User)
+f25xfs (10-User)
+
+Spear Internet Marketing Tool Beta Release 1 - 30-day trial spear.exe (906,224 bytes)
+
+Well, I think this tutorial has done enough serial # cracks just for now, so its time to move on to anoth
+er favourite with programmers and software vendors (the time-limited trial), here's the caveat, you get a
+ll the functions of a fully working piece of software to try for 30 days before the program stops working
+ or nags you to death (Paint Shop Pro).
+
+In fact there is usually no need to crack these type of protections since most can simply be re-installed
+ again and again, with PSP, many cracks I've seen just simulate the pushing of the O.K button, however th
+ese trials are often inconvenient and some trials can even be malicious (self-deleting files).  So lets h
+ave a look at this program (which you may now find difficult to get hold of).
+The first thing I did was disassemble spear.exe and look for StringRef's for something like "trial period
+ over", in fact I found nothing interesting there at all, in fact the imports seem remarkably scarce.  We
+ll, the next thing you should do with time-trials is see if you can trigger the nag and then crack from t
+here.
+
+The easiest way to do this is to adjust your BIOS clock temporarily.  Sure enough when I rebooted it came
+ back and bitched about the trial period being over and the message box looks pretty much like a standard
+ WIN32 call.  Now there are several ways to crack from here, you could try setting a breakpoint on someth
+ing like MessageBoxA to intercept the message box and then trace back from there, however there is an eas
+ier way in this case.
+
+The program obviously gets the date from somewhere, it would most likely have to use either GetSystemTime
+ or GetLocalTime or a flag in the registry.  We can eliminate the 3rd possibility easily by using Registr
+y Monitor (no calls are made).  So let's enter SI and set these breakpoints (I advise you to do them indi
+vidually otherwise you will be tracing calls all day).
+
+With GetLocalTime, the first break is in mscvrt20.dll (a Visual C run-time file - not our check), so push
+ F11 and then Ctrl+D again, the second break and F11 should place you inside the file spear.exe+LiWenJun,
+ looking at the following code.
+
+CALL    [KERNEL32!GetLocalTime] Retrieves the current local time and date.
+
+Now step through the instructions here.  Just pop's from the stack and a function return, then this:
+
+CALL    004D81B0                                Call some function.
+CALL    004DA360                                & Another.
+TEST    EAX,EAX
+JZ      004DA6DC                        Has trial user any time left?, if yes jump.
+
+Well, there's really not much to understand here, its cracking by intuition, the 2 functions at 004D81B0
+& 004DA360 are very tedious to trace, but 004D81B0 seems to do some password checking and call's 004D9630
+ a lot, I guess this is error checking, 004DA360 seems to check registry settings.
+
+With this sort of crack you should use a heuristic approach, we know that a message box will pop up if we
+ are out of time, so I looked at the code that followed, the JZ 004DA6DC takes us to JZ 004DA763 which th
+en tidies the registers and stack and calls MessageBoxA.  Well lets change this jz to a jnz live in SI or
+ modify EAX and see what happens, you already know, the program starts.
+
+Now that we know how to jump the date check we can hex patch this program so that it will never mind what
+ date it is.  There are lots of ways, we could change the jz 004DA6DC instruction to a jnz or set EAX = 0
+, but I settled for changing jz 004DA6DC to an unconditional jmp 004DA6DC.  So lets HEX patch this file.
+
+Firstly search the disassembly listing for the address 004DA6DC, you should find it says je 004DA6DC, so
+lets find out what that is in HEX by selecting the HexData menu and then Hex Display of code data.  You s
+hould see that the je 004DA6DC = 74 11 A1 C0 D6 4D 00 3B (Hex Display), now lets change that to jmp 004DA
+6DC by patching the 74 to an EB (the opcode for jmp).  Make that change in your favourite HEX patcher and
+ this program is cracked, note that you could have ascertained the correct code for the jmp live in Softi
+ce with the >a command.
+
+Real crackers might also like to remove the 30-day trial text from the About Box, its fairly easily done
+just by searching for the text in a HEX editor and then altering it.  (I actually when I released this pr
+ogram just settled for overwriting the 30-day trial text with HEX 20, i.e. blank spaces but the more egot
+istical of you may like to add your nickname).
+
+
+
+Premia Codewright Professional v5.1 cw32.exe (98,816 bytes)
+
+Another variation upon the previous time-trial tool (albeit much more sophisticated), Premia have used a
+few extra features to annoy and cripple their flagship code editor.  When you install you'll find 3 main
+problems with this program, the first is a nag box at the start-up, the 2nd is a time restricted trial an
+d the 3rd is in the Help/About menu, a nasty string which says FREE DEMO COPY.
+
+Now the way to approach these sort of programs is to crack systematically and really make sure as I'll hi
+ghlight that you know exactly the changes your making, I'm not going to step you through as much code as
+in previous examples.  The first thing I did was to advance my BIOS date a little past the time-trial and
+ sure enough once I'd clicked the annoying O.K button, up popped the "Sorry, program has expired message"
+, so I disassembled cw32.exe to see what I could find, and there the problems began, no StringRef.
+
+Well, I guessed that the time-trial was being checked from another file but there are lots in the install
+ directory, so I set a breakpoint on MessageBoxA and launched the program, sure enough up popped our nast
+y time-trial message and into Softice I landed, an F11, a click of O.K and finally, yes I'm in the file c
+sdll32.dll, found where our check is.
+
+So we disassemble csdll32.dll and you should have noted the address of the MessageBoxA break when you lan
+ded in Softice, its at 1014B920 in case you didn't look.  Now, we can see where our nag is called but tra
+cing back from here in the disassembly leaves many possibilities, my next thought therefore was to try br
+eaking in with Softice using one of the date API calls and then trace from there to work out how to avoid
+ the message box.
+
+I used bpx getsystemtime and after clicking the O.K button I got a return to Softice at 10181C76, now I s
+tepped noting down the functions which got called as I proceeded.  This is the list I made.
+
+:10181CCE                       GetTimeZoneInformation
+:10181D70                       CALL 10183AC0
+:1011D0A0                       CALL 1014BC62
+:1011D0B9                       CALL 1014B8D9           Displayed the message box.
+
+I elected then to trace the call at 1014B8D9 and see if I could avoid the message box, in fact it turns o
+ut that which ever way the JZ 1014B909 goes (see the disassembly for this also) the nag message gets disp
+layed, so to beat the time-trial CALL 1014B8D9 must never happen.
+
+I looked back in the code to see how this could be avoided and I soon spotted this:
+
+JLE     1011D0E1                (Address 1011D04C)
+MOV     EAX,[10197A64]
+MOV     [EBP-18],EAX
+CMP     DWORD PTR [EBP-0C],00
+JZ      1011D090
+
+Note this code carefully, when your out of time neither of these conditional jump statements actually jum
+p, but the JZ 1011D090 if you check the disassembly even if it happens still calls 1014BC62 and then 1014
+B8D9 (the nag) so the JLE 1011D0E1 must always happen if we are to avoid this message box.
+I therefore changed the JLE 1011D0E1 into a JMP 1011D0E1 + 1 NOP for an even byte swap.
+
+0F 8E 8F 00 00 00       JLE 1011D0E1
+E9 90 00 00 00 90       JMP 1011D0E1 + NOP              (Cwdll32.dll)
+
+With the time-trial now ineffective I wanted to remove the welcoming O.K box which popped up after the sp
+lash screen.  It looked like a standard windows dialog box so I set a breakpoint on DialogBoxParamA and S
+oftice popped at this code - note here, why did I chose DialogBoxParamA.
+Well a bit of intuition told me this, the splash screen was painted and then after that the nag appeared,
+ I was confident that beginpaint and endpaint were being used to paint the splash so in the disassembly I
+ looked after the call to endpaint and worked out that DialogBoxParamA was displaying the nag.
+
+Using the same tactics as with the time trial nag I bpx-ed on DialogBoxParamA, and noted the welcome box
+call at 1011D036.  In the disassembly I traced back up the hierarchy of conditional jumps to work out whe
+re I could avoid this call.  I soon located this interesting conditional jump (note the address).
+
+JE      1011D0E1                (Address 1011CF9A) - Jumps nag.
+
+Well, here's where I made a mistake, I thought I could get the nag not to display by making this JE alway
+s JUMP, in fact if you try it you'll find something's wrong because the program doesn't start, so I decid
+ed to go back to the INT 3 trick just before this JE and trace (see later tutorial's for INT 3 trick deta
+ils).
+
+I traced through these calls, remembering that I had to avoid the call at 1011D036, I soon found what I w
+as looking for at address 1011D022 - JNZ 1011D03C, I decided to make this JNZ into a JMP to avoid the wel
+come box.  You should now make this patch in your favourite HEX editor, 75 18 into EB 18.
+
+Now for the final cosmetic change.  You launch the program and all is well, no nags, but the Help/About i
+s not very pretty, FREE DEMO COPY, we'd like to change that to something slightly nicer looking.
+Well, I couldn't find the HEX for this String in any of the files, though I was sure that cwdll32.dll was
+ responsible, so I guessed it was encrypted somewhere.
+
+I set a bpx on DialogBoxParamA and found that address 10144420 displayed the box, I decided to therefore
+try a bpx on SetDlgItemTextA in the hope that I could find where the FREE DEMO COPY came from.  I selecte
+d Help/About and sure enough Softice broke, I then started tracing, noting down the functions which were
+called and seeing what strings I could locate, I didn't step for long before the call 1014BD7C came to my
+ attention.
+
+CALL    101624FB
+.....
+CALL    1014BD7C                        Placed FREE DEMO COPY in ECX.
+TEST    EAX,EAX
+JLE     10146EDC                        <-- Why jump?
+CMP     DWORD PTR [EBP-04],00
+JZ      10146EDC                        <-- Why jump?
+
+Well, what's happening here, well neither the JLE or the JZ actually jumped so I decided to see what happ
+ened after this, well what happens is this, EAX holds FREE DEMO COPY and then after a few function return
+s wsprintfa is called at address 10146EBB and sets the S/N: prefix, also look in the disassembler at addr
+ess 10146EB2 just before, so its in our interest to allow one of these jumps to actually happen, either i
+s desirable, I changed the JZ to an unconditional, this leaves us with a S/N: of V5.1 which is more visua
+lly appealing (note there are other jumps further on in that can be changed so long as 10146EB2 never hap
+pens).
+
+JZ      10146EDC        0F 84 9D 00 00 00
+JMP     10146EDC        E9 9E 00 00 00 90       (1 NOP required for an even byte swap).
+
+You may like to investigate how you could actually alter the functions to return a String of your choice
+but that involves adding some coding of your own.
+
+Cygnus (Hex Editor) v1.5 (cygnus.exe 421,888 bytes)
+
+Well, here's another program which I thought would be interesting to take a look at simply because its pr
+otection scheme is interesting and it requires a little bit of Softice confidence.
+
+Although you don't yet know it this program uses the Windows 95 registry as the basis for its serial # pr
+otection, essentially the registry consists of 2 files, they are System.dat & User.dat, you will find the
+m with the system, read only and hidden attributes in the Windows directory, the registry is basically a
+large database which stores details about your system, run Regedit.exe and take a look (but don't alter a
+nything unless you are really sure).
+
+So, lets start cracking this target.  I ran the program for the first time and up popped our nag screen,
+I clicked O.K then exited and re-started, well no nag the second time which is actually quite pleasant of
+ the author.  I then checked the register.txt file which informed me that the program was function disabl
+ed unless I registered, so I checked again and sure enough in the Help menu there's an option called Regi
+ster Cygnus and voila 3 dialog boxes asking for a registration code.
+
+So the first thing I did was disassemble, you should really do this all the time now, and you should easi
+ly be able to locate these string references (of interest), these are briefly those that I noted.
+
+* Possible StringData Ref from Data Obj ->"Registration was successful."
+
+:0040EA39 68348E4500            push 00458E34
+
+* Possible StringData Ref from Data Obj ->"Registration Successful"
+
+:0040EAF9 68F08D4500    push 00458DF0
+
+* Possible StringData Ref from Data Obj ->      "The authorization code you've "
+"entered is not valid. Please contact "
+"SoftCircuits for a valid code."
+"Select Help for more information."
+
+:0040EB29 68508D4500    push 00458D50
+
+So, we can now see what strategy to use, our code must avoid 0040EB29 and it looks like standard Windows
+API calls are being used.  So lets set those Softice breakpoints, you should find that GetWindowTextA wor
+ks well.  Now, from here on in it seems easy, I show you the Softice code and you find the good serial #,
+ however its not that simple.
+
+I broke 3 times on GetWindowTextA and started tracing to reach 0040EAF9 but it seemed as if I would never
+ get there, in fact this program seems to stay permanently around the 0042xxxx memory address but we know
+ that it must step back at some point to do the compare, just try this and see, you will even step right
+out of cygnus.exe back into kernel and then into user, but persevere and eventually you will get back int
+o cygnus.exe (you know it must do this compare).  Try a breakpoint on IsDialogMessage if you want to avoi
+d some of the tedious stepping.
+
+Eventually you will reach this:
+
+CALL    [USER32!IsDialogMessage]
+POP     ESI                             Pop ESI from the stack.
+RET     0004
+CMP     EAX,01                          Compare 1 with EAX.
+JNZ     0040EB36                                The jump which pushes the 'bad registration code'
+                                        message.  Fortunately it seems that this only happens
+                                if you enter nothing for a serial #.
+
+So, lets step on until we hit this function call, (note that you should step through the call at 0042121C
+):
+
+CALL    0040ED80
+MOV     ECX,[EAX]                       Here you should take a look at ECX.
+Mine shows the following serial # at ECX, that of 221-7020-700, and as it turns out this works unanimousl
+y.
+
+IMPORTANT TIP:  Whenever you elect to step over a call in a protection scheme check the contents of any r
+egisters which have changed, you may find your serial # there, alternatively when you have exhausted all
+possibilities re-trace your steps and examine functions.
+
+Well, in the real world of cracking many would have missed that call at 0040ED80 and just traced on and a
+ltered an instruction to get to the good serial # message, then when you restart the program its still un
+registered (every cracker has done this, believe me).  So, in these cases you must not be afraid to take
+a different approach.  It is probable that when this happens the program has written out your bogus seria
+l # somewhere and then checks it at run-time.  The 3 most likely ways of doing this are as follows:
+
+i)  An *.ini file or initialisation files, these are small text files usually stored in 1 of 2 locations,
+ either in the home directory of the program or the Windows directory, they tend to be used more by older
+ applications.
+ii)  The Windows 95 registry, (note that any program that carries the designed for Windows 95 logo will u
+se this).
+iii)  The programs own separate (usually encrypted) file, *.dat, *.idx or *.lic are ones that I have seen
+, e.g. UniVBE 5.3, WinHacker 95.
+
+With Cygnus you will find that the program possesses no cygnus.ini file or encrypted file as such so the
+registry remains as the most likely possibility.  So launch Registry Monitor and then Cygnus, now lets se
+e what values are being checked.  The following values look interesting:
+
+758     QueryValueEx    CURRENT\Software\SoftCircuits\Cygnus\General\UserName   SUCCESS
+759     QueryValueEx    CURRENT\Software\SoftCircuits\Cygnus\General\UserName   SUCCESS "Cracking Tutoria
+l"
+
+768     QueryValueEx    CURRENT\Software\SoftCircuits\Cygnus\General\UserCompany        SUCCESS
+769     QueryValueEx    CURRENT\Software\SoftCircuits\Cygnus\General\UserCompany        SUCCESS "Cracking
+ Tutorial Address"
+
+778     QueryValueEx    CURRENT\Software\SoftCircuits\Cygnus\General\UserCode   SUCCESS
+779     QueryValueEx    CURRENT\Software\SoftCircuits\Cygnus\General\UserCode   SUCCESS "221-7020-700"
+
+So at run-time, these values get verified by the program, so you can now use Softice to intercept all reg
+istry calls and then trace where the value is verified, I warn you that tracing registry accesses can be
+quite tedious.  These are the breakpoints used for registry access, to be honest though I've only ever us
+ed the first 2 for querying registry values.
+
+RegQueryValueExA
+RegQueryValue
+RegOpenKeyA                     Open's a registry key.
+RegCloseKeyA                    Close's a registry key.
+RegCreateKeyA           Create's a registry key.
+RegDeleteKeyA           Delete's a registry key.
+
+Vulcan Notes 95 v2.13 (vnotes95.exe 567,296 bytes) - junking tricks
+
+Well, I'm back to serial #'s again with this slightly more interesting application which I'm hoping house
+s a more complex code generation routine than the previous example, or at least something worthy of our s
+tudies.  So you should by now have the disassembled listing of vnotes95.exe in front of you.  I've just s
+elected a few interesting StringRef's which you may also have located.
+
+00465182 - "Thank You for registering ".<-- this then runs on with the text "Vulcan Notes 95" + "Please c
+lose and restart " + "Vulcan Notes 95" + "to enable all features/functions."  If you've been paying more
+attention you will have also noted the reference "Software\Vulcan\Notes", because that's where the inform
+ation is going to get stored.
+
+Fairly standard stuff there.  But here's an interesting little trick, look above the 'real' registration
+message at 00465182 and at 00465118 we'll see "Thank you for registering" and also at 00465128 "Vulcan No
+tes", this code is actually a trick to fool you into making a quick patch when you first examine the disa
+ssembly.
+
+This alleged good guy message is apparently referenced by a conditional jump at 00465114 i.e. JNE 0046518
+0, in the hope you will just go ahead and change that and think it will always be registered, but in fact
+ if you look again, trace back a little from that, you'll see that the REAL deciding good guy / bad guy j
+ump is at 00465032 - JNE 00465208, in fact in Softice this is easily spotted because the really good buye
+r never hits the code at 00465103.
+
+At 0046521B we have this "Sorry! The information you entered does not match!" and that's referenced at 00
+465032 which confirms our beliefs that this is the good guy/bad guy flag status.
+
+Well, lets select register and input some details into the dialog box, unfortunately our Getxyz breakpoin
+ts won't work here so bpx on Hmemcpy instead and remember that 2 dialogs are being copied into memory.
+So, you should be now in User, start the stepping process with F10, go through kernel32 and the first ins
+truction inside vnotes95.exe is at 00416FE5, now the next stepping session does a lot of function returni
+ng (around 6 returns I recall), then you are returned here (note this is the Softice listing):
+
+:00464FFE       MOV EAX, [EBP-10]               EAX holds the serial # entered.
+:00465001       LEA EDX, [EBP-14]
+:00465004       CALL 00405A70           A junking function.
+
+* Well, I'll explain here what I mean by junking, this function just checks whether you entered a serial
+# that was at least 1 in length, it does absolutely pointless operations and tests on the length of the s
+tring you entered, some of the code is just plain silly, like this fragment, get the string length, store
+ it in ESI, now store it in ECX, increment ECX, decrement ECX, is the result zero?.
+
+:00465009       MOV EAX, [EBP-14]               Serial # in EAX.
+:0046500C       PUSH EAX                        Save it for use on the stack.
+:0046500D       LEA EDX, [EBP-10]
+:00465010       MOV EAX, [EBP-04]
+:00465013       MOV EAX, [EAX+000001B8]
+:00465019       CALL 00414F00           More silly junking calculations.
+:0046501E       MOV EAX, [EBP-10]               Name is now in EAX.
+:00465021       LEA EDX, [EBP-18]
+:00465024       CALL 00464DF0           The calculation routine.
+
+The calculation routine calls lots of other functions (most actually do very little), you can try and tra
+ce them if you really want but its unfortunately the same old sauce, after the return the good guy code i
+s left in EDX, if your interested the code is built up from HEX manipulations of the name.
+
+:00465029       MOV EDX, [EBP-18]               EDX holds good number.
+:0046502C       POP EAX                 Pop EAX from the stack i.e. the serial # you entered.
+:0046502D       CALL 004036DC           Compare EAX with EDX (your code with good code).
+:00465032       JNE 00465208                    Jump bad cracker / Continue good buyer.
+
+So lets see if a simple crack will work here, we need to reverse or change this JNE so that it never jump
+s, so lets just kill the jne with 5 NOP's and see what happens.  Well, when you restart the program its r
+egistered with the correct code placed in the registry.
+
+Just a matter of aesthetics, but when you patch programs in this manner, try to avoid excessive NOP's, so
+me programs contain code to detect this sort of patching, I would suggest in the above example that you p
+ad with instructions like this (the hex codes are in brackets).
+
+INC EAX (40)
+DEC EAX (48)
+INC EBX (41)
+DEC EBX (49)
+NOP (90)
+
+The net result of this code is obviously to do nothing at all but it is more aesthetically pleasing than
+a row of 5 NOP's.
+
+A Word about Microsoft Foundation Class Applications (MFC) & Visual Basic Applications
+
+The Microsoft Foundation Classes are essentially a set of core components which can be used by Microsoft
+Visual C/C++programmers looking for rapid application development, in terms of cracking MFC applications
+are identified by looking for specific dynamic link library (dll) imports.  The MFC files are usually sto
+red in the Windows/System directory.  These are the files which I know of, note the rather obvious MFC an
+d MSVC prefixes:
+
+Msvcrt.dll, Mfc30.dll, Mfc40.dll, Mfc42.dll
+
+Of these Mfc42.dll seems to be the most common, you'll see a lot of MFCxx:NoName in a disassembled MFC ap
+plication.
+
+VB applications are also easy to recognise, again because of their imported dll's.  Essentially most VB p
+rograms are scripts calling the dll's functions.
+
+VB3     Imports vbrun300.dll    (16-bit)
+VB4     Imports vb40032.dll     (32-bit)
+VB5     Imports msvbvm50.dll    (32-bit Microsoft Visual Basic Virtual Machine).
+
+WinHacker 95 v2.0 - (wh95.exe 495,616 bytes)
+
+Well, after reading my section about MFC applications what better way to continue than by attempting a pr
+ogram that uses MFC's.  Upon starting the next target a huge dialog box pops up advising that only 20 day
+s are permitted for evaluation.  However we can see a registration option asking for name, company & seri
+al #, as it turns out this program actually calculates an individual key based upon those 2 fields but un
+fortunately the serial # is left in a register after a function call which makes it easy to locate.
+
+A disassembly listing should reveal that mfc42.dll and msvcrt.dll are being used, just note also that wh9
+5.dll is also imported, (this is actually a non-standard dll included by the program author and sometimes
+ they hide serial # routines).  Now a quick look at the stringRef's will yield these details.
+
+* Reference To: MFC42.MFC42:NoName0335, Ord:021ch
+
+:0041933C       E8E5D40000              CALL 00426826
+
+* Possible StringData Ref from Data Obj -> "Invalid Serial Number!"
+
+So we can see where bad numbers end up but I couldn't actually find anything that really looked like the
+good guy code nearby, so when you start cracking this you know only that this program must avoid 0041933C
+.  Let's set a breakpoint on our standard functions just to see what happens.  In fact in this instance G
+etWindowTextA works well, most of the time you will not be so fortunate and will have to use Hmemcpy.
+So, 3 boxes need to be read into memory so perform the necessary actions in Softice and then you should s
+ee this:
+
+CALL    [User32!GetWindowTextA]
+MOV     ECX,[EBP+10]
+PUSH    FF
+
+Now this code actually turns out to be in mfc42!text+.....so you need to step around 5-6 instructions unt
+il you find yourself in wh95.exe.  Now remember your tactics and stay calm as you step, you will actually
+ go briefly back into mfc42 again during the stepping process but eventually you will near the following.
+
+CALL    EDI             The last function before the test/jz sequence to the bad serial #.
+NEG     EAX
+SBB     EAX,EAX
+POP     ECX             Pop ECX off the stack (Good serial # is now in ECX).
+INC     EAX             Increment EAX.
+POP     ECX
+TEST    AL,AL           Test AL for 0.
+JZ      00419333                Jump if AL=0.
+
+Now, you should trace the CALL EDI with F8 and you will find this fragment, it looks as if the code was a
+ctually calculated in a previous function call however this function compares certain values of your seri
+al # with the correct code.
+
+MOV     ESI,[EBP+18]    ESI holds the number you entered.
+MOV     EAX,[EBP+14]    EAX holds the good serial #.
+
+For interest, you may like to actually investigate earlier function calls and see if you can work out how
+ the serial # is calculated, in fact I've written in an addendum here because this crack is really just f
+ind the serial # and run.  The functions you step through seem to work like this:
+
+In mfc42.dll the call at 5F4028B8 leaves the serial # you entered in ECX, then in the WinHacker executabl
+e the call 0042682C is called 3 times, it seems to set up strings to push as parameters to the message bo
+x, like time-trial etc., the function at 00426820 is then called twice, its just checking whether you act
+ually entered something in the Name & Company dialogs, the calculation routine is at 004193CD and tracing
+ it is painful, it calls at least 5 other functions and is a misery to work out, it seems to work on the
+basis that "if the deserts big enough you'll never find what you are looking for", skip over it and save
+yourself the hassle.
+
+The final call before the call EDX compare is at 004268F2, you can trace this one and find the correct se
+rial # also, its placed in EAX.  Its much easier (if you are going to make a general purpose crack) to pu
+sh the good serial # as a parameter to the error message in call 00424CB4 rather than work out the key ge
+nerator.  The code, well that gets written to a file wh95.dat in the Windows directory.
+
+DiskCopy v4.0 - (diskcopy.exe 147,968 bytes)
+
+Well I cannot stress how important this particular crack is, perhaps this should be a single tutorial in
+its own right, you should read this crack a few times just so you are clear exactly why I use this method
+ and why it is so effective.  Well take a look at our target and you instantly see the vb40032.dll import
+, so its a VB 4 application.
+
+Now after I cracked this and worked out the serial # I realised just how difficult this program would act
+ually be if you did a bpx on multibytetowidechar and started tracing.  Now, the following code fragment i
+s the standard VB4 code for comparing strings in wide character format.
+
+
+HEX             INSTRUCTION
+
+56              PUSH ESI
+57              PUSH EDI
+8B7C2410        MOV EDI, [ESP + 10]
+8B74240C        MOV ESI, [ESP + 0C]
+8B4C2414        MOV ECX, [ESP + 14]
+33C0            XOR EAX, EAX
+F366A7  REPZ CMPSW                      Here the contents of ESI & EDI get compared.
+
+So what I am actually going to do is patch the Visual Basic dll in such a way that we can break in on thi
+s sequence of instructions with Softice.  So, open up a copy of vb40032.dll in your favourite HEX editor
+and search for the HEX bytes listed above, 56 57 8B 7C 24 10 etc.  Now when I used Hiew I patched the XOR
+ EAX,EAX with CC 90, (note that CC is the HEX for Interrupt 3, and 90 you should know is nop or no operat
+ion), I then saved those changes and started.
+
+So before starting the application I Ctrl+D into Softice and set a breakpoint on int 3, by typing:
+
+>bpint 3
+
+After exiting, I launched the target and selected register, note the 2 dialog boxes, note that our interr
+upt is enabled, now enter your name and any registration number into the boxes, I used Cracking Tutorial
+and 12121212, now click O.K, you should be in Softice at int 3 staring at the above compare, so now lets
+change that int 3 and no-op to its correct xor eax,eax.  I typed the following:
+
+>A 014F:0F79B356 (Enter)
+>XOR EAX,EAX (Enter)
+>Escape
+
+Now if you look in ESI with >D ESI you will see the code you entered, and guess what's in >D EDI, you gue
+ssed it, the correct code.
+
+With Cracking Tutorial, my code was cTpA,1174 (I think this is a universal code).  Note also that althoug
+h the actual code is located in memory very close to the one we entered would you actually have picked th
+is up as the legitimate serial # in the search window, I very much doubt it.
+
+As a small project you may like to practise this technique of the cracked VB 4 dll on CT HotSpot v2.0, an
+other product from the same author, although he wasn't silly enough to code in exactly the same serial #
+as his other product, you should find s400,913,*113 fairly easily.
+
+Emulive Wave Audio Encoder 2.2 - (emuwave.exe 248,320 bytes)
+
+Well, its time for me now to look at a VB5 target application, when you don't know how to crack these typ
+es of application it can be a nightmare, disassembling these applications is for the most part a total wa
+ste of time, you'll know a VB program when the installation copies lots of dll's into your system directo
+ry, VB5 uses msvbvm50.dll.
+
+Now when you start this application its a choice, either a 10 minute demonstration or register, so select
+ register, and you have 2 key dialog boxes, mine says 323730247736 in the top part and asks for another k
+ey in the other, its probably a safe assumption that the 'key' will be the same length as the security co
+de.  Well, if you try our standard API functions which we have used previously you'll find that Softice w
+on't break, you could also try the hacked dll trick as used in the previous tutorial but on this occasion
+ it will not work, its all due to VB 5 having its own set of functions.
+
+I also just for this tutorial attempted to see if hmemcpy would actually lead to any traceable code, I sp
+ent a few hours trying but just got lost in the msvbvm50.dll, so I decided to try other breakpoints.
+Again with VB 5 this tends to be more trial and error as opposed to anything else.  You should find in th
+is case that bpx multibytetowidechar works well, so set that breakpoint in Softice and click O.K on the r
+egister button.
+
+Now when you hit F11, here's the code you should be looking at:  (Commenting it is fairly pointless as it
+s inside the msvbvm50.dll).
+
+CALL    [Kernel32!MultiByteToWideChar]
+MOV     EBX, EAX
+CMP     EDI, -01
+JNZ     0F0414EA
+DEC     EBX
+PUSH    EBX
+PUSH    00
+CALL    [0F0019A0]
+MOV     EBP, EAX
+TEST    EBP, EBP
+JZ      0F07C71D
+
+Now, I stepped past the function call at 0F0019A0 because the conditional jump 0F0414EA (if it happened o
+nly skipped) a few lines of code, I then stopped just before the JZ 0F07C71D and decided to use another o
+f Softice's useful features, the memory search.
+
+Now, I entered 1212121212 as my serial # so I entered the following in Softice.
+
+>S 30:0 L FFFFFFFF 31 00 32 00 31 00 32 00 31 00 32
+
+Note that the S is the search command, 30:0 L FFFFFFFF is the memory range, and 31 00 etc is the HEX valu
+e of the serial # I entered (note the wide character format).
+
+Now Softice found my string at 0030:004540B8, so I typed E to edit or browse around that location.  After
+ around 10 presses of Pg Up I found something interesting lurking in memory, The Invalid Key message and
+a few presses further on something like this.
+
+0.D.0.5.0.F.1.6
+.4.8.0.4. . . . . .             Well, its 12 characters long and in wide character format.
+
+So, I entered 0D050F164804 as my unlock code and registered the program, note also the rather simplistic
+correlation between the unlock code and the key, it seems that all the 3's in the key correspond to 0's i
+n the unlock code.
+
+3 2 3 7 3 0 C 4 7 7 3 6
+0 D 0 5 0 F 1 6 4 8 0 4
+
+Whilst at http://www.emulive.com, I downloaded Emulive Premiere & Video Producer (both the same 10 minute
+ trial), you should find them remarkably easy to register in the same fashion as shown above.
+
+Space Monitor 1.1a - (spacemon.exe 340,992 bytes)
+
+Well, I just included this program as a little bonus because it just illustrates the use of the Softice '
+evaluate' feature and this program has also got some fairly nice code that I can comment well.
+Without further ado, run the program and then right click on the icon it places on the taskbar, then sele
+ct register, note that the vendors have been kind enough to tell you that the code is 6 numbers.
+So, enter a value, I used 121212 and then pop over into Softice, this program uses the WIN32 API so trial
+ and error will suffice.  (GetWindowTextA does it for me).
+
+Now when you push F11 you should be looking at this code:
+
+CALL    User32!GetWindowTextA           Standard WIN32 function call.
+LEA     EDX,[EBP-0C]                    Loads the contents of EBP-0C into EDX (in this case
+                                our serial number).
+PUSH    EDX                             Save our serial # on the stack.
+CALL    00435E8C                                Function call, trace with F8 if you like.
+POP     ECX                             Move our number from the stack.
+MOV     ESI,EAX                         Move EAX to ESI.
+MOV     [00449734],ESI                  Move ESI to memory location 00449734.
+CMP     ESI,000B1014                    Compare 000B1014 with the value of ESI.
+JNZ     00404175                                Jump if the result is not zero.
+
+So, this code should be easy to follow and if you had looked at a disassembled listing of spacemon.exe yo
+u would have known that 0040413A = good guy code & 0040417E = bad guy, so at the cmp sequence you can use
+ Softice's evaluate feature to check what is in ESI by typing '? esi', the result I got is shown below.
+
+0001D97C        0000121212      "Text View"     Our serial #.
+
+So if we evaluate the contents of memory address 000B1014 by typing '? 000B1014' we get this:
+
+000B1014        0000725012      "Text View"     The good guy serial #.
+
+So we can see that the good buyers code is 725012 because the result of the compare has to set the Zero F
+lag.  You can now go ahead and register this program (note the details are stored in the registry).
+
+Any Speed v1.3 (anyspeed.exe 1,076,736 bytes)
+
+Another fairly interesting crack this because many newer crackers will have experienced the challenge tha
+t this application presents, as you know my first step to crack most applications is too take out the dis
+assembler, so don't wait on my account, you'll easily locate our nag at 0046A771 and also some other inte
+resting references concerning Reg_Key & Reg_Name, but there's a problem, just above the 0046A771 we'll se
+e this code:
+
+0046A768        7418    JE 004687A2     <-- Jumps Invalid Code Msg.
+
+You reckon that just changing this so it always jumps say 7418 to EB18 might do the trick, I didn't try i
+t but I strongly suggest it won't.  Now look a little further up the tree, referenced by call at 00403DE1
+, have a look there and you'll see how many functions call this function, its not going to be easy.
+
+So, lets try the Softice approach, you launch the program and up comes the nag, you select Registration K
+ey and its our old friends the 2 dialog boxes.  You enter some details, toddle over to Softice and try Ge
+tWindowTextA, GetDlgItemTextA in the hope they work.....and no break, well Hmemcpy must do it you think,
+but alas no, the program doesn't break on this either, and now if you are a newer cracker you are stuck.
+
+Well, lets try another really great Softice feature and cracking approach, the Window Handle, bmsg approa
+ch.
+
+Enter your details in the 2 boxes and Ctrl+D into Softice, type the following:
+
+>hwnd           <-- Displays windows handles.
+
+Now scroll the list using the space bar, look at the windows scrolling by, and note this:
+
+
+Window-Handle   hQueue          SZ      QOwner  Class-Name              Window-Proc
+
+04C4(1)                 2A1F            32      ANYSPEED        TRegistrationDlg        147F:00000B38
+
+Now this looks like the handle of our registration box, note that the handle will be different each time
+you do this, so lets bmsg on this handle and the windows message gettext using the following command in S
+oftice.
+
+>bmsg 04C4 wm_gettext (note that wm_command is also good for this situation).
+
+Now, Ctrl+D out of Softice and click OK, you'll be returned probably somewhere in Kernel.alloc but now le
+ts search for the string we entered.
+
+>s 0 l ffffffff '12121212'
+
+I find my string at 00A43078 and a load of 8xxxxxxx & Cxxxxxxx locations but lets dump the memory around
+the 00A43078 location, at 00A43038 I find an 8 figure string which looks remarkably like a serial #, so l
+ets enter it and see, you know that it works already and as a side-note the information gets stored in th
+e registry.
+
+Registration Name:      CRACKING TUTORIAL       Registration Code:      CF9A3A00
+
+ScrnSaveSwitch/Plus v4.50 (ssswitch.exe 129,536 bytes
+
+Well, I've selected this next target purely because it introduces another useful Softice breakpoint and a
+lso because this program does some checking which you should be prepared for when you start analysing pro
+grams that may then require a key generator, it also allows me to introduce the concept of analysing func
+tions as opposed to just stepping over them.
+
+So, you should have by now disassembled this target and noted the following addresses as being significan
+t.
+
+00409DCE - "Congratulations!, ScnSaveSwitch/Plus is now registered".
+00409DE8 - "Sorry.  The registration code you entered is invalid".
+
+Now a breakpoint here on GetDlgItemTextA will work, but you will start tracing at around 00401xxx and tha
+t's a lot of cracking time to waste single stepping through code, so perhaps a little refinement may help
+.  Try setting a breakpoint on the function DialogBoxParamA instead, its quite fiddly to actually do but
+eventually you will get the program to break, just step with F10 if you can't.
+
+This is the pertinent code, note that I entered 121212 as a serial #.
+
+CALL    [User32!DialogBoxParamA]                Look in the WIN32 API guide for more
+                                        information.
+CMP     EAX,01
+JNZ     00406223
+LEA     EAX,[EBP-0F]                            Load EAX with our serial number.
+.....
+PUSH    EAX                                     Push serial # on to the stack.
+CALL    00409D70                                        A critical function.
+
+O.K, I've just stopped here because if you actually F10 through the function 00409D70 it returns you to t
+he bad serial number screen, so we are actually going to have to trace inside this function, so instead o
+f hitting F10 hit F8 instead.
+
+.....                                                   Push's to the stack.
+PUSH    ESI                                     ESI now contains our serial # as well.
+CALL    [Kernel32!lstrlen]                              A very interesting function.
+CMP     EAX,05                                  Now test whether the serial # is of length 5.
+JNZ     00409DDE                                Jump if not zero.
+
+So what happens here is that the function lstrlen gets the length of our serial # and then returns the re
+sult in EAX before comparing it with 5, if the serial # isn't 5 in length then the number will be conside
+red wrong already, so lets return and enter a 5 string number and get into Softice again.
+
+So we step through the cmp eax,05 now because so far our program thinks our serial # is correct.
+Now we are in the checking mechanism, this is the code fully commented below, remember we know that our s
+erial # is in ESI and that if the program jumps to 00409DDE we have entered a bad serial #.
+
+MOV     CL,[ESI]                                        Move the first digit of ESI into CL.
+CMP     CL,32                                   Compare CL with HEX 32 (2 in decimal).
+JNZ     00409DDE
+CMP     BYTE PTR [ESI+02],37                    Compare ESI+02 i.e. the third digit with HEX
+                                        37, (7 in decimal)
+MOV     AL,[ESI+04]                             Move ESI+04 (the last number) into AL.
+CMP     AL,36                                   Compare AL with HEX 36 (6 in decimal).
+JNZ     00409DDE
+CMP     [ESI+01],CL                             Compare CL (HEX 32) with ESI+01.
+                                                        So the 2nd digit must be 2.
+JNZ     00409DDE
+CMP     [ESI+03],AL                             Finally, compare ESI+03 (the 4th digit) with
+                                                        AL, (AL=HEX 36, decimal 6).
+JNZ     00409DDE
+
+So, we can see that this program has one universally good code which must be 22766.  This sort of analysi
+s can be done live in Softice but sometimes is easier in a disassembly listing.  Note that this program w
+rites the serial # out to its own initialisation file, ssswitch.ini.
+
+File-Ex v2.00c (fileex32.exe 13,312 bytes)
+
+This program is an interesting little study for us crackers even though its size may not suggest so.  Thi
+s program on installation gives you a choice between 16-bit and 32-bit installations, in fact its only th
+e executable files that seem to be different and they don't implement the serial # check (who writes 2 fi
+les to do the same thing), note that running the 16-bit executable seems to crash my system.
+
+So lets launch the program.  It should minimise as a task bar icon and then you can single click that to
+access the application, now you should be able to select Enter Registration Code.  Note our old friends t
+he dialog boxes.  Lets see what happens with a bad Name & Number, "Sorry, the code you entered is not cor
+rect.  Please verify the exact name spelling and code digits".
+
+Lets take out our disassembler.  Now, you should be able to find some interesting registration StringRefs
+ in fxhook.dll (but note fxhook32.dll), the more interesting references can be found in fxcomn.dll ('File
+-Ex common' abbreviation perhaps).  You should easily locate these 2 references.
+
+* Possible Reference to String Resource ID=00068: "Thank You!  This copy of File-Ex is now registered and
+ fully"
+
+* Possible Reference to String Resource ID=00069: "Sorry, the code you entered is not correct.  Please ve
+rify"
+
+Now a little scroll up the disassembly should give you an idea what to set a breakpoint on in Softice, th
+is dll implementing the check is actually 16-bit so we are going to use GetDlgItemText, note also the con
+ditional jumps, you should break in at address 07D0, now step to this code.
+MOV     AX,[BP-0E]              Move code you entered into AX, ? AX = code.
+MOV     DX,[BP-0C]
+CMP     [BP-12],AX              Compare.
+JZ      081D                    Must jump to be a good code.
+JMP     0874                    Jump to bad code.
+CMP     [BP-10],DX
+JZ      0825                    Must jump to be a good code.
+JMP     0874                    Jump to bad code.
+MOV     AX,[BP-0C]
+OR      AX,[BP-0E]
+JNZ     0830                    Jump good buyer.
+JMP     0874                    Jump to bad code.
+MOV     AX,0000                 Clean up.
+
+Now you should find this code easy to follow, remember that 16-bit code means 16-bit registers i.e. AX as
+ opposed to EAX.  The calculation routine is done in an earlier function call, the program can be cracked
+ by reversing the 2 pertinent JZ's so that they always jump, remember we are in fxcomn.dll.
+
+If you are interested in undertaking a further analysis of the code, the program writes out your registra
+tion information to its own configuration file called fileex20.bin, just view it with a standard text edi
+tor.
+
+Mine looks like this:
+
+[Registration]
+Name=Cracking Tutorial
+Code=47750632
+
+A lot of crackers avoid 16-bit code because its not as 'friendly' as 32-bit, however many older applicati
+ons and dongle chat routines use 16-bit code so I suggest you practice your 16-bit skills as regularly as
+ 32-bit, it does seem however, that inevitably 32-bit code will be standard.
+
+Jot Note Manager (32-bit) v1.3 (jot32.exe 610,304 bytes)
+
+Well here's another bonus application I've included especially for this tutorial, I thought I'd just demo
+nstrate a method of cracking serial # dialog boxes by using Softice's search facilities.  Its easy enough
+ to disassemble this target and find that 00462AF4 = nice buyer and 00462B0F = bad serial #, but try step
+ping with Softice and you'll be there a very long time and unlikely trace anything, even though it breaks
+ on GetWindowTextA.
+
+When you start the target, there are 3 dialog boxes and one of them already has the number 1000 as a seri
+al #, are there any implications if any? of that, as it turns out the 1000 is a red-herring, in that you
+need actually do nothing with it, its just used by a few functions.  If you are actually patient enough y
+ou can step to the code that determines whether you are a good buyer or bad cracker, and then reverse the
+ JZ 00462B06 to a JNZ, the good code then gets written out to the registry, but many programs today will
+simply write out your bad code and then when you restart the program's still unregistered.
+
+So lets enter our name and an Activation Key that we can remember (say 12121212), now Ctrl+D into Softice
+ and try a breakpoint on GetWindowTextA, now after each break and return with F11 you should enter the fo
+llowing in Softice.
+
+* s 30:00 l ffffffff '12121212' (This will search memory and return all locations where this string is
+                being stored).
+
+Eventually (around the 5th return on GetWindowTextA) you should find your string in memory.
+
+Important, when searching you should disregard most searches that find your string around the 8xxxxxxx or
+ Cxxxxxxx locations, these locations are sometimes mirrors but usually just used by the OS (operating) an
+d BIOS.
+
+I found my string at 0157:004878CC & 0030:004878CC when I did this twice in succession (your location may
+ be different), but at this point you can disable all existing breakpoints and now set the following brea
+kpoint in Softice:
+
+* bpm 0157:004878CC             (Sets a breakpoint on memory location (i.e. our serial #)).
+
+Now when you allow Softice to run again with Ctrl+D you should break again on the following code:
+
+REPNZ   SCASB
+NOT     ECX                     ECX=11
+LEA     EAX,[ECX-01]            EAX=10 (length of string)
+POP     EDI                     Pop EDI from the stack.
+RET                                     Return from function.
+
+This section of code gets the length of the string you entered then places it in EAX.
+
+Now upon returning from this function, you'll see this code:
+
+POP     ECX             Holds Serial # you entered.
+JMP     0043F54A
+.....
+PUSH    EAX             Push's length of your serial # on the stack.
+PUSH    ESI             Push's your serial # onto the stack.
+MOV     EDX,[EBP-04]
+PUSH    EDX
+
+At this point you can do one of 2 things.  You can just start tracing with F10 to where you know the begg
+ar on / beggar off conditional jump is, you will get there after a few function returns relatively quickl
+y, or you could try dumping a little of the memory location around where your serial # that you entered i
+s.  This is actually quite a useful thing to do when you are sure that you are looking at the protection
+routines, you should locate fairly easily your good serial # lying lazily near EDX.
+
+With name Cracking Tutorial, Serial # 1000, Activation Key 1HCVPD5PE.
+
+Dongle Cracking
+
+Well, this section houses a fair amount of theory but you should read it, when you first start cracking,
+your competency will be tested and measured by others based upon your ability to crack dongles, dongled p
+rograms are widely acknowledged to be one of the most difficult applications to crack, it is the protecti
+on of choice for expensive applications such as Cubase, SoftImage and 3D Studio Max as well as various pl
+ug-ins.
+
+So what is a dongle?, well its usually a combination of hardware and software protection, the hardware co
+nstituent is a small plug which usually connects to the parallel port of your computer (although I believ
+e Serial devices are also available), the 2 I've seen most often are Sentinel and HASP, but there are oth
+ers such as DesKEY etc., put simply if you don't have the dongle the program doesn't run, often the progr
+am will periodically check during its operation for the presence of the dongle as well.
+
+It's actually a lot easier to crack dongles when you have the actual dongle itself, in fact most tutorial
+ authors probably possess the dongle in the first place, without the dongle you are probably going to hav
+e to 'zen' a lot and maybe pray.
+With dongles I can not stress how important it is to have information about the protection you are dealin
+g with, 1/2 of the challenge is establishing which flavour of dongle you are dealing with, for the HASP c
+heck out ftp://ftp.hasp.com, just use a regular search engine for other vendors, also during the installa
+tion watch for files such as sentinel.vxd etc.  You should try and understand exactly the 'dongle' it is
+you are trying to crack and read my following tips.
+
+1.  Remember that the weak part of the dongle is usually the software driving the hardware, for the most
+part all the software wants is the 'answers' from the hardware, forget cracking the dongle wrapper unless
+ you are really wanting to sit down for a long session.
+2.  Most dongle implementations are poor, the programmer will most likely write his own functions to chec
+k responses from the dongle using silly function names which are obvious under disassembly, if they used
+the dongle manufacturer's API the protection can be a lot stronger.
+3.  Most dongles have more than one beggar off/beggar on check, sometimes flags are set discretely to tri
+ck you, tracking these down is fairly easy once you are sure that you are actually looking at the protect
+ion scheme.
+4.  Some dongle routines will attempt to confuse you with complex maths expressions which in reality are
+very simple in operation, in assembler even simple mathematics can be confusing, this isn't that big a pr
+oblem in Softice because there's usually a beggar off check at the end.
+5.  For the most part, forget working out the dongles code or routines unless you really must understand
+it in its entirety, its sometimes better to settle for less aesthetically pleasing NOP's and brute force
+techniques.
+6.  Don't despair when a dongle beats you, some programs can be literally uncrackable without the dongle
+present, some dongles drive the programs they protect to an extent where patching them is just impractica
+l.  I wish you Good luck and remember to use any information you have, study my brute-force crack below f
+or an idea of what your up against.
+
+
+A DONGLE CRACK
+
+Virtual Gibbs v4.23.13 (virtual.exe 4,100,096 bytes)
+
+Well, I've just included this very sketchy tutorial on the following dongled application that I recently
+had the opportunity to study (thanks to Homes).  Virtual Gibbs uses the Sentinel dongle although I didn't
+ have the dongle or drivers installed when I wrote this tutorial.
+
+When you start this program a message box pops up with a beep telling you "Hardware key missing", you cou
+ld now disassemble the virtual.exe file looking for this string but its not present and the disassembly m
+ight take a while, so lets firstly try and get an idea which program and which function is displaying our
+ nag.
+
+So I set the following breakpoint in Softice:
+
+>BPIO -H 378 R  Breakpoint on Parallel port I/O access.
+
+Now when I launched Gibbs, Softice broke, at this stage I really only wanted to find a bearing upon the p
+rotection location so I disabled the breakpoint and kept pressing F12 until the message box appeared, I t
+hen clicked O.K, and in Softice I could see that the function call 0044400C in virtual.exe had just displ
+ayed this message box, so I decided to start my tracing a little before here at this code (you can see th
+is by pressing Ctrl+Up).
+
+005839EF                TEST EAX,EAX    Patch this with an INT 3 so you can easily reach this code.
+005839F1                JNZ 00583A0E            Jumps to function call.
+.....
+00583A0E                CALL 0044400C   Displays "Hardware key missing".
+
+Now, lets start building our map of this 0044400C function (as a point of interest you can actually just
+no-op this entire function call and the program will start but then there's another check), forget also r
+eversing the JNZ 00583A0E to avoid the CALL (you'll find from the disassembler that this check is with re
+gards to the Material database).
+
+So let's trace 0044400C and note all significant calls and conditional jumps, I've tried to tell you what
+ I think each function call does but some I can't really work out without further examination:
+
+CALL 007A5CB0           Called a lot, seems to set up Material.txt.
+CALL 004440C5           Import Mpc.TickCount
+JNZ 00444037 (jumps)            If this jump doesn't happen then 0044400C returns and Gibbs starts.
+CALL 00444828           Nothing.
+CALL 00444793           Nothing.
+CALL 00444963           Calls a function before returning at 004449F6.
+CALL 004449F7           Displays message box.
+
+Now we can trace deeper into the protection scheme, examining 004449F7 produces these results, note how I
+'ve examined what happens in each scenario:
+
+JZ 00444A1C (jumps)             If this doesn't jump then JZ 00444A1C gets tested (that is set to jump),
+if                              that then fails the function exits with a JMP 00444BB0 and Gibbs will not
+                                start so it looks as if this JZ is safe to allow.
+JNZ 00444A34 (no jump)  Similar to previous example.
+JZ 00444A39 (jumps)             If this doesn't jump a loop is initiated incrementing ECX from 0 to B the
+n                               the function continues before exiting at 00444BB0, Gibbs then starts.
+JNZ 00444AA7 (jumps)    If this doesn't jump a loop similar to JZ 00444A39 is initiated, Gibbs will
+                then start.
+CALL 0066A860           Looping and testing.
+JZ 00444AE9 (jumps)             <-- Interesting - When this jump doesn't happen 006EB584 gets called and
+                        and then 006E626D displays "Hardware key does not match flavor".
+
+CALL 0066A860
+CALL 006EB584
+CALL 006EAE5C - Message Beep + Message Box.
+
+Well you can see how this cracking approach will progress, now you start tracing 006EAE5C and eventually
+you'll have a complete picture of the calling hierarchy and be able to see which instructions will need p
+atching, in fact you could at this point just patch one of the instructions above so that Gibbs is allowe
+d to start (it seems to work O.K) but I strongly advise that if you want reliable cracks you understand t
+he 'hierarchy', some techniques suggest giving each function your interested in a name (especially if you
+ discover interaction).
+
+In fact with Gibbs there's not much further to go, I've given you the details of the functions below 006E
+AE5C.
+
+CALL [00818A90]         Nothing.
+CALL [00818A4C]         Audible Beep.
+.....
+CALL 0079991D           After this function EAX holds "Hardware key missing"
+.....
+CALL [008189B8]         Message.
+
+Well, here's our answer to this dongle check, I'm now tracing inside 006EAE5C.  00818A90 seems to do noth
+ing but after 00818A4C you'll here a beep, if you actually trace this call you'll see that MessageBeep is
+ unavoidable.  I traced after this but there is absolutely no way of avoiding 008189B8 so to crack this I
+ would suggest that the call at 006EAE5C must never happen, now HEX patch this target.
+
+I think this approach is probably brute forcing, its not zen but then I can't teach you how to do that an
+d this technique does work.  Now run the program with your crack (I no-opped JNZ 00444AA7 - not very prof
+essional I know), and you should just make sure there isn't a sneaky routine checking for the dongle at a
+ given time interval (I couldn't locate one) so enjoy this program.
+
+CONTACTING CRACKZ (crackz__@hotmail.com (that's 2 underscores))
+
+Well I hope you enjoyed reading this document and maybe learnt something from it, I certainly enjoyed wri
+ting it.  I'm working on other tutorials right now so if you have any applications that you would like to
+ see included then just e-mail me (I'm looking specifically for dongles and function disabled application
+s).
+
+I'd also appreciate any comments you want to send me on this document, even just a note to say you read i
+t.
+If I get a positive response I'll make some of my other 'rougher' notes available.
+
+CrackZ
+

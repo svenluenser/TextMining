@@ -1,0 +1,482 @@
+THE_URL:http://web.textfiles.com/computers/ptd320-tute.txt
+THE_TITLE:ptd320-tute.txt
+
+:::::::::::::::::::::  m E X / c 4 N  T U T O R I A L  D I V I S I O N  :::::::::::::::::::::
+
+Cracker    : Vizion
+Editor     : Notepad (wordwrap on)
+Audience   : intermediate, advanced
+Greets     : all people from mEX/c4N, Revolt, #cracking, #PST, and all I know...
+
+Target     : Password Tracker Deluxe v3.20
+Protection : name/serial
+Solution   : key generator
+
+Remark     : bug reported by Corn2 (11/03/1997), bug fixed (11/04/1997)
+
+I'm working on a general key generator tutorial where I will try to explain and learn people how to build
+ up all information they need to create there own key generators. This isn't finished! But because a lot
+of people wanted a solution for this AOTW I released this short tutorial on this target. So watch out for
+ my keygen-tute in the near future!!
+
+Ok, put a breakpoint on GetWindowTextA, youll break twice, and you should be able after some tracing, get
+ a the next code,
+
+* Possible Reference to Dialog: DialogID_008B, CONTROL_ID:03E8, ""
+                                  |
+:00415CDC 68E8030000              push 000003E8
+:00415CE1 C644241C01              mov [esp+1C], 01
+:00415CE6 E80FA80100              call 004304FA
+:00415CEB 8BC8                    mov ecx, eax
+:00415CED E897840100              call 0042E189                   << read name
+:00415CF2 8D4C2404                lea ecx, dword ptr [esp+04]
+:00415CF6 51                      push ecx
+
+* Possible Reference to Dialog: DialogID_0092, CONTROL_ID:040B, ""
+                                  |
+:00415CF7 680B040000              push 0000040B
+:00415CFC 8BCE                    mov ecx, esi
+:00415CFE E8F7A70100              call 004304FA
+:00415D03 8BC8                    mov ecx, eax
+:00415D05 E87F840100              call 0042E189                   << read serial
+:00415D0A 8B542404                mov edx, dword ptr [esp+04]
+:00415D0E 8B442408                mov eax, dword ptr [esp+08]
+:00415D12 52                      push edx                        << store serial
+:00415D13 50                      push eax                        << store name
+:00415D14 E807FFFFFF              call 00415C20                   << validate information
+:00415D19 83C408                  add esp, 00000008
+:00415D1C 83F840                  cmp eax, 00000040               << information correct?
+:00415D1F 7509                    jne 00415D2A                    << jump_bad_cracker
+:00415D21 8BCE                    mov ecx, esi
+:00415D23 E856740100              call 0042D17E
+:00415D28 EB21                    jmp 00415D4B                    << jump_good_buyer
+
+* Referenced by a (U)nconditional or (C)onditional Jump at Address:
+|:00415D1F(C)
+|
+:00415D2A 6A00                    push 00000000
+:00415D2C 6A30                    push 00000030
+
+* Possible StringData Ref from Data Obj ->"Invalid registration number."
+                                  |
+:00415D2E 68043D4600              push 00463D04                   << string on stack
+:00415D33 E8CD2E0200              call 00438C05                   << show nag screen
+
+Ok, the above code should be easy to follow, now take a look at the call just before the critical compare
+ (415D1C),
+
+* Referenced by a CALL at Addresses:
+|:00407A61   , :00415D14
+|
+:00415C20 6AFF                    push FFFFFFFF
+:00415C22 6858DB4400              push 0044DB58
+:00415C27 64A100000000            mov eax, dword ptr fs:[00000000]
+:00415C2D 50                      push eax
+:00415C2E 64892500000000          mov dword ptr fs:[00000000], esp
+:00415C35 83EC08                  sub esp, 00000008
+:00415C38 8B442418                mov eax, dword ptr [esp+18]
+:00415C3C 56                      push esi
+:00415C3D 51                      push ecx
+:00415C3E 8BCC                    mov ecx, esp
+:00415C40 89642408                mov dword ptr [esp+08], esp
+:00415C44 50                      push eax
+:00415C45 E878B30100              call 00430FC2                  << make copy of name
+:00415C4A 8D4C2408                lea ecx, dword ptr [esp+08]
+:00415C4E E83D010000              call 00415D90                  << ! Call (1)
+:00415C53 8B542420                mov edx, dword ptr [esp+20]
+:00415C57 51                      push ecx
+:00415C58 8BCC                    mov ecx, esp
+:00415C5A 89642420                mov dword ptr [esp+20], esp
+:00415C5E 52                      push edx
+:00415C5F C744241C00000000        mov [esp+1C], 00000000
+:00415C67 E856B30100              call 00430FC2                  << make copy of serial
+:00415C6C 8D4C2408                lea ecx, dword ptr [esp+08]
+:00415C70 E8CB010000              call 00415E40                  << ! Call (2)
+:00415C75 8D4C2404                lea ecx, dword ptr [esp+04]
+:00415C79 8BF0                    mov esi, eax
+:00415C7B C7442414FFFFFFFF        mov [esp+14], FFFFFFFF
+:00415C83 E878370000              call 00419400                  << do nothing
+:00415C88 8B4C240C                mov ecx, dword ptr [esp+0C]
+:00415C8C 8BC6                    mov eax, esi                   <<
+:00415C8E 64890D00000000          mov dword ptr fs:[00000000], ecx
+:00415C95 5E                      pop esi
+:00415C96 83C414                  add esp, 00000014
+:00415C99 C3                      ret
+
+Ok the above code is pretty obvious again, no difficulties here, just couple of important calls. Let's ta
+ke a look at Call (1) and see what happens with the name we entered,
+
+* Referenced by a CALL at Address:
+|:00415C4E
+|
+:00415D90 64A100000000            mov eax, dword ptr fs:[00000000]
+:00415D96 6AFF                    push FFFFFFFF
+:00415D98 6898DB4400              push 0044DB98
+:00415D9D 50                      push eax
+:00415D9E 64892500000000          mov dword ptr fs:[00000000], esp
+:00415DA5 57                      push edi
+:00415DA6 8BF9                    mov edi, ecx
+:00415DA8 8D4C2414                lea ecx, dword ptr [esp+14]
+:00415DAC C744240C00000000        mov [esp+0C], 00000000
+:00415DB4 E820500100              call 0042ADD9                   << ?
+:00415DB9 8D4C2414                lea ecx, dword ptr [esp+14]
+:00415DBD E860500100              call 0042AE22                   << ?
+:00415DC2 8B442414                mov eax, dword ptr [esp+14]
+:00415DC6 C74704FFFFFFFF          mov [edi+04], FFFFFFFF
+:00415DCD C707FFFFFFFF            mov dword ptr [edi], FFFFFFFF
+:00415DD3 8B50F8                  mov edx, dword ptr [eax-08]     << length of string
+:00415DD6 85D2                    test edx, edx                   << zero?
+:00415DD8 743D                    je 00415E17                     << yes! get out'a here
+:00415DDA 56                      push esi
+:00415DDB BE0D000000              mov esi, 0000000D               << !
+:00415DE0 85D2                    test edx, edx
+:00415DE2 7E1A                    jle 00415DFE
+:00415DE4 B901000000              mov ecx, 00000001
+:00415DE9 55                      push ebp
+:00415DEA 53                      push ebx
+:00415DEB 2BC8                    sub ecx, eax
+
+* Referenced by a (U)nconditional or (C)onditional Jump at Address:
+|:00415DFA(C)
+|
+:00415DED 0FBE28                  movsx ebp, byte ptr [eax]       << !
+:00415DF0 8D1C01                  lea ebx, dword ptr [ecx+eax]    << !
+:00415DF3 0FAFDD                  imul ebx, ebp                   << !
+:00415DF6 03F3                    add esi, ebx                    << !
+:00415DF8 40                      inc eax                         << !
+:00415DF9 4A                      dec edx                         << !
+:00415DFA 75F1                    jne 00415DED                    << !
+:00415DFC 5B                      pop ebx
+:00415DFD 5D                      pop ebp
+
+* Referenced by a (U)nconditional or (C)onditional Jump at Address:
+|:00415DE2(C)
+|
+:00415DFE 56                      push esi
+:00415DFF E8EC2C0000              call 00418AF0                   << ?
+:00415E04 83C404                  add esp, 00000004
+:00415E07 E8F42C0000              call 00418B00                   << ! Call (1.1)
+:00415E0C 8907                    mov dword ptr [edi], eax        << store value
+:00415E0E E8ED2C0000              call 00418B00                   << ! Call (1.1)
+:00415E13 894704                  mov dword ptr [edi+04], eax     << store value
+:00415E16 5E                      pop esi
+
+* Referenced by a (U)nconditional or (C)onditional Jump at Address:
+|:00415DD8(C)
+|
+:00415E17 8D4C2414                lea ecx, dword ptr [esp+14]
+:00415E1B C744240CFFFFFFFF        mov [esp+0C], FFFFFFFF
+:00415E23 E82CB10100              call 00430F54                   << ?
+:00415E28 8B4C2404                mov ecx, dword ptr [esp+04]
+:00415E2C 8BC7                    mov eax, edi
+:00415E2E 64890D00000000          mov dword ptr fs:[00000000], ecx
+:00415E35 5F                      pop edi
+:00415E36 83C40C                  add esp, 0000000C
+:00415E39 C20400                  ret 0004
+
+Call (1.1) in detail,
+
+* Referenced by a CALL at Addresses:
+|:00403EC2   , :00403EDC   , :00403F47   , :00403F63   , :00403F76
+|:00403FE0   , :00404096   , :0040C26A   , :0040C271   , :00411276
+|:00415E07   , :00415E0E
+|
+:00418B00 E84B450000              call 0041D050                           << ?
+:00418B05 8B4814                  mov ecx, dword ptr [eax+14]             <<
+:00418B08 8D1449                  lea edx, dword ptr [ecx+2*ecx]
+:00418B0B 8D1491                  lea edx, dword ptr [ecx+4*edx]
+:00418B0E C1E204                  shl edx, 04
+:00418B11 03D1                    add edx, ecx
+:00418B13 C1E208                  shl edx, 08
+:00418B16 2BD1                    sub edx, ecx
+:00418B18 8D8C91C39E2600          lea ecx, dword ptr [ecx+4*edx+00269EC3]
+:00418B1F 894814                  mov dword ptr [eax+14], ecx             << !
+:00418B22 8BC1                    mov eax, ecx
+:00418B24 C1E810                  shr eax, 10
+:00418B27 25FF7F0000              and eax, 00007FFF
+:00418B2C C3                      ret
+
+Well, what happens here with the name that we entered? First, the target checks if we entered a name at a
+ll (415DD6, 415DD8 and 415DE0, 415DE2). Then there follows a very important part, in fact this will be th
+e first part of code that we will need to create the key generator! The entered name is used to calculate
+ a temporary value (415DED to 415DFA) - call it value_0, this value is then used in Call (1.1) - the code
+ of Call (1.1) will also be important for our key generator - and we finally got two different values (ca
+ll them value_1 and value_2) that are stored for later use (415E0C and 415E0E). The line 418B1F is import
+ant when Call (1.1) is used the second time.
+
+Ok, it's time for the serial we entered, lets take a look at Call (2), I wish to warn you for the listing
+ that follows, it's long - so read it several times if you can't follow it from the first time and due to
+ its length I will add comments in between the code listing,
+
+* Referenced by a CALL at Address:
+|:00415C70
+|
+:00415E40 6AFF                    push FFFFFFFF
+:00415E42 68B8DB4400              push 0044DBB8
+:00415E47 64A100000000            mov eax, dword ptr fs:[00000000]
+:00415E4D 50                      push eax
+:00415E4E 64892500000000          mov dword ptr fs:[00000000], esp
+:00415E55 51                      push ecx
+:00415E56 53                      push ebx
+:00415E57 56                      push esi
+:00415E58 57                      push edi
+:00415E59 8BF1                    mov esi, ecx
+:00415E5B 8B06                    mov eax, dword ptr [esi]        <<
+:00415E5D 83CFFF                  or edi, FFFFFFFF                <<
+:00415E60 3BC7                    cmp eax, edi                    <<
+:00415E62 C744241800000000        mov [esp+18], 00000000
+:00415E6A 7509                    jne 00415E75                    <<
+:00415E6C 397E04                  cmp dword ptr [esi+04], edi     <<
+:00415E6F 0F848E000000            je 00415F03                     <<
+
+Uhm, here the target checks if value_1 and value_2 are not -1.
+
+* Referenced by a (U)nconditional or (C)onditional Jump at Address:
+|:00415E6A(C)
+|
+:00415E75 8D4C2420                lea ecx, dword ptr [esp+20]
+:00415E79 E8A44F0100              call 0042AE22                    << ?
+:00415E7E 8D4C2420                lea ecx, dword ptr [esp+20]
+:00415E82 E8524F0100              call 0042ADD9                    << ?
+:00415E87 8B442420                mov eax, dword ptr [esp+20]
+:00415E8B 8378F80D                cmp dword ptr [eax-08], 0000000D <<
+:00415E8F 7572                    jne 00415F03                     <<
+:00415E91 8D4C240C                lea ecx, dword ptr [esp+0C]
+:00415E95 6A02                    push 00000002
+:00415E97 51                      push ecx
+:00415E98 8D4C2428                lea ecx, dword ptr [esp+28]
+:00415E9C E8C84B0100              call 0042AA69
+:00415EA1 8B10                    mov edx, dword ptr [eax]
+
+Ok, first you should now what '<< ?' means. Well, I just wanna say by this that the call is not important
+ to us or that I don't know or remember what it does... here it probably calculates the string length and
+ stores it... Anyway in line 415E8B the target checks if the length of the serial is 13 digits long. If t
+he serial that you entered isn't 13 digits long, reenter a new one that is.
+
+* Possible StringData Ref from Data Obj ->"PT"                      << !
+                                  |
+:00415EA3 68243D4600              push 00463D24
+:00415EA8 52                      push edx
+:00415EA9 E8B22D0000              call 00418C60                     << Call (2.1)
+:00415EAE 8BD8                    mov ebx, eax                      << eax = result of (2.1)
+:00415EB0 83C408                  add esp, 00000008
+:00415EB3 F7DB                    neg ebx                           <<
+:00415EB5 1BDB                    sbb ebx, ebx                      <<
+:00415EB7 8D4C240C                lea ecx, dword ptr [esp+0C]
+:00415EBB F7DB                    neg ebx                           <<
+:00415EBD E892B00100              call 00430F54
+:00415EC2 84DB                    test bl, bl                       << everything ok?
+:00415EC4 753D                    jne 00415F03                      << no! get out'a here
+
+Sorry I break here, but here we got an important part of code.
+We got a string data reference to "PT" (maybe from Password Tracker ;). Call (2.1) checks if the first 2
+digits are equal to "PT" and the result is returned in eax. The following lines are very typical (415EB3,
+ 415EB5 and 415EBB) when it comes to testing if something went just like it should have gone... Ok, you p
+robly will have to reenter you serial, now enter one that starts with "PT" and that's 13 digits long.
+
+:00415EC6 8D44240C                lea eax, dword ptr [esp+0C]
+:00415ECA 6A02                    push 00000002                     <<
+:00415ECC 50                      push eax
+:00415ECD 8D4C2428                lea ecx, dword ptr [esp+28]
+:00415ED1 E8684A0100              call 0042A93E                     <<
+:00415ED6 8B08                    mov ecx, dword ptr [eax]
+:00415ED8 51                      push ecx
+:00415ED9 E8F2340000              call 004193D0                     << Call (2.2)
+:00415EDE 8BC8                    mov ecx, eax                      <<
+:00415EE0 8B06                    mov eax, dword ptr [esi]          << ! value_1
+:00415EE2 F7D8                    neg eax                           <<
+:00415EE4 99                      cdq                               <<
+
+* Possible Reference to Dialog: DialogID_008B, CONTROL_ID:03E8, ""
+                                  |
+:00415EE5 BBE8030000              mov ebx, 000003E8                 <<
+:00415EEA 83C404                  add esp, 00000004
+:00415EED F7FB                    idiv ebx                          <<
+:00415EEF 33DB                    xor ebx, ebx                      <<
+:00415EF1 3BCA                    cmp ecx, edx                      << !
+:00415EF3 8D4C240C                lea ecx, dword ptr [esp+0C]
+:00415EF7 0F95C3                  setne bl                          << !
+:00415EFA E855B00100              call 00430F54
+:00415EFF 84DB                    test bl, bl                       <<
+:00415F01 7423                    je 00415F26                       << jump_good_buyer
+
+Hey, here I'm again. The call in line 415ED1 will 'cut' of the first two digits from the serial, so we go
+t a serial from 11 (13-2 ;) digits left. What's next? Well Call (2.2) is some kind of split_and_convert f
+unction, it gets the first four digits and convert it to a number and the value is returned in eax. Then
+something great happens, value_1 is loaded (don't remember it, get back to some of the code above and rea
+d it again). With value_1, the target does some more math and then in line 415EF1 a we got a critical com
+pare. If you want to get the good value check out ecx (you probly need again reenter the serial).
+
+* Referenced by a (U)nconditional or (C)onditional Jump at Addresses:
+|:00415E6F(C), :00415E8F(C), :00415EC4(C)
+|
+:00415F03 8D4C2420                lea ecx, dword ptr [esp+20]
+:00415F07 897C2418                mov dword ptr [esp+18], edi
+:00415F0B E844B00100              call 00430F54
+:00415F10 8BC7                    mov eax, edi
+:00415F12 8B4C2410                mov ecx, dword ptr [esp+10]
+:00415F16 64890D00000000          mov dword ptr fs:[00000000], ecx
+:00415F1D 5F                      pop edi
+:00415F1E 5E                      pop esi
+:00415F1F 5B                      pop ebx
+:00415F20 83C410                  add esp, 00000010
+:00415F23 C20400                  ret 0004
+
+* Referenced by a (U)nconditional or (C)onditional Jump at Address:
+|:00415F01(C)
+|
+:00415F26 8D54240C                lea edx, dword ptr [esp+0C]
+:00415F2A 6A06                    push 00000006                         <<
+:00415F2C 52                      push edx
+:00415F2D 8D4C2428                lea ecx, dword ptr [esp+28]
+:00415F31 E8084A0100              call 0042A93E                         <<
+:00415F36 8B00                    mov eax, dword ptr [eax]
+:00415F38 50                      push eax
+:00415F39 E892340000              call 004193D0                         << Call (2.3)
+:00415F3E 8B4E04                  mov ecx, dword ptr [esi+04]           << ! value_2
+:00415F41 83C404                  add esp, 00000004
+:00415F44 8BD1                    mov edx, ecx                          <<
+:00415F46 33DB                    xor ebx, ebx                          <<
+:00415F48 C1E203                  shl edx, 03                           <<
+:00415F4B 2BD1                    sub edx, ecx                          <<
+:00415F4D D1E2                    shl edx, 1                            <<
+:00415F4F 2BD1                    sub edx, ecx                          <<
+:00415F51 8D4C240C                lea ecx, dword ptr [esp+0C]           <<
+:00415F55 F7DA                    neg edx                               <<
+:00415F57 3BC2                    cmp eax, edx                          << !
+:00415F59 0F95C3                  setne bl                              << !
+:00415F5C E8F3AF0100              call 00430F54
+:00415F61 84DB                    test bl, bl                           <<
+:00415F63 897C2418                mov dword ptr [esp+18], edi
+:00415F67 8D4C2420                lea ecx, dword ptr [esp+20]
+:00415F6B 741B                    je 00415F88                           << jump_good_buyer
+:00415F6D E8E2AF0100              call 00430F54
+:00415F72 8BC7                    mov eax, edi
+:00415F74 8B4C2410                mov ecx, dword ptr [esp+10]
+:00415F78 64890D00000000          mov dword ptr fs:[00000000], ecx
+:00415F7F 5F                      pop edi
+:00415F80 5E                      pop esi
+:00415F81 5B                      pop ebx
+:00415F82 83C410                  add esp, 00000010
+:00415F85 C20400                  ret 0004
+
+Uhm, again the same shit (euhh code ;). Now the last 7 digits are again used in the same and previous men
+tioned split_and_convert function. Again, a value from our name is loaded, value_2 this time and some mor
+e math again and the critical compare at line 415F57. Now if you like to see the good third part of the s
+erial it's in eax.
+
+* Referenced by a (U)nconditional or (C)onditional Jump at Address:
+|:00415F6B(C)
+|
+:00415F88 E8C7AF0100              call 00430F54
+:00415F8D 8B4C2410                mov ecx, dword ptr [esp+10]
+:00415F91 5F                      pop edi
+:00415F92 5E                      pop esi
+:00415F93 B840000000              mov eax, 00000040                     << !!
+:00415F98 64890D00000000          mov dword ptr fs:[00000000], ecx
+:00415F9F 5B                      pop ebx
+:00415FA0 83C410                  add esp, 00000010
+:00415FA3 C20400                  ret 0004
+
+This last part is quite obvious if you remember that eax will be compared to 40h. So that's all we need t
+o know about the target for our key generator. Now let me quickly show you how I translated all that code
+ to a working pascal program,
+
+program PTD320-K;
+
+var
+ sPart1, sPart2, sUName      : string;
+ bCount                      : byte;
+ lPart1, lPart2,lTemp,lDummy : longint;
+ bUNLen                      : byte absolute sUName;
+ bP1Len                      : byte absolute sPart1;
+ bP2Len                      : byte absolute sPart2;
+
+function Calculate(lNumber : longint) : longint;        { Call (1.1) }
+var
+ lPart : longint;
+begin
+ lPart   := 3 * lNumber;
+ lPart   := lNumber + (4 * lPart);
+ lPart   := lPart shl 4;
+ lPart   := lPart + lNumber;
+ lPart   := lPart shl 8;
+ lPart   := lPart - lNumber;
+ lNumber := lNumber + (4 * lPart) + $269EC3;
+
+ lTemp   := lNumber;
+
+ lNumber := lNumber shr 16;
+ lPart   := lNumber and 32767; { $7FFFF, bug! reported by Corn2 }
+
+ Calculate := lPart
+end;
+
+function Complete(sNumber : string; bTotal : byte) : string;
+var
+ bCount, bDummy : byte;
+ bNuLen         : byte absolute sNumber;
+ sDummy         : string;
+begin
+ if bTotal = 7 then Dec(bNuLen);
+
+ bDummy    := 2;
+ sDummy[1] := sNumber[1];
+
+ for bCount := 2 to bTotal do
+  if bCount < bNuLen
+   then sDummy[bCount] := '0'
+   else begin
+         sDummy[bCount] := sNumber[bDummy];
+         Inc(bDummy)
+        end;
+
+ if bTotal = 7
+  then sDummy[0] := #7
+  else sDummy[0] := #4;
+
+ Complete  := sDummy
+end;
+
+begin
+ writeln('Password Tracker Deluxe v3.20 - Key Generator by Vizion');
+ write('Enter your name : ');
+ readln(sUName);
+
+ lTemp := $0D;
+ for bCount := 1 to bUNLen do
+  begin
+   lDummy := byte(sUName[bCount]);
+   lDummy := lDummy * bCount;
+   lTemp  := lTemp + lDummy
+  end;
+
+ lPart1 := Calculate(lTemp);
+
+ lPart1 := (0 - lPart1);
+ lPart1 := lPart1 mod $3E8;
+
+ Str(lPart1, sPart1);
+ if bP1Len < 4 then sPart1 := Complete(sPart1, 4);
+
+ lDummy := Calculate(lTemp);
+
+ lPart2 := lDummy shl $3;
+ lPart2 := lPart2 - lDummy;
+ lPart2 := lPart2 shl $1;
+ lPart2 := lPart2 - lDummy;
+ lPart2 := (0 - lPart2);
+
+ Str(lPart2, sPart2);
+ if bP2Len < 7 then sPart2 := Complete(sPart2, 7);
+
+ write('Registration Number : ', 'PT' + sPart1 + sPart2)
+end.
+
+If you like to get more information on this pascal code just contact me and ask...
+So that's all folks, hope you enjoyed it just like I did,
+
+Vizion.
+
+:::::::::::::::::::::  m E X / c 4 N  T U T O R I A L  D I V I S I O N  :::::::::::::::::::::
+

@@ -1,0 +1,1377 @@
+THE_URL:http://web.textfiles.com/computers/modgrps.lst
+THE_TITLE:modgrps.lst
+Date: 18 Sep 1995 10:20:08 -0500
+From: kent@sterling.com (Kent Landfield)
+Newsgroups: news.lists,comp.archives,news.newusers.questions,news.answers,comp.answers
+Subject: Usenet Moderated Newsgroup Archive List
+
+Archive-name: usenet/mod-archives
+Last-modified: 8/15/95
+Posting-Frequency: monthly
+Version: 1.39
+
+   This article contains the location of archives for moderated Usenet
+   newsgroups.  If you are looking at a version of this file which is
+   more than a month old, get the latest version of this file by sending
+   an email message to
+
+             send-mod-archives@ftp.sterling.com
+
+   The latest version will be mailed to you. Please use a domain based
+   address if possible.  This file is also available via WWW and FTP from
+
+          ftp://ftp.sterling.com/moderators/Archives.html
+                                or
+          ftp://ftp.sterling.com/moderators/Archives.txt
+
+----------------------------------------------------
+Subject: General Information
+
+This article lists the location, maintainer and other general information
+about the archives of moderated newsgroups. In most cases, the archives
+listed are the location the moderators of the individual newsgroups consider
+official.  Those that are not considered official but are available are
+marked with a '**' on the Newsgroup: line.
+
+This is not an all encompassing list of archives for each group.  Only the
+archives that the moderators consider official or one recommended archive
+for the newsgroup is listed.   Some entries are tagged '(Status Unknown)'.
+This archive list will constantly be under construction.  This indicates
+information concerning the newsgroup's archives is not available to the
+maintainer at the time of posting.
+
+If you or your site are archiving a newsgroup that is listed as
+'Not Archived', you might consider asking the moderator if your site
+might be complete enough to be listed as the archive site for the
+newsgroup.  It is solely up to the moderator as to which sites are
+to be listed. Updates to this listing will only be allowed from the
+newsgroup's official moderator as listed in the periodic posting titled
+
+                "List of Moderators for Usenet"
+
+maintained by tale@uunet.uu.net (David C Lawrence).
+
+Moderators, to submit changes send email to:
+
+                mod-archive-faq@ftp.sterling.com
+
+-----------------------------------------------------------------
+Subject: comp.* moderated newsgroup archives
+
+Newsgroup:               comp.ai.jair.announce
+Maintainer's full name:  Steven Minton
+Maintainer's address:    jair-ed@ptolemy.arc.nasa.gov
+WWW Archive location:    http://www.cs.washington.edu/research/jair/home.html
+Gopher Archive location: gopher://p.gp.cs.cmu.edu/
+FTP Archive location:    ftp://p.gp.cs.cmu.edu/usr/jair/pub/
+
+Newsgroup:               comp.ai.jair.papers
+Maintainer's full name:  Steven Minton
+Maintainer's address:    jair-ed@ptolemy.arc.nasa.gov
+WWW Archive location:    http://www.cs.washington.edu/research/jair/home.html
+Gopher Archive location: gopher://p.gp.cs.cmu.edu/
+FTP Archive location:    ftp://p.gp.cs.cmu.edu/usr/jair/pub/
+
+Newsgroup:               comp.ai.nlang-know-rep
+Maintainer's full name:  Al Whaley
+Maintainer's address:    al@ai.sunnyside.com
+Archive location:        ftp://ai.sunnyside.com/pub/nl-kr/
+                         http://ai.sunnyside.com/pub/nl-kr/
+
+Newsgroup:               comp.ai.vision
+Maintainer's full name:  Philip Kahn
+Maintainer's address:    576 Middlefield Road, Palo Alto, CA  94301
+                         (Vision-List-Request@teleos.com)
+Archive location:        ftp://teleos.com/VISION-LIST-ARCHIVE/
+
+Newsgroup:               comp.answers
+Maintainer's full name:  *.answers moderation team
+Maintainer's address:    news-answers-request@MIT.EDU
+Archive location:        ftp://rtfm.mit.edu/pub/usenet/comp.answers/
+
+** Newsgroup:            comp.archives
+Maintainer's full name:  Kent Landfield
+Maintainer's address:    kent_landfield@sterling.com
+Archive location:        ftp://ftp.sterling.com/usenet/comp.archives/
+
+Newsgroup:               comp.archives.msdos.announce
+Info:                    Recent announcements are archived on a rotating
+                         basis for the two major newsgroup contributors
+                         (SimTel and Garbo).  The pointers to the respective
+                         storages are given in
+                         ftp://garbo.uwasa.fi/pc/pd2/camfaq.zip
+
+Newsgroup:               comp.binaries.acorn
+Archive location:        Not Archived
+
+** Newsgroup:            comp.binaries.amiga
+Maintainer's full name:  Archive Administrator
+Maintainer's address:    root@wuarchive.wustl.edu
+Archive location:        ftp://wuarchive.wustl.edu/usenet/comp.binaries.amiga/
+
+** Newsgroup:            comp.binaries.atari.st
+Maintainer's full name:  Archive Administrator
+Maintainer's address:    root@wuarchive.wustl.edu
+Archive location:        ftp://wuarchive.wustl.edu/usenet/comp.binaries.atari.st/
+
+Newsgroup:               comp.binaries.cbm
+Maintainer's full name:  Michael Jay Miller
+Maintainer's Address:    cbm-request@gac.edu
+FTP Archive:             ftp://ccnga.uwaterloo.ca/pub/cbm/comp.binaries.cbm/
+WWW Site:                http://www.gac.edu/~mmiller3/
+
+Newsgroup:               comp.binaries.geos
+Maintainer's full name:  Dan Birchall
+Maintainer's address:    birchall@pilot.njin.net
+                         shag@arginine.umdnj.edu
+Archive location:        ftp://arginine.umdnj.edu/pub/geos/
+
+Newsgroup:               comp.binaries.ibm.pc
+Maintainer's full name:  Vinit Carpenter
+Maintainer's address:    carpenterv@vms.csd.mu.edu
+Archive location:        ftp://vinny.csd.mu.edu/pub/CBIP/
+Info:                    Archive is currently in transition to this site
+                         from ftp://ftp.uml.edu/cbip/
+
+Newsgroup:               comp.binaries.mac
+Maintainer's full name:  Roger L. Long
+Maintainer's address:    macintosh-request@uunet.uu.net
+Archive location:        ftp://ftp.uu.net/archive/usenet/comp.binaries.mac/
+
+Newsgroup:               comp.binaries.ms-windows
+Maintainer's full name:  Tin Le
+Maintainer's address:    tin@tlsoft.com
+Archive location:        ftp://wuarchive.wustl.edu/usenet/comp.binaries.ms-windows/
+
+** Newsgroup:            comp.binaries.newton
+Maintainer's full name:  Archive Administrator
+Maintainer's address:    root@wuarchive.wustl.edu
+Archive location:        ftp://wuarchive.wustl.edu/usenet/comp.binaries.ms-windows/
+
+Newsgroup:               comp.binaries.os2
+Archive location:        Not Archived
+
+Newsgroup:               comp.binaries.psion (Status Unknown)
+
+Newsgroup:               comp.bugs.4bsd.ucb-fixes
+Maintainer's full name:  Keith Bostic
+Maintainer's address:    bostic@cs.berkeley.edu
+Archive location:        ftp://ftp.cs.berkeley.eduucb/4bsd/ucb-fixes/
+
+Newsgroup:               comp.compilers
+Maintainer's full name:  John Levine
+Maintainer's address:    compilers-request@iecc.com
+Archive location:        ftp://iecc.com/pub/articles/
+                         mail://compilers-server@iecc.com
+
+Newsgroup:               comp.compression.research
+Archive location:        Not Archived
+
+Newsgroup:               comp.dcom.telecom
+Maintainer's full name:  Patrick Townson
+Maintainer's address:    ptownson@eecs.nwu.edu
+FTP Archive location:    ftp://lcs.mit.edu/telecom-archives/
+Email Archive location:  The Telecom Archives Email Information Service
+                         is a fully automated response system based on
+                         email commands.  For information send mail to
+                         telecom@eecs.nwu.edu and request archives.help.file.
+
+Newsgroup:               comp.doc
+Archive location:        Not Archived
+
+Newsgroup:               comp.doc.techreports
+Archive location:        Not Archived
+
+Newsgroup:               comp.emulators.announce
+Archive location:        Not Archived
+
+Newsgroup:               comp.graphics.research (Status Unknown)
+
+Newsgroup:               comp.home.misc
+Maintainer's full name:  Kresten Bjerg
+Maintainer's address:    home_request@vax.psl.ku.dk
+Archive location:        listserv@coco.ihi.ku.dk
+
+Newsgroup:               comp.infosystems.announce (Status Unknown)
+
+Newsgroup:               comp.infosystems.kiosks
+Maintainer's full name:  Arthur Lee Wilson
+Maintainer's address:    dknight@lanl.gov
+Archive location:        ftp://ftp.c3.lanl.gov/pub/kiosks/
+
+Newsgroup:               comp.infosystems.www.announce (Status Unknown)
+
+** Newsgroup:            comp.internet.library
+Maintainer's full name:  Archive Administrator
+Maintainer's address:    root@wuarchive.wustl.edu
+Archive location:        ftp://wuarchive.wustl.edu/usenet/comp.internet.library/
+
+Newsgroup:               comp.internet.net-happenings
+Maintainer's full name:  Gleason Sackman
+Maintainer's address:    net-happenings-owner@is.internic.net
+Telnet Archive location: telnet gopher.cni.org; login brsuser
+WWW Archive location:    http://www-iub.indiana.edu/cgi-bin/nethaps/
+
+Newsgroup:               comp.lang.basic.visual.announce
+Archive location:        Not Archived
+
+Newsgroup:               comp.lang.c.moderated (Status Unknown)
+
+Newsgroup:               comp.lang.ml
+Maintainer's full name:  Greg Morrisett
+Maintainer's address:    greg.morriset@cs.cmu.edu
+Archive location:        ftp://pop.cs.cmu.edu/usr/jgmorris/sml-archive/
+Info:                    Current year is uncompressed and can be found in:
+                  ftp://pop.cs.cmu.edu/usr/jgmorris/sml-archive/sml-archive.94/
+                         Earlier years are compressed and can be found in
+                         (where YY are the last two digits of the year):
+                  ftp://pop.cs.cmu.edu/usr/jgmorris/sml-archive/sml-archive.YY/
+
+Newsgroup:               comp.lang.sigplan (Status Unknown)
+Newsgroup:               comp.lang.visual (Status Unknown)
+Newsgroup:               comp.laser-printers (Status Unknown)
+
+Newsgroup:               comp.mail.maps
+Archive location:        ftp://ftp.uu.net/uumap/
+
+Newsgroup:               comp.networks.noctools.announce (Status Unknown)
+Newsgroup:               comp.networks.noctools.tools (Status Unknown)
+
+Newsgroup:               comp.newprod
+Maintainer's full name:  Chip Rosenthal
+Maintainer's address:    chip@chinacat.unicom.com
+Archive location:        http://www.metronet.com/newprod.html
+                         gopher://gopher.metronet.com/11h/newprod
+
+Newsgroup:               comp.org.cpsr.announce
+Maintainer's full name:  CPSR staff and volunteers
+Maintainer's address:    admin@cpsr.org
+Archive location:        ftp://ftp.cpsr.org/cpsr/lists/listserv_archives/cpsr-announce/
+
+Newsgroup:               comp.org.eff.news (Status Unknown)
+Newsgroup:               comp.org.fidonet (Status Unknown)
+
+Newsgroup:               comp.os.386bsd.announce
+Archive location:        Not Archived
+
+Newsgroup:               comp.os.linux.announce
+Maintainer's full name:  Ian Jackson
+Maintainer's address:    ijackson@ny x.cs.du.edu
+Archive location:        ftp://sunsite.unc.edu/pub/Linux/docs/linux-announce.archive/
+
+Newsgroup:                comp.os.linux.answers
+Maintainer's full name:   Matt Welsh
+Maintainer's address:     mdw@sunsite.unc.edu
+WWW Archive Location:     http://sunsite.unc.edu/mdw/linux.html
+FTP Archive Location:     ftp://sunsite.unc.edu/pub/Linux/docs
+Gopher Archive Location:  gopher://sunsite.unc.edu
+Info:                     Not all postings to c.o.l.answers are included in
+                          the above archives, nor are the entire archives
+                          posted to this newsgroup. The above lists the Linux
+                          Documentation Project archives, a significant portion
+                          of which is posted to c.o.l.answers.
+
+Newsgroup:               comp.os.ms-windows.announce
+Maintainer's full name:  Sean Graham
+Maintainer's address:    win-announce@shiloh.nimh.nih.gov
+Archive location:        ftp://ftp.nimh.nih.gov/pub/win3/coma/
+
+Newsgroup:               comp.os.os2.announce
+Maintainer's full name:  Dave Tholen
+Maintainer's address:    tholen@newton.ifa.hawaii.edu
+Archive location:        mailto::tholen@newton.ifa.hawaii.edu
+
+Newsgroup:               comp.os.research
+Maintainer's full name:  Dr. Darrell Long
+Maintainer's address:    darrell@cse.ucsc.edu
+Archive location:        ftp://ftp.cse.ucsc.edu/pub/comp.os.research/
+
+Newsgroup:               comp.parallel (Status Unknown)
+Newsgroup:               comp.patents (Status Unknown)
+
+Newsgroup:               comp.protocols.kermit.announce
+Maintainer's full name:  Frank da Cruz
+Maintainer's address:    fdc@columbia.edu
+Archive location:        Not Archived
+Info:                    kermit.columbia.edu has Kermit files, but not an
+                         archive of newsgroup messages.
+
+Newsgroup:               comp.research.japan
+Maintainer's full name:  Richard D. Schlichting
+Maintainer's address:    rick@cs.arizona.edu
+Archive location:        ftp://cs.arizona.edu/japan/
+
+Newsgroup:               comp.risks
+Maintainer's full name:  Peter G. Neumann, RISKS Moderator
+Maintainer's address:    risks@csl.sri.com
+                         SRI International, Menlo Park CA 94025-3496
+FTP Archive location:    ftp://crvax.sri.com/risks/
+                         (per-volume subdirectories for back issues)
+                         - RISKS is also available from
+                                bitftp@pucc.Princeton.EDU.
+WWW Archive location:    http://www.wais.com/wais-dbs/risks-digest.html
+
+Newsgroup:               comp.simulation
+Maintainer's full name:  Patrick Dowd
+Maintainer's address:    dowd@eng.buffalo.edu
+Archive location:        ftp://norman.eng.buffalo.edu/pub/comp.simulation/
+
+Newsgroup:               comp.society (Status Unknown)
+
+Newsgroup:               comp.society.cu-digest
+Maintainer's full name:  Brendan Kehoe
+Maintainer's address:    brendan@eff.org
+Archive location:        ftp://ftp.eff.org/pub/Publications/CuD/
+
+Newsgroup:               comp.society.folklore
+Archive location:        Not Archived
+
+Newsgroup:               comp.society.privacy
+Maintainer's full name:  L. P. Levine, Professor CS
+Maintainer's address:    levine@cs.uwm.edu
+FTP Archive location:    ftp://ftp.cs.uwm.edu/
+Gopher Archive location: gopher://gopher.cs.uwm.edu/
+
+Newsgroup:               comp.sources.3b1
+Maintainer's full name:  David H. Brierley
+Maintainer's address:    dave@galaxia.network23.com
+Archive location:        ftp://ftp.uu.net/usenet/comp.sources.3b1/
+
+** Newsgroup:            comp.sources.acorn
+Maintainer's full name:  Kent Landfield
+Maintainer's address:    kent_landfield@sterling.com
+Archive location:        ftp://ftp.sterling.com/usenet/comp.sources.acorn/
+
+** Newsgroup:            comp.sources.amiga
+Maintainer's full name:  Kent Landfield
+Maintainer's address:    kent_landfield@sterling.com
+Archive location:        ftp://ftp.sterling.com/usenet/comp.sources.amiga/
+
+Newsgroup:               comp.sources.apple2
+Maintainer's full name:  Kent Landfield
+Maintainer's address:    kent_landfield@sterling.com
+Archive location:        ftp://ftp.sterling.com/usenet/comp.sources.apple2/
+
+Newsgroup:               comp.sources.atari.st
+Maintainer's full name:  Kent Landfield
+Maintainer's address:    kent_landfield@sterling.com
+Archive location:        ftp://ftp.sterling.com/usenet/comp.sources.atari.st/
+
+Newsgroup:               comp.sources.games
+Maintainer's full name:  Bill Randle
+Maintainer's address:    billr@saab.cna.tek.com
+Archive location:        ftp://ftp.uu.net/usenet/comp.sources.games/
+
+Newsgroup:               comp.sources.hp48
+Maintainer's full name:  Chris Spell
+Maintainer's address:    spell@cms.uncwil.edu
+Archive location:        ftp://wuarchive.wustl.edu/systems/hp/hp48/
+
+Newsgroup:               comp.sources.mac
+Maintainer's full name:  Roger L. Long
+Maintainer's address:    macintosh_request@uunet.uu.net
+Archive location:        ftp://ftp.uu.net/archive/usenet/comp.sources.mac/
+Info:                    Coming to ftp.uu.net RSN.
+
+Newsgroup:               comp.sources.misc
+Maintainer's full name:  Kent Landfield
+Maintainer's address:    archive@sterling.com
+Archive location:        ftp://ftp.sterling.com/usenet/comp.sources.misc/
+
+Newsgroup:               comp.sources.postscript
+Maintainer's full name:  Kent Landfield
+Maintainer's address:    archive@sterling.com
+Archive location:        ftp://ftp.sterling.com/usenet/comp.sources.postscript/
+
+Newsgroup:               comp.sources.reviewed
+Maintainer's full name:  Kent Landfield
+Maintainer's address:    archive@sterling.com
+Archive location:        ftp://ftp.sterling.com/usenet/comp.sources.reviewed/
+
+Newsgroup:               comp.sources.sun
+Maintainer's full name:  Charles Mcgrew
+Maintainer's address:    mcgrew@aramis.rutgers.edu
+Archive location:        ftp://rutgers.edu//src/sun-sources/
+
+Newsgroup:               comp.sources.unix
+Maintainer's full name:  Paul Vixie
+Maintainer's address:    paul@vix.com
+Archive location:        ftp://ftp.vix.com/pub/usenet/comp.sources.unix/
+
+Newsgroup:               comp.sources.x
+Maintainer's full name:  Kent Landfield
+Maintainer's address:    archive@sterling.com
+Archive location:        ftp://ftp.sterling.com/usenet/comp.sources.x/
+
+Newsgroup:               comp.std.announce
+Archive location:        Not Archived
+
+Newsgroup:               comp.std.lisp
+Maintainer's full name:  Bradford Miller
+Maintainer's address:    miller@cs.rochester.edu
+Archive location:        ftp://ftp.cs.rochester.edu/pub/lisp-standards/
+
+Newsgroup:               comp.std.mumps
+Archive location:        Not Archived
+
+Newsgroup:               comp.std.unix
+Maintainer's full name:  Sean Eric Fagan
+Maintainer's address:    std-unix-request@uunet.uu.net
+Archive location:        ftp://ftp.uu.net/archive/usenet/comp.std.unix/
+
+Newsgroup:               comp.std.wireless
+Archive location:        Not Archived
+
+Newsgroup:               comp.sys.acorn.announce
+Archive location:        Not Archived
+
+Newsgroup:               comp.sys.amiga.announce
+Maintainer's full name:  Marc Schaefer
+Maintainer's address:    schaefer@di.epfl.ch
+Archive location:        ftp://litamiga.epfl.ch/pub/amiga/archives/CSAA/
+
+Newsgroup:               comp.sys.amiga.reviews
+Maintainer's full name:  Daniel J. Barrett
+Maintainer's address:    amiga-reviews@math.uh.edu
+Archive location:        ftp://math.uh.edu/pub/Amiga/comp.sys.amiga.reviews/
+
+Newsgroup:               comp.sys.atari.announce
+Maintainer's full name:  Yat Siu
+Maintainer's address:    Lexicor@world.std.com
+Archive location:        ftp://ftp.std.com/pub/atari
+
+Newsgroup:               comp.sys.concurrent
+Archive location:        Not Archived
+
+Newsgroup:               comp.sys.ibm.pc.digest (Status Unknown)
+
+Newsgroup:               comp.sys.ibm.pc.games.announce
+Archive location:        Not Archived
+
+Newsgroup:               comp.sys.m68k.pc (Status Unknown)
+
+Newsgroup:               comp.sys.mac.announce
+Maintainer's full name:  Werner Uhrig
+Maintainer's address:    csma@hipark.austin.isd.tenet.edu
+Archive location:        ftp://hipark.austin.isd.tenet.edu/mac/csma/
+
+Newsgroup:               comp.sys.mac.digest
+Maintainer's full name:  Bill Lipa, Gordon Watts, Liam Breck, Igor Livshits, Adam C. Engst
+Maintainer's address:    info-mac-request@sumex-aim.stanford.edu
+Archive location:        ftp://sumex-aim.stanford.edu/per/
+Info:                    Send mail to info-mac-request@sumex-aim.stanford.edu
+                         for a list of our mirror sites.
+
+Newsgroup:               comp.sys.mac.programmer.info (Status Unknown)
+
+Newsgroup:               comp.sys.newton.announce
+Archive location:        Not Archived
+WWW Page:                http://www.oit.itd.umich.edu/Newton-Announce.html
+
+Newsgroup:               comp.sys.next.announce
+Maintainer's full name:  Scott Anguish
+Maintainer's address:    sanguish@digifix.com
+Archive location:        ftp://ftp.digifix.com/
+
+Newsgroup:               comp.sys.sgi.announce
+Maintainer's full name:  Harry Mangalam
+Maintainer's address:    mangalam@uci.edu
+Archive location:        http://www.sgi.com/tech/Wais/comp.sys.sgi.archive.html
+
+Newsgroup:               comp.sys.sun.announce
+Archive location:        Not Archived
+
+Newsgroup:               comp.theory.info-retrieval (Status Unknown)
+Newsgroup:               comp.unix.bsd.386bsd.announce (Status Unknown)
+
+Newsgroup:               comp.unix.bsd.bsdi.announce
+Maintainer's full name:  Tom Haapanen
+Maintainer's address:    tomh@metrics.com
+Archive Location:        ftp://ftp.metrics.com/archive/bsdi.YYMM
+                         (where YYMM is the year/date of postings)
+
+Newsgroup:               comp.unix.bsd.freebsd.announce (Status Unknown)
+Newsgroup:               comp.unix.bsd.netbsd.announce (Status Unknown)
+
+Newsgroup:               comp.unix.sco.announce
+Maintainer's full name:  Ed Hew
+Maintainer's address:    scoannmod@xenitec.on.ca
+Archive location:        ftp://ftp.xenitec.on.ca/pub/news/scoann/
+
+Newsgroup:               comp.unix.wizards
+Archive location:        Not Archived
+
+Newsgroup:               comp.virus
+Maintainer's full name:  Kevin Marcus
+Maintainer's address:    datadec@cs.UCR.edu
+Archive location:        ftp://corsa.ucr.edu/pub/virus-l/
+Info:                    VIRUS-L is gatewayed to comp.virus.
+
+Newsgroup:               comp.windows.x.announce (Status Unknown)
+
+-----------------------------------------------------------------
+Subject: misc.* moderated newsgroup archives
+
+Newsgroup:               misc.activism.progressive
+Maintainer's full name:  Rich Winkel
+Maintainer's address:    rich@pencil.cs.missouri.edu
+Archive location:        listserv@mizzou1.missouri.edu
+                         soc.rights.human,misc.headlines
+Info:                    For more info: Send "GET AMLDBASE DOC ACTIV-L" to
+                         listserv@mizzou1.missouri.edu
+
+Newsgroup:               misc.answers
+Maintainer's full name:  *.answers moderation team
+Maintainer's address:    news-answers-request@MIT.EDU
+Archive location:        ftp://rtfm.mit.edu/pub/usenet/misc.answers/
+
+Newsgroup:               misc.education.multimedia (Status Unknown)
+
+Newsgroup:               misc.entrepreneurs.moderated
+Archive location:        Not Archived
+
+Newsgroup:               misc.handicap (Status Unknown)
+
+Newsgroup:               misc.kids.info
+Archive location:        Not Archived
+
+Newsgroup:               misc.legal.moderated
+Archive location:        Not Archived
+
+Newsgroup:               misc.news.bosnia
+Maintainer's full name:  Asim Mughal
+Maintainer's address:    mughal@alumni.caltech.edu
+Archive Location:        ftp://ftp.cco.caltech.edu/pub/calsma/bosnia/
+
+Newsgroup:               misc.news.east-europe.rferl (Status Unknown)
+
+Newsgroup:               misc.news.southasia
+Archive location:        Not Archived
+
+Newsgroup:               misc.test.moderated
+Maintainer's full name:  Ian Phillipps
+Maintainer's address:    ian@pipex.net
+Archive location:        Not Archived
+Info:                    Some information concerning the group is maintained
+                         at ftp://ftp.pipex.net/pub/news/mtm-welcome and
+                         http://www.pipex.net/pub/news
+
+
+-----------------------------------------------------------------
+Subject: news.* moderated newsgroup archives
+
+Newsgroup:               news.admin.technical
+Archive location:        Not Archived
+
+Newsgroup:               news.announce.conferences
+Maintainer's full name:  Juergen Wagner
+Maintainer's address:    Juergen.Wagner@iao.fhg.de
+Archive location:        http://www.iao.fhg.de/Library/conferences
+Info:                    Announcements are purged after the related
+                         event has passed.
+
+Newsgroup:               news.announce.important
+Archive-location:        Not Archived
+
+Newsgroup:               news.announce.newgroups
+Maintainer's full name:  David C Lawrence
+Maintainer's address:    newgroups-request@uunet.uu.net
+Archive location:        ftp://ftp.uu.net/usenet/news.announce.newgroups/
+
+Newsgroup:               news.announce.newusers
+Maintainer's full name:  News Answers Team
+Maintainer's address:    news-answers-request@mit.edu
+Archive location:        ftp://rtfm.mit.edu/pub/usenet-by-group/news.announce.newusers/
+
+Newsgroup:               news.answers
+Maintainer's full name:  *.answers moderation team
+Maintainer's address:    news-answers-request@MIT.EDU
+Archive location:        ftp://rtfm.mit.edu/pub/usenet/news.answers/
+
+Newsgroup:               news.groups.reviews
+Maintainer's full name:  Jim J. Jewett
+Maintainer's address:    jewett+@pitt.edu
+Archive location:        http://www.pitt.edu/~grouprev/index.html
+
+Newsgroup:               news.lists
+Archive location:        Not Archived
+
+Newsgroup:               news.lists.ps-maps
+Archive location:        Not Archived
+
+-----------------------------------------------------------------
+Subject: rec.* moderated newsgroup archives
+
+Newsgroup:               rec.answers
+Maintainer's full name:  *.answers moderation team
+Maintainer's address:    news-answers-request@MIT.EDU
+Archive location:        ftp://rtfm.mit.edu/pub/usenet/rec.answers/
+
+Newsgroup:               rec.arts.anime.info (Status Unknown)
+
+Newsgroup:               rec.arts.anime.stories
+Maintainer's full name:  MegaZone
+Maintainer's address:    megazone@world.std.com
+Archive location:        ftp://ftp.std.com/archives/anime-fan-works/
+
+Newsgroup:               rec.arts.ascii
+Archive location:        Not Archived
+
+Newsgroup:               rec.arts.books.reviews
+Maintainers's full name: Steve Brock
+Maintainer's Address:    brock@ucsub.colorado.edu
+Archive location:        gopher://gopher.colorado.edu/
+
+Newsgroup:               rec.arts.cinema (Status Unknown)
+
+Newsgroup:               rec.arts.comics.info
+Archive location:        Not Archived
+
+Newsgroup:               rec.arts.erotica
+Archive location:        Not Archived
+
+Newsgroup:               rec.arts.movies.reviews
+Maintainer's full name:  Evelyn C. Leeper
+Maintainer's address:    evelyn.leeper@att.com
+Archive location:        ftp://ftp.uu.net/usenet/rec.arts.movies.reviews/
+
+Newsgroup:               rec.arts.sf.announce
+Archive location:        Not Archived
+
+Newsgroup:               rec.arts.sf.reviews
+Maintainer's full name:  Michael C. Berch
+Maintainer's address:    mcb@postmodern.com
+Archive location:        ftp://net.bio.net/pub/misc/sf-reviews/
+
+Newsgroup:               rec.arts.startrek.info
+Maintainer's full name:  Jim Griffith
+Maintainer's address:    trek-info-request@scam.berkeley.edu
+Archive location:        ftp://scam.berkeley.edu/pub/misc/trek-info/
+
+Newsgroup:               rec.arts.startrek.reviews
+Maintainer's full name:  Michael Scott Shappe
+Maintainer's address:    mss1@cornell.edu
+Archive location:        mail-server@harper-hall.cit.cornell.edu
+Info:                    The archive is e-mail only.
+
+Newsgroup:               rec.audio.high-end
+Maintainer's full name:  Russell G. DeAnna
+Maintainer's address:    deanna@tolstoy.lerc.nasa.gov
+Archive location:        ftp://ftp.uu.net/usenet/rec.audio.high-end/
+
+Newsgroup:               rec.autos.sport.info
+Maintainer's full name:  Tom Haapanen
+Maintainer's address:    tomh@motorsport.com
+Archive location:        http://www.motorsport.com/MNI/Index.html
+
+Newsgroup:               rec.aviation.announce
+Archive location:        Not Archived
+
+Newsgroup:               rec.aviation.answers
+Archive location:        Not Archived
+
+Newsgroup:               rec.aviation.questions
+Archive location:        Not Archived
+
+Newsgroup:               rec.aviation.stories
+Archive location:        Not Archived
+
+Newsgroup:               rec.boats.marketplace (Status Unknown)
+
+Newsgroup:               rec.food.recipes
+Archive location:        Not Archived
+
+Newsgroup:               rec.food.veg.cooking
+Archive location:        Not Archived
+
+Newsgroup:               rec.games.computer.doom.announce
+Maintainer's full name:  Tony Lezard
+Maintainer's address:    doom-request@mantis.co.uk
+Archive location:        ftp://ftp.mantis.co.uk/pub/doom/
+
+Newsgroup:               rec.games.frp.announce
+Archive location:        Not Archived
+
+Newsgroup:               rec.games.frp.archives
+Archive-location:        Not Archived
+
+Newsgroup:               rec.games.mud.announce
+Archive location:        Not Archived
+
+Newsgroup:               rec.games.roguelike.announce
+Archive location:        Not Archived
+
+Newsgroup:               rec.games.trading-cards.announce (Status Unknown)
+
+Newsgroup:               rec.guns
+Maintainer's full name:  Jim Purtilo
+Maintainer's address:    magnum@cs.umd.edu
+Archive location:        ftp://flubber.cs.umd.edu/rec/
+
+Newsgroup:               rec.humor.funny
+Maintainer's full name:  Not Archived
+
+Newsgroup:               rec.humor.oracle
+Maintainer's full name:  Steve Kinzler
+Maintainer's address:    oracle-admin@cs.indiana.edu
+Archive location:        ftp://ftp.cs.indiana.edu/pub/oracle/
+                         OR mail to mailserv@cs.indiana.edu ("help" in body)
+
+Newsgroup:               rec.hunting
+Maintainer's full name:  Chris Barnes
+Maintainer's address:    huntmod@tamvm1.tamu.edu
+Archive location:        listserv@tamvm1.tamu.edu
+
+Newsgroup:               rec.mag.fsfnet (Status Unknown)
+
+Newsgroup:               rec.music.gaffa
+Maintainer's full name:  Bill Wisner
+Maintainer's address:    wisner@uunet.uu.net
+Archive location:        ftp://ftp.uu.net/usenet/rec.music.gaffa/
+
+Newsgroup:               rec.music.info
+Archive location:        Not Archived
+
+Newsgroup:               rec.music.promotional (Status Unknown)
+
+Newsgroup:               rec.music.reviews
+Archive location:        Not Archived
+
+Newsgroup:               rec.pets.dogs.info
+Maintainer's full name:  Cindy Tittle Moore
+Maintainer's address:    tittle@netcom.com
+Archive location:        ftp://rtfm.mit.edu/pub/usenet/news.answers/dogs-faq
+WWW Archive Location:    http://www.io.com/user/tittle/dogs-faq/homepage.html
+
+Newsgroup:               rec.radio.broadcasting
+Maintainer's full name:  William Pfeiffer
+Maintainer's address:    wdp@airwaves.chi.il.us
+FTP Archive Location:    ftp://radio.aiss.uiuc.edu/misc/rec.radio.b-cast/
+Gopher Archive Location: radio.aiss.uiuc.edu 7070
+WWW Archive Location:    http://radio.aiss.uiuc.edu/~rrb/
+
+Newsgroup:               rec.radio.info
+Archive location:        Not Archived
+
+Newsgroup:               rec.skiing.announce
+Archive location:        Not Archived
+
+Newsgroup:               rec.sport.baseball.analysis
+Maintainers' full name:  Dorian Kim and Gary Huckabay
+Maintainers' address:    dorian@cic.net and glhuckabay@ucdavis.edu
+Archive location:        ftp://etext.archive.umich.edu/pub/Sports/Baseball/Analysis
+
+Newsgroup:               rec.sport.cricket.info
+Maintainer's full name:  Simon King, Murari, Badri
+Maintainer's address:    management@cricinfo.cse.ogi.edu
+Gopher Archive location: gopher://cricinfo.cse.ogi.edu:7070/
+Mail Archive Location:   cricinfo@cricinfo.cse.ogi.edu ; Subject : help
+Telnet Archive Location: telnet cricinfo.cse.ogi.edu ; login " cricket "
+
+Newsgroup:               rec.sport.cricket.scores (Status Unknown)
+
+-----------------------------------------------------------------
+Subject: sci.* moderated newsgroup archives
+
+Newsgroup:               sci.aeronautics
+Maintainer's full name:  Robert Dorsett
+Maintainer's address:    rdd@rascal.ics.utexas.edu
+Archive location:        ftp://rascal.ics.utexas.edu/misc/av/sci.aeronautics/
+
+Newsgroup:               sci.aeronautics.airliners
+Maintainer's full name:  Karl L. Swartz
+Maintainer's address:    airliners-admin@chicago.com
+Archive Location:        ftp://ftp.kei.com/pub/airliners/
+
+Newsgroup:               sci.aeronautics.simulation (Status Unknown)
+
+Newsgroup:               sci.answers
+Maintainer's full name:  *.answers moderation team
+Maintainer's address:    news-answers-request@MIT.EDU
+Archive location:        ftp://rtfm.mit.edu/pub/usenet/sci.answers/
+
+Newsgroup:               sci.astro.hubble
+Maintainer's full name:  Dr Paul A Scowen
+Maintainer's address:    scowen@tycho.la.asu.edu
+                         Department of Physics & Astronomy
+                         Arizona State University
+                         Tempe, AZ 85287-1504
+FTP Archive location:    ftp://wfpc3.la.asu.edu/pub/sci.astro.hubble
+WWW Archive location:    http://wfpc3.la.asu.edu/sah.html
+WAIS Archive source:
+(:source
+   :version  3
+   :ip-address "129.219.144.132"
+   :ip-name "wfpc3.la.asu.edu"
+   :tcp-port 210
+   :database-name "/disk1/wais/wais-sources/sci.astro.hubble"
+   :cost 0.00
+   :cost-unit :free
+   :maintainer "sah@wfpc3.la.asu.edu"
+   :keyword-list (
+                  )
+   :description "Archive of materials posted to sci.astro.hubble, part of Usenet"
+   )
+
+Newsgroup:               sci.astro.research
+Maintainer's full name:  Martin E. Sulkanen (SAR Moderator)
+Maintainer's address:    astres-request@pecos.msfc.nasa.gov
+Archive location:        ftp://sslles.msfc.nasa.gov/pub/astres/
+
+Newsgroup:               sci.bio.conservation (Status Unknown)
+
+Newsgroup:               sci.bio.evolution
+Maintainer's full name:  Simon E. Spero
+Maintainer's address:    ses@tipper.oit.unc.edu
+FTP Archive location:    ftp://sunsite.unc.edu/pub/academic/biology/ecology+evolution/forums/sci.bio.evol
+ution/
+Gopher Archive location: gopher://sunsite.unc.edu/11/../.pub/academic/biology/ecology%2bevolution/forums/
+sci.bio.evolution
+
+Newsgroup:               sci.crypt.research
+Maintainer's full name:  Mark Riordan
+Maintainer's address:    mrr@ripem.msu.edu
+Archive Location:        ftp://ripem.msu.edu/pub/
+
+Newsgroup:               sci.econ.research
+Maintainer's full name:  Forrest Smith
+Maintainer's address:    fls@walras.econ.duke.edu
+FTP Archive location:    ftp://sunsite.unc.edu/public/ftp/pub/academic/economics/sci.econ.research/
+WWW Archive location:    http://walras.econ.duke.edu/
+
+Newsgroup:               sci.math.research
+Maintainer's full name:  Michael Boardman
+Maintainer's address:    boardman@davinci.lfc.edu
+Archive location:        gopher://math.lfc.edu/11/MathRelItems/scimathArchive/
+
+Newsgroup:               sci.med.aids
+Archive location:        Not Archived
+
+Newsgroup:               sci.military
+Archive location:        Not Archived
+
+Newsgroup:               sci.nanotech
+Maintainer's full name:  J. Storrs Hall, PhD.
+Maintainer's address:    josh@cs.rutgers.edu
+Archive Location:        ftp://planchet.rutgers.edu/nanotech/archives/
+
+Newsgroup:               sci.physics.plasma (Status Unknown)
+
+Newsgroup:               sci.physics.research
+Maintainer's full name:  Cameron 'Dale' Bass
+Maintainer's address:    crb7q@virginia.edu
+Archive location:        ftp://rincewind.mech.virginia.edu/
+
+Newsgroup:               sci.psychology.digest
+Maintainer's full name:  Stevan Harnad
+Maintainer's address:    harnad@soton.ac.uk
+FTP Archive location:    ftp://princeton.edu/pub/harnad/Psycoloquy/
+WWW Archive location:    http://www.princeton.edu/~harnad/
+Gopher Archive location: gopher://gopher.princeton.edu/1ftp%3aprinceton.edu%40/pub/harnad/Psycoloquy
+
+Newsgroup:               sci.psychology.research
+Archive location:        Not Archived
+
+Newsgroup:               sci.space.news
+Maintainer's full name:  Peter Yee
+Maintainer's address:    yee@atlas.arc.nasa.gov
+Archive location:        ftp://explorer.arc.nasa.gov/pub/SPACE/
+Info:                    Partial archive
+
+Newsgroup:               sci.space.science (Status Unknown)
+Newsgroup:               sci.space.tech (Status Unknown)
+
+Newsgroup:               sci.virtual-worlds
+Maintainer's full name:  Toni Emerson
+Maintainer's address:    temerson@hitl.washington.edu
+Archive Location:        ftp://ftp.u.washington.edu/public/virtual-worlds/postings/
+
+Newsgroup:               sci.virtual-worlds.apps
+Archive location:        Not archived
+
+-----------------------------------------------------------------
+Subject: soc.* moderated newsgroup archives
+
+Newsgroup:               soc.answers
+Maintainer's full name:  *.answers moderation team
+Maintainer's address:    news-answers-request@MIT.EDU
+Archive location:        ftp://rtfm.mit.edu/pub/usenet/soc.answers/
+
+Newsgroup:               soc.culture.indian.info
+Archive location:        Not Archived
+
+Newsgroup:               soc.culture.jewish.holocaust
+Maintainer's full name:  Warren Burstein
+Maintainer's address:    warren@nysernet.org
+Archive location:        ftp://israel.nysernet.org/israel/lists/shoah/
+
+Newsgroup:               soc.feminism
+Archive location:        Not Archived
+
+Newsgroup:               soc.genealogy.jewish (Status Unknown)
+Newsgroup:               soc.genealogy.methods (Status Unknown)
+Newsgroup:               soc.genealogy.surnames (Status Unknown)
+
+Newsgroup:               soc.history.moderated
+Archive-location:        Not Archived
+Info:                    If you know of someone who'd like to help
+                         us set one up, we'd like to start one.
+
+Newsgroup:               soc.history.war.world-war-ii
+FTP Archive location:    ftp://byrd.mu.wvnet.edu/pub/history/military/wwii/
+WWW Archive location:    http://enterprise.osd.mil/Demo/WWIInet/
+
+Newsgroup:               soc.politics
+Archive location:        Not Archived
+
+Newsgroup:               soc.politics.arms-d
+Archive location:        Not Archived
+
+Newsgroup:               soc.religion.bahai
+Archive location:        Not Archived
+
+Newsgroup:               soc.religion.christian
+Archive location:        Not Archived
+Info:                    FAQ collection at
+                         ftp://cs.rutgers.edu/pub/soc.religion.christian/
+                         See also
+                         http://www.cs.rutgers.edu/soc.religion.christian.html
+
+Newsgroup:               soc.religion.christian.bible-study
+Archive location:        Not Archived
+
+Newsgroup:               soc.religion.christian.youth-work
+Archive location:        Not Archived
+
+Newsgroup:               soc.religion.eastern (Status Unknown)
+Newsgroup:               soc.religion.gnosis (Status Unknown)
+
+Newsgroup:               soc.religion.islam
+Maintainer's full name:  Asim Mughal
+Maintainer's address:    mughal@alumni.caltech.edu
+Archive location:        ftp://ftp.cco.caltech.edu/pub/calmsa/
+
+Newsgroup:               soc.religion.shamanism
+Archive location:        Not Archived
+
+Newsgroup:               soc.religion.unitarian-univ (Status Unknown)
+
+Newsgroup:               soc.support.youth.gay-lesbian-bi
+Archive location:        Not Archived
+
+-----------------------------------------------------------------
+Subject: talk.* moderated newsgroup archives
+
+Newsgroup:               talk.answers
+Maintainer's full name:  *.answers moderation team
+Maintainer's address:    news-answers-request@MIT.EDU
+Archive location:        ftp://rtfm.mit.edu/pub/usenet/talk.answers/
+
+-----------------------------------------------------------------
+Subject: alt.* moderated newsgroup archives
+
+Newsgroup:               alt.answers
+Maintainer's full name:  *.answers moderation team
+Maintainer's address:    news-answers-request@MIT.EDU
+Archive location:        ftp://rtfm.mit.edu/pub/usenet/alt.answers/
+
+Newsgroup:               alt.atheism.moderated
+Maintainer's full name:  mathew
+Maintainer's address:    mathew@mantis.co.uk
+FTP Archive location:    ftp://ftp.mantis.co.uk/pub/alt.atheism/
+WWW Archive location:    http://www.mantis.co.uk/atheism/
+
+Newsgroup:               alt.gourmand (Status Unknown)
+
+Newsgroup:               alt.binaries.pictures.fine-art.d
+Maintainer's full name:  Laurence L. Leff, Ph.D.
+Maintainer's address:    mflll@uxa.ecn.bgu.edu
+                         Department of Computer Science
+                         Western Illinois University
+                         Macomb IL 61455
+Archive location:        ftp://uxa.ecn.bgu.edu/pub/fine-art/
+
+Newsgroup:               alt.binaries.pictures.fine-art.graphics
+Maintainer's full name:  Laurence L. Leff, Ph.D.
+Maintainer's address:    mflll@uxa.ecn.bgu.edu
+                         Department of Computer Science
+                         Western Illinois University
+                         Macomb IL 61455
+Archive location:        ftp://uxa.ecn.bgu.edu/pub/fine-art/
+
+Newsgroup:               alt.binaries.pictures.fine-art.digitized
+Maintainer's full name:  Laurence L. Leff, Ph.D.
+Maintainer's address:    mflll@uxa.ecn.bgu.edu
+                         Department of Computer Science
+                         Western Illinois University
+                         Macomb IL 61455
+Archive location:        ftp://uxa.ecn.bgu.edu/pub/fine-art/
+
+Newsgroup:               alt.health.cfids-action
+Maintainer's full name:  listserv (automated) (Roger Burns)
+Maintainer's address:    CFIDS-L-REQUEST@AMERICAN.EDU.
+Archive location:        LISTSERV@AMERICAN.EDU
+Info:                    Stored under list-name CFIDS-L.  Use standard GET
+                         command for log files, or Listserv DBASE commands
+                         for searching and extracting specific messages.
+
+-----------------------------------------------------------------
+Subject: bionet.* moderated newsgroup archives
+
+Newsgroup:                   bionet.announce
+Maintainer's full name:      BIOSCI Administrator
+Maintainer's address:        biosci-help@net.bio.net
+Archive location:            ftp://net.bio.net/pub/BIOSCI/bionet/announce/
+
+Newsgroup:                   bionet.biology.computational
+Maintainer's full name:      BIOSCI Administrator
+Maintainer's address:        biosci-help@net.bio.net
+Archive location:            ftp://net.bio.net/pub/BIOSCI/bionet/biology/computational/
+
+Newsgroup:                   bionet.journals.contents
+Maintainer's full name:      BIOSCI Administrator
+Maintainer's address:        biosci-help@net.bio.net
+Archive location:            ftp://net.bio.net/pub/BIOSCI/bionet/journals/contents/
+
+Newsgroup:                   bionet.journals.letters.tibs
+Maintainer's full name:      BIOSCI Administrator
+Maintainer's address:        biosci-help@net.bio.net
+Archive Location:            ftp://net.bio.net/pub/BIOSCI/TIBS/
+WWW Archive Location:        http://www.bio.net/
+
+Newsgroup:                   bionet.molbio.genbank.updates
+Archive location:            Not Archived
+
+Newsgroup:                   bionet.prof-society.afcr
+Maintainer's full name:      BIOSCI Administrator
+Maintainer's address:        biosci-help@net.bio.net
+Archive Location:            ftp://net.bio.net/pub/BIOSCI/bionet/prof-society/afcr/
+WWW Archive Location:        http://www.bio.net/
+
+Newsgroup:                   bionet.prof-society.ascb
+Maintainer's full name:      BIOSCI Administrator
+Maintainer's address:        biosci-help@net.bio.net
+Archive location:            ftp://net.bio.net/pub/BIOSCI/bionet/prof-society/ascb/
+
+Newsgroup:                   bionet.prof-society.biophysics
+Maintainer's full name:      BIOSCI Administrator
+Maintainer's address:        biosci-help@net.bio.net
+Archive location:            ftp://net.bio.net/pub/BIOSCI/bionet/prof-society/biophysics/
+
+Newsgroup:                   bionet.prof-society.csm
+Maintainer's full name:      BIOSCI Administrator
+Maintainer's address:        biosci-help@net.bio.net
+Archive location:            ftp://net.bio.net/pub/BIOSCI/bionet/prof-society/csm/
+
+Newsgroup:                   bionet.prof-society.faseb
+Maintainer's full name:      BIOSCI Administrator
+Maintainer's address:        biosci-help@net.bio.net
+Archive location:            ftp://net.bio.net/pub/BIOSCI/bionet/prof-society/faseb/
+
+Newsgroup:                   bionet.sci-resources
+Maintainer's full name:      BIOSCI Administrator
+Maintainer's address:        biosci-help@net.bio.net
+Archive location:            ftp://net.bio.net/pub/BIOSCI/bionet/sci-resources/
+
+Newsgroup:                   bionet.software.sources
+Maintainer's full name:      Don Gilbert
+Maintainer's address:        archive@bio.indiana.edu
+Archive location:            ftp://ftp.bio.indiana.edu/
+Gopher access:               gopher://ftp.bio.indiana.edu:70/11/Network-News
+
+Newsgroup:                   bionet.software.www
+FTP Maintainer's full name:  Dave Kristofferson
+FTP Maintainer's address:    biosci-help@net.bio.net
+FTP Archive-location:        ftp://net.bio.net/pub/BIOSCI/BIO-WWW/
+WWW Maintainer's full name:  Reinhard Doelz
+WWW Maintainer's address:    info@ch.embnet.org
+WWW Archive-location:        http://www.ch.embnet.org/bio-www/info.html
+
+-----------------------------------------------------------------
+Subject: bit.* moderated newsgroup archives
+
+Accessible via anonymous ftp or via the listserv GET command.
+Listserv's database functions can be used to search for particular
+keywords, etc.
+
+Newsgroup:               bit.lang.neder-l (Status Unknown)
+Newsgroup:               bit.listserv.aera (Status Unknown)
+Newsgroup:               bit.listserv.apar-l (Status Unknown)
+Newsgroup:               bit.listserv.basque-l (Status Unknown)
+Newsgroup:               bit.listserv.berita (Status Unknown)
+Newsgroup:               bit.listserv.berita.d (Status Unknown)
+Newsgroup:               bit.listserv.bgrass-l (Status Unknown)
+
+Newsgroup:               bit.listserv.big-lan
+Maintainer's full name:  John M. Wobus
+Maintainer's address:    jmwobus@syr.edu
+Archive location:        ftp://syr.edu/archives/big-lan/
+
+Newsgroup:               bit.listserv.bitnews (Status Unknown)
+Newsgroup:               bit.listserv.blindnws (Status Unknown)
+Newsgroup:               bit.listserv.blues-l (Status Unknown)
+Newsgroup:               bit.listserv.bosnet (Status Unknown)
+
+Newsgroup:               bit.listserv.c+health
+Maintainer's full name:  Mark C. Sheehan
+Maintainer's address:    University Computing Services
+Archive Location:        listserv@iubvm.ucs.indiana.edu
+Info:                    Obtain a list of the available archive files by
+                         sending INDEX C+HEALTH in the body of an message
+                         to LISTSERV@IUBVM.UCS.INDIANA.EDU.
+                         Retrieve files by means of the GET C+HEALTH FILETYPE
+                         command (where "filetype" is the name following
+                         C+HEALTH in the file list)
+
+Newsgroup:               bit.listserv.catholic (Status Unknown)
+
+Newsgroup:               bit.listserv.cfs.newsletter
+Maintainer's full name:  listserv (automated) (Roger Burns)
+Maintainer's address:    CFS-NEWS-REQUEST@LIST.NIH.GOV.
+Archive location:        LISTSERV@LIST.NIH.GOV
+Info:                    Stored under list-name CFS-NEWS.  Use standard GET
+                         command for log files, or Listserv DBASE commands
+                         for searching and extracting specific messages.
+
+Newsgroup:               bit.listserv.christia (Status Unknown)
+
+Newsgroup:               bit.listserv.cumrec-l
+Maintainer's full name:  Joe Moore
+Maintainer's address:    MooreJ@cc.sdstate.edu
+Archive location:        Ask him only if you read the group on a regular basis,
+                         then maybe he will tell you.
+
+Newsgroup:               bit.listserv.devmedia (Status Unknown)
+Newsgroup:               bit.listserv.e-europe (Status Unknown)
+Newsgroup:               bit.listserv.edpolyan (Status Unknown)
+Newsgroup:               bit.listserv.edtech (Status Unknown)
+Newsgroup:               bit.listserv.freemasonry (Status Unknown)
+Newsgroup:               bit.listserv.gaynet (Status Unknown)
+Newsgroup:               bit.listserv.graph-ti (Status Unknown)
+
+Newsgroup:               bit.listserv.gutnberg
+Archive location:        Not Archived
+
+Newsgroup:               bit.listserv.hellas
+Maintainer's full name:  Jim McIntosh
+Maintainer's address:    JIM@AUVM.BITNET or jim@auvm.american.edu
+Archive location:        ftp://auvm.american.edu/listlogs.hellas/
+
+Newsgroup:               bit.listserv.humage-l (Status Unknown)
+Newsgroup:               bit.listserv.hytel-l (Status Unknown)
+Newsgroup:               bit.listserv.ipct-l (Status Unknown)
+Newsgroup:               bit.listserv.japan (Status Unknown)
+Newsgroup:               bit.listserv.l-hcap (Status Unknown)
+
+Newsgroup:               bit.listserv.libref-l
+Maintainer's full name:  listserv (Kara L. Robinson Co-Moderator:  LIBREF-L)
+Maintainer's address:    krobinso@kentvm.kent.edu
+Archive location:        The contents of our archive can be retrieve by
+                         sending an email message to LISTSERV@kentvm.kent.edu;
+                         the command to send first is: index libref-l f=mail
+                         That command has LISTSERV send you a copy of what is
+                         currently available in the archive.  To retrieve
+                         anything from the archive, send a second email
+                         message to LISTSERV@kentvm.kent.edu; this time the
+                         command would be:  get filename filetype f=mail
+                         (ex. get libref-l log9408c f=mail)
+Info:                    We have a severe space problem on our server so
+                         that typically only the current six months of archives
+                         are available.
+
+Newsgroup:               bit.listserv.libres
+Maintainer's full name:  listserver@kentvm.kent.edu
+Maintainer's address:    dkovacs@kentvm.kent.edu
+Archive location:        ftp://cc.curtin.edu/lib-research/
+
+Newsgroup:               bit.listserv.mdphd-l (Status Unknown)
+Newsgroup:               bit.listserv.medforum (Status Unknown)
+
+Newsgroup:               bit.listserv.lsoft-announce
+Maintainer's full name:  Eric Thomas
+Maintainer's address:    ERIC@LSOFT.COM
+Archive Location:        LISTSERV@LISTSERV.NET, INDEX LSOFT-ANNOUNCE
+
+Newsgroup:               bit.listserv.mednews
+Maintainer's full name:  David Dodell
+Maintainer's address:    mednews@stat.com
+Archive location:        ftp://vm1.nodak.edu/HICNEWS/
+
+Newsgroup:               bit.listserv.muslims
+Maintainer's full name:  Asim Mughal
+Maintainer's address:    mughal@alumni.caltech.edu
+LISTSERV location:       listserv@asuacad.bitnet  text: index muslims
+FTP location:            ftp://ftp.cco.caltech.edu/pub/calmsa/
+                         ftp://ftp.ugcs.caltech.edu/pub/cms/
+Gopher location:         gopher://gopher.caltech.edu
+WWW location:            http://www.cco.caltech.edu/~calmsa/calmsa.html
+
+Newsgroup:               bit.listserv.nppa-l (Status Unknown)
+
+Newsgroup:               bit.listserv.nettrain
+Maintainer's full name:  LISTSERV
+FTP Archive location:    ftp://ubvm.cc.buffalo.edu/nettrain/
+Telnet Archive location: telnet a.cni.org; login: brsuser; select NTTR
+
+Newsgroup:               bit.listserv.new-list
+Maintainer's full name:  Marty Hoag
+Maintainer's address:    hoag@VM1.nodak.edu
+Gopher Archive Location: gopher://vm1.nodak.edu:7010/
+FTP Archive location:    ftp://vm1.nodak.edu/new-list/
+                         (DIR NEW-LIST.*  for a list).
+Mail Archive location:   Send e-mail to listserv@VM1.nodak.edu with the
+                         command  INDEX NEW-LIST in the body for a list
+                         of files.  Use  GET NEW-LIST.LOGyymm   to get the
+                         archive for a given month (yymm).
+
+Newsgroup:               bit.listserv.pacs-l
+Maintainer's full name:  listserv
+Archive location:        listserv@uhupvm1.uh.edu
+
+Newsgroup:               bit.listserv.pakistan
+Maintainer's full name:  Asim Mughal
+Maintainer's address:    mughal@alumni.caltech.edu
+LISTSERV location:       listserv@asuacad.bitnet  text: index pakistan
+FTP Location:            ftp://ftp.ugcs.caltech.edu/pub/gifs/Pakistan/
+
+Newsgroup:               bit.listserv.pns-l
+Maintainer's full name:  Asim Mughal
+Maintainer's address:    mughal@alumni.caltech.edu
+LISTSERV location:       listserv@psuvm.bitnet  text: index pns-l
+FTP location:            ftp://ftp.ugcs.caltech.edu/pub/gifs/Pakistan/
+
+Newsgroup:               bit.listserv.politics (Status Unknown)
+
+Newsgroup:               bit.listserv.quaker-p
+Maintainer's full name:  listserv  (auto-maintained)
+Maintainer's address:    listserv@vmd.cso.uiuc.edu
+Archive location:        ftp://vmd.cso.uiuc.edu/logs/
+Info:                    - Relevant files in "logs" are QUAKER-P.*
+                         (e.g.  QUAKER-P.LOG9406A  would be the log for
+                         the first week of June 1994). When using listserv's
+                         GET command instead of ftp, change the "." to a space.
+                         (e.g. GET QUAKER-P LOG9406A)
+                         - Archives older than 1 year are kept off-line by
+                         George Amoss (email: daruma@clark.net ) Write
+                         to him if you want a specific month's file.
+                         Quaker-P started in 11/92
+
+Newsgroup:               bit.listserv.quality (Status Unknown)
+
+Newsgroup:               bit.listserv.rra-l
+Maintainer's full name:  listserv (Kara L. Robinson Co-Moderator:  RRA-L)
+Maintainer's address:    krobinso@kentvm.kent.edu
+Archive location:        To determine what is available from the fileserver
+                         (archives), send an email message to
+                                    LISTSERV@kentvm.kent.edu
+                         the text of the message should read only:
+                                    index rra-l f=mail
+                         Once LISTSERV sends you the listing of what is
+                         available, you can request any of those files by
+                         sending another email message to
+                                    LISTSERV@kentvm.kent.edu
+                         this time the command is:
+                                   get filename filetype f=mail
+                              (ex. get rra-l log9408b f=mail)
+
+Newsgroup:               bit.listserv.screen-l
+Maintainer's full name:  Jeremy Butler
+Maintainer's address:    jbutler@ua1vm.ua.edu
+Archive location:        listserv@ua1vm.ua.edu
+                         Also available via gopher at ua1vm.ua.edu
+
+Newsgroup:               bit.listserv.skeptic
+Maintainer's full name:  listserv (Taner Edis & Dave Simon)
+Maintainer's address:    skeptic-request@jhuvm.hcf.jhu.edu.
+Archive location:        Archive files (plus other public files such as an
+                         anotated bibliography) are available through ftp or
+                         LISTSERV requests, on JHUVM.HCF.JHU.EDU (JHUVM.BITNET)
+
+Newsgroup:               bit.software.international (Status Unknown)
+Newsgroup:               bit.listserv.superguy (Status Unknown)
+
+Newsgroup:               bit.listserv.tbi-support
+Maintainer's full name:  Len F. Burns
+Maintainer's address:    lburns@cruzio.com
+Archive location:        listserv@sjuvjm.stjohns.edu
+                         bit.listserv.dsshe-l
+
+Newsgroup:               bit.listserv.valert-l (Status Unknown)
+Newsgroup:               bit.software.international (Status Unknown)
+
+-----------------------------------------------------------------
+Subject: biz.* moderated newsgroup archives
+
+Newsgroup:               biz.sco.binaries
+Maintainer's full name:  Ed Hew
+Maintainer's address:    edhew@xenitec.on.ca
+WWW Archive location:    http://www.xenitec.on.ca/
+FTP Archive location:    ftp://ftp.xenitec.on.ca/pub/news/scobin/
+
+Newsgroup:               biz.sco.sources
+Maintainer's full name:  Ed Hew
+Maintainer's address:    edhew@xenitec.on.ca
+WWW Archive location:    http://www.xenitec.on.ca/
+FTP Archive location:    ftp://ftp.xenitec.on.ca/pub/news/scosrc/
+
+-----------------------------------------------------------------
+Subject: gnu.* moderated newsgroup archives
+
+All GNU moderated groups those listed and most of the non-moderated GNU
+groups are archived under the equivalent mailing list name in sub-directories
+under prep.ai.mit.edu:/pub/gnu/MailingListArchives.
+
+Maintainer's full name:  GNU Project
+Maintainer's address:    gnu@prep.ai.mit.edu
+
+Newsgroup name          file-name includes:
+--------------          ------------------
+comp.emacs              comp.emacs and net.emacs
+gnu.announce            info-gnu
+gnu.bash.bug            bug-bash
+gnu.emacs.announce      info-gnu-emacs
+gnu.emacs.bug           bug-gnu-emacs
+gnu.emacs.help          help-gnu-emacs
+gnu.emacs.sources       gnu-emacs-sources
+gnu.g++.announce        info-g++
+gnu.g++.bug             bug-g++
+gnu.g++.bug             help-g++
+gnu.g++.lib.bug         bug-lib-g++
+gnu.gcc.announce        info-gcc
+gnu.gcc.bug             bug-gcc
+gnu.gcc.help            help-gcc
+gnu.gdb.bug             bug-gdb
+gnu.ghostscript.bug     bug-ghostscript
+gnu.groff.bug           bug-groff
+gnu.smalltalk.bug       bug-gnu-smalltalk
+gnu.utils.bug           bug-gnu-utils
+
+-----------------------------------------------------------------
+Subject: vmsnet.* moderated newsgroup archives
+
+Newsgroup:               vmsnet.announce
+Archive location:        Not Archived
+
+Newsgroup:               vmsnet.announce.newusers
+Archive location:        Not Archived
+
+Newsgroup:               vmsnet.decus.journal (Status Unknown)
+
+Newsgroup:               vmsnet.employment
+Archive-location:        Not Archived
+
+Newsgroup:               vmsnet.sources
+Maintainer's full name:  Kent Landfield
+Maintainer's address:    archive@sterling.com
+Archive location:        ftp://ftp.sterling.com/usenet/vmsnet.sources/
+
+-----------------------------------------------------------------
+Subject: Credits
+
+This list was compiled by Kent Landfield.  It was not done without
+the generous help of a massive number of the moderators.  I've tried
+to thank them all individually for their assistance but I'm sure that
+I missed quite a few.  To all, THANKS!  It really did help.
+
+==================================================================
+

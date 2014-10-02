@@ -1,0 +1,118 @@
+addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+    \addplot [color=cyan, mark=+] table [y = LCSubstr ] from \datatable;
+ 
+    \addplot [ycomb,color=cyan] coordinates {(78,4000) };
+ 
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{SS12\_HA09\_SearchTree}
+\end{figure}
+\end{landscape}
+
+
+
+\begin{comment}
+
+\pgfplotstableread{SS12_HA09_SearchTree.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        %log origin=infty,
+        %unbounded coords=jump,
+       % restrict y to domain*=-1:10000,
+       y filter point/.code={\pgfmathparse{\pgfkeysvalueof{/data point/y}=0}\ifpgfmathfloatcomparison \pgfkeyssetvalue{/data point/y}{1}\fi }, 
+        legend entries ={Jaccard, Cosine, Levensthein, LCS, LCSubstr}]
+        
+    \addplot [color=blue,mark=+,] table [y  = Jaccard] from \datatable;
+    \addplot [color=green,mark=+,] table [y = Cosine ] from \datatable;
+    \addplot [color=magenta,mark=+,] table [y = Levensthein ] from \datatable;
+    \addplot [color=orange,mark=+,] table [y = LCS ] from \datatable;
+    \addplot+[ycomb,color=cyan, mark=*] table [y = LCSubstr ] from \datatable;
+    
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{semilogyaxis}
+\end{tikzpicture}
+\caption{SS12\_HA09\_SearchTree}
+\end{figure}
+\end{landscape}
+
+\pgfplotstableread{SS12_HA09_SearchTree.java.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{axis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        %ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,100}, % make steps of length 5
+        %extra x ticks={23},
+        %extra y ticks={0.507297},
+        axis background/.style={fill=white},
+        ylabel=Number,
+        xlabel=Similarity-Value,
+        tick align=outside,
+        legend entries ={ COSINE, LEVENSTHEIN, LCS, LCSUBSTR}]
+        
+    \addplot [color=blue,mark=+, only marks] table [x=LEVENSTHEIN, y  = COSINE] from \datatable; 
+    \addplot [color=red,mark=+, only marks] table [x=LEVENSTHEIN,y  = JACCARD] from \datatable;
+     \addplot [color=green,mark=+, only marks] table [x=LEVENSTHEIN,y  = LCS] from \datatable; 
+     \addplot [color=yellow,mark=+, only marks] table [x=LEVENSTHEIN,y  = LCSUBSTR] from \datatable; 
+     
+    
+   % \addplot [color=black, fill=black, mark=*, only marks] table {testdata.dat};
+    %\addplot [box plot top whisker] table {testdata.dat};
+    %\addplot [box plot bottom whisker] table {testdata.dat};
+\end{axis}
+\end{tikzpicture}
+\caption{SS12\_HA09\_SearchTree} 
+\end{figure}
+\end{landscape}
+
+\pgfplotstableread{SS12_HA09_SearchTree.java.csv}
+\datatable
+
+
+\begin{landscape}
+\begin{figure}[!H]
+\begin{tikzpicture}
+\begin{axis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid

@@ -1,0 +1,82 @@
+THE_URL:http://web.textfiles.com/computers/readme.1st
+THE_TITLE:readme.1st
+
+                              Puffer (tm) 2.0
+                    Copyright (C) 1995,1996 Kent Briggs
+                            All Rights Reserved
+
+
+Introduction
+------------
+Puffer is a general purpose encryption tool for Windows that protects your
+personal and business data as well as your e-mail correspondence.  Use
+Puffer to securely exchange data over insecure channels.  Puffer uses
+state-of-the-art encryption algorithms for maximum security.  This shareware
+version has been approved for export from the U.S. by the State Department
+through a commodity jurisdiction determination.
+
+Features:
+
+* 40-bit PC1 (RC4 clone) stream cipher
+* 160-bit Blowfish block cipher (U.S./Canada registered version)
+* Secure, multi-pass file wiping
+* LZ77 compression
+* Binary and ASCII archives
+* Self-extracting executables
+* Built-in editor
+
+
+Installation
+------------
+Puffer is normally distributed inside a ZIP archive through online services.
+Unzip the distribution files into a temporary directory.  Run the SETUP.EXE
+program from the Windows Program Manager by selecting File/Run.  The setup
+program will prompt you for a destination directory (C:\PUFFER2 is default)
+and will create a Puffer2 program group.  You may remove the files from
+the temporary directory after the installation is complete.
+
+
+License Agreement
+-----------------
+Puffer is copyrighted software distributed as shareware, a "try before
+you buy" marketing concept where users are encouraged to copy and share it
+with friends and business associates.  You are granted a limited 30-day
+license to evaluate Puffer to see if it meets your needs.  When the
+evaluation period expires, you must purchase the registered version or
+delete the shareware version.  Failure to do so is a violation of the
+license agreement.  Single user, network server, and unlimited user site
+licenses are available.  Click the Register button on Puffer's main page
+for more information.
+
+
+Disclaimer
+----------
+This software is provided as is and without warranty.  The author assumes no
+liability for damages, either direct or consequential, which may result from
+the use of this product.
+
+
+Association of Shareware Professionals
+--------------------------------------
+
+                          _______
+                     ____|__     |                (R)
+                  --|       |    |-------------------
+                    |   ____|__  |  Association of
+                    |  |       |_|  Shareware
+                    |__|   o   |    Professionals
+                  -----|   |   |---------------------
+                       |___|___|    MEMBER
+
+
+Kent Briggs is a member of the Association of Shareware Professionals (ASP).
+The ASP wants to make sure that the shareware principle works for you.  If
+you are unable to resolve a shareware related problem with an ASP member by
+contacting the member directly, the ASP may be able to help.  The ASP
+Ombudsman can help you resolve a dispute or problem with an ASP member, but
+does not provide technical support for members' products.  Please write to
+the ASP Ombudsman at 545 Grover Road, Muskegon, MI 49442-9427 USA.
+FAX 616-788-2765 or send a CompuServe message via CompuServe Mail to ASP
+Ombudsman 70007,3536.
+
+

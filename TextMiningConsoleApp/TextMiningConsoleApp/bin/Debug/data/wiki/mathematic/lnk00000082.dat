@@ -1,0 +1,181 @@
+THE_URL:http://web.textfiles.com/computers/c4n-crackuniv.txt
+THE_TITLE:c4n-crackuniv.txt
+How to crack Universe v1.5b
+A tutorial by Plushmm
+
+
+I don't usually take requests (this crack was requested) but since a friend, DiTTo, has seek my help on t
+his, I decided to take a look at it.
+
+Frankly, I found nothing special, the protection used is standard, no big surprises or anything like that
+ AT ALL.  The only thing perhaps worth mentioning is that the author has been careful not to "echo" the c
+orrect key in memory.  Instead, he used another (basic) trick for the (essential) comparing of your input
+ key and the correct key.
+
+I've also decided to recommend this program as app/week for the week starting 25 Aug 97 at #cracking4newb
+ies.  The prez, Joe, says there's no way newbies can handle this one, and so its has become the op's app/
+week.  Some ops have tired and failed...I hope that by the end of the week, all the ops can crack it, usi
+ng the sERIAL I provided as a "hint" to cracking it.
+
+You can get the target found:  http://www.diardsoftware.com/
+
+Here we go:
+
+Run the program and choose to register:
+Enter any crappy info, lets say for the name we use     "Plushmm [PC97]"
+                        and for the key we use          "1234567"
+
+A messagebox so kindly pops up and tells us
+"The registration information you supplied is incorrect."
+
+Lets deadlist the program and search for this...
+
+* Possible Reference to String Resource ID=00001: "Globular Cluster Properties"
+                                  |
+:00419FF5 6A01                    push 00000001
+:00419FF7 E82A8F0100              call 00432F26
+:00419FFC 8B8798000000            mov eax, dword ptr [edi+00000098]
+:0041A002 B9F87A4600              mov ecx, 00467AF8
+:0041A007 50                      push eax
+:0041A008 56                      push esi
+:0041A009 E8A2030000              call 0041A3B0         ;check reg routine
+:0041A00E 85C0                    test eax, eax
+:0041A010 744C                    je 0041A05E           ;if 0 then <>regged
+:0041A012 8B8798000000            mov eax, dword ptr [edi+00000098]
+:0041A018 50                      push eax
+:0041A019 83EC04                  sub esp, 00000004
+:0041A01C 8965F0                  mov dword ptr [ebp-10], esp
+:0041A01F 56                      push esi
+:0041A020 8B4DF0                  mov ecx, dword ptr [ebp-10]
+:0041A023 E827A90100              call 0043494F
+:0041A028 C745FC00000000          mov [ebp-04], 00000000
+:0041A02F C745FCFFFFFFFF          mov [ebp-04], FFFFFFFF
+:0041A036 B9F87A4600              mov ecx, 00467AF8
+:0041A03B E8C0020000              call 0041A300
+:0041A040 B9F87A4600              mov ecx, 00467AF8
+:0041A045 E826010000              call 0041A170
+:0041A04A EB20                    jmp 0041A06C
+:0041A04C B890F64500              mov eax, 0045F690
+:0041A051 E91A1A0000              jmp 0041BA70
+:0041A056 8B4DF0                  mov ecx, dword ptr [ebp-10]
+:0041A059 E940AA0100              jmp 00434A9E
+
+* Referenced by a (U)nconditional or (C)onditional Jump at Address:
+|:0041A010(C)
+|
+:0041A05E 6AFF                    push FFFFFFFF
+:0041A060 6A30                    push 00000030
+
+* Possible Reference to String Resource ID=01025: "The registration information you supplied is incorrect
+.   Th"                 ;HERE
+                                  |
+:0041A062 6801040000              push 00000401
+:0041A067 E82F3E0200              call 0043DE9B
+
+
+Lets look into the Check Reg Routine...
+
+* Referenced by a CALL at Addresses:
+|:0041A009   , :0041A2A8                                ;called twice!
+|
+:0041A3B0 53                      push ebx              ;This routine
+:0041A3B1 56                      push esi              ;converts your
+:0041A3B2 57                      push edi              ;string key into
+:0041A3B3 8BF1                    mov esi, ecx          ;a hex value which
+:0041A3B5 55                      push ebp              ;is stored at
+:0041A3B6 33FF                    xor edi, edi          ;EDI (see :0041A40A)
+:0041A3B8 33DB                    xor ebx, ebx          ;Also your name gets
+:0041A3BA 8B442414                mov eax, dword ptr [esp+14]   ;played
+:0041A3BE 8B08                    mov ecx, dword ptr [eax]      ;around
+
+* Referenced by a (U)nconditional or (C)onditional Jump at Address:
+|:0041A3E8(U)
+|
+:0041A3C0 3B59F8                  cmp ebx, dword ptr [ecx-08]
+:0041A3C3 7D25                    jge 0041A3EA
+:0041A3C5 0FBE2C19                movsx ebp, byte ptr [ecx+ebx]
+:0041A3C9 03FD                    add edi, ebp
+:0041A3CB 8BC3                    mov eax, ebx
+:0041A3CD 99                      cdq
+:0041A3CE 33C2                    xor eax, edx
+:0041A3D0 2BC2                    sub eax, edx
+:0041A3D2 83E001                  and eax, 00000001
+:0041A3D5 33C2                    xor eax, edx
+:0041A3D7 2BC2                    sub eax, edx
+:0041A3D9 83F801                  cmp eax, 00000001
+:0041A3DC 1BC0                    sbb eax, eax
+:0041A3DE 43                      inc ebx
+:0041A3DF 83E002                  and eax, 00000002
+:0041A3E2 48                      dec eax
+:0041A3E3 0FAFE8                  imul ebp, eax
+:0041A3E6 03FD                    add edi, ebp
+:0041A3E8 EBD6                    jmp 0041A3C0
+
+* Referenced by a (U)nconditional or (C)onditional Jump at Address:
+|:0041A3C3(C)
+|
+:0041A3EA 8BC7                    mov eax, edi
+:0041A3EC 0FAFC7                  imul eax, edi
+:0041A3EF 03C7                    add eax, edi
+:0041A3F1 33FF                    xor edi, edi
+:0041A3F3 50                      push eax
+:0041A3F4 E827D7FEFF              call 00407B20
+:0041A3F9 83C404                  add esp, 00000004
+:0041A3FC 393E                    cmp dword ptr [esi], edi
+:0041A3FE 7E0A                    jle 0041A40A
+
+* Referenced by a (U)nconditional or (C)onditional Jump at Address:
+|:0041A408(C)
+|
+:0041A400 47                      inc edi
+:0041A401 E83AD7FEFF              call 00407B40
+:0041A406 393E                    cmp dword ptr [esi], edi
+:0041A408 7FF6                    jg 0041A400
+
+* Referenced by a (U)nconditional or (C)onditional Jump at Address:
+|:0041A3FE(C)
+|
+:0041A40A 8B7C2418                mov edi, dword ptr [esp+18]   ;your code
+:0041A40E 85FF                    test edi, edi                 ;is empty?
+:0041A410 7F03                    jg 0041A415
+:0041A412 8B7E10                  mov edi, dword ptr [esi+10]
+
+* Referenced by a (U)nconditional or (C)onditional Jump at Address:
+|:0041A410(C)
+|
+:0041A415 E826D7FEFF              call 00407B40         ;this call to "get"
+                                                        ;the correct key for
+                                                        ;your name (in hex)
+                                                        ;eax = correct code
+                                                        ;edi = your code
+:0041A41A 2BC7                    sub eax, edi          ;if eax-edi = 0
+                                                        ;then CORRECT!
+:0041A41C 5D                      pop ebp
+:0041A41D 5F                      pop edi
+:0041A41E 83F801                  cmp eax, 00000001
+:0041A421 1BC0                    sbb eax, eax          ;if eax = 0 then
+                                                        ;eax := -1
+                                                        ;else eax := 0
+:0041A423 5E                      pop esi
+:0041A424 F7D8                    neg eax               ;if eax = -1 then
+                                                        ;eax := 1
+                                                        ;else eax = 0
+                                                        ;
+:0041A426 5B                      pop ebx
+:0041A427 C20800                  ret 0008
+
+
+So what do we have here?
+
+EDI = your code in hex,
+EAX = correct code in hex
+
+If CORRECT then at the end before the return, eax = 1, and thus
+:0041A00E 85C0                    test eax, eax
+:0041A010 744C                    je 0041A05E           ;is 0 then <>regged
+will not jump since eax = 1
+
+So if you bpx at cs:0041A41A and do a "? eax" the correct key will be shown to you!
+
+
+Plushmm

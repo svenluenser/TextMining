@@ -1,0 +1,96 @@
+THE_URL:http://web.textfiles.com/computers/EDDYHAWK/avir.txt
+THE_TITLE:avir.txt
+EddyHawk's Info List
+---
+Anti Virus Hall of Fame:
+---
+-AVAST
+ by: Alwil Software
+
+-AVP (Anti Virus Pro)
+ by: Kaspersky Lab (Eugene Kaspersky)
+ V3.0 b134 [2000]
+  incremental update
+ JMT: add even not-yet-known virus
+ Thomas Monkemeier: high-precision detection
+
+-CPAV (Central Point Anti Virus)
+ by: Central Point Software
+
+-Flu Shot
+ ?
+
+-F-Prot
+ by: Fridrik Skulason, Vesselin Bontchev/Frisk Software (Iceland)
+ V3.04
+ V3.07
+
+-McAfee VirusScan (SCAN)
+ by: John McAfee/McAfee/Network Associates
+ Year: 1992-2000
+ variant: for Win32, Unix
+ V3.15
+ V3.15+
+  no more vir.dat update for V3.x on 15 Dec 1999
+ V4.7.0 for DOS/PM [Mar 2000]
+ V4.12.0 (?)
+
+-McAfee VirusShield (VSHIELD)
+ by: John McAfee/McAfee/Network Associates
+ Year: 1994-1998
+ type: TSR, 32kb upper mem, 77kb XMS, 320kb basemem
+ V3.20 [1998]
+  no longer updated
+  VSHEML.EXE: polymorphic.vir.emulator
+
+-PC-Cillin
+ by: Trend Micro Device
+
+-NAV (Norton Anti Virus)
+ by: Peter Norton/Symantec
+
+-TBAV (ThunderByte Anti-Virus)
+ By: Thunderbyte B.V. or ESaSS B.V.
+ Year: 1989-1998
+ Type: anti-virus toolkit
+ Desc:
+  utils to prevent, detect and recover from a virus
+   attack: runtime scanner, TSR scanner, chksummer, TSR chksum checker,
+   (disk/mem/file) protor, heur.cleaner, UI, wiper, save/restore MBR/BS/CMOS
+   and self-check BS/MBR maker
+ V8.09 [1998]
+ Adv:
+  generic TSRs (except the scanner) -> usable even today
+  world 1st heur.cleaner (?)
+  CyR: the best doc
+  scanner explains why a file triggered alarm
+  TSR scanner can use XMS or EMS
+  prot against tunneling and ANSI bombs by 'TSRs driver'
+  can log everything
+  nice heuristics
+  BS prot in MBR code which CRC-checking BS
+  the same code on floppies allows user to boot from HD if no system on
+   the FD
+  possible to set which prog can go TSR/modify executables/write to
+   disk/etc.
+ Disadv:
+  I've yet to see it find a Win virus
+  the TSR scanner doesn't find many viruses by copying (although it finds
+   them if the infected file is being executed)
+  cleaner doesn't allow wildcards
+  not possible to scan and repair at once (but is possible through Inter
+   Engineering's TBMClean utility which runs cleaner automaticly)
+  shareware
+   nag screens
+  development has ended
+ Alt: InVircible AV, V-Buster
+
+-VirScan Plus
+ by: Ralph Roth aka ROSE/ROSE_SWE (Germany)
+---
+NOTE
+---
+1 Dec 1997, McAfee merged with other companies to form Network Associates
+McAfee/VirusScan/V3.15+/DAT/readme.txt: 300 new viruses are produced
+ each month
+

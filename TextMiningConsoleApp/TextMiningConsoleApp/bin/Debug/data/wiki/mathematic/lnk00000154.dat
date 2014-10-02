@@ -1,0 +1,339 @@
+THE_URL:http://web.textfiles.com/computers/mdrive.txt
+THE_TITLE:mdrive.txt
+============================================================
+
+This is a description of the MicroDrive IDE Card, including
+ordering information.
+
+   Copyright  (c)  ///SHH Systeme, Joachim Lange.
+
+You may distribute this document freely as long as it
+remains unchanged (spelling corrections welcome)
+
+=============================================================
+
+Address for inquiries and orders:
+
+///SHH SYSTEME
+Dipl. Ing. Joachim Lange
+Bergstrasse 95
+82131  Stockdorf
+Germany
+
+phone & fax  Germany - 89 - 8577040
+(fax  19.00 to 23.00 CET only)
+GEnie:  J.LANGE7
+Internet:  lange@tasha.muc.de   (<--- preferred)
+
+
+Date: April, 2., 1995
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+                  MicroDrive Card
+
+Low-cost hard disk controller for external IDE hard drives
+and internal filecard ("hard-disk-in-a-slot" solution).
+
+(probably the most inexpensive hard disk controller ever
+ built for the Apple II computer)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The MicroDrive Card is a low-cost hard disk controller for the Apple
+IIGS and Apple IIe. It allows the use of _all_ kinds of IDE hard
+drives with Apple II computers.
+
+  The card was developed to provide the Apple user with a _really_
+inexpensive and compact hard disk controller. It is intended to be
+used either
+
+1) as a controller to connect one or two _external_ IDE
+   hard disks to the Apple II.
+
+or
+
+2) as a filecard to carry a single 2.5 inch ("notebook style")
+   IDE hard disk.
+
+
+
+Main Features
+--------------
+
+- Fully PRODOS and GS/OS compatible.
+
+- Works in any slot except slot 3.
+
+- Compatible with Apple IIGS and Apple IIe enhanced.
+
+- Supports two hard drives up to 256 MBytes capacity each.
+
+- High data transfer rate: 1.4 to 2.0 (maximum) msec/block for linear
+  reads (using ProSel-16, Statistics on Disc Access). More than three
+  times faster than a non-DMA SCSI hard disk controller!
+
+- Fast startup: boots a minimum GS/OS System in twelve seconds, with
+  accelerator in nine seconds (boot message to Finder Desktop).
+
+- Boots PRODOS 8 in less than one second.
+
+- Wastes no time for self-initialization compared to SCSI interfaces!
+  Gives a very short warm-up time. You are up and running as soon as
+  the hard disk is ready.
+
+- High-speed GS/OS driver with GS/OS caching support.
+
+- Fully compatible with any existing hardware such as: ZIP GS,
+  Transwarp GS, PC Transporter, RAM Cards from Apple, Applied
+  Engineering, CV-Tech, Harris, Sequential Systems, Q-Labs etc.
+
+- The MicroDrive Card supports up to 8 (eight) MBytes of expansion
+  RAM on the IIGS.
+
+- Up to eight partitions on one drive, 16 partitions on two drives,
+  32 MBytes per partition.
+
+- You can boot from _any_ partition which carries a valid operating
+  system (hold down an Apple Key and press 1 through 9, A through G
+  or set up a default value with the configuration program).
+
+
+
+Easy Installation:
+-------------------
+
+- Automatic installation procedure with auto-recognition of the hard
+  drive's geometry. Fast and easy partitioning.
+
+- All types of IDE hard disk drives can be used. There are no
+  restrictions in the number of sectors per track, number of heads or
+  number of cylinders. The MicroDrive Card Software supports any
+  combination of numbers that may exist.
+
+- Support for the PRODOS 8 and the SmartPort protocol (standard &
+  extended calls)
+
+- Specific ROM code for Apple IIe and Apple IIGS available (same
+  hardware for both machines):
+
+  Apple IIe firmware: 65C02 code only, also works on any Apple IIGS.
+
+  Apple IIGS firmware: 65C816 code, fully speed optimized for this
+  machine. Speed advantages (compared to Apple IIe firmware) when
+  booting into GS/OS and when using no GS/OS driver. The Apple IIGS
+  firmware cannot be used on Apple IIe machines.
+
+
+
+Additional FileCard Features
+-----------------------------
+
+- Plug-and-play solution. Find a free slot and install your files.
+
+- Occupies only one slot!
+
+- Uses existing internal power supply of an Apple IIe or Apple IIGS.
+  Power to the hard disk is provided via controller card.
+
+- No additional cables required, simply plug and play.
+
+- Very quiet hard drive operation.
+
+
+
+Other Features
+---------------
+
+- The MicroDrive Card was developed according to Apple's Interface
+  Card Design Guidelines.
+
+- Very low power consumption (all circuits are C-MOS technology).
+
+- Developed, tested and made in Germany.
+
+- High quality industry standard board with gold edge connector and
+  high quality solder resist.
+
+- Standard MS-DOS-type 40-pin IDE connector allows the use of
+  inexpensive standard IDE flat ribbon cables.
+
+- Additional 2-pin standard connector for hard disk power supply.
+
+- One year limited warranty on materials and workmanship.
+
+- Thirty day money back guarantee on the card's value.
+
+- Free software updates available via GEnie A2 library and via
+  internet e-mail (using UUENCODE/UUDECODE).
+
+- Free support for all products from ///SHH Systeme via GEnie A2
+  bulletin board (category 46, topic 11, 12, 13...) and via internet
+  e-mail.
+
+
+
+================================================
+  Vulcan & Vulcan Gold Controller Replacement:
+================================================
+
+  If you have a Vulcan internal hard drive system, and you want to
+upgrade your system with a bigger hard disk, your Vulcan controller
+probably won't allow to install a new one if your new hard disk
+doesn't exist in the Vulcan's internal drive table.
+
+  The MicroDrive Card can replace your Vulcan controller card and
+allows you to install any IDE drive in your Vulcan case. The
+MicroDrive Card is fully pin-compatible with Vulcan hard disk
+controllers (--> in addition, it supports even those IDE bus signals a
+Vulcan controller erroneously didn't support).
+
+  We have tested the MicroDrive Card successfully and haven't found any
+problems when using hard drives of the following manufacturers:
+
+Conner    CP20xxx series, CP30xxx series,
+          CFNxxx series, CFSxxx series, CFAxxx series
+Seagate   ST3xxxx series, ST9xxx series
+Quantum   GoDrive 40...250MB
+Toshiba   all kinds
+
+
+Ordering Information
+---------------------
+
+  This is _not_ a pre-announcement. The MicroDrive Card is available
+in Germany since July 1993. Thus, you can get a card or a plug-and-play
+hard drive system immediately. The MicroDrive Card is available _now_.
+
+  The MicroDrive Card carries a one year limited warranty against
+defects in materials and workmanship. Software and ROM updates (if
+needed) will be available on GEnie A2 library or can be sent via
+internet e-mail.
+
+
+The MicroDrive Card basic package consists of
+
+   - the controller card
+   - the installation disk with MicroDrive installer,
+     GS/OS caching driver, installer script, icons and
+     additional test programs
+   - the user's manual (English language)
+
+
+Accessories available:
+
+   - IDE 40-pin flat ribbon cable  3 ft.
+     with two 0.1 inch plugs for standard IDE connectors.
+
+   - 2.5 inch mounting kit with power supply cabling,
+      i.e. a complete set for mounting your 2.5" drive
+      on a MicroDrive card.
+      (short IDE flat ribbon cable with special
+       2mm plug for 2.5 inch drives and standard
+       0.1 inch plug for MicroDrive IDE connector,
+       metal mounting stripes and M3 metric screws)
+
+
+
+MicroDrive Card Prices
+-----------------------
+
+MicroDrive Card basic package           US $79       DM 110.00
+2.5 inch mounting Kit                   US $27       DM  38.00
+IDE 40-pin flat ribbon cable 3 ft.      US $11       DM  15.00
+
+
+Shipping and handling for basic package
+(with or without Mounting Kit):
+                                     Additional s/h fee
+                                     for 3 ft. cable
+Europe                DM 18                 --         (surface mail)
+USA                   US $14                $4         (air mail)
+all other countries   US $14                $4         (air mail)
+
+
+
+MicroDrive Filecard Prices
+----------------------------
+
+Complete INTERNAL hard drive systems, ready for use, "plug and play".
+
+                              Europe           USA & others
+                            -----------        -------------
+MicroDrive  20 MB            DM 370.00          US$ 250.00
+MicroDrive  40 MB            DM 460.00          US$ 310.00
+MicroDrive  60 MB            DM 530.00          US$ 370.00
+MicroDrive  80 MB            DM 590.00          US$ 410.00
+MicroDrive  120 MB           DM 650.00          US$ 460.00
+MicroDrive  250 MB           DM 760.00          US$ 540.00
+
+
+Shipping and handling for the MicroDrive FileCard:
+
+Europe                DM 18    (surface mail)
+USA                   US $18   (air mail)
+all other countries   US $18   (air mail)
+
+ The MicroDrive Filecard carries a one year limited warranty against
+defects in materials and workmanship.
+
+
+Payment
+--------
+
+  Payment must accompany your order. All overseas orders must be
+prepaid in US currency or Deutsche Mark. All orders from Europe must
+be prepaid in Deutsche Mark. Cash (bills), certified cheques (accepted
+by a German bank), money orders, travellers cheque and international
+money transfer via post office accepted. Sorry, no credit cards
+accepted.
+
+  IMPORTANT: If payment is by cheque or money order, an additional fee
+of US $3 or 4.50 Deutsche Mark (formerly US$12/DM 20) is required for
+each order. We have to pay this amount to get cash for the cheque. For
+European orders we recommend paying by EuroCheque because _no_
+additional fee is required for EuroCheques.
+
+  If you want to send cash, just be sure to send it via _registered_
+mail. This is a very safe way and probably the cheapest solution for
+overseas payment. Remember, when ordering more than one card (even
+mixed orders, Turbo IDE Card & BlueDisk), you can get a discount and
+the shipping charges are lower for each card if shipped together.
+
+  As the Dollar exchange rates are changing from day to day, the
+pricing may not be stable for a long time. Please try to get the latest
+US$ pricing for the MicroDrive Card on GEnie or via Internet e-mail.
+Also, if you want to order more than one item, please send your inquiry
+via e-mail and ask for a combo offer with appropriate shipping charges.
+
+
+In your order please specify for your computer (IIe or IIGS):
+
+- Firmware should be for universal use on Apple IIe/Apple IIGS
+     or
+- Firmware should be for Apple IIGS only
+
+and the utilities disk size: 5.25" or  3.5".
+
+
+SHH Systeme, Joachim Lange,
+April '95
+
+=====================================================================
+
+Other products available from SHH Systeme
+for the Apple IIe and Apple IIGS:
+
+*  Turbo IDE Card
+   Ultra-fast DMA hard disk controller for all kinds of IDE drives.
+
+*  BlueDisk
+   FLoppy disk controller for using inexpensive
+   MS-DOS-type floppy disk drives with your Apple
+   under ProDOS & GS/OS (including Mac HFS & MS-DOS).
+   Up to 2.88MB capacity.
+
+=====================================================================
+
+-- End of MicroDrive description --
+

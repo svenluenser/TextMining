@@ -1,0 +1,444 @@
+THE_URL:http://web.textfiles.com/computers/EDDYHAWK/compiler.txt
+THE_TITLE:compiler.txt
+EddyHawk's Info List
+---
+COMPILER LIST
+---
+Assembler
+---
+-MASM (Microsoft Macro? ASseMbler)
+ V5.x
+ V6.13
+  stn: slow compile
+
+-TASM (Turbo ASseMbler)
+ V4.0
+ V5.0
+ note:
+  MASM clone, but introduces 'Ideal' mode
+
+-NASM (Net wide ASsembler)
+ by: Simon Tathan and Julian Hall
+ V0.98 pre-release v1 [Sep 1998]
+ note: free assembler with simplified syntax
+
+-GAS (GNU ASsembler)
+ note: part of GNU
+
+-PASS32
+ by: Dieter Pawelczak (Germany)
+ year: 1996-1999
+ compiler: tasm v2.0, bp v7.0
+ v2.4n [Jan 1999]
+  has spec.x.format -> 3OS (not bound to spec.dosx)
+  2pass assembler, speed=1,000 lines/sec on 486DX4-100Mhz
+ note:
+  created for easy pm programming
+  486 & 586, 32bit assembler+linker in 1
+  x produced using Pro32 dosx
+---
+Assembly Related
+---
+-PDS (Portal Development System)
+ type: hi-lang.maker
+
+-XSC (XSCompiler)
+ by: Victor Pordan
+ type: hi-lang.maker
+ V1.04.36098
+---
+Assembly Library
+---
+-ALIB (Assembly LIBrary)
+ by: Jeff Owens/Owens Consulting
+ type: PS/2 or XT or PC, dos v2.1+
+ V4.0 [1997]
+  free -> to support it, send piece of code or comment
+  not for gfx or TSR application, or to be accessed from other lang
+  brief doc
+
+-FREELIB (the FREE assembly LIBrary)
+ by: Tenie Remmel
+ type: 186 or 386
+ V3.0 [Dec 1996]
+  free for non-commercial use
+  certified bug-free -> $5 prize for one who report a new bug
+ note: author is also the editor of PTT electronic magazine
+---
+Linker
+---
+-LINK
+ by: Microsoft
+
+-TLINK (Turbo LINKer)
+ by: Borland
+
+-PLINK86
+ by: Phoenix Software Associates
+ note: used by Clipper (?)
+
+-LD
+ note: part of GNU
+
+-PowerSoft
+ note: WC linker (?)
+---
+Pascal Compiler:
+----
+ DOS:
+----
+-Borland/Turbo Pascal
+ by: Borland
+ V3 [1983]
+  -create COM
+  -simple programming
+  -use include ($I FileName)
+ V4
+  -create EXE
+  -overlay?
+  -modular programming (unit) instead of include
+  -can't calculate constant
+ V5
+  -integrated debugger
+  -more useful routines
+ V5.5
+  -OOP
+  -better overlay manager
+  -better help function
+   .with example (can be pasted)
+  -few more procedures & predefined constant
+  -fix multiple 'extended' bug
+ V6
+  -multiple file editing
+  -INC & DEC
+  -BASM
+  -Turbo Vision
+ V7 [1992]
+  -protected mode
+  -fast & large compiling
+  -color coding of keywords
+  -break & continue to stop loop
+  -PChar; WinDos & Strings unit
+  -pass variable as 'constant' to procedure/function
+  -indexed pointers to array
+  -dynamic methods (DMT)
+ last known ver: V7.01
+ note: automatically initializes variable to zero
+
+-Borland Delphi
+ by: Borland
+ type: win32
+ V3.0 [1997]
+ V4.0
+
+-Quick Pascal (Microsoft)
+
+-Stony Brook Pascal+
+ predecessor? of TMT Pascal
+ generates smaller? executable than TP/BP V7.0
+ last known version: V6.1G
+------
+ DOS32:
+------
+-P32 (Pascal32)
+ by: Johan Priss
+ v0.5b2 [1999]
+  free
+  requires external assembler & dos extender
+   can use WDOSX/DOS32/Pro32 + TASM/NASM/Pass32 + TLINK32/DLINK -> PE/Adam
+  not complete
+  IDE isn't completed
+  discontinued (due to lack of user)
+
+-Pascal Pro
+ last known ver: 0.1?
+ year: 1999?
+ note:
+  free
+  not complete
+  no update after 1 year
+  slow compile
+  prog often exit with unclear error message ("RunTimeError #216")
+
+-TMT Pascal
+ by: TMT
+ type: 4mb xms, fpu
+ V0.33- : DOS32 extender
+ V0.33 : DOS32 -> PMODE extender
+ V0.37 : MOUSE unit
+ V1.00
+  improves quality of generated code
+  full on-line doc
+ V1.20 : MMX support
+ V1.30 : DPMI unit
+ V2.00
+  SVGA GRAPH unit
+  regged ver: PMODE -> PMODE/W (PMWSTUB) extender
+ V2.01 : regged ver: supports GRAPH/Virtual Mode: double/triple buffering
+ V2.10 : PMODE -> WDOS/X (TMTSTUB) extender
+ V3.00
+  math unit
+  wstub: uses DOS4GW extender
+ V3.10 : tmtpack: TMT/WDX x presor
+ V3.20 : supports AMD 3DNow!
+ V3.30 [2000]
+  windos unit
+  2 version: DOS Lite (free evaluation) and Multi Target (DOS/Win/Linux?)
+  registration costs 39 USD
+ adv:
+  regged ver offers IDE, debugger, full on-line doc
+  zentimer, keyboard unit
+ disadv:
+  free ver limits prog code+data+heap <= 1.5mb, static var <= 500kb
+  built-in asm can't accept 16bit syntax (32bit)
+ note:
+  BP compatible
+  4 stub:
+   PASSTUB (PMODE 3.07)
+   PMWSTUB (PMODEW)
+   TMTSTUB (WDOS/X 0.94)
+   WSTUB (DOS4GW)
+  DOS32 (Adam) executable format
+  doesn't auto-initialize variable to zero
+  slower? executable than BP V7.0 & FPC V0.99.14a
+  fast compile
+  small executable
+
+-FPC (Free Pascal Compiler)
+ by: Florian Klaempfl (Germany) et al / FPC Team
+ year: 1993-2000
+ former name: FPK-Pascal
+ variant: for Win32, Linux, OS/2 (EMX), Commodore AmigaOS, Atari ST
+ type: 386-25Mhz, 2Mb RAM, GO32V2 (CWSDPMI)
+ V0.99.14a [Feb 2000]
+ V1.00 [Jul (?) 2000]
+  bigger x size: because compiler adds exception messages
+ V1.0.9: development version, last known ver
+ adv:
+  free
+  access to DOS mem (DJGPP V2)
+  built-in asm accepts 16bit syntax
+  Delphi or BP V7.0 compatible
+  can do fast compiling
+  can produce small executable size (smart-link)
+  fast execution (due to good optimizator?)
+  implements:
+  -function/operator overloading
+  -some Delphi 2/3 extensions
+ disadv:
+  you must use {$I-} to disable default I/O check, not mentioned in docs
+  IDE still beta: ROSE: crush on NT V4.0
+
+-GNU Pascal
+ starter/author: Jukka Virtanen (Finland)
+ POSIX compatible
+
+-DPAS (Dieter (?) PAScal)
+ by: Dieter Pawelczak (Germany)
+ V1.4
+ note:
+  not complete
+  uses Pro32 extender
+----
+ Win32:
+----
+-VP (Virtual Pascal)
+ By: fPrint (UK) Ltd
+ Year: 1996-1998
+ V2.00 [1998]
+ V2.1
+  free (?)
+ adv: VeK: good code, IDE, fast compile, small x size
+ disadv: commercial
+ note:
+  LX format for OS/2 2+
+  PE format for Win32
+
+-Prospero Extended Object Pascal (?)
+ note: commercial?
+----
+VMS:
+----
+-VMS Pascal
+---
+C Compilers:
+----
+-Intel C/C++
+ note: used to compile PPMD
+
+-SPHINX C--
+ subset of C++?
+ Author: Peter Cellik
+ V0.203 [1994]
+  "reduced" (?) C
+
+-LSI C-86
+ V3.30c beta
+ note: used to compile LHA archiver
+
+-LC
+ V3.00
+ herinmi: oldest compiler
+
+-Lattice C
+
+-LCC/win32
+ by: Jacob Navia
+ V1.3
+ EdH: is this a compiler/PE crypter ?
+
+-M. Zbikowski C
+
+-Pacific C
+
+-Quick C
+ by: Microsoft?
+ V2.5
+
+-MS-C (MicroSoft C)
+ by: Microsoft
+ V8.0
+
+-Visual C
+ by: Microsoft
+ type: win32.gui
+ V2.0
+ C++
+  V3.1
+  V4.2
+  V5.0
+  V5.0 SP3
+  V5.02
+
+-TC (Turbo C)
+ by: Borland
+ V1.0
+
+-Coherent
+ V3.2.0
+
+-BC (Borland C)
+ V4.0 [1993]
+ V5.5 [2000?]
+ Author: Borland
+
+-CCDL
+ V1.80 [1999]
+ free? 32bit C compiler
+ Author: David Laundier
+ Some elements & utils gathered from various sources: Tran PMODE, Valx
+
+-ScriptEase
+ V3.0? [1998?]
+ intepreter in "reduced C" language
+ Author: ?
+
+-TopSpeed C
+ by: JPI
+ V3.01 [1989]
+
+-WC (Watcom C/C++)
+ Year: 1988-1995
+ Author: Watcom
+ type: 16 or 32bit compiler
+ V10.6
+  Naresh Kumar: great piece of sw
+ V11.0a
+
+-Zortech C
+ Year: 1988-1991
+ Author: Walter Bright (?)
+ V2.10 [1990]
+ V3.0r1 [1991]
+
+-Symantec C
+ Author: Walter Bright (?)
+ Year: 1988-1993
+ v2.10
+ V4.0
+
+-Symantec Visual Cafe
+ by: Symantec
+ V3.0
+ EdH: what the hell is this anyway?
+
+-Think C
+ OS: Mac
+
+-GNU C
+
+-DJGPP
+ by: D.J. Delorie
+ V2.01
+ adv: free
+ note: DOS port of GNU C
+
+-MetaWare High C
+ by: MetaWare
+
+-LadSoft C
+---
+FORTRAN
+---
+-Lahey Fortran 77L
+-IBM Fortran/2
+-Fortran 77
+ type: 32bit compiler (?)
+ note: uses DOS4GW (?)
+---
+BASIC
+---
+-GWBASIC
+ script
+
+-PowerBasic
+ V2.10
+ V3.2
+
+-Turbo Basic
+ by: Borland (?)
+ V1.0 [1987]
+
+-QB (Quick Basic)
+ by: Microsoft
+ V4.5
+
+-Visual Basic
+ by: Microsoft
+ V2.0
+ V3.0
+
+-Moon Rock
+ V0.50: COM
+---
+SCRIPT
+---
+-Shell
+
+-Perl
+
+-Python
+
+-Java
+
+-REXX
+ by: IBM
+ type: OS/2
+ variant:
+ .Personal REXX
+  by: charles daney/quercus system
+  year: 1985-1994
+  type: DOS
+  compiler: msc++ [1990/1992]
+  v3.02A1 [1992]
+---
+Modula2
+---
+-Fitted M2
+
+-TopSpeed M2
+---
+Prolog
+---
+-Turbo Prolog
+

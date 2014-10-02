@@ -1,0 +1,77 @@
+THE_URL:http://web.textfiles.com/computers/c4n-axmantut.txt
+THE_TITLE:c4n-axmantut.txt
+AxMan v2.11                9-14-97
+by: bulll
+url  http://www.wwnet.com/~dfend/axman211r.zip
+
+
+Well Ive never written a tut on anything before so if this just confuses the hell out
+of you then just dont use it.  I crack or patch things usually not by going in and
+checking for a serial but just by using my W32dasm and Hexworks...and sice3.0.  But
+this method works great for alot of programs that Ive worked on but not all so you cant
+completely use this method "all" the time.
+
+
+So first i guess you need to be sure you got all these tools. And if you're readin this
+I assume you already have them.  If you dont get them and then come back.
+
+
+First of all just run the program and youll see the nasty nag screen.  Hit the register
+button and enter info in all the boxes (use what ever you want ....Now you could bpt on
+getdlgitem and start there but thats not what this tuts about)  Now press the OK button
+and youll see another little nasty nagger tellin you that the reg nfo was incorrect.
+So by now you know what you need to get rid of.
+
+Now enter sice and do a bpt on DialogBoxParamA.........(Again I assume that you know how to
+use sice and get in and out of it and set breakpoints)  Now press ctrl-d to get out of sice
+and youre back in axman.  Just exit the prog and restart it and blam! we're back in sice.
+Now you know that this breakpt is the first nasty nag so we want to get rid of it.  Now
+do a d eip to see what the code is.  We see FF15D8144200C8... so now we need to change our
+code to get rid of the screen.
+
+So we exit sice and fire up our hexworks.  Do a search for our code.  Change FF15D8144200 to
+ 909090909090 because it takes six bytes for the call and we want to get rid of it. And
+90 is nop ( no operation ).  Now once youve changed this you need to save this file to
+another name because you dont want to ruin your "good nagged" exe.  Now once youve saved it
+start it up and youll see that you have no nasty nag you just go straight into the program.
+Now isnt that much better.  But hey .........when we click on register in the about box and
+enter a number we get another nasty nag telling us that our reg info was bad.  Well we'll
+fix this too.
+
+Now just fire up your w32dasm and load up your AxMan.exe.  Now once youve got it loaded just
+look up in the Refs section (references) and goto the string data ref.  Now look for anything
+interesting to registration.  You see........Thank you for registering.  Now dbl click
+on that and youll end up in the code for that ref.  Now just scroll up a bit to find the last
+compare before our "nag" and youll see a jmp......actually this will be a jge (jump if
+greater or equal) Hmmmmmmmm..........what if we change this thing to an jmp.  That way it will
+register no matter what we put in.  Well lets look at our code youll see................
+004024CB 7D15 .
+
+Now we have to head back to our hexworks.  Search for 7D15.  Now weve found it we need to
+change it to a jmp which is EB.  So do that and then save this in our previously saved file.
+Now all you have to do is run your hexed version of AxMan ........Great no nasty nag....now
+when we register it we get the "Thank you for registering"  .........
+
+Thats it.......Hope this was really self explanatory.  And if it wasn't well.......this is
+my first tut so bare with me.
+
+
+
+The main reason that I got this program was because my good ole Windoze95 Backup just wasnt
+cutting the crap this morning so I went searching the net for something that would do the job
+and I stumbled on this shareware.  I know that this probably isnt the "cleanest" of cracks
+but hey Im just starting and it works for me!!!!
+
+
+I'd like to say thanks to all the ops in #cracking4newbies and thanx to all the regulars
+that help me out.  You all know who you are so I dont have to waste my time typing it out.
+
+
+bulll
+
+bull@upstate.net
+
+
+
+
+

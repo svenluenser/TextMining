@@ -1,0 +1,132 @@
+THE_URL:http://web.textfiles.com/computers/bburn2.txt
+THE_TITLE:bburn2.txt
+
+                                      How to crack Blood 2 cd protection
+                                                 A little update to my tutorial#1
+                                                            written by ByteBurn
+
+Intro:
+Hello Dudes!Welcome to the little update for my Tutorial#1 (Introducing into the world of cracking).I hop
+e you enjoyed my Tutorial and i hope you`ll enjoy this little plus tutorial :).
+I am at home and i brought Blood2 (English version) of a video shop.Now 5mins ago i cracked it and i thin
+k i`ve to tell you how you can do that.I like to help newbies on their way up to a real cracker.And excus
+e my english i know it isnt the best :).
+
+What we need to crack:
+At first you need WDasm8.9 and Hiew5.9.WDasm is a disassembler and Hiew is a little good HexEditor.Rememb
+er that this tutorial is only a little tutorial i write for you that you can crack some more and dont hav
+e to wait for my next real tutorial (what can take some time :))So i dont explain exatly step by step wha
+t to do here.If you have read my Tutorial#1 you know what to do and it`ll be easy for you to follow my in
+structions.I hope it will :).
+
+Lets start:
+Ok at first make a full install of the game (i make a full install cause i like the movies too.I dont kno
+w if there is any error message if you delete movies or sound like "Cannot find intro.avi" or anything el
+se).Then start the game without cd to get the error message.The message says "Please insert the Blood2 cd
+ into your Cd-Rom"or something like that.Now
+make two copys of the Blood2.exe.One called Blood2.exx (the save copy if you nop or manipulate something
+wrong and the game wont work) and one called Blood2.w32 (this one you`ll use for Wdasm to disassemble).I
+dont will explain why to do that here cause i write it in my Tutorial#1 (if you dont have it maybe you`ll
+ download it to understand better about what i am talking here.You can download it on www.crackstore.com.
+).Start Wdasm and disassemble the Blood2.w32 file.After the disassembling process click on the String Dat
+a References button on the upper right site of the screen.Now a little window pops up with lots of error
+messages and other messages of the game.Look out for the error message you recieved when you start the ga
+me without cd (Please insert Blood2 cd into your cd-rom).
+You can see it on the first page of the window you dont have to scroll down.Doubleclick on the message.No
+w you`ll be warped to the string where the error message is stored.This will looks like this:
+
+:00403FB6 6A08               push 00000008
+:00403FB8 51                  push ecx
+:00403FB9 FFD3               call ebx
+:00403FBB 85C0              test eax, eax
+:00403FBD 7524              jne 00403FE3     <----------ah any jne.Maybe thats the badboy?
+
+*Possible String Data Ref from Data Obj    -> "Please insert the game
+                                                             -> "into the drive."
+                                                   |
+:00403FBF BFE4A54200             mov edi, 0042A5E4
+:00403FC4 83C9FF                    or ecx, FFFFFFFF
+:00403FC7 F2                             repnz
+:00403FC8 AE                           scasb
+:00403FFC9 F7D1                        not ecx
+:00403FCB 2BF9                          sub edi, ecx
+:00403FCD 8D542450                     lea edx, dword ptr [esp+50]
+:00403FD1 8BC1                           mov eax, ecx
+:00403FD3 8BF7                            mov esi, edi
+:00403FD5 8BFA                           mov edi, edx
+:00403FD7 C1E902                         shr ecx, 02
+:00403FDA F3                               repz
+:00403FDB A5                               movsd
+:00403FD 8BC8                             mov ecx, eax
+:00403FDE 83E103                         and ecx, 00000003
+:00403FE1 F3                                repz
+:00403FE2 A4                                 movsb
+
+*Referenced by a (U)nconditional or (C)onditional Jump at Address:
+|:00403FBD(C)    <-----------enter this number without the (C) into the CD Location window
+|
+:00403FE3 8B15B8E74200                mov edx, dword ptr [0042E7B8]
+:00403FE9 8D4C2410                     lea ecx, dword ptr [esp+10]
+:00403FED 6A3E                          push 0000003E
+
+this screen you`ve to see on your monitor if you doubleclick on the error message (ohh do you know how mu
+ch i like to write asm-codes like this into tutorials like this?Hehe...).
+Know all you `ve to do is to click on the "Goto Cd Location" Button on the upper middle of the screen and
+ enter the number of the *Referenced by (U)nconditional or (C)onditional Jump at Address: 00403FBD(C) num
+ber and click on ok.You`ll be warped to any string in the
+asm-code.Its a jne command.This one calls the window error box on your screen if there is no cd present i
+n drive.Ok take a look down at the @Offset number.Its 000033BD.Remember the number (witthout all the 0000
+) and go to Hiew.Load your Blood2.exe in Hiew.Click on F4 and select decode mode.Then click on F5 and ent
+er the @Offset number,its 33BD.You`ll be warped to the jne command.Click on F3 and change the value of jn
+e to je.This will happen when you change 75 to 74.Now you can save it and leave Hiew.Start your game and
+taaddaaa it works.Ok you make it.I hope you see how easy it is to get the error message and kill it.This
+was a very very veryyy easy protection sheme and you`ve to learn more about cracking if you want be good.
+
+OH SHIT!!!!:
+Dudes....i now see what i do wrong!The game have more then one "badboy"you can see it if you click often
+on the error message in Data String References window.That means that if you disable only the one jne lik
+e i discribe up it wont have the effect you`ll recieve.It can be that if you start the game sometimes it`
+ll always show you the error message.Now you can do two things.One:You play it with the "Bug Crack" that
+means that sometimes when you start the game it wont work and you have to start it often to get into the
+game.Or step two:
+You crack every jne you can see when you click often on the error message in String Data Window.If you wa
+nt to crack it real you`ve to do everything like i discribe up but you`ve to do it more then one times.Yo
+u have to do it on every place of the string you`ll be warped when you doubleclick on the errror message
+in SDR window.Ok ok i know i am shit and i do a mistake but know you can see that it isnt so easy to crac
+k no much harder but take more time.You can crack it without my help if you do what i discribe up.Hmm and
+ i wondered why it sometimes work and sometimes not HAHA.Thats one of the things you`ve remember too!
+Everytime doubleclick more then one time on the errror message in SDR (String Data References) window!Do
+that and you wont have this kind of trouble with your game :)))
+
+NO PANIC!!!:
+Hehe no panic dudes!I found the error...the only thing you`ve to do is to change another jne on the same
+window.The @Offset number is 3389.If you change this one from jne in je you can play the game.I do it and
+ i have no problems for now.Only look up a bit in the asm and you`ll find after one or two calls the jne.
+In hiew its this kind of jne`s i explain in Tutorial#1.
+Its one of the 0F85964553 kinds.So dint worry only change the 85 behinf 0F to 84 and all will work.You do
+nt have to nop it or anything else.Its only a little bit longer thats all :))).Ok enjoy it!And have fun.I
+ hope you`re now happy and not longer angry of me for taking you in shock situation :)))Hehe...
+Hmm..how i think...it is enough when you change 3389...you dont have to change the one i describe up...
+I think so..try it..if not change it the game works...
+
+Outro:
+I hope you understand this little tutor and are able to crack Blood2 now.I think i`ll release more of tho
+se little quick crack tutorials in the time when i write a greater tutorial so you have everytime anythin
+g to crack :).If you have questions or anything else you can send me a mail to: ByteBurn@onecooldude.com
+or catch me on IRC EFnet #DHR.Please if it isnt very important visit me on EFnet and dont send me a mail
+cause it take so long to load my mails when they are full of any questions.If you havent got IRC mail me.
+Maybe it`ll take some time but i`ll answer.I like to help newbies cause they are the future of cracking e
+lite and if nobody help them the art of cracking will die...and thats isnt what we want or?hehe.So i`ll b
+e happy to help you if can or your upcoming crew.EFnet #DHR is a good crew which specialized on help othe
+r people with cracking and writing cracks.They are always on the search for cracker who like what they do
+ and like to answer some questions when they were asked by any newbies.Feel free and join DHR without any
+ pressure of sending cracks or do something special.DHR is a funny crew with no pressure.DHR stands for D
+ephenderz/DephStarz/Digital
+Hardcore Cracker.Join the channel and have fun with us :).Dont worry if nobody is online cause they join
+in the night.I am sometimes online if i get faked IPs of universitys :).Hey you!
+What you wanna learn is highly illegal!HAHA.My greetings goes to:
+Mues_Lee,Scamp,insEOK`98,_Anubis_,NetLeaDer,ByteFaker,_phi_ to every cracker,every crew and every newbie
+in the world!!!Do what you can best and make the best of it :))))
+
+West Berlin City 14/12/98
+

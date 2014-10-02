@@ -1,0 +1,176 @@
+THE_URL:http://web.textfiles.com/computers/vgbd_01.txt
+THE_TITLE:vgbd_01.txt
+=========
+Vagabond Crack Tutorial #01
+============================
+Where the butterfly's roam (and using bmemcpy)
+
+Target: Textpad 32bit v3.0.12
+Found at: www.download.com
+Level: Beginner/Intermedite
+Tools: Soft-ice, Hex Editor, cold drink
+
+===============================
+Quick Walk through
+
+.. bpx hmemcpy
+.. start textpad
+.. ctrl-d until you see nag screen (counting)
+.. restart textpad
+.. ctrl-d up to (before) nag screen (did u count?)
+.. F10 & F12 till you find nag window call (use F4)
+.. look just before the call for a test jump (jz in this case)
+.. reverse the jump (jnz) .. patch .. test
+
+===============================
+Intro:
+
+::: Warning: Pop cold drink now, this tut is in the non-condensed version. :::
+
+Ok, I picked a fairly eaisy crack for my first tut, however, this crack has a little twist that I get a l
+ot of people asking me about (using hmemcpy). Sometimes using this method can seem overwhelming, but this
+ really is easy, as you'll see. So, read on, crack, and learn.
+
+Install Textpad, fire it up. One of the best text editors out there. This program is fast, saves in pc or
+ unix formats, spell checking, opens hugh files, will even view files in binary mode (although no edit...
+ the one thing they need to add). I would suggest a purchase (ya buy it) of this program, as it can be ve
+ry helpful in your daily work (including writing tut's!).
+
+Also, they were kind enough to give us a full working copy to try, with one exception. Every time you sta
+rt the little bugger, this nasty dialog pops up, not only that, but it doesn't go away for several second
+s.
+
+Well, that just won't do. I like to use my text viewer for my small, quick viewing needs (like .nfo's and
+ tut's), and don't want to wait 5 seconds each time I start it. SPEED.
+
+Ok, enough gibbering.......
+
+=================================
+Finding The Crack:
+
+If you'll notice, when you first start Textpad, the nasty shareware dialog is the first thing to appear,
+with the program poping up right behind it. No Prob.
+1st thing I do is hit CTRL-D (to enter soft-ice), then type in BPX DIALOGBOXPARAMA (to break on a dialog
+box). I re-start Textpad and.... no break :/
+Well, I try my other nice dialog break points
+
+BPX DIALOGBOXPARAM   ;16bit
+BPX DIALOGBOXPARAMA  ;32bit
+BPX DIALOGBOX
+BPX MESSAGEBOX       ;16bit
+BPX MESSAGEBOXA      ;32bit
+
+I just set all the bpx at once, restart Textpad, and.... nothing, no break. hmmmm... guess were going to
+have to get tough and use BPX HMEMCPY
+
+===================================
+using hmemcpy
+
+OK, lets hit CTRL-D (back to soft-ice), then type in BPX HMEMCPY. What is hmemcpy?? ok...
+hmemcpy is a KERNAL (windows) function that has to do with coping memory. Therefore, when you set this br
+eakpoint, softice will break on a LOT of things. Enough said.
+
+ok... bpx hmemcpy.. then start Textpad again... and poof, softice breaks right away. Now, if you LOOK at
+the line below the code window (right above where you can type), it will say something about KERNAL. That
+'s where your at, but not where you want to be. You will need to hit F12 (run till the next RETurn statem
+ent). It will still be in the kernal. So, hit F12 several times, you will go through the USER functions (
+more windoze stuff), and finally, it will say Textpad32!.. this is where we want, the program code.
+
+====================================
+Where the butterfly's roam...
+
+using hmemcpy can often be like catching butterflys. Because we are breaking on such a general function,
+we need to find where we want to be in the program code. In this case, we want to be right before the nag
+ window appears. This is the tricky part....
+
+So... next step, hit CTRL-D untill you see the nag screen. If you count, you'll notice on the 7th CTRL-D
+the nag screen appears, and the program does not break again after that. so... restart textpad, hit CTRL-
+D six(6) times. Same as above, F12 till your in the Textpad! code.
+
+Now we still haven't found where the nag screen appears, but we are as close to it as we can get. Usually
+ this method will put you fairly close to where you want to be, but in this case (because we are at the s
+tart of the program), we are a ways off.
+
+So... start hitting F10 to step through your program. F10 will step over CALL statments (it still makes t
+he CALL), instead of steping into the call (F8 does that). Another thing to notice, is as your stepping t
+hrough the code, you will see a lot of RET statments, that means you are coming back from a CALL. Where w
+e start in this code is pretty deep.
+
+If you 'drop' back into (it's really coming out of), any KERNAL code or USER code, just use F12 until you
+ get back to Textpad! code (this will save you a LOT of time).
+
+Somewhere in this code, we are going to hit a CALL statement that will bring up our nag dialog, and thats
+ what were looking for. You can after each call statement use F4 to view the screen (F4 to return to sice
+). On my computer, when ever a new window or dialog appears on the screen, sice flickers, so I just hit F
+10 till I see a flicker, then use F4 to see if its the dialog. (this will save you a LOT of time).
+
+Eventually, sice will flicker, you'll hit F4, and there it is, the (blank) nag dialog. Since we have come
+ a long way, I suggest you set a breakpoint on the call (BPX 004404FC). If your curious, you can F10 a fe
+w lines and you'll pass the call that writes the text to the dialog.
+
+==================================
+Using the net.....
+
+Ok, now we have our magic location where the dialog pops up. We can disable our fist breakpoint (hmemcpy)
+ by doing a BD 0 (BL to list), and now we can restart Textpad as many times as we want and it will break
+right before displaying the nag screen.
+
+After finding the call, I wanted to look just before the call to see what was happing. So, I use CTRL + t
+he up arrow to scroll up in the code window, and this is what we see....
+
+:004404EA   call dword ptr [eax+000000D4]
+:004404F0   test eax, eax   <<< HEY, look here, a test!
+:004404F2   je 00440518     <<< and a JUMP! hmmmm.....
+:004404F4   mov ecx, dword ptr [esi+000000D0]
+:004404FA   push 00000005
+:004404FC   call 004874E0   <<< this is our breakpoint (blank nag)
+:00440501   mov eax, dword ptr [esi+000000D0]
+:00440507   push [eax+1C]
+:0044050A   call ebx        <<< this call fills in the nag text
+
+Well, just a few lines above our call we see a test and a conditional jump (je 00440518). Not only that,
+but if we look close, we will see that the jump goes down a dozen lines or so, just below our nag screen
+calls... hmmm.... I wonder.....
+
+So.. test it... BPX 004404F2 (break on the je statement).
+restart textpad
+you should break right on line 004404F2, and if you look at the end of the line, sice is telling you it's
+ not going to jump (no jump).
+
+Well, we want to jump for a test, so we are going to type in R FL Z (which toggles the z-flag... learn as
+sembly), and sice will now say (jump) at the end of the line. Hit CTRL-D to resume the program, and ... p
+oof, Textpad starts up nicely without the nag screen.
+
+So, we need to modify our exe file. No prob. restart Textpad, back to our breakpoint, and type CODE ON..
+sice then displays the hex codes...
+
+:004404F2 7424                    je 00440518
+:004404F4 8B8ED0000000            mov ecx, dword ptr [esi+000000D0]
+:004404FA 6A05                    push 00000005
+:004404FC E8DF6F0400              call 004874E0
+:00440501 8B86D0000000            mov eax, dword ptr [esi+000000D0]
+
+The 1st one (74) stands for je, and we want reverse that to jne (75).. so...
+copy down some of the hex codes....
+
+74248B8ED00000006A05E8DF6F04008B86D0000000....
+
+open your favorate hex edit.. and change the 74 to 75
+
+74248B8E...
+
+Save it, run it, no nag screen... no problems....
+
+=====================================
+In Con_End'e
+
+I've tried to make this tut very descriptive (if not wordy), but I suggest after you walk through it, rea
+d the quick walk through at the top of this tut and see how really simple it is.
+
+8 quick steps. This crack is realitivly east, and you will soon be able to do it faster than you can gulp
+ down that cold drink you started....
+
+enjoy,
+Vagabond
+
+

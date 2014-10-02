@@ -1,0 +1,3115 @@
+THE_URL:http://web.textfiles.com/computers/moders.lst
+THE_TITLE:moders.lst
+Date: 25 Nov 1996 18:16:34 -0500
+From: moderators-request@uunet.uu.net (David C Lawrence)
+Newsgroups: news.lists,news.groups,news.answers
+Subject: List of Moderators for Usenet
+
+Archive-name: moderator-list/part1
+Original-author: Gene Spafford (spaf@cs.purdue.edu)
+Comment: enhanced & edited until 5/93 by spaf@cs.purdue.edu (Gene Spafford)
+Last-change: 22 Nov 1996 by moderators-request@uunet.uu.net (David C Lawrence)
+
+A number of moderated groups exist on the net.  These are groups which
+usually have one or more individuals (acting as editors and/or
+moderators) who must approve articles before they are published to the
+net.  In general, these groups fall into one of five categories:
+
+1) Groups with postings of an informative nature not suited to
+   discussion and always originating from the same (very small) group
+   of posters.  Groups within this category include news.lists,
+   news.announce.newusers, and comp.mail.maps.
+
+2) Groups derived from regular groups with such a high volume that
+   it is hard for the average reader to keep up.  The moderated
+   versions of these groups are an attempt to provide a lower volume
+   and higher quality version of the same forum.  An example of
+   this category is news.announce.newgroups (a reduced form of
+   news.groups).
+
+3) Groups derived from regular groups that have often been abused.
+   That is, the regular groups often received postings of items that
+   were not germane to the stated topic of the group (or sometimes even
+   within the realm of politeness for the net).  This also includes
+   groups suffering from an annoying number of duplicate postings and
+   inappropriate followups.  Moderated groups in this category include
+   comp.sources.unix.
+
+4) Groups designed to serve also as direct feedback to an off-the-net
+   group.  The discussion in comp.std.lisp is an example of this.
+
+5) Groups which are gatewayed into the Usenet from an Internet
+   mailing list.  These groups are moderated by someone on the Internet
+   side but are shared with the Usenet population.  Submissions mailed
+   to the proper addresses, given below, will appear in both the group
+   on Usenet, and the Internet list.  This includes some groups in
+   the "inet" distribution which are listed here for completeness:
+   comp.ai.vision and comp.std.announce.
+
+To post to a moderated group, write your article and mail it to the
+listed SUBMISSION address.  The moderator will then do the actual
+posting of the article.  The news software on the Usenet will not
+allow direct posting to moderated newsgroups, nor will it forward
+unauthorized articles to other sites.  The only way to post to a
+moderated group is to mail it to the moderator.  If your system is
+running a version of news more recent than B news 2.10 -- including C
+News and INN -- your news software will automatically mail your
+article to the moderator if you attempt to post it.  Thus, posting to
+a moderated newsgroup should appear the same as posting to any other
+group (except you don't see the posting right away).
+
+Depending on the newsgroup involved, if the moderator feels that your
+article is inappropriate for the group, s/he will return the article to
+you with a suggestion for other newsgroups in which to post it, and/or
+an explanation of why it is not appropriate for the moderated group.
+You may still post such articles to the regular groups as you currently
+do, if such groups exist.
+
+If you have questions or complaints about the way a moderated group is
+run, please contact the moderator by mail.  If you don't get a response
+in a reasonable amount of time, you can send mail to the mailing list
+"moderators@uunet.uu.net" and it will be rebroadcast to many electronic
+group moderators, who might be able to help.
+
+Below is a list of the current moderated groups and the moderators of
+those groups. Included in that list are the addresses to use if you
+have questions of comments about the groups. After that is given a
+list of addresses for submissions of articles to those groups. These
+addresses can be used to build the "moderators" file so that
+"postnews" can automatically mail an article to the correct moderator.
+
+Note that many of the aliases at the end of this file are for
+newsgroups in hierarchies other than the "main Usenet."  These aliases
+have been collected from a number of different sources, including the
+alias file at uunet.uu.net, and they may not be completely accurate
+over time.  You may wish to trim some of these aliases if you don't
+get the newsgroups indicated.
+
+If your system is running a version of news more recent than B news
+2.10 -- including C News and INN -- posting to moderated newsgroups is
+done by mailing your submission to well-defined aliases at a nearby
+well-connected site.  The mail path to that site should be in your
+news library, in the file "mailpaths" -- there is no need to update a
+moderators file with the information in this article, nor is there a
+need for you to mail your articles individually.  Information on how
+to construct the paths in the "mailpaths" file so this works correctly
+are posted in a companion article.
+
+If you are NOT running a recent version of news, you are *STRONGLY*
+advised to upgrade to it so as to take advantage of this feature, as
+well as the numerous bug fixes and other enhancements.
+
+The addresses below are given in Internet/domain form.  If you are a
+UUCP-only site, you can mail to an Internet (EDU, GOV, etc.)-only site
+by mailing through the gateways using a uucp-style path, e.g.:
+        ...!{mcnc,rutgers,ucsd,uunet,uw-beaver,watmath}!site.domain!address
+
+25 Nov 1996
+------------------------------------------------------------------
+Group
+        Moderator or Coordinator        Requests, Comments, etc.
+------------------------------------------------------------------
+comp.ai.jair.announce
+        Steven Minton           jair-announce-request@ptolemy.arc.nasa.gov
+comp.ai.jair.papers
+        Steven Minton           jair-papers-request@ptolemy.arc.nasa.gov
+comp.ai.nlang-know-rep
+        Christopher Welty       weltyc@cs.vassar.edu
+comp.ai.vision
+        Philip Kahn             vision-list-request@teleos.com
+comp.answers
+        Jonathan Kamens         news-answers-request@mit.edu
+          & others
+comp.archives
+        Adam Richter,           comp-archives-request@yggdrasil.com
+          Edward Vielmetti
+comp.archives.ms-windows.announce
+        Keith Petersen          win-news-manager@Simtel.Net
+comp.archives.msdos.announce
+        Keith Petersen,
+          Brian O'Neill, Timo Salmi,
+          & Harri Valkama       ms-news-request@simtel.net
+comp.binaries.acorn
+        Julian Wright           cba-request@bridge.wn.planet.gen.nz
+comp.binaries.amiga
+        Bill Zimmer             amiga-request@uunet.uu.net
+comp.binaries.cbm
+        William R Ward          cbm-binaries-request@bayview.com
+comp.binaries.geos
+        Dan "Shag" Birchall     birchall@pilot.njin.net
+comp.binaries.ibm.pc
+        Vinit Carpenter         cbip@vms.csd.mu.edu
+comp.binaries.mac
+        Roger Long              bytebug@uunet.uu.net
+comp.binaries.ms-windows
+        Tin Le                  cbmsw-request@saigon.com
+comp.binaries.newton
+        Rob Dewhirst            robd@farallon.com
+comp.binaries.os2
+        Mick Brown              lfirrantello@bix.com
+comp.binaries.psion
+        Erik Johansen           ej@it.dtu.dk
+comp.bugs.4bsd.ucb-fixes
+        Keith Bostic            ucb-fixes-request@okeeffe.berkeley.edu
+comp.compilers
+        John Levine             compilers-request@iecc.com
+comp.compression.research
+        Peter Gutmann           compression-request@cs.aukuni.ac.nz
+comp.dcom.telecom
+        Patrick Townson         ptownson@massis.lcs.mit.edu
+comp.doc
+        Brian Kantor            comp-doc@ucsd.edu
+comp.doc.techreports
+        Richard Golding         compdoc-techreports-request@ftp.cse.ucsc.edu
+comp.emulators.announce
+        Ron Dippold             emulators-request@qualcomm.com
+comp.home.misc
+        Kresten Bjerg           home_request@axp.psl.ku.dk
+comp.infosystems.announce
+        Richard W Wiggins       infosys-request@msu.edu
+comp.infosystems.kiosks
+        Craig A. Keefner        kiosk_request@kinetic.com
+comp.infosystems.www.announce
+        M. L. Grant,            www-announce-request@boutell.com
+          Kate McDonnell
+comp.infosystems.www.authoring.cgi
+        Thomas Boutell          authoring-cgi-request@boutell.com
+comp.internet.library
+        Yoshiyasu Takefuji      takefuji@sfc.keio.ac.jp
+comp.internet.net-happenings
+        Gleason Sackman         gleason@rrnet.com
+comp.lang.basic.visual.announce
+        Matthew W. Heinrichs    vbasic-request@cc.umanitoba.ca
+comp.lang.c.moderated
+        Peter Seebach           clc-request@solutions.solon.com
+comp.lang.c++.moderated
+        David Vandevoorde,      c++-request@netlab.cs.rpi.edu
+          Dom DeVitto, Robert Martin, Herb Sutter, Howard Harkness,
+          James Kanze & Dietmar Kuehl
+comp.lang.java.announce
+        Urban Mueller           java-mod@relog.ch
+comp.lang.ml
+        Rowan Davies            comp-lang-ml-request@cs.cmu.edu
+comp.lang.pascal.delphi.announce
+        Don Croyle              clpda-request@gelemna.ft-wayne.in.us
+comp.lang.perl.announce
+        Randal Schwartz         merlyn@stonehenge.com
+comp.lang.sigplan
+        Dan Yellin              sigplan-request@watson.ibm.com
+comp.lang.tcl.announce
+        John D. Mitchell,       tcl-announce-request@mitchell.org
+          Alistair G. Crooks &  Michael Moore
+comp.lang.visual
+        David McIntyre          visual-request@morgan.com
+comp.laser-printers
+        Richard Furuta          furuta@cs.umd.edu
+comp.mail.maps
+        Mel Pleasant            pleasant@noc.rutgers.edu
+comp.music.research
+        Jeff Harrington,        mus-res-request@maths.bath.ac.uk
+          John Fitch
+comp.networks.noctools.announce
+        Dave Pascoe             noctools-request@merit.edu
+comp.networks.noctools.tools
+        Dave Pascoe             noctools-request@merit.edu
+comp.newprod
+        Scott Hazen Mueller     newprod-request@uunet.uu.net
+comp.org.cpsr.announce
+        ??                      cpsr-announce-owner@cpsr.org
+comp.org.eff.news
+        Christopher Davis &
+          Helen Rose            eff@eff.org
+comp.org.fidonet
+        Tim Pozar               pozar@hop.toad.com
+comp.org.team-os2
+        Christian Scarborough,  comp.org.team-os2-request@teamos2.org
+          Gary Hammer & David LaRue
+comp.os.linux.announce
+        Lars Wirzenius          linux-announce-request@news.ornl.gov
+comp.os.linux.answers
+        Greg Hankins            linux-answers-request@news.ornl.gov
+comp.os.ms-windows.announce
+        Rich Graves             win-request@metrics.com
+comp.os.ms-windows.nt.announce
+        Oliver Uhrig            nt-request@metrics.com
+comp.os.netware.announce
+        Lennart Regebro         cona-request@stacken.kth.se
+comp.os.os2.announce
+        Mick Brown              lfirrantello@bix.com
+comp.os.os2.moderated
+        David Gaskill           david@cgaski.u-net.com
+          (Coordinator for:
+          Adam Adkins, Lawrence Beals, Jerry Case,
+          Jon Duringer, Pat Gunn & Eric Veldhuyzen)
+comp.os.plan9
+        Icarus Sparry &         plan9mod-request@bath.ac.uk
+          Tim Goodwin
+comp.os.research
+        Darrell Long            darrell@cse.ucsc.edu
+comp.parallel
+        Mike Bigrigg            bigrigg@cs.pitt.edu
+comp.patents
+        Peter John Treloar      pjt@cs.su.oz.au
+comp.protocols.dns.bind
+        Paul Vixie              postmaster@vix.com
+comp.protocols.dns.ops
+        Paul Vixie              postmaster@vix.com
+comp.protocols.dns.std
+        Paul Vixie              postmaster@vix.com
+comp.protocols.kermit.announce
+        Frank da Cruz           info-kermit-request@watsun.cc.columbia.edu
+comp.research.japan
+        Rick Schlichting        rick@cs.arizona.edu
+comp.risks
+        Peter G. Neumann        risks-request@csl.sri.com
+comp.robotics.research
+        Martin Boyer &          crr-request@robot.ireq.ca
+          Iain Shigeoka
+comp.security.pgp.announce
+        Arnoud Engelfriet &     pgp-announce-moderator@news.pgp.net
+          Peter Gutmann
+comp.simulation
+        Krishna Sivalingam      krishna@kural.uncg.edu
+comp.society
+        Greg Welsh              socicom@auvm.american.edu
+comp.society.cu-digest
+        Jim Thomas &
+          Gordon Meyer          tk0jut2@mvs.cso.niu.edu
+comp.society.folklore
+        Eric Fischer            enf1@midway.uchicago.edu
+comp.society.privacy
+        L. P. Levine            comp-privacy-request@uwm.edu
+comp.soft-sys.math.mathematica
+        Steven M. Christensen   mathgroup-request@smc.vnet.net
+comp.sources.acorn
+        Julian Wright           csa-request@bridge.wn.planet.gen.nz
+comp.sources.amiga
+        Bill Zimmer             amiga-request@uunet.uu.net
+comp.sources.apple2
+        Jonathan Chandross      jac@paul.rutgers.edu
+comp.sources.delphi
+        Don Croyle              csd-request@gelemna.ft-wayne.in.us
+comp.sources.games
+        Bill Randle             games-request@saab.cna.tek.com
+comp.sources.hp48
+        Chris Stevens           hp48-request@acm.rpi.edu
+comp.sources.mac
+        Roger Long              bytebug@uunet.uu.net
+comp.sources.misc
+        Kent Landfield &        sources-misc-request@uunet.uu.net
+          Alec David Muffett
+comp.sources.postscript
+        Allen Braunsdorf        postscript-request@cc.purdue.edu
+comp.sources.reviewed
+        David Boyd              comp-sources-reviewed-request@sterling.com
+comp.sources.sun
+        Charles McGrew          mcgrew@aramis.rutgers.edu
+comp.sources.unix
+        Paul Vixie, Mike Stump
+           and Nick Lai         unix-sources-moderator@vix.com
+comp.sources.x
+        Chris Olson             chris@sterling.com
+comp.std.announce
+        John C. Klensin         klensin@infoods.mit.edu
+comp.std.c++
+        Matt Austern,           std-c++-request@ncar.ucar.edu
+          Steve Clamage, & Fergus Henderson
+comp.std.lisp
+        Brad Miller             miller@cs.rochester.edu
+comp.std.unix
+        Sean Eric Fagan         std-unix-request@uunet.uu.net
+comp.std.wireless
+        W. Stuart Jones         jonesw@wes.mot.com
+comp.sys.acorn.announce
+        Alan Glover             csaa-request@acorn.co.uk
+comp.sys.amiga.announce
+        Dan Zerkle              zerkle@cs.ucdavis.edu
+comp.sys.amiga.reviews
+        Daniel J. Barrett       amiga-reviews@math.uh.edu
+comp.sys.atari.announce
+        Yat Siu                 atari-request@lexicor.com
+comp.sys.concurrent
+        Brian Carlton           concurrent-request@bdcsys.suvl.ca.us
+comp.sys.ibm.pc.digest
+        Gregory Hicks           info-ibmpc-request@arl.mil
+comp.sys.ibm.pc.games.announce
+        Todd Perry              toddp@bev.net
+comp.sys.m68k.pc
+        Mike Meyer              info-68k-request@ucbvax.berkeley.edu
+comp.sys.mac.announce
+        Werner Uhrig            werner@cs.utexas.edu
+comp.sys.mac.digest
+        Bill Lipa               info-mac-request@sumex-aim.stanford.edu
+comp.sys.mac.games.announce
+        Christina Schulman      schulman+@pitt.edu
+comp.sys.mac.programmer.info
+        MacTech magazine        csmp_info@xplain.com
+comp.sys.newton.announce
+        Michael Nowak           mnowak@umich.edu
+comp.sys.next.announce
+        Scott Anguish           next-announce-request@digifix.com
+comp.sys.psion.announce
+        Michael L. Kaufman      kaufman@mcs.com
+comp.sys.psion.reviews
+        Michael L. Kaufman      kaufman@mcs.com
+comp.sys.sgi.announce
+        Dave Sill               sgi-announce-request@ornl.gov
+comp.sys.sun.announce
+        Scott Hazen Mueller     css-announce-request@uunet.uu.net
+comp.theory.info-retrieval
+        Art Pollard             pollarda@uhunix.uhcc.hawaii.edu
+comp.unix.bsd.386bsd.announce
+        Hans Petter Fasteng     hansf@kfdata.no
+comp.unix.bsd.bsdi.announce
+        Tom Haapanen            bsdi-request@metrics.com
+comp.unix.bsd.freebsd.announce
+        Jordan Hubbard          jkh@freefall.cdrom.com
+comp.unix.bsd.netbsd.announce
+        Jason Thorpe            netbsd-announce-newsgroup-request@mail.netbsd.org
+comp.unix.sco.announce
+        Ed Hew                  edhew@xenitec.on.ca
+comp.unix.unixware.announce
+        Evan Leibovitch         cuua-request@telly.org
+comp.unix.wizards
+        David Barr              wizmod-request@math.psu.edu
+comp.virus
+        Nick FitzGerald         virus-l@lehigh.edu
+comp.windows.news
+        Pat Lashley             cwn-request@phoenix.volant.org
+comp.windows.x.announce
+        A. Rich                 xannounce-moderator@x.org
+humanities.answers
+        Jonathan Kamens         news-answers-request@mit.edu
+          & others
+humanities.philosophy.objectivism
+        Tim Skirvin             tskirvin@uiuc.edu
+misc.activism.militia
+        David Hollingsworth     militia-request@atype.com
+misc.activism.progressive
+        Rich Winkel             map-request@pencil.cs.missouri.edu
+misc.answers
+        Jonathan Kamens         news-answers-request@mit.edu
+          & others
+misc.business.consulting
+        Bob Curtis              mbc-request@gate.net
+misc.business.credit
+        Rich Hill               mbc-request@creditworthy.com
+misc.business.facilitators
+        Sandor P. Schuman       grp-facl-request@cnsibm.albany.edu
+misc.business.marketing.moderated
+        John Gerits             gerits@nijenrode.nl
+misc.education.multimedia
+        James Wile              jwile@teleport.com
+misc.entrepreneurs.moderated
+        Steven Garman           sugarman@world.std.com
+misc.health.injuries.rsi.moderated
+        Jonathan Bailin         rsi@usc.edu
+misc.industry.insurance
+        Roger Smith             mii@rs32.demon.co.uk
+misc.invest.financial-plan
+        Susan Wasserman         mifp-admin@netline.net
+misc.industry.printing
+        Greg Stromberg          printing-request@printer.net
+misc.kids.info
+        Robyn Kozierok          kids-info-request@ai.mit.edu
+misc.legal.moderated
+        Larry Kolodney &        legal-request@panix.com
+          Mark Eckenwiler
+misc.news.bosnia
+        Iraj Ali,               misc-news-bosnia-request@gnu.ai.mit.edu
+          Ahmet Kirac & Asim Mughal
+misc.news.east-europe.rferl
+        ??                      rferl-daily-report-request@rferl.org
+misc.news.internet.announce
+        J.D. Falk               mnia-req@cybernothing.org
+misc.news.southasia
+        Surekha Gaddam          surekha@nyx.cs.du.edu
+misc.taxes.moderated
+        Dick Adams              rdadams@ubmail.ubalt.edu
+misc.test.moderated
+        Ian Phillipps           test-mod-request@uunet.uu.net
+misc.transport.air-industry
+        Helen Rose              air-industry-request@kei.com
+misc.transport.air-industry.cargo
+        Jim Powell,             aircargo@concentric.net
+          Martin Brennan & Michal Douglas
+news.admin.announce
+        Dave Barr,              news-admin-announce-request@math.psu.edu
+          Abby Franquemont-Guillory
+news.admin.net-abuse.announce
+        David Barr,             net-abuse-request@math.psu.edu
+        Joel Furr, Paul Phillips, &
+        Abby Franquemont-Guillory
+news.admin.net-abuse.bulletins
+        Dave Barr,              news-admin-bulletins-request@math.psu.edu
+          Paul Phillips & Joel Furr
+news.admin.net-abuse.policy
+        Scott Forbes,           nanap-req@ravenna.com
+          Tim Skirvin
+news.admin.net-abuse.sightings
+        J.D. Falk,              nanas-req@cybernothing.org
+          Tim Skirvin
+news.admin.technical
+        Scott Hazen Mueller     natech-request@uunet.uu.net
+news.announce.conferences
+        Juergen Wagner          Juergen.Wagner@iao.fhg.de
+news.announce.important
+        Mark Horton             announce@stargate.com
+news.announce.newgroups
+        Dave Lawrence           newgroups-request@uunet.uu.net
+news.announce.newusers
+        Mark Moraes             netannounce@deshaw.com
+news.answers
+        Jonathan I. Kamens      news-answers-request@mit.edu
+          & others
+news.groups.reviews
+        Michael Bauser          islander@mail.msen.com
+news.lists
+        David Lawrence          news-lists-request@uunet.uu.net
+rec.answers
+        Jonathan Kamens         news-answers-request@mit.edu
+          & others
+rec.arts.anime.creative
+        Brian Edmonds           raac-coordinator@cs.ubc.ca
+rec.arts.anime.info
+        Stephen Pearl           anime-info-request@cybercomm.net
+rec.arts.ascii
+        Dan Bertino             asciiart-request@netcom.com
+rec.arts.books.reviews
+        Steve Brock             brock@ucsub.colorado.edu
+rec.arts.comics.info
+        Jim Cowling             comics-info-request@islandnet.com
+rec.arts.disney.announce
+        Tim Pickett             rad-announce-request@yoyo.cc.monash.edu.au
+rec.arts.drwho.info
+        E. Larry Lidz           ellidz@midway.uchicago.edu
+rec.arts.erotica
+        Michael Handler         erotica-request@sub-rosa.com
+rec.arts.movies.announce
+        Colin Needham           rama-request@ibmpcug.co.uk
+rec.arts.movies.erotica
+        Jeff Knapp,             rame-request@paranoia.com
+          Imperator, Brad Williams, Peter Van Aarle &  Tim Evanson
+rec.arts.movies.reviews
+        Evelyn C. Leeper        movies-request@mtgbcs.lucent.com
+rec.arts.sf.announce
+        Scott Hazen Mueller     sf-announce-request@uunet.uu.net
+rec.arts.sf.reviews
+        Michael C. Berch,       sf-reviews@postmodern.com
+          Dan'l Danehy-Oakes, Evelyn Leeper, Wayne Throop,
+          Alan Wexelblat, & Bill Wisner
+rec.arts.sf.starwars.info
+        David Kemper            starwars-request@hacks.arizona.edu
+rec.arts.sf.tv.babylon5.info
+        Colin Roald,            b5-info-request@callisto.pas.rochester.edu
+          Dirk Loedding, David Strauss & Dan Wood
+rec.arts.sf.tv.babylon5.moderated
+        Bill Zimmer,            rastb5-request@solon.com
+          Jay Denebeim, John Pietrzak, John Schilling,
+          Michael J. King Sr., Patricia A. Swan & Teresa Lhotka
+rec.arts.startrek.info
+        Jim Griffith            trek-info-request@xcf.berkeley.edu
+rec.arts.startrek.reviews
+        Scott Forbes            forbes@mcs.com
+rec.arts.tv.mst3k.announce
+        Mike Pierce             mike@his.com
+rec.audio.high-end
+        James W. Durkin         rahe-moderator@graphics.cornell.edu
+rec.autos.sport.info
+        Tom Haapanen &
+          others                ras-info-request@metrics.com
+rec.aviation.announce
+        Geoff Peck              aviation-announce-request@peck.com
+rec.aviation.answers
+        Geoff Peck              aviation-announce-request@peck.com
+rec.aviation.questions
+        Geoff Peck              rec-aviation-questions-request@peck.com
+rec.aviation.stories
+        Geoff Peck              aviation-announce-request@peck.com
+rec.boats.marketplace
+        Bill Ward               boat-market-request@bayview.com
+rec.drugs.announce
+        Dan Morris,             rda-request@cloud9.net
+          Jani Poijdrvi
+rec.food.recipes
+        Patricia Hill, Thomas Fenske,
+            Ken Herron, Marianna Vayntrub, &
+            Russ Zaccari        recipes-request@rt66.com
+rec.food.veg.cooking
+        Steve Cogorno           cogorno@netcom.com
+rec.games.computer.doom.announce
+        Tony Lezard             doom-request@mantis.co.uk
+rec.games.computer.quake.announce
+        Tony Lezard             quake-request@mantis.co.uk
+rec.games.frp.announce
+        Coyt D. Watters         cwatters@magnus.acs.ohio-state.edu
+rec.games.frp.archives
+        Steve Mansfield         frp-archives-request@uunet.uu.net
+rec.games.mud.announce
+        Lydia Leong             rgm-announce-request@theurgy.digex.net
+rec.games.roguelike.announce
+        Aliza R. Panitz         rgra-request@bronze.lcs.mit.edu
+rec.games.trading-cards.announce
+        Alan Glover             trading-cards-request@acorn.co.uk
+rec.guns
+        Jim Purtilo             magnum@cs.umd.edu
+rec.humor.funny
+        Jim Griffith            funny-request@clarinet.com
+rec.humor.oracle
+        Steve Kinzler           oracle-admin@cs.indiana.edu
+rec.hunting
+        Chris Barnes            huntmod@tamu.edu
+rec.hunting.dogs
+        Chris Barnes            dogmod@tamu.edu
+rec.music.beatles.info
+        Maurizio Codogno,       edc@evolution.bchs.uh.edu
+          Edward S. Chen, D. L. MacLaughlan, Neal Katz & Bruce Dumes
+rec.music.beatles.moderated
+        Maurizio Codogno,       edc@evolution.bchs.uh.edu
+          Edward S. Chen, D. L. MacLaughlan, Neal Katz & Bruce Dumes
+rec.music.gaffa
+        Bill Wisner             love-hounds-request@uunet.uu.net
+rec.music.info
+        Brian Edmonds           rmi-coordinator@cs.ubc.ca
+rec.music.promotional
+        David A. Pearlman       promotional-request@vpharm.com
+rec.music.reviews
+        Al Crawford             awrc@access.digex.net
+rec.pets.dogs.info
+        Cindy Tittle Moore      rpd-info@zmall.com
+rec.photo.moderated
+        Pete Bergstrom &        bergstro@src.honeywell.com
+          Yasha Karant
+rec.radio.broadcasting
+        Bill Pfeiffer           wdp@airwaves.com
+rec.radio.info
+        David Dodell            rec-radio-info-request@stat.com
+rec.skiing.announce
+        Glen Baker              skiing-request@sr.hp.com
+rec.sport.baseball.analysis
+        Gary Huckabay           baseball-request@cic.net
+rec.sport.cricket.info
+        B. "Vicky" Vigneswaran  rsci-request@cricket.org
+rec.sport.pro-wrestling.info
+        Danny Porter            dannyp@sky.net
+rec.travel.bed+breakfast
+        J.M. Bell,              bnb-list-moderators@innsite.com
+          Stephan Spencer
+rec.travel.resorts.all-inclusive
+        Hal Segal               hsegal@worldnet.att.net
+rec.video.professional
+        Michael Silbergleid     msilber@li.net
+sci.aeronautics
+        Mary Shafer &
+            Robert Dorsett      aeronautics-admin@wilbur.pr.erau.edu
+sci.aeronautics.airliners
+        Karl Swartz             airliners-admin@chicago.com
+sci.aeronautics.simulation
+        Robert Dorsett          aero-simulation-request@wilbur.pr.erau.edu
+sci.answers
+        Jonathan Kamens         news-answers-request@mit.edu
+          & others
+sci.archaeology.moderated
+        Doug Weller,            arch-moderators@ucl.ac.uk
+          Hope Anthony, Kathy Bartsch, Philip Blair,
+          Ariane Burke, John Carr, John A. Giacobbe,
+          Gerard Alan Latham, Vince Russett, Doug Rutherford,
+          Nigel Strudwick, Adrian Tribe & Steve Whittet
+sci.astro.hubble
+        Paul A. Scowen          scowen@wfpc3.la.asu.edu
+sci.astro.research
+        Martin Sulkanen         astres-request@pecos.msfc.nasa.gov
+sci.bio.conservation
+        Preston Hardison        consreq@u.washington.edu
+sci.bio.evolution
+        Josh Hayes              josh@pogo.cqs.washington.edu
+sci.bio.phytopathology
+        Thorsten Kraska         phytopathology@mbox.ipp.uni-hannover.de
+sci.crypt.research
+        David Wagner,           crypt-request@cs.aukuni.ac.nz
+          Greg Rose, Mark Lomas, Michael Paul Johnson, & Peter Gutmann
+sci.econ.research
+        Forrest Smith           fls@walras.econ.duke.edu
+sci.finance.abstracts
+        Arnold R. Cowan         arnie@iastate.edu
+sci.math.research
+        Daniel R. Grayson       dan@math.uiuc.edu
+sci.med.aids
+        Dan Greening,           aids-request@wubios.wustl.edu
+        Phil Miller, Jack Hamilton, Jeff Rizzo & Lauren Ferguson
+sci.med.midwifery
+        Bernhard Muenzer,       midwifery-request@gsf.de
+          Cheri Van Hoover, Deirdre E.E.A. Joukes,
+          Marjorie A. Dacko, Patrick Hublou & Sabrina Cuddy
+sci.med.obgyn
+        Kelvin Tan &            obgyn-panel@sintercom.org
+          Geffrey Klein
+sci.med.orthopedics
+        Iain Dickey             bones-request@unixg.ubc.ca
+sci.military.moderated
+        Steve Bridges           req.military@daytonoh.ncr.com
+sci.nanotech
+        J. Storrs Hall (JoSH)   josh@aramis.rutgers.edu
+sci.physics.plasma
+        John McKelliget         plasmareq@woods.uml.edu
+sci.physics.research
+        John Baez, Dale Bass,   physics-research-request@ncar.ucar.edu
+          Bill Johnson, Lee Sawyer
+sci.psychology.announce
+        John M. Grohol          psy-moderator@psy.psych.nova.edu
+sci.psychology.consciousness
+        Patrick Wilken          patrickw@cs.monash.edu.au
+sci.psychology.digest
+        Stevan Harnad           psyc-request@phoenix.princeton.edu
+sci.psychology.journals.psyche
+        Patrick Wilken          patrickw@cs.monash.edu.au
+sci.psychology.journals.psycoloquy
+        Stevan Harnad           psyc@pucc.princeton.edu
+sci.psychology.research
+        John Grohol,            psy-research-request@psy.psych.nova.edu
+          George Briggs & Al Black
+sci.space.news
+        Ron Baalke              baalke@kelvin.jpl.nasa.gov
+sci.space.science
+        George William Herbert &
+          Steve Willner         gherbert@crl.com
+sci.space.tech
+        George William Herbert  gherbert@crl.com
+sci.techniques.mass-spec
+        David Bostwick          mass.spec-request@chemistry.gatech.edu
+sci.virtual-worlds
+        Toni Emerson &
+          Aaron Pulkka          scivw-request@hitl.washington.edu
+soc.adoption.adoptees
+        S. Cameron Byrd,        adoptees-req@netcom.com
+          Ruth James & Roger Smith
+soc.answers
+        Jonathan Kamens         news-answers-request@mit.edu
+          & others
+soc.atheism
+        Kenneth Almquist,       atheism-request@alumni.caltech.edu
+          Jeff Lowder & Tony Lezard
+soc.culture.basque
+        Ana-Mayte (Mendia) Coria,       mss6e@virginia.edu
+          Jose Antonio del Moral, Francisco J. Herrera,
+          Jose Luis Hernandez Marco & Maria S. Santisteban
+soc.culture.belarus
+        Peter Kasaty,           scb-request@solar.rtd.utk.edu
+          Alex Artsyukhovich, Matvey Nemenman, Irena Slage & Dmitry Zelenko
+soc.culture.estonia
+        Tanel Tammet            estonia-request@cs.chalmers.se
+soc.culture.ethiopia.moderated
+        Zewuditu Bachore,       ethiopia-admin@kes.cc.uakron.edu
+          Joe Ciuffini, Asaffa Endeshaw, Jennifer Habte,
+          Mohamed Hussein, Ouguocha Ike, Belete K. Muturo,
+          Binyam Reja & Paulos Segaro
+soc.culture.hawaii
+        Kevin Chung,            sch-contact@lava.net
+        Jesse Crawford, Susan Jaworowski,
+        Michael J. Wise & Nathan Yuen
+soc.culture.indian.info
+        Prince Kohli            scii-request@cc.gatech.edu
+soc.culture.indian.telugu
+        Ratnakar Sonthi,        scit-request@icarve2.me.wisc.edu
+          Ramana Juvvadi
+soc.culture.japan.moderated
+        Shimpei Yamashita,      scjmmod@eyrie.org
+          Mike Fester, Akira Ijuin, Chuck Douglas, Jeff Friedl &
+          Scott Reynolds
+soc.culture.jewish.holocaust
+        Danial Aldrich,         shoahmod@veritas.nizkor.org
+          Rick Horowitz & Bob Michael
+soc.culture.jewish.parenting
+        Andrea Herrera,         scjp-board@ai.mit.edu
+          Gail Karlovsky, Layne Murphy, Marjorie Peskin, Jo Pitesky,
+          Michael Rand, Shari Rifas, Nina Salkin, Sherri Shulman,
+          Steve Weintraub, Tom Alpert, Daniel Faigin,
+          Amy Uhrbach Harwood, Robyn Kozierok, & Connie Stillinger
+soc.culture.kuwait.moderated
+        Ammar T. Al-Saegh,      ammar-request@kuwait.net
+          John W. Temples & Anwar Mohammed
+soc.culture.pakistan.education
+        Moin Ansari,            scpe-admin@gnu.ai.mit.edu
+          Sohail Qureshi & Mariam Ispahani
+soc.culture.pakistan.history
+        Moin Ansari,            scph-admin@gnu.ai.mit.edu
+          Sohail Qureshi & Mariam Ispahani
+soc.culture.pakistan.moderated
+        Moin Ansari,            scpm-admin@gnu.ai.mit.edu
+          Sohail Qureshi & Mariam Ispahani
+soc.culture.russian.moderated
+        Igor Chudov,            scrm-board@algebra.com
+          Eduard Ponarin, Sergei Senin, Vladimir Smirnov,
+          Larisa Streeter, Eugene Zherebilov & Constatin Zhikharev
+soc.culture.singapore.moderated
+        Kelvin Tan,             panel@sintercom.org
+          Tan Chong Kee, Wynthia Goh, Harish Pillay, Edmund Chia &
+          Alvin Jiang
+soc.feminism
+        Cindy Tittle Moore,     feminism-request@ncar.ucar.edu
+          Fazia Begum Rizvi, Sally Nordquist, & Paul Wallich
+soc.genealogy.african
+        Saundra Brown,          soc-genealogy-african-request@rootsweb.com
+          Michael Emery
+soc.genealogy.jewish
+        Susan King              sgjewish-req@trace.cgsg.com
+soc.genealogy.methods
+        Brian Leverich &        soc-genealogy-methods-request@rootsweb.com
+          Alicia Towster
+soc.genealogy.surnames
+        Bill Mills &            surnames-admin@rootsweb.com
+          Tim Pierce
+soc.history.african.biafra
+        Patience Akpan,         biafra-mod@mcfeeley.cc.utexas.edu
+          Akobuije Chijioke, Alexander Dan'Iyan,
+          Tochi Omenukor & Alexander Ukoh
+soc.history.moderated
+        A Cast of Dozens        history-mod@www.ee.washington.edu
+soc.history.war.us-civil-war
+        Mike Furlan,            cw-mod@tao.agoron.com
+        Lynn Berkowitz, Barbara Obrien, James F. Epperson,
+        Mike Marshall, Andrew Mcmichael, & Gary Charbonneau
+soc.history.war.vietnam
+        John R. Tegtmeier,      vietnam-request@panix.com
+          Richard Rohde & Brian Ross
+soc.history.war.world-war-ii
+        Kenneth Bullock,        ww2-mod@acpub.duke.edu
+          John Davis, Brett Kottmann, Andrew McMichael,
+          Richard Miller, Asim Mughal, Stephen Graham & Dave S.
+soc.politics
+        Charles McGrew          poli-sci-request@rutgers.edu
+soc.politics.arms-d
+        Rob Gross               gross@bcvms.bc.edu
+soc.politics.marxism
+        Per I Mathisen &        marxism-request@stud.unit.no
+          the facilitator board
+soc.religion.bahai
+        Dick Detweiler &
+          Pete Hellmann         srb-request@bcca.org
+soc.religion.christian
+        Charles Hedrick         christian-request@aramis.rutgers.edu
+soc.religion.christian.bible-study
+        Steve Adams             bible-request@spss.com
+soc.religion.christian.youth-work
+        Cameron Byrd            youth-work-req@netcom.com
+soc.religion.eastern
+        Aaron Nabil &           tt@wag.caltech.edu
+          Toshi Takeuchi
+soc.religion.gnosis
+        Dean Edwards &           srg-request@alumni.caltech.edu
+          Iraj Mughal
+soc.religion.hindu
+        Ajay Shah               srhreq@rbhatnagar.ececs.uc.edu
+soc.religion.islam
+        Catherine Hampton,      religion-islam-request@telerama.lm.com
+          Ahmad Hashem & Benham Sadeghi
+soc.religion.mormon
+        David Bowie (LDS),      srm-admin@srm.npl.com
+          Roger Denison (LDS), Barb Gaynor (Jewish),
+          Diana Newman (LDS) &
+          Richard Schroeder (non-denominational Christian)
+soc.religion.paganism
+        Donal                   srp-admin@brewich.com
+soc.religion.shamanism
+        Dean Edwards &           srs-request@alumni.caltech.edu
+          Iraj Mughal
+soc.religion.sikhism
+        Sandeep Singh Brar,     sikh-mod@acpub.duke.edu
+        Kanwalroop Kaur Dhanda, Manjit Singh,
+        Inderpal Singh & Harpinder Singh Madan
+soc.religion.unitarian-univ
+        Lance A. Brown,         uu-request@iecc.com
+          Greg Woodbury, Justin B. Alcorn,
+          Harley Stenzel & John Levine
+soc.religion.vaishnava
+        Mani Varadarajan,       srv-request@atlantis.mae.cornell.edu
+          Henry Groover
+soc.singles.moderated
+        E. Evans,               soc-singles-mod-request@evolution.com
+          D. Parsons
+soc.support.loneliness
+        Jay Dyson,              ssl-requests@netsoc.org.nz
+          Simon Lyall & Logan
+soc.support.youth.gay-lesbian-bi
+        Nick Fitch,             glb-youth-request@ucsd.edu
+          Mary Louise Gray, Jane Patterson & Rod Swift
+soc.women.lesbian-and-bi
+        Ayana Craven,           swlab-request@casti.com
+          Amy McShane & Stephanie Smith
+talk.answers
+        Jonathan Kamens         news-answers-request@mit.edu
+          & others
+alt.answers
+        Jonathan Kamens         news-answers-request@mit.edu
+          & others
+alt.atheism.moderated
+        Brett G. Lemoine        aam-request@atheist.tamu.edu
+alt.binaries.pictures.crafts
+        George Walters &        craftpic-request@super.zippo.com
+          Jeanne Kent
+alt.binaries.pictures.fine-art.d
+        Laurence Leff           mflll@uxa.ecn.bgu.edu
+alt.binaries.pictures.fine-art.graphics
+        Laurence Leff           mflll@uxa.ecn.bgu.edu
+alt.binaries.pictures.fine-art.digitized
+        Laurence Leff           mflll@uxa.ecn.bgu.edu
+alt.college.fraternities.zeta-psi
+        Dan King                lildan@phoenix.net
+alt.conspiracy.jfk.moderated
+        Robert Harris           rharris@thuntek.net
+alt.health.cfids-action
+        Roger Burns             cfids-l-request@american.edu
+alt.gourmand
+        Brian Reid              recipes-request@decwrl.dec.com
+alt.usenet.manifestoes
+        E. Stephen Mack         manifesto-request@emf.net
+bionet.announce
+        Dave Kristofferson      bionews@net.bio.net
+bionet.biology.computational
+        Phil Curtiss            comp-bio-moderator@net.bio.net
+bionet.biology.deepsea
+        Andrew Grant McArthur   deepsea-moderator@net.bio.net
+bionet.biology.symbiosis
+        James F. White, Jr.     symbios-moderator@net.bio.net
+bionet.biology.vectors
+        Dennis Knudson          vect-bio-moderator@net.bio.net
+bionet.cellbiol.insulin
+        T.S. Pillay             tpillay@ucsd.edu
+bionet.chlamydomonas
+        Elizabeth Harris        chlamy-moderator@net.bio.net
+bionet.diagnostics
+        Kevin O'Donnell &       diagnost-moderator@net.bio.net
+          Roger Burns
+bionet.ecology.physiology
+        Martyn M. Caldwell      ecophys-moderator@net.bio.net
+bionet.emf-bio
+        Allan H. Frey           emf-bio-moderator@net.bio.net
+bionet.genome.autosequencing
+        David Cain              autoseq-moderator@net.bio.net
+bionet.jobs.offered
+        David Kristofferson     employment-moderator@net.bio.net
+bionet.journals.contents
+        Dave Kristofferson      bio-journals@net.bio.net
+bionet.journals.letters.biotechniques
+        Mary McCarthy           biotechniques-moderator@net.bio.net
+bionet.journals.letters.tibs
+        Jo McEntyre &           tibs-moderator@net.bio.net
+          David Kristofferson
+bionet.molbio.genbank.updates
+        Dave Mack               gb-updates@net.bio.net
+bionet.molbio.genome-program
+        Betty Mansfield         gnome-pr-moderator@net.bio.net
+bionet.molbio.molluscs
+        Elizabeth Grace Boulding
+                                molluscs-moderator@net.bio.net
+bionet.molecules.free-radicals
+        Javier J. Zulueta,      freerad-moderator@net.bio.net
+          Kevin Clancy & Neil Hogg
+bionet.organisms.urodeles
+        Susan Duhon             urodeles-moderator@net.bio.net
+bionet.photosynthesis
+        Larry Orr               photosyn-moderator@net.bio.net
+bionet.plants.signaltransduc
+        Bratislav Stankovic     plsignal-moderator@net.bio.net
+bionet.prof-society.afcr
+        Jon T. Schafer          afcr-moderator@net.bio.net
+bionet.prof-society.aibs
+        Rebecca Chasan          aibs-moderator@net.bio.net
+bionet.prof-society.ascb
+        Vincent Shan            moderator@faseb.org
+bionet.prof-society.biophysics
+        Carol Gross             bphyssoc-moderator@net.bio.net
+bionet.prof-society.csm
+        Max Firtel &            csm@nrcbsa.bio.nrc.ca
+          John Nash
+bionet.prof-society.faseb
+        Vincent Shan            moderator@faseb.org
+bionet.prof-society.navbo
+        Valeri Kolpakov         navbo-moderator@net.bio.net
+bionet.sci-resources
+        Dave Kristofferson      science-resources@net.bio.net
+bionet.software.sources
+        Rob Harper              software-sources@net.bio.net
+bionet.software.www
+        Reinhard Doelz          bio-www@comp.bioz.unibas.ch
+bionet.virology
+        Marnix L. Bosch,        bionet-virology@net.bio.net
+            Brett Lindenbach & Thomas Pfitzner
+bit.lang.neder-l
+        Ben Salemans            u216013@hnykun11.urc.kun.nl
+bit.listproc.stockphoto
+        Joel Day                sdayj@cc.curtin.edu.au
+bit.listserv.2000-l
+        Jay Gary                talk2000@rmii.com
+bit.listserv.aera
+        Gene V. Glass           glass@asu.edu
+bit.listserv.albanian
+        Mentor Cana             canosk83@npeeserv.eelab.newpaltz.edu
+bit.listserv.apar-l
+        Jim Drzymala            drzymala@ubvm.cc.buffalo.edu
+bit.listserv.arlis-l
+        Mary Molinaro           molinaro@pop.uky.edu
+bit.listserv.ashe-l
+        Carl Reimann            reimann@access.digex.net
+bit.listserv.basque-l
+        Marta-Lourdes Llano     egmbh@cunyvm.cuny.edu
+bit.listserv.berita
+        Ian Chai                chai@uiuc.edu
+bit.listserv.berita.d
+        Faruq abd ul-Rafi       faruq@uxa.cso.uiuc.edu
+bit.listserv.bgrass-l
+        Frank Godbey            uka016@ukcc.uky.edu
+bit.listserv.biomch-l
+        Arthur D. Kuo           artkuo@umich.edu
+bit.listserv.bitnews
+        Jim Conklin             conklin@bitnic.cren.net
+bit.listserv.blindnws
+        Bill McGarry            wtm@bunker.shel.isc-br.com
+bit.listserv.blues-l
+        David Pimmel            pimmel@cs.wisc.edu
+bit.listserv.bosnet
+        Nermin Zukic            ZukicN@wu2.wl.aecl.ca
+bit.listserv.catholic
+        Cindy Smith             cms@dragon.com
+bit.listserv.celiac
+        Michael Jones           mjones@digital.net
+bit.listserv.cfs.newsletter
+        Roger Burns             rburns@cap.gwu.edu
+bit.listserv.christia
+        Mark Drake              drake@asuchm.la.asu.edu
+bit.listserv.clayart
+        Mary Molinaro           molinaro@pop.uky.edu
+bit.listserv.cloaks-daggers
+        Rudolf Kies             76046.1730@compuserve.com
+bit.listserv.croatia
+        Vladimir Vuksan         vuksan@unm.edu
+bit.listserv.cumrec-l
+        Joe Moore               moorej@cc.sdstate.edu
+bit.listserv.devmedia
+        Moderator               drichard@uoguelph.ca
+bit.listserv.dorothyl
+        Diane K. Kovacs         diane@diaspar.kovacs.com
+bit.listserv.e-europe
+        James W. Reese          r505040@univscvm.csd.scarolina.edu
+bit.listserv.edpolyan
+        Gene V. Glass           glass@asu.edu
+bit.listserv.edtech
+        EDTECH Moderator        21765edt@msu.edu
+bit.listserv.fire-l
+        Gil Emery               gil@nh.destek.net
+bit.listserv.free-l
+        Anne P. Mitchell        shedevil@vix.com
+bit.listserv.freemasonry
+        Ron Boutwell            ron.boutwell@indy.com
+bit.listserv.gaynet
+        Roger B.A. Klorese      gaynet-request@queernet.org
+bit.listserv.graph-ti
+        Jeff Crump              jcrump@ti.com
+bit.listserv.gutnberg
+        Michael S. Hart         hart@vmd.cso.uiuc.edu
+bit.listserv.hellas
+        Spyros D. A. Antoniou   sda106@psuvm.psu.edu
+bit.listserv.hrvatska
+        Vladimir Vuksan         vuksan@unm.edu
+bit.listserv.humage-l
+        Jim Emmons              jemmons@huachuca-emh8.army.mil
+bit.listserv.hytel-l
+        Peter Scott             pscott@library.berkeley.edu
+bit.listserv.imagelib
+        Stuart Glogoff          sglogoff@library.arizona.edu
+bit.listserv.ipct-l
+        Zane Berge              berge@guvax.georgetown.edu
+bit.listserv.japan
+        James W. Reese          r505040@univscvm.csd.scarolina.edu
+bit.listserv.l-hcap
+        Bill McGarry            wtm@bunker.shel.isc-br.com
+bit.listserv.labmgr
+        Mary Molinaro           molinaro@pop.uky.edu
+bit.listserv.libref-l
+        Kara Robinson           krobinso@kentvm.kent.edu
+bit.listserv.libres
+        Diane Kovacs            dkovacs@kentvm.kent.edu
+bit.listserv.lsoft-announce
+        Eric Thomas             eric@searn.sunet.se
+bit.listserv.makedon
+        Sasha Konechni          skonechn@isosa2.estec.esa.nl
+bit.listserv.mdphd-l
+        Jim Marco               doc@uiuc.edu
+bit.listserv.medforum
+        Jim Marco               doc@uiuc.edu
+bit.listserv.mednews
+        David Dodell            david@stat.com
+bit.listserv.muslims
+        Asim Mughal             mughal@alumni.caltech.edu
+bit.listserv.netnws-l
+        Marty Hoag              nu021172@vm1.nodak.edu
+bit.listserv.nettrain
+        Jim Milles              millesjg@sluvca.slu.edu
+bit.listserv.new-list
+        Marty Hoag              info@vm1.nodak.edu
+bit.listserv.novell
+        Glenn A. Malling        gmalling@dormouse.syr.edu
+bit.listserv.pacs-l
+        Charles Bailey          libpacs@uhupvm1.uh.edu
+bit.listserv.pakistan
+        Asim Mughal             mughal@alumni.caltech.edu
+bit.listserv.pchealth
+        Ballew Kinnaman         kinnaman@immune.com
+bit.listserv.pns-l
+        Asim Mughal             mughal@alumni.caltech.edu
+bit.listserv.politics
+        Gary W. Olson           swede@drycas.club.cc.cmu.edu
+bit.listserv.power-l
+        Marty Hoag              nu021172@vm1.nodak.edu
+bit.listserv.psycgrad
+        Matthew Simpson         msimpson@netcom.com
+bit.listserv.quaker-p
+        Bruce Dienes            bdienes@s.psych.uiuc.edu
+bit.listserv.quality
+        James W. Reese          r505040@univscvm.csd.scarolina.edu
+bit.listserv.radio-l
+        Ron Stone               ston0030@gold.tc.umn.edu
+bit.listserv.railroad
+        Geert K. Marien         geert@panix.com
+bit.listserv.rra-l
+        Leslie Haas             krobinso@kentvm.kent.edu
+bit.listserv.screen-l
+        Jeremy Butler           jbutler@ua1vm.ua.edu
+bit.listserv.scuba-l
+        Nick Simicich           njs@scifi.maid.com
+bit.listserv.skeptic
+        Taner Edis              edis@eta.pha.jhu.edu
+bit.listserv.slart-l
+        Anthea Tillyer          abthc@cunyvm.cuny.edu
+bit.listserv.superguy
+        Tad Simmons             simmons@ucf1vm.cc.ucf.edu
+bit.listserv.tbi-support
+        Len Burns               lburns@cruzio.com
+bit.listserv.tesl-l
+        Anthea Tillyer          abthc@cunyvm.cuny.edu
+bit.software.international
+        Jeff Bowyer             jbowyer@cis.vutbr.cs
+gnu.*
+        Leonard H. Tower Jr.    info-gnu-request@prep.ai.mit.edu
+ieee.tcos
+        Richard Golding         tcos-request@cse.ucsc.edu
+resif.oracle
+        Christophe Wolfhugel    oracle@grasp1.univ-lyon1.fr
+vmsnet.announce
+        Charles T. Smith, Jr.   vmsnet-announce-request@dragon.com
+vmsnet.announce.newusers
+        Charles T. Smith, Jr.   vmsnet-announce-request@dragon.com
+vmsnet.decus.journal
+        Sharon Frey             dsjournal-qrys@eisner.decus.org
+vmsnet.employment
+        Ehud Gavron             vmsnet-employment-request@aces.com
+vmsnet.sources
+        Mark Berryman           vmsnet-sources-request@mvb.saic.com
+
+------------------------------------------------------------------
+Group                           Submissions
+:-----------------------------------------------------------------
+comp.ai.jair.announce           jair-announce@ptolemy.arc.nasa.gov
+comp.ai.jair.papers             jair-papers@ptolemy.arc.nasa.gov
+comp.ai.nlang-know-rep          nl-kr@ai.sunnyside.com
+comp.ai.shells                  mod-bounce.not-moderated@uunet.uu.net
+comp.ai.vision                  vision-list@teleos.com
+comp.answers                    news-answers@mit.edu
+comp.archives                   comp-archives@yggdrasil.com
+comp.archives.ms-windows.announce       win-news-request@simtel.net
+comp.archives.msdos.announce    ms-news-request@simtel.net
+comp.binaries.acorn             cba@bridge.wn.planet.gen.nz
+comp.binaries.amiga             amiga@uunet.uu.net
+comp.binaries.atari.st          mod-bounce.comp-binaries-atari-st@uunet.uu.net
+comp.binaries.cbm               cbm-binaries@bayview.com
+comp.binaries.geos              comp-binaries-geos@pilot.njin.net
+comp.binaries.ibm.pc            cbip-submit@vms.csd.mu.edu
+comp.binaries.mac               bytebug@uunet.uu.net
+comp.binaries.ms-windows        cbmsw@saigon.com
+comp.binaries.newton            newton-submissions@farallon.com
+comp.binaries.os2               os2_ann_req@bix.com
+comp.binaries.psion             psion-binaries@it.dtu.dk
+comp.bugs.4bsd.ucb-fixes        ucb-fixes@okeeffe.berkeley.edu
+comp.compilers                  compilers@iecc.com
+comp.compression.research       compression@cs.aukuni.ac.nz
+comp.dcom.telecom               ptownson@massis.lcs.mit.edu
+comp.doc                        mod-bounce.comp-doc@uunet.uu.net
+comp.doc.techreports            compdoc-techreports@ftp.cse.ucsc.edu
+comp.emulators.announce         emulators@qualcomm.com
+comp.home.misc                  comp_home@axp.psl.ku.dk
+comp.infosystems.announce       infosys@msu.edu
+comp.infosystems.kiosks         kiosk@kinetic.com
+comp.infosystems.www.announce   www-announce@boutell.com
+comp.infosystems.www.authoring.cgi      authoring-cgi@boutell.com
+comp.internet.library           library@synap.neuro.sfc.keio.ac.jp
+comp.internet.net-happenings    net-happenings@lists.internic.net
+comp.lang.basic.visual.announce vbasic-submit@cc.umanitoba.ca
+comp.lang.c.moderated           clc@solutions.solon.com
+comp.lang.c++.moderated         c++-submit@netlab.cs.rpi.edu
+comp.lang.java.announce         java-mod@relog.ch
+comp.lang.ml                    comp-lang-ml@cs.cmu.edu
+comp.lang.pascal.delphi.announce        clpda@gelemna.ft-wayne.in.us
+comp.lang.perl.announce         clpa@perl.com
+comp.lang.sigplan               sigplan@watson.ibm.com
+comp.lang.tcl.announce          tcl-announce@mitchell.org
+comp.lang.visual                visual@morgan.com
+comp.laser-printers             laser-lovers@bush.cs.tamu.edu
+comp.mail.elm                   mod-bounce.not-moderated@uunet.uu.net
+comp.mail.maps                  uucpmap@rutgers.edu
+comp.music.research             mus-res@maths.bath.ac.uk
+comp.networks.noctools.announce noctools-request@merit.edu
+comp.networks.noctools.tools    noctools-request@merit.edu
+comp.newprod                    newprod@uunet.uu.net
+comp.org.cpsr.announce          cpsr-announce@cpsr.org
+comp.org.eff.news               effnews@eff.org
+comp.org.fidonet                pozar@hop.toad.com
+comp.org.team-os2               comp.org.team-os2@teamos2.org
+comp.os.linux.announce          linux-announce@news.ornl.gov
+comp.os.linux.answers           linux-answers@news.ornl.gov
+comp.os.ms-windows.announce     win-announce@metrics.com
+comp.os.ms-windows.nt.announce  nt-announce@metrics.com
+comp.os.netware.announce        cona@stacken.kth.se
+comp.os.os2.announce            os2_ann_req@bix.com
+comp.os.os2.moderated           coom@ideafarm.com
+comp.os.os9                     mod-bounce.not-moderated@uunet.uu.net
+comp.os.plan9                   plan9mod@bath.ac.uk
+comp.os.research                osr@ftp.cse.ucsc.edu
+comp.parallel                   pkld@oak.grove.iup.edu
+comp.patents                    patents@cs.su.oz.au
+comp.protocols.dns.bind         comp-protocols-dns-bind@vix.com
+comp.protocols.dns.ops          comp-protocols-dns-ops@vix.com
+comp.protocols.dns.std          comp-protocols-dns-std@vix.com
+comp.protocols.iso.x400         mod-bounce.not-moderated@uunet.uu.net
+comp.protocols.kermit.announce  info-kermit@watsun.cc.columbia.edu
+comp.research.japan             japan@cs.arizona.edu
+comp.risks                      risks@csl.sri.com
+comp.robotics.research          crr@robot.ireq.ca
+comp.security.pgp.announce              pgp-announce-submit@news.pgp.net
+comp.simulation                 krishna@kural.uncg.edu
+comp.society                    socicom@auvm.american.edu
+comp.society.cu-digest          tk0jut2@mvs.cso.niu.edu
+comp.society.folklore           enf1@midway.uchicago.edu
+comp.society.privacy            comp-privacy@uwm.edu
+comp.soft-sys.math.mathematica  mathgroup@smc.vnet.net
+comp.sources.3b1                mod-bounce.comp-sources-3b1@uunet.uu.net
+comp.sources.acorn              csa@bridge.wn.planet.gen.nz
+comp.sources.amiga              amiga@uunet.uu.net
+comp.sources.apple2             jac@paul.rutgers.edu
+comp.sources.atari.st           mod-bounce.comp-sources-atari-st@uunet.uu.net
+comp.sources.delphi             csd@gelemna.ft-wayne.in.us
+comp.sources.games              games@saab.cna.tek.com
+comp.sources.hp48               hp48@acm.rpi.edu
+comp.sources.mac                bytebug@uunet.uu.net
+comp.sources.misc               sources-misc@uunet.uu.net
+comp.sources.postscript         postscript@cc.purdue.edu
+comp.sources.reviewed           comp-sources-reviewed@sterling.com
+comp.sources.sun                sun-sources@aramis.rutgers.edu
+comp.sources.unix               unix-sources-moderator@vix.com
+comp.sources.x                  chris@sterling.com
+comp.std.announce               klensin@infoods.mit.edu
+comp.std.c                      mod-bounce.not-moderated@uunet.uu.net
+comp.std.c++                    std-c++@ncar.ucar.edu
+comp.std.lisp                   lisp-standards@cs.rochester.edu
+comp.std.misc                   mod-bounce.not-moderated@uunet.uu.net
+comp.std.mumps                  mod-bounce.comp-std-mumps@uunet.uu.net
+comp.std.unix                   std-unix@uunet.uu.net
+comp.std.wireless               std-mod@wes.mot.com
+comp.sys.acorn.announce         csaa@acorn.co.uk
+comp.sys.amiga.announce         announce@cs.ucdavis.edu
+comp.sys.amiga.reviews          amiga-reviews-submissions@math.uh.edu
+comp.sys.atari.announce         atari-announce@lexicor.com
+comp.sys.concurrent             concurrent@bdcsys.suvl.ca.us
+comp.sys.ibm.pc.digest          info-ibmpc@arl.mil
+comp.sys.ibm.pc.games.announce  csipga@vt.edu
+comp.sys.m68k.pc                info-68k@ucbvax.berkeley.edu
+comp.sys.mac.announce           csma@hipark.austin.isd.tenet.edu
+comp.sys.mac.digest             info-mac@sumex-aim.stanford.edu
+comp.sys.mac.games.announce     csmga@csus.edu
+comp.sys.mac.programmer.info    csmp_info@xplain.com
+comp.sys.newton.announce        newton-announce@umich.edu
+comp.sys.next.announce          next-announce@digifix.com
+comp.sys.psion.announce         psion@acm.org
+comp.sys.psion.reviews          psion@acm.org
+comp.sys.sequent                mod-bounce.not-moderated@uunet.uu.net
+comp.sys.sgi.announce           sgi-announce@ornl.gov
+comp.sys.sun.announce           css-announce@uunet.uu.net
+comp.text.desktop               mod-bounce.not-moderated@uunet.uu.net
+comp.theory.info-retrieval      retrieve@sofya.math.byu.edu
+comp.unix.bsd.386bsd.announce   386bsd-announce@kfdata.no
+comp.unix.bsd.bsdi.announce     bsdi-info@metrics.com
+comp.unix.bsd.freebsd.announce  jkh@freefall.cdrom.com
+comp.unix.bsd.netbsd.announce   netbsd-announce-newsgroup@mail.netbsd.org
+comp.unix.sco.announce          scoannmod@xenitec.on.ca
+comp.unix.ultrix                mod-bounce.not-moderated@uunet.uu.net
+comp.unix.unixware.announce     cuua@telly.org
+comp.unix.wizards               wizmod@math.psu.edu
+comp.virus                      virus-l@lehigh.edu
+comp.windows.news               cwn-submissions@phoenix.volant.org
+comp.windows.x.announce         xannounce@x.org
+humanities.answers              news-answers@mit.edu
+humanities.philosophy.objectivism       tskirvin+hpo@math.uiuc.edu
+misc.activism.militia           militia-submission@atype.com
+misc.activism.progressive       map@pencil.cs.missouri.edu
+misc.answers                    news-answers@mit.edu
+misc.business.consulting        mbc@gate.net
+misc.business.credit            mbc@creditworthy.com
+misc.business.facilitators      grp-facl@cnsibm.albany.edu
+misc.business.marketing.moderated       mbmm@nijenrode.nl
+misc.education.multimedia       jwile@teleport.com
+misc.entrepreneurs.moderated    miscentr@world.std.com
+misc.handicap                   mod-bounce.misc-handicap@uunet.uu.net
+misc.health.injuries.rsi.moderated      rsi@usc.edu
+misc.industry.insurance         mii@rs32.demon.co.uk
+misc.invest.financial-plan      mifp-submit@netline.net
+misc.industry.printing          printing@printer.net
+misc.kids.info                  kids-info@ai.mit.edu
+misc.legal.moderated            legal@panix.com
+misc.news.bosnia                misc-news-bosnia@gnu.ai.mit.edu
+misc.news.east-europe.rferl     rferl-daily-report-request@rferl.org
+misc.news.internet.announce     mnia-sub@cybernothing.org
+misc.news.southasia             surekha@nyx.cs.du.edu
+misc.security                   mod-bounce.misc-security@uunet.uu.net
+misc.taxes.moderated            rdadams@digex.net
+misc.test.moderated             test-mod@uunet.uu.net
+misc.transport.air-industry     air-industry@kei.com
+misc.transport.air-industry.cargo       mtaic@concentric.net
+news.admin.announce             news-admin-announce@math.psu.edu
+news.admin.policy               mod-bounce.news-admin-policy@uunet.uu.net
+news.admin.net-abuse.announce   net-abuse@math.psu.edu
+news.admin.net-abuse.bulletins  news-admin-bulletins@math.psu.edu
+news.admin.net-abuse.policy     nanap-sub@ravenna.com
+news.admin.net-abuse.sightings  nanas-sub@cybernothing.org
+news.admin.technical            natech@uunet.uu.net
+news.announce.conferences       conferences@iao.fhg.de
+news.announce.important         announce@stargate.com
+news.announce.newgroups         newgroups@uunet.uu.net
+news.announce.newusers          netannounce@deshaw.com
+news.answers                    news-answers@mit.edu
+news.groups.reviews             grouprev@msen.com
+news.lists                      news-lists-request@uunet.uu.net
+news.lists.ps-maps              mod-bounce.news-lists-ps-maps@uunet.uu.net
+rec.answers                     news-answers@mit.edu
+rec.arts.anime.creative         rec-arts-anime-creative@cs.ubc.ca
+rec.arts.anime.info             anime-info@cybercomm.net
+rec.arts.anime.stories          mod-bounce.rec-arts-anime-stories@uunet.uu.net
+rec.arts.ascii                  asciiart@netcom.com
+rec.arts.books.reviews          book-reviews@news.colorado.edu
+rec.arts.cinema                 mod-bounce.rec-arts-cinema@uunet.uu.net
+rec.arts.comics.info            comics-info@islandnet.com
+rec.arts.disney.announce        rad-announce@yoyo.cc.monash.edu.au
+rec.arts.drwho.info             console@tardis.uchicago.edu
+rec.arts.erotica                erotica@sub-rosa.com
+rec.arts.movies.announce        rama@ibmpcug.co.uk
+rec.arts.movies.erotica         rame@paranoia.com
+rec.arts.movies.reviews         movies@mtgbcs.lucent.com
+rec.arts.sf.announce            sf-announce@uunet.uu.net
+rec.arts.sf.reviews             sf-reviews@postmodern.com
+rec.arts.sf.starwars.info       starwars@hacks.arizona.edu
+rec.arts.sf.tv.babylon5.info    b5-info@callisto.pas.rochester.edu
+rec.arts.sf.tv.babylon5.moderated       rastb5@solon.com
+rec.arts.startrek.info          trek-info@xcf.berkeley.edu
+rec.arts.startrek.reviews       trek-reviews@mcs.com
+rec.arts.tv.mst3k.announce      mike@his.com
+rec.audio.high-end              rahe-usenet@graphics.cornell.edu
+rec.autos.sport.info            ras-info@metrics.com
+rec.aviation.announce           aviation-announce@peck.com
+rec.aviation.answers            aviation-answers@peck.com
+rec.aviation.questions          rec-aviation-questions@peck.com
+rec.aviation.stories            aviation-stories@peck.com
+rec.boats.marketplace           boat-market@bayview.com
+rec.drugs.announce              rda@cloud9.net
+rec.food.recipes                recipes@rt66.com
+rec.food.veg.cooking            rfvc-mod@utcc.utoronto.ca
+rec.games.computer.doom.announce        doom@mantis.co.uk
+rec.games.computer.quake.announce       quake@mantis.co.uk
+rec.games.cyber                 mod-bounce.rec-games-cyber@uunet.uu.net
+rec.games.frp.announce          rg-frp-announce@magnus.acs.ohio-state.edu
+rec.games.frp.archives          frp-archives@uunet.uu.net
+rec.games.mud.announce          rgm-announce@theurgy.digex.net
+rec.games.roguelike.announce    rgra@bronze.lcs.mit.edu
+rec.games.trading-cards.announce        trading-cards@acorn.co.uk
+rec.guns                        gun-control@cs.umd.edu
+rec.humor.funny                 funny@clarinet.com
+rec.humor.oracle                oracle-mod@cs.indiana.edu
+rec.hunting                     hunting@tamu.edu
+rec.hunting.dogs                gundog-l@tamu.edu
+rec.mag.fsfnet                  mod-bounce.rec-mag-fsfnet@uunet.uu.net
+rec.music.beatles.info          rmb-info@seltaeb.ghgcorp.com
+rec.music.beatles.moderated     rmb-moderated@seltaeb.ghgcorp.com
+rec.music.gaffa                 love-hounds@uunet.uu.net
+rec.music.info                  rec-music-info@cs.ubc.ca
+rec.music.promotional           promotional@vpharm.com
+rec.music.reviews               reviews@access.digex.net
+rec.pets.dogs.info              rpd-info@zmall.com
+rec.photo.moderated             bergstro@src.honeywell.com
+rec.radio.broadcasting          articles@airwaves.com
+rec.radio.info                  rec-radio-info@stat.com
+rec.skiing.announce             skiing@sr.hp.com
+rec.sport.baseball.analysis     baseball@cic.net
+rec.sport.cricket.info          rsci@cricket.org
+rec.sport.cricket.scores        mod-bounce.rec-sport-cricket-scores@uunet.uu.net
+rec.sport.pro-wrestling.info    dannyp@sky.net
+rec.travel.bed+breakfast        bnb-list@innsite.com
+rec.travel.resorts.all-inclusive        hsegal@worldnet.att.net
+rec.video.professional          msilber@li.net
+sci.aeronautics                 aeronautics@wilbur.pr.erau.edu
+sci.aeronautics.airliners       airliners@chicago.com
+sci.aeronautics.simulation      aero-simulation@wilbur.pr.erau.edu
+sci.answers                     news-answers@mit.edu
+sci.archaeology.moderated       sci-archaeology-moderated@mccomb.vip.best.com
+sci.astro.hubble                sah@wfpc3.la.asu.edu
+sci.astro.research              astres@pecos.msfc.nasa.gov
+sci.crypt.research              crypt-submission@cs.aukuni.ac.nz
+sci.bio.conservation            conssub@u.washington.edu
+sci.bio.evolution               evolution@pogo.cqs.washington.edu
+sci.bio.phytopathology          phytopathology@mbox.ipp.uni-hannover.de
+sci.econ.research               ser@walras.econ.duke.edu
+sci.finance.abstracts           finabs@iastate.edu
+sci.math.research               sci-math-research@uiuc.edu
+sci.med.aids                    aids@wubios.wustl.edu
+sci.med.midwifery               midwifery@gsf.de
+sci.med.obgyn                   obgyn@sintercom.org
+sci.med.orthopedics             bones@unixg.ubc.ca
+sci.military                    mod-bounce.sci-military@uunet.uu.net
+sci.military.moderated          sci.military@daytonoh.ncr.com
+sci.nanotech                    nanotech@aramis.rutgers.edu
+sci.physics.plasma              plasma@woods.uml.edu
+sci.physics.research            physics-research@ncar.ucar.edu
+sci.psychology.announce         psy-announce@psy.psych.nova.edu
+sci.psychology.consciousness    psyche-d@iris.rfmh.org
+sci.psychology.digest           mod-bounce.sci-psychology-digest@uunet.uu.net
+sci.psychology.journals.psyche  psyche-l@iris.rfmh.org
+sci.psychology.journals.psycoloquy      psyc@pucc.princeton.edu
+sci.psychology.research         psy-research@psy.psych.nova.edu
+sci.space.news                  sci-space-news@yerevan.jpl.nasa.gov
+sci.space.science               gherbert@crl.com
+sci.space.tech                  gherbert@crl.com
+sci.techniques.mass-spec        mass.spec@gatech.edu
+sci.virtual-worlds              scivw@hitl.washington.edu
+sci.virtual-worlds.apps         mod-bounce.sci-virtual-worlds-apps@uunet.uu.net
+soc.adoption.adoptees           adoptees@netcom.com
+soc.answers                     news-answers@mit.edu
+soc.atheism                     atheism@alumni.caltech.edu
+soc.culture.basque              basque@virginia.edu
+soc.culture.belarus             scb@solar.rtd.utk.edu
+soc.culture.estonia             estonia@cs.chalmers.se
+soc.culture.ethiopia.moderated  ethiopia@uakron.edu
+soc.culture.hawaii              sch@lava.net
+soc.culture.indian.info         scii@cc.gatech.edu
+soc.culture.indian.telugu       scit@icarve2.me.wisc.edu
+soc.culture.japan.moderated     scjm@eyrie.org
+soc.culture.jewish.holocaust    shoahmod@veritas.nizkor.org
+soc.culture.jewish.parenting    scjp-submit@ai.mit.edu
+soc.culture.kuwait.moderated    ammar-submit@kuwait.net
+soc.culture.pakistan.education  scpe@gnu.ai.mit.edu
+soc.culture.pakistan.history    scph@gnu.ai.mit.edu
+soc.culture.pakistan.moderated  scpm@gnu.ai.mit.edu
+soc.culture.russian.moderated   scrm@algebra.com
+soc.genealogy.african           soc-genealogy-african@rootsweb.com
+soc.genealogy.jewish            sgjewish@trace.cgsg.com
+soc.genealogy.methods           soc-genealogy-methods@rootsweb.com
+soc.genealogy.surnames          soc-genealogy-surnames@rootsweb.com
+soc.history.african.biafra      biafra@mcfeeley.cc.utexas.edu
+soc.history.moderated           soc-history-mod@bcm.tmc.edu
+soc.history.war.us-civil-war    cw-sub@tao.agoron.com
+soc.history.war.vietnam         vietnam@panix.com
+soc.history.war.world-war-ii    ww2-sub@acpub.duke.edu
+soc.culture.singapore.moderated scsm@sintercom.org
+soc.feminism                    feminism@ncar.ucar.edu
+soc.motss                       mod-bounce.not-moderated@uunet.uu.net
+soc.politics                    poli-sci@rutgers.edu
+soc.politics.arms-d             arms-l@buacca.bu.edu
+soc.politics.marxism            marxism@stud.unit.no
+soc.religion.bahai              srb@bcca.org
+soc.religion.christian          christian@aramis.rutgers.edu
+soc.religion.christian.bible-study      bible@spss.com
+soc.religion.christian.youth-work       youth-work@netcom.com
+soc.religion.eastern            toshi@cco.caltech.edu
+soc.religion.hindu              ghen@netcom.com
+soc.religion.gnosis             srg@alumni.caltech.edu
+soc.religion.islam              religion-islam@telerama.lm.com
+soc.religion.mormon             srm-submit@srm.npl.com
+soc.religion.paganism           srpbot@brewich.com
+soc.religion.shamanism          srs@alumni.caltech.edu
+soc.religion.sikhism            sikh-sub@acpub.duke.edu
+soc.religion.unitarian-univ     uu@iecc.com
+soc.religion.vaishnava          srv@atlantis.mae.cornell.edu
+soc.singles.moderated           soc-singles-mod@evolution.com
+soc.support.loneliness          ssl@netsoc.org.nz
+soc.support.youth.gay-lesbian-bi        glb-youth@ucsd.edu
+soc.women.lesbian-and-bi        swlab@casti.com
+talk.answers                    news-answers@mit.edu
+talk.bizarre                    mod-bounce.not-moderated@uunet.uu.net
+aaa.inu-chan                    mod-bounce.no-mod-info@uunet.uu.net
+ab.arnet                        mod-bounce.no-mod-info@uunet.uu.net
+alabama.announce                alabama-announce@news.msfc.nasa.gov
+alabama.jobs                    alabama-jobs@news.msfc.nasa.gov
+alc.stat                        mod-bounce.no-mod-info@uunet.uu.net
+alt.2600.moderated              jagged@libfe.liberty.com
+alt.ammonia.refrigeration       root@rdumais.slip.indy.net
+alt.angels                      mod1@angelmiracle.com
+alt.answers                     news-answers@mit.edu
+alt.atheism.moderated           aam@atheist.tamu.edu
+alt.bible.rapture.mod           jonn@islandnet.com
+alt.bigfoot                     wilf@io.com
+alt.bigfoot.research            bigfoot-submit@mcs.com
+alt.binaires.pictures.erotica.moderated mod-bounce.abpem@uunet.uu.net
+alt.binaries.atari.dead         bromage@silas.cc.monash.edu.au
+alt.binaries.games.vga-planets  mod-bounce.not-moderated@uunet.uu.net
+alt.binaries.pictures.crafts    craftpic@super.zippo.com
+alt.binaries.pictures.crafts.d  craftpic@super.zippo.com
+alt.binaries.pictures.erotica.australians.dropbears     bromage@silas.cc.monash.edu.au
+alt.binaries.pictures.erotica.moderated abpem@mvillage.com
+alt.binaries.pictures.erotica.d.moderated       abpedm@mvillage.com
+alt.binaries.pictures.fine-art.d        artcomp@uxa.ecn.bgu.edu
+alt.binaries.pictures.fine-art.digitized        artcomp@uxa.ecn.bgu.edu
+alt.binaries.pictures.fine-art.graphics artcomp@uxa.ecn.bgu.edu
+alt.binaries.pictures.raik      bromage@silas.cc.monash.edu.au
+alt.books.chesterton            rfreeman@interaccess.com
+alt.business.import-export.only intl_trade@bizynet.com
+alt.business.multi-level.moderated      mlmpost@bloomstar.com
+alt.business.telecommunication.services root@rdumais.slip.indy.net
+alt.collecting.barbie           mod-bounce.alt-collecting-barbie@uunet.uu.net
+alt.comp.acad-freedom.news      caf-news@eff.org
+alt.computer.consultants.moderated      netglobe@cris.com
+alt.consciousness.slyman        osokin@ptw.com
+alt.conspiracy.jfk.moderated    aja@thuntek.net
+alt.culture.cyberpsychos        cp-submit@netonecom.net
+alt.culture.virtual.oceania     oceania-moderator@reed.edu
+alt.dads-rights                 alt-dads-rights@vix.com
+alt.dev.null                    /dev/null
+alt.education.home-school.christian     think@eskimo.com
+alt.fan.letterman.top-ten       top-ten-list@mcs.net
+alt.fan.nickilewis              mod-bounce.not-moderated@uunet.uu.net
+alt.fan.pratchett.announce      afpa-mod@lspace.org
+alt.fan.rosieodonnell           knabbie@execpc.com
+alt.folklore.info               wood@vms.cis.pitt.edu
+alt.folklore.suburban           snopes@best.com
+alt.games.doom.announce         doom@mantis.co.uk
+alt.games.down-economy          blockade@ural.udm.ru
+alt.games.quake                 mod-bounce.alt-games-quake@uunet.uu.net
+alt.games.tradewars             mod-bounce.alt-games-tradewars@uunet.uu.net
+alt.games.ultima-dragons        mod-bounce.alt-games-ultima-dragons@uu.net
+alt.gothic.announce             mod-bounce.not-moderated@uunet.uu.net
+alt.gourmand                    recipes@decwrl.dec.com
+alt.hackers                     /dev/null
+alt.hackers.discuss             /dev/null
+alt.hackers.groups.moderated    /dev/null
+alt.hackers.malicious           mod-bounce.alt-hackers-malicious@uunet.uu.net
+alt.health.cfids-action         cfids-l@american.edu
+alt.hindu                       editor@rbhatnagar.ececs.uc.edu
+alt.hotrod                      hotrod@dixie.com
+alt.humor.best-of-usenet        best@cc.ysu.edu
+alt.india.progressive           biju+@pitt.edu
+alt.irc.announce                irc-announce@kei.com
+alt.is                          mod-bounce.no-mod-info@uunet.uu.net
+alt.is.doomed                   nevermind@cybrspc.mn.org
+alt.is.too                      mod-bounce.no-mod-info@uunet.uu.net
+alt.journalism.moderated        journalism@chrysopylae.com
+alt.mac.copy-protect.kdt-terminator     kdtnews@urshan.com
+alt.magazine.2600hz             mod-bounce.alt-magazine-2600hz@uunet.uu.net
+alt.magick.moderated            amm@empire.interstate.net
+alt.make.cash.fast              bromage@silas.cc.monash.edu.au
+alt.math.iams                   benjie@hh.sbay.org
+alt.med.cfs                     cfs-l@list.nih.gov
+alt.med.cfs.chat                cfs-chat@sjuvm.stjohns.edu
+alt.med.cfs.info                cfs-gate@sjuvm.stjohns.edu
+alt.med.cfs.open                cfs-open@sjuvm.stjohns.edu
+alt.meditation.moderated        ragho@tiac.net
+alt.music.makers.christian      mod-bounce.alt-music-makers-christian@uu.net
+alt.music.midi.keydisk-terminator       kdtnews@urshan.com
+alt.music.pat-metheny.moderated pat-meth-mod@gilman.com
+alt.music.s7g                   mod-bounce.no-mod-info@uunet.uu.net
+alt.occult.kabbalah.golden-dawn dave@mbha.demon.co.uk
+alt.olympic.studies             ippe11@blues.uab.es
+alt.parenting.attachment        parenting@kjsl.com
+alt.politics.korea              editor@kimsoft.com
+alt.religion.monica             monica@xpat.com
+alt.religion.watchtower         moderate@deltanet.com
+alt.security.index              mod-bounce.alt-all-index@uunet.uu.net
+alt.sex.stories.moderated       mod-bounce.no-mod-info@uunet.uu.net
+alt.skinheads.moderated         alt-skinheads-moderated@progeny.demon.co.uk
+alt.smokers.glamour             asg-sub@lelnet.com
+alt.sources.amiga               mod-bounce.not-moderated@uunet.uu.net
+alt.sources.index               mod-bounce.alt-all-index@uunet.uu.net
+alt.support.dwarfism            dkennedy@shore.net
+alt.support.non-smokers.moderated       o2bsmokfre@aol.com
+alt.support.obesity             markm@unm.edu
+alt.sysadmin.recovery           mod-bounce.alt-sysadmin-recovery@uunet.uu.net
+alt.usenet.manifestoes          manifesto@emf.net
+alt.tv.world-news-now.moderated wnnmod@aol.com
+alt.virasoft.info               vfrench@virasoft.com
+alt.virasoft.vso                vfrench@virasoft.com
+alt.webedit                     mod-bounce.alt-webedit@uunet.uu.net
+arkane.announce                 arkane-announce@arkane.demon.co.uk
+arkane.answers                  arkane-answers@arkane.demon.co.uk
+asu.culture.indian              mod-bounce.no-mod-info@uunet.uu.net
+asu.ecs.news                    mod-bounce.no-mod-info@uunet.uu.net
+at.blackbox.gruene.wien         p.kawinek@magnet.at
+at.blackbox.gruene.wien.termine p.kawinek@magnet.at
+at.blackbox.liberales_forum     lif-omg@blackbox.ping.at
+at.blackbox.liberales_forum.dokumente   lif-omg@blackbox.ping.at
+at.blackbox.liberales_forum.presse      lif-omg@blackbox.ping.at
+aus.ads.jobs.moderated          aajm-request@tertius.net.au
+aus.legal.moderated             alm-submit@spirit.net.au
+aus.map                         mod-bounce.not-exist@uunet.uu.net
+austin.announce                 austin-announce@unicom.com
+austin.eff                      mod-bounce.not-exist@uunet.uu.net
+ba.announce                     sfbay-announce@uunet.uu.net
+ba.helping-hand                 ba-helping-hand@vix.com
+be.announce                     be-announce@innet.be
+bionet.announce                 bionews@net.bio.net
+bionet.biology.computational    comp-bio-moderator@net.bio.net
+bionet.biology.deepsea          deepsea@net.bio.net
+bionet.biology.symbiosis        symbios@net.bio.net
+bionet.biology.vectors          vect-bio@net.bio.net
+bionet.cellbiol.insulin         insulin-moderator@net.bio.net
+bionet.chlamydomonas            chlamy@net.bio.net
+bionet.diagnostics              diagnost@net.bio.net
+bionet.ecology.physiology       ecophys@net.bio.net
+bionet.emf-bio                  emf-bio@net.bio.net
+bionet.genome.autosequencing    autoseq@net.bio.net
+bionet.jobs.offered             biojobs@net.bio.net
+bionet.journals.contents        bio-journals@net.bio.net
+bionet.journals.letters.biotechniques   btechniq@net.bio.net
+bionet.journals.letters.tibs    tibs-moderator@net.bio.net
+bionet.molbio.genbank.updates   gb-updates@net.bio.net
+bionet.molbio.genome-program    gnome-pr@net.bio.net
+bionet.molbio.molluscs          molluscs@net.bio.net
+bionet.molecules.free-radicals  freerad@net.bio.net
+bionet.organisms.urodeles       urodeles@net.bio.net
+bionet.photosynthesis           photosyn@net.bio.net
+bionet.plants.signaltransduc    plsignal@net.bio.net
+bionet.prof-society.afcr        afcr@net.bio.net
+bionet.prof-society.aibs        aibs@net.bio.net
+bionet.prof-society.ascb        moderator@faseb.org
+bionet.prof-society.biophysics  bphyssoc@net.bio.net
+bionet.prof-society.csm         csm@nrcbsa.bio.nrc.ca
+bionet.prof-society.faseb       moderator@faseb.org
+bionet.prof-society.navbo       navbo@net.bio.net
+bionet.sci-resources            science-resources@net.bio.net
+bionet.software.sources         software-sources@net.bio.net
+bionet.software.www             bio-www@comp.bioz.unibas.ch
+bionet.virology                 virology@net.bio.net
+bit.lang.neder-l                u216013@hnykun11.urc.kun.nl
+bit.listproc.stockphoto         sdayj@cc.curtin.edu.au
+bit.listserv.2000ad-l           2000ad-l@usc.edu
+bit.listserv.aera               aera@asuvm.inre.asu.edu
+bit.listserv.albanian           canosk83@npeeserv.eelab.newpaltz.edu
+bit.listserv.apar-l             apar-l@ubvm.cc.buffalo.edu
+bit.listserv.arlis-l            arlis-l@ukcc.uky.edu
+bit.listserv.ashe-l             ashe-l@american.edu
+bit.listserv.basque-l           egmbh@cunyvm.cuny.edu
+bit.listserv.berita             berita-l@postoffice.cso.uiuc.edu
+bit.listserv.berita.d           berita-d@postoffice.cso.uiuc.edu
+bit.listserv.bgrass-l           bgrass-l@lsv.uky.edu
+bit.listserv.biomch-l           biomch-l@nic.surfnet.nl
+bit.listserv.bitnews            bitnews@bitnic.cren.net
+bit.listserv.blindnws           wtm@bunker.shel.isc-br.com
+bit.listserv.blues-l            blues-l@brownvm.brown.edu
+bit.listserv.bosnet             zukicn@wu2.wl.aecl.ca
+bit.listserv.c+health           mod-bounce.bit-listserv-c+health@uunet.uu.net
+bit.listserv.catholic           catholic@american.edu
+bit.listserv.celiac             celiac@sjuvm.stjohns.edu
+bit.listserv.cfs.newsletter     rburns@cap.gwu.edu
+bit.listserv.christia           christia@asuvm.inre.asu.edu
+bit.listserv.clayart            clayart@ukcc.uky.edu
+bit.listserv.cloak-and-daggers  mod-bounce.bit-listserv-cloak-and-daggers@uunet.uu.net
+bit.listserv.cloaks-daggers     cloaks@sjuvm.stjohns.edu
+bit.listserv.croatia            croatian-news@stribor.srce.hr
+bit.listserv.cumrec-l           moorej@cc.sdstate.edu
+bit.listserv.devmedia           drichard@uoguelph.ca
+bit.listserv.dorothyl           dorothyl@listserv.kent.edu
+bit.listserv.e-europe           e-europe@pucc.princeton.edu
+bit.listserv.edpolyan           edpolyan@asuvm.inre.asu.edu
+bit.listserv.edtech             21765edt@msu.edu
+bit.listserv.fire-l             fire-l@cornell.edu
+bit.listserv.free-l             free-l@indycms.iupui.edu
+bit.listserv.freemasonry        freemasonry@indy.com
+bit.listserv.gaynet             gaynet@queernet.org
+bit.listserv.graph-ti           dharnish@ti.com
+bit.listserv.gutnberg           hart@vmd.cso.uiuc.edu
+bit.listserv.hellas             sda106@psuvm.psu.edu
+bit.listserv.hrvatska           hrvatski-vjesnik@stribor.srce.hr
+bit.listserv.humage-l           humage-l@asuvm.inre.asu.edu
+bit.listserv.hytel-l            aa375@freenet.carleton.ca
+bit.listserv.imagelib           imagelib@arizvm1.ccit.arizona.edu
+bit.listserv.ipct-l             ipct-l@guvm.georgetown.edu
+bit.listserv.japan              japan@pucc.princeton.edu
+bit.listserv.l-hcap             wtm@bunker.shel.isc-br.com
+bit.listserv.labmgr             labmgr@ukcc.uky.edu
+bit.listserv.libref-l           libref-l@listserv.kent.edu
+bit.listserv.libres             librk329@kentvms.kent.edu
+bit.listserv.lsoft-announce     lsoft-announce-request@searn.sunet.se
+bit.listserv.makedon            makedon@listserv.acsu.buffalo.edu
+bit.listserv.mdphd-l            mdphd-l@ubvm.cc.buffalo.edu
+bit.listserv.medforum           medforum@listserv.arizona.edu
+bit.listserv.mednews            david@stat.com
+bit.listserv.muslims            muslims@psuvm.psu.edu
+bit.listserv.netnws-l           nu021172@vm1.nodak.edu
+bit.listserv.nettrain           millesjg@sluvca.slu.edu
+bit.listserv.new-list           nu021172@vm1.nodak.edu
+bit.listserv.novell             novell@listserv.syr.edu
+bit.listserv.pacs-l             libpacs@uhupvm1.uh.edu
+bit.listserv.pakistan           pakistan@psuvm.psu.edu
+bit.listserv.pchealth           pchealth@listserv.aol.com
+bit.listserv.pns-l              pns-l@psuvm.psu.edu
+bit.listserv.politics           politics%villvm@cunyvm.cuny.edu
+bit.listserv.power-l            nu021172@vm1.nodak.edu
+bit.listserv.psycgrad           psycgrad@acadvm1.uottawa.ca
+bit.listserv.quaker-p           quaker-p@earlham.edu
+bit.listserv.quality            quality@pucc.princeton.edu
+bit.listserv.radio-l            ah617@freenet.carleton.ca
+bit.listserv.railroad           railroad@cunyvm.cuny.edu
+bit.listserv.rra-l              rra-l@listserv.kent.edu
+bit.listserv.screen-l           screen-l@ua1vm.ua.edu
+bit.listserv.scuba-l            scuba-l@brownvm.brown.edu
+bit.listserv.skeptic            skeptic@jhuvm.hcf.jhu.edu
+bit.listserv.slart-l            slart-l@cunyvm.cuny.edu
+bit.listserv.superguy           superguy@ucf1vm.cc.ucf.edu
+bit.listserv.tbi-support        approve@sasquatch.com
+bit.listserv.tesl-l             tesl-l@cunyvm.cuny.edu
+bit.software.international      insoft-l@cis.vutbr.cs
+biz.clarinet                    biz-clarinet@clari.net
+biz.clarinet.sample             biz-clarinet-sample@clari.net
+biz.clarinet.web.sample         modreply@clarinet.com
+biz.clarinet.web.xcache.large   modreply@clarinet.com
+biz.clarinet.web.xcache.small   modreply@clarinet.com
+biz.clarinet.webnews.biz        modreply@clarinet.com
+biz.clarinet.webnews.living     modreply@clarinet.com
+biz.clarinet.webnews.sports     modreply@clarinet.com
+biz.clarinet.webnews.techwire   modreply@clarinet.com
+biz.clarinet.webnews.top        modreply@clarinet.com
+biz.clarinet.webnews.usa        modreply@clarinet.com
+biz.clarinet.webnews.world      modreply@clarinet.com
+biz.comp.mcs                    karl@mcs.net
+biz.digex.announce              mod-bounce.no-mod-info@uunet.uu.net
+biz.digital.announce            rjones@pa.dec.com
+biz.digital.articles            rjones@pa.dec.com
+biz.oreilly.announce            listown@online.ora.com
+biz.zeos.announce               kgermann@zeos.com
+bln.announce.berlinet           bln-announce-berlinet@fu-berlin.de
+bln.announce.fub                bln-announce-fub@fu-berlin.de
+bln.announce.fub.cs             bln-announce-fub-cs@fu-berlin.de
+bln.announce.fub.math           bln-announce-fub-math@fu-berlin.de
+bln.announce.fub.zedat          bln-announce-fub-zedat@fu-berlin.de
+bln.announce.hub.informatik     bln-announce-hub-informatik@fu-berlin.de
+bln.announce.in-berlin          bln-announce-in-berlin@fu-berlin.de
+bln.announce.sub                bln-announce-sub@fu-berlin.de
+bln.announce.tub.cs             bln-announce-tub-cs@fu-berlin.de
+bln.net.maps                    bln-net-maps@fu-berlin.de
+brasil.anuncios                 desouza@math.berkeley.edu
+ca.govt-bulletins               mod-bounce.ca-govt-bulletins@uunet.uu.net
+can.canet.d                     canet-d@canet.ca
+can.gov.announce                dave@revcan.ca
+can.uucp.maps                   pathadmin@cs.toronto.edu
+carleton.org.virtual-ventur     mod-bounce.no-mod-info@uunet.uu.net
+cern.cern                       mod-bounce.no-mod-info@uunet.uu.net
+cern.nice.info                  mod-bounce.no-mod-info@uunet.uu.net
+cern.skiclub                    mod-bounce.no-mod-info@uunet.uu.net
+cern.sting                      mod-bounce.no-mod-info@uunet.uu.net
+chile.anuncios                  erodrigu@nexus.chilenet.cl
+chile.grupos.anuncios           mod-cga@webhost.cl
+chinese.newsgroups.announce     deng@owl.rhic.bnl.gov
+chinese.newsgroups.answers      deng@owl.rhic.bnl.gov
+christnet.bible                 christnet-bible@fdma.com
+christnet.bible.revelation      christnet-bible-revelation@fdma.com
+christnet.christianlife         christnet-christianlife@fdma.com
+christnet.christnews            christnet-christnews@fdma.com
+christnet.ethics                christnet-ethics@fdma.com
+christnet.evangelical           christnet-evangelical@fdma.com
+christnet.general               christnet-general@fdma.com
+christnet.healing.herbs         christnet-healing@fdma.com
+christnet.ladies                christnet-ladies@fdma.com
+christnet.philosophy            christnet-philosophy@fdma.com
+christnet.poetry                christnet-poetry@fdma.com
+christnet.prayer                christnet-prayer@fdma.com
+christnet.religion              christnet-religion@fdma.com
+christnet.theology              christnet-theology@fdma.com
+christnet.writers               christnet-writers@fdma.com
+clari.apbl.review               modreply@clarinet.com
+clari.biz.briefs                modreply@clarinet.com
+clari.biz.currencies            modreply@clarinet.com
+clari.biz.currencies.misc       modreply@clarinet.com
+clari.biz.currencies.us_dollar  modreply@clarinet.com
+clari.biz.earnings              modreply@clarinet.com
+clari.biz.earnings.releases     modreply@clarinet.com
+clari.biz.economy               modreply@clarinet.com
+clari.biz.economy.usa           modreply@clarinet.com
+clari.biz.economy.world         modreply@clarinet.com
+clari.biz.features              modreply@clarinet.com
+clari.biz.finance               mod-bounce.not-exist@uunet.uu.net
+clari.biz.front_page            modreply@clarinet.com
+clari.biz.headlines             modreply@clarinet.com
+clari.biz.industry              modreply@clarinet.com
+clari.biz.industry.agriculture  modreply@clarinet.com
+clari.biz.industry.agriculture.releases modreply@clarinet.com
+clari.biz.industry.automotive   modreply@clarinet.com
+clari.biz.industry.automotive.cbd       modreply@clarinet.com
+clari.biz.industry.automotive.releases  modreply@clarinet.com
+clari.biz.industry.aviation     modreply@clarinet.com
+clari.biz.industry.aviation.releases    modreply@clarinet.com
+clari.biz.industry.banking      modreply@clarinet.com
+clari.biz.industry.banking.releases     modreply@clarinet.com
+clari.biz.industry.broadcasting mod-bounce.not-exist@uunet.uu.net
+clari.biz.industry.conglomerates        modreply@clarinet.com
+clari.biz.industry.construction mod-bounce.not-exist@uunet.uu.net
+clari.biz.industry.construction.cbd.acquisition modreply@clarinet.com
+clari.biz.industry.construction.cbd.architect+eng       modreply@clarinet.com
+clari.biz.industry.construction.cbd.hardware    modreply@clarinet.com
+clari.biz.industry.construction.cbd.maintenance modreply@clarinet.com
+clari.biz.industry.construction.cbd.misc        modreply@clarinet.com
+clari.biz.industry.construction.cbd.supplies    modreply@clarinet.com
+clari.biz.industry.dry_goods    mod-bounce.not-exist@uunet.uu.net
+clari.biz.industry.energy       modreply@clarinet.com
+clari.biz.industry.energy.releases      modreply@clarinet.com
+clari.biz.industry.food         modreply@clarinet.com
+clari.biz.industry.food.cbd     modreply@clarinet.com
+clari.biz.industry.food.releases        modreply@clarinet.com
+clari.biz.industry.food.retail.releases modreply@clarinet.com
+clari.biz.industry.health       modreply@clarinet.com
+clari.biz.industry.health.care  modreply@clarinet.com
+clari.biz.industry.health.care.releases modreply@clarinet.com
+clari.biz.industry.health.cbd   modreply@clarinet.com
+clari.biz.industry.health.pharma        modreply@clarinet.com
+clari.biz.industry.health.pharma.releases       modreply@clarinet.com
+clari.biz.industry.household    modreply@clarinet.com
+clari.biz.industry.household.cbd        modreply@clarinet.com
+clari.biz.industry.information.cbd      modreply@clarinet.com
+clari.biz.industry.insurance    modreply@clarinet.com
+clari.biz.industry.insurance.releases   modreply@clarinet.com
+clari.biz.industry.machinery    modreply@clarinet.com
+clari.biz.industry.machinery.cbd.components     modreply@clarinet.com
+clari.biz.industry.machinery.cbd.engines        modreply@clarinet.com
+clari.biz.industry.machinery.cbd.misc   modreply@clarinet.com
+clari.biz.industry.manufacturing        mod-bounce.not-exist@uunet.uu.net
+clari.biz.industry.manufacturing.releases       modreply@clarinet.com
+clari.biz.industry.media        modreply@clarinet.com
+clari.biz.industry.media.entertainment  modreply@clarinet.com
+clari.biz.industry.media.entertainment.releases modreply@clarinet.com
+clari.biz.industry.media.releases       modreply@clarinet.com
+clari.biz.industry.metals+mining        modreply@clarinet.com
+clari.biz.industry.metals+mining.cbd    modreply@clarinet.com
+clari.biz.industry.metals+mining.releases       modreply@clarinet.com
+clari.biz.industry.mining       mod-bounce.not-exist@uunet.uu.net
+clari.biz.industry.misc         modreply@clarinet.com
+clari.biz.industry.misc.cbd.electric    modreply@clarinet.com
+clari.biz.industry.misc.cbd.equip_maint modreply@clarinet.com
+clari.biz.industry.misc.cbd.equip_services      modreply@clarinet.com
+clari.biz.industry.misc.cbd.housekeeping        modreply@clarinet.com
+clari.biz.industry.misc.cbd.lab_supplies        modreply@clarinet.com
+clari.biz.industry.misc.cbd.management  modreply@clarinet.com
+clari.biz.industry.misc.cbd.misc_services       modreply@clarinet.com
+clari.biz.industry.misc.cbd.misc_supplies       modreply@clarinet.com
+clari.biz.industry.misc.cbd.research    modreply@clarinet.com
+clari.biz.industry.misc.cbd.studies     modreply@clarinet.com
+clari.biz.industry.misc.releases        modreply@clarinet.com
+clari.biz.industry.others       modreply@clarinet.com
+clari.biz.industry.print_media  mod-bounce.not-exist@uunet.uu.net
+clari.biz.industry.real_est+const       modreply@clarinet.com
+clari.biz.industry.real_est+const.releases      modreply@clarinet.com
+clari.biz.industry.real_estate  mod-bounce.not-exist@uunet.uu.net
+clari.biz.industry.retail       modreply@clarinet.com
+clari.biz.industry.retail.releases      modreply@clarinet.com
+clari.biz.industry.services     mod-bounce.not-exist@uunet.uu.net
+clari.biz.industry.textiles     modreply@clarinet.com
+clari.biz.industry.textiles.cbd modreply@clarinet.com
+clari.biz.industry.tourism      mod-bounce.not-exist@uunet.uu.net
+clari.biz.industry.transportation       modreply@clarinet.com
+clari.biz.industry.transportation.cbd   modreply@clarinet.com
+clari.biz.industry.transportation.releases      modreply@clarinet.com
+clari.biz.industry.travel+leisure       modreply@clarinet.com
+clari.biz.industry.travel+leisure.cbd   modreply@clarinet.com
+clari.biz.industry.travel+leisure.releases      modreply@clarinet.com
+clari.biz.industry.utilities    modreply@clarinet.com
+clari.biz.market.commodities    modreply@clarinet.com
+clari.biz.market.commodities.misc       modreply@clarinet.com
+clari.biz.market.misc           modreply@clarinet.com
+clari.biz.market.news           mod-bounce.not-exist@uunet.uu.net
+clari.biz.market.report         mod-bounce.not-exist@uunet.uu.net
+clari.biz.market.report.asia    mod-bounce.not-exist@uunet.uu.net
+clari.biz.market.report.europe  mod-bounce.not-exist@uunet.uu.net
+clari.biz.market.report.top     mod-bounce.not-exist@uunet.uu.net
+clari.biz.market.report.usa     mod-bounce.not-exist@uunet.uu.net
+clari.biz.market.report.usa.nyse        mod-bounce.not-exist@uunet.uu.net
+clari.biz.mergers               modreply@clarinet.com
+clari.biz.mergers.releases      modreply@clarinet.com
+clari.biz.misc                  modreply@clarinet.com
+clari.biz.misc.releases                 modreply@clarinet.com
+clari.biz.personnel.releases    modreply@clarinet.com
+clari.biz.privatization         modreply@clarinet.com
+clari.biz.review                mod-bounce.not-exist@uunet.uu.net
+clari.biz.stocks                modreply@clarinet.com
+clari.biz.stocks.corporate_news modreply@clarinet.com
+clari.biz.stocks.dividend.releases      modreply@clarinet.com
+clari.biz.stocks.report.asia    modreply@clarinet.com
+clari.biz.stocks.report.elsewhere       modreply@clarinet.com
+clari.biz.stocks.report.europe.eastern  modreply@clarinet.com
+clari.biz.stocks.report.europe.western  modreply@clarinet.com
+clari.biz.stocks.report.top     modreply@clarinet.com
+clari.biz.stocks.report.usa     modreply@clarinet.com
+clari.biz.stocks.report.usa.misc        modreply@clarinet.com
+clari.biz.stocks.report.usa.nyse        modreply@clarinet.com
+clari.biz.top                   modreply@clarinet.com
+clari.biz.tradeshows.releases   modreply@clarinet.com
+clari.biz.urgent                mod-bounce.not-exist@uunet.uu.net
+clari.biz.world_trade           modreply@clarinet.com
+clari.editorial.cartoons.toles  modreply@clarinet.com
+clari.editorial.cartoons.worldviews     modreply@clarinet.com
+clari.editorial.commentary.misc         modreply@clarinet.com
+clari.editorial.commentary.political    modreply@clarinet.com
+clari.feature.dave_barry        modreply@clarinet.com
+clari.feature.dilbert           modreply@clarinet.com
+clari.feature.experimental      modreply@clarinet.com
+clari.feature.forbetter         modreply@clarinet.com
+clari.feature.mike_royko        modreply@clarinet.com
+clari.feature.miss_manners      mod-bounce.not-exist@uunet.uu.net
+clari.living                    modreply@clarinet.com
+clari.living.animals            modreply@clarinet.com
+clari.living.arts               modreply@clarinet.com
+clari.living.bizarre            modreply@clarinet.com
+clari.living.books              modreply@clarinet.com
+clari.living.celebrities        modreply@clarinet.com
+clari.living.columns.joebob     modreply@clarinet.com
+clari.living.columns.lipton     modreply@clarinet.com
+clari.living.columns.miss_manners       modreply@clarinet.com
+clari.living.comics.bizarro     modreply@clarinet.com
+clari.living.comics.cafe_angst  modreply@clarinet.com
+clari.living.comics.doonesbury  modreply@clarinet.com
+clari.living.comics.forbetter   modreply@clarinet.com
+clari.living.comics.foxtrot     modreply@clarinet.com
+clari.living.comics.ozone_patrol        modreply@clarinet.com
+clari.living.consumer           modreply@clarinet.com
+clari.living.entertainment      modreply@clarinet.com
+clari.living.entertainment.briefs       modreply@clarinet.com
+clari.living.entertainment.misc modreply@clarinet.com
+clari.living.fashion            modreply@clarinet.com
+clari.living.goodnews           mod-bounce.not-exist@uunet.uu.net
+clari.living.history            modreply@clarinet.com
+clari.living.history.today      modreply@clarinet.com
+clari.living.human_interest     modreply@clarinet.com
+clari.living.leisure            modreply@clarinet.com
+clari.living.misc               modreply@clarinet.com
+clari.living.movies             modreply@clarinet.com
+clari.living.music              modreply@clarinet.com
+clari.living.royalty            modreply@clarinet.com
+clari.living.tv                 modreply@clarinet.com
+clari.local.alabama             modreply@clarinet.com
+clari.local.alaska              modreply@clarinet.com
+clari.local.arizona             modreply@clarinet.com
+clari.local.arkansas            modreply@clarinet.com
+clari.local.california          mod-bounce.not-exist@uunet.uu.net
+clari.local.california.briefs           modreply@clarinet.com
+clari.local.california.gov      modreply@clarinet.com
+clari.local.california.los_angeles      modreply@clarinet.com
+clari.local.california.lottery  modreply@clarinet.com
+clari.local.california.misc             modreply@clarinet.com
+clari.local.california.northern modreply@clarinet.com
+clari.local.california.sfbay.biz        modreply@clarinet.com
+clari.local.california.sfbay.briefs     modreply@clarinet.com
+clari.local.california.sfbay.crime      modreply@clarinet.com
+clari.local.california.sfbay.education  modreply@clarinet.com
+clari.local.california.sfbay.fire       modreply@clarinet.com
+clari.local.california.sfbay.gov        modreply@clarinet.com
+clari.local.california.sfbay.health     modreply@clarinet.com
+clari.local.california.sfbay.law        modreply@clarinet.com
+clari.local.california.sfbay.living     modreply@clarinet.com
+clari.local.california.sfbay.misc       modreply@clarinet.com
+clari.local.california.sfbay.transport  modreply@clarinet.com
+clari.local.california.sfbay.transport.conditions       modreply@clarinet.com
+clari.local.california.sfbay.trouble    modreply@clarinet.com
+clari.local.california.sfbay.weather    modreply@clarinet.com
+clari.local.california.southern modreply@clarinet.com
+clari.local.california.southern.misc    modreply@clarinet.com
+clari.local.chicago             mod-bounce.not-exist@uunet.uu.net
+clari.local.colorado            modreply@clarinet.com
+clari.local.connecticut         modreply@clarinet.com
+clari.local.delaware            modreply@clarinet.com
+clari.local.florida             modreply@clarinet.com
+clari.local.georgia             modreply@clarinet.com
+clari.local.hawaii              modreply@clarinet.com
+clari.local.idaho               modreply@clarinet.com
+clari.local.illinois            mod-bounce.not-exist@uunet.uu.net
+clari.local.illinois.chicago    modreply@clarinet.com
+clari.local.illinois.misc       modreply@clarinet.com
+clari.local.indiana             modreply@clarinet.com
+clari.local.iowa                modreply@clarinet.com
+clari.local.kansas              modreply@clarinet.com
+clari.local.kentucky            modreply@clarinet.com
+clari.local.los_angeles         mod-bounce.not-exist@uunet.uu.net
+clari.local.louisiana           modreply@clarinet.com
+clari.local.maine               modreply@clarinet.com
+clari.local.maryland            modreply@clarinet.com
+clari.local.massachusetts       modreply@clarinet.com
+clari.local.michigan            modreply@clarinet.com
+clari.local.minnesota           modreply@clarinet.com
+clari.local.mississippi         modreply@clarinet.com
+clari.local.missouri            modreply@clarinet.com
+clari.local.montana             modreply@clarinet.com
+clari.local.nebraska            modreply@clarinet.com
+clari.local.nevada              modreply@clarinet.com
+clari.local.new_hampshire       modreply@clarinet.com
+clari.local.new_jersey          modreply@clarinet.com
+clari.local.new_mexico          modreply@clarinet.com
+clari.local.new_york            mod-bounce.not-exist@uunet.uu.net
+clari.local.new_york.misc       modreply@clarinet.com
+clari.local.new_york.nyc        modreply@clarinet.com
+clari.local.north_carolina      modreply@clarinet.com
+clari.local.north_dakota        modreply@clarinet.com
+clari.local.nyc                 mod-bounce.not-exist@uunet.uu.net
+clari.local.ohio                modreply@clarinet.com
+clari.local.oklahoma            modreply@clarinet.com
+clari.local.oregon              modreply@clarinet.com
+clari.local.pennsylvania        modreply@clarinet.com
+clari.local.rhode_island        modreply@clarinet.com
+clari.local.sfbay               mod-bounce.not-exist@uunet.uu.net
+clari.local.south_carolina      modreply@clarinet.com
+clari.local.south_dakota        modreply@clarinet.com
+clari.local.tennessee           modreply@clarinet.com
+clari.local.texas               modreply@clarinet.com
+clari.local.utah                modreply@clarinet.com
+clari.local.vermont             modreply@clarinet.com
+clari.local.virginia+dc         modreply@clarinet.com
+clari.local.washington          modreply@clarinet.com
+clari.local.west_virginia       modreply@clarinet.com
+clari.local.wisconsin           modreply@clarinet.com
+clari.local.wyoming             modreply@clarinet.com
+clari.matrix_news               mod-bounce.not-exist@uunet.uu.net
+clari.nb.apple                  mod-bounce.not-exist@uunet.uu.net
+clari.nb.business               mod-bounce.not-exist@uunet.uu.net
+clari.nb.general                mod-bounce.not-exist@uunet.uu.net
+clari.nb.govt                   mod-bounce.not-exist@uunet.uu.net
+clari.nb.ibm                    mod-bounce.not-exist@uunet.uu.net
+clari.nb.review                 mod-bounce.not-exist@uunet.uu.net
+clari.nb.summary                mod-bounce.not-exist@uunet.uu.net
+clari.nb.telecom                mod-bounce.not-exist@uunet.uu.net
+clari.nb.top                    mod-bounce.not-exist@uunet.uu.net
+clari.nb.trends                 mod-bounce.not-exist@uunet.uu.net
+clari.nb.unix                   mod-bounce.not-exist@uunet.uu.net
+clari.net.admin                 modreply@clarinet.com
+clari.net.announce              modreply@clarinet.com
+clari.net.answers               mod-bounce.not-exist@uunet.uu.net
+clari.net.info                  modreply@clarinet.com
+clari.net.newusers              modreply@clarinet.com
+clari.net.newusers.group_info.edu       modreply@clarinet.com
+clari.net.newusers.group_info.four-star modreply@clarinet.com
+clari.net.newusers.group_info.three-star        modreply@clarinet.com
+clari.net.newusers.group_info.two-star  modreply@clarinet.com
+clari.news.aging                modreply@clarinet.com
+clari.news.alcohol              mod-bounce.not-exist@uunet.uu.net
+clari.news.alcohol+drugs        modreply@clarinet.com
+clari.news.blacks               modreply@clarinet.com
+clari.news.briefs               modreply@clarinet.com
+clari.news.censorship           mod-bounce.not-exist@uunet.uu.net
+clari.news.childrn+family       modreply@clarinet.com
+clari.news.civil_rights         mod-bounce.not-exist@uunet.uu.net
+clari.news.conflict             modreply@clarinet.com
+clari.news.conflict.misc        modreply@clarinet.com
+clari.news.conflict.peace_talks modreply@clarinet.com
+clari.news.conflict.peacekeeping        modreply@clarinet.com
+clari.news.corruption           modreply@clarinet.com
+clari.news.crime                modreply@clarinet.com
+clari.news.crime.abductions     modreply@clarinet.com
+clari.news.crime.abuse          mod-bounce.not-exist@uunet.uu.net
+clari.news.crime.assaults       modreply@clarinet.com
+clari.news.crime.fraud+embezzle modreply@clarinet.com
+clari.news.crime.general        modreply@clarinet.com
+clari.news.crime.hate           modreply@clarinet.com
+clari.news.crime.issue          mod-bounce.not-exist@uunet.uu.net
+clari.news.crime.juvenile       modreply@clarinet.com
+clari.news.crime.misc           modreply@clarinet.com
+clari.news.crime.murders        modreply@clarinet.com
+clari.news.crime.murders.misc   modreply@clarinet.com
+clari.news.crime.murders.political      modreply@clarinet.com
+clari.news.crime.organized      modreply@clarinet.com
+clari.news.crime.sex            modreply@clarinet.com
+clari.news.crime.theft          modreply@clarinet.com
+clari.news.crime.top            modreply@clarinet.com
+clari.news.crime.war                    modreply@clarinet.com
+clari.news.crime.white_collar   mod-bounce.not-exist@uunet.uu.net
+clari.news.disabilities         modreply@clarinet.com
+clari.news.disaster             mod-bounce.not-exist@uunet.uu.net
+clari.news.drugs                mod-bounce.not-exist@uunet.uu.net
+clari.news.education            modreply@clarinet.com
+clari.news.education.higher     modreply@clarinet.com
+clari.news.education.misc       modreply@clarinet.com
+clari.news.education.releases   modreply@clarinet.com
+clari.news.ethnicity            mod-bounce.not-exist@uunet.uu.net
+clari.news.family               mod-bounce.not-exist@uunet.uu.net
+clari.news.features             modreply@clarinet.com
+clari.news.flash                modreply@clarinet.com
+clari.news.front_page           modreply@clarinet.com
+clari.news.gays                 modreply@clarinet.com
+clari.news.guns                 mod-bounce.not-exist@uunet.uu.net
+clari.news.immigration          modreply@clarinet.com
+clari.news.immigration.misc     modreply@clarinet.com
+clari.news.issues               modreply@clarinet.com
+clari.news.issues.censorship    modreply@clarinet.com
+clari.news.issues.death_penalty modreply@clarinet.com
+clari.news.issues.guns          modreply@clarinet.com
+clari.news.issues.human_rights  modreply@clarinet.com
+clari.news.issues.misc          modreply@clarinet.com
+clari.news.issues.poverty       modreply@clarinet.com
+clari.news.issues.reproduction  modreply@clarinet.com
+clari.news.issues.smoking       modreply@clarinet.com
+clari.news.jews                 modreply@clarinet.com
+clari.news.labor                modreply@clarinet.com
+clari.news.labor.employment     modreply@clarinet.com
+clari.news.labor.layoff         mod-bounce.not-exist@uunet.uu.net
+clari.news.labor.misc           modreply@clarinet.com
+clari.news.labor.strike         modreply@clarinet.com
+clari.news.law_enforce          modreply@clarinet.com
+clari.news.minorities           modreply@clarinet.com
+clari.news.minorities.misc      modreply@clarinet.com
+clari.news.misc.releases                modreply@clarinet.com
+clari.news.obituaries           modreply@clarinet.com
+clari.news.photos               modreply@clarinet.com
+clari.news.poverty              mod-bounce.not-exist@uunet.uu.net
+clari.news.protests             modreply@clarinet.com
+clari.news.punishment           mod-bounce.not-exist@uunet.uu.net
+clari.news.refugees             modreply@clarinet.com
+clari.news.religion             modreply@clarinet.com
+clari.news.reproduction         mod-bounce.not-exist@uunet.uu.net
+clari.news.review               mod-bounce.not-exist@uunet.uu.net
+clari.news.sex                  modreply@clarinet.com
+clari.news.smoking              mod-bounce.not-exist@uunet.uu.net
+clari.news.terrorism            mod-bounce.not-exist@uunet.uu.net
+clari.news.top                  mod-bounce.not-exist@uunet.uu.net
+clari.news.trouble              modreply@clarinet.com
+clari.news.trouble.accidents    modreply@clarinet.com
+clari.news.trouble.disaster     modreply@clarinet.com
+clari.news.trouble.misc         modreply@clarinet.com
+clari.news.urgent               mod-bounce.not-exist@uunet.uu.net
+clari.news.usa.gov.financial    mod-bounce.not-exist@uunet.uu.net
+clari.news.usa.gov.foreign_policy       mod-bounce.not-exist@uunet.uu.net
+clari.news.usa.gov.misc         mod-bounce.not-exist@uunet.uu.net
+clari.news.usa.gov.personalities        mod-bounce.not-exist@uunet.uu.net
+clari.news.usa.gov.politics     mod-bounce.not-exist@uunet.uu.net
+clari.news.usa.gov.state+local  mod-bounce.not-exist@uunet.uu.net
+clari.news.usa.gov.white_house  mod-bounce.not-exist@uunet.uu.net
+clari.news.usa.law              mod-bounce.not-exist@uunet.uu.net
+clari.news.usa.law.supreme      mod-bounce.not-exist@uunet.uu.net
+clari.news.usa.military         mod-bounce.not-exist@uunet.uu.net
+clari.news.usa.terrorism        modreply@clarinet.com
+clari.news.weather              modreply@clarinet.com
+clari.news.women                modreply@clarinet.com
+clari.sfbay.briefs              mod-bounce.not-exist@uunet.uu.net
+clari.sfbay.entertain           mod-bounce.not-exist@uunet.uu.net
+clari.sfbay.fire                mod-bounce.not-exist@uunet.uu.net
+clari.sfbay.general             mod-bounce.not-exist@uunet.uu.net
+clari.sfbay.misc                mod-bounce.not-exist@uunet.uu.net
+clari.sfbay.police              mod-bounce.not-exist@uunet.uu.net
+clari.sfbay.roads               mod-bounce.not-exist@uunet.uu.net
+clari.sfbay.short               mod-bounce.not-exist@uunet.uu.net
+clari.sfbay.weather             mod-bounce.not-exist@uunet.uu.net
+clari.sports.baseball           modreply@clarinet.com
+clari.sports.baseball.games     mod-bounce.not-exist@uunet.uu.net
+clari.sports.baseball.major     modreply@clarinet.com
+clari.sports.baseball.major.al.games    modreply@clarinet.com
+clari.sports.baseball.major.al.stats    modreply@clarinet.com
+clari.sports.baseball.major.nl.games    modreply@clarinet.com
+clari.sports.baseball.major.nl.stats    modreply@clarinet.com
+clari.sports.baseball.minor     modreply@clarinet.com
+clari.sports.basketball         modreply@clarinet.com
+clari.sports.basketball.college modreply@clarinet.com
+clari.sports.basketball.college.men     modreply@clarinet.com
+clari.sports.basketball.college.men.games       modreply@clarinet.com
+clari.sports.basketball.college.men.stats       modreply@clarinet.com
+clari.sports.basketball.college.women   modreply@clarinet.com
+clari.sports.basketball.minor   modreply@clarinet.com
+clari.sports.basketball.nba     modreply@clarinet.com
+clari.sports.basketball.nba.games       modreply@clarinet.com
+clari.sports.basketball.nba.stats       modreply@clarinet.com
+clari.sports.bowling            modreply@clarinet.com
+clari.sports.boxing             modreply@clarinet.com
+clari.sports.briefs             modreply@clarinet.com
+clari.sports.championships              modreply@clarinet.com
+clari.sports.features           modreply@clarinet.com
+clari.sports.football           modreply@clarinet.com
+clari.sports.football.cfl       modreply@clarinet.com
+clari.sports.football.college   modreply@clarinet.com
+clari.sports.football.college.games     modreply@clarinet.com
+clari.sports.football.college.stats     modreply@clarinet.com
+clari.sports.football.games     mod-bounce.not-exist@uunet.uu.net
+clari.sports.football.nfl       modreply@clarinet.com
+clari.sports.football.nfl.games modreply@clarinet.com
+clari.sports.football.nfl.stats modreply@clarinet.com
+clari.sports.golf               modreply@clarinet.com
+clari.sports.hockey             modreply@clarinet.com
+clari.sports.hockey.ahl         modreply@clarinet.com
+clari.sports.hockey.ihl         modreply@clarinet.com
+clari.sports.hockey.nhl         modreply@clarinet.com
+clari.sports.hockey.nhl.games   modreply@clarinet.com
+clari.sports.hockey.nhl.stats   modreply@clarinet.com
+clari.sports.horse_racing       modreply@clarinet.com
+clari.sports.hot.olympic.boating        modreply@clarinet.com
+clari.sports.hot.olympic.combat         modreply@clarinet.com
+clari.sports.hot.olympic.court          modreply@clarinet.com
+clari.sports.hot.olympic.cycling        modreply@clarinet.com
+clari.sports.hot.olympic.equestrian     modreply@clarinet.com
+clari.sports.hot.olympic.gymnastics     modreply@clarinet.com
+clari.sports.hot.olympic.misc_news      modreply@clarinet.com
+clari.sports.hot.olympic.others         modreply@clarinet.com
+clari.sports.hot.olympic.swim+diving    modreply@clarinet.com
+clari.sports.hot.olympic.team           modreply@clarinet.com
+clari.sports.hot.olympic.top            modreply@clarinet.com
+clari.sports.hot.olympic.track+field    modreply@clarinet.com
+clari.sports.local.canada.atlantic_provs        modreply@clarinet.com
+clari.sports.local.canada.brit_columbia modreply@clarinet.com
+clari.sports.local.canada.eastern       modreply@clarinet.com
+clari.sports.local.canada.ontario       modreply@clarinet.com
+clari.sports.local.canada.ontario.misc  modreply@clarinet.com
+clari.sports.local.canada.ontario.toronto       modreply@clarinet.com
+clari.sports.local.canada.prairie_provs modreply@clarinet.com
+clari.sports.local.canada.quebec        modreply@clarinet.com
+clari.sports.local.mid-atlantic.new_jersey      modreply@clarinet.com
+clari.sports.local.mid-atlantic.new_york        modreply@clarinet.com
+clari.sports.local.mid-atlantic.new_york.nyc    modreply@clarinet.com
+clari.sports.local.mid-atlantic.pennsylvania    modreply@clarinet.com
+clari.sports.local.mid-atlantic.pennsylvania.philadelphia       modreply@clarinet.com
+clari.sports.local.midwest      modreply@clarinet.com
+clari.sports.local.midwest.illinois     modreply@clarinet.com
+clari.sports.local.midwest.indiana      modreply@clarinet.com
+clari.sports.local.midwest.michigan     modreply@clarinet.com
+clari.sports.local.midwest.minnesota    modreply@clarinet.com
+clari.sports.local.midwest.misc modreply@clarinet.com
+clari.sports.local.midwest.missouri     modreply@clarinet.com
+clari.sports.local.midwest.ohio modreply@clarinet.com
+clari.sports.local.midwest.wisconsin    modreply@clarinet.com
+clari.sports.local.new_england  modreply@clarinet.com
+clari.sports.local.new_england.connecticut      modreply@clarinet.com
+clari.sports.local.new_england.massachusetts    modreply@clarinet.com
+clari.sports.local.new_england.misc     modreply@clarinet.com
+clari.sports.local.northwest    modreply@clarinet.com
+clari.sports.local.northwest.misc       modreply@clarinet.com
+clari.sports.local.northwest.washington modreply@clarinet.com
+clari.sports.local.south        modreply@clarinet.com
+clari.sports.local.south.florida        modreply@clarinet.com
+clari.sports.local.south.florida.miami  modreply@clarinet.com
+clari.sports.local.south.florida.misc   modreply@clarinet.com
+clari.sports.local.south.florida.tampa_bay      modreply@clarinet.com
+clari.sports.local.south.georgia        modreply@clarinet.com
+clari.sports.local.south.maryland       modreply@clarinet.com
+clari.sports.local.south.maryland+dc    modreply@clarinet.com
+clari.sports.local.south.north_carolina modreply@clarinet.com
+clari.sports.local.south.washington_dc  modreply@clarinet.com
+clari.sports.local.southwest    modreply@clarinet.com
+clari.sports.local.southwest.arizona    modreply@clarinet.com
+clari.sports.local.southwest.california modreply@clarinet.com
+clari.sports.local.southwest.california.los_angeles     modreply@clarinet.com
+clari.sports.local.southwest.california.sfbay   modreply@clarinet.com
+clari.sports.local.southwest.colorado   modreply@clarinet.com
+clari.sports.local.southwest.misc       modreply@clarinet.com
+clari.sports.local.southwest.texas.dallas-fw    modreply@clarinet.com
+clari.sports.local.southwest.texas.misc modreply@clarinet.com
+clari.sports.local.southwest.utah       modreply@clarinet.com
+clari.sports.misc               modreply@clarinet.com
+clari.sports.motor              modreply@clarinet.com
+clari.sports.olympic            modreply@clarinet.com
+clari.sports.others             modreply@clarinet.com
+clari.sports.photos             modreply@clarinet.com
+clari.sports.releases           modreply@clarinet.com
+clari.sports.review             mod-bounce.not-exist@uunet.uu.net
+clari.sports.schedules          modreply@clarinet.com
+clari.sports.soccer             modreply@clarinet.com
+clari.sports.tennis             modreply@clarinet.com
+clari.sports.top                modreply@clarinet.com
+clari.tw.aerospace              modreply@clarinet.com
+clari.tw.aerospace.cbd.components       modreply@clarinet.com
+clari.tw.aerospace.cbd.misc     modreply@clarinet.com
+clari.tw.aerospace.releases     modreply@clarinet.com
+clari.tw.biotechnology          mod-bounce.not-exist@uunet.uu.net
+clari.tw.briefs                 modreply@clarinet.com
+clari.tw.chemicals              modreply@clarinet.com
+clari.tw.chemicals.cbd          modreply@clarinet.com
+clari.tw.chemicals.releases     modreply@clarinet.com
+clari.tw.columns.imprb_research modreply@clarinet.com
+clari.tw.computers              mod-bounce.not-exist@uunet.uu.net
+clari.tw.computers.apple        modreply@clarinet.com
+clari.tw.computers.apple.releases       modreply@clarinet.com
+clari.tw.computers.cbd          modreply@clarinet.com
+clari.tw.computers.entertainment.releases       modreply@clarinet.com
+clari.tw.computers.in_use       modreply@clarinet.com
+clari.tw.computers.industry_news        modreply@clarinet.com
+clari.tw.computers.misc         modreply@clarinet.com
+clari.tw.computers.networking   modreply@clarinet.com
+clari.tw.computers.networking.releases  modreply@clarinet.com
+clari.tw.computers.pc.hardware  modreply@clarinet.com
+clari.tw.computers.pc.hardware.releases modreply@clarinet.com
+clari.tw.computers.pc.software  modreply@clarinet.com
+clari.tw.computers.pc.software.releases modreply@clarinet.com
+clari.tw.computers.peripherals.releases modreply@clarinet.com
+clari.tw.computers.releases     modreply@clarinet.com
+clari.tw.computers.retail.releases      modreply@clarinet.com
+clari.tw.computers.unix         modreply@clarinet.com
+clari.tw.computers.unix.releases        modreply@clarinet.com
+clari.tw.defense                modreply@clarinet.com
+clari.tw.defense.cbd            modreply@clarinet.com
+clari.tw.electronics            modreply@clarinet.com
+clari.tw.electronics.cbd        modreply@clarinet.com
+clari.tw.electronics.releases   modreply@clarinet.com
+clari.tw.environment            modreply@clarinet.com
+clari.tw.environment.cbd        modreply@clarinet.com
+clari.tw.environment.releases   modreply@clarinet.com
+clari.tw.features               modreply@clarinet.com
+clari.tw.health                 modreply@clarinet.com
+clari.tw.health.aids            modreply@clarinet.com
+clari.tw.health.misc            modreply@clarinet.com
+clari.tw.issues                 modreply@clarinet.com
+clari.tw.misc                   modreply@clarinet.com
+clari.tw.new_media              modreply@clarinet.com
+clari.tw.new_media.matrix_news  modreply@clarinet.com
+clari.tw.new_media.online.releases      modreply@clarinet.com
+clari.tw.new_media.releases     modreply@clarinet.com
+clari.tw.nuclear                modreply@clarinet.com
+clari.tw.science                modreply@clarinet.com
+clari.tw.science+space          modreply@clarinet.com
+clari.tw.space                  modreply@clarinet.com
+clari.tw.stocks                 modreply@clarinet.com
+clari.tw.telecom                modreply@clarinet.com
+clari.tw.telecom.cbd            modreply@clarinet.com
+clari.tw.telecom.misc           modreply@clarinet.com
+clari.tw.telecom.phone_service  modreply@clarinet.com
+clari.tw.telecom.releases       modreply@clarinet.com
+clari.tw.top                    modreply@clarinet.com
+clari.usa.briefs                modreply@clarinet.com
+clari.usa.gov                   modreply@clarinet.com
+clari.usa.gov.briefs            modreply@clarinet.com
+clari.usa.gov.general           modreply@clarinet.com
+clari.usa.gov.misc              modreply@clarinet.com
+clari.usa.gov.personalities     modreply@clarinet.com
+clari.usa.gov.policy.biz        modreply@clarinet.com
+clari.usa.gov.policy.financial  modreply@clarinet.com
+clari.usa.gov.policy.foreign    modreply@clarinet.com
+clari.usa.gov.policy.foreign.mideast    modreply@clarinet.com
+clari.usa.gov.policy.foreign.misc       modreply@clarinet.com
+clari.usa.gov.policy.misc       modreply@clarinet.com
+clari.usa.gov.policy.social     modreply@clarinet.com
+clari.usa.gov.politics          modreply@clarinet.com
+clari.usa.gov.releases          modreply@clarinet.com
+clari.usa.gov.state+local       modreply@clarinet.com
+clari.usa.gov.white_house       modreply@clarinet.com
+clari.usa.hot.election.clinton          modreply@clarinet.com
+clari.usa.hot.election.congress         modreply@clarinet.com
+clari.usa.hot.election.dole             modreply@clarinet.com
+clari.usa.law                   modreply@clarinet.com
+clari.usa.law.misc              modreply@clarinet.com
+clari.usa.law.supreme           modreply@clarinet.com
+clari.usa.military              modreply@clarinet.com
+clari.usa.misc                  modreply@clarinet.com
+clari.usa.politics              modreply@clarinet.com
+clari.usa.politics.personalities        modreply@clarinet.com
+clari.usa.terrorism             modreply@clarinet.com
+clari.usa.top                   modreply@clarinet.com
+clari.web.sports.olympic        modreply@clarinet.com
+clari.world.africa              mod-bounce.not-exist@uunet.uu.net
+clari.world.africa.eastern      modreply@clarinet.com
+clari.world.africa.northwestern modreply@clarinet.com
+clari.world.africa.south_africa modreply@clarinet.com
+clari.world.africa.southern     modreply@clarinet.com
+clari.world.africa.western      modreply@clarinet.com
+clari.world.americas            modreply@clarinet.com
+clari.world.americas.argentina  modreply@clarinet.com
+clari.world.americas.brazil     modreply@clarinet.com
+clari.world.americas.canada     modreply@clarinet.com
+clari.world.americas.canada.biz modreply@clarinet.com
+clari.world.americas.canada.briefs      modreply@clarinet.com
+clari.world.americas.canada.business    mod-bounce.not-exist@uunet.uu.net
+clari.world.americas.canada.general     modreply@clarinet.com
+clari.world.americas.canada.review      mod-bounce.not-exist@uunet.uu.net
+clari.world.americas.caribbean  modreply@clarinet.com
+clari.world.americas.central    modreply@clarinet.com
+clari.world.americas.meso       modreply@clarinet.com
+clari.world.americas.mexico     modreply@clarinet.com
+clari.world.americas.peru       modreply@clarinet.com
+clari.world.americas.south      modreply@clarinet.com
+clari.world.americas.south.misc modreply@clarinet.com
+clari.world.asia+oceania        modreply@clarinet.com
+clari.world.asia.central        modreply@clarinet.com
+clari.world.asia.central+south  modreply@clarinet.com
+clari.world.asia.china          modreply@clarinet.com
+clari.world.asia.china.biz      modreply@clarinet.com
+clari.world.asia.hong_kong      modreply@clarinet.com
+clari.world.asia.india          modreply@clarinet.com
+clari.world.asia.indochina      modreply@clarinet.com
+clari.world.asia.indochina.misc modreply@clarinet.com
+clari.world.asia.japan          modreply@clarinet.com
+clari.world.asia.japan.biz      modreply@clarinet.com
+clari.world.asia.koreas         modreply@clarinet.com
+clari.world.asia.philippines    modreply@clarinet.com
+clari.world.asia.south          modreply@clarinet.com
+clari.world.asia.southeast      modreply@clarinet.com
+clari.world.asia.taiwan         modreply@clarinet.com
+clari.world.asia.vietnam        modreply@clarinet.com
+clari.world.briefs              modreply@clarinet.com
+clari.world.europe              modreply@clarinet.com
+clari.world.europe.alpine       modreply@clarinet.com
+clari.world.europe.balkans      modreply@clarinet.com
+clari.world.europe.benelux      modreply@clarinet.com
+clari.world.europe.british_isles        modreply@clarinet.com
+clari.world.europe.british_isles.biz    modreply@clarinet.com
+clari.world.europe.british_isles.ireland        modreply@clarinet.com
+clari.world.europe.british_isles.uk     modreply@clarinet.com
+clari.world.europe.british_isles.uk.biz modreply@clarinet.com
+clari.world.europe.british_isles.uk.n-ireland   modreply@clarinet.com
+clari.world.europe.central      modreply@clarinet.com
+clari.world.europe.eastern      modreply@clarinet.com
+clari.world.europe.france       modreply@clarinet.com
+clari.world.europe.france.biz   modreply@clarinet.com
+clari.world.europe.germany      modreply@clarinet.com
+clari.world.europe.germany.biz  modreply@clarinet.com
+clari.world.europe.greece       modreply@clarinet.com
+clari.world.europe.iberia       modreply@clarinet.com
+clari.world.europe.ireland      mod-bounce.not-exist@uunet.uu.net
+clari.world.europe.italy        modreply@clarinet.com
+clari.world.europe.northern     modreply@clarinet.com
+clari.world.europe.russia       modreply@clarinet.com
+clari.world.europe.uk           mod-bounce.not-exist@uunet.uu.net
+clari.world.europe.union        modreply@clarinet.com
+clari.world.gov.budgets         modreply@clarinet.com
+clari.world.gov.intl.relations  modreply@clarinet.com
+clari.world.gov.intl_relations  modreply@clarinet.com
+clari.world.gov.politics        modreply@clarinet.com
+clari.world.law                 modreply@clarinet.com
+clari.world.mideast             modreply@clarinet.com
+clari.world.mideast+africa      modreply@clarinet.com
+clari.world.mideast.arabia      modreply@clarinet.com
+clari.world.mideast.egypt       modreply@clarinet.com
+clari.world.mideast.iran        modreply@clarinet.com
+clari.world.mideast.iraq        modreply@clarinet.com
+clari.world.mideast.israel      modreply@clarinet.com
+clari.world.mideast.kuwait      modreply@clarinet.com
+clari.world.mideast.misc        modreply@clarinet.com
+clari.world.mideast.palestine   modreply@clarinet.com
+clari.world.mideast.turkey      modreply@clarinet.com
+clari.world.military            modreply@clarinet.com
+clari.world.oceania             modreply@clarinet.com
+clari.world.oceania.australia   modreply@clarinet.com
+clari.world.oceania.new_zealand modreply@clarinet.com
+clari.world.organizations       modreply@clarinet.com
+clari.world.organizations.misc  modreply@clarinet.com
+clari.world.organizations.un    modreply@clarinet.com
+clari.world.organizations.un.conferences        modreply@clarinet.com
+clari.world.terrorism           modreply@clarinet.com
+clari.world.top                 modreply@clarinet.com
+co.politics.amend2.info         mod-bounce.no-mod-info@uunet.uu.net
+comp.protocols.iso.x400.gateway ifip-gtwy-usenet@ics.uci.edu
+comp.security.announce          cert@cert.org
+cor.gamers                      craig@peak.org
+courts.usa.federal.supreme      courts@usenet.cwru.edu
+courts.usa.state.ohio.appls-8th courts@usenet.cwru.edu
+courts.usa.state.ohio.supreme   courts@usenet.cwru.edu
+crosslink.announce              crosslink-announce@crosslink.net
+cz.net.resources                mod-bounce.no-mod-info@uunet.uu.net
+cz.soc.carolina-cs              mod-bounce.no-mod-info@uunet.uu.net
+de.admin.lists                  de-admin-lists@hactar.hanse.de
+de.admin.news.announce          moderator@dana.de
+de.admin.news.net-abuse.announce        de.admin.news.net-abuse.announce@han.de
+de.admin.submaps                maps@flatlin.ka.sub.org
+de.alt.netdigest                de-alt-netdigest@spectre.ka.sub.org
+de.alt.sources.linux.patches    de-linux-patches@mvmampc66.ciw.uni-karlsruhe.de
+de.alt.zotty.answers            zotty@germany.uucp
+de.answers                      news-answers@mit.edu
+de.comm.gatebau                 de-comm-gatebau@euterpe.owl.de
+de.newusers                     newusers@jat.nbg.sub.org
+de.org.announce                 de-org-announce@hhdo.venture.net
+de.org.dfn                      org-dfn@dfn.de
+de.org.eunet                    news@germany.eu.net
+de.org.in                       de-org-in@individual.net
+de.org.sub                      vorstand@subnet.sub.net
+de.org.xlink                    de-org-xlink@xlink.net
+de.rec.orakel                   fritsch@phil15.uni-sb.de
+de.sci.announce                 de-sci-announce@germany.eu.net
+de.talk.jokes.funny             jokes@ucon.gun.de
+demon.announce                  mod-bounce.no-mod-info@uunet.uu.net
+demon.answers                   mod-bounce.no-mod-info@uunet.uu.net
+demon.archives.announce         mod-bounce.no-mod-info@uunet.uu.net
+demon.ip.support.pc.announce    mod-bounce.no-mod-info@uunet.uu.net
+demon.sales                     mod-bounce.no-mod-info@uunet.uu.net
+dfw.maps                        dfw-maps@cirr.com
+edm.announce                    edm-announce@alive.ampr.ab.ca
+efn.answers                     efn-answers@efn.org
+es.ciencia.astrofisica          es-ciencia-astrofisica@news.rediris.es
+es.comp.infosistemas.listas.anuncios    es-comp-infosistemas-listas-anuncios@news.rediris.es
+es.comp.infosistemas.www        es-comp-infosistemas-www@news.rediris.es
+es.comp.sistemas.inteligentes   es-comp-sistemas-inteligentes@news.rediris.es
+es.news                         es-news@news.rediris.es
+escape.announce                 escape-announce@escape.de
+eunet.checkgroups               newsmaster@eu.net
+eye.letters                     eye@interlog.com
+eye.news                        eye@interlog.com
+finet.freenet.kidlink.kidlink   kidlink@vm1.nodak.edu
+finet.freenet.kidlink.response  response@vm1.nodak.edu
+finet.freenet.lastensuojelu.asiantuntijat       sirius@freenet.hut.fi
+finet.freenet.lastensuojelu.nimeton             nimeton@freenet.hut.fi
+finet.freenet.lists.freenet-otol                freenet@otol.fi
+finet.freenet.mediateekki.kirjastonhoitaja      kirjastonhoitaja@freenet.hut.fi
+finet.freenet.oppimiskeskus.aurora-press        mod-bounce.no-mod-info@uunet.uu.net
+finet.freenet.oppimiskeskus.kontaktit           kontaktit@freenet.hut.fi
+finet.freenet.partnerit.eurooppa-tiedotus.kysymyksia    eurooppa@freenet.hut.fi
+finet.freenet.tiedottaa         tiedotus@freenet.hut.fi
+fj.binaries.msdos               fj-binaries-msdos@merope.pleiades.or.jp
+fj.binaries.x68000              mod-bounce.not-exist@uunet.uu.net
+fj.mail-lists.apollo            apollo.users@etl.go.jp
+fj.mail-lists.reduce            kanada@u-tokyo.ac.jp
+fj.mail-lists.x-window          shinoda@cs.titech.ac.jp
+fj.misc.announce                fj-misc-announce@drl.mei.co.jp
+fj.net.announce                 fj-net-announce@drl.mei.co.jp
+fj.news.announce                fj-news-announce@etl.go.jp
+fj.rec.announce                 fj-rec-announce@drl.mei.co.jp
+fj.soc.announce                 fj-soc-announce@drl.mei.co.jp
+fl.map                          mod-bounce.no-mod-info@uunet.uu.net
+flora.announce                  flora-announce@flora.ottawa.on.ca
+flora.ask-doctor                flora-ask-doctor@flora.ottawa.on.ca
+flora.status                    flora-status@flora.ottawa.on.ca
+fr.announce.divers              fr-divers@usenet.fr.net
+fr.announce.important           fr-announce-important@fdn.org
+fr.announce.newgroups           fr-newgroups@usenet.fr.net
+fr.announce.newusers            fr-newusers@usenet.fr.net
+fr.announce.seminaires          fr-sem@imag.fr
+fr.biz.produits                 biz-prod@usenet.fr.net
+fr.biz.publicite                biz-pub@usenet.fr.net
+fr.comp.infosystemes.www.annonces       fciwa@frmug.org
+fr.doc.magazines                fr-magazines@imag.fr
+fr.education.medias             giraud@crrm.univ-mrs.fr
+fr.emplois.demandes             moderator-demandes@cli51ak.der.edf.fr
+fr.emplois.offres               moderator-offres@cli51ak.der.edf.fr
+fr.misc.transport.autostop      autostop@bsiris.ibs.fr
+fr.network.incidents.annonces   fr-incidents-annonces@usenet.fr.net
+fr.network.incidents.tickets    fr-incidents-tickets@usenet.fr.net
+fr.rec.oracle                   mod-bounce.fr-rec-oracle@uunet.uu.net
+fr.sci.cogni.discussion         Thierry.Herve@imag.fr
+fr.sci.cogni.info               Thierry.Herve@imag.fr
+fr.sci.cogni.publication        Thierry.Herve@imag.fr
+fr.usenet.reponses              fr-reponses@usenet.fr.net
+fr.usenet.stats                 fr-stats@usenet.fr.net
+gay-net.erotic-stories          mod-bounce.no-mod-info@uunet.uu.net
+geometry.announcements          approve@forum.swarthmore.edu
+geometry.college                approve@forum.swarthmore.edu
+geometry.forum                  approve@forum.swarthmore.edu
+geometry.institutes             approve@forum.swarthmore.edu
+geometry.pre-college            approve@forum.swarthmore.edu
+geometry.puzzles                approve@forum.swarthmore.edu
+geometry.research               approve@forum.swarthmore.edu
+geometry.software.dynamic       approve@forum.swarthmore.edu
+georgia.announce                georgia-announce@bagend.org
+ger.binaer.ct.adressen          alex@ambix.han.de
+ger.binaer.ct.bugs              alex@ambix.han.de
+ger.binaer.ct.inhalt            alex@ambix.han.de
+ger.binaer.ct.listings          alex@ambix.han.de
+ger.binaer.ct.pc_config         alex@ambix.han.de
+ger.binaer.ct.pci_corner        alex@ambix.han.de
+ger.binaer.ct.share             alex@ambix.han.de
+ger.binaer.ct.soft              alex@ambix.han.de
+ger.binaer.elrad.demosoft       alex@ambix.han.de
+ger.binaer.elrad.dsp            alex@ambix.han.de
+ger.binaer.elrad.inhalt         alex@ambix.han.de
+ger.binaer.elrad.logik          alex@ambix.han.de
+ger.binaer.elrad.messtechnik    alex@ambix.han.de
+ger.binaer.elrad.microcon       alex@ambix.han.de
+ger.binaer.elrad.simulation     alex@ambix.han.de
+ger.binaer.elrad.soft           alex@ambix.han.de
+ger.binaer.gw.inhalt            alex@ambix.han.de
+ger.binaer.ix.inhalt            alex@ambix.han.de
+ger.binaer.misc.bugs            mod-bounce.not-exist@uunet.uu.net
+ger.binaer.swt.inhalt           alex@ambix.han.de
+git.housing.resnet.availability mod-bounce.no-mod-info@uunet.uu.net
+git.oit.availability            mod-bounce.no-mod-info@uunet.uu.net
+git.sga.usc                     gt4614d@prism.gatech.edu
+git.test.moderated              amy.ayers@oit.gatech.edu
+gnu.announce                    info-gnu@prep.ai.mit.edu
+gnu.bash.bug                    bug-bash@prep.ai.mit.edu
+gnu.cfengine.bug                bug-cfengine@prep.ai.mit.edu
+gnu.emacs.announce              info-gnu-emacs@prep.ai.mit.edu
+gnu.emacs.bug                   bug-gnu-emacs@prep.ai.mit.edu
+gnu.g++.announce                info-g++@prep.ai.mit.edu
+gnu.g++.bug                     bug-g++@prep.ai.mit.edu
+gnu.g++.lib.bug                 bug-lib-g++@prep.ai.mit.edu
+gnu.gcc.announce                info-gcc@prep.ai.mit.edu
+gnu.gcc.bug                     bug-gcc@prep.ai.mit.edu
+gnu.gdb.bug                     bug-gdb@prep.ai.mit.edu
+gnu.ghostscript.bug             bug-ghostscript@prep.ai.mit.edu
+gnu.groff.bug                   bug-groff@prep.ai.mit.edu
+gnu.smalltalk.bug               bug-gnu-smalltalk@prep.ai.mit.edu
+gnu.utils.bug                   bug-gnu-utils@prep.ai.mit.edu
+halcyon.announce                mod-bounce.no-mod-info@uunet.uu.net
+halcyon.answers                 mod-bounce.no-mod-info@uunet.uu.net
+han.announce                    han-announce@kreonet.re.kr
+han.answers                     mod-bounce.no-mod-info@uunet.uu.net
+han.net.announce                mod-bounce.no-mod-info@uunet.uu.net
+hannet.map                      mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.atari.gem             mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.bsdi                  mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.cycle.hpv             mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.firewalls             mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.genesis               mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.ietf                  mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.680x0           mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.config          mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.kernel          mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.linuxnews       mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.net             mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.new-channels    mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.news            mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.scsi            mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.slip            mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.uucp            mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.x11             mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.litprog               mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.lst-erlangen          mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.mac.anf               mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.mac.think-c           mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.medinf                mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.medinf.hl7            mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.netbsd.current        mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.netbsd.current-users  mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.netbsd.netbsd-bugs    mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.netbsd.netbsd-help    mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.netbsd.netbsd-ports   mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.netbsd.netbsd-users   mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.next                  mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.pci                   mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.rfc                   mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.sun.sunflash          mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.taylor                mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.test                  mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.tex.emtex             mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.tex.tex-d-l           mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.ultrasound            mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.watchtower            mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.www.netscape          mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.germnews              mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.nrao.linux-alert        mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.nrao.linux-security     mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.rutgers.linux-680x0     mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.rutgers.linux-announce  mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.rutgers.linux-admin     mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.rutgers.linux-bbs       mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.rutgers.linux-config    mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.rutgers.linux-doc       mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.rutgers.linux-fido      mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.rutgers.linux-ftp       mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.rutgers.linux-gcc       mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.rutgers.linux-kernel    mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.rutgers.linux-mips      mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.rutgers.linux-msdos     mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.rutgers.linux-net       mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.rutgers.linux-newbie    mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.rutgers.linux-normal    mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.rutgers.linux-ppc       mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.rutgers.linux-qag       mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.rutgers.linux-scsi      mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.rutgers.linux-seyon     mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.rutgers.linux-sound     mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.rutgers.linux-svgalib   mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.rutgers.linux-tape      mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.rutgers.linux-uucp      mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.rutgers.linux-wabi      mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.linux.rutgers.linux-x11       mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.netbsd.amiga          mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.netbsd.amiga-dev      mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.netbsd.amiga-x        mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.netbsd.port-m68k      mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.tex.auc-tex           mod-bounce.no-mod-info@uunet.uu.net
+hannet.ml.med.mmatrix-l         mod-bounce.no-mod-info@uunet.uu.net
+hannover.mhh.mhrz.ftp           ftp@ftp.mhrz.mh-hannover.de
+hannover.mhh.mhrz.statistik     news@news.mhrz.mh-hannover.de
+hannover.mhh.ml.test            fifi@news.mhrz.mh-hannover.de
+hannover.sysops                 hannover.sysops@mailnews.han.de
+hannover.uni.rrzn.aktuelles     zziosun@rrzn.uni-hannover.de
+hawaii.ads.misc                 mod-bounce.no-mod-info@uunet.uu.net
+hildesheim.uni.rz.statistik     mod-bounce.no-mod-info@uunet.uu.net
+houston.weather                 weather-monitor@tmc.edu
+hun.lists.hix.forum             hun-lists-hix-forum@sztaki.hu
+hun.lists.hix.guru              hun-lists-hix-guru@sztaki.hu
+hun.lists.hix.jatek             hun-lists-hix-jatek@sztaki.hu
+hun.lists.hix.kornyesz          hun-lists-hix-kornyesz@sztaki.hu
+hun.lists.hix.kultura           hun-lists-hix-kultura@sztaki.hu
+hun.lists.hix.moka              hun-lists-hix-moka@sztaki.hu
+hun.lists.hix.otthon            hun-lists-hix-otthon@sztaki.hu
+hun.lists.hix.randi             hun-lists-hix-randi@sztaki.hu
+hun.lists.hix.sport             hun-lists-hix-sport@sztaki.hu
+hun.lists.hix.szalon            hun-lists-hix-szalon@sztaki.hu
+hun.lists.hix.tipp              hun-lists-hix-tipp@sztaki.hu
+hun.lists.hix.vita              hun-lists-hix-vita@sztaki.hu
+hun.lists.hudom-l               hudom-l@huearn.sztaki.hu
+hun.lists.hunopen               hunopen@huearn.sztaki.hu
+hun.lists.katalist              katalist@huearn.sztaki.hu
+hun.lists.mlf.linux             mlf@bucipc.math.klte.hu
+hun.lists.mlf.linux-doc         mlf@bucipc.math.klte.hu
+hun.lists.mlf.linux-kezdo       mlf@bucipc.math.klte.hu
+hun.lists.mlf.unix              mlf@bucipc.math.klte.hu
+ieee.announce                   mod-bounce.not-moderated@uunet.uu.net
+ieee.eab.announce               mod-bounce.not-moderated@uunet.uu.net
+ieee.pub.announce               mod-bounce.not-moderated@uunet.uu.net
+ieee.rab.announce               mod-bounce.not-moderated@uunet.uu.net
+ieee.stds.announce              mod-bounce.not-moderated@uunet.uu.net
+ieee.tab.announce               mod-bounce.not-moderated@uunet.uu.net
+ieee.tcos                       tcos@cse.ucsc.edu
+ieee.usab.announce              mod-bounce.not-moderated@uunet.uu.net
+iij.announce                    mod-bounce.no-mod-info@uunet.uu.net
+iij.newsletter                  mod-bounce.no-mod-info@uunet.uu.net
+iij.sunflash                    mod-bounce.no-mod-info@uunet.uu.net
+info.admin                      usenet@ux1.cso.uiuc.edu
+info.big-internet               mod-bounce.info-big-internet@uunet.uu.net
+info.bind                       bind@arpa.berkeley.edu
+info.brl-cad                    cad@arl.mil
+info.bsdi.users                 bsdi-users@bsdi.com
+info.bytecounters               bytecounters@venera.isi.edu
+info.firearms                   firearms@ns1.rutgers.edu
+info.firearms.politics          firearms-politics@ns1.rutgers.edu
+info.gated                      gated-people@gated.cornell.edu
+info.grass.programmer           grassp-list@moon.cecer.army.mil
+info.grass.user                 grassu-list@moon.cecer.army.mil
+info.ietf                       ietf@venera.isi.edu
+info.ietf.hosts                 ietf-hosts@nnsc.nsf.net
+info.ietf.isoc                  isoc-interest@relay.sgi.com
+info.ietf.njm                   njm@merit.edu
+info.ietf.smtp                  ietf-smtp@dimacs.rutgers.edu
+info.isode                      isode@nic.ddn.mil
+info.jethro-tull                jtull@remus.rutgers.edu
+info.labmgr                     labmgr@ukcc.uky.edu
+info.mach                       info-mach@cs.cmu.edu
+info.mh.workers                 mh-workers@ics.uci.edu
+info.nets                       mod-bounce.info-nets@uunet.uu.net
+info.nsf.grants                 grants@note.nsf.gov
+info.nsfnet.cert                nsfnet-cert@merit.edu
+info.nsfnet.status              mod-bounce.no-mod-info@uunet.uu.net
+info.nupop                      nupop@casbah.acns.nwu.edu
+info.nysersnmp                  nysersnmp@nisc.nyser.net
+info.osf                        mod-bounce.info-osf@uunet.uu.net
+info.pem-dev                    mod-bounce.info-pem-dev@uunet.uu.net
+info.ph                         info-ph@postoffice.cso.uiuc.edu
+info.rfc                        rfc-request@nic.ddn.mil
+info.slug                       mod-bounce.no-mod-info@uunet.uu.net
+info.snmp                       snmp@psi.com
+info.solbourne                  mod-bounce.no-mod-info@uunet.uu.net
+info.sun-managers               sun-managers@ra.mcs.anl.gov
+info.sun-nets                   sun-nets@umiacs.umd.edu
+info.theorynt                   theorynt@vm1.nodak.edu
+info.unix-sw                    unix-sw-request@wsmr-simtel20.army.mil
+info.wisenet                    wisenet@uicvm.uic.edu
+israel.cs.board                 mod-bounce.no-mod-info@uunet.uu.net
+israel.israel-mideast           mod-bounce.no-mod-info@uunet.uu.net
+israel.israeline                mod-bounce.no-mod-info@uunet.uu.net
+it.annunci                      it-annunci@news.nis.garr.it
+it.annunci.vari                 it-annunci-vari@news.nis.garr.it
+it.arti.musica.recensioni       it-arti-musica-recensioni@news.nis.garr.it
+it.binari.cartoni               it-binari-cartoni@news.nis.garr.it
+it.binari.files                 it-binari-files@news.nis.garr.it
+it.binari.informazioni          it-binari-informazioni@news.nis.garr.it
+it.comp.recensioni              it-comp-recensioni@news.nis.garr.it
+it.comp.sicurezza.cert-it       it-comp-sicurezza-cert-it@news.nis.garr.it
+it.comp.www.annunci             it-comp-www-annunci@news.nis.garr.it
+it.cultura.musicologia          it-cultura-musicologia@news.nis.garr.it
+it.diritto                      it-diritto@news.nis.garr.it
+it.discussioni.iso9000          it-discussioni-iso9000@news.nis.garr.it
+it.faq                          it-faq@news.nis.garr.it
+it.fan.dewdney                  it-fan-dewdney@news.nis.garr.it
+it.industria.varie              it-industria-varie@news.nis.garr.it
+it.news.annunci                 it-news-annunci@news.nis.garr.it
+jyu.mac                         maclista@jyu.fi
+jyu.netix                       netix@phoenix.oulu.fi
+jyu.tieli                       tieli@lists.otol.fi
+jyu.internet                    internet@lists.otol.fi
+jyu.viruskeskustelu             viruskeskustelu@lists.otol.fi
+jyu.tietoliikenne.portmaster    portmaster-users@livingston.com
+jyu.kidsphere                   kidsphere@vms.cis.pitt.edu
+jyu.eettiset                    eettiset@jyu.fi
+jyu.ohjelmointi.coderpunks      coderpunks@toad.com
+jyu.ohjelmointi.cypherpunks     cypherpunks@toad.com
+ka.uni.fundgrube                usenet@nz12.rz.uni-karlsruhe.de
+kw.ads.business                 kw-ads-business@digifix.com
+kw.ads.events                   kw-ads-events@digifix.com
+kw.events                       kw-events@digifix.com
+kw.forsale                      kw-forsale@digifix.com
+ky.weather                      mod-bounce.no-mod-info@uunet.uu.net
+maus.info                       maus-info@gst0hb.north.de
+mcmaster.announce               mod-bounce.no-mod-info@uunet.uu.net
+mcmaster.conduct                mod-bounce.no-mod-info@uunet.uu.net
+mcmaster.newuser                mod-bounce.no-mod-info@uunet.uu.net
+md.announcements                mod-bounce.no-mod-info@uunet.uu.net
+medlux.dept.docs                teleman@medlux.msk.su
+medlux.dept.lic                 teleman@medlux.msk.su
+medlux.dept.qual.doc            teleman@medlux.msk.su
+medlux.diacoms.about            teleman@medlux.msk.su
+medlux.doc.acc                  teleman@medlux.msk.su
+medlux.doc.apt                  teleman@medlux.msk.su
+medlux.doc.family               teleman@medlux.msk.su
+medlux.doc.medinsur             teleman@medlux.msk.su
+medlux.doc.ministry             teleman@medlux.msk.su
+medlux.doc.mos                  teleman@medlux.msk.su
+medlux.doc.nark                 teleman@medlux.msk.su
+medlux.doc.rus                  teleman@medlux.msk.su
+medlux.doc.spb                  teleman@medlux.msk.su
+medlux.doc.vtek                 teleman@medlux.msk.su
+medlux.drugs.reg                teleman@medlux.msk.su
+medlux.drugs.safety             teleman@medlux.msk.su
+medlux.journal.top              teleman@medlux.msk.su
+medlux.journal.vit              teleman@medlux.msk.su
+medlux.medinfo                  teleman@medlux.msk.su
+medlux.mfy.dict.add             teleman@medlux.msk.su
+medlux.mfy.dict.main            teleman@medlux.msk.su
+medlux.mfy.exhibitions          teleman@medlux.msk.su
+medlux.mfy.expo                 teleman@medlux.msk.su
+medlux.mfy.public               teleman@medlux.msk.su
+medlux.postmasters              teleman@medlux.msk.su
+mi.map                          uucpmap@msen.com
+mn.map                          mod-bounce.no-mod-info@uunet.uu.net
+muc.infoforum                   mod-bounce.no-mod-info@uunet.uu.net
+mx.anuncios                     mod-bounce.no-mod-info@uunet.uu.net
+nctu.answers                    answers@nctuccca.edu.tw
+nctu.ccca.ftp.announce          ftp-announce@nctuccca.edu.tw
+nctu.ccca.ftp.newfiles          ftp-newfiles@nctuccca.edu.tw
+nctu.ccca.hytelnet              hytelnet@nctuccca.edu.tw
+nctu.ccca.mirror                ccca-mirror@nctuccca.edu.tw
+nctu.newgroups.announce         newgroups-announce@nctuccca.edu.tw
+ne.general.selected             selected@iecc.com
+nebr.news.announce              nebr-news-announce@nebrnews.org
+nersc.rfc.software              nersc-rfc-software@nersc.gov
+neworleans.info                 new-orleans@yatcom.com
+nil.maps                        mod-bounce.no-mod-info@uunet.uu.net
+nl.announce                     nl-announce@nl.net
+nlnet.announce                  nlnet-announce@nl.net
+no.alt.gullkorn                 no-alt-gullkorn@moderators.usenet.no
+no.news.nytt                    no-news-nytt@moderators.usenet.no
+no.org.efn.nyheter              no-org-efn-nyheter@moderators.usenet.no
+no.org.nobug.nytt               no-org-nobug-nytt@moderators.usenet.no
+no.pressemeldinger              no-pressemeldinger@moderators.usenet.no
+no.religion.kristendom          no-religion-kristendom@moderators.usenet.no
+no.svar                         no-svar@moderators.usenet.no
+ns.announce                     ns-announce@swamp.alt.ns.ca
+nz.biz.misc                     nz-biz-misc@usenet.net.nz
+nz.net.announce                 nz-net-announce@usenet.net.nz
+ott.weather                     weather@aficom.com
+own.answers                     thilo@own.deceiver.org
+own.news.announce               thilo@own.deceiver.org
+own.tibet.wtn                   wtn-editors@utcc.utoronto.ca
+pgh.jobs.offered                mod-pgh-jobs-offered@telerama.lm.com
+pl.announce.newgroups           pl-announce-newgroups@usenet.pl
+pl.answers                      pl-answers@usenet.pl
+pl.gazety.donosy                pl-gazety-donosy@usenet.pl
+pl.gazety.dyrdymalki            pl-gazety-dyrdymalki@usenet.pl
+pl.gazety.gazeta                pl-gazety-gazeta@usenet.pl
+pl.rec.humor.najlepsze          pl-rec-humor-najlepsze@usenet.pl
+pnet.announce.important         pnet-announce-important@prairienet.org
+pnet.comp.ciba                  pnet-comp-ciba@prairienet.org
+pnet.consumer.forsale.real-estate       mod-bounce.not-exist@uunet.uu.net
+pnet.health.braininjury         pnet-health-braininjury@prairienet.org
+pnet.health.drug-alcohol        pnet-health-drug-alcohol@prairienet.org
+pnet.local.politics             pnet-local-politics@prairienet.org
+pnet.news.gazette               pnet-news-gazette@prairienet.org
+pnet.newuser.announce           pnet-newuser-announce@prairienet.org
+pnet.rec.radio.amateur.announce pnet-rec-radio-amateur-announce@prairienet.org
+pnet.school.parkland            pnet-school-parkland@prairienet.org
+pnet.sys.announce               pnet-sys-announce@prairienet.org
+posc.announce                   moderate@posc.org
+posc.application.views          moderate@posc.org
+posc.change_request             moderate@posc.org
+posc.change_request.bcs         moderate@posc.org
+posc.change_request.browser     moderate@posc.org
+posc.change_request.data_access moderate@posc.org
+posc.change_request.data_model  moderate@posc.org
+posc.change_request.ref_entity  moderate@posc.org
+posc.change_request.si          moderate@posc.org
+posc.change_request.ui          moderate@posc.org
+posc.migration                  moderate@posc.org
+posc.sysadm                     postmaster@posc.org
+posc.test                       moderate@posc.org
+psi.interramp                   moderator@interramp.com
+psi.psinet                      psinet-moderator@psi.com
+relcom.answers                  relcom-answers@news.ussr.eu.net
+relcom.bbs.list                 relcom-bbs-list@news.ussr.eu.net
+relcom.ecology                  relcom-ecology@news.ussr.eu.net
+relcom.humor.lus                relcom-humor-lus@news.ussr.eu.net
+relcom.postmasters              relcom-postmasters@news.ussr.eu.net
+relcom.relarn.general           relcom-relarn-general@news.ussr.eu.net
+relcom.relarn.science           relcom-relarn-science@news.ussr.eu.net
+relcom.sci.libraries            relcom-sci-libraries@news.ussr.eu.net
+relcom.wtc                      relcom-wtc@news.ussr.eu.net
+rhein.unibn.rhrz.aktuelles      uzr121@ibm.rhrz.uni-bonn.de
+robin.maps                      mod-bounce.no-mod-info@uunet.uu.net
+saar.lists.freebsd-announce     saar-lists-freebsd-announce@news.phil.uni-sb.de
+saar.lists.freebsd-hackers      saar-lists-freebsd-hackers@news.phil.uni-sb.de
+saar.lists.hpv                  saar-lists-hpv@news.phil.uni-sb.de
+saar.lists.linux-m68k           saar-lists-linux-m68k@news.phil.uni-sb.de
+saar.lists.sun-managers         saar-lists-sun-managers@news.phil.uni-sb.de
+saar.lists.taylor-uucp          saar-lists-taylor-uucp@news.phil.uni-sb.de
+saar.lists.uconnect             saar-lists-uconnect@news.phil.uni-sb.de
+sanet.announce                  mod-bounce.no-mod-info@uunet.uu.net
+sanet.maps                      mod-bounce.no-mod-info@uunet.uu.net
+sanet.newsletters               mod-bounce.no-mod-info@uunet.uu.net
+sanet.tech                      mod-bounce.no-mod-info@uunet.uu.net
+sanet.unix.sources              mod-bounce.no-mod-info@uunet.uu.net
+sat.announce                    satgroup@endicor.com
+sat.eff                         barron@texas.net
+seattle.gay.news                sgn2@sgn.org
+sfnet.atk.flpf.tiedotukset      flpf@nic.funet.fi
+sfnet.funet.tiedotukset         toimitus@funet.fi
+sfnet.fuug.tiedotukset          sfnet-fuug-tiedotukset@fuug.fi
+sfnet.opiskelu.ymp.kurssit      hoffren@cc.Helsinki.FI
+shamash.asap                    shamash-asap@shamash.nysernet.org
+shamash.bridges                 shamash-bridges@shamash.nysernet.org
+shamash.brij-announce           shamash-brij-announce@shamash.nysernet.org
+shamash.bytetorah               shamash-bytetorah@shamash.nysernet.org
+shamash.chabad                  shamash-chabad@shamash.nysernet.org
+shamash.daf-hashavua            shamash-daf-hashavua@shamash.nysernet.org
+shamash.dvartorah               shamash-dvartorah@shamash.nysernet.org
+shamash.enayim                  shamash-enayim@shamash.nysernet.org
+shamash.etz-chaim               shamash-etz-chaim@shamash.nysernet.org
+shamash.freeloan                shamash-freeloan@shamash.nysernet.org
+shamash.genesis                 shamash-genesis@shamash.nysernet.org
+shamash.gossip                  shamash-gossip@shamash.nysernet.org
+shamash.habonet                 shamash-habonet@shamash.nysernet.org
+shamash.halacha-yomi            shamash-halacha-yomi@shamash.nysernet.org
+shamash.hebron-news             shamash-hebron-news@shamash.nysernet.org
+shamash.iris                    shamash-iris@shamash.nysernet.org
+shamash.iris-vip                shamash-iris-vip@shamash.nysernet.org
+shamash.isrecon                 shamash-isrecon@shamash.nysernet.org
+shamash.iyov                    shamash-iyov@shamash.nysernet.org
+shamash.j-seminar               shamash-j-seminar@shamash.nysernet.org
+shamash.jacs                    shamash-jacs@shamash.nysernet.org
+shamash.jewish-psy              shamash-jewish-psy@shamash.nysernet.org
+shamash.jewishdigest            shamash-jewishdigest@shamash.nysernet.org
+shamash.jewishhikers            shamash-jewishhikers@shamash.nysernet.org
+shamash.jewishweek              shamash-jewishweek@shamash.nysernet.org
+shamash.jewsnsports             shamash-jewsnsports@shamash.nysernet.org
+shamash.jewstudies              shamash-jewstudies@shamash.nysernet.org
+shamash.jmba-l                  shamash-jmba-l@shamash.nysernet.org
+shamash.join-help               shamash-join-help@shamash.nysernet.org
+shamash.join-talk               shamash-join-talk@shamash.nysernet.org
+shamash.jpol-pubs               shamash-jpol-pubs@shamash.nysernet.org
+shamash.jpollard                shamash-jpollard@shamash.nysernet.org
+shamash.judean-voice            shamash-judean-voice@shamash.nysernet.org
+shamash.jwtalk                  shamash-jwtalk@shamash.nysernet.org
+shamash.klal-yisrael            shamash-klal-yisrael@shamash.nysernet.org
+shamash.kol-isha                shamash-kol-isha@shamash.nysernet.org
+shamash.lchaim                  shamash-lchaim@shamash.nysernet.org
+shamash.lik-shabbath            shamash-lik-shabbath@shamash.nysernet.org
+shamash.maggid                  shamash-maggid@shamash.nysernet.org
+shamash.maharal                 shamash-maharal@shamash.nysernet.org
+shamash.mail-havurah            shamash-mail-havurah@shamash.nysernet.org
+shamash.mail-jewish             shamash-mail-jewish@shamash.nysernet.org
+shamash.marketfax               shamash-marketfax@shamash.nysernet.org
+shamash.meidalink-eng           shamash-meidalink-eng@shamash.nysernet.org
+shamash.meidalink-por           shamash-meidalink-por@shamash.nysernet.org
+shamash.mj-announce             shamash-mj-announce@shamash.nysernet.org
+shamash.mj-chaburah             shamash-mj-chaburah@shamash.nysernet.org
+shamash.mj-ravtorah             shamash-mj-ravtorah@shamash.nysernet.org
+shamash.mlj                     shamash-mlj@shamash.nysernet.org
+shamash.mochin                  shamash-mochin@shamash.nysernet.org
+shamash.moshiach                shamash-moshiach@shamash.nysernet.org
+shamash.newsflash               shamash-newsflash@shamash.nysernet.org
+shamash.oldflame                shamash-oldflame@shamash.nysernet.org
+shamash.orot                    shamash-orot@shamash.nysernet.org
+shamash.ouintro                 shamash-ouintro@shamash.nysernet.org
+shamash.oukosher                shamash-oukosher@shamash.nysernet.org
+shamash.ouncsy                  shamash-ouncsy@shamash.nysernet.org
+shamash.ounews                  shamash-ounews@shamash.nysernet.org
+shamash.outorah                 shamash-outorah@shamash.nysernet.org
+shamash.oxford-judaism          shamash-oxford-judaism@shamash.nysernet.org
+shamash.pg-sunysb               shamash-pg-sunysb@shamash.nysernet.org
+shamash.pg-yale                 shamash-pg-yale@shamash.nysernet.org
+shamash.prac-halacha            shamash-prac-halacha@shamash.nysernet.org
+shamash.ramchal                 shamash-ramchal@shamash.nysernet.org
+shamash.ravfrand                shamash-ravfrand@shamash.nysernet.org
+shamash.ravriskin               shamash-ravriskin@shamash.nysernet.org
+shamash.rikud                   shamash-rikud@shamash.nysernet.org
+shamash.rjp-l                   shamash-rjp-l@shamash.nysernet.org
+shamash.russian-jews            shamash-russian-jews@shamash.nysernet.org
+shamash.sefarad                 shamash-sefarad@shamash.nysernet.org
+shamash.shabbatshalom           shamash-shabbatshalom@shamash.nysernet.org
+shamash.shma                    shamash-shma@shamash.nysernet.org
+shamash.sri                     shamash-sri@shamash.nysernet.org
+shamash.stop                    shamash-stop@shamash.nysernet.org
+shamash.tefila                  shamash-tefila@shamash.nysernet.org
+shamash.tikkun-on-line          shamash-tikkun-on-line@shamash.nysernet.org
+shamash.top                     shamash-top@shamash.nysernet.org
+shamash.torah-forum             shamash-torah-forum@shamash.nysernet.org
+shamash.torahfax                shamash-torahfax@shamash.nysernet.org
+shamash.torch-d                 shamash-torch-d@shamash.nysernet.org
+shamash.travel                  shamash-travel@shamash.nysernet.org
+shamash.yavneh-na               shamash-yavneh-na@shamash.nysernet.org
+shamash.yomtov                  shamash-yomtov@shamash.nysernet.org
+shamash.zionline                shamash-zionline@shamash.nysernet.org
+sk.project.fast                 mod-bounce.not-exist@uunet.uu.net
+sk.talk.irc                     irc-cs@hron.fei.tuke.sk
+sk.talk.vtip                    vtip@hron.fei.tuke.sk
+slac.announce.important         mod-bounce.no-mod-info@uunet.uu.net
+slac.aps.news                   mod-bounce.no-mod-info@uunet.uu.net
+slac.news.stats                 mod-bounce.no-mod-info@uunet.uu.net
+slac.slc.news                   mod-bounce.no-mod-info@uunet.uu.net
+slac.slc.reports                mod-bounce.no-mod-info@uunet.uu.net
+slac.ssc.news                   mod-bounce.no-mod-info@uunet.uu.net
+slac.test.mod                   mod-bounce.no-mod-info@uunet.uu.net
+slo.biz.computers               slo-biz-computers@punk.net
+slo.biz.misc                    slo-biz-misc@punk.net
+slo.flame                       slo-flame@punk.net
+slo.for-sale                    slo-for-sale@punk.net
+slo.general                     slo-general@punk.net
+slo.jobs                        slo-jobs@punk.net
+slo.personals                   slo-personals@punk.net
+slo.punks                       slo-punks@punk.net
+slo.sex                         slo-sex@punk.net
+stl.jobs.offered                mod-bounce.no-mod-info@uunet.uu.net
+stl.jobs.resumes                mod-bounce.no-mod-info@uunet.uu.net
+sura.announce                   sura-announce@darwin.sura.net
+sura.noc.status                 sura-noc-status@darwin.sura.net
+sura.security                   sura-security@darwin.sura.net
+tamu.religion.christian         shetler@eemips.tamu.edu
+tdr.problems                    problems@tdr.com
+thelinq.admin                   thelinq-admin@apollo.thelinq.net
+thelinq.counselors              thelinq-counselors@apollo.thelinq.net
+thelinq.e-books                 thelinq-e-books@apollo.thelinq.net
+thelinq.elem.homework-help      thelinq-elem-homework-help@apollo.thelinq.net
+thelinq.elem.lesson-plans       thelinq-elem-lesson-plans@apollo.thelinq.net
+thelinq.elem.writing            thelinq-elem-writing@apollo.thelinq.net
+thelinq.geography               thelinq-geography@apollo.thelinq.net
+thelinq.goals-2000              thelinq-goals-2000@apollo.thelinq.net
+thelinq.grants                  thelinq-grants@apollo.thelinq.net
+thelinq.health-workers          thelinq-health-workers@apollo.thelinq.net
+thelinq.high.homework-help      thelinq-high-homework-help@apollo.thelinq.net
+thelinq.high.lesson-plans       thelinq-high-lesson-plans@apollo.thelinq.net
+thelinq.high.writing            thelinq-high-writing@apollo.thelinq.net
+thelinq.home-schooling          thelinq-home-schooling@apollo.thelinq.net
+thelinq.middle.homework-help    thelinq-middle-homework-help@apollo.thelinq.net
+thelinq.middle.lesson-plans     thelinq-middle-lesson-plans@apollo.thelinq.net
+thelinq.middle.writing          thelinq-middle-writing@apollo.thelinq.net
+thelinq.parent.elem             thelinq-parent-elem@apollo.thelinq.net
+thelinq.parent.high             thelinq-parent-high@apollo.thelinq.net
+thelinq.parent.middle           thelinq-parent-middle@apollo.thelinq.net
+thelinq.poli-sci                thelinq-poli-sci@apollo.thelinq.net
+thelinq.private-schools         thelinq-private-schools@apollo.thelinq.net
+thelinq.pta-pto                 thelinq-pta-pto@apollo.thelinq.net
+thelinq.school-council          thelinq-school-council@apollo.thelinq.net
+thelinq.soc-workers             thelinq-soc-workers@apollo.thelinq.net
+thelinq.student-council         thelinq-student-council@apollo.thelinq.net
+thelinq.student.career          thelinq-student-career@apollo.thelinq.net
+thelinq.student.college-talk    thelinq-student-college-talk@apollo.thelinq.net
+thelinq.student.health          thelinq-student-health@apollo.thelinq.net
+thelinq.student.motivation      thelinq-student-motivation@apollo.thelinq.net
+thelinq.student.peer-pressure   thelinq-student-peer-pressure@apollo.thelinq.net
+thenet.downtime                 mod-bounce.no-mod-info@uunet.uu.net
+tnn.announce                    tnn-announce@news.iij-mc.co.jp
+tnn.edu+net.announce            tnn-edu+net-announce@news.iij-mc.co.jp
+tnn.edu+net.edu                 tnn-edu+net-edu@news.iij-mc.co.jp
+tnn.edu+net.misc                tnn-edu+net-misc@news.iij-mc.co.jp
+tnn.edu+net.net                 tnn-edu+net-net@news.iij-mc.co.jp
+tnn.forum.canna                 tnn-forum-canna@news.iij-mc.co.jp
+tnn.forum.global-brain          tnn-forum-global-brain@news.iij-mc.co.jp
+tnn.forum.hello-tokyo           tnn-forum-hello-tokyo@news.iij-mc.co.jp
+tnn.forum.ican                  tnn-forum-ican@news.iij-mc.co.jp
+tnn.forum.nsug                  tnn-forum-nsug@news.iij-mc.co.jp
+tnn.forum.ventures              tnn-forum-ventures@news.iij-mc.co.jp
+tnn.horoscope                   tnn-horoscope@news.iij-mc.co.jp
+tnn.interv.info                 tnn-interv-info@news.iij-mc.co.jp
+tnn.interv.saigai.hq            tnn-interv-saigai-hq@news.iij-mc.co.jp
+tnn.interv.saigai.official      tnn-interv-saigai-official@news.iij-mc.co.jp
+tnn.interv.saigai.lifeline      tnn-interv-saigai-lifeline@news.iij-mc.co.jp
+tnn.interv.saigai.press         tnn-interv-saigai-press@news.iij-mc.co.jp
+tnn.interv.saigai.pcnet-info    tnn-interv-saigai-pcnet-info@news.iij-mc.co.jp
+tnn.interv.tokyoplan.documents  tnn-interv-tokyoplan-documents@news.iij-mc.co.jp
+tnn.marketing.internet          tnn-marketing-internet@news.iij-mc.co.jp
+tnn.music.early.lute            tnn-music-early-lute@news.iij-mc.co.jp
+tnn.netnews.stats               tnn-netnews-stats@news.iij-mc.co.jp
+tnn.os.bsd386.announce          tnn-os-bsd386-announce@news.iij-mc.co.jp
+tnn.travel.globe                tnn-travel-globe@news.iij-mc.co.jp
+tp.sysinfo                      postmaster@toppoint.de
+triangle.singles.announce       wolfe@mercury.interpath.net
+tw.bbs.soc.feminism             bbs-feminism@cis.nctu.edu.tw
+tw.bbs.soc.society              bbs_society@bbs.cis.nctu.edu.tw
+tx.maps                         texas-uucpmap@academ.com
+ucb.cs.soda-move                soda-move-info@cs.berkeley.edu
+ucb.erotica.sensual             mod-bounce.no-mod-info@uunet.uu.net
+ucb.financial-aid.info          mod-bounce.no-mod-info@uunet.uu.net
+ucb.net.barrnet-alert           rob@agate.berkeley.edu
+ucd.itcap                       ucd-itcap@ucdavis.edu
+ucd.listserv.ucdnet-admin       ucd-listserv-ucdnet-admin@ucdavis.edu
+uiuc.campusnet                  uiuc-campusnet@ux1.cso.uiuc.edu
+uiuc.cs.alumni                  uiuc-cs-alumni@ux1.cso.uiuc.edu
+uiuc.misc.trek                  mod-bounce.no-mod-info@uunet.uu.net
+uiuc.org.asia                   uiuc-org-asia@ux1.cso.uiuc.edu
+uiuc.org.men                    uiuc-men-ml@ux1.cso.uiuc.edu
+uk.adverts.stolen.announce      uk-adverts-stolen-announce@usenet.org.uk
+uk.announce                     uk-announce@usenet.org.uk
+uk.announce.events              uk-announce-events@usenet.org.uk
+uk.answers                      news-answers@mit.edu
+uk.food+drink.archives          mark@alexr.co.uk
+uk.net.news.announce            control@usenet.org.uk
+uk.org.bcs.announce             mcramm@tay.ac.uk
+uk.org.community.committee      comcom@nowster.demon.co.uk
+uk.org.epsrc.hpc.news           alison.wall@rl.ac.uk
+uk.org.starlink.announce        announce@starlink.rutherford.ac.uk
+uk.politics.announce            uk-politics-announce@usenet.org.uk
+uk.religion.christian           uk-religion-christian@usenet.org.uk
+uk.religion.jewish              uk-religion-jewish@usenet.org.uk
+ukr.gc.chronical                mod-bounce.no-mod-info@uunet.uu.net
+ukr.gc.normativ                 mod-bounce.no-mod-info@uunet.uu.net
+ukr.rules                       ukr-rules@sita.kiev.ua
+umiami.cs.announce              mod-bounce.no-mod-info@uunet.uu.net
+umich.test.2mod                 mod-bounce.no-mod-info@uunet.uu.net
+umich.test.mod                  mod-bounce.no-mod-info@uunet.uu.net
+umich.test.mod3                 mod-bounce.no-mod-info@uunet.uu.net
+umn.local-lists.bookstore-prices        mod-bounce.no-mod-info@uunet.uu.net
+umn.local-lists.microcomputer-news      mod-bounce.no-mod-info@uunet.uu.net
+unihigh.announce                mod-bounce.no-mod-info@uunet.uu.net
+unihigh.arts                    mod-bounce.no-mod-info@uunet.uu.net
+unihigh.sports.scores           mod-bounce.no-mod-info@uunet.uu.net
+ut.ecf.announce                 mod-bounce.no-mod-info@uunet.uu.net
+ut.ecf.pey                      mod-bounce.no-mod-info@uunet.uu.net
+ut.nets.reports                 mod-bounce.no-mod-info@uunet.uu.net
+utexas.cc.sysmod                cc.sysmod@newshost.cc.utexas.edu
+utexas.ece.announce             moderator@ece.utexas.edu
+utexas.intoffice.news           mod-bounce.no-mod-info@uunet.uu.net
+utexas.math.courses             davis@math.utexas.edu
+utexas.microlab-updates         jrussell@uts.cc.utexas.edu
+utexas.multimedia               kmcdan@uts.cc.utexas.edu
+utexas.org.democrats            troyp@mail.utexas.edu
+utexas.org.fea                  mod-bounce.not-moderated@uunet.uu.net
+utexas.org.st-athanasius        stathsoc@ccwf.cc.utexas.edu
+uunet.alternet                  asp@uunet.uu.net
+uunet.announce                  postmaster@uunet.uu.net
+uunet.products                  postmaster@uunet.uu.net
+uunet.status                    postmaster@uunet.uu.net
+uunet.tech                      postmaster@uunet.uu.net
+uw.ahs.general                  mod-bounce.no-mod-info@uunet.uu.net
+uw.ahs.system                   mod-bounce.no-mod-info@uunet.uu.net
+uw.kin425                       mod-bounce.no-mod-info@uunet.uu.net
+uw.mfcf.hardware                mod-bounce.no-mod-info@uunet.uu.net
+uw.wpirg                        jmsellen@watdragon.uwaterloo.ca
+uwcsa.general                   uwcsa-general@cs.washington.edu
+viwa.any.humor                  merlin@f555.n1.z963.viwanet.ru
+viwa.cinema                     sb@viwanet.ru
+viwa.elite                      ermine@f13.n1.z963.viwanet.ru
+viwa.english.talks              dikov@tsr.ru
+viwa.forward                    sb@viwanet.ru
+viwa.sex                        ivan@f555.n1.z963.viwanet.ru
+vmsnet.announce                 vmsnet-announce@dragon.com
+vmsnet.announce.newusers        vmsnet-announce-newusers@dragon.com
+vmsnet.decus.journal            dsjournal@eisner.decus.org
+vmsnet.employment               vmsnet-employment@aces.com
+vmsnet.sources                  vmsnet-sources@mvb.saic.com
+wolfhh.archive                  chris@wolfhh.hanse.de
+wolfhh.sources                  chris@wolfhh.hanse.de
+wu.cec.general                  mod-bounce.no-mod-info@uunet.uu.net
+york.club.physclub              physclub@yorku.ca
+york.psychology.course.psyc3010c        mod-bounce.no-mod-info@uunet.uu.net
+york.sosc.course.1330           peggy@calumet.yorku.ca
+za.frd.announce                 mod-bounce.no-mod-info@uunet.uu.net
+za.net.maps                     uucpmap@lasernet.co.za
+zipnews.announce                zipnews@zippo.com
+zipnews.control                 zipnews@zippo.com
+zipnews.gov.news.summary.48hours        zipnews@zippo.com
+zipnews.gov.us.society          zipnews@zippo.com
+zipnews.gov.world.analysis      zipnews@zippo.com
+zipnews.gov.world.democracy.human-rights        zipnews@zippo.com
+zipnews.gov.world.diplomatic.security   zipnews@zippo.com
+zipnews.gov.world.economic      zipnews@zippo.com
+zipnews.gov.world.global.communications zipnews@zippo.com
+zipnews.gov.world.news          zipnews@zippo.com
+zipnews.gov.world.press-review  zipnews@zippo.com
+zipnews.gov.world.special-report        zipnews@zippo.com
+zipnews.gov.world.summary.french        zipnews@zippo.com
+zipnews.gov.world.summary.russian       zipnews@zippo.com
+zipnews.gov.world.summary.spanish       zipnews@zippo.com
+

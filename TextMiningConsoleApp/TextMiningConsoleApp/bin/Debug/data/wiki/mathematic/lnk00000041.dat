@@ -1,0 +1,116 @@
+\documentclass{article}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\usepackage{filecontents}
+\usepackage{pdflscape}
+\usepackage{environ}
+
+\usepackage{ifthen}
+\usepackage{comment}
+\pgfplotsset{compat=newest}
+
+
+\newcommand{\EmptyPlot}
+{%
+	%Empty Plot
+    \nextgroupplot[xtick=\empty,ytick=\empty]
+    \addplot[opacity=0, only marks] coordinates {(0,2)};	
+}
+
+\newcommand{\scatterplot}[8]
+{%
+	\nextgroupplot[xtick pos=left, ytick pos=left, 
+		extra x ticks={#1, #2, #3},
+        extra x tick labels={$Q_{0,3}$, $Q_{0,5}$, $Q_{0,75}$},
+        extra x tick style={grid=major,grid style={solid,black!40},
+		tick label style={black,xshift=-0cm, yshift=0.25cm},
+		extra y ticks={#4,#5,#6},
+		extra y tick labels={1,2,3},
+		scatter/classes ={%
+			0={mark=x, blue},
+			1={mark=x, orange},
+			2={mark=x, red},
+			3={mark=x, violet},
+			4={mark=x, green},
+			5={mark=x, gray}
+		}
+				}]
+	\addplot [only marks,mark=+] table [x=#7, y=#8, meta=CLUSTER] from\datatable;
+}
+
+
+\NewEnviron{scatterplotmatrix}[1]
+{
+	\pgfplotstableread{#1}{\datatable}
+	\begin{tikzpicture}
+		\begin{groupplot}
+[			group style={%
+			group size=5 by 5,				
+        	horizontal sep=0pt, 
+        	vertical sep=0pt
+     		},
+     		height=4cm,
+     		width=5.5cm,
+     		%grid = major,
+        	%grid style={dashed, gray!30}
+]
+		\BODY
+		\end{groupplot}
+	\end{tikzpicture}
+
+}
+
+\begin{document}
+
+\pgfplotstableread{test.csv}\datatable
+
+\begin{scatterplotmatrix}{TestCluster.csv}
+	\EmptyPlot
+	\scatterplot{22}{55}{77}{15}{30}{60}{COSINE}{JACCARD}
+	\scatterplot{22}{55}{77}{15}{30}{60}{LEVENSTHEIN}{JACCARD}
+	\scatterplot{22}{55}{77}{15}{30}{60}{LCS}{JACCARD}
+	\scatterplot{22}{55}{77}{15}{30}{60}{LCSUBSTR}{JACCARD}
+	
+	\scatterplot{22}{55}{77}{15}{30}{60}{JACCARD}{COSINE}
+	\EmptyPlot
+	\scatterplot{22}{55}{77}{15}{30}{60}{LEVENSTHEIN}{COSINE}
+	\scatterplot{22}{55}{77}{15}{30}{60}{LCS}{COSINE}
+	\scatterplot{22}{55}{77}{15}{30}{60}{LCSUBSTR}{COSINE}
+	
+	
+	\node at (group c1r1.center) { JACCARD};
+	\node at (group c2r2.center) { COSINE};
+	%\node at (group c3r3.center) { LEVENSTEIN};
+	%\node at (group c4r4.center) { LCS};
+	%\node at (group c5r5.center) { LCSUBSTR};
+	
+\end{scatterplotmatrix}
+
+
+\begin{comment}
+
+\begin{landscape}
+\begin{figure}[!H]
+
+\begin{tikzpicture}
+%\pgfplotsset{group/xticklabels at=edge bottom ,group/yticklabels at=edge right}
+
+\begin{groupplot}
+[	group style=
+	{
+        group size=5 by 5,				
+        horizontal sep=0pt, 
+        vertical sep=0pt
+     },
+     	height=4cm,
+     	width=5.5cm,
+     	%grid = major,
+        grid style={dashed, gray!30},
+        legend to name=leg
+]
+
+    %\nextgroupplot[group/empty plot]
+    \nextgroupplot[xtick=\empty,ytick=\empty]
+    \addplot[opacity=0, only marks] coordinates {(0,2)};	
+	\nextgroupplot[xtick pos=right, ytick =\empty, extra x ticks={26, 55, 73},
+      

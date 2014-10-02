@@ -1,0 +1,187 @@
+THE_URL:http://www2.estrellamountain.edu/faculty/farabee/biobk/BioBookATP.html
+THE_TITLE:ATP AND BIOLOGICAL ENERGY
+                                        ATP AND BIOLOGICAL ENERGY
+
+   Table of Contents
+
+   The Nature of ATP | How to Make ATP | Learning Objectives | Terms | Links
+
+The Nature of ATP | Back to Top
+
+   Adenosine triphosphate (ATP), the energy currency or coin of the cell pictured in Figfures 1 and
+   2, transfers energy from chemical bonds to endergonic (energy absorbing) reactions within the
+   cell. Structurally, ATP consists of the adenine nucleotide (ribose sugar, adenine base, and
+   phosphate group, PO[4]^-2) plus two other phosphate groups.
+
+   Figure 1. A 2-D stick view of the structure of ATP. The above drawing of ATP is from EcoCyc at
+   http://hapuna.ai.sri.com:1555/new-image?type=COMPOUND-IN-PATHWAY&object=ATP
+
+                                           [ecocyc-atp.gif]
+
+   Figure 2. A cartoon and space-filling view of ATP. Image from Purves et al., Life: The Science
+   of Biology, 4th Edition, by Sinauer Associates (www.sinauer.com) and WH Freeman
+   (www.whfreeman.com), used with permission.
+
+                                              [ATP.gif]
+
+   Energy is stored in the covalent bonds between phosphates, with the greatest amount of energy
+   (approximately 7 kcal/mole) in the bond between the second and third phosphate groups. This
+   covalent bond is known as a pyrophosphate bond.
+
+   We can write the chemical reaction for the formation of ATP as:
+
+   a) in chemicalese: ADP + Pi + energy ----> ATP
+
+   b) in English: Adenosine diphosphate + inorganic Phosphate + energy produces Adenosine
+   Triphosphate
+
+   The chemical formula for the expenditure/release of ATP energy can be written as:
+
+   a) in chemicalese: ATP ----> ADP + energy + Pi
+
+   b) in English Adenosine Triphosphate produces Adenosine diphosphate + energy + inorganic
+   Phosphate
+
+   An analogy between ATP and rechargeable batteries is appropriate. The batteries are used, giving
+   up their potential energy until it has all been converted into kinetic energy and heat/unusable
+   energy. Recharged batteries (into which energy has been put) can be used only after the input of
+   additional energy. Thus, ATP is the higher energy form (the recharged battery) while ADP is the
+   lower energy form (the used battery). When the terminal (third) phosphate is cut loose, ATP
+   becomes ADP (Adenosine diphosphate; di= two), and the stored energy is released for some
+   biological process to utilize. The input of additional energy (plus a phosphate group)
+   "recharges" ADP into ATP (as in my analogy the spent batteries are recharged by the input of
+   additional energy).
+
+How to Make ATP | Back to Top
+
+   Two processes convert ADP into ATP: 1) substrate-level phosphorylation; and 2) chemiosmosis.
+   Substrate-level phosphorylation occurs in the cytoplasm when an enzyme attaches a third
+   phosphate to the ADP (both ADP and the phosphates are the substrates on which the enzyme acts).
+   This is illustrated in Figure 3.
+
+   Figure 3. Enzymes and the formation of NADH and ATP. Images from Purves et al., Life: The
+   Science of Biology, 4th Edition, by Sinauer Associates (www.sinauer.com) and WH Freeman
+   (www.whfreeman.com), used with permission.
+
+                                            [NADHenz.gif]
+
+   [substrphos.gif]
+
+   Chemiosmosis, shown in Figure 4, involves more than the single enzyme of substrate-level
+   phosphorylation. Enzymes in chemiosmotic synthesis are arranged in an electron transport chain
+   that is embedded in a membrane. In eukaryotes this membrane is in either the chloroplast or
+   mitochondrion. According to the chemiosmosis hypothesis proposed by Peter Mitchell in 1961, a
+   special ATP-synthesizing enzyme is also located in the membranes. Mitchell would later win the
+   Nobel Prize for his work.
+
+   Figure 4. A typical representation of an electron transport chain. Images from Purves et al.,
+   Life: The Science of Biology, 4th Edition, by Sinauer Associates (www.sinauer.com) and WH
+   Freeman (www.whfreeman.com), used with permission.
+
+   [chemiosm1.gif]
+
+   [chemiosm2.gif]
+
+   During chemiosmosis in eukaryotes, H^+ ions are pumped across an organelle membrane by membrane
+   "pump proteins" into a confined space (bounded by membranes) that contains numerous hydrogen
+   ions. This is shown in Figure 4 and 5. The energy for the pumping comes from the coupled
+   oxidation-reduction reactions in the electron transport chain. Electrons are passed from one
+   membrane-bound enzyme to another, losing some energy with each tansfer (as per the second law of
+   thermodynamics). This "lost" energy allows for the pumping of hydrogen ions against the
+   concentration gradient (there are fewer hydrogen ions outside the confined space than there are
+   inside the confined space). The confined hydrogens cannot pass back through the membrane. Their
+   only exit is through the ATP synthesizing enzyme that is located in the confining membrane. As
+   the hydrogen passes through the ATP synthesizing enzyme, energy from the enzyme is used to
+   attach a third phosphate to ADP, converting it to ATP.
+
+   Figure 5. A generalized view of an electron transport system. Image from Purves et al., Life:
+   The Science of Biology, 4th Edition, by Sinauer Associates (www.sinauer.com) and WH Freeman
+   (www.whfreeman.com), used with permission.
+
+                                            [chemios.gif]
+
+   Usually the terminal phosphate is not simply removed, but instead is attached to another
+   molecule. This process is known as phosphorylation.
+
+   W + ATP -----> W~P + ADP where W is any compound, for example:
+
+   glucose + ATP -----> glucose~P + ADP
+
+   Glucose can be converted into Glucose-6-phosphate by the addition of the phosphate group from
+   ATP.
+
+   ATP serves as the biological energy company, releasing energy for both anabolic and catabolic
+   processes and being recharged by energy generated from other catabolic reactions.
+
+Learning Objectives | Back to Top
+
+     * Describe the components, organization, and functions of an electron transport system.
+     * ATP is composed of ribose, a five-carbon sugar, three phosphate groups, and adenine , a
+       nitrogen-containing compound (also known as a nitrogenous base). What class of organic
+       macromolecules is composed of monomers similar to ATP?
+     * ATP directly or indirectly delivers energy to almost all metabolic pathways. Explain the
+       functioning of the ATP/ADP cycle.
+     * Adding a phosphate to a molecule is called phosphorylation. What two methods do cells use to
+       phosphorylate ADP into ATP?
+
+Terms | Back to Top
+
+   adenine nucleotide
+
+   Adenosine diphosphate
+
+   Adenosine triphosphate (ATP)
+
+   anabolic
+
+   catabolic
+
+   chemiosmosis
+
+   chloroplast
+
+   covalent bonds
+
+   cytoplasm
+
+   electron transport chain
+
+   endergonic
+
+   enzyme
+
+   mitochondrion
+
+   oxidation-reduction
+
+   phosphorylation
+
+   ribose
+
+   second law of thermodynamics
+
+  Links | Back to Top
+
+     * Energy View an online slideshow (102 slides) by Susan Blanchard that covers thermodynamics,
+       ATP and all that stuff.
+     * The Nobel Prize in Chemistry 1997 Three scientists were awarded the Nobel Prize in 1997 for
+       their work studying enzymes involved with the formation and use of ATP. The press release is
+       of particular note.
+     * The Nobel Prize in Chemistry 1978 Press Release Peter D. Mitchell proposed a wild idea about
+       how ATP was made...and he was subsequently validated by other researchers. Read the Nobel
+       Foundation Press release announcing the prize.
+     * Small Molecules for Modern Biology This site requires the Chime Plugin (available from that
+       site) for your browser. You can view images of a variety of small molecules, including ATP.
+     * Mitochondrial Mysteries Demystified This site uses the Shockwave Plugin to provide a
+       multimedia tour of the mitochondrion and its role in cellular metabolism.
+     ___________________________________________________________________________________________
+
+   Text ©1992, 1994, 1997, 1998, 1999, 2000, 2001, 2002, 2007 by M.J. Farabee, all rights reserved.
+
+   Back to Table of Contents | Go To Cellular Metabolism...
+
+   Email: mj.farabee@emcmail.maricopa.edu [envIcon.gif]
+
+   Last modified: Tuesday May 18 2010
+
+   The URL of this page is: www2.estrellamountain.edu/faculty/farabee/biobk/BioBookATP.html

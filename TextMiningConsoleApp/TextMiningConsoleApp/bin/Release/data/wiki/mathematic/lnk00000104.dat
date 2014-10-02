@@ -1,0 +1,552 @@
+THE_URL:http://web.textfiles.com/computers/dlms.txt
+THE_TITLE:dlms.txt
+ --------------------------------------------------------------------------
+ DLMS 2.4                                         |  |  |  |  |  |  |  |  |
+ Electric Storm Software                          |  |  |  |  |  |  |  |  |
+ Copyright 1995, Michel Forget                    |  |  |  |  |  |  |  |  |
+ --------------------------------------------------------------------------
+
+
+                                   ========
+                                   CONTENTS
+                                   ========
+
+              1.  Introduction
+
+              2.  Registration
+                  a) Registration Information
+                  b) Registration Form
+                  c) U.K. Registration Form
+                  d) Site License Registration Form
+
+              3.  Distribution
+
+              4.  Disclaimer
+
+              5.  Contacting Electric Storm Software
+
+              6.  Using DLMS
+                  a. System Requirements
+                  b. The Document List
+                  c. Options
+
+              7.  Acknowledgements
+
+              8.  WUGNET & WINUSER Information
+
+NOTE:  You may prefer to use the online manual; it is more current than the
+       text-only manual.
+
+=============================================================================
+1. INTRODUCTION
+=============================================================================
+
+     There are many new and exciting features to be found in Windows95, but
+perhaps the most exciting feature is the automatic recording of all the
+documents you access so that they can be located and opened at a later
+time with a single mouse click.  The need to search through a complex -- and
+often confusing -- file system for frequently used documents is now a part
+of the past.
+
+     Unfortunately, while implementing this feature, several important
+details seem to have been neglected.  People who take advantage of this
+wonderful feature are usually people who tend to use many documents.  The
+list very quickly becomes crowded with documents no sane person would
+want recorded for later use.  How many times, after all, do you want to
+read "BBS_ADD.TXT"?
+
+  The document list management system allows you to easily maintain a
+  clear and coherent document list in the following ways:
+
+     * You can automatically remove unwanted documents (or document classes)
+       from the document list.
+
+     * You can perform common document list management tasks by using an
+       icon in the system tray (the area on the taskbar where the time is
+       displayed).
+
+     * You can protect one or more documents, thus ensuring that they are
+       not removed from the document list by the document list management
+       system.
+
+     * You can save and restore complete document lists, which is especially
+       useful if there are multiple users on one system (without a network)
+       or there are multiple document lists being used by one user.
+
+     * You can add documents to the document list.
+
+     * You can remove one or more documents from the document list.
+
+     * You can remove all documents from the document list.
+
+     The document list maanagement system is ideally suited to novice users
+and expert users alike.  When a command that will have a permanent effect
+is about to be undertaken, the document list management system can be
+instructed to ask for confirmation.  Users who are experts may elect to
+disable the confirmations, which may be done on an individual basis, to
+improve productivity.
+
+     The document list management system is a completely 32-BIT application
+written explicitly for Windows 95.
+
+
+     What does the press have to say about the document list management
+system?  Well...
+
+     * WINUSER Pick Of The Week (Sunday, December 17, 1995)
+
+=============================================================================
+2. Registration
+=============================================================================
+
+-------------------------------
+- a) Registration Information -
+-------------------------------
+
+OR:  Is this program worth $15.00 to me?
+
+     If you feel that this application is a quality product and would like
+to receive the registered version of the software, please send $15 (US/CDN)
+to:
+
+     Michel Forget (RE: DLMS)
+     12209 Dovercourt Avenue
+     Edmonton, Alberta
+     CANADA
+     T5L 4E1
+
+     If you send a cheque to the address listed above, please make it
+payable to Michel Forget.
+
+     If you do not live in North America (and you are writing to this
+address instead of the address for users in the United Kingdom), please
+send an international money order or the equivalent of $17 USD in your own
+currency.  Please do not send a personal cheque unless you live in North
+America.
+
+     For your convenience, we have included a registration form which can be
+printed.
+
+     If you live in the United Kingdom, you can send your registration (10 UKP)
+to:
+
+     ESS-PC (c/o Denesh Bhabuta)
+     203 Parr Lane
+     Unsworth
+     Bury
+     Lancashire
+     BL9 8JW
+
+     If you send a cheque to the address listed above, please make it payable
+to Denesh Bhabuta.  If you do not, it will be returned to you for correction.
+
+     For your convenience, we have included a United Kingdom registration
+form for those who live in the United Kingdom.
+
+---------------------------------------------
+- b) Registration Form [VersionID:  2.4/NA] -
+---------------------------------------------
+
+     You do not need to print this form to register.  It is provided for
+your convenience only.  If you do not have a printer, or simply do not
+wish to print this form, simply send your name, address, and registration
+fee to the address listed below.
+
+TO:     Michel Forget (RE:  DLMS)
+        12209 Dovercourt Avenue
+        Edmonton, Alberta
+        CANADA
+        T5L 4E1
+
+Dear Michel,
+
+     I am sending you $15.00 (US/CDN) as my registration fee for the
+document list management system.  Please send me a key that I can use to
+unlock all current and future versions of this application.
+
+Name:           ____________________________________
+Address:        ____________________________________
+                ____________________________________
+                ____________________________________
+                ____________________________________
+                ____________________________________
+
+
+If you supply an Internet electronic mail address, your key will be sent
+to you by electronic mail (if possible) in addition to being sent through
+normal mail channels.
+
+E-Mail:         [Internet]
+                ______________________________________________________
+                [Other]
+                ______________________________________________________
+
+[________]      Please send a note to my Internet electronic mail address
+                when new versions of this application are released.
+
+     Please feel free to use the space provided below to record your
+comments, suggestions, or bug reports (if any):
+
+--------------------------------------------------
+- c) U.K. Registration Form [VersionID:  2.4/UK] -
+--------------------------------------------------
+
+     You do not need to print this form to register.  It is provided for your
+convenience only.  If you do not have a printer, or simply do not wish to
+print this form, simply send your name, address, and registration fee to the
+address listed below.
+
+TO:     ESS-PC (c/o Denesh Bhabuta)
+        203 Parr Lane
+        Unsworth
+        Bury
+        Lancashire
+        BL9 8JW
+
+Dear Denesh,
+
+     I am sending you 10 UKP as my registration fee for the document list
+management system.  Please send me a key that I can use to unlock all
+current and future versions of the document list management system.  I
+have made my cheque/money order payable to Denesh Bhabuta.
+
+Name:           ____________________________________
+Address:        ____________________________________
+                ____________________________________
+                ____________________________________
+                ____________________________________
+                ____________________________________
+
+     If you supply an Internet electronic mail address, your key will be sent
+to you by electronic mail (in addition to being sent through normal
+mail channels.
+
+E-Mail:         [Internet]
+                ______________________________________________________
+                [Other]
+                ______________________________________________________
+
+[________]      Please send a note to my Internet electronic mail address
+                when new versions of DocMan are released.
+
+     Please feel free to use the space provided below to record your
+comments, suggestions, or bug reports (if any):  Your comments will be
+forwarded to Electric Storm Software.
+
+----------------------------------------------------------
+- d) Site License Registration Form [VersionID:  2.4/SL] -
+----------------------------------------------------------
+
+     You do not need to print this form to register.  It is provided for
+your convenience only.  If you do not have a printer, or simply do not
+wish to print this form, simply send your name, address, and registration
+fee to the address listed below.
+
+TO:     Michel Forget (RE:  DLMS)
+        12209 Dovercourt Avenue
+        Edmonton, Alberta
+        CANADA
+        T5L 4E1
+
+Dear Michel,
+
+     I am sending you $100.00 USD as my site license registration fee
+for the document list management system.  Please send me a key that I can
+use to unlock this application on an unlimited number of computers.  I
+understand that this key will unlock all current and future versions of
+the document list management system.
+
+Name:           ____________________________________
+Address:        ____________________________________
+                ____________________________________
+                ____________________________________
+                ____________________________________
+                ____________________________________
+
+
+If you supply an Internet electronic mail address, your key will be sent
+to you by electronic mail (if possible) in addition to being sent through
+normal mail channels.
+
+E-Mail:         [Internet]
+                ______________________________________________________
+                [Other]
+                ______________________________________________________
+
+[________]      Please send a note to the above Internet electronic mail
+                address when new versions of this application are released.
+
+     Please feel free to use the space provided below to record comments,
+suggestions, or bug reports (if any):
+
+=============================================================================
+3. Distribution
+=============================================================================
+
+     The unregistered version of the document list management system may be
+distributed with the following limitations:
+
+     GENERAL
+
+     The document list management system may be distributed free of charge;
+there can be no fee charged for the distribution of this application other
+than reasonable media charges.  The document list management system may only
+be distributed in its entirety -- the archive format may be changed,
+but all of the files in the original archive must be included in the new
+archive.
+
+     MAGAZINES
+
+     The document list management system may be included on disks or CD-ROMs
+included with (or sold by) magazines without permission, providing that a
+courtesy copy of the magazine (and media) is sent to Electric Storm Software
+and all other rules of distribution are adhered to.
+
+     CD-ROM SOFTWARE COLLECTIONS
+
+     DocMan may be included on CD-ROM collections, providing that a courtesy
+copy of the media is sent to Electric Storm Software and all other rules
+of distribution are adhered to.
+
+     The limitations specified in this section are not designed to interfere
+with you; they are designed to protect the interests of Electric Storm
+Software.  If there are any questions about these limitations, please do not
+hesitate to contact Electric Storm Software for clarification.
+
+=============================================================================
+4. Disclaimer
+=============================================================================
+
+     DLMS (THE SOFTWARE) DOES NOT COME WITH ANY WARRANTY, EXPRESS OR
+IMPLIED.  IF YOU MAKE USE OF THE SOFTWARE, PLEASE BE AWARE THAT YOU DO SO AT
+YOUR OWN RISK.  NEITHER THE AUTHOR OF THE SOFTWARE (MICHEL FORGET) NOR ANY
+OTHER PARTY WILL ACCEPT RESPONSIBILITY FOR ANY DATA LOSS, EQUIPMENT DAMAGE,
+OR OTHER UNFORESEEN CONSEQUENCES OR DAMAGES THAT ARISE AS A RESULT OF THE
+USE OR MISUSE OF THE SOFTWARE.
+
+=============================================================================
+5. Contacting Electric Storm Software
+=============================================================================
+
+Programming:     Michel Forget
+Design Testing:  Mike Bublitz
+
+     If you would like to contact Electric Storm Software, please send an
+electronic mail message to mforget@planet.eon.net, mbublitz@agt.net,
+or M_Bublitz@msn.com -- your message will be answered promptly.  If you
+would like to contact Electric Storm Software in writing, either for the
+purposes of registration or to offer comments or suggestions, please write
+to:
+
+     Michel Forget (RE: DLMS)
+     12209 Dovercourt Avenue
+     Edmonton, Alberta   T5L 4E1
+     CANADA
+
+=============================================================================
+6. Using The Document List Management System
+=============================================================================
+
+--------------------------
+- a. System Requirements -
+--------------------------
+
+     The document list management system is not an application that will
+devour your system resources.  If you would like to use it on your system,
+you should have a system with the following components/capabilities:
+
+        386/486/Pentium/Pentium Pro Processor
+        Windows 95
+        VGA (>=16 Colours)
+
+------------------------
+- b. The Document List -
+------------------------
+
+     The document list is the heart of this application.  It consists of a
+single pane showing the documents currently in your document list, a row of
+quick access buttons above the window pane, and a menu where the complete
+set of commands is available.  The purpose of each command button is
+explained below:
+
+ File Menu
+
+      Open Document(s)
+
+      This command allows you to open a document (or more than one document)
+      listed in the document list.  Simply select the document(s) you would
+      like to open, then click "Open Document(s)".  The application
+      associated with the document will be opened and the document will be
+      shown.
+
+      New Shortcut
+
+      This command allows you to manually add a document to the document
+      list without actually launching the application associated with the
+      document.
+
+      Close Document Window
+
+      This command will exit the Document Window.  It does not exit the
+      document list management system, though, so the document window can
+      be opened again using the icon in the system tray.
+
+      Exit DLMS
+
+      This command will exit the document list management system.  If you
+      select this command, the icon in the system tray will be removed and
+      the only way to activate this application again will be to restart
+      your computer.
+
+ View Menu
+
+      Refresh
+
+      This command is used to update the document list.  If new documents are
+      added to the list while the document list management system is being
+      used, clicking this button will add them to the document list.
+
+      Options
+
+      This command will allow you to set the various options available in
+      this application.  To obtain more information about the options that
+      can be changed, please read the next section of this manual.
+
+ Document Menu
+
+     Protect Document(s)
+
+     There are documents that are accessed so frequently that they should be
+     protected from accidental removal from the document list.  If there are
+     such documents on your system, you can protect them by selecting each
+     document and then selecting this command.  When an attempt is made to
+     remove a protected document from the document list (and the
+     appropriate option is enabled) you will be asked for
+     confirmation before the document is removed.
+
+     NOTE:  This command will only prevent the document list management
+            system from removing the document.  If you delete the document
+            from the list using any other method (such as the Explorer or
+            the Windows 95 "Clear" feature) the document will be removed.
+
+     Remove Document(s)
+
+     If you decide that one or more documents are no longer needed in the
+     document list, select them using the mouse and then select this command.
+     The selected documents will be removed from the document list
+     immediately.
+
+     Remove All Documents
+
+     If you want to remove all documents from the document list, select this
+     command.
+
+     Remove All Unprotected
+
+     If you want to remove all documents from the document list that are not
+     protected, select this command.
+
+     Save Document List
+
+     If there is more than one user using a computer (but you do not want to
+     install all of the networking drivers and software) you can create a
+     document list for each user using this command.  It is also a useful
+     feature for systems where there is one user with a need for more
+     than one specialized document list.
+
+     Restore Document List
+
+     This command allows you to restore a previously saved document list.
+     When a document list is restored, the previous index of the document
+     list is destroyed by default.  If you do not want the previous index
+     of the document list to be destroyed, there is an appropriate option
+     available to disable this feature.
+
+ Help Menu
+
+     Help Topics
+
+     This command allows you to find out more information about the document
+     list management system and how to use it more effectively.
+
+     About DLMS
+
+     This command allows you to find out more information about the document
+     list management system.  This is also the dialog box in which
+     registered users can enter their personalized keys to fully unlock the
+     application.
+
+--------------
+- c. Options -
+--------------
+
+     The options dialog box allows you to set various levels of confirmation
+before commands that are considered permanent are performed on the document
+list.  For novice users, it is advisable to enable all of the confirmations.
+As users gain experience with the document list management system,
+confirmations can be disabled individually or as a group.
+
+* Ask for confirmation before removing all documents from the document list.
+
+     If this confirmation is enabled, the document list management system
+will display a message box asking for confirmation before the contents of
+the document list is erased. This action, once taken, is irrevocable.
+
+* Ask for confirmation before removing one or more documents from the
+  document list.
+
+     If this confirmation is enabled, the document list management system
+will display a message box asking for confirmation before a set of documents
+(selected by the user) is removed from the document list.
+
+* Ask for confirmation before removing a protected document from the document
+  list.
+
+     Documents that have been protected by the user should not be removed
+from the document list.  If this confirmation is enabled, the document list
+management system will display a message box asking for confirmation before
+a protected document is removed from the document list.  If more than one
+protected document is to be removed, confirmation will be requested for each
+document.
+
+* Use a non-destructive method of restoring document lists.
+
+     This option prevents the previous index of a document list from being
+destroyed when a document list is restored.  This ensures that any documents
+currently in the document list are still available after the document list
+is restored.  This mode can be though of as "merge" mode, whereas the
+default mode can be thought of as "replace" mode.
+
+* Display a summary after each command is completed.
+
+     This option provides extra information about each command that
+the document list management system performs on the document list.  When
+removing documents, it summarizes the number of documents removed.  When
+saving or restoring document lists, it summarizes the number of documents
+saved or restored.
+
+=============================================================================
+7. Acknowledgements
+=============================================================================
+
+     This application would not be possible without the contribution of
+Mike Bublitz and Denesh Bhabuta.  I would also like to thank Cyber City BBS
+(which can be reached at +60-3-758-7400) for creating a special software
+area for Electric Storm Software products.  In addition, I would like to
+thank the fine people at PC Magazine & ZDNet for the excellent technical
+articles and utilities that they publish and make available to the public.
+
+=============================================================================
+8. WUGNET & WINUSER Information
+=============================================================================
+
+The Windows Users Group Network (WUGNET), operators of the oldest and
+largest independent support resource forum (WINUSER) for Windows Users
+on CIS with nearly 1,000,000 active members is recognized in the press,
+user groups, developers, and Microsoft as the foremost resource for
+shareware publishers on CompuServe and the Internet.
+
+---
+Windows 95 is a trademark of Microsoft Corporation.
+Trademarks are property of their respective owners.
+

@@ -1,0 +1,373 @@
+THE_URL:http://web.textfiles.com/computers/ucc.txt
+THE_TITLE:ucc.txt
+-----------------------------------------------------------------------------
+
+   Ultra Crack Compiler v1.2  Copyright (c) 1996  Animadei[T]  08-16-1996
+
+                                 UCC DOCUMENT
+
+                          Last updated on 8-14-1996
+
+-----------------------------------------------------------------------------
+
+
+UCC requirements:  8086 CPU compatible.
+                   17k of disk space.
+                   116k free DOS memory.
+
+
+TABLE OF CONTENTS
+
+  1.  INTRODUCTION
+  2.  PROGRAMMING SCRIPTS
+  3.  COMPILING SCRIPTS
+  4.  TROUBLE SHOOTING
+  5.  UNKNOWN PROBLEMS
+
+
+(1)  INTRODUCTION
+
+     With Ultra Crack Pro (UCP) in mind, you may be challenged to use it to
+it's fullest capability.  Ultra Crack Compiler (UCC) can generate UCP scripts
+fast!  Products of UCC can be made into a library of patches in tiny compact
+packets, or even made into a gigantic patch library managed by a program!
+All products of UCC are royalty free, and free!!!
+
+
+(2)  PROGRAMMING SCRIPTS
+
+          UC (tm) will assume that the maximum file size is MaxLongInt
+     (7FFFFFFFH or 2,147,483,647).  No error checkings are made for the
+     actual execution of the scripts.  You may test scripts by manually
+     running the scripts and check if it was correctly executed without
+     errors.
+
+
+     ==============================================
+       Symbols:  % - used by UCC at compile time.
+                 @ - used by script.
+     ==============================================
+
+
+     -----
+     %DIR  -  Change directory.
+     -----
+       Limit:  Maximum 79 characters.
+
+       Notes:  Changes to directory on compile time (ie. if you don't want to
+               input path to "open/create" command.  DIR will not change back
+               to original directory after compile has completed.
+
+       Example:  (Open "FILE.EXE" in "C:\GAMES" directory).
+                 Dir = C:\GAMES
+                 Open = FILE.EXE
+
+     ------
+     %BKDIR  -  Back to original directory.
+     ------
+       Notes:  Changes back to the original directory where UCC was called.
+
+       Example:  BKDIR
+
+     -------
+     @TITLE  -  Adds a title to the patch file.
+     -------
+       Limit:  65 characters maximum.
+
+       Example:  Title = A title for everyone to see!
+
+     --------
+     @AUTHOR  -  Adds a author name to the patch file.
+     --------
+       Limit:  65 characters maximum.
+
+       Example:  Author = Any author, group, or company's name here!
+
+     -----
+     @MSG  -  Add an extra messege to the patch file.
+     -----
+       Limit:  65 characters maximum.
+
+       Example:  MSG = Please read the created READ.ME file!!!
+
+     -----
+     @DEL  -  Delete file.
+     -----
+       Limit:  Maximum 79 characters.
+
+       Default:  RErr is off.
+
+       Option:  RErr - report error if unable to delete file.
+
+       Example:  (Delete "JUNK.TXT" and report errors).
+
+                 Del = C:\TEMP\JUNK.TXT, RErr
+
+     ----
+     @CD  -  Change directory.
+     ----
+       Limit:  Maximum 67 characters.
+
+       Default:  RErr is off.
+
+       Option:  RErr - report error if unable to change directory.
+
+       Example:  (Change to "C:\UTIL" and report errors).
+
+                 ChDir = C:\UTIL, RErr
+
+     ----
+     @MD  -  Make directory.
+     ----
+       Limit:  Maximum 67 characters.
+
+       Note:  MD will directories up to 67 character regardless if it already
+              exists or not.
+
+       Default:  RErr is off.
+
+       Option:  RErr - report error if unable to make directory.
+
+       Example:  (Make directory "C:\NEW\GAME" and report errors).
+
+                 Md = C:\NEW\GAME, RErr
+
+     -------
+     @RD  -  Remove directory.
+     -------
+       Warnings:  You must perform a "CLOSE" if a file is opened and
+                  located the directory to be deleted!!!  Failure to do so
+                  will cause DOS to lose the file handle and produce unknown
+                  errors!  Also, you must perform a "CD = .." if deleting
+                  the directory currently in use, or nothing will happen!
+
+       Limit:  Maximum 67 characters.
+
+       Note:  If RErr is on, then user gets the choice of killing the
+              directory and its subdirectories.
+
+       Default:  RErr is off.
+
+       Option:  RErr - report error if unable to remove directory.
+
+       Example:  (Remove directory "C:\NEW" and report errors).
+
+                 Rd = C:\NEW, RErr
+
+     ------
+     @OPEN  -  Opens a file.
+     ------
+       Limit:  Maximum 79 characters.
+
+       Note:  File must be present in the directory specified by "open=" at
+              compile time.
+
+       Options:  ResAttr - restore stored file attributes.
+                 ResDT   - restore stored file date/time.
+                 ChkSize - check file size
+                 ChkCRC  - check file CRC
+
+       Example:  (Open "FILE.EXE" and save file size and CRC).
+
+                 Open = C:\NEW\FILE.EXE, ChkSize, ChkCRC
+
+     --------
+     @CREATE  -  Creates a file.
+     --------
+       Limit:  Maximum 79 characters.
+
+       Notes:  File must be present in the directory specified by "create="
+               at compile time.  Be sure that there are enough disk space
+               before using the CREATE command!
+
+       Option:  C - LZSS compression (slow compression time)!
+
+       Example:  (Copy file "SAVEGAME.000" and use compression).
+
+                 Create = C:\GAME\SAVEGAME.000, C
+
+     -------
+     @CLOSE  -  Close file.
+     -------
+       Note:  Use only when in cases of extreme emergency!  Ie. Deleting the
+              directory where the open file is located.
+
+       Example:  Close
+
+     ----
+     @SM  -  Search modes.
+     ----
+       Default:  Case sensitive and reset file for each search.
+
+       Options:  Caps        - Case insensitive mode.
+                 ScanLastPos - Scan from current file position (don't reset
+                               file).
+
+       Example:  SM = Caps, ScanLastPos
+
+     -----
+     @LOC  - Search by location.
+     -----
+       Warning:  Don't exceed file size!  Exceeding true file size may
+                 produce invalid finds or produce very large files!
+
+       Limits:  Position may not be over MaxLongInt!  Position can't be a
+                negative!
+
+       Example:  Loc = 12345678  ; in numerals
+                 -or-
+                 Loc = $BC614E   ; in hex
+
+     -------
+     @SKIPS  - Skip to occurrence number.
+     -------
+       Note:  Binary search is the default search method if location search
+              isn't specified.
+
+       Default:  Finds the first occurrence.
+
+       Example:  (Go to the 10th occurrence).
+
+                 Skip = 10  ; in numerals
+                 -or-
+                 Skip = $A  ; in hex
+
+     -----
+     @JMP  - Jump ñ bytes from string found position.
+     -----
+       Warnings:  Jumping to a negative location will produce errors.
+                  Jumping further than the current file size will generate a
+                  very large file!
+
+       Notes:  If using hex, then you must add "$" to the number.  Also, you
+               must realize that it's positive and negative.  Ie. $FF is -1
+               and $7F is 127.
+
+       Example:  (Find 1st occurence of "world" in "hello world," jump back
+                 6 bytes, and replace with "happy").
+
+                 Jmp = -6
+                 F = "world"
+                 R = "happy"
+
+     ---
+     @F  -  Find string.
+     ---
+       Limits:  String can't be over 255 characters and all hex digits must
+                be even!  If using wildcard mode, all "?" characters are
+                regarded as a wildcard! - watch out!
+
+       Note:  Find string always requires a replace string after!
+
+       Syntax:  Default is hex.  Data in double quotes (") are used as
+                individual characters; data can also be ASCII characters.
+                All "#" and "**" represent wildcards.
+
+       Example:  (Only search for string)
+
+                 F = 0A BA BE " is at the " CA FE
+                 R =
+
+                 (Search and replace string)
+
+                 F = 0A BA BE " is at the " CA FE
+                 R = 0C BA BE " take the " CA 0B
+
+     ---
+     @R  -  Replace string.
+     ---
+       Limits:  String can't be over 255 characters and all hex digits must
+                be even!  If using wildcard mode, all "?" characters are
+                regarded as a wildcard! - watch out!
+
+       Note:  Replace string can be used without find string.
+
+       Syntax:  Default is hex.  Data in double quotes (") are used as
+                individual characters; data can also be ASCII characters.
+                All "#" and "**" represent wildcards.
+
+       Examples:  (Find and replace string)
+
+                  F = 0A BA BE " is at the " CA FE
+                  R = 0C BA BE " take the " CA 0B
+
+                  (Replace string at the current location)
+
+                  R = 0A 0B 0C
+
+                  (Replace string at a specific address)
+
+                  Loc = 12345678
+                  R = 0A 0B 0C
+
+
+(3)  COMPILING SCRIPTS
+
+     Format:  UCC.EXE (path)[script](.UC)
+
+
+     Compiled scripts will be written in the current directory.
+
+
+     All errors are reported.  However, no logs are made with UCC.  You may
+redirect the DOS output to a disk.
+
+     Example:
+
+       C:\> UCC.EXE NEW.UC > UCC.LOG
+
+     UCC.LOG will be produced and you may view the .LOG file using a text
+editor or "TYPE UCC.LOG" to view it on the screen.
+
+
+(4)  TROUBLE SHOOTING
+
+     Because of the vast numbers of errors possible, only tips for good
+programming are included in this document.
+
+
+     General rules for good scripts:
+
+       *  You must have files present and unmodified when compiling!  Check
+          if files are in the correct paths.  (Only files listed in open and
+          create needs to be present when compiling).
+
+       *  All syntax are entered correctly; ie. valid commands, correct
+          lengths, and etc.
+
+       *  All searches end with "R =" replace.  Be sure that if you need to
+          find a string, you must include "R =" after.
+
+       *  If changing to different directories either at compile time or
+          execution, always keep track of the current directory.  If
+          compiling with UCC, use "BkDir" to return to the compiling
+          directory.
+
+       *  If you need to report errors while using DEL, CD, MD, and RD, then
+          include "RErr" at the end of the command.
+
+          Ie. DEL = C:\JUNK.TXT,RErr
+
+          Also, RD, when appended "RErr," will allow the user to kill
+          "deltree" a directory.
+
+       *  Use the error log when testing scripts.
+
+          Format:  UCP.EXE /L[log file] [patch file]
+
+          The default log file UCP.LOG will overwrite existing UCP.LOG in
+          the current directory.  Also, you may change the log file name.
+
+          Ie.  UCP.EXE /Lerror.rpt test.crk
+
+
+(5)  UNKNOWN PROBLEMS
+
+     If you have a problem that is not solved from the "TROUBLE SHOOTING"
+section, then feel free to contact the author at animadei@juno.com,
+animadei@geocities.com, or tcwhq@geocities.com.  All questions will be
+answered as quickly as possible.
+
+
+<EOF>
+

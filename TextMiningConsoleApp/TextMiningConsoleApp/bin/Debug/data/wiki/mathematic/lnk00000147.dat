@@ -1,0 +1,60 @@
+THE_URL:http://web.textfiles.com/computers/linux.txt
+THE_TITLE:linux.txt
+            ************************************************************************
+                        How to Setup/install Linux Slackware step by step by ^MadDog^.
+                ************************************************************************
+
+Do you think i have time to write fucking info or other fucking text that nobody needs? NO!
+As i told ya step by step meening step by stemp that means you will do what i write here
+without any bullshit, even if you newuser u will have Linux BOX today! ok ? :)
+OK so let's start.
+
+STEP 1 - Downloading Linux slackware from INTERNET.
+***************************************************
+K, goto FTP(cuteftp,wsftp), now don't look at it, lauch it!
+1. ftp to ftp.cdrom.com.
+2. cd pub.
+3. cd linux.
+4. cd slackware.
+5. get all txt files down.
+6. goto bootdisk 1.4 download bire.i.
+7. goto rootdisk 1.4 download color.gz.
+8. cd slackware again (or slakware), you see some abc123 shit, right? download all A dirs.
+9. download all AP dirs.
+10. if you want x windows get all X dirs.
+11. if you want TCL get all TCL dirs.
+12. after that reboot.
+13. If you have 2 HD good, format the second drive but first get your important stuff on other disk.
+14. after format type: fdisk.
+15. type: 5.
+16. select second drive (2).
+17. if you see the main menu, type 1.
+18. delete all partitions from the 2 drive.
+19. add partition, if it ask  ya how MB leave 200mb for Linux. i.e your HD 1GB make partition
+for dos 800mb.
+20. reboot and insert bootdisk.
+21. press ENTER.
+22. insert ROOTDISK.
+23. wait, type: fdisk /dev/hdb.
+24. type: n (add partition).
+25. type: p.
+26. type: 2.
+27. enter the first cylinder, i.e: cylinders(567-456): enter 567.
+28. type p again. add ya 190mb.
+29. type: 3.
+30. also first cylinder, add ya 10mb.
+31. to save i think it is: w.
+32. reboot.
+33. bootdisk,rootdisk now type: setup.
+34. You must get a window now. goto select soucrce.
+35. It is beta version od linux.txt if you want more help you gotta pay 10$....joke :).
+26. in select soucre type your first HD path: i.e /dev/hda1.
+27. the dir that linux in, i.e  /linux.
+28. goto install it will ask disk sets mark the sets u got, i.e A,AP,TCL.
+30. now install, format the 190mb with the setup, make a bot disk, copy kernel from disk.
+31. after setup do reboot place in the disk u made with the setup.
+32. that all.
+******************************************
+If you need more help don't e-mail me, read other howtos.
+hillz@bigfoot.com
+*******************

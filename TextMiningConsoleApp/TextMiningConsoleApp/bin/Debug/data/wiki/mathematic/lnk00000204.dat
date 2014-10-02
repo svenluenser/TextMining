@@ -1,0 +1,343 @@
+THE_URL:http://web.textfiles.com/computers/ultima_faq.txt
+THE_TITLE:ultima_faq.txt
+The C64 and Apple II Ultima FAQ
+April 6, 1996
+
+-==UDIC==-
+-------------------------
+Commodore 64 and Apple 2 Ultima FAQ Version 1.4
+by Caliaber Dragon (Bladez@ix.netcom.com)
+
+This is my Frequently Asked Questions list for the Commodore 64
+and Apple II Ultima games freely available on the internet.
+This FAQ is divided into 4 sections.
+
+Introduction
+ Section I: C64 Ultimas
+ Section II: Apple II Ultimas
+ Section III: Akalabeth
+ Section IV: Closing
+
+*** Introduction ***
+
+Hello and welcome to this release of the FAQ. I have pretty
+much refined it to the point where it doesn't need any more
+additions.
+
+Additions to this version:
+
+-Information about ApplePC which has Mockingboard support.
+-Information on Ultima V music on the Apple ][
+-Information on C64 Ultima V music Program by Minstrel
+ Dragon
+-And more...
+
+Need Help:
+
+I wrote this FAQ as a service to all the Ultima players and
+I realize that many of the procedures with all the .gz files
+and everything may be difficult. I would appreciate it if
+someone could provide me with a WWW page or allow me to put
+all this stuff on their page. I would like to store the
+Apple II Ultima's somewhere as .ZIP files (pkzip) so it will
+be much easier for people to access the games and set them
+up. I already went through all the hard stuff and so all you
+have to do is unzip them and play instead of renaming files.
+
+All I need is a place to display the FAQ and games for C64 and
+Apple II on the WWW.
+
+Thanks.
+
+
+*** Section I: C64 Ultimas ***
+
+Q. What is this I have been hearing about Ultima on C64?
+
+A. There are many people who love the 8-bit Commodore and own PC
+   compatibles. These people can  use emulators of the C64
+   which allows them to use software for those computers.
+   This software includes great games such as Ultima I,II,III,IV
+   and V. All of this is freely available on the internet.
+
+
+Q. And Apple II?
+
+A. Yes, Apple II as well. On the Apple II you may play Akalabeth,
+   Richard Garriot's first Ultima game released long ago as well
+   as Ultima I-V. You do not need an Apple II itself to play
+   though. See Section II.
+
+
+Q. Why would I want to play Ultima games on a C64 emulator when
+   I can play the PC versions?
+
+A. The C64 versions of Ultima III and IV include music. It is
+   good music in fact. It's worth getting them working just for
+   that. Another thing is that not everyone has the PC versions
+   of Ultima and don't want to buy them. It would be illegal to
+   distribute copies of PC Ultimas, but the C64 versions for
+   download are no longer sold so they can be downloaded.
+
+
+Q. Ok, good. Now, what emulator can I get and where?
+
+A. The Commodore 64 can be emulated several ways, there are
+   many different programs available. PC64 is the one I most
+   highly recommend, however there is also C64S. These two run
+   on an IBM compatible at various degrees of success. For
+   example, the music will not sound as good on a 386SX/16 as it
+   will on a 486DX4/100.
+
+   There is also a Linux C64 Emulator available I believe.
+   You may want to check the Linux home page at http://www.linux.org
+   and follow the software map.
+
+   As of now, I'm not sure where you can get PC64.
+
+
+Q. Where do I get the C64 Games?
+
+A. ftp: arnold.hiof.edu /games/u
+
+   -Trivia-
+   There were FTP sites that mirrored the former C64 site
+   watson.mbb.sfu.ca, this site was the originator of the
+   collection. Jeff Bryer was forced to remove his C64 collection
+   and the mirrors came to death as well. This also happened to
+   the mirrors of Watson as well. It was sad to see an entire
+   collection of games vanish but you need not worry because
+   C64 Ultimas are now available on the following site:
+
+   arnold.hiof.no /games/u
+
+
+Q. Okay, I have all the games and stuff, how do I run them?
+
+A. Please read the documentations for the emulators you are
+   using. Note that there has been quite a bit of confusion
+   about the documentation of PC64. There are two different
+   versions, one is English and the other is German. The
+   Enlish version is the one with the 'e' in the zip file.
+
+
+Q. I am stuck in _insert name of game here_.
+
+A. Check with WWW site: http://www.udic.org for hint files.
+   Also, try reading the newsgroup alt.games.ultima.dragons.
+   This is the newsgroup for the Ultima Dragons Internet
+   Chapter, an Ultima fan club.
+
+
+Q. Where can I get the manuals for these games?
+
+A. Try FTP.EA.COM and look for MANUAL.TXT, MANUAL.WRI, or
+   MANUAL.ZIP. These are the instructions for the 6 pack of
+   Ultima games on CD-ROM. For maps, try http://www.udic.org
+   and they have scanned images of them which may be downloaded
+   and printed.
+
+
+Q. I can't get the music working in Ultima V.
+
+A. The music in Ultima V can only be heard on a 128.
+   However, Minstrel Dragon has written a program that allows
+   you to hear the music in PC64.  Just check
+   ftp.udic.org and you should be able to find it. The file is
+   u5-music.zip.
+
+   To run it, unzip it into a directory then go into your PC64
+   directory and type:
+
+   PC64 C:\PC64\GAMES\ULTIMA5\U5_MUSIC.P00
+           ^^^^^^^^^^^^^^^^^^
+              (path name)
+
+
+Q. What about these games with the multiple disk images?
+
+A. On the shareware version of C64S, they do not support
+   multiple disk images, in other words you will need to shell
+   out $60 to register it. In the shareware version of PC64
+   you can use multiple disk images allowing you to play the
+   games with more than one disk.
+
+
+Q. In PC64 I try to open these files and I can't. It says they
+   need to be .C64 files. What do I do?
+
+A. Okay, you need to pull down the EMULATOR menu then choose NEW.
+   Now, you can push F9 and choose the .D64 file you need. You
+   can continue to do this and make more than one window open and
+   switch back and forth between them. Remember, once you have
+   loaded the .D64 file, push F5 to go into the emulator. You may
+   push escape and goto the menu then come back by pushing F5
+   again to go where you left off. See the manual for more
+   information.
+
+
+Section II: Apple II Ultima Games
+
+Q. What is this I have been hearing about Ultima games on the
+   Apple II?
+
+A. The Apple II is a computer from the early 80's. The original
+   Ultima Games were made on an Apple II computer. These games
+   have become available on the internet and can be played on
+   DOS, Windows, Linux and Macintosh computers.
+
+
+Q. Ok. How do I emulate an Apple II on my computer?
+
+A. FTP to robot.asimov.com and login as anonymous and give your
+   email address as a password. I /pub/apple2 you will find several
+   directories to get emulators.
+
+    My favorite Apple ][ Emulator in ApplePC, which can be found at
+   robot.asimov.edu in /pub/apple_II/emulators. Get the newest
+   version (2.40) and get iierom.zip. Put them both in a directory
+   and read apple.doc. ApplePC emulates a Mockingboard so you get
+   the cool music in Ultima V.
+
+    The next best one I have found is AppleWin which include 16 and
+   32 bit versions and runs on 486 compatible computers in a
+   Windows enironment. Download the emulator of your choice and
+   set it up. Consult the emulator's documentation on how to do this.
+   Unfortunately, this doesn't emulate Mockingboard.
+
+Q. Ok. The emulator is working now where do I get the games?
+
+A. The games are available from robot.asimov.com in the
+   /pub/apple2/images/games/rpg directory. There you will find
+   Akalabeth, Ultima I, II, III, IV and V. These disks have been
+   compressed by a unix form of compression known as GZIP. All files
+   will have the extension of .gz at the end.
+
+   Important:
+   Get Ultima V from the /pub/apple_II/images/games/rpg/Ultima_V
+   directory.
+
+   Here are step by step instructions for getting a disk image to
+   work.
+
+   1. Download the file. We will use Akalabeth.dsk.gz as an example.
+   2. The file will probably have a shorter name due to the fact
+      it is on a DOS computer. You will need to rename the file
+      Akalabeth.dsk.gz from whatever it is present to something
+      like akale.gz
+   3. Download the gzip compression utility from somewhere.
+   4. Use the command gzip -d akale.gz
+   5. Rename the given file name from that to akale.dsk
+   6. You may now load it in your emulator.
+
+   A simular process is followed for all Apple II disk images.
+
+
+Q. I can't get Akalabeth to boot in AppleWin, it screws up.
+
+A. Follow this procedure to load Akalabeth:
+   1. Click on the disk drive icon and load akale.dsk
+   2. Click on the apple button
+
+
+Q. Music in Ultima V?
+
+A. Yes and no. Yes, if you use ApplePC and no if you use AppleWin.
+   Go into the music configuration from the Ultima V menu and set
+   ports 4 and 5 for Mockingboard. Note that it requires an Adlib
+   compatible card. (any Soundblaster compatible will work)
+
+
+Q. Which version of Ultima I should I get?
+
+A. There are 2 versions of Ultima I available. The first is in the
+   rpg directory and that is the 1986 version. The second is in the
+   Ultima_I directory and is from 1981. The major changes are
+   basically the graphics.
+
+
+Section III: Akalabeth
+
+Q. What is Akalabeth anyway?
+
+A. Akalabeth is the very first Ultima. It was made by Richard
+   Garriot in 1980 and he sold it in zip lock bags. It has been
+   referred to as Ultima 0. All die hard Ultima fans must take
+   a look at it.
+
+
+Q. How do I play Akalabeth?
+
+A. Basically, you explore the Akalabeth, World of Doom and do
+   quests for Lord British.
+
+ Here is what Malicious Dragon says:
+
+Here's what I've found out about Akalabeth:
+Once it sets your stats, you start in a town.  Press 'Q' to exit.
+
+Use:
+<CR> for North
+<- for west
+-> for east
+/ for south
+
+In dungeons, those keys mean forward, left, right, and turn around,
+respectivly.
+
+'A' to attack in dungeons.  No combat outside of dungeons.
+
+Food is consumed at 1 unit per step on the outside, and .1 unit per movement
+in dungeons.  And I thought starvation was a problem in other Ultimas...
+sheesh.
+
+'S' to check your current stats.
+
+no savegame feature that I can see
+symbols that look like giant 'x's are dungeons single boxes are trees
+five linked boxes are towns(all with the same thing in them)
+haven't found Lord British's castle yet. Everything of note that
+can be entered can be entered by pressing 'x'
+climbing up and down ladders and dungeons can be accomplished by pressing x
+There is no difference between Fighters and Mages, except that Mages have
+weaker combat abilities, but can use the mysterious Magic Amulet as a weapon.
+Items in dungeons can be picked up simply by walking on them.
+It's amazing how much Questron dungeon sequences resemble Akalabeth dungeon
+sequences.  Garriot really DID set the standard.
+
+(Thanks to Malicious Dragon)
+
+Section IV: Closing
+
+Well I suppose that wraps it up. Hopefully, if you didn't have any Ultima's,
+now you will and should be able to play them. If you've been wondering
+what Akalabeth was now you have it. This is just my contribution is the
+Ultima Dragon's Internet Chapter, a virtual club that consists of fans
+of the Ultima series of games.
+
+As to ethical questions...
+
+        Some people have brought up the point that having these
+games on the internet is a form of piracy. They are no longer published
+for these systems making them hard to find so they are considered by
+some to be free works. I don't say anything on the issue so please
+no flames.
+
+Made by: Caliaber Dragon
+
+Thanks to:
+UDIC
+Jeff Bryer (Host of the original C64 site)
+Malicious Dragon
+Minstrel Dragon
+
+Send comments, questions, flames etc. to:
+If you have space on your WWW page for this
+and the Apple ][ + C64 Ultima games, or
+would provide me with a page for this, please
+e-mail me.
+
+ Caliaber Dragon
+ -==UDIC==-
+ Bladez@ix.netcom.com
+

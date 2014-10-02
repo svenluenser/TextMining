@@ -1,0 +1,94 @@
+ (2,0)};
+     \nextgroupplot[xtick=\empty,ytick=\empty]
+   \addplot coordinates {(0,2) (1,1) (2,0)};
+     \nextgroupplot[xtick=\empty,ytick=\empty]
+   \addplot coordinates {(0,2) (1,1) (2,0)};
+   
+    \nextgroupplot[xtick=\empty,ytick=\empty]
+    \addplot coordinates {(0,2) (1,1) (2,0)};	
+     \nextgroupplot[xtick=\empty,ytick=\empty]
+   \addplot coordinates {(0,2) (1,1) (2,0)};
+   %Empty Plot
+      \nextgroupplot[xtick=\empty,ytick=\empty]
+    \addplot[opacity=0, only marks] coordinates {(0,2)};
+     \nextgroupplot[xtick=\empty,ytick=\empty]
+   \addplot coordinates {(0,2) (1,1) (2,0)};
+     \nextgroupplot[xtick =\empty ,ytick pos=right]
+   \addplot coordinates {(0,2) (1,1) (2,0)};
+   
+   \nextgroupplot[xtick=\empty,ytick pos=left]
+    \addplot coordinates {(0,2) (1,1) (2,0)};	
+     \nextgroupplot[xtick=\empty,ytick=\empty]
+   \addplot coordinates {(0,2) (1,1) (2,0)};
+     \nextgroupplot[xtick=\empty,ytick=\empty]
+   \addplot coordinates {(0,2) (1,1) (2,0)};
+     %Empty Plot
+      \nextgroupplot[xtick=\empty,ytick=\empty]
+    \addplot[opacity=0, only marks] coordinates {(0,2)};
+     \nextgroupplot[xtick=\empty,ytick=\empty]
+   \addplot coordinates {(0,2) (1,1) (2,0)};
+   
+    \nextgroupplot[ytick=\empty,xtick pos=left]
+    \addplot coordinates {(0,2) (1,1) (2,0)};	
+     \nextgroupplot[xtick=\empty,ytick=\empty]
+   \addplot coordinates {(0,2) (1,1) (2,0)};
+     \nextgroupplot[ytick=\empty,xtick pos=left]
+   \addplot coordinates {(0,2) (1,1) (2,0)};
+     \nextgroupplot[xtick=\empty,ytick=\empty]
+   \addplot coordinates {(0,2) (1,1) (2,0)};
+    %Empty Plot
+      \nextgroupplot[xtick pos=left,ytick pos=right]
+    \addplot[opacity=0, only marks] coordinates {(0,0)(50,50)(100,100)};
+\end{groupplot}
+
+%\draw[thick,>=latex,->,red](group c1r1.center) node {JACCARD} -- (group c2r1.center)node{B};
+\node at (group c1r1.center) { JACCARD};
+\node at (group c2r2.center) { COSINE};
+\node at (group c3r3.center) { LEVENSTEIN};
+\node at (group c4r4.center) { LCS};
+\node at (group c5r5.center) { LCSUBSTR};
+\ref{leg}
+%\draw[black](group c1r1.south west)rectangle(3.5cm,7cm);
+%\begin{axis}[
+%axis y line*=right,
+%scaled  ticks = true,
+%ylabel near ticks,
+%xlabel = x pos-right,
+%ylabel = y pos
+%]
+%\end{axis}
+\end{tikzpicture}
+
+\end{figure}
+\end{landscape}
+
+\begin{landscape}
+\begin{figure}
+\begin{tikzpicture}
+\begin{axis}[name=plot1,height=3cm,width=3cm]
+\addplot coordinates{(0,0) (1,1) (2,2)};
+\end{axis}
+\begin{axis}[name=plot2,at={($(plot1.east)+(1cm,0)$)},anchor=west,height=3cm,width=3cm]
+\addplot coordinates {(0,2) (1,1) (2,0)};
+\end{axis}
+\begin{axis}[name=plot3,at={($(plot1.south)-(0,1cm)$)},anchor=north,height=3cm,width=3cm]
+\addplot coordinates {(0,2) (1,1) (2,1)};
+\end{axis}
+\begin{axis}[name=plot4, at={($(plot2.south)-(0,1cm)$)},anchor=north,height=3cm,width=3cm]
+\addplot coordinates {(0,2) (1,1) (1,0)};
+\end{axis}
+\end{tikzpicture}
+\end{figure}
+\end{landscape}
+\begin{comment}
+\begin{semilogyaxis}[
+        width=18cm, height=12cm,     % size of the image
+        grid = major,
+        grid style={dashed, gray!30},
+        %xmode=log,log basis x=10,
+        %ymode=log,log basis y=10,
+        xmin=0,     % start the diagram at this x-coordinate
+        xmax=100,    % end   the diagram at this x-coordinate
+        ymin=0,     % start the diagram at this y-coordinate
+        %ymax=1.1,   % end   the diagram at this y-coordinate
+        /pgfplots/xtick={0,5,...,

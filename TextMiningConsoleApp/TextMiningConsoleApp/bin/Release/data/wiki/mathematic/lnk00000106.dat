@@ -1,0 +1,328 @@
+THE_URL:http://web.textfiles.com/computers/doomit.txt
+THE_TITLE:doomit.txt
+
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³                        DOOM-IT SETUP PROGRAM Version 5.2                     ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+WHAT'S NEW IN 5.2:
+
+          - Support for the DeHackEd utility (By Greg Lewis)
+          - A few bug fixes from v5.0
+
+         FROM 5.0:
+          - Full support for DOOM and DOOM 2
+          - Ability to define five sets of defaults
+          - More options for setting up your SERIAL/MODEM
+          - Jump through WAD list quicker by pressing A-Z
+          - Direct access to the -TURBO and -TIMER parameters
+          - New interface allowing quicker game selections
+          - Partial available keys list at bottom of screen
+          - DOOM-IT is now Shareware, register for as little as $5
+            Please see ORDER.FRM for more info
+
+DESCRIPTION:
+
+          DOOM-IT is an alternate setup program for DOOM and DOOM 2.  By
+          running DOOM-IT to start your single or multiplayer games, one
+          can take full advantage of command-line-only parameters.  These
+          parameters allow you to load PWADs, record games, start at any
+          level, turn on development mode, and much more.  This version of
+          DOOM-IT provides complete support for DOOM v1.2, DOOM v1.666,
+          and DOOM 2.
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ INSTRUCTIONS
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+INSTALLATION:
+
+          To install DOOM-IT, simply unzip all files within DOOMIT.ZIP
+          into any directory on your hard disk.  This requires PkUnzip
+          version 2.04 or higher.  If you don't already have this program
+          you can download it almost anywhere, including Compuserve.
+
+          To start the program type DOOMIT at the DOS prompt.
+
+          NOTE: You must use the DOOMIT batch file for DOOM-IT to work
+                correctly.  You CANNOT run DMLOAD.EXE.
+
+
+PRE-CONFIGURATION:
+
+          Before starting Network, Serial, or Modem games you need to set
+          your PORT and COM settings.  You can do this from the menu bar
+          located at the top of the screen.  To access this menu press
+          the <Alt> key and select CONFIG.  From this menu you can choose
+          to setup any of the three connection types.  More info on each
+          of these is given later on in this document.
+
+          Before starting any type of game make sure the Path settings are
+          correct.  They can be changed by selecting PATH on the menu bar.
+          Different file locations can be specified for DOOM, WAD, and
+          DeHackEd files.
+
+          NOTE:  You must select "DOOM 1" or "DOOM 2" from the main
+                 menu before accessing the menu bar.  This is done so
+                 DOOM and DOOM 2 can have separate settings.
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ NETWORK PORTS
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+        When playing a network game you must have a port number chosen.
+        To do this, choose "NETWORK" under CONFIG on the menu bar.  By
+        selecting different port numbers you can play more than one match
+        over the same network.  The default port number is 0.
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ SERIAL SETUP
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+        Before setting up a serial game you must specify the COM port that
+        the cable is plugged into.  To do this, choose "SERIAL" under CONFIG
+        on the menu bar.  Your COM port will either be COM 1 or COM 2.
+
+        You are also given the option to select a Baud rate.  This value
+        will override the settings in your MODEM.CFG file.  If you don't
+        want to change this then select "Default".
+
+        The final option determines whether or not to use UART 8250.  This
+        might be necessary if you have an older I/O card.
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ MODEM SETUP
+ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+        Before setting up a modem game you must specify the COM port your
+        modem is connected to.  To do this, choose "MODEM" under CONFIG on
+        the menu bar.  External modems can only use COM 1 or COM 2. Most
+        internal modems can be setup to use COM ports 1 through 4.
+
+        You are also given the option to select a Baud rate.  This value
+        will override the settings in your MODEM.CFG file.  If you don't
+        want to change this then select "Default".
+
+        The final option determines whether or not to use UART 8250.  This
+        might be necessary if you have an older I/O card.
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ USING PWADS
+ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+        If you choose to add PWADs then you will be presented with a list
+        containing all WAD files in the specified directory.  All files
+        except DOOM.WAD are probably PWADs.  These files can contain new
+        levels, graphics, sounds, etc..  You can select up to nine PWADS
+        to load at one time.  To do this, highlight each file and press
+        the space bar to mark it.  You will then see a "*" next to each
+        file name.  Once you have your PWADs marked you can press the
+        enter key to continue.
+
+        NOTE:  If you only need one PWAD loaded then just highlight that
+               file and press enter.
+
+        If you chose to load a PWAD containing a new level, the program
+        will ask you if you want to warp directly to that level.  Doing
+        this will skip the process of choosing an episode or level number.
+        If you have marked more than one PWAD level to load, the program
+        will warp you to the earliest one.
+
+        DOOM-IT allows you to change the episode and level number of
+        a PWAD.  To do this, highlight the desired file and press F1.
+
+        To scan through a large PWAD list faster, press any key A to Z
+        to jump to the first PWAD beginning with that letter.
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ DEHACKED PATCHES
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+        To load a patch file created with the DeHackEd utility, press
+        the letter "P" from the final setup menu.  This will list all
+        files with a .DEH extension in the specified directory.
+
+        I recommend making a default patch file that keeps your original
+        DOOM.EXE settings.  This way you can restore you orignal
+        settings whenever needed, by loading that file.  To make a patch
+        file called "DEFAULT.DEH" type the following at the DOS prompt:
+
+                        DEHACKED -SAVE DEFAULT.DEH
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ USING DEFAULTS
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+        DOOM-IT now allows you to customize five sets of defaults.  To
+        edit these settings select "DEFAULTS" under MISC on the menu bar.
+        Choose one of the five available slots and press <Enter>.  You
+        now have the option to give your settings a menu title.  Once you
+        have chosen a name press <Enter> again.  You are now presented
+        with a screen showing nearly all of the setup options.  Customize
+        the settings and and press <Enter> a final time.  Pressing <Esc>
+        will return you to the menu bar.
+
+        To use these defaults press "D" from the main menu.  When the list
+        appears, highlight the desired settings and press <Enter>.  The
+        only thing left to do is select a game type and decide whether or
+        not to use PWADs.
+
+ÄÄÄÄÄÄÄÄÄÄÄÄ
+ PHONE BOOK
+ÄÄÄÄÄÄÄÄÄÄÄÄ
+        To setup the phone book choose "EDIT" under PBook on the menu bar.
+        After you have done this you are able to pick one of ten slots to
+        modify.  Highlight a slot and press <Enter>.  Type the persons name
+        and press <Enter> again.  Now type their phone number and press
+        <Enter> a final time.  That's all there is to it.  To exit the phone
+        book editor press <Esc>.
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ RECORDING GAME
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+        If you choose to Record your game you must give the program a file
+        name to save the data into. When giving it a file name use no more
+        than eight characters and leave off the file extension.  DOOM will
+        use .LMP as the file extension of your recorded game.  For example,
+        if you give DOOM-IT the name "DEMO1" for recording, DOOM will save
+        it as "DEMO1.LMP".
+
+        If you have DOOM v1.6 or DOOM2 you can record mulitplayer games.
+        You can also specify the amount of diskspace you want DOOM to use
+        for recordings by using the -MAXDEMO parameter.  When recording a
+        multiplayer game make sure ALL players choose the record option
+        for it to work correctly.
+
+        Recording of your game begins right when you start DOOM.  To end
+        the recording press "Q", or exit the game.  Once you have recorded
+        your demo you can it play it back within DOOM-IT by selecting
+        "PLAY DEMO" under MISC on the menu bar.
+
+        NOTE:  If you record a demo from a PWAD, you must load that same
+               PWAD along with DOOM for your demo to play back correctly.
+
+               Also, DOOM-IT no longer allows you to record a game from
+               a saved game.  This feature was removed in DOOM v1.666.
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ MOUSE SUPPORT
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+        You asked for it, so here it is!  Just point and click.  Button one
+        does the same thing as pressing <Enter>, and button two does the same
+        thing as pressing <Esc>.  The only exception to this is when your
+        choosing PWADs or making menu selections on certain menus.  In this
+        case it does the same thing as pressing <Space>.
+
+ÄÄÄÄÄÄÄÄÄÄ
+ ID SETUP
+ÄÄÄÄÄÄÄÄÄÄ
+        If needed, you can run the SETUP.EXE program that comes with DOOM
+        or DOOM 2, within DOOM-IT.  To do this, choose "ID SETUP" under
+        MISC on the menu bar.  This option is given just in case you need
+        to change your hardware configuration at the last minute.  DO NOT
+        start DOOM when running ID's setup program within DOOM-IT.
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ RESPONSE FILE
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+        A great feature in DOOM v1.6 and DOOM 2 is the ability to use a
+        response file.  A response file is an alternate way to pass
+        parameters to DOOM.  Instead of passing DOOM the parameters on
+        the command line, they can be written to a file instead.  This is
+        extremely helpful when passing more parameters to DOOM than will
+        fit on the command line.
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ CUSTOM PARAMETERS
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+        DOOM-IT allows you to define you own parameters.  This might be
+        necessary if you have an alternative SERSETUP or IPXSETUP file that
+        can accept non-standard parameters, or, if you want to use parameters
+        not addressed by DOOM-IT.  To define these you need to select "ADD
+        PARAM" under MISC on the menu bar.  You can type up to about fifty
+        characters of your own text.  These parameters will always be added
+        to the settings you chose when starting a game.
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ OTHER PARAMETERS
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+        There are other parameters DOOM accepts that I felt were not
+        necessary to directly address in DOOM-IT.  I have listed as many
+        as I can below.  If you wish to use any of these, you may add them
+        to the custom parameter list.
+
+Ver.    Parameter               Description
+ÄÄÄÄ   ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ      ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+1.2     -nosound                Plays no sound effects or music during DOOM.
+1.2     -nosfx                  Plays no sound effects during DOOM.
+1.2     -nomusic                Plays no music during DOOM.
+1.2     -config <filename>      Specifies an alternate config file.
+1.2     -devparm                Is needed to allow certain parameters.
+                                With devparm enabled you can press F1 during
+                                the game to save the screen as a PCX file.
+1.2     -recordfrom <#> <name>  This is only availavble in DOOM v1.2.  It
+                                allows you to record a game from a saved
+                                game. (example -recordfrom 1 demoz)
+1.6     -maxdemo (size)         Tells DOOM the max amount of diskspace to
+                                use for demos. For example: "-maxdemo 1024"
+                                sets aside 1 Megabyte.  Default is 128K.
+1.6     -irq <number>           Sets the IRQ for a COM port.
+1.6     -port <number>          Sets the COM I/O port that SERSETUP uses for
+                                your modem. (example -port 0x3f8)
+
+ NOTE:  A better description for many of these parameters can be found in
+        the README file that comes with DOOM or DOOM 2.
+
+ÄÄÄÄÄÄÄÄÄÄÄÄ
+ CHEAT KEYS
+ÄÄÄÄÄÄÄÄÄÄÄÄ
+        Here are some of the most useful cheat keys for DOOM and DOOM 2.
+        Type these key combinations within the game.
+
+  Keys                    Description
+ÄÄÄÄÄÄÄÄÄÄÄÄ      ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ IDKFA            Gives player all weapons, ammo, and keys.
+ IDFA             Gives player all weapons and ammo.  DOOM 2 only.
+ IDCLEV           Followed by an episode and level number, this key
+                  combination will warp you anywhere in the game.
+                  For example, IDCLEV32 will warp you to episode 3
+                  level 2.  In DOOM 2 only a level number is needed.
+ IDDQD            Turns on God mode.  You will be invulnerable.
+ IDDT             Press this combination while viewing the map, it
+                  will let you see everything.
+ IDSPISPOPD       Use this combination in DOOM to turn off clipping
+                  mode.  You will be able to walk through walls.
+ IDCLIP           Turns off clipping mode in DOOM 2.
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ WHY SHAREWARE?
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+        DOOM-IT has come a long way since its first release around five
+        months ago.  I originally wrote it for my own personal use, but
+        now it's a complete setup program with as many of your recommended
+        features included as possible.  I have listened to all of your
+        requests and done my best to satisfy them.  This is why I continued
+        to make four more versions of DOOM-IT and release them as Freeware.
+        I have given you 100+ hours of my time.  All I ask from you is a
+        very small compensation of five dollars for my efforts.  You are
+        given a 21 day trial period to test out DOOM-IT.  If you find it
+        useful and continue to use it, you need to register.  Thanks.
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ IF YOUR BORED!
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         This document and the DOOM-IT program was created in entire by
+         Chris Badger.  I am 18 years old and live in Santa Ynez CA.
+
+         DOOM-IT was programmed in Quick Basic 7.1 PDS on a 486DX-33 VLB
+         with 8Mb of RAM.  Bla Bla Bla...
+
+
+I have explained the usage of this program to the best of my abilities.  If
+you still have questions, comments, or found a big fat bug please feel free
+to contact me on Compuserve at 74017,1014.
+
+I give you complete permission to distribute this program.  I only ask that
+you include all of the original unmodified files, and that you distribute it
+free of charge.  The shareware policy is always in effect no matter where
+you distribute this program.
+------------------------------------------------------------------------------
+
+
+

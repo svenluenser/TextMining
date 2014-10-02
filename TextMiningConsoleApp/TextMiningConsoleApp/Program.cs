@@ -45,6 +45,28 @@ namespace TextMiningConsoleApp
             return global;
         }
 
+        public static List<DocumentTermFrequencyVector> getKeyTermFrequenciesFromIndex(LuceneIndex index, TermFrequencyVector keyTerms)
+        {
+            List<DocumentTermFrequencyVector> docTermFrequencies = new List<DocumentTermFrequencyVector>();
+            IndexReader indexReader = index.Open();
+            int indexSize = indexReader.NumDocs();
+            for(int i=0; i < indexSize; i++)
+            {
+                ITermFreqVector vct = indexReader.GetTermFreqVector(i, "content");
+                if (vct == null) continue;
+                string[] terms = vct.GetTerms();
+                var doc = new DocumentTermFrequencyVector(indexReader.Document(i).Get("filepath"), keyTerms.GetTerms());
+
+                for(int a = 0; a < terms.Length; a++)
+                {
+                    doc.UpdateTermFrequency(terms[a], (uint)vct.GetTermFrequencies()[a]);
+                }
+                docTermFrequencies.Add(doc);
+            }
+
+            return docTermFrequencies;
+        }
+
         static void Main(string[] args)
         {
             LuceneIndex index = new LuceneIndex(getProjectPath()+"/LuceneIndex", new StreamReader(getProjectPath()+"/data/stopwords_en.txt"));
@@ -60,12 +82,35 @@ namespace TextMiningConsoleApp
             
             data = bestTerms.toArray();
 
-            Array.Sort(data);
-            Array.Reverse(data);
-           
+            List<DocumentTermFrequencyVector> list = getKeyTermFrequenciesFromIndex(index, bestTerms);
 
+            int countBio = 0;
+            int countMath = 0;
+    
+            List<DocumentTermFrequencyVector> smalllist = new List<DocumentTermFrequencyVector>();
+            for(int i=0; i < list.Count; i++)
+            {
+                if (list[i].Title.Contains("mathematic") )
+                {
+                    smalllist.Add(list[i]);
+                    countMath++;
+                }
+                if (list[i].Title.Contains("biology") && countBio < 20)
+                {
+                    smalllist.Add(list[i]);
+                    countBio++;
+                }
+            }
+
+            //uint[] data1 = bestTerms.toArray();
+            //Array.Sort(data1);
+            //Array.Sort(data);
+            //Array.Reverse(data);
+            
+
+           
             OxiPlot plot = new OxiPlot(".");
-            plot.Export(plot.BarSeries(data), "BestTermFrequency");
+            plot.Export(plot.ColumnSeries(list), "BestTermFrequency");
 
         }
     }

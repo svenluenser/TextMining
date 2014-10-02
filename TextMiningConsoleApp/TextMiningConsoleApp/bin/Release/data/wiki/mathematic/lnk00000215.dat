@@ -1,0 +1,115 @@
+THE_URL:http://web.textfiles.com/computers/vpb.txt
+THE_TITLE:vpb.txt
+Viper v1.1 (Single Account - Graphical User Interface)
+
+Wiltered Fire : http://www.wilter.com/wf/
+
+---
+Summary:
+---
+
+This program will crack passwords. It will crack a lot of passwords.
+In particular, it will crack DES/crypt() passwords used on most unix
+systems, which must be retrieved either from the /etc/passwd or
+/etc/shadow file. I wouldn't reccomend using this if you don't understand
+what I just said... Traditional crackers use the dictionary method, while
+this one does not. With the dictionary method, every dictionary word
+is tried, hoping for a weak password. This program checks all passwords.
+It will literally go from aaaaaaaa to zzzzzzzz. To be more exact, it actually
+goes from a to 000000000000. It will check all combinations of the character
+ranges : a-z, A-Z, 0-9 for a password length of 1 to 12. This will take
+a long, long time. Realistically this make take days, or even weeks. As
+the password length increases, the amount of possible passwords increases
+exponentially, as can be seen in this table:
+
+Length            Possible    Exact
+
+  1                     62    62^1
+  2                  3,844    62^2
+  3                238,328    62^3
+  4             14,776,336    62^4
+  5            916,132,832    62^5
+  6         56,800,235,584    62^6
+  7      3,521,614,606,208    62^7
+  8     2.183401055849e+14    62^8
+  9     1.353708654626e+16    62^9
+ 10     8.392993658683e+17    62^10
+ 11     5.203656068384e+19    62^11
+ 12     3.226266762398e+21    62^12
+
+---
+So what?
+---
+The common password security dogma has been that if your password
+is not a dictionary word, it is secure. This program puts that to rest.
+Security people have always known that someone could theoretically go
+through every password possible, but it would just take so long as to not
+make is feasable. However, with the ever increasing speed of CPU's, that
+is no longer the case. Even if it takes a month to find the password, it
+is still worth it, if the original intrusion was not detected. Now, the
+working dogma should really be a password of 12+ characters with
+non-alphanumerics, and even then it is not secure. The point of this is
+really to put theory into actual written code.
+
+---
+Usage:
+---
+Copy a line from your /etc/passwd or /etc/shadow file, paste it in the
+account field, and hit 'crack'. It will bring itself to the top, and
+display the password when it finds it. Really how you should use this
+program is to pick out a privledged account, put it in there, and try
+to forget about it for a few days. Just check up on it every once in
+awhile. If you are itching to find a passwords, this is account:
+
+ test:qkvZFZjnWmv42:10633::::::
+
+It will be found early on in the password length four run. It will show
+you what password length it is working on in that status bar, and in the
+title bar. It will also show what the last password it attempted was
+(every 40000 cracks), so you can keep track of its progress.
+This should be obvious, but this program is only a last resort. Use
+standard crackers first. This will take a long, long, long time. You
+have to really want that password (or have a monster machine) to even
+try this.
+
+---
+Why can't I...
+---
+
+- Why does it only try up to a password length of 12? -
+Any higher than that, and it would be entirely insane. If it isn't found
+by 12, you're probably not going to. It either is _very_ long, or has
+a special chararacter in it.
+
+-Why only alphanumnerics? What about special characters? -
+Keep two things in mind. Most passwords are only letters and numbers,
+and each extra character you add to the set greatly increases the time
+it takes to go trough a password length. However, an option to do this will
+may be added in a future version...
+
+-Why is the GUI so sluggish when it is cracking?-
+This is a trade off. It will crack faster if it doesn't have to keep up
+with what's happening to its window. This will vary from machine to machine,
+but moving or minimizing it will take a few seconds...
+
+-Why is my computer slower?-
+Well, let's think about that.. Maybe because you're encrypting every possible
+alphanumneric sequence within 12 characters? Seriously though, if this
+is a problem, you can work around this - but only in windows NT. You can
+use either use the start command when you initially run viper and set
+the priority, or you can open up task manager and right click on the
+process, and set the priority that way.
+
+---
+Revision History
+---
+
+v1.1 : Ported to windows GUI, made into
+       a single account brute force app.
+
+v1.0 : Original command line release,
+       standard cracker.
+
+
+-Hale / admin@deviance.org 02-12-1999
+

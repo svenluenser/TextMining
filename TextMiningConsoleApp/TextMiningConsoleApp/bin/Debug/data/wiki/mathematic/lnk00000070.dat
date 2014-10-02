@@ -1,0 +1,967 @@
+THE_URL:http://web.textfiles.com/computers/attack.txt
+THE_TITLE:attack.txt
+
+        --[Abstract]--
+
+        PGP is the most widely used hybrid cryptosystem around today.  There
+have been AMPLE rumours regarding it's security (or lack there of).  There
+have been rumours ranging from PRZ was coerced by the Gov't into placing
+backdoors into PGP, that the NSA has the ability to break RSA or IDEA in a
+reasonable amount of time, and so on.  While I cannot confirm or deny these
+rumours with 100% certianty, I really doubt that either is true.  This FAQ
+while not in the 'traditional FAQ format' answers some questions about the
+security of PGP, and should clear up some rumours...
+
+        This FAQ is also available from the web:
+
+        http://axion.physics.ubc.ca/pgp-attack.html
+        http://ucsu.colorado.edu/~cantrick/pgphafaq.html
+        http://www.lava.net/~jordy/PGPAttackFAQ.html
+        http://www.stack.urc.tue.nl/~galactus/remailers/attack-faq.html
+
+
+
+                        [ The Feasibility of Breaking PGP ]
+                             [ The PGP attack FAQ ]
+
+                            2/96         v. 2.0
+
+
+              by infiNity [daemon9@netcom.com / route@infonexus.com]
+
+
+                        -- [Brief introduction] --
+
+        There are a great many misconceptions out there about how
+        vulnerable Pretty Good Privacy is to attack.  This FAQ is designed
+        to shed some light on the subject.  It is not an introduction to
+        PGP or cryptography.  If you are not at least conversationally
+        versed in either topic, readers are directed to The Infinity Concept
+        issue 1, and the sci.crypt FAQ.  Both documents are available via
+        ftp from infonexus.com.  This document can be found there
+        as well:
+URL:ftp://ftp.infonexus.com/pub/Philes/Cryptography/PGP/PGPattackFAQ.gz
+
+        PGP is a hybrid cryptosystem.  It is made up of 4 cryptographic
+        elements: It contains a symmetric cipher (IDEA), an asymmetric cipher
+        (RSA), a one-way hash (MD5), and a random number generator (Which is
+        two-headed, actually:  it samples entropy from the user and then
+        uses that to seed a PRNG).  Each is subject to a different form of
+        attack.
+
+
+                        1 -- [The Symmetric Cipher] -- 1
+
+        IDEA, finalized in 1992 by Lai and Massey is a block cipher that
+        operates on 64-bit blocks of data.  There have been no advances
+        in the cryptanalysis of standard IDEA that are publically known.
+        (I know nothing of what the NSA has done, nor does most anyone.)
+        The only method of attack, therefore, is brute force.
+
+        -- Brute Force of IDEA --
+
+        As we all know the keyspace of IDEA is 128-bits.  In base 10
+        notation that is:
+
+                340,282,366,920,938,463,463,374,607,431,768,211,456.
+
+        To recover a particular key, one must, on average, search half the
+        keyspace.  That is 127 bits:
+
+                170,141,183,460,469,231,731,687,303715,884,105,728.
+
+        If you had 1,000,000,000 machines that could try 1,000,000,000
+        keys/sec, it would still take all these machines longer than the
+        universe as we know it has existed and then some, to find  the key.
+        IDEA, as far as present technology is concerned, is not vulnerable to
+        brute-force attack, pure and simple.
+
+        -- Other attacks against IDEA --
+
+        If we cannot crack the cipher, and we cannot brute force the
+        key-space, what if we can find some weakness in the PRNG used
+        by PGP to generate the psuedo-random IDEA session keys?  This
+        topic is covered in more detail in section 4.
+
+
+
+                        2 -- [The Asymmetric Cipher] -- 2
+
+        RSA, the first full fledged public key cryptosystem was designed
+        by Rivest, Shamir, and Adleman in 1977.  RSA gets it's security from
+        the apparent difficulty in factoring very large composites.
+        However, nothing has been proven with RSA.  It is not proved
+        that factoring the public modulous is the only (best) way to
+        break RSA.  There may be an as yet undiscovered way to break it.
+        It is also not proven that factoring *has* to be as hard as it is.
+        There exists the possiblity that an advance in number theory may lead
+        to the discovery of a polynomial time factoring algorithm.  But, none
+        of these things has happened, and no current research points in that
+        direction.  However, 3 things that are happening and will continue
+        to happen that take away from the security of RSA are: the advances
+        in factoring technique, computing power and the decrease in the
+        cost of computing hardware.  These things, especially the first one,
+        work against the security of RSA.  However, as computing power
+        increases, so does the ability to generate larger keys.  It is *much*
+        easier to multiply very large primes than it is to factor the
+        resulting composite (given today's understanding of number theory).
+
+        -- The math of RSA in 7 fun-filled steps --
+
+        To understand the attacks on RSA, it is  important to understand
+        how RSA works.  Briefly:
+
+          - Find 2 very large primes, p and q.
+          - Find n=pq (the public modulous).
+          - Choose e, such that e<n and relatively prime to (p-1)(q-1).
+          - Compute d=e^-1 mod[(p1-)(q-1)]  OR  ed=1[mod (p-1)(q-1)].
+          - e is the public exponent and d is the private one.
+          - The public-key is (n,e), and the private key is (n,d).
+          - p and q should never be revealed, preferably destroyed (PGP
+            keeps p and q to speed operations by use of the Chinese Remainder
+            Theorem, but they are kept encrypted)
+
+          Encryption is done by dividing the target message into blocks
+          smaller than n and by doing modular exponentiation:
+
+                c=m^e mod n
+
+          Decryption is simply the inverse operation:
+        
+                m=c^d mod n
+
+
+        -- Brute Force RSA Factoring --
+
+        An attacker has access to the public-key.  In other words, the
+        attacker has e and n.  The attacker wants the private key.  In
+        other words the attacker wants d.  To get d, n needs to be
+        factored (which will yield p and q, which can then be used to
+        calculate d).  Factoring n is the best known attack against RSA to
+        date.  (Attacking RSA by trying to deduce (p-1)(q-1) is no easier
+        than factoring n, and executing an exhaustive search for values of d
+        is harder than factoring n.)  Some of the algorithms used for
+        factoring are as follows:
+
+        - Trial division:  The oldest and least efficient.  Exponential
+        running time.  Try all the prime numbers <= sqrt(n).
+
+        - Quadratic Sieve (QS):  The fastest algorithm for numbers smaller
+        than 110 digits.
+
+        - Multiple Polynomial Quadratic Sieve (MPQS):  Faster version of QS.
+
+        - Double Large Prime Variation of the MPQS:  Faster still.
+
+        - Number Field Sieve (NFS):  Currently the fastest algorithm known for
+        numbers larger than 110 digits.  Was used to factor the ninth Fermat
+        number.
+
+        These algorithms represent the state of the art in warfare against
+        large composite numbers (therefore agianst RSA).  The best algorithms
+        have a super-polynomial (sub-exponential) running time, with the NFS
+        having an asypmtotic time estimate closest to polynomial behaivior.
+
+        Still, factoring large numbers is hard.  However, with the advances
+        in number theory and computing power, it is getting easier.  In 1977
+        Ron Rivest said that factoring a 125-digit number would take
+        40 quadrillion years.  In 1994 RSA129 was factored using about
+        5000 MIPS-years of effort from idle CPU cycles on computers across
+        the Internet for eight months.  In 1995 the Blacknet key (116 digits)
+        was factored using about 400 MIPS-years of effort (1 MIPS-year is
+        a 1,000,000 instruction per second computer running for one year)
+        from several dozen workstations and a MasPar for about three months.
+        Given current trends the keysize that can be factored will only
+        increase as time goes on.  The table below estimates the effort
+        required to factor some common PGP-based RSA public-key modulous
+        lengths using the General Number Field Sieve:
+
+
+                KeySize         MIPS-years required to factor
+        -----------------------------------------------------------------
+                512                     30,000
+                768                     200,000,000
+                1024                    300,000,000,000
+                2048                    300,000,000,000,000,000,000
+
+
+        The next chart shows some estimates for the equivalences in brute
+        force key searches of symmetric keys and brute force factoring
+        of asymmetric keys, using the NFS.
+
+
+                Symmetric                       Asymmetric
+        ------------------------------------------------------------------
+                56-bits                         384-bits
+                64-bits                         512-bits
+                80-bits                         768-bits
+                112-bits                        1792-bits
+                128-bits                        2304-bits
+
+
+        It was said by the 4 men who factored the Blacknet key that
+        "Organizations with 'more modest' resources can almost certainly
+        break 512-bit keys in secret right now."  This is not to say
+        that such an organization would be interested in devoting so
+        much computing power to break just anyone's messages.  However, most
+        people using cryptography do not rest comfortably knowing the
+        system they trust their secrets to can be broken...
+
+        My advice as always is to use the largest key allowable by the
+        implementation.  If the implementation does not allow for large
+        enough keys to satisfy your paranoia, do not use that implementation.
+
+
+        -- PGP's Handling of Prime Numbers --
+
+
+        RSA gets it's security from the presumed difficulty in factoring
+        large prime numbers.  So, PGP needs some way of generating large
+        prime numbers.  As it turns out, there is no way to feasibly
+        generate large primes.  So, what PGP does,is generate large odd
+        numbers and test them for primality.
+        By the way, there *are* in fact, an infinite amount of prime numbers.
+        Probably more than you would first suspect.  The prime number theorem
+        gives a useful approximation for the prime distribution function
+        PI(n); which specifies the number of primes <=n:
+
+                  limit
+                n -->  infinity PI(n) / [ n / (ln (n) )] == 1
+
+        So, the approximation n/ln n gives with reasonable accuracy, the
+        density of primes less than or equal to n:
+
+                There are 17 prime numbers from 1-60.
+
+                        60 / ln(60) = 14.65
+
+                An error of about 8% (this is not linear, however).
+
+
+        To test a candidate number (n) for primality, one obvious and simple
+        method is to try trial divisions.  Try dividing n by each integer
+        2,3,...,sqrt(n).  If n is prime, none of the trial divisors will
+        divide it.  Assuming each division takes constant time, this method
+        has a worst case running time (if n is in fact prime) proportional to
+        exponential, in the length of n.  If n is non-trivial (which is the
+        case for the PGP's candidate numbers) this approach is not feasible
+        (this is also why trial division is not a viable method of attack
+        against RSA).  (Trial divsion has the one advantage of determining the
+        prime factorization of n, however.  But who wants to wait till the
+        Universe explodes (implodes)?)
+
+        -- Psuedo-Primality --
+
+        In order to test non-trivial candidates, PGP uses psuedo-primality
+        testing.  Psuedo-primality tests take a candidate number and test
+        it for primality, returning with a certian degree of accuracy, whether
+        or not it's prime.  PGP uses the 4 Fermat Tests to test the numbers
+        for primality.
+
+        -- The Four Fermat Tests --
+
+        - Candidate number to be tested for primality: n.
+        - Take the first 4 prime numbers b={2,3,5,7}
+        - Take b^(n-1) % n = w
+        - If w == 1; for all b, n is probably prime.  Any other number and n is
+          definitely not prime.
+
+
+        While it *is* possible for a number to be reported as being prime
+        when it is in reality a composite, it is very unlikely.  After each
+        successful test the likelyhood drops dramatically, after one test,
+        the likelyhood is 1 in 10^13, after  two tests, the likelyhood is
+        1 in 10^26, and if the number passes all four tests, the possibility
+        of it not being prime is 1 in 10^52.  The 4 Fermat Tests will *not*
+        discard a prime number.
+
+
+        -- The Carmichael Numbers --
+
+        Unfortunately, there are some numbers which are *not* prime, that
+        do satisfy the equation b^(n-1) % n.  These integers are known as
+        The Carmichael Numbers, and are quite rare (the reason being because
+        a Carmichael Number must not be divisable by the square of any prime
+        and must be the product of at least three primes).  The first
+        three Carmichael Numbers are: 561, 1105, and 1729.  They are so rare,
+        in fact, there are only 255 of them less than 10^9.  The chance of
+        PGP generating a Carmichael Number is less than 1 in 10^50.
+
+
+        -- Esoteric RSA attacks --
+
+        These attacks do not exhibit any profound weakness in RSA itself,
+        just in certian implementations of the protocol.  Most are not
+        issues in PGP.
+
+        -- Choosen cipher-text attack --
+
+        An attacker listens in on the insecure channel in which RSA
+        messages are passed.  The attacker collects an encrypted message
+        c, from the target (destined for some other party).  The attacker
+        wants to be able to read this message without having to mount a
+        serious factoring effort.  In other words, she wants m=c^d.
+
+        To recover m, the attacker first chooses a random number, r<n.
+        (The attacker has the public-key (e,n).)  The attacker computes:
+
+                x=r^e mod n (She encrypts r with the target's public-key)
+
+                y=xc mod n (Multiplies the target ciphertext with the temp)
+
+                t=r^-1 mod n (Multiplicative inverse of r mod n)
+
+        The attacker counts on the fact property that:
+
+                If x=r^e mod n, Then r=x^d mod n
+
+        The attacker then gets the target to sign y with her private-key,
+        (which actually decrypts y) and sends u=y^d mod n to the
+        attacker.  The attacker simply computes:
+
+        tu mod n = (r^-1)(y^d) mod n = (r^-1)(x^d)(c^d) mod n = (c^d) mod n
+
+                                = m
+
+        To foil this attack do not sign some random document presented to
+        you.  Sign a one-way hash of the message instead.
+
+        -- Low encryption exponent e --
+
+        As it turns out, e being a small number does not take away from the
+        security of RSA.  If the encryption exponent is small (common values
+        are 3,17, and 65537) then public-key operations are significantly
+        faster.  The only problem in using small values for e  as a public
+        exponent is in encrypting small messages.  If we have 3 as our e
+        and we have an m smaller than the cubic root of n, then the message
+        can be recovered simply by taking the cubic root of m beacuse:
+
+                m [for m<= 3rdroot(n)]^3 mod n will be equivalent to m^3
+
+                and therefore:
+
+                3rdroot(m^3) = m.
+
+        To defend against this attack, simply pad the message with a nonce
+        before encryption, such that m^3 will always be reduced mod n.
+
+        PGP uses a small e for the encryption exponent, by default it tries
+        to use 17.  If it cannot compute d with e being 17, PGP will iterate
+        e to 19, and try again...  PGP also makes sure to pad m with a random
+        value so m > n.
+
+
+        -- Timing attack against RSA --
+
+        A very new area of attack publically discovered by Paul Kocher deals
+        with the fact that different cryptographic operations (in this case
+        the modular exponentiation operations in RSA) take discretely different
+        amounts of time to process.  If the RSA computations are done without
+        the Chinese Remainder theorem, the following applies:
+
+        An attacker can exploit slight timing differences in RSA computations
+        to, in many cases, recover d.  The attack is a passive one where the
+        attacker sits on a network and is able to observe the RSA operations.
+
+        The attacker passively observes k operations measuring the time t
+        it takes to compute each modular exponentation operation:
+        m=c^d mod n.  The attacker also knows c and n.  The psuedo code of
+        the attack:
+
+        Algorithm to compute m=c^d mod n:
+
+        Let m0 = 1.
+        Let c0 = x.
+        For i=0 upto (bits in d-1):
+                If (bit i of d) is 1 then
+                        Let mi+1 = (mi * ci) mod n.
+                Else
+                        Let mi+1 = mi.
+                Let di+1 = di^2 mod n.
+        End.
+
+        This is very new (the public announcement was made on 12/7/95)
+        and intense scrutiny of the attack has not been possible.  However,
+        Ron Rivest had this to say about countering it:
+
+- -------------------------------------------BEGIN INCLUDED TEXT---------------
+
+From: Ron Rivest <rivest>
+Newsgroups: sci.crypt
+Subject: Re: Announce: Timing cryptanalysis of RSA, DH, DSS
+Date: 11 Dec 1995 20:17:01 GMT
+Organization: MIT Laboratory for Computer Science
+
+The simplest way to defeat Kocher's timing attack is to ensure that the
+cryptographic computations take an amount of time that does not depend on the
+data being operated on.  For example, for RSA it suffices to ensure that
+a modular multiplication always takes the same amount of time, independent of
+the operands.
+
+A second way to defeat Kocher's attack is to use blinding: you "blind" the
+data beforehand, perform the cryptographic computation, and then unblind
+afterwards.  For RSA, this is quite simple to do.  (The blinding and
+unblinding operations still need to take a fixed amount of time.) This doesn't
+give a fixed overall computation time, but the computation time is then a
+random variable that is independent of the operands.
+- -
+==============================================================================
+Ronald L. Rivest  617-253-5880  617-253-8682(Fax) rivest@theory.lcs.mit.edu
+==============================================================================
+
+- ---------------------------------------------END INCLUDED TEXT---------------
+
+        The blinding Rivest speaks of simply introduces a random value into
+        the decryption process.  So,
+
+                m = c^d mod n
+
+        becomes:
+
+                m = r^-1(cr^e)^d mod n
+
+        r is the random value, and r^-1 is it's inverse.
+
+        PGP is not vulnerable to the timing attack as it uses the CRT to
+        speed RSA operations.  Also, since the timing attack requires an
+        attacker to observe the cryptographic operations in real time (ie:
+        snoop the decryption process from start to finish) and most people
+        encrypt and decrypt off-line, it is further made inpractical.
+
+        While the attack is definitly something to be wary of, it is
+        theorectical in nature, and has not been done in practice as of
+        yet.
+
+        -- Other RSA attacks --
+
+        There are other attacks against RSA, such as the common modulous
+        attack in which several users share n, but have different values
+        for e and d.  Sharing a common modulous with several users, can
+        enable an attacker to recover a message without factoring n.  PGP
+        does not share public-key modulous' among users.
+
+        If d is up to one quarter the size of n and e is less than n, d
+        can be recovered without factoring.  PGP does not choose small
+        values for the decryption exponent.  (If d were too small it might
+        make a brute force sweep of d values feasible which is obviously a
+        bad thing.)
+
+
+        -- Keysizes --
+
+        It is pointless to make predictions for recommended keysizes.
+        The breakneck speed at which technology is advancing makes it
+        difficult and dangerous.  Respected cryptographers will not make
+        predictions past 10 years and I won't embarass myself trying to
+        make any.  For today's secrets, a 1024-bit is probably safe and
+        a 2048-bit key definitely is.  I wouldn't trust these numbers
+        past the end of the century.  However, it is worth mentioning that
+        RSA would not have lastest this long if it was as fallible as some
+        crackpots with middle initials would like you to believe.
+
+
+
+                        3 -- [The one-way hash] -- 3
+
+
+        MD5 is the one-way hash used to hash the passphrase into the IDEA
+        key and to sign documents.  Message Digest 5 was designed by Rivest
+        as a sucessor to MD4 (which was found to be weakened with reduced
+        rounds).  It is slower but more secure.  Like all one-way hash
+        functions, MD5 takes an arbitrary-length input and generates a unique
+        output.
+
+        -- Brute Force of MD5 --
+
+        The strength of any one-way hash is defined by how well it can
+        randomize an arbitrary message and produce a unique output.  There
+        are two types of brute force attacks against a one-way hash
+        function, pure brute force (my own terminolgy) and the birthday
+        attack.
+
+
+        -- Pure Brute Force Attack against MD5 --
+
+
+        The output of MD5 is 128-bits.  In a pure brute force attack,
+        the attacker has access to the hash of message H(m).  She wants
+        to find another message m' such that:
+
+                        H(m) = H(m').
+
+        To find such message (assuming it exists) it would take a machine
+        that could try 1,000,000,000 messages per second about 1.07E22
+        years.  (To find m would require the same amount of time.)
+
+
+        -- The birthday attack against MD5 --
+
+        Find two messages that hash to the same value is known as a collision
+        and is exploited by the birthday attack.
+
+        The birthday attack is a statistical probability problem.  Given
+        n inputs and k possible outputs, (MD5 being the function to take
+        n -> k) there are n(n-1)/2 pairs of inputs.  For each pair, there
+        is a probability of 1/k of both inputs producing the same output.
+        So, if you take k/2 pairs, the probability will be 50% that a
+        matching pair will be found.  If n > sqrt(k), there is a good chance
+        of finding a collision.  In MD5's case, 2^64 messages need to be
+        tryed.  This is not a feasible attack given today's technology.  If
+        you could try 1,000,000 messages per second, it would take 584,942
+        years to find a collision. (A machine that could try 1,000,000,000
+        messages per second would take 585 years, on average.)
+
+        For a successful account of the birthday against crypt(3), see:
+        url:
+
+   ftp://ftp.infonexus.com/pub/Philes/Cryptography/crypt3Collision.txt.gz
+
+
+        -- Other attacks against MD5 --
+
+        Differential cryptanalysis has proven to be effective against one
+        round of MD5, but not against all 4 (differential cryptanalysis
+        looks at ciphertext pairs whose plaintexts has specfic differences
+        and analyzes these differences as they propagate through the cipher).
+
+        There was successful attack at the compression function itself that
+        produces collsions, but this attack has no practical impact the
+        security.  If your copy of PGP has had the MD5 code altered to
+        cause these collisions, it would fail the message digest
+        verification and you would reject it as altered... Right?
+
+
+        -- Passphrase Length and Information Theory --
+
+        According to conventional information theory, the English language
+        has about 1.3 bits of entropy (information) per 8-bit character.
+        If the pass phrase entered is long enough, the reuslting MD5 hash will
+        be statisically random.  For the 128-bit output of MD5, a pass phrase
+        of about 98 characters will provide a random key:
+
+                (8/1.3) * (128/8) = (128/1.3) = 98.46 characters
+
+        How many people use a 98 character passphrase for you secret-key
+        in PGP?  Below is 98 characters...
+
+        123456789012345678901234567890123456789012356789012345678901234567\
+        \890123456789012345678
+
+        1.3 comes from the fact that an arbitrary readable English sentence
+        is usually going to consist of certian letters, (e,r,s, and t are
+        statiscally very common) thereby reducing it's entropy.  If any of the
+        26 letters in the Latin alphabet were equally possible and likely
+        (which is seldom the case) the entropy increases.  The so-called
+        absolute rate would, in this case, be:
+
+                log(26) / log(2) = 4.7 bits
+
+        In this case of increased entropy, a password with a truly random
+        sequence of English characters will only need to be:
+
+                (8/4.7) * (128/8) = (128/4.7) = 27.23 characters
+
+
+        For more info on passphrase length, see the PGP passphrase FAQ:
+
+        http://www.stack.urc.tue.nl/~galactus/remailers/passphrase-faq.html
+        ftp://ftp.infonexus.com/pub/Philes/Cryptography/PGP/PGPpassphraseFAQ.gz
+
+                        4 -- [The PRNG] -- 4
+
+
+        PGP employs 2 PRNG's to generate and manipulate (psuedo) random data.
+        The ANSI X9.17 generator and a function which measures the entropy
+        from the latency in a user's keystrokes.  The random pool (which is
+        the randseed.bin file) is used to seed the ANSI X9.17 PRNG (which uses
+        IDEA, not 3DES).  Randseed.bin is initially generated from trueRand
+        which is the keystroke timer.  The X9.17 generator is pre-washed with
+        an MD5 hash of the plaintext and postwashed with some random data
+        which is used to generate the next randseed.bin file.  The process is
+        broken up and discussd below.
+
+
+        -- ANSI X9.17 (cryptRand) --
+
+        The ANSI X9.17 is the method of key generation PGP uses. It is
+        oficially specified using 3DES, but was easily converted to IDEA.
+        X9.17 requires 24 bytes of random data from randseed.bin.  (PGP
+        keeps an extra 384 bytes of state information for other uses...)
+        When cryptRand starts, the randseed.bin file is washed (see below)
+        and the first 24-bytes are used to initialize X9.17.  It works as
+        follows:
+
+        E() = an IDEA encryption, with a reusable key used for key generation
+        T = timestamp (data from randseed.bin used in place of timestamp)
+        V = Initialization Vector, from randseed.bin
+        R = random session key to be generated
+
+        R = E[E(T) XOR V]
+
+        the next V is generated thusly:
+
+        V = E[E(T) XOR R]
+
+        -- Latency Timer (trueRand) --
+
+        The trueRand generator attempts to measure entropy from the latency
+        of a user's keystrokes every time the user types on the keyboard.  It
+        is used to generate the initial randseed.bin which is in turn used to
+        seed to X9.17 generator.
+        The quality of the output of trueRand is dependent upon it's input.
+        If the input has a low amount of entropy, the output will not be as
+        random as possible.  In order to maxmize the entropy, the keypresses
+        should be spaced as randomly as possible.
+
+
+        -- X9.17 Prewash with MD5 --
+
+        In most situations, the attacker does not know the content of the
+        plaintext being encrypted by PGP.  So, in most cases, washing the
+        X9.17 generator with an MD5 hash of the plaintext, simply adds to
+        security.  This is based on the assumption that this added unknown
+        information will add to the entropy of the generator.
+        If, in the event that the attacker has some information about the
+        plaintext (perhaps the attacker knows which file was encrypted, and
+        wishes to prove this fact) the attacker may be able to execute a
+        known-plaintext attack against X9.17.  However, it is not likely
+        that, with all the other precautions taken, that this would weaken
+        the generator.
+
+        -- Randseed.bin wash --
+
+        The randseed is washed before and after each use.  In PGP's case
+        a wash is an IDEA encryption in cipher-feedback mode.  Since IDEA
+        is considered secure (see section 1), it should be just as hard to
+        determine the 128-bit IDEA key as it is to glean any information from
+        the wash.  The IDEA key used is the MD5 hash of the plaintext and an
+        initialization vector of zero.  The IDEA session key is then generated
+        as is an IV.
+        The postwash is considered more secure.  More random bytes are
+        generated to reinitialize randseed.bin.  These are encrypted with the
+        same key as the PGP encrypted message.  The reason for this is that if
+        the attacker knows the session key, she can decrypt the PGP message
+        directly and would have no need to attack the randseed.bin.  (A note,
+        the attacker might be more interested in the state of the
+        randseed.bin, if they were attacking all messages, or the message
+        that the user is expected to send next).
+
+
+
+                        5 -- [Practical Attacks] -- 5
+
+        Most of the attacks outlined above are either not possible or not
+        feasable by the average adversary.  So, what can the average cracker
+        do to subvert the otherwise stalwart security of PGP?  As it turns
+        out,  there are several "doable" attacks that can be launched by the
+        typical cracker.  They do not attack the cryptosystem protocols
+        themselves, (which have shown to be secure) but rather system
+        specific implementations of PGP.
+
+
+        -- Passive Attacks (Snooping) --
+
+        These attacks do not do need to do anything proactive and can easily
+        go undetected.
+
+        -- Keypress Snooping  --
+
+        Still a very effective method of attack, keypress snooping can subvert
+        the security of the strongest cryptosystem.  If an attacker can
+        install a keylogger, and capture the passphrase of an unwary target,
+        then no cryptanalysis whatsoever is necessary.  The attacker has the
+        passphrase to unlock the RSA private key.  The system is completely
+        compromised.
+        The methods vary from system to system, but I would say DOS-based PGP
+        would be the most vulnerable.  DOS is the easiest OS to subvert, and
+        has the most key-press snooping tools that I am aware of.  All an
+        attacker would have to do would be gain access to the machine for
+        under 5 minutes on two seperate occasions and the attack would be
+        complete.  The first time to install the snooping software, the second
+        time, to remove it, and recover the goods. (If the machine is on a
+        network, this can all be done *remotely* and the ease of the attack
+        increases greatly.)  Even if the target boots clean, not loading any
+        TSR's, a boot sector virus could still do the job, transparently.
+        Just recently, the author has discovered a key logging utility for
+        Windows, which expands this attack to work under Windows-based PGP
+        shells (this logger is available from the infonexus via ftp, BTW).
+        ftp://ftp.infonexus.com/pub/ToolsOfTheTrade/DOS/KeyLoggers/
+
+        Keypress snooping under Unix is a bit more complicated, as root
+        access is needed, unless the target is entering her passphrase from
+        an X-Windows GUI.  There are numerous key loggers available to
+        passively observe keypresses from an X-Windows session.  Check:
+        ftp://ftp.infonexus.com/pub/SourceAndShell/Xwindows/
+
+        -- Van Eck Snooping --
+
+        The original invisible threat.  Below is a clip from a posting by
+        noted information warfare guru Winn Schwartau describing a Van Eck
+        attack:
+
+- -------------------------------------------BEGIN INCLUDED TEXT---------------
+
+Van Eck Radiation Helps Catch Spies
+
+"Winn Schwartau" < p00506@psilink.com >
+Thu, 24 Feb 94 14:13:19 -0500
+
+
+Van Eck in Action
+
+Over the last several years, I have discussed in great detail how the
+electromagnetic emissions from personal computers (and electronic gear in
+general) can be remotely detected without a hard connection and the
+information on the computers reconstructed.  Electromagnetic eavesdropping is
+about insidious as you can get: the victim doesn't and can't know that anyone
+is 'listening' to his computer.  To the eavesdropper, this provides an ideal
+means of surveillance: he can place his eavesdropping equipment a fair
+distance away to avoid detection and get a clear representation of what is
+being processed on the computer in question.  (Please see previous issues of
+Security Insider Report for complete technical descriptions of the
+techniques.)
+
+The problem, though, is that too many so called security experts, (some
+prominent ones who really should know better) pooh-pooh the whole concept,
+maintaining they've never seen it work.  Well, I'm sorry that none of them
+came to my demonstrations over the years, but Van Eck radiation IS real and
+does work.  In fact, the recent headline grabbing spy case illuminates the
+point.
+
+Exploitation of Van Eck radiation appears to be responsible, at least in part,
+for the arrest of senior CIA intelligence officer Aldrich Hazen Ames on
+charges of being a Soviet/Russian mole.  According to the Affidavit in support
+of Arrest Warrant, the FBI used "electronic surveillance of Ames' personal
+computer and software within his residence," in their search for evidence
+against him.  On October 9, 1993, the FBI "placed an electronic monitor in his
+(Ames') computer," suggesting that a Van Eck receiver and transmitter was used
+to gather information on a real-time basis.  Obviously, then, this is an ideal
+tool for criminal investigation - one that apparently works quite well.  (From
+the Affidavit and from David Johnston, "Tailed Cars and Tapped Telephones: How
+US Drew Net on Spy Suspects," New York Times, February 24, 1994.)
+
+>From what we can gather at this point, the FBI black-bagged Ames' house and
+installed a number of surveillance devices.  We have a high confidence factor
+that one of them was a small Van Eck detector which captured either CRT
+signals or keyboard strokes or both.  The device would work like this:
+
+A small receiver operating in the 22MHz range (pixel frequency) would detect
+the video signals minus the horizontal and vertical sync signals.  Since the
+device would be inside the computer itself, the signal strength would be more
+than adequate to provide a quality source.  The little device would then
+retransmit the collected data in real-time to a remote surveillance vehicle or
+site where the video/keyboard data was stored on a video or digital storage
+medium.
+
+At a forensic laboratory, technicians would recreate the original screens and
+data that Mr. Ames entered into his computer.  The technicians would add a
+vertical sync signal of about 59.94 Hz, and a horizontal sync signal of about
+27KHz.  This would stabilize the roll of the picture. In addition, the
+captured data would be subject to "cleansing" - meaning that the spurious
+noise in the signal would be stripped using Fast Fourier Transform techniques
+in either hardware or software.  It is likely, though, that the FBI's device
+contained within it an FFT chip designed by the NSA a couple of years ago to
+make the laboratory process even easier.
+
+I spoke to the FBI and US Attorney's Office about the technology used for
+this, and none of them would confirm or deny the technology used "on an active
+case."
+
+Of course it is possible that the FBI did not place a monitoring device within
+the computer itself, but merely focused an external antenna at Mr. Ames'
+residence to "listen" to his computer from afar, but this presents additional
+complexities for law enforcement.
+
+     1. The farther from the source the detection equipment sits means that
+the detected information is "noisier" and requires additional forensic
+analysis to derive usable information.
+
+     2. Depending upon the electromagnetic sewage content of the immediate
+area around Mr. Ames' neighborhood, the FBI surveillance team would be limited
+as to what distances this technique would still be viable.  Distance squared
+attenuation holds true.
+
+     3. The closer the surveillance team sits to the target, the more likely
+it is that their activities will be discovered.
+
+In either case, the technology is real and was apparently used in this
+investigation.  But now, a few questions arise.
+
+     1.  Does a court surveillance order include the right to remotely
+eavesdrop upon the unintentional emanations from a suspect's electronic
+equipment?  Did the warrants specify this technique or were they shrouded
+under a more general surveillance authorization?  Interesting question for the
+defense.
+
+     2. Is the information garnered in this manner admissible in court?  I
+have read papers that claim defending against this method is illegal in the
+United States, but I have been unable to substantiate that supposition.
+
+     3. If this case goes to court, it would seem that the investigators would
+have to admit HOW they intercepted signals, and a smart lawyer (contradictory
+allegory :-) would attempt to pry out the relevant details.  This is important
+because the techniques are generally classified within the intelligence
+community even though they are well understood and explained in open source
+materials.  How will the veil of national security be dropped here?
+
+To the best of my knowledge, this is the first time that the Government had
+admitted the use of Van Eck (Tempest Busting etc.)  in public.  If anyone
+knows of any others, I would love to know about it.
+
+- ---------------------------------------------END INCLUDED TEXT---------------
+
+        The relevance to PGP is obvious, and the threat is real.  Snooping
+        the passphrase from the keyboard, and even whole messages from
+        the screen are viable attacks.  This attack, however exotic it may
+        seem, is not beyond the capability of anyone with some technical
+        know-how and the desire to read PGP encrypted files.
+
+        -- Memory Space Snooping --
+
+        In a multi-user system such as Unix, the physical memory of the
+        machine can be examined by anyone with the proper privaleges (usally
+        root).  In comparsion with factoring a huge composite number, opening
+        up the virtual memory of the system (/dev/kmem) and seeking to a
+        user's page and directly reading it, is trivial.
+
+        -- Disk Cache Snooping --
+
+        In multitasking environments such as Windows, the OS has a nasty habit
+        of paging the contents of memory to disk, usally transparently to the
+        user, whenever it feels the need to free up some RAM.  This
+        information can sit, in the clear, in the swapfile for varying lengths
+        of time, just waiting for some one to come along and recover it.
+        Again, in a networked environment where machine access can be done with
+        relative impunity, this file can be stolen without the owner's consent
+        or knowledge.
+
+        -- Packet Sniffing --
+
+        If you use PGP on a host which you access remotely, you can be
+        vulnerable to this attack.  Unless you use some sort of session
+        encrypting utility, such as SSH, DESlogin, or some sort of network
+        protocol stack encryption (end to end or link by link) you are sending
+        your passphrase, and messages across in the clear.  A packet sniffer
+        sitting at a intermediate point between your terminal can capture all
+        this information quietly and efficiently.  Packet sniffers are
+        available at the infonexus:
+        ftp://ftp.infonexus.com/pub/SourceAndShell/Sniffers/
+
+        -- Active Attacks --
+
+        These attacks are more proactive in nature and tend to be a bit more
+        difficult to wage.
+
+        -- Trojan Horse --
+
+        The age old trojan horse attack is still a very effective means
+        of compromise.  The concept of a trojan horse should not be foriegn
+        to anyone.  An apparently harmless program that in reality is evil
+        and does potentially malicious things to your computer.  How does
+        this sound...:
+        Some 31it3 coder has come up with a k3wl new Windows front-end to
+        PGP.  All the newbies run out and ftp a copy.  It works great, with
+        a host of buttons and scrollbars, and it even comes with a bunch
+        of *.wav files and support for a SB AWE 32 so you can have the
+        16-bit CD quality sound of a safe locking when you encrypt your
+        files.  It runs in a tiny amount of memory, coded such that nothing
+        leaks, it intercepts OS calls that would otherwise have it's contents
+        paged to disk and makes sure all the info stays in volatile memory.
+        It works great (the first Windows app thar does).  Trouble is, this
+        program actually has a few lines of malevolent code that record your
+        secret-key passphrase, and if it finds a modem (who doesn't have a
+        modem these days?) it 'atm0's the modem and dials up a hard coded
+        number to some compromised computer or modem bank and sends the info
+        through.
+        Possible?  Yes.  Likely?  No.
+
+
+        -- Reworked Code --
+
+        The code to PGP is publically available.  Therefore it is easy to
+        modify.  If someone were to modify the sourcecode to PGP inserting
+        a sneaky backdoor and leave it at some distribution point, it could
+        be disasterous.  However, it is also very easy to detect.  Simply
+        verify the checksums.  Patching the MD5 module to report a false
+        checksum is also possible, so verify using a known good copy.
+        A more devious attack would be to modify the code, compile it and
+        surreptitouly plant in the target system.  In a networked environment
+        this can be done without ever having physical access to the machine.
+
+                        6 -- [What if...] -- 6
+
+        ...My secret key was comprimsed?
+
+        A PGP secret key is kept conventionally encrypted with IDEA.  Assuming
+        your passphrase is secure enough (see section 3) the best method of
+        attack will be a brute force key-search.  If an attacker could test
+        1,000,000,000,000 keys per second, it would take 1x10^17 years
+        before odds will be in the attacker's favor...
+
+        ...PGP ran outta primes?
+
+        There are an infinite amount of prime numbers.  The approximate
+        density of primes lesser than or equal to n is n/ln(n).  For a
+        1024-bit key, this yields:
+
+                1.8*10^308/ln(1.8*10^308) = 2.5*10^305
+
+        There are about 2.5*10^228 times more prime numbers less than
+        1024-bits than there are atoms in the universe...
+
+        ...What if someone made a list of all these prime numbers?
+
+        If you could store 1,000,000 terabytes of information of a device
+        that weighs 1 gram, (and we figure each number fits in a space of 128
+        bytes or less) we would need a device that weighs 3.2*10^289 grams or
+        7*10^286 pounds.  This is 1.6*10^256 times more massive than our sun.
+        Nevermind the fact that we don't have enough matter to even concieve
+        of building such a device, and if we could, it would collapse into
+        a black-hole...
+
+        ...And used them in a brute force search?
+
+        There are 2.5E305(2.5E305-1)/2 possible pairs.  This is 3.12*10^610
+        combinations.  Absurd, isn't it?
+
+        ...PGP chose composites instead of primes?
+
+        The likelyhood of the Fermat Tests of passing a composite off as a
+        prime is 1 in 10^52.  If PGP could generate 1,000,000,000,000 primes
+        per second, It would take about 1x10^32 years until odds are better
+        than even for that to happen.
+
+
+                        7 -- [Closing Comments] -- 7
+
+        I have presented factual data, statistical data, and projected data.
+        Form your own conclusions.  Perhaps the NSA has found a polynomial-time
+        (read: *fast*) factoring algorithm.  But we cannot dismiss an
+        otherwise secure cryptosystem due to paranoia.  Of course, on the
+        same token, we cannot trust cryptosystems on hearsay or assumptions of
+        security.  Bottom line is this: in the field of computer security, it
+        pays to be cautious.  But it doens't pay to be un-informed or
+        needlessly paranoid.  Know the facts.
+
+
+                   -- [Thank You's (in no particular order)] --
+
+        PRZ, Collin Plumb, Paul Kocher, Bruce Schneier, Paul Rubin, Stephen
+        McCluskey, Adam Back, Bill Unruh, Ben Cantrick, Jordy, Galactus,
+        the readers of sci.crypt and the comp.security.* groups...
+
+- --
+[ route@infonexus.com ] Guild member, Information enthusiast, Hacker, demon
+                ...this universe is MINE... I am *GOD* here...
+
+
+-----BEGIN PGP SIGNATURE-----
+Version: 2.6.2
+
+iQCVAwUBMbCwcAtXkSokWGapAQHo0gP+MaL7fi3e7yRxfbUglOuFJdD06oL+nwHJ
+iRvDCvs20zfmatZW+Ya5bzdbEkAmxsDe4uJ8aL1ATu66CO5SnoChDHRfyXPdhgL1
+gZnEIZv7oFw4WOCPrIWw2QpvpegnIyvwIHCPTDzhiRhb3eV+H1GQ2gwHNjxRtfp5
+mp2XHOras20=
+=je1v
+-----END PGP SIGNATURE-----
+

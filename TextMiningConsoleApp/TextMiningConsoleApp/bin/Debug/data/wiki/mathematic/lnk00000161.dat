@@ -1,0 +1,184 @@
+THE_URL:http://web.textfiles.com/computers/nmss.txt
+THE_TITLE:nmss.txt
+Changes in the versions:
+
+1.0
+   - release version. 5-10% speed up. EXE compressed by UPX 0.7.
+
+0.9:
+    - First (BETA) version released.
+
+----------------------------------------------------------------
+
+
+
+                N M S S  (No More Secret Stuff)
+             Norton Secret Stuff Password Cracker
+
+                            v. 1.0
+
+         (c) Copyright PSW-soft 1998-99 by P. Semjanov
+
+
+    THIS BETA-VERSION of  the  PROGRAM IS  DISTRIBUTED "AS   IS".
+You CAN USE   IT AT YOUR   OWN RISK. ANY   CLAIMS ON WORKING   of
+the  PROGRAM  WILL  NOT  BE  ACCEPTED.  The  AUTHOR also DOES NOT
+GUARANTEE  FURTHER  SUPPORT  and  UPDATING  of future VERSIONS of
+THIS  PROGRAM.  This  program is FREEWARE and can  be distributed
+freely under following conditions: the  program code may  not  be
+changed   and  the  program  has  to  be  distributed in original
+form.
+    Any commercial use is prohibited.
+
+1. Objectives and characteristics.
+
+    The  program  NMSS  is  intended  for the extraction of files
+encrypted with  Norton Secret  Stuff (NSS)  without the  password
+knowledge.  The  program  has  been   tested  on NSS v. 1.0 files
+only.
+
+    NSS uses a Blowfish encryption  with a very short key  length
+(32  bits)   because  of   the  export   regulation  of    strong
+cryptography. But the key expansion function of Blowfish is  very
+slow  and  gives  about  3-4  additional  bits  to  effective key
+length.
+
+    So, to  crack ANY  NSS password  you only  need to  test 2^32
+possible  keys.   It's  done  in  this  program, but the speed is
+about 2000 keys/s  on Pentium-166 and  you need about  20-25 days
+to finish  it (I  have   no idea  how   the search  will take  on
+PII-400, let me  know if you   have any ideas). Because of   slow
+speed the simple distributed  computing mechanism is included  in
+NMSS program.
+
+    All keyspace is divided  into 4096 (0-4095) "megakeys"  (they
+are  simply  called  "keys"  below)  and  each  of  them  can  be
+tested in parallel on different computers.  One key testing  time
+is  about  9  minutes  on  Pentium-166.  So,  if  you've got 4096
+computers in  your LAN,  you could  find the  right key  in a few
+minutes.
+
+2. Working with the program.
+
+   You may run  NMSS program under  MS DOS or  Win (Windows 3.11,
+Windows 95-98, Windows NT).  DPMI-host is necessary to  start the
+program (you may use freeware CWSDPMI).
+
+   Use the following command line to run the program:
+
+   NMSS.EXE NSS_encrypted_file [start_key [end_key]], where
+
+   start_key is a key to start from (0-4095), default = 0;
+   end_key   is a last key to test  (0-4095), default = 4095.
+
+   When     the  right     key is    found, the    NSS  encrypted
+file will be  patched and  user  can  enter   any password.   So,
+making the  copy of your NSS file is recommended.
+
+To provide distributed computing mechanism the shared file  (with
+.key extension) is created in current directory at the first  run
+of  the  NMSS  program.   Thus,  you  will  need  to  have  write
+permission to  current (shared)  directory. Please  do not delete
+nor modify this file if you are not sure you are right.
+
+Normally, there  must be  no interrupted  keys in  the .key file.
+But they could  appear if computer  accidently powers off  or  if
+you  interrupt  the  program  run  on  Windows NT. To resolve the
+problem with  the interrupted  keys the  program will  stop after
+all  keyspace  is  tested  and  wait  until  all shared copies of
+program will stop too. Because the program doesn't know how  many
+shared copies are running, user  must press ENTER (on each  copy)
+when all copies  stop. If the program finds the interrupted  key,
+it will be tested again.
+
+Here are the examples of NMSS using:
+
+1) To crack the CRYPT.EXE file on one computer use:
+   NMSS.EXE CRYPT.EXE
+
+2) To crack CRYPT.EXE file on several computers on the LAN,  copy
+the NMSS program and CRYPT.EXE  file to the shared directory  and
+use the same command line:
+   NMSS.EXE CRYPT.EXE
+
+3) To crack CRYPT.EXE on two divided LANs, use
+   NMSS.EXE CRYPT.EXE 0 2047   - on first LAN
+   NMSS.EXE CRYPT.EXE 2048     - on second LAN
+
+   Use the similar command lines on several LANs.
+
+
+3. Mini-FAQ.
+
+1) How to interrupt and continue searching?
+
+The  program  can   be  interrupted  by  pressing Ctrl-C once and
+continued by  running with  the same  options (no  need to change
+the keyspace range - it will be done automatically).
+
+   ATTENTION: on pressing  Ctrl-C  Windows  NT  will  cause   the
+"Application   error" window  and   interrupted key   will appear
+in the .key file (see above).
+
+2) What do the values in .key file mean?
+
+The first  byte must  be 'N'.  The byte  with n  offset mean  the
+state of (n-1)  key and may  be one of  3 values: 0  - key is not
+tested yet,  1 -  key was  tested and  is not  right, 2  - key is
+testing now (or may be interrupted key).
+
+So, if  after the  test on  a given  keyspace is completed, there
+are still some values (in this keyspace) which are  not equal  to
+1, then there must  be a bug in  the program. Those   keys, which
+have  not  been  tested,   must  be  tested by simply running the
+program on this keyspace again.
+
+3)  I've  got  Pentium-II/400  computer,  but key testing time is
+extremely large.
+
+Check  if  others  program  (including  3D-screensavers)  are not
+running in the same time.
+
+4) How can I test if your program works?
+
+Encrypt file with  NSS using "abm"  password. Next run  NMSS with
+parameter 2571.
+
+5) Is it possibly to speed up your program?
+
+During  the  investigation of  the  NSS  algorithm   no backdoors
+nor statistical defects  in password-to-key   conversion function
+(it is MD5)  have  been  found.  I think  only machine-dependent
+(like MMX)  optimization could be done. I will NOT make such
+optimization (at least, for free).
+
+4. How to contact to the author.
+
+Only on e-mail.
+e-mail: psw@ssl.stu.neva.ru
+FIDO:   2:5030/145.17
+WWW:    http://www.ssl.stu.neva.ru/psw/
+
+Main program URL is http://www.ssl.stu.neva.ru/psw/crack.html#NMSS
+
+Although  I    already     mentioned that     I will not   accept
+any claims, I   shall    be grateful   to    here about   obvious
+errors, such as:
+
+- the program hangs  at brute force;
+- the   program  does   not  find   the  key   of  a  given  file
+although all keys were tested
+
+I shall be  glad    to any constructive  offers  on   improvement
+of the working of the program.
+
+5. Special thanks.
+
+  To Eric Young for his great SSLeay library.
+
+
+Good luck!
+
+Pavel Semjanov, St.-Petersburg.
+
+

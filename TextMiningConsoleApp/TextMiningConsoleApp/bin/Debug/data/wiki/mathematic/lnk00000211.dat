@@ -1,0 +1,133 @@
+THE_URL:http://web.textfiles.com/computers/vgakills.txt
+THE_TITLE:vgakills.txt
+     (If you are not using a PC with a PCI VGA accelerator card,
+     you need not read any further....)
+
+WARNING: Long post ahead!    updated 8/2/98
+
+In the past this information has been suppressed, now it can be told...
+
+   A good number of VGA card manufacturers are squeezing out a few extra
+points on their winbench scores by locking up the PCI bus.  This is fine
+for graphics and most systems on the PC (hard disks and such) don't even
+notice the problem.... Unfortunately this can hurt the audio system in
+a big way.
+   Most audio cards use ISA/DMA to trickle samples over the bus one word
+at a time.  Even PCI cards such as the AMIII can be hurt by this problem
+because they trickle the data over the bus in tiny PCI transfers.  When
+another device illegally locks up the bus for more than 1/88200th of a
+second, there's a good chance you will lose audio samples resulting an a
+glitch in the recording or playback.
+   How do you know if you're having this problem?  Try opening up your
+favorite wave editing program, loading a wave file and hitting the play
+button.  While the audio is playing, grab the top of the window (assuming
+it is not maximized) and repeatedly pick it up and drag it to another
+location on the desktop.  On a soundblaster compatible card, the audio
+will glitch and pop while you drag the window.  On a ZA2 card, there is
+a 50/50 chance the audio will swap L/R channels after such a glitch.
+On an adb card, not only can the right and left channels swap, but there
+is also a good chance the audio will be left in a glitchy mode that makes
+the audio repeatedly jump channels resulting in a high pitch scratchy noise.
+
+   At this point in the discussion, I would like to stress that this is NOT
+(I repeat NOT) the fault of the soundcard!  This is not even the fault
+of the VGA card... it is in fact the fault of the VGA driver.  If you do
+not experience any glitching or distortion then you can probably ignore
+the rest of this post!  I've heard that the VGA drivers supplied by
+Microsoft (verses the drivers supplied by the VGA manufacturer) do not
+suffer from this problem.
+
+   I think Matrox was the first to play with this, but it doesn't really
+matter because most high performance VGA accelerator cards for the PCI
+bus are doing the same thing now.  When a number of graphics acceleration
+operations need to be performed, these commands are sent from the VGA driver
+to the VGA card over the PCI bus.  The VGA chipset has a built in queue
+that is capable of holding several accelerator commands.  Normally the driver
+checks a status bit on the VGA card to tell if this queue is full or not.
+If the queue is full, the driver waits for the queue to have a free space
+before sending the next command.  Matrox discovered (and everyone soon
+followed) that you could increase VGA performance by NOT CHECKING THIS
+STATUS BIT!!!!!  What happens when you write blindly to a full queue of
+commands on the VGA card?  The bus hangs... The bus master has started a
+PCI transaction, but the target (the VGA card) can't accept the data yet
+because it has no place to put it.  As soon as the VGA card has room for the
+data, then the transaction can complete... but until that time the PCI bus
+is completely locked up.  No PCI or ISA transactions can happen.  This can
+take a long time (40 or more audio cycles) if the current VGA operation is
+a huge BITBLT on a 24bit screen...  A 256 or 512 bit FIFO just ain't gonna
+cut it.
+   The only acceptable solution to this problem is to put the queue check
+BACK into the VGA driver.  I have been discussing this problem with some
+of the engineers at Matrox and Tseng labs and have some solutions for you!
+   Tseng labs has released a new version of their ET6000 VGA driver that
+behaves nicer to the PCI bus.. this driver is now trickling down to the
+STB and Hercules products that use the ET6000 chip.  For the Hercules
+Dynamite 128 card, there is a new driver on the Hercules BBS (not web
+page... don't ask me) called DV95112  (Version 1.12)  Using this driver,
+you need to add a special switch in your system.ini file.  Under the
+heading [Hercules] there is a line that reads "Optimization=0"  you will
+need to set this to "Optimization=1"... ta da, problem fixed.
+   It turns out that Matrox has ALWAYS had a hidden back door switch to
+enable this check in the VGA driver.  If you are using the Matrox Millennium,
+you will need to add the following lines to your system.ini file:
+
+[mga.drv]
+PCIChipset=1
+
+This almost fixes the problem completely.... you will also need to disable
+the "Use PowerGDI acceleration" feature in the Advanced Matrox setup
+(Control Panel->Display Properties->MGA Settings->Advanced->Performance)
+ta da... problem fixed.
+
+[update August 1998]  It seems that the generic Trident cards 9685/9682/9680/9440
+do NOT suffer any problems using the standard Microsoft Win98 drivers.
+
+[update July 1997]   I've heard from the good folks at S3 that ->ALL<- S3
+  drivers for all of their VGA cards (downloaded from www.s3.com) can be
+  fixed by adding a line in system.ini under the [display] section...
+  After [display] add the line 'bus-throttle=1' so (for S3 drivers):
+
+  [display]
+  busthrottle=1
+
+It seems that this fix also works with the latest Microsoft Win98 drivers for S3 cards.
+If your Win98 system.ini file doesn't have a [display] section, you can add it at the
+end of the file.
+
+[update 2/11/98]   For owners of newer Matrox cards:
+Go get the latest Matrox drivers from www.matrox.com.. (V3.80 drivers)
+Go to screen properties (right click in main window)
+Go to setting tab, Click on PowerDesk button
+On V3.80 there is no longer a 'PCI Bus retries' option.
+Uncheck 'Use Bus Mastering' (off)  .. at least this worked for me
+On Pentium Pro machines, Uncheck 'Use Write-Combining'
+Click on OK
+
+[updated November 1997]  For owners of the #9 Imagine 128 series 2
+It seems a new driver (version 4.102.36) is now available directly from
+the folks at #9 upon request..
+
+
+Unfortunately there are other VGA maker who have not
+acknowledged this problem (not that Matrox or Tseng has formally done so
+either).  And we as users, software manufacturers or hardware
+manufacturers need to get the word out that this is a VGA problem
+and not a DMA problem!!!!!!  We need to drill it through the heads of
+the VGA card makers that they can't get away with this B.S. without at
+least having an OPTION to make the driver behave appropriately.
+
+Have you ever been told to turn the VGA acceleration off???   or to reduce
+the size of your VGA screen???   or reduce the color depth???
+
+THESE ARE NOT ACCEPTABLE SOLUTIONS!!!
+
+  Call your VGA manufacturer and tell them they need to fix the problem!
+(You will probably need to get beyond Joe Tech Support, because he
+probably doesn't know anything about this... please inform him!)
+
+This message has been brought to you by Greg Hanssen
+copyright 1996 Zefiro Acoustics.
+
+PLEASE feel free to post this to any forum where the knowledge can be used.
+
+

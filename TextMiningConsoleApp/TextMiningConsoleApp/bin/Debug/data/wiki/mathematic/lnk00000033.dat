@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\usepackage{filecontents}
+\usepackage{pdflscape}
+\usepackage{environ}
+
+\usepackage{ifthen}
+\usepackage{comment}
+\pgfplotsset{compat=newest}
+
+
+\newcommand{\EmptyPlot}
+{%
+	%Empty Plot
+    \nextgroupplot[xtick=\empty,ytick=\empty]
+    \addplot[opacity=0, only marks] coordinates {(0,2)};	
+}
+
+\newcommand{\scatterplot}[8]
+{%
+	\nextgroupplot[xtick pos=left, ytick pos=left, 
+		extra x ticks={#1, #2, #3},
+        extra x tick labels={$Q_{0,3}$, $Q_{0,5}$, $Q_{0,75}$},
+        extra x tick style={grid=major,grid style={solid,black!40},
+		tick label style={black,xshift=-0cm, yshift=0.25cm},
+		extra y ticks={#4,#5,#6},
+		extra y tick labels={1,2,3},
+		scatter/classes ={%
+			0={mark=x, blue},
+			1={mark=x, orange},
+			2={mark=x, red},
+			3={mark=x, violet},
+			4=

@@ -1,0 +1,113 @@
+THE_URL:http://web.textfiles.com/computers/lumberjackdocs.txt
+THE_TITLE:lumberjackdocs.txt
+Lumberjack Docs...
+
+Disclaimer
+This program comes as it is. Use it at your own risk. This is free software with ABSOLUTELY NO WARRANTY.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even th
+e implied warranty of FITNESS FOR A PARTICULAR PURPOSE. It is free software but not under the terms of GN
+U General Public License. Modification is not permitted. Use it as it is or let it be. Redistribution is
+not permitted. You can give it to others for free. Exceptions are comercials: You need to ask me! Don´t u
+se it for comercial proposes without permissions explicit given to you. You can get such permissions only
+ from the owner of the copyrights.
+
+Thanx
+Thanx go to David E. Storey (http://www.tamos.net/~dave/) for it's code in the OpenLDAP project.
+
+
+Introduction
+Lumberjack is a program to check LDAP Data Interchange Format files (ldif files) for weak passwords. It w
+orks local and you don't need a network connection at all. For online tests of LDAP servers use k0Ld.
+Lumberjack works in some different modes. It is compairable to the UNIX tools John the Ripper and crack o
+r to the Windows tool L0phtCrack but not such advanced software.
+LDAP is one of the rising technologies in these days. Many companies use central LDAP servers for the man
+agement of user accounts especialy for mail servers. Netscape Directory Server and the free OpenLDAP serv
+er are two of the best products.
+To exchange informations betwen LDAP Servers which are not set up for replication or for backup proposes
+exist the ldif format. It is a text based file format, which stores the complete (or parts of a) tree.
+In this ldif file are informations like:
+Usernames
+Passwords
+Email address
+a lot of infos
+This is the point to start from. The passwords may be encrypted. There are ldif files without encrypted p
+asswords, but if you can get such a file you are the lucky guy and don't need Lumberjack at all.
+For the encrypted passwords: The ldif definition allows different encryption methodes. Common used are SH
+A, MD5 and crypt. Some servers (like Netscape) use other encryptions. If you have informations about othe
+r stuff - mail me and I add support of them to Lumberjack.
+SHA and MD5 are not really encryption. They are hash keys. A hash is a kind of check sum. Therefor is one
+ of the primary functionality to result in the same string for the same clear text (unlike crypt - where
+4096 differnent results are possible).
+
+
+How to use ...
+The usage is simple but you have to understand the basics.
+First of all: Use the ldifclean.sh first with your ldif file - for better results (or for results at all!
+).
+./ldifclean.sh company.ldif my.ldif
+
+Assumed you have a ldif file called a.ldif and a wordlist named wordlist.txt just enter:
+./lj -w wordlist.txt -f a.ldif
+
+and wait. The options of Lumberjack are:
+-P
+This prints out a list of all words in the guess database. These words are collected from the ldif file a
+nd used before the wordlist data. Uses this option to look for internal server commands in the ldif file
+and add them to the badword.txt file.
+-F
+Foreces the adding of contextless passwords. Contextless means that Lj found a password attibute without
+a username attribute before. This may be the case in ldif files with different user types (like local use
+rs, NS Mail users, etc.)
+-C
+... this is obsolete since we support crypt() native now !
+If you have an old version of Lj use this switch to ignore all crypt passwords.
+-s
+Don't collect ldif guess informations. This means, that you don't want to use guessed strings. May be you
+ have a ldif file with a size of 424MB you don't want this! (actually I have one).
+-S
+Don't do prefix number testing. In normal numeric mode, Lj tests for one postfix number 100 prefix number
+s. The numeric mode works like this:
+for every postfix number (eg. 04) do:
+password04
+04password
+0password04
+...
+99password04
+With this option, you reduce the mode to "password04". It saves a lot of time.
+-n X
+Numeric mode on - until depth X. Look at the -S option for an idea of what numeric mode means.
+-b X / -B Y
+Brute force from depth X 'til depth Y. You will have to wait for a long time. But it tries for X=4 and Y=
+5 everything from AAAA to '''''. And this includes all characters you can enter on a german keyboard.
+-u / -U
+Supply a string after -u or -U. The string is used as pattern to match a username attribute line or a pas
+sword attribute line. If you get a lot of "Password without context" messages, look in the ldif file and
+use -u to supply the right user identification string (like 'dn: cn=').
+-v
+Be very verbose
+-V
+Print some informations about what's going on to standard error. This means you can put the standard outp
+ut to a file and look at the screen for some infos at the same time:
+
+./lj -w bla.txt -f a.ldif -V >password.txt
+
+Use this option often
+Some hints:
+Use stream redirection ! Send the output of Lj to a file, the standard error to another console screen:
+./lj -w bla.txt -f a.ldif -V >passwords.txt 2>/dev/tty9
+
+Now switch to TTY9 to see the progress.
+Don't start with numeric mode and without the -S switch ! It takes a lot of time and you should first try
+ deeper postfix numeric (like -Sn4) before you try the prefix stuff.
+If you have problems with your mem or swap space, supply the ldif file with -sf not with -f, because this
+ reduces the amount of needed memory !
+
+
+Technical details
+Lumberjack supports the following hash codes:
+SHA (native)
+MD5 (native)
+crypt (native since V 0.2.7)
+NS-MTA-MD5 (native since V 0.2.2)
+Support for SSHA and SMD5 is not tested. I guess it does not work because I had a lot of trouble with the
+ salting. If you have a SSHA or SMD5 ldif file with known passwords: send it to me !

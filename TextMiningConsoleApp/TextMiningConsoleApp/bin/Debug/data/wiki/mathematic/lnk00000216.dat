@@ -1,0 +1,1006 @@
+THE_URL:http://web.textfiles.com/computers/w95_wp03.txt
+THE_TITLE:w95_wp03.txt
+
+           ====================================
+           !  OS/2 WARP CONNECT vs WINDOWS 95  !
+           ====================================
+
+                           FOR
+
+              OPERATING SYSTEM EVALUATION BY
+  IBM MARKETING PERSONNEL, BUSINESS PARTNERS AND CUSTOMERS
+
+
+                        PREPARED BY
+                      IBM CORPORATION
+                WORLDWIDE MARKET STRATEGIES
+                    FAX (407) 982-8888
+
+                    SEPTEMBER 28, 1995
+
+
+
+
+                  OS/2 Warp Connect vs. Windows 95
+               ======================================
+
+Introduction
+++++++++++++
+
+OS/2 Warp has generated renewed excitement and heightened
+momentum for OS/2 in all areas of the marketplace since its
+release .   This has led to over 60 independent software
+vendors (ISV) announcing more than 100 new applications for
+OS/2 Warp in 1995 alone.  In addition to the IBM PC Company,
+OS/2 Warp is a preload option on PCs from over 200 OEMs
+worldwide.
+
+Now almost a year and nearly 3 million OS/2 Warp sales later,
+the  release of Windows 95 in August 1995 will lead to some
+degree of evaluation of computer hardware and software needs
+in  homes and businesses, both large and small.  Whether you
+are running through a mental checklist or performing a full
+pilot evaluation, here are some basic points to consider as
+you decide the best way to meet your needs today and in the
+future.
+
+
+Executive Summary
++++++++++++++++++
+
+Microsoft's $200 million+  marketing campaign surrounding the
+August 24, 1995 availability of Windows 95 created a media
+blitz that reached a fever pitch and blurred the realistic
+expectations for the product.  The good news is that Windows
+95 is now a product and the reality can be separated from the
+hype.
+
+Many media commentators, reviewers, and writers as diverse as
+Rush Limbaugh,1  Howard Stern 2 and Garry Trudeau in the
+Doonesbury3 comic strip observed that Windows 95 is offering
+features and functions that OS/2 and Apple Mac users have
+enjoyed for years.   James Fallows, in his National Public
+Radio (NPR) commentary,  pointed out that
+Windows 95 is " . . . an achievement of commerce and
+promotion rather than technology."  What makes OS/2 Warp
+important to businesses, where stability and productivity are
+crucial, was summed up by Eric Grevstad in the September 1995
+Computer Shopper, "A time-tested, bargain-priced,
+elegantly-interfaced, Internet-savvy, rock-solid, 32-bit
+operating system."
+
+OS/2 Warp Connect is designed for today's networked business
+environment.   Its true multitasking, multithreading
+capabilities handle mission-critical tasks more quickly and
+efficiently.  OS/2's Crash ProtectionTM  keeps problems with
+individual applications from crashing your entire system.
+Combining OS/2 Warp's architectural and networking strengths
+with the investment protection afforded by compatibility with
+existing DOS and Windows 3.x applications creates an
+environment with advantages that Windows 95 does not provide.
+
+Only OS/2 Warp provides personal computer users with:
+  * A full 32-bit operating system with true multitasking and
+    multithreading
+  * Preemptive multitasking with 16-bit Windows 3.x
+    applications as well as native 32-bit applications
+  * Memory and data protection
+  * Crash Protection
+  * Internet access graphical tools
+  * Consistent user interface across entire family of
+    scaleable products
+  * Lotus Notes synergy
+  * BonusPak of full-function productivity applications.
+
+Companies that migrate to OS/2 Warp Connect today may recover
+their migration cost by the time Microsoft makes a second,
+more stable release of Windows 95 available with native
+32-bit applications (currently named Nashville and planned
+for next year).
+
+OS/2 Warp Advantages
+--------------------
+
+OS/2 was designed as a 32-bit multitasking, multithreaded
+operating system from the ground up.  OS/2 Warp is the third
+major release of 32-bit OS/2 and the seventh release with
+preemptive multitasking and multithreading capabilities.  It
+is a stable, industrial-strength operating system that has
+proven its ability to handle mission-critical applications.
+
+OS/2 has been introducing and evolving leading edge
+technology over its 8-year history.  The  results of that
+technology have been to exploit the capabilities of today's
+hardware fully, while  maximizing usability and protecting
+investment in current technology.  OS/2 has won over 70
+awards since April 1992.  The recognition OS/2 has received
+for its technical excellence along with its widespread usage
+in major corporations worldwide has raised the bar, creating
+a new level of expectation in operating system function.
+Windows 95 is now beginning to introduce many of the features
+and functions that OS/2 users have been accustomed to for
+some time now.  Many of  OS/2 Warp's functions, listed below,
+are now claimed by Microsoft for Windows 95 but are present
+to varying degrees, some with additional purchases required.
+
+* Full 32-bit multitasking, multithreaded operating system --
+  but Windows 95 has semi-preemptive multitasking
+* Crash Protection  --  but Windows 95 has compromised crash
+  protection in favor of compatibility
+* Internet access with graphical browsers -- but no graphical
+  tools, for example Web Browser or Gopher, are included with
+  Windows 95
+* Graphical utility for accessing a commercial on-line
+  provider (CompuServe) -- but Windows 95 only offers the
+  Microsoft Network connecting software
+* Support for multiple clients and multiple network
+  transports out of the box
+* Object-oriented technology through IBM's System Object
+  Model (SOM) -- but Windows 95 utilizes proprietary
+  Object-Linking and Embedding (OLE), which is object-based
+  rather than object-oriented.
+* Ease-of-use features which include:
+  - A full object-oriented desktop -- but Windows 95 is a
+    partial object implementation.
+  - Folder work areas -- but Windows 95 folders lack OS/2
+    Warp's unique work-area capabilities of closing the
+    folder and having all objects within the folder close.
+    Then when the folder is reopened, all objects reopen just
+    as they were before the folder was closed.
+  - Shadow duplicate icons -- but Windows 95 lacks the
+    ability to dynamically track the linkage and can lose the
+    target.
+  - Drag-and-drop -- but Windows 95 has inconsistent
+    drag-and-drop.
+  - Toolbar completely customizable for one-click application
+    access -- but the  Windows 95 task bar has minimal
+    customization capability.
+  - Long file names -- but Windows 95 is only the most recent
+    operating system to break the 8.3-character file name
+    barrier.
+  - Right mouse-button support  for context menu, including
+    setting properties -- but Windows 95 is supporting a
+    feature OS/2 Warp users have benefited from for years.
+
+Ease of Use
++++++++++++
+
+User Interface
+--------------
+
+OS/2 Warp
+
+Staying at the forefront of the technology curve, OS/2 began
+exploiting object-oriented technology on the OS/2 2.0 desktop
+that was introduced in April 1992.   The  OS/2 desktop has
+evolved into the user-friendly desktop currently available in
+OS/2 Warp.  The beauty of this clean,  efficient desktop is
+much more than skin deep.  Each icon, whether on the desktop,
+toolbar, or in a folder, is a graphic representation of the
+actual object.  This provides consistent drag-and-drop usage
+across all areas of the desktop.   Any action on the icon
+applies to the object.  Therefore when an icon is dragged to
+the shredder it shreds, to the printer it prints, and to the
+fax it faxes.  Shadow icons can easily be created to
+represent an original object and its contents.  Because this
+is a true object-oriented implementation, any action done to
+the original  (for example, a name change) occurs in the
+shadow as well.  Object locations are dynamically maintained
+so that when the original files are moved within or between
+directories, or local/network disk drives the shadows are not
+lost.
+
+Windows 95
+
+Microsoft has promised a full object-oriented implementation
+in Cairo, a future NT release, but the current partial
+object-based implementation of Windows 95 causes inconsistent
+results with drag-and-drop operations.  Some areas, among
+them the My Computer and Control Panel folders, are
+considered special areas, off limits for drag-and-drop
+activity.  This inconsistency is very confusing for a new
+user.  The lack of a drag-and-drop deletion capability adds
+to the confusion, since drag-and-drop on the Recycle Bin
+requires an additional step that may not be apparent to
+complete the deletion.  Pressing the Start button to get to
+the system shutdown is not very intuitive either.
+
+The partial object-oriented implementation is also evident in
+the Windows 95 feature for creating shortcuts, which are
+alternative names or nicknames that refer to an object and
+can be placed at convenient places on the desktop.  Since the
+shortcut and its related files are linked by static pathnames
+and .ini file entries, moving the target file within the
+directory structure can break the connection, causing the
+shortcut to be lost.   Windows 95 does search, often
+successfully, to find the wayward file, but the search can be
+lengthy and can result in targeting the wrong file.
+
+Referring to the inconsistency of the drag-and-drop, the
+InfoWorld Test Center Product Review, August 1995, warns,
+"Another inconsistency -- which is serious enough to cause
+you to accidentally dump a document if you're not careful --
+has to do with Win95's capability to help you create
+shortcuts.  You create a shortcut to an executable ªfileÝ by
+dragging and dropping it onto the desktop with the left mouse
+button.  If you use the same procedure on a document, you get
+a different result -- the document gets moved rather than a
+shortcut created.  If you don't realize you are not working
+with a shortcut, you can easily delete the document file when
+moving it to the Recycle Bin."
+
+When an entire window is moved across the desktop, the
+contents of that window are temporarily blanked out. The
+remedy for that is in Microsoft Plus], a $49.95 add-on to
+Windows 95 that raises the minimum system requirement to a
+486 processor, 256-color graphics, and 25 to 50MB of
+additional hard disk space.
+
+Long File Names
+---------------
+
+OS/2 Warp
+
+Breaking free of the cryptic 8.3-character file name
+constraints that have frustrated a generation of DOS and
+Windows users occurred 8 years ago for OS/2 users.
+User-assigned names for folders are examples of where long
+file names can be conveniently used.
+
+Windows 95
+
+Windows 95 has garnered significant press over the support of
+long file names. While this function is nothing new to users
+of other personal computer operating systems, it is another
+example of where Windows 95 users can encounter problems
+unless all of the applications on their system and any system
+with which they plan to exchange data files are upgraded to
+Windows 95 versions.  Here's a frightening example.  You
+create an expense report, titled 'Expenses for Aug',  with a
+new Windows 95 spreadsheet program in your office.  Next
+month you create 'Expenses for Sept' and decide to take it
+home and complete it over the weekend.  Windows 95 has
+assigned 'Expens½1' and 'Expens½2' as short aliases for your
+two files, but when you copy the September report onto a new
+floppy diskette to take it home, it is titled 'Expens½1' on
+the diskette.  Monday morning you return to the office and
+copy the September report that you completed on your Windows
+3.x spreadsheet at home back onto your office system.  Since
+the August report had previously been assigned the 'Expens½1'
+alias, the September report will overwrite it.  The August
+report is gone, replaced by the September file.  This type of
+confusion can only be avoided by using short (8.3) file names
+solely,  and therefore any perceived advantage is lost.
+
+
+Architecture
+++++++++++++
+
+Crash Protection and Multitasking
+---------------------------------
+
+We are constantly multitasking in every aspect of our lives,
+with much of the activity so natural that we don't even think
+about it.  From the simplest walk-and-chew-gum-joke to the
+evenings spent cooking dinner while the laundry runs and the
+kids are reporting on their day, this natural flow of
+activity maximizes productivity in our lives.
+
+Our work lives should be no less efficient.  Being able to
+open multiple Web Browsers allows the Internet user to
+maximize the on-line time for which he is billed.
+Downloading a file while reading e-mail has the same cost
+savings.  Continuing to edit a file while a previous version
+is faxed to a co-worker increases productivity.
+
+OS/2 Warp
+
+Doing these tasks concurrently is the true preemptive
+multitasking that OS/2 was designed from the ground up to
+provide.  The strength of OS/2 Warp's multitasking, coupled
+with its superb Crash Protection, has led to its widespread
+adoption in major worldwide corporations where productivity
+and stability are paramount.   Even though earlier versions
+of OS/2 did contain 16-bit elements, IBM was able to
+trademark OS/2 Crash Protection because no 16-bit parts were
+ever shared with Windows applications.
+
+Windows 95
+
+An article titled "A Grab Bag of Gotchas and Goodies for
+Programming in Windows 95"  in the May 1995 issue of the
+Microsoft System Journal stated: "Windows 95 is based on
+Windows for Workgroups 3.11 code.  Yes, the code has been
+significantly modified to provide process and thread
+management . . . but there are still some occasional 16-bit
+issues to deal with."   The ramifications of newer 32-bit
+code having to call 16-bit operating system parts compromise
+both the stability of the system and the multitasking
+capabilities.
+
+  * Two important portions of legacy code are GDI, the
+    Graphics Device Interface, and  USER.EXE,  which controls
+    the user interface.  Being 16-bit code, it is
+    non-reentrant and can only be accessed by one application
+    at a time.  That one application makes a call and locks
+    that portion of code until it is finished with it. The
+    danger lies in the potential for USER.EXE to be grabbed
+    and locked by a crashed application.  When that happens
+    the Windows 95 user interface remains inaccessible and
+    needs a  <Ctrl><Alt><Del> action to free it, which also
+    terminates any real-time applications running in the
+    background, such as a file transfer or FAX.
+  *  All Windows 3.x applications are executed in one shared
+    address space. There is no option as in OS/2 Warp to
+    execute Windows 3.x applications in separate protected
+    address spaces where the inter-application protection
+    isolates each Windows 3.x application from the
+    idiosyncrasies of the others.
+  * The introduction of even one 16-bit Windows 3.x
+    application causes the entire environment to revert to a
+    cooperative multitasking model where the application,
+    rather than the operating system, is in control of
+    critical system resources such as the CPU.
+  * Only 32-bit applications are memory protected. Unless
+    additional money is spent to acquire all new Windows 95
+    32-bit applications, General Protection Faults (GPFs) are
+    not history.
+
+Multithreading adds efficiency by allowing concurrent
+operation of more than one path of execution within a task.
+Addressing a developers conference  recently, Jeff Richter, a
+Microsoft software engineer, discussed various aspects of
+Windows 95 architecture and cautioned the developers,  "In
+Windows 95, the threads are a nightmare."   He warned the
+developers that threads could be used for background tasks,
+but could never be used to simultaneously print and edit a
+document because Windows 95 would not know which version of
+the file to print.   He also alerted the developers that
+high-priority threads, which should be reserved for system
+functions, could inadvertently be created by application
+developers, potentially crashing the system.
+
+Connecting
+++++++++++
+
+Connectivity was once thought of as strictly a corporate
+need, but that paradigm has changed.  Modems have become
+standard equipment in consumer systems, simplifying
+connecting to commercial on-line services and the Internet.
+The teamwork approach of workgroup or collaborative computing
+is growing as the productivity gains are realized.  The
+client/server model of computing is becoming more prevalent
+in corporations.  The importance of connected computers in
+our lives will keep growing exponentially.  Our need to be
+connected, everywhere from the office to the plane to the
+lounge chair in the backyard, is becoming a way of life.
+
+Internet Access
+---------------
+
+OS/2 Warp
+
+The Internet Access Kit provided in the OS/2 Warp BonusPak
+includes a Web Browser, News Reader, Gopher, Telnet and FTP
+client, all with the same graphical look and feel as OS/2
+Warp.  With OS/2 Warp's one-button registration,  it is
+unnecessary for users to understand or even see the
+underlying SLIP protocol.   The October 10, 1995 PC Magazine
+feature article, "The Internet: Make It Work For You" gives a
+comparison of Internet access tools and states,  " . . . only
+OS/2 Warp Connect can boast a fully developed TCP/IP anatomy.
+Its multifaceted stack, voluminous suite of tools, and
+integrated installation process provide Internet options that
+will appease both the on-line novice and the demanding power
+user."
+
+Windows 95
+
+The OS/2 Warp Internet Access Kit, available since October
+1994, has received much acclaim and has been a compelling
+sales factor. Shortly after its release,  Microsoft announced
+changes in their planned Internet access tools for Windows
+95.  Windows 95's main focus is the Microsoft Network  (MSN)
+where Microsoft controls the content and collects the
+revenue.  So that Internet access can be claimed,  Windows 95
+provides the Internet Protocol stack along with Telnet and
+FTP as command-line entries only.  To use the Internet, the
+user must first subscribe to the MSN or another commercial
+on-line service where a Web Browser and a Gopher can be
+downloaded. The Microsoft Plus] add-on to Windows 95 also
+provides a Web Browser and Gopher along with the Internet
+mail client.
+
+Peer Networks
+-------------
+
+OS/2 Warp
+
+Cost containment is a major factor in businesses today.  The
+need to minimize the expenditures for expensive peripherals
+(for example, laser printers) coupled with the need for
+multiple employees to access the same files led to the growth
+of peer-to-peer networking.  By not requiring a dedicated
+server, peer networking achieves savings but should not
+compromise security.  Not everyone attached to the peer
+network should be able to read, much less write, to certain
+files such as the payroll record.  OS/2 Warp Connect's peer
+networking capabilities provide user-level access rights. For
+simplicity, initial access rights of read, read/write, and
+none are presented.  For completeness, the options for read,
+read/write, execute, create, delete, attributes, permissions
+and none are presented (when you click on the Customize
+button) and can be assigned for individual users or groups of
+users.
+
+An OS/2 Warp peer network can connect PCs seamlessly and
+share resources among co-workers using OS/2 Warp Connect,
+Windows for Workgroups, Windows 95, Windows NT and LANTastic.
+
+OS/2 Warp Connect's ability to have a peer connection and
+attach to a server simultaneously over the same network card
+is a breakthrough for companies who will no longer have to
+choose between peer and server connections that each require
+unique connectivity mechanisms.
+
+Windows 95
+
+By contrast, Windows 95 uses the old share-level security
+carried over from Windows for Workgroups.  In this scheme a
+password is assigned to the sharable resource.  Once a user
+logs on to the peer network, if he knows the password
+associated with the resource, he can control the resource.
+Windows 95 share-level security can only be implemented in a
+network that consists entirely of Windows 95 PCs or in a
+network that includes other Microsoft networks.  The only way
+to provide additional levels of access rights is to use the
+Windows 95 peer server in conjunction with an NT Server or
+Novell NetWare server with the peer services linked directly
+to the domain-based user accounts.
+
+Client / Server
+---------------
+
+IBM's "Networking the World" vision means that whenever
+anyone connects electronically to anyone else, anywhere, it
+is IBM's networking software that enables it, manages it and
+makes it safe.  OS/2 Warp Connect is the cornerstone of IBM's
+software strategy.
+
+Lotus Notes
+-----------
+
+The Information Technology industry is  becoming increasingly
+network centric.  Personal computer users have moved from a
+standalone personal productivity environment to a LAN
+network-based environment.  Momentum is building toward a
+collaborative, shared work environment.  This is the
+groupware environment. Groupware provides an integration of
+the total work environment that encompasses all aspects of
+personal productivity, collaborations,  and line-of-business
+applications.  All of this is simplified by having the same
+solution at work, on the road, and at home.
+
+Lotus Notes is the market leader in integrated messaging and
+workgroup computing.  Notes along with cc:Mail,  have over 10
+million users in 6 thousand companies.  Currently
+10 thousand business partners are writing applications for
+Lotus Notes across a broad range of platforms.  Lotus Notes
+Express is already integrated into OS/2 Warp Connect
+providing an easy entry into the Lotus Notes environment.
+The synergy between OS/2 Warp and Lotus Notes will contribute
+to increased productivity, which is a direct contributor to
+the bottom line in any business.
+
+Value
++++++
+
+Productivity and Investment Protection
+--------------------------------------
+
+OS/2 Warp
+
+The BonusPak of applications included with OS/2 Warp allows a
+user to be productive immediately out of the box.  The need
+to purchase additional applications prior to doing anything
+meaningful is eliminated.  The object-oriented technology
+used in the BonusPak applications allows them to integrate
+fully into the OS/2 Warp desktop.  This further extends the
+drag-and-drop functions seamlessly between the operating
+system and the productivity applications.  An example of the
+ease of use achieved is when a  document object is dragged to
+the printer or fax object without your having to open the
+word processor that created the document.
+
+Replacing and upgrading applications can be a very expensive under-
+taking for both consumers and business users. OS/2 Warp's downward
+compatibility is designed to protect your current investment
+in DOS and Windows applications.  With OS/2 Warp, Windows 3.x
+applications can run in separate protected memory address
+spaces, providing robust inter-application protection.  The
+OS/2 Warp advantages of Crash Protection in a multitasked,
+multithreaded environment make OS/2 Warp a more stable
+environment for your current Windows 3.x applications.
+
+Windows 95
+
+To benefit from the advancements of Windows 95, all of your
+applications must be upgraded to Windows 95 versions.   When
+recently retired Mike Maples was senior vice president of
+applications at Microsoft, he gave the industry a glimpse of
+the magnitude of Microsoft's unique position as both supplier
+and competitor when he reported, "My job is to get a fair
+share of the software applications market, and that is 100%."
+Since 61% of Microsoft's revenue in their last fiscal year
+was from the sale of applications, how much interest do you
+believe they have in protecting your current investment in
+those applications?  Every major upgrade in the Windows
+environment has required corresponding upgrades in
+applications -- Windows 3.0 to Windows 3.1, Windows 3.1 to
+Windows NT, and now Windows 3.1 to Windows 95.  The future
+release known as Cairo has a stated goal of being
+object-oriented, which would require another round of
+application upgrades.
+
+The IBM paradigm is downward compatibility combined with
+bundling OS/2 exploitative applications at no extra charge
+vs. the Microsoft paradigm of planned obsolescence.
+
+The minimal instruction manual that ships with Windows 95
+suggests that users acquire the Windows 95 Resource Kit, a
+CDROM with more comprehensive documentation.  This is an
+additional $49.95 cost for everyone who purchased a preloaded
+system or the diskette version of the shrink-wrapped product.
+
+
+Compatibility
++++++++++++++
+
+Software Compatibility
+----------------------
+
+The August 8, 1995 PC Week reported that "as many as one
+third of the 2500 DOS and Windows applications that Microsoft
+Corporation tested for compatibility with Windows 95
+displayed some problem which either reduced functionality,
+required workarounds or prevented it from running."
+Microsoft officials stated that 200 applications, among the
+2500,  do not  run under Windows 95 but these have not been
+broken out into a separate list.
+This list is available on Microsoft's home page at:
+        http://www.microsoft.com/windows/thirdparty.htm
+
+Problems were encountered in most existing DOS and Windows
+utilities, including virus protectors, backups that don't
+support long file names, and those that access the disk
+directly.  Microsoft directs users back to the manufacturers.
+Retrofitting existing versions of their software into the
+Windows 95 environment will not generate the revenue that
+many of these companies are counting on receiving from the
+Windows 95 versions they are releasing.
+
+Many Windows 3.x screen savers are compatible with Windows 95
+but anyone considering using a Windows 3.1 screen saver on
+their Windows 95 system should be warned that the password
+protection is lost.  Pressing <Ctrl><Alt><Del> brings up the
+close program dialog box which allows the screen saver task
+to end and the system to be accessible.
+
+Hardware Compatibility
+----------------------
+
+Windows 95 warns users of DOS device drivers that there will
+be performance penalties unless new 32-bit device drivers are
+obtained.  Peripheral manufacturers are among those expecting
+a financial boon from the sale of new hardware generated by
+Windows 95 hardware requirements.  As hardware peripheral
+manufacturers struggle to keep up with the latest technology,
+how many will be willing to go back and write new drivers for
+old hardware?
+
+Application Development
++++++++++++++++++++++++
+
+Today,  hardware costs are declining as the cost of software
+development and testing continues to rise.  The
+ever-escalating cost of software development can only be
+contained if the major dependencies of the software
+developers are provided.  These dependencies are
+
+  * A predictable set of APIs
+  * Support for industry standards
+  * Reliable service and support
+
+Application Programming Interface (API)
+---------------------------------------
+
+OS/2 Warp
+
+IBM understands the dynamics of business economics today. We
+understand that businesses must leverage their investment,
+frequently many person years, in mission-critical
+applications and cannot cost-justify re-engineering.  The
+single 32-bit OS/2 API set across the entire OS/2 Warp family
+simplifies development of applications that are scaleable
+from the laptop to the  mission-critical corporate LAN
+server.  All OS/2 and LAN Server releases have been upwardly
+compatible. In fact IBM's PCLP 1.0, which shipped in 1985,
+can run on LAN Server 4.0 today, 10 years later.  This
+consistency is like a life insurance policy for your
+mission-critical applications.
+
+As part of an ongoing campaign to reduce software developers'
+costs and give them an opportunity to capitalize on the
+rapidly growing OS/2 market, the Developers Application
+Extensions are being added to the tools available to
+application developers.   The Developer Application
+Extensions enable developers to create a common code base for
+OS/2 Warp, Windows NT, and Windows 95 by including over 700
+new APIs and 300 messages that are consistent with Windows
+APIs.  These extensions allow application developers to write
+portions of their code to be common among the operating
+systems, then to add the portions that exploit OS/2 Warp's
+API set and advanced functions.   Windows applications that
+use the APIs defined in the Developer Application Extensions
+can be recompiled to produce a functionally equivalent OS/2
+Warp application.  A major Independent Software Vendor (ISV)
+has estimated an 80% reduction in the porting cost of Windows
+applications to OS/2 can be achieved.
+
+
+Windows 95
+
+The Windows API set has continued to change with each Windows
+release -- Windows, Windows for Workgroups, NT, and now
+Windows 95 -- supporting a different combination of 16- and
+32-bit APIs.
+
+With Windows 95, Microsoft introduced their fourth set of
+Windows APIs.
+  1)  Win16   -  The original 16-bit Windows 3.x APIs.
+  2)  Win32   -  The 32-bit API set introduced with Windows NT.
+  3)  Win32s  -  The expansion of Win16,  the lowest common
+      denominator for applications, to run on both NT and
+      Windows for Workgroups.
+  4)  Win32c  - Introduced with Windows 95. This is an
+      irregular subset of Win32.
+
+For an application to be logoed as "Windows 95 Ready,"  it must also
+run on Windows NT.  This sounds innocuous enough until you look at
+the trade-offs of function that is in each one.  Functions unique to
+each product include:
+
+      Windows NT                    Windows 95
+      ----------                    ----------
+
+      Security                      New User Interface
+      Unicode                       TAPI, MAPI
+      Event Logging                 Plug and Play
+      NTFS                          VxD
+      OpenGL                        Independent Color Matching
+                                    Microsoft FAX, Unimodem
+                                    Microsoft Network Connection
+
+Since each API set has unique features, an application that
+must run on both operating systems must be written to the
+lowest common denominator,  which is a compromise optimizing
+neither environment.
+
+Microsoft has a history of churn in their API definitions as
+evident in the following examples:
+
+  * Win16 / Win32S / Win32 /Win32c for operating systems.
+  * VBX to OCX for application development.
+  * OLE 1.0 to OLE 2.0, which caused a virtual rewrite of OLE
+    1.0 applications.
+  * ODBC 1 to ODBC 2  to OLE-DB for database access APIs. The
+    future migration to OLE-DB will be at least one more
+    major rewrite.
+
+Can any business afford the development cost created by
+chasing a moving API set?
+
+Industry Standards
+++++++++++++++++++
+
+IBM is committed to open industry standards as a founding and
+active member of various industry alliances. Widely accepted
+industry standards are integrated into OS/2 Warp.
+  * Common Object Broker Architecture (CORBA), on which IBM's
+    System Object Model (SOM) is based, is a consortium of
+    over 500 of the industry's leading developers.  This
+    provides the rich object-oriented foundation for OS/2
+    Warp products.
+  * Desktop Management Taskforce (DMTF) has defined a Desktop
+    Management Interface (DMI) for consistent asset
+    management across hardware and software platforms.
+  * OpenDoc, a cross-platform compound-document architecture.
+  * Lotus Notes is a de facto industry standard for which
+    over 12 thousand developers are writing applications.
+    Notes is cross platform, not a Windows-only solution.
+
+In today's heterogeneous computer world,  the acceptance of
+open industry standards is the best insurance against being
+locked into an implementation or architecture owned and
+controlled by one vendor.
+
+
+Support
++++++++
+
+With OS/2 Warp comes IBM's world-class, award-winning,
+worldwide support through a single point of contact.
+Contrast this with Microsoft's complex, multi-tiered program
+of (900) numbers, (800) numbers, and associated fees.
+
+Microsoft support policy for networking products, including
+the MSN, fax, and e-mail components of Windows 95, was
+changed July 1, 1995, eliminating the 30-day free support
+period.  Priority desktop support for personal operating
+systems is $1.95 per minute. The per-incident cap was raised
+from $25 to $35.   Microsoft expects Windows 95 to generate
+record numbers of calls to the support centers.
+
+OS/2 Warp Corrective Service Diskettes (CSDs) are made
+available for electronic downloading, or the diskettes may be
+ordered for the cost of manufacturing, shipping, and
+handling.
+
+The September 1995 issue of Windows Magazine relates that
+Windows 95 tune-up packs may be sold either quarterly or on
+an annual subscription basis.  Many users resent paying
+Microsoft for bug fixes, particularly with Windows 95 being
+version 1.0 of a new operating system.  In larger
+organizations the additional cost of purchasing these
+quarterly updates will be compounded by the administrative
+challenges involved with distribution, control, and end-user
+education.
+
+Windows 95 Past, Present, and Future
+++++++++++++++++++++++++++++++++++++
+
+The Road to Chicago  (The Past])
+--------------------------------
+
+After Windows NT was released in August 1992, Microsoft told
+customers who found the hardware requirements of NT
+unpalatable that the next year would bring Windows 4.0,
+described as providing preemptive multitasking,
+multithreading, crash protection,  and all able to perform as
+fast as Windows 3.x in a system with only 4MB RAM.  The only
+action 1993 saw was the code name "Chicago" publicly replace
+Windows 4.0 references.  Then 1994 came and went with only a
+very limited beta test program made available late in the
+year. This was followed by Bill Gates announcing that the
+product, initially promised for 1993 then 1994,  would be 5
+months late, pushing availability out to April 1994. The name
+was then officially announced as Windows 95.  A larger public
+beta in the first half of 1995 uncovered sufficient problems
+to delay the release once more,  from early 1995 into August
+1995.  The scope of problems encountered in the preview
+program led to function shifting out of the base product in
+order to maintain the date.  Microsoft Plus] became one of
+the catchers for functions falling out of the main product,
+including MPEG and the Internet mail driver.
+
+Microsoft Claims (The Present])
+-------------------------------
+
+Attempting to position Windows 95 head-to-head with OS/2
+Warp, Microsoft has claimed that Windows 95 is a completely
+new 32-bit operating system, free of the constraints of DOS
+and Windows 3.x, along with many other claims and promises
+made over the course of the 3-year development cycle
+regarding what to expect in the final product.  Now that all
+of the smoke has blown away, and the vaporware claims with
+it, the assertions can be mapped against the actual final
+product.  There are significant differences, and the hype
+doesn't match the reality.  The most dramatic of these claims
+are the ones which will impact the day-to-day operations of
+users, who need to fully understand the actual product and
+not base their expectations on media coverage.  Perhaps Brad
+Silverberg, Microsoft senior vice president of Personal
+Systems, summed it up best in May 1995 when he said,  "It is
+clear that the hype has gotten out of hand . . .We take our
+share of responsibility for creating unreasonable
+expectations."
+
+Architecturally, Windows 95 was promised to be a completely
+new, full 32-bit, totally integrated operating system.  Now
+we know:
+  * Critical pieces are carried over (not new) from Windows
+    for Workgroups and DOS, creating a 16/32-bit hybrid
+    operating system.
+  * As explained in the "Architecture" section of this paper,
+    fundamental portions of Windows 95 are legacy 16-bit
+    code, including the Windows manager.
+  * The absence of a 32-bit graphics subsystem is significant
+    evidence of Microsoft's inability to achieve 32-bit
+    technology due to compatibility issues. We recognize the
+    difficulty of this challenge as it was not until OS/2's
+    second major 32-bit release, OS/2 2.1,  that we
+    achieved integration of a full 32-bit graphics subsystem
+    with superior compatibility. Windows developers
+    who were expecting the memory management relief from a
+    32-bit graphics engine were surprised when they were
+    informed at the December 1994 Microsoft Developers
+    Conference that they would still have to deal with
+    graphics in 64KB chunks in Windows 95 rather than the
+    flat 32-bit memory model of OS/2 and NT.
+  * While Windows 95 has added many features beyond Windows
+    3.x, in  Unauthorized Windows 95,  page 2,  Andrew
+    Schulman points out, "But there isn't much genuine
+    integration at a technical level."
+
+Windows 95 was touted to provide preemptive multitasking in a
+crash-protected environment.
+  * Windows 95 cannot preemptively multitask 16-bit Windows
+    applications.
+  * The presence of a single 16-bit Windows application
+    causes Windows 95 to revert to cooperative multitasking.
+    Windows 95 sales literature warns, "To get the full
+    benefits of preemptive multitasking requires exclusive
+    use of 32-bit Windows-based programs such as those
+    bearing the Designed for Windows 95 logo."
+  * 16-bit Windows 3.x applications all run in a single
+    address space, exposing the stability of the entire
+    system.
+  * Key legacy, 16-bit portions of the Windows 95 operating
+    system can only be accessed serially, creating a
+    semi-preemptive multitasking environment.
+  * Since the Windows 95 operating system code is not
+    protected, errant memory operations in a Windows 95
+    32-bit application can overwrite critical areas, exposing
+    the system to the possibility of a crash.
+
+As a follow-on to Windows 3.11, Windows 95 was promised to
+run with the same hardware with the same performance.
+  * The reality is explained by PC Computing, April 1995,
+    describing 386SX systems as not fully operational and
+    saying 486 25MHz systems "run out of gas too quickly."
+
+  * The same article reported 200MB of hard disk storage.
+  * Microsoft recommends 8MB RAM minimally.
+  * Only relatively new systems with Plug-and-Play (PnP) BIOS
+    will be able to utilize PnP.  Replacing adapters with PnP
+    versions will be another major expense for those hoping
+    to exploit the advantages of PnP.
+
+
+Where Does Microsoft See Windows 95 Fitting In?
+-----------------------------------------------
+
+According to a Microsoft spec sheet, Windows 95 is "for
+computer users everywhere."  However according to Bill Gates,
+Steve Ballmer and other Microsoft executives, Windows NT is a
+more appropriate operating system for corporate desktops.  In
+the August 1995 Byte magazine, Jim Allchin, senior vice
+president of Microsoft Business Systems, is quoted as saying,
+"If you're in a corporate environment and you are thinking
+long-term, and hardware isn't a limitation, you should be
+looking at Windows NT."  In fact, whenever Microsoft is
+challenged on the stability or robustness of Windows 95, they
+revert back to Windows NT being the best choice for "serious
+business applications."   Do you or your customers run
+non-serious business applications?
+
+Around the Bend toward Cairo  (The Future])
+-------------------------------------------
+
+Microsoft only wants to support one operating system across
+all segments, from consumer to large enterprise, but that is
+not feasible today due to the high hardware requirements on
+NT.  So,  in order to stave off market share gains by OS/2
+Warp, Microsoft is attempting to position Windows 95 as a
+full 32-bit operating system and the follow-on to Windows
+3.x.  In a recent interview, Bill Gates predicted a short
+lifespan for Windows 95, telling users to expect, "One more
+major round of Windows"  to be built on Windows 95 prior to
+Microsoft refocusing "just on NT."  In Computer Reseller
+News, 6/12/95, Bill Gates was quoted as saying,  "We will
+focus on NT as our mainstream platform 2 to 4 years from now
+when 16MB ªof RAMÝ  on the desktop is common."   Eric
+Grevstad summed it up well in the April 28, 1995 Computer
+Shopper,  "Face it; Microsoft's answer to its own ad slogan,
+'Where do you want to go today?' is usually 'Great, we'll
+take you there next year.' "
+
+OS/2 has over 9 million licenses and an 8-year history in
+thousands of major corporations worldwide.  How can questions
+concerning OS/2 Warp's longevity continue to get major press
+coverage when Windows 95 has been declared obsolete by its
+originator even before release?
+
+Microsoft appears to be incorporating a bait-and-switch
+strategy in the business segment as they continue to hype
+Windows 95 but in the background openly admit that Windows NT
+is the better choice.  Their hope is that many customers will
+succumb to the multimillion dollar media blitz and purchase
+Windows 95, not realizing that Microsoft plans on replacing
+the product within a few years.  For those who are savvy
+enough to realize that they want a full 32-bit operating
+system or that the specter of pain and expense generated by
+an interim migration is too severe, Microsoft recommends
+Windows NT  today.
+
+PC Week's Jim Louderback summed it up well in his article
+titled, "Windows 95 or NT Decision Clear as Mud."  He wrote,
+"Suddenly Windows 95 looks more like Bob 2.0 than a corporate
+solution.  And, with that new holy-grail operating system
+going to beta very soon, could Windows 95 simply be a an NT
+Trojan Horse?"  Personal Software magazine,  September 1995,
+printed an article titled "OS/2 Warp Connect versus Windows
+Family"  that details why OS/2 Warp Connect is a superior
+solution to Windows NT.
+
+Summary
++++++++
+
+Don't be bullied by marketing blitz.  An operating system
+choice is not a fashion statement.  Getting your work done as
+quickly as possible means that all of the applications you
+are dependent on run in the most productive and least
+intrusive manner.  Do you want to trust your productivity to
+version 1.0 of an operating system that requires version 1.0
+applications to exploit it?
+
+With OS/2 Warp, you receive the benefits of a full 32-bit,
+robust, preemptive multitasking operating system which has
+been trusted to run most of the banking industry's automatic
+cash machines, to control the cash registers in fast food
+chains and department stores, and to make reservations on the
+busiest airline systems.  OS/2 runs major sporting events
+like the Olympics and Indianapolis 500. Judicial systems,
+police departments, and prisons all rely heavily on OS/2.
+As part of the world's business fabric, these are situations
+where downtime cannot be tolerated.   Doesn't your own time
+and work warrant the same consideration?
+
+OS/2 Warp received InfoWorld's Readers Choice award; this was
+followed by PC Magazine's special edition of their annual
+readers survey in July 1995.  The results, based on responses
+from users, showed, "Just as in last year's survey, OS/2 was
+the only operating system that scored for overall
+satisfaction significantly better than average."   This is an
+assessment from the user community,  many of whom depend on
+their personal computers to provide their livelihood.  It is
+not the results of a $200 million advertising campaign.
+
+References
+++++++++++
+
+01 August 9, 1995 show,  Regular Windows with a better
+interface, "a Model T with a Corvette cover"
+02 August 9, 1995 show,  "It is still DOS."  "If you want to
+multitask, get OS/2"
+03 Syndicated Doonesbury comic strip August 21 through August
+25, 1995
+
+Disclaimer
+++++++++++
+
+The information contained in this document represents the
+current view of IBM Corporation on the issues discussed at
+the date of publication.  Because IBM must respond to
+changing market conditions, it should not be interpreted to
+be a commitment on the part of IBM.  All information, claims,
+references and comparisons related to Windows 95 in this
+document are based upon non-confidential information
+currently available as of the date of publication. This
+document is for informational purposes only.  IBM makes NO
+WARRANTIES, EXPRESSED OR IMPLIED, IN THIS DOCUMENT.
+
+Copyrights 1995 IBM Corporation, All Rights Reserved.
+
+OS/2 is a registered trademark and OS/2 Crash Protection is a
+trademark of International Business Machines Corporation.
+
+Lotus and Lotus Notes are registered trademarks of Lotus
+Development Corporation
+
+Microsoft is a registered trademark and Windows is a
+trademark of Microsoft, Inc.
+
+Other company, product, and service names may be trademarks
+or service marks of others.
+

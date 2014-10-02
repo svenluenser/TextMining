@@ -23,7 +23,11 @@ namespace TextMiningConsoleApp.Util
 
         public uint[] toArray()
         {
-            return this.termfrequency.Values.ToArray();
+            var result = from pair in termfrequency
+                         orderby pair.Key
+                         select pair.Value;
+
+            return result.ToArray();
         }
 
         private void addTerm(string term, uint value)

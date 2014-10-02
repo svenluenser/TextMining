@@ -1,0 +1,382 @@
+THE_URL:http://web.textfiles.com/computers/vectors.txt
+THE_TITLE:vectors.txt
+               ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+               ³ Ò     Â ÒÄÄ¿ ÖÄÄ¿ ÖÄÒÄ¿ ÖÄÄ¿ ÒÄÄ¿ ÖÄÄÄÄÄ¿³
+               ³ º     ³ ÇÄ   º      º   º  ³ ÇÄÂÙ º      ³
+               ³ Ó·   ÚÙ ÐÄÄÙ ÓÄÄÙ   Ð   ÓÄÄÙ Ð Á  ÓÄÄÄÄÄ¿³
+               ³  º   ³ Tutorial by Richard Nichols      ³³
+               ³  ÓÄÄÄÙ                            ÓÄÄÄÄÄÙ³
+               ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+                        (c)1996 Richard Nichols
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Hi! You are reading a tutorial in vectors by Richard Nichols of Australia...
+
+This document is not to be reproduced in any other form than this original.
+ie. don't cut bits of it up etc. Also this MUST be distributed free of charge.
+
+The only charge from me for your use of it is that you come visit my website
+at 'http://bip.concept.se/user/rich/index.htm' and tell me what you think...
+
+Okay enough crap, let's get on to the main bit:
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Part One.
+
+In part one of this tutorial we will go over the very basic act
+of adding two vectors together in a variety of ways. I will give a
+few ways because, although methods used in programming are often
+faster and simpler, they usually don't give a good understanding of
+what you are doing.
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+What are vectors?
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Vectors are units which have both magnitude and direction.
+For example 500 metres at 57ø is a vector.
+The opposite of a vector is a scalar which is a unit with only
+a magnitude. eg. 500 m.
+Vectors are written in a few ways. If we assign a letter to a
+vector we could write (for example):  or ¯ or i
+                                          i    ~  .
+This isn't very important though. For the purposes of this tute
+you can assume that any alphanumeretic I use is a vector.
+
+We will mainly be dealing with direction vectors. ie. A distance
+or force and a bearing eg. 134N @ 45ø. I may also refer to position
+vectors which are the same as normal ones but originate from the
+origin.
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Vector Addition : Cartesian (rectangular coordinates)
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Vector Addition on our rectangular plane is easy. I will demonstrate:
+
+Let Point A = (5, 2) and B = (-4, 1).
+
+                                  ³
+                                  ³
+                                  ³
+                                  ³
+                                 2³             úA
+                        Bú       1³
+            <ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ>
+                        -4        ³             5
+     Imagine a line coming from   ³
+     the origin and going to each ³
+     A & B. These are our vectors.³
+                                  ³
+     So A + B is somewhere in     ³
+     between these.
+
+All we have to do is add the respective x and y coords together:
+        x coords: (+5) + (-4) = 1
+        y coords: (+2) + (+1) = 3
+
+So A + B = (1, 3).
+
+Easy huh? Well on to polar coordinates then...
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Vector Addition : Method A - Least complex - Least Understanding
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+For those of you not familiar with polar coordinates, imagine a
+plane with concentric circles as shown:
+                         - |  -
+                    /      |        \
+                 /         |           \
+              /            |              \
+           /               |                 \
+        /                  |                   \
+      /        More circles|here (sorry:Ascii)   \
+     /                     |
+    /                      |                       \
+---------------------------+------------------------------
+    \                      |                       /
+     \                     |
+      \                    |                     /
+        \                  |
+          \                |                  /
+             \             |               /
+                \          |            /
+                    \      |       /
+Instead of giving an (x, y) coordinate we give a radius and degrees:
+        (13, 45ø). This says a line of 13 units 45ø around from 0ø
+        (and of course originating from the origin).
+Where 0ø is depends on what you are doing. In Maths usually we use
+to the right horizontally (-->) as 0 but in Physics it is more common
+to use bearings so that upwards is 0ø (under this system we say something
+travelling at 0ø is going straight ahead).
+
+The method I am about to show here simply uses what you have already
+learnt. We convert the Polar coordinates to rectangular and then add them.
+We then convert them back.
+
+We convert them like this:
+                          /|
+                         / |   We know what r (radius) and é (angle) are
+                      r /  |   so we have to change them into x, y as shown.
+                       /   |y
+                      /é   |
+                     +-----+
+                        x
+This is _very_ simple trig that everyone should know:
+        x = r.cos.é
+        y = r.sin.é
+
+If you don't get it do a few equations and you should see the significance.
+Convert the two vectors as above and then add them like in the first part.
+Converting them back is a little more difficult:
+  1st get é:  é = arctan(y/x)
+  now get r:  r =   x
+                 ÄÄÄÄÄÄÄ
+                  cos.é
+  or alternatively use pythagoras: r = û(xý + yý)
+
+Again if you're not sure do a few examples.
+
+If that's as far into this as you want to go then you can skip past
+the next two methods.
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Vector Addition : Method B - Intermediate - Reasonable Understanding
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+But real men like trig. :)
+
+This method uses what are known as the Sine and Cosine rules. This was
+the first method I was taught (in Physics). It would not be particularly
+useful in a programming situation.
+
+On a triangle we must name the sides in a certain way eg.
+              +
+             /C\
+            /   \               Where A, B, C are angles (must use caps)
+        a  /     \ b            and where a, b, c are the sides.
+          /       \
+         /         \
+        /B         A\
+       +-------------+
+              c
+The point of this Ascii picture is that the angles have a corresponding
+side of the _same_ letter. This is essential while working out using this
+method. As long as you get this right it is plain sailing.
+
+Okay here are the rules. I won't bother with the proofs for them for two
+reasons a) I can't think of the top of my head b) It would take too long!
+
+ Cosine Rule: aý = bý + cý - 2bc.cos.A
+
+ Sine Rule: sin.A = sin.B = sin.C
+            ÄÄÄÄÄ   ÄÄÄÄÄ   ÄÄÄÄÄ
+              a       b       c
+This sine rule can also be inverted so that the top is the bottom and vice
+versa (it's a ratio after all). It just depends on what sort of numbers
+you want to work with...
+
+Anyway on to the main bit:
+
+The difference with this method is that we are using polar coords all the
+time. This means we must add the vectors correctly, that is end to end.
+The true representation of (5, 0ø) + (3, 90ø) for example would be like this:
+                                  3
+                              ÄÄÄÄÄÄÄ>
+                              ³Ù    /
+                              ³    /
+                            5 ³   / R         O = Origin
+                              ³ /
+                              ³/
+                 - - - - - - -O- - - - - - - - -
+
+Where the diagonal vector R is the resultant vector. It is now much easier
+to see what is going on isn't it?
+
+I will point out now that we will hardly ever have a right angle but I used
+one to make the diagram clearer okay?
+
+We must now name our sides like so:
+
+                                  c
+                              ÄÄÄÄÄÄÄ>
+                              ³ÙA   B/
+                              ³    /
+                            b ³   / a         O = Origin
+                              ³C/
+                              ³/
+                 - - - - - - -O- - - - - - - - -
+Yeah, I know it's a spas diagram but its the best I can do with ascii.
+So what do we know? We know c = 3 and b = 5 and that A = 90ø ( (3, 90ø) ).
+Ah! We can use the cosine rule to work it out:
+                aý = bý + cý - 2bc.cos.A
+substitute:     aý = 5ý + 3ý - 2x5x3xcos(90)
+                   = 25 + 9  - 2x5x3x0
+                   = 34                 therefore:
+                a  = û34
+                   = 5.830951895.......
+So we now have the vector's magnitude but what about the angle? This is where
+the sine rule comes in:
+           sin.A = sin.C
+           ÄÄÄÄÄ   ÄÄÄÄÄ
+             a       c
+     sin(90)/5.83= sin(c)/3
+            0.172= sin(c)/3           (*3)
+            0.515= sin(c)             therefore:
+              c  = arcsin(.515)
+                 = 31ø
+
+Only one more thing: We want a bearing from 0ø. This is easy we can see that
+all we have to do is subtract 31 from 90 which equals 59.
+
+That's it! Now we have our resultant:  5.83 @ 59ø.
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Vector Addition : Method C - Expert - Excellent Understanding
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Personally I don't like this method; it is too much like hard work. :)
+I learnt this in Maths C. It works well but is pretty useless where
+computers are concerned but you should learn how to do it just to do it
+for the sake of better understanding.
+
+Suposing we had two vectors a and b. a=(10, 45ø) and b=(5, 100ø)
+
+                                    0ø
+                                            -\
+   a & b are the vectors            |      /  -
+                                       a  /    \ b
+                                    |    /      -
+                                        /        \
+                                    |  /
+                                      /
+                                    |/
+270ø- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -90ø
+                                    |
+
+Basically this method entails drawing two triangles from the two vectors:
+
+                                    0ø
+                                            -\
+   a & b are the vectors            |      /|Z-
+                                       a  / x  \ b     I just chucked w,x,y,z
+                                    |    /  |ª  -      on there so you would
+   we know a, b and à.                  /   |-z- \     be able to reference
+                                    |  /    |          the next bit....
+                                      /à   ©y
+                                    |/------|
+270ø- - - - - - - - - - - - - - - - - - -w- - - - - - - - - - - - - - - - -90ø
+                                    |
+What we have to do is to resovle the vectors into their respective
+horizontal and vertical coords and then add them together...
+
+Horizontal= a.cos.à + b.sin.Z
+
+ If you can see that then have a lok at the diagram. It's just
+ basic trig.
+
+Now we have a problem: We don't know angle Z. We find it like so:
+                                            |
+                                    0ø      |ª
+                                     - - -  -\- - - - - -
+                                    |      /|Z\10ø     If b = 100ø then
+                                       a  / |  \       the angle shown must
+                                    |    /  |ª  \      be 10ø which means
+                                        /   |--- \     Z=80ø.
+                                    |  /    |
+                                      /45ø ©|
+                                    |/------|
+270ø- - - - - - - - - - - - - - - - - - -w- - - - - - - - - - - - - - - - -90ø
+Great! now we can work out the horizontal distance.
+
+Horizontal= a.cos.à    + b.sin.Z
+          = 10.cos.45ø + 5.sin.80ø
+          = 7.071      + 4.924
+          = 12                  (near enuf)
+Now we do the vertical:
+Vertical  = a.sin.à    - b.cos.Z   (we are finding side y on the 1st diagram)
+          = 10.sin.45ø - 5.cos.80ø
+          = 7.071      - 0.868
+          = 6.2
+
+Okay now we have that lets draw our resultant diagram:
+                              0ø
+                              |          +
+                              |        -/|      We can put out horiz & vert
+                              |      -/  |      nos on here now...
+                              |    -/    |6.2
+                              |  -/      |
+                              |-/        |
+------------------------------------12--------------------------------90ø
+
+We get the length of the vector by just using pythagoras:
+        aý = bý  + cý
+           = 12ý + 6.2ý
+           = 144 + 38.44
+           = 182.44
+         a = 13.5
+                              0ø
+                              |          +
+                              |        -/|
+                              |  13.5-/  |
+                              |    -/    |6.2
+                              |  -/      |
+                              |-/A       |
+------------------------------------12--------------------------------90ø
+
+Now to get the angle is easy...We could cos, sin or tan..I'll use tan.
+        tan.A = OP/AD
+              = 6.2/12
+              = .51666...
+            A = arctan(.5166..)
+              = 27.324ø
+                              0ø
+                              |          +
+                              |        -/|
+                              |  13.5-/  |
+                              |    -/    |6.2
+                              |  -/      |
+                              |-/27.324ø |
+------------------------------------12--------------------------------90ø
+
+Now just to finish off make it a bearing:  90-27.324 = 62.676ø
+
+So the answer = 13.5 @ 62.7ø
+
+---------------------------------------------------------------------------
+Sooo..That concludes the tutorial. This should be simple stuff for most
+people but if you do have any trouble mail 'tiberius@mailhost.net'
+for help.
+
+Here are some questions for you. Use whichever method suits you:
+
+1. Add (4, 10ø) and (5, 60ø)
+2. Add (9, 100ø) and (12, 170ø)
+3. A boat is travelling along a river at 3 knots with bearing of 39ø.
+   An easterly wind is blowing at 1 knot. What is the boat's true heading
+   and speed?
+
+4. A bit more thought:
+
+Say I have a traffic light spanning a road joined to two buildings by two
+ropes as shown:   -----------------------------------
+                           \60ø      60ø/
+                            \          /
+                             \        /
+                              \      /
+                               \    /     The light's weight is 150 newtons.
+                                +--+
+                                |[]|
+                                |[]|
+                                +--+
+
+Work out the tension (or pull) in the ropes....
+----------------------------------------------------------------------------
+Check the answers with the vector addition program attached to this.........
+----------------------------------------------------------------------------
+This tutorial is (c)1996 Richard Nichols.
+I take no responsibility for the feasability or correctness of this document,
+or any damage it could do.
+
+Remeber to check out my cool website at:
+             'http://bip.concept.se/user/rich/index.htm/'
+
+Byee, byee
+
+May, 1996 - Richard Nichols
+
+

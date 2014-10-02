@@ -1,0 +1,41 @@
+THE_URL:http://web.textfiles.com/computers/mirror21.txt
+THE_TITLE:mirror21.txt
+Mirror Universe 2.1 - For Win95/98
+----------------------------------
+Made by St0rmer
+
+
+8.30.98
+
+
+Mirror Universe finds the NetBIOS information, given a specific IP address. This information is what is c
+ommonly called "Workgroup" and "User" names. Often such names can be "useful" on IRC or whatever. For exa
+mple, if you find that someone's name is Bob with Mirror Universe, and you message them and say, "Hi Bob"
+... well, you get the idea.
+
+I take no responsibility for this program. You're being warned... you run this program at your own risk.
+
+Any questions/problems/whatever, e-mail st0rmer@hotmail.com.
+
+Future version release dates are subject to whenever I have to time to work on this.
+
+
+Future version expectations
+---------------------------
+
+DDE support for mIRC
+Exporting data to text files
+Extra options
+3DFX support (just kidding)
+Any other cool stuff I can think of
+
+
+Release history
+---------------
+
+8.30.98 - Version 2.1 released - Fixed (hopefully) some system error bugs
+8.27.98 - Version 2.0 released - 'Cleaned up' IP resolution module, added status bar, added 'Usage' infor
+mation
+8.17.98 - Version 1.3 released - 'Cleaned up' data processing and display, added help information
+8.16.98 - Version 1.1 Beta released - Fixed divide by zero error, enabled IP address error checking
+8.14.98 - Versoin 1.0

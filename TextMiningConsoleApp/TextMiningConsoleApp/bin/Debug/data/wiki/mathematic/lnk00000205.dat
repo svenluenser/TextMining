@@ -1,0 +1,125 @@
+THE_URL:http://web.textfiles.com/computers/uns12.txt
+THE_TITLE:uns12.txt
+*****************************************************************************
+
+                            UnSecure
+                            ver 1.2
+
+         Copyright (c) 1998 SniperX, All rights reserved
+
+           For news and updates visit www.SniperX.net
+
+*****************************************************************************
+Contents:
+
+1. Introduction
+
+2. Using UnSecure
+     a. Basic Information
+     b. Interface
+     c. Attack Methods
+
+3. Technicalities and Theory
+
+4. Contact Info
+*****************************************************************************
+
+     Check at www.sniperx.net for updates on docs and such.
+
+     1.   Introduction
+
+          Most people believe the Internet is secure and near impossible to break into. Since we know
+     differently, we decided to provide means for everyone to experiment with the Internet's
+     Security. Through UnSecure, the world will gain a better idea on whether or not they're safe.
+
+          UnSecure is a Brute Forcing program to exploit flaws with the worlds current Internet
+     Security. This program is able to try every possible password combination, and pinpoint the
+     users password. UnSecure can currently break into most Windows 95/98, Windows NT,
+     Mac, Unix and other OS servers with or without a firewall. Some people say the time to
+     Brute Force a server can take years. This is not true considering the way
+     hardware is being sped up.
+
+        Unfortunately we also both know that the average users password is 6
+     lowercase characters.
+
+
+2. Using UnSecure -           Click connect to start!
+
+        2a.  Basic Information
+
+                    UnSecure is primarily meant to be used over a network connection,
+          yet is able to work with a modem connection as well. On a Pentium 233,
+          UnSecure will go through a 37,000 word dictionary in under 5 minutes when
+          attacking locally. UnSecure will run over a modem, but not nearly as fast
+          as over a LAN.
+
+          NOTE : More than one instance of UnSecure will run at a time, without
+          slowing down the other instance(s) a great deal. Although there is not
+          an existing feature to do so automatically, you may run this program
+          more than once on the same host, at the same time, starting on different
+          password combinations. UnSecure is not cpu intensive.
+
+        2b.  Interface
+
+            Examples :
+          The computer name or IP : ftp.xxxxxxxxx.com or mail.xxxxxxxxx.com or x.x.x.x
+          Port : 110 for most mail servers. 21 for most ftp servers.
+          Username : The name of the user that you wish to pose as.
+          Password : You can leave this the way it is.
+          Reconnect: Some servers will disconnect you if you make x number of incorrect
+               tries. The reconnect option tells UnSecure to automatically reconnect
+               if the remote host does disconnect you.
+          Autosave : This option, when enabled, auto saves your session (all current info.)
+               as a file called autosave.uns.
+
+          *NOTE* You CAN save a session while attacking.
+
+        2c.  Attack Method
+
+                    UnSecure uses two methods to accomplish its task. A dictionary attack, and a brute
+          force attack. A dictionary attack meaning you have a file containing all of the words
+          and combinations you choose, seperated by spaces or crlf's (carrage return/
+          linefeed's) to use as guesses.
+
+                The brute force method will allow you to try all possible password
+          combinations using the characters you specify (a-z, A-Z, 0-9, and special).
+          You may also use a custom character set.
+
+          Custom brute force characters : A character set you make up... ex : if you put
+               ab3...    It will try all combinations with the characters a, b and 3.
+
+
+3. Technicalities and Theory
+
+          This idea is based on a well known attack, but has never been exploited like this. Never has
+     there been a program that allowed anyone to practice this kind of attack.
+
+          The program should have a fairly decent client computer, on which UnSecure is running.
+     The bandwidth is the main slowdown. UnSecure has a far greater potential than what has been
+     described here. For our examples, we used Pentium 233's. Imagine the speed difference if the
+     client and host were Pentium II 400Mhz's on a 100Mbit connection.
+
+
+                    4. Contact Info
+
+     From now on, please only contact the following addresses.
+
+     guns@sniperx.net
+     unsecure@sniperx.net
+     www.sniperx.net
+
+     Greets go to :
+
+     The L0pht
+
+     MilW0rm
+
+     All the Kevins
+
+     And, our favorite...
+
+     Bill!
+
+     This program is deticated to the U.S. goverment and all the others
+     who just don't get it.
+

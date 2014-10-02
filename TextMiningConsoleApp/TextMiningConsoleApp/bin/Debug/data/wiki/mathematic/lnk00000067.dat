@@ -1,0 +1,351 @@
+THE_URL:http://web.textfiles.com/computers/asmodeus.txt
+THE_TITLE:asmodeus.txt
+Asmodeus
+
+--------
+
+Greg Hoglund
+1997
+
+--------
+
+Introduction.
+
+First of all, thanks for taking the time to test this program.  I hope you find it useful.  Many people h
+ave contributed and offered suggestions.  Since this is a work in progress, you can expect it to change o
+ver time.  If you like Asmodeus, then please offer your suggestions.  I can be emailed at hoglund@ieway.c
+om.
+
+Why did I choose the name?  It's sort of a play on SATAN, the unix based scanner written my Wietse and Fa
+rmer.  A few years ago I was running an ISP and I wanted to scan customers machines for security holes.
+I used SATAN.  To make a long story short, that's what got me started.  I liked the idea behind SATAN, bu
+t it was clumsy to use and difficult to install and compile.  Anyway, Asmodeus was originally inspired by
+ SATAN, so credits to those boys.  Further credits go to roomate Jason who helped me with the main GUI gr
+aphics. Greets to Fyodor for general coolness, Jeff for a great party in Vegas and good times past, Aleph
+ One for inspiration, and everyone at the ieway stomping grounds.  Special thanks to ISS for not hiring m
+e, for which I would have never written Asmodeus (but all the free booze was great!).
+
+---------
+What does it do?
+
+Two main things: SCANNING and SNIFFING
+
+Unfortunately it doesn't do everything.  I have received so many suggestions, and I have so little time.
+ Beleive me, I still have a super-list of stuff to do w/ it.
+
+Right now, Asmodeus is capable of scanning ranges of TCP ports on subnets.  At the time i originally wrot
+e the socket engine, it was the fastest scanner on the 'net.  Since that time, a few other scanners have
+been released which are pretty darned fast.  Most of these are commercial and very expensive at that.  As
+modeus can keep up.. I have scanned entire class C's in less than a minute.  You can scan some small coun
+tries in one night ;)  I beleive Asmodeus can stream along at a modest 30,000 sockets per minute under op
+timum conditions.  All of the data that is gleaned from the scan is passed through a user-supplied script
+.  This script allows the you to define what security holes will be checked for.  Also, you can trigger e
+vents based on what you find.  If you REALLY want to hear a wav file play every time you find an IMAP ser
+vice running, go crazy.  You can spawn external processes, or other scripts.
+
+Also, Asmodeus can promiscously sniff your ethernet segment.  Other than some commercial applications (li
+ke Micro$ofts SMS) I haven't really seen a good sniffer.  Asmodeus can filter the packets and search them
+ for certain data.  You can log packets to file, or have an external application deal with them.  For ins
+tance, you can have your alphanumeric pager software go off if Asmodeus detects a certain kind of packet
+(i.e., say a samba packet from a certain address).  Using the built in scripting language, almost anythin
+g is possible.  This gives you the ability to monitor your network 24 hours a day.
+
+
+----------
+How do I install and use it?
+
+SYSTEM REQUIREMENTS: Windows NT 4.0
+
+Asmodeus doesn't stuff crap into your registry, it's a stand alone binary.  It must have all of it's asso
+ciated script files in the same directory.  If you don't have the script files with the program, your not
+ going to get far.
+Windows 95:  Don't try to force it to run on Win95.  It may barely work if you install Winsock 2 first, b
+ut do me a favor.. write a program for 95 that opens about 70 sockets or so and watch what happens.  Asmo
+deus opens and manages upwards of 2500 sockets at any given time under NT.  I rest my case.
+
+
+IMPORTANT:  Installing the promiscuous packet driver
+
+If you already have a packet driver like this installed, they may not co-exist together very well.  I hav
+en't tried this yet.  I know some other vendors have a *very* similar packet driver to Asmodeus... so you
+ may experience problems... hard to say.
+
+>>
+Go into your Network Properties and add a PROTOCOL.  Click HAVE DISK and supplky the path to the Asmodeus
+ "Driver" directory.  you should be able to select "Asmodeus Packet Driver".  You then have to REBOOT.
+>>
+
+
+-----------
+Scanning Class C's and Single Machines
+
+This is all very easy.  To get started, just create a NEW database.  The thing to remember is that everyt
+hing you do is based on whatever NODE you currently have selected in the database.  If you scan a site, t
+hen the results of this scan are placed under the currently selected database node.
+
+>>
+Open or create a NEW database, select the first node (you will see a little red and yellow arrow highligh
+ting it...), and then click on SCAN SINGLE IP.  Enter an IP Address and let her go.  The results of the s
+can are placed in the database tree.
+>>
+
+If you want to get busy, try the same thing with the "SCAN CLASS C" button.  This will scan an entire cla
+ss C range of machines.. or 255 machines.
+
+The data that is collected is run through a script file called "default.spn".  Take a look at this file t
+o see how Asmodeus determines what to post in the database.  This file is where you will add checks for n
+ew security holes.  As long as you can get a system OS type, a Service ID, and a Version Number.. you can
+ cross refernence any number of known security holes.
+
+
+------------
+Tuning and Performance
+
+By default, Asmodeus is pretty conservative.  You can change that.  If you have the machine and the bandw
+idth, you may want to play with the "TUNE" button.  This controls the number of threads, the number of so
+ckets per thread, and the timeout values associated with each socket.  There are some presets available t
+o get you started.  On a PentiumPro 200 with 64 megs of ram, I can use the highest settings on a local IP
+ scan...  If you start getting "out of buffers" errors, you need to tune it down a little.
+
+
+
+------------
+My Religious Statements: "Hackers don't follow links, they map them." -Greg Hoglund
+
+
+To me, the Internet is a giant game of Core Wars.  TCP/IP is only a way of InterProcess Communication...
+It's more than a bunch of computers, its a bunch of memory spaces.. a bunch of process spaces...  The Int
+ernet is just one giant distributed machine.
+
+Ultimately that is what Asmodeus is about, mapping the locations of all processes on the 'Net.  Asmodeus
+isn't smart enough yet to interrogate those processes to learn what they do.  That job is up to you, the
+Hacker.  Asmodeus provides you with a tool to manage your "map" of the 'net.  It places everything in add
+ress space, handles scanning and basic informaiton retreival, and sorts this for you in a database.
+
+Network power is related to the number of nodes it contains and the number of processes which can be acce
+ssed.  The endpoints of process communications must be labelled or identified in a unique way, otherwise
+how do we find them?  Enter the arena of Internet, the global IPC Space if you will, a million computers,
+ and millions of processes....  Processes that serve files and information, databases, and CPU time.  Thi
+s is true cyberspace.
+
+So how do we make a *gods map* to this cyberspace?  I am beginning to live there (cyberspace), but not in
+ front a web browser.  What maps the Internet?  It's NOT URL links on web sites, with their chaotic cross
+-pollination and 404 errors...  The web is not a map for the Internet, it's spaghetti.  What about the In
+ternic domain name system?  Nah, it's overlord commercialism.  One entity trying to control the commercia
+lism of the net thru a name.  That's downright wrong.
+
+You see, Hackers dont follow links, they map them.  At any particular point on the "wire" that connects u
+s, what information can be gained?  The true structure of the Internet is based on numbers, 32 bit addres
+ses and associated port numbers.  All this binary data forms a packet, encapsulating destination ports, d
+ata fields, and option flags.  Magnify the data packets and take a look at the payload.  What information
+ is going where?  How does it effect the machines and processes who receive this packet?
+
+Eventually I would like Asmodeus to function as a pattern analysis tool.  Look at the data stream, see it
+ for what it is, find the tell tale patterns and analyse analyse analyse.  For instance, we know that if
+we frame out octets 26 thru 29 of an ethernet packet, we have the destination IP address of the packet..
+ie., 127.0.0.1 or something similar.. and that if we look at the 4th bit of octet 18, and it is set, then
+ the packet is going to cause the machine located at 127.0.0.1 to crash (if it is running Micro$loth Wind
+oze, that is...).. give it the "Blue Screen of Death" as it's so kindly known.
+
+To my mind, and indeed mathematics, the Internet is an abstract collection of data spaces, each mappable
+with some unique methodology.  Information Theory. Every particular frame of bits from the packet can be
+thrown in it's repsective bucket, and we can create "spaces".  Number spaces.  Address spaces, port space
+s... It's only a matter of detail to look at what's stored within something.  The web space, the file spa
+ce, any particular pattern of data behind a port...
+
+-----------
+Future Plans
+
+
+Of course, the scanning and sniffing engines will be upgraded.  Right now, the scanning engine uses a pin
+g sweep method.  There are at least a dozen methods for scanning that aren't approached yet.  These will
+be added.
+
+UDP scanning is not yet incorporated.  This will be added.
+
+A full set of SAMBA utilties will be added, for drive mounting and browsing.  This is easy to do and I've
+ already stubbed in most of the code.
+
+Of course, the scripting language will only get better, alot better.  I plan on allowing variables and a
+few sorts of conditional loops.  Also, the scripts will be able to do alot more to attempt and detect exp
+loits.. including remote buffer-overflows.
+
+There are many places in the code where I can optimize yet.. so it's only a matter of time for a more com
+pact, cleaner binary.  It uses MFC for the GUI so I figured I was doing pretty good at keeping it less th
+an a meg.... ;)
+
+
+-----------------------------------------------
+
+            SCRIPT FILE REFERENCE
+
+-----------------------------------------------
+
+
+# a hash mark indicates a comment. Anything after the hash is ignored until we encounter a newline
+
+
+------
+
+IfCompare(substring){function block}
+
+        IfCompare("ZPOP")
+        {
+          PostChild("Post Office software.com Zmail", 4);
+          ExpandThis();
+        }
+
+This command will compare the substring against the banner retreived at the current node. If the substrin
+g is located, then the block is executed. Else, it is skipped. As always, function blocks can be nested w
+ithin one another. Version 1.0 note:  This will work on packet analysis as well.
+
+
+------
+
+PostChild(string to be posted, icon number);
+
+        PostChild("Post Office software.com Zmail", 4);
+
+PostChild is fairly simple. It posts information to the database tree. It does not use a function block.
+You can change the icon used to represent this data. Try values between 1 and 7. Another version of this
+command is PostParent. PostParent is exactly the same except that it posts the data to the parent node.
+
+
+------
+
+ExpandThis();
+
+        ExpandThis();
+
+Expands the current node so all children are visible. This is very handy. It operates only in context of
+the current node.
+
+
+------
+
+PrintLED(string);
+
+        PrintLED("-------------=Microsoft  ==Windows    ==System     ==           ==           =---------
+---");
+
+This is a cool little function. It prints whatever data you want to the LED sign. Keep in mind the number
+ of characters you are passing. Alignment is crucial here. If you play with the command you will get the
+idea. See the examples in the default.spn file. Also, note that if you pass more charcaters than will fit
+ on the sign at once, the sign will actually cycle through the entire string.. giving you a sort of rudim
+entary ASCII animation.
+
+
+------
+
+PlaySnd(filename.wav);
+
+        PlaySnd("mushroom.wav");
+
+This is something you would want to use sparingly. Make sure your .wav file in the same directory w/ Asmo
+deus. The thread is blocked until the wav file has completed, so this would slow you down ALOT if you had
+ sound everywhere. However, it is very handy when you are running huge scans and you need to be alerted t
+o a particular detail of some kind..
+
+------
+Script commands below this point are all version 1.0 and will not work with older alpha versions
+------
+
+IfCompareHex(string){ function block }
+
+        IfCompareHex("00 00 0A AA AC CD 3F 1A")
+        {
+          # do something
+        }
+
+This is used mainly for packet analysis.  You can look for pattern of hex code, just type a string of 2 c
+haracter hexadecimal values.  You can then do things like log the packet to a file.
+
+-------
+
+LogPacket("filename");
+
+APPENDS the contents of this packet to a file.
+
+-------
+
+AddScript("filename");
+
+Adds a script to the user-script window.
+
+-------
+
+IfIPDest("xxx.xxx.xxx.xxx") { function block }
+
+Will execute the function block if the destination IP matches (dotted decimal notation)
+
+-------
+
+IfIPSrc("xxx.xxx.xxx.xxx") { function block }
+
+Will execute the function block if the source IP matches (dotted decimal notation)
+
+-------
+
+Connect("ip address", "port"); #note port is a string, enclose in quotes
+
+Establishes a TCP session.
+
+IF ip address = "NIC" then the command will use the ip address of the target in a drag and drop operation
+.
+
+i.e., Connect("NIC", "23"); will connect to the target's telnet port.  These commands are expirimental.
+Once you have connected, the script file has a session.  This is all in context of the current script fil
+e.  Further read/write operations will operate on this socket.
+
+-------
+
+Send("string");
+
+Sends the string over the current TCP session.  Limited in functionality at this time.  Asmodeus interper
+ets the following characters as script tokens:
+
+"{"
+"}"
+"("
+")"
+","
+";"
+"\n"
+"\r"
+" "
+"\t"
+"\""
+"#"
+
+Within the string, you cannot have a quote charcater, else asmodeus will think the string is complete.  I
+'ll fix this later.
+
+-------
+
+Recv();
+
+This forces a blocking receive operation on the session.  Once again, this is testing.  All further IfCom
+pare and IfCompareHex commands should operate on this data.  Don't waste huge amounts of time writing att
+ack scripts using these commands, I haven't finsihed working on them yet.
+
+-------
+
+CloseSocket();
+
+Closes the session.
+
+-------
+
+The last thing to note. The scripting is very sensetive to mistakes. I have tried to do my best to catch
+typo's and mis-aligned function blocks.. but if you type a bunch of garbage into a script file, Asmodeus
+isn't going to like it. So watch your coding very carefully.. if Asmodeus does find weird stuff, it tries
+ to report it to you.. and it also will make a backup of your database in case something goes haywire.
+
+
+-----------------------------------------
+-Best regards.. please visit www.asmodeus.com for latest updates!
+
+-Greg Hoglund (hoglund@ieway.com)
+-Dec 2. 1997
+
+

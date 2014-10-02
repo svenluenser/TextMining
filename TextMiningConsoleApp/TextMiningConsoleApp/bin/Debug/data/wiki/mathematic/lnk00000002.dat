@@ -1,0 +1,1401 @@
+THE_URL:http://web.textfiles.com/computers/EDDYHAWK/archiver.txt
+THE_TITLE:archiver.txt
+EddyHawk's Info List
+---
+FILE (ARCHIVER/(DE)COMPRESSOR):
+---
+ Info Source:
+  Philip Helger/GT/V2.60/GT.TXT
+  Jeff Gilchrist:
+   ACT/Nov 1999/INDEX
+   ACT/Sep 1998/INDEX
+---
+Features Legend:
+A  = Authentication Verification (Security Envelope)
+A1 = AV is using external utility (UC2)
+D  = user can include his own dictionary (UC2, ARI, ERI)
+E  = Encryption (Ability to encrypt/garble files in archive with password)
+E1 = Crypt is using external utility (UC2)
+F  = Additional Filter or Multimedia compression for graphic, sound files
+F1 = Multimedia compression + Other Filters (ex: for EXE, OBJ, etc)
+G  = GUI (Graphical or Text Shell to manage archiver functions)
+G1 = GUI is using external utility (UC2)
+L  = Windows Long Filename Support
+M  = Multi Disk Spanning (Ability to span an archive over two or more disks)
+M1 = multi volume is using external utility
+O  = list/view some other archives (RAR, ACE)
+O1 = built-in extraction of some other archives (IMP)
+O2 = can create other archives format (X1, WinRAR)
+P  = Data Protection Encoding (Stores Error Recovery Info)
+S  = Solid Archives (All files compressed together as one instead of
+individually)
+S1 = Solid Archive can't be disabled
+S2 = Modified solid-archive (concatenates files into block like JAR & YAC)
+S3 = Less-like solid-archive (using shared dictionary like UC2)
+S4 = Indirect solid-archive, or using external file collector
+X  = SFX (Ability to create Self-Extracting Archives)
+---
+-XTREME
+ V1.06
+
+-NPACK
+ V1.0
+
+-SHORTEN
+ V2.3a
+
+-SEMONE
+ V0.6b0
+
+-WAVARC
+ V1.0
+ note: WAV sound file presor
+
+-EPRESS
+ beta0
+
+-STUFFIT
+ by: Raymond Lau and Aladdin System
+
+-DROPSTUFF
+ V5.0
+ note: can create StuffIt & ZIP archive
+
+-7ZIP
+ V2.0
+
+-COOLZIP
+ V1.01
+
+-BA (Blocksorting Arithmetic)
+ by: mikael lundqvits (.se)
+ type: experimental presor
+ compiler: djgpp v2
+ V0.99b [1999]
+  verbose analysis report
+ note:
+  GZIP-like cmdln
+  pres uses BWT+arithmetic
+
+-ARS
+ by: Oleg Stepanyuk
+ V2.1
+ note: always create SFX archive
+
+-BS2
+ V2.0 [1992]
+
+-BSArc
+ by: Serg Babitchew/PTS (Russia?)
+ v1.9.3 [Sep 1992]
+ v1.9.5 [1992]
+ v2.0.0 [May 1995]
+ features: M X
+ disadv: Shareware
+
+-BSA
+ by: PTS Ltd. (Russia)
+ year: 1992-1994
+ type: 286
+ compiler: BC++ V3+ [1991]
+ V2.00
+  rel 0.972 [1994]: very buggy (hang when pres starts)
+   EdH: I can't risk my computer data just to test the bug further
+  rel 1.10 [1994]
+   prog x has ovl -> BSN archive contains help files
+   supports BSA, BSN archive (by specify archive.BSA to create BSA archive
+    & archive.BSN to create BSN archive)
+   -++ option is buggy (says 'corrupt' when depres)
+ note: part of PTSDOS
+
+-CHARC
+ by: S. Tchernivetzky
+ V1.2 [1990]
+
+-COMP16
+ by: Joseph M. Orost
+
+-Finish
+ by: ImagiSOFT
+ V2.6 [1992]
+
+-Links LS
+ by: Access Software
+
+-LZA
+ by: The African Chief
+ [1999]
+
+-PKK
+ by: African Chief
+ V4.20
+ note: part of Chief's Installer Pro
+
+-MAR (Micrognosis compression ARchiver)
+ by: Micrognosis
+ compiler: msc [1992]
+ V1.0 [1994?]
+  prog can't accept -lzs- & -lzw- options
+ note:
+  based on Haruhiko's LZSS?
+  depres is slower than pres
+
+-PACK
+ by: IBM
+
+-PAQ
+ by: Dmitry Dvoinikov
+ year: 1996-98
+
+-PHP
+ by: PHaX aka Philip Helger (Austria)
+ year: 1997-1998
+ V1.0 [1998]
+
+-RAX
+ by: GeCAD srl
+ V1.02 [1998]
+
+-Synetic
+ by: Synetic Software
+
+-XLink
+ by: J. E. Hoffmann
+ V2.02 [1994,1995]
+
+-YamazakiZippe
+ by: Binary Technologies
+ year: 1997-98
+
+-ZPack
+ by: SpeedSOFT
+ V1.0 [1992]
+
+-QUANTUM
+ by: david s./Cinematronics
+ year: 1993-1995
+ compiler: bc++ [1994] PE
+ v0.90+ [1995]
+  named as 'Q.EXE' (?)
+ v0.97 release candidate [May 1995]
+  undoc-ed switch: -c6 or -c7 for maximum, very very slow pres
+ adv:
+  Free
+  very good & slow pres
+
+-QUARK
+ by: Kunz Robert
+ v1.0b [May 1993]
+ disadv: Shareware
+
+-SAR
+ by: Streamline Design
+ v1.0 [Mar 1993]
+ disadv: Shareware
+
+-SBX
+ by: castman/SpinnerBaker Software
+ type: win32
+ v1.2 [Jan 1998]
+ v1.4
+ disadv: Shareware
+
+-SONARC
+ by: Richard P. Sprague
+ v2.1i [Jun 1994]
+ disadv: Shareware
+ note: sound file presor
+
+-SPLINT
+ by: Kenji Rikitake
+ v2.1 [Apr 1989]
+ adv: Free
+
+-SQUASH
+ by: Dominik Murk
+ v1.21 [May 1997]
+ adv: Free
+
+-SQUISH
+ by: Mike Albert
+ v1.0 [Sep 1992]
+ disadv: Shareware
+
+-SQWEZ
+ by: Jim Miller/JM Software
+ v2.3 [Nov 1994]
+ disadv: Shareware
+
+-SZIP
+ by: Michael Schindler
+ type: presor
+ V1.05 [1997]
+ v1.11b [Aug 1998]
+ adv: Free
+
+-TAR
+ by: Tim V. Shaporev (Russia)
+ v3.21b [May 1997]
+ v3.21g
+ disadv: Shareware
+ note: not presor but file collector, but can use GZIP to pres -> .TGZ file
+
+-TAR
+ note: GNU pub license
+
+-QFC
+ by: George G. Lyapko (Ukraine)
+ year: 1993-1998
+ note: not presor but file collector, like TAR
+
+-TPDEZIP
+ by: R.P. Byrne
+ v1.5 [May 1989]
+ disadv: Shareware
+
+-ZET
+ by: Oleg V. Zaimkin
+ v0.10 [1994]
+ v0.10b [Mar 1997]
+ disadv:Shareware
+
+-PAR
+ by: Philipp Druyts (Belgium)
+ type: win32
+ v1.45 [Jun 1998]
+ V1.49b
+ adv: Free
+
+-PAK-DD
+ by: Dmitry Dvoinikov
+ v1.0a [1997]
+ disadv: Shareware
+
+-BinHex
+ by: Apple
+ note: not presor, but converter like UUEncode, Mime
+
+-NULIB
+ by: Andy McFadden
+ v3.24 [Jan 1993]
+ adv: Free
+
+-NSK
+ by: Nashsoft Systems
+ v5.0 [1997]
+ disadv: Shareware
+
+-MDCD
+ by: Mike Davenport
+ v1.0 [Oct 1988]
+ adv: Free
+
+-HIT
+ by: Bogdan Ureche
+ v2.10 [Mar 1995]
+ disadv: Shareware
+
+-ELI
+ by: Jules Revsin
+ v5750
+ disadv: Shareware
+
+-CRUSH
+ by: J. Rollason
+ v1.8 [Feb 1995]
+ disadv: Shareware
+ note: not presor, converts others's archive into solid archive
+
+-LIMIT
+ by: J. Y. Lim
+ type: 286
+ v1.2 [Feb 1994]
+ adv: Free
+ note: pres uses Sliding window dictionary + Huffman
+
+-KBOOM
+ by: Miles Pawski
+ v1.1 [1992]
+ adv: Free
+ note: pres uses LZW
+
+-JRC (JRCHIVE)
+ by: JAYAR Systems
+ year: 1992-1995
+ v1.10 [May 1995]
+ disadv: Shareware
+ Features: S X
+
+-JAM
+ by: W. Jiang (China)
+ [Aug 1996]
+ adv: free
+ features: E
+ note: pres uses LZ78 variant
+
+-HUFFMAN C.E. II
+ by: Joe Jared
+ type: Win32
+ v0.21q [Jun 1999]
+ adv: free for non commercial use
+ note: pres uses LZ + Huffman
+ features: L
+
+-HPA
+ by: Hungarian Pirates Alliance
+ v1.8 [Apr 1998]
+ adv: Free
+ features: X
+
+-GAS
+ by: Ricky Bhatti
+ v2.0 [May 1993]
+ disadv: Shareware
+
+-DST
+ by: Tommaso Guglielmi (Italy)
+ type: 386, 2Mb RAM
+ v0.9b [May 1998]
+ disadv: Shareware
+ note: pres uses LZ77 and PPM variant, Dynamic Huffman
+
+-DEEPFREEZ
+ by: Binary Technology (Japan?)
+ type: win32
+ v1.03 [Jan 1998]
+ disadv: Shareware
+ Features: E L X
+
+-CROSSEPAC
+ by: Digital Strategies
+ V1.35 [Oct 1994]
+ disadv: shareware
+
+-PROPACK
+ By: Rob Northen Computing (England)
+ Type: (data & x) presor, archiver
+ Year: 1991-1993
+ Compiler: BC++ [1991]
+ V2.08
+ V2.14 [Oct 1992]
+ V2.19 [1993]
+ Adv:
+  support for Amiga, Lynx, ST, 68000 x ?
+  free for non-commercial use
+  registration & update is free for sw developers
+ Disadv: bad pres ratio
+
+-BVI
+ by: Boris Vilincoff
+ type: 386
+ v1.70 [Feb 1998]
+ adv: free
+ features: L
+ note: pres uses Arithmetic
+
+-X1
+ by: Stig Valentini (.dk)
+ type: 386, 4Mb RAM, DOS V3.3
+ year: 1991-1996
+ v0.95a beta [May 1997]
+ adv:
+  free
+  can create (PK)ZIP/ARJ/LHA(RC)/ZOO/HA/TGZ/HAP/PUT archive by itself
+  recovery record
+  contains experimental pres algo
+  solid archive
+  double-crc (for presed & depresed data)
+ disadv:
+  repair command actually erase the archive instead!
+  doc gives little explanation about .X coder options
+ note:
+  prog x is PMODE/W V1.20 + LE
+  pres also use Bloom's PPMZ
+
+-LZS
+ by: Hifn/Stac Electronics
+ v3.1 [1992]
+  demo
+ note:
+  pres uses LZS
+  candidate for algo for Stacker ?
+
+-DPA
+ by: Dirk Paehl
+ v1.1a [Apr 1996]
+ adv: free
+ disadv:
+  bad pres ratio -> Huffman only (?)
+  can't pres too large file (tested: 2.7Mb) ?
+
+-CODEC
+ by: Telvox Teleinformatica (Italy)
+ v3.21 [Apr 1995]
+ disadv: shareware
+ Features: E X
+ note:
+  pres uses HPBS (High Performance Bit Shrinker)
+  package also contain some pres algo desc
+
+-BZIP2
+ by: Julian Seward
+ type: win32, 2Mb RAM, presor
+ v0.1pl2 [Aug 1997]
+  free
+ v0.21: GNU pub license
+ v0.9.0b [Sep 1998]
+ features: L P
+ V0.9.5d
+  nice speed improvement
+ note:
+  pres uses BWT + Huffman
+  GZIP-like cmdln
+
+-UHARC (Uwe Herklotz ARChiver)
+ by Uwe Herklotz (Germany)
+ V0.2 [Dec 1997]
+ adv: free for non commercial use
+ note: always solid
+
+-LZAP
+ by: Mike Goldman
+ type: 386
+ v0.20.0 [Jun 1998]
+ adv: Free
+ disadv: slow
+ note: pres uses LZ77 and LZP variants
+
+-TSCOMP
+ by: The Stirling Group
+ v1.3.21 [1991]
+ disadv: Shareware
+
+-ISC or ICOMP or ISCOMP
+ by: Stirling Technologies Inc.
+ year: 1990-1997
+ v3.00.61 [Oct 1997]
+ disadv: Shareware
+ note: produces .Z archive which is used by some Win3/4 application packages
+
+-HAP
+ by: Harald Feldmann/Hamarsoft (The Netherlands)
+ type: 286
+ v3.00 [1992]
+ v3.05b: Shareware
+ v4.03 [Apr 1996]
+  commercial
+   only test drive ver available: not pres at all, only show presed size
+ features: P
+ note:
+  author also wrote list of 80x86 bugs & optimized others's archiver
+  pres uses modified arithmetic
+
+-ASD
+ by: Tobias Svensson/Topologi Software (.se)
+ adv: free
+ v0.1.2 [Apr 1996]
+ v0.1.3 [Nov 1996]
+ features: S X
+ note:
+  pres uses LZ77
+  always solid
+
+-ARC (PLUS)
+ by: SEA
+ year: 1985-1991
+ V6.00
+ V6.02 [Jan 1989]
+ V7.0
+ adv: crypt
+ disadv: shareware
+ note:
+  crypt uses XOR
+  pres uses RLE, dynamic LZ, Huffman
+
+-PKARC
+ by: Phil Katz/PKWARE (USA)
+ v3.5 [Apr 1987]
+  shareware
+ note: ARC compatible -> cause SEA Inc to take PKWARE to court (?)
+
+-PAK
+ by: NoGate Consulting
+ year: 1988-1990
+ V2.51 [Oct 1990]
+ disadv: shareware
+
+-PKPAK
+ by: Phil Katz/PKWARE (USA)
+ v3.61 [Aug 1988]
+  Shareware
+ note: PAK compatible?
+
+-PKZIP (PKware ZIP)
+ by: Phil Katz/PKWARE (USA)
+ year: 1989-1999
+ variant: PKZIPWIN V2.6 [Dec 1997]
+ V0.9
+  pres uses Shrink method
+ V1.10
+  pres uses Shrink method
+ V2.04g [Feb 1993]
+  deflate pres
+  can use (X/E)MS, DPMI, 386 instruction for more pres ratio & speed
+ V2.06 [Jan 1994]
+  IBM licensed version
+  PKWARE: it's identic with V2.04g
+ V2.50 [1999]
+  option -exx (extreme compression)
+  enabling 32bit PM Extreme Compression with CWSDPMI V0.90+ r4 causes hang on
+   my cpu
+ Adv:
+  standard
+  good & fast pres
+   option -es gives the fastest known pres with good pres ratio
+  regged ver offers AV
+ Disadv:
+  shareware
+  weak multi-floppy archive
+   required to insert last disk (volume)
+  no recovery record
+  PKZIPFIX is criticized to only updates archive header structure w/o
+   check individual files integrity
+ note:
+  Phil Katz put ZIP algo to pub domain
+  ZIP algo contains various methods: Shannon-Fano, Huffman and named them
+   differently: Shrink, Implode, Deflate
+
+-WINZIP
+ by: Nico Mak
+ type: win3+
+ v6.3 [Sep 1997]
+ V7.0
+ V8.0
+ disadv: shareware
+ note:
+  PKZIP compatible
+  popular ZIP prog for Win
+
+-GZIP (Gailly's? ZIP)
+ by: Jean-loup Gailly
+ type: presor
+ V1.2.4 [Aug 1993]
+ adv: free (GNU pub license)
+ note: pres uses Shannon-Fano, Huffman
+
+-INFOZIP
+ by: Mark Adler, Richard B. Wales, Jean-loup Gailly, Onno van der Linden,
+  Kai Uwe Rommel
+ year: 1990-1997
+ v2.2 [Nov 1997]
+ adv: free
+ features: E L M X
+ note: pres uses LZW, Shannon-Fano, Huffman
+
+-NCZIP (Norton Commander ZIP)
+ by: Symantec
+ year: 1986-1995
+ V5.0 [1995]
+ note: can only be run under NC
+
+-TURBOZIP
+ by: Pacific Gold Coast
+ type: win32
+ v2.1 [Aug 1997]
+ disadv: shareware
+
+-ZIP-ARCHIV
+ by: Peter Troxler
+ v2.0 [1994]
+ disadv: shareware
+
+-ZIPNAV
+ by: FlashPoint
+ type: win
+ v2.03 [Jul 1995]
+ disadv: shareware
+
+-ZIPSERVER
+ by: Redei Enterprises
+ type: win
+ v2.12.2 [Oct 1996]
+ disadv: Shareware
+
+-NETZIP
+ by: Software Builders
+ type: win32
+ v4.1 [Sep 1997]
+ disadv: Shareware
+
+-ARJ (Archiver by Robert Jung)
+ by: Robert K. Jung/ARJ Software (USA)
+ year: 1990-2000
+ type: DOS V2.11+/V3+
+ compiler: BC++ V3.0+ [1990/1991]
+ variant: ARJ32 V3.08a [Oct 2000]
+ V1.00 [Feb 1991]
+  basic design from AR001/AR002
+ V2.41 [Jun 1993]
+  EdH: best ver: no ovl on prog x
+ V2.60 [Nov 1997]
+  -hk option (recovery record)
+  -ac option (chapter archive)
+  supports Win98
+  prog x uses ovl
+  new 2nd crypt using GOST cipher
+ V2.70 [Sep 1999]
+  recovery record is appended to archive instead of as separate file
+  prog x (image, not ovl) can't be presed (CRC error!)
+ V2.75A [Oct 2000]
+ features: A E L M P X
+ Adv:
+  free for non-commercial use
+  mass of options -> very flexible
+  standard
+  much better (floppy/multi volume) archive handler than PKZIP
+   but worse than RAR/ACE
+ note:
+  pres uses LZSS+Huffman
+  crypt uses
+   simple XOR (-g) -> easy? to break
+   GOST 28147-89 cipher in 64bit CFB mode
+    40bit key (-g -hg!) to meet USA export regulation (but not anymore?)
+    separate module ARJCRYPT.COM, 256bit key (?) (-g -hg)
+     only for USA user
+
+-SARJ (Solid ARJ)
+ by: Frederic Taes (Belgium)
+ v1.21 [Jan '96]
+ adv: free
+ note: not presor but converts ARJ archive to solid ARJ
+ EdH: UC V2.37b/DOC mention 'ARJ a -m0' + 'ARJ a -m1' as another way to
+  create solid-like ARJ
+
+-ARJZ
+ by: Bulat Ziganshin (.su)
+ V0.15a [Apr 1995]
+  better pres than ARJ
+ disadv: shareware
+ note:
+  independently improved ARJ
+  pres uses LZSS+Huffman
+
+-EXP
+ by: Bulat Ziganshin (.su)
+ type: win32
+ v1.0 [Feb 1998]
+ adv: free
+ features: L
+ note: pres uses BWT + Huffman
+
+-AR (ARchiver(?))
+ by: Haruhiko Okumura (Japan)
+ 001 or V1.10 [Oct 1990]
+ 002 [1990]
+  with src?
+ note:
+  frame of lz+huffman presor?
+  basic of most archiver today (ex: ARJ V1.0-2.0, LHA, ZIP, ZOO)
+
+-LZARI (LZss+ARIthmetic)
+ by: Haruhiko Okumura (Japan)
+ note: with src
+
+-LH5
+ by: Haruhiko Okumura (Japan) (?)
+ note: AR002 variant, slightly better? pres
+
+-LARC
+ by: Kazuhiko Miki, Haruhiko Okumura, Ken Masuyama (Japan)
+ v3.33 [Feb 1989]
+ features: X
+ disadv: Shareware
+ note:
+  uses Haruhiko's LZSS implementation
+  pres uses LZ
+
+-ICE
+ by: Yoshi
+ year: 1988-1989
+ V1.14 [1989]
+
+-LHA (Lz-Huffman Archiver)
+ by: Haruyazu Yoshizaki (Japan)
+ year: 1988-1995
+ compiler: LSI-C86
+ features: X
+ adv: free
+ V1.13C
+  former name is LH or LHARC
+   changed in next ver because MS-DOS V5.0 now also has command called 'LH'
+  uses dynamic Huffman coding
+  src is released
+ V2.13 [July 1991]
+  compiled by LSI-C86 V3.20
+  faster depres (because of new static Huffman coding)
+  free
+ V2.6x
+  experimental vers for V3.0 production
+ V2.60 [Jun 1994]
+  compiled by LSI-C86 V3.30b
+  increase dictionary to 32kb for pres & 64kb for depres
+ V2.61 [Jun 1994]
+  compiled by LSI-C86 V3.30c beta
+ V2.63 [Jul 1994]
+  improved pres speed: optimized asm + larger buffer
+  -lh6-: up to 32kb dict
+  -lh7-: 32 to 64kb dict
+ V2.66 [Dec 1994]
+ V2.67 [Oct 1995]
+  win32 console
+ note:
+  1st standard archiver, adopted by PKZIP, ARJ, UC
+  lha is family of LHarc, LHIce, AR
+  pres uses LZSS+Huffman (prog call it Freeze/Melt)
+
+-LHARK
+ by: Kerwin F. Medina
+ v0.4d [Dec 1996]
+ adv: Free
+ Features: E L X
+ note: pres uses LZH
+
+-ARX
+ by: Michael A. Kosior
+ year: 1994-1995
+ v1.00 [Jan 1995]
+ disadv: Shareware
+ note: pres use LHARC V1.13's algo
+
+-PUT
+ by: Jim Hass
+ v3.47 [Jan 1998]
+ disadv: Shareware
+ note: pres uses LHA V2.x's algo -> equal? output
+
+-UC (Ultra Compressor)
+ by: AIP-NL (The Netherlands)
+ year: 1991-1996
+ compiler: bc++ 3.0+ compact [1991]
+ type: dos v2.1+, 8086+, 640kb RAM
+ V2.3 [Jun 1995]
+ V2.37b [1996]
+ adv:
+  compherensive manual
+  pcp: private compression profile -> user dictionary to replace
+   master dictionary
+  (Super)Optimize: repres existing archive in different ways as an attempt
+   to reduce archive size even further
+  recovery record (called damage protection)
+  sfx creator (UC2SEA) uses subset of UltraFast depres engine
+   it's different than usual pres engine used in UC, so sfx creation involves
+    depresing UC archive & presing in UCSEA format
+   UltraFast may be used in next ver of UC
+  chapter archive
+  multimedia pres
+  regged ver offers UltraSeal (AV) based on Lucas function (300 & 400bit
+   prime factors)
+  free for non-commercial use
+ disadv:
+  close-related features are put in separate x-es (ex: file-split, crypt)
+  presed header & pathnames
+  sfx distribution requires registration
+ note:
+  crypt uses 3DES, OTP+MD5
+  pres uses LZSS+Huffman (AR002 derivative)
+   + dictionary manager: create dictionary from collection of files
+      (like modified solid-archive)
+   + master dictionary: generic info about common file types which is used
+      to pres dictionaries (shared dictionary)
+   + enlarged string matching:
+      called UltraEngine
+      max 64kb distance & 30kb match length
+      try to 'learn' statistic from previous block under blocking/grouping
+
+-RAR (Roshal's ARchiver)
+ by: Eugene Roshal (Russia)
+ year: 1993-2001
+ variant: WinRAR V2.70b2 for Win4+, for OS/2 /Unix/BeOS
+ V2.04 [May 1998]
+ V2.06 [1998]
+ V2.50 [March 1999]
+  last dos ver
+  dict size is only 64kb
+  but can extract archive with more than 64kb dictionary
+ V2.60b8 [Oct 1999]
+  32bit prog x (EMX prog)
+  w/o shell
+  up to 1Mb dictionary
+  can handle huge (number of) files
+ V2.80b3 [10 Jan 2001]
+ Adv:
+  solid-archive
+  recovery record
+   started with string 'Protect!'
+  multimedia pres
+   useful for
+    raw digital audio data contains up to 4 8bit or 2 16bit channels
+    & true color (24-bit) bitmaps
+  NC-like shell
+  command-line
+  better pres ratio than PKZIP
+  non-RAR archive support
+  regged ver offers AV
+ Disadv:
+  shareware
+  crypted solid-archive can't be modified
+  proprietary cipher
+   Eugene Roshal: but it's significantly stronger than ZIP's
+  dos sfx can only extract archive with 64kb dictionary
+ Note:
+  1st archiver to use
+   'real' shell
+   solid-archive
+   recovery record
+   multimedia pres
+  RAR pres algo is proprietary
+
+-WinRAR
+ by: Eugene Roshal (Russia)
+ V2.70b2
+  can create ZIP archive
+  non-RAR archiver support
+
+-ACE
+ by: Marcel Lemke (Germany)
+ compiler: wc32
+ year: 1997-2000
+ type: 386+, 2Mb RAM
+ Var: WinACE for Win4+
+ V1.1 [1997]
+ V1.2b [Jul 1998]
+  up to 1Mb dictionary
+  Features: A E G L M P S X
+ V2.0b2 [2000]
+  up to 4Mb dictionary
+  ACE V2.0 pres: uses some filters for better pres
+  Features: A E F1 G L M P S X
+ V2.0b4 [Dec 2000]
+  better recovery record
+  lower memory requirement
+ Hint: prog x checks itself, but if prog x is read-only attributed, the
+  check is disabled (bug?) and prog x executes normally. so after
+  pres the prog x, set it to read-only
+ Adv:
+  better pres ratio than PKZIP
+  RAR-like shell
+   2nd path
+  command-line
+  encryption (160 bit hashed BlowFish)
+  non-ACE archive support
+  regged ver offers AV
+ disadv: shareware
+ note: uses LZ77 + Huffman pres algo
+
+-YAC (Yet Another Compressor)
+ by: Aleksandras Surna or Alexander Shurna (Russia)
+ type: 440/330kb mem (pres/depres)
+ compiler: ms-c [1990/1992]
+ V1.02 [Sep 1995]
+  free
+  uses EMS for better pres instead of dos extender for stability
+  auto-solid archive: combine files into 1-1.5Mb file
+  uses LZ with 64 or 1024kb (if EMS enabled) window + static Huffman
+   plus 2b data sequences transformation & adaptive dictionary
+  ovl-ed x
+  disadv: max ~2,100 files addable at once
+ note: always solid
+
+-JAR (Jung's ARchiver)
+ by: Robert K. Jung/ARJSoftware (USA)
+ type: ~571kb mem
+ year: 1996-1997
+ Variant: JAR32 (console) for NT 3.5+, Win9x
+ V1.02 [Aug 1997]
+  uses 'GOST V1.01' cipher in CBC mode
+   not on export version, only for USA user
+ Features: A E L M P S
+ adv:
+  mass of options
+  free for non commercial use
+ disadv:
+  worse floppy/multi volume archive handler than ARJ (?)
+  specifying mem near maximum available will make JAR unable to depres
+  max 80,000 files in an archive
+  presed pathnames
+ note:
+  to get better pres w/o removing ARJ compatibility, new pres algo is
+   implemented in JAR instead
+  follows Surna's YAC philosophy:
+   uses XMS/EMS for better pres & stability
+   ovl-ed x
+   modified solid-archive: combine files into 1-1.5Mb/12Mb file
+  always solid
+  pres uses LZSS+Huffman+ word dictionary?
+
+-XPACK -A
+ by: JauMing Tseng (Taiwan)
+ type: archiver
+ V1.67.r [Oct 1999]
+ note: depres is slower than pres
+
+-XPACK -PD
+ by: JauMing Tseng (Taiwan)
+ type: data presor
+ V1.67.r [Oct 1999]
+
+-xpa32
+ by: jauming tseng
+ type: win32
+ V1.0.2 [1999]
+
+-HYPER
+ by: Peter Sawatzki & K. Nischkle (Germany)
+ V2.5 [1990]
+ V2.6 [May 1992]
+ features: X
+ adv: fast pres
+ disadv: shareware
+
+-ZOO
+ by: Rahul Dhesi (India?)
+ V2.01 [1988?]
+  shareware
+ V2.01+
+  GNU pub license
+ V2.10 [Jul 1991]
+ note: similar presed size with AR002 & LHA 2.x?
+
+-AMG (Archiver by Milen Georgiev (?))
+ by: Milen Georgiev (Bulgaria)
+ compiler: bp v7.0
+ V2.2 [Nov 1993] with src
+ V2.3 [Aug 1995]
+  called AMGC
+  shareware
+ Features: E G M X
+ V2.3 [Nov 1997]
+  hacked V2.2 by Tony M. Brown/TonyTown Software (?)
+  called OOP
+  features: E G M
+ note: AMGC, OOP V2.3, SuperPack V2.00 (?) & SKY V1.15 best pres
+  gives the same presed filesize -> same algo (?)
+
+-SKY
+ by: Jean-Michel Herve/SkyTech (France)
+ year: 1995-1997
+ V1.15 [Jul 1997]
+ adv: free
+ note: AMGC, OOP V2.3, SuperPack V2.00 (?) & SKY V1.15 best pres
+  gives the same presed filesize -> same algo (?)
+
+-SUPER PACK
+ by: Kai Gossens/Future-Dreams Entertainment
+ v2.0 [Apr 1995]
+ adv: free
+ note: AMGC, OOP V2.3, SuperPack V2.00 (?) & SKY V1.15 best pres
+  gives the same presed filesize -> same algo (?)
+
+-PPMZ
+ by: Charles Bloom (USA)
+ type: experimental presor
+ V8.1 [1995]
+ V8.3
+ disadv:
+  mem required ~ 30xfilesize
+  very very slow
+  bad pres for binary file
+ note: uses arithmetic/PPM coding
+
+-PPMD
+ type: win32
+ compiler: intel c/c++
+ by: Dimitry Shkarin (Russia)
+ note: fast & good pres on textfile
+
+-BOA
+ by: Ian Sutton
+ year: 1997-1998
+ type: 386, 2Mb RAM
+ V0.58b [Feb 1998]
+ features: L S
+ adv:
+  1 of best pres for textfile
+  free
+ disadv:
+  very very slow
+  bad pres for binary file
+  shareware
+ note: pres uses PPM variant
+
+-ACB (Associative Coder by Buyanovsky)
+ by: George Buyanovsky (.su)
+ v1.14a
+  386+, 8mb mem
+ v2.00c [Apr 1997]
+  486+, 16mb mem
+ adv: 1 of best text presors
+ features: E M P S1
+ disadv:
+  shareware
+  presed header
+ note: pres uses Associative Coder
+
+-IMP
+ by: Technelysium Pty Ltd (Australia)
+ year: 1998-2000
+ type: 386+, init mem: 540kb
+ compiler: wc32
+ variant: WinImp V0.93
+ V1.0 [Jun 1998]
+  win32 console
+  crypt uses BlowFish
+ V1.1b2 [May 1999]
+ Features: E F L M P S
+ adv: can depres ZIP archive, but not (crypt/Shrink/Reduc)ed
+ disadv:
+  to depres multi-volume archive, must start with last volume
+  shareware
+  presed pathnames
+ V1.12 [Jan 2000]
+  win32 console
+ note: pres uses LZ77 (algorithm 1) & BWT (algorithm 2)
+
+-BLINK
+ by: DTS
+ type: DOS V3.3, 256kb RAM, 8088/386
+ compiler: bc++ v5.02
+ year: 1997-1999
+ V2.51 [Mar 1999]
+ note: 1 of fastest presors, but LZOP V1.00 has better pres & faster depres
+ PHaX: terrible format
+
+-LZOP (Lempel-Ziv-Oberhumer Packer)
+ by: Markus F.X.J. Oberhumer (Austria)
+ year: 1996-1998
+ type: presor
+ compiler: djgpp v2
+ v0.95 [Nov 1997]
+ V1.00 [Apr 1998]
+  faster
+ adv:
+  free
+  can use very fast pres
+ features: L
+ note:
+  1 of fastest presors, but PKZIP V2.50 -es + DPMI has better pres
+  pres uses LZO1X algo
+ EdH: LZO may also mean Laetor Zonas Obteri (?)
+
+-AKT
+ by: TRT/Agyhalal (Hungary)
+ year: 1998-1999
+ v2.70b2 [Sep 1999]
+ compiler: bp v7.0
+ adv: free
+
+-AIN
+ by: Alexander Kulpin/Transas Marine (Russia)
+ year: 1993-1996
+ V2.21 [1994]
+ V2.32 [Nov 1996]
+ features: E M X
+ adv: can use XMS/EMS
+ disadv: shareware
+ note: presed header
+
+-AR7
+ by: Timothy R. Erickson
+ V1.2
+ note: for e-mail send -> bad pres ratio (?)
+
+-ARG
+ by: Igor Pavlov (Russia)
+ V1.01á [1994]
+ note: uses huffman only -> bad pres
+
+-UFA (UFA32)
+ by: Igor Pavlov (Russia)
+ year: 1996-1998
+ compiler: bc++ v3+ [1994]
+ V0.00 (Alpha+Gamma)/2 [Oct 1996]
+  pres: 570,000b mem, depres: 250,000b mem
+ V0.01/V0.02 [1997]
+ V0.03/V0.04 [1998]
+ V0.04b1 [Mar 1998]
+
+-777
+ by: Igor Pavlov (Russia)
+ year: 1997-98
+ type: win32
+ V0.04b1 [Mar 1998]
+ features: E L S
+ disadv: shareware
+
+-BIX
+ by: Igor Pavlov
+ V1.00b2 [1998]
+ V1.0b3
+
+-RKive
+ by: Malcolm Taylor (New Zealand)
+ year: 1996-1998
+ V1.4 [1996]
+ V1.92b [1997]
+ V1.92b1 [Feb 1998]
+ disadv: shareware
+ note:
+  very slow pres
+  always solid
+
+-RK
+ by: Malcolm Taylor (New Zealand)
+ V1.01b1
+ note: 1 of best presor
+
+-RKUC (RK Universal Compressor (?))
+ by: Malcom Taylor
+ V1.03
+  Jeff Gilchrist: there's a bug in depres on some cases
+
+-DWC
+ by: Dean W. Cooper
+ V5.01a [1988]
+ V5.10 [Mar 1990]
+ features: E X
+ disadv: shareware
+ note:
+  fast
+  uses LZW
+
+-ARI (Archiver by Rao Inc)
+ by: Alexander Ratushnyak / RAO Inc. (Russia)
+ type: 386
+ compiler: asm
+ V2.15 [1997]
+ V2.2  [Jun 1997]
+ features: D E M P S
+ adv: free
+ disadv: sfx are disabled
+ note:
+  very (good & slow) pres
+  pres uses LZ+Huffman, 2D-eri-ppm
+  if you use -hc<size> option to pres, you must respecify the same -hc<size>
+   on depres for correct depres
+ PHaX: no header
+
+-ERI32
+ by: Alexander Ratushnyak / RAO Inc. (Russia)
+ year: 1991-1999
+ type: ARI+multimedia extension, 386, 2Mb RAM
+ compiler: wc32
+ adv: free
+ disadv: solid, pcp, sfx is disabled
+ V3.1 [Feb 1998] available for test
+ V3.6fre [Mar 1999]
+ V4.2fre
+ V4.4fre
+  pres improvement
+ Features: E F M P S X
+ note: pres uses LZ+Huffman, 2D-eri-ppm
+
+-(UNIX) COMPRESS
+ by: Unix
+ V4.30d
+ note:
+  1 of the worst pres :)
+  uses LZC
+
+-MSXIE
+ by: Andy Cheng/MercurySoft (Hong Kong)
+ year: 1995-1997
+ V1.40 [Dec 1997]
+ disadv: shareware
+ note: always solid
+
+-SWG or SWAG (SourceWare Archival Group) ADD
+ by: Gayle Davis/SWAG team
+ type: max 64kb.text.archiver
+ V1.0 [May 1995]
+ adv: very fast depres
+ disadv: only for max 64kb textfile
+ note:
+  uses LZH with double splayed sliding dictionary
+  part of SWAG
+
+-WWP (WWPACK) PD
+ by: Rafal W. & Piotr Warezak (Poland)
+ type: data presor
+ V3.05b5 [Jan 1997]
+ disadv: very slow
+
+-SQZ (SQueeZe-It)
+ by: Jonas I. Hammarberg
+ V1.80.2 : bug: remove archive-comment will damage the archive
+ V1.08.3 [Jan 1993]
+ disadv: shareware
+
+-ESP (Extension Sort Packer)
+ by: GyikSoft (Hungary)
+ v1.92 [Nov 1997]
+ Features: E F M P S X
+ disadv: presed header
+ note:
+  pres uses LZSS+Huffman
+  always solid
+
+-SIXPACK
+ by: Phillip E. Gauge (?)
+ note: Dr. Dobbs Journal 1991? pres contest submission
+
+-CPShrink
+ by: CPS
+ year: 1992
+ note: part of PCTools
+
+-HPACK
+ by: Peter Guttman (New Zealand)
+ v0.78a0 [1992]
+ v0.79a0 [May 1993]
+  strongly support PGP-crypt
+ features: A E M P S
+ disadv: shareware
+ note: author also frequent contributors of PGP & encryption field
+
+-(MS)Compress
+ by: Microsoft
+ type: presor
+ V2.00 [1992]
+ adv: free
+
+-Cabinet
+ by: Microsoft
+
+-CABARC (CABinet ARChiver)
+ by: Microsoft
+ type: Win32
+ V1.0 [Mar 1997]
+ adv: free
+ features: L
+ note:
+  available from Borland Delphi V3.0 package
+  pres uses LZX, Shannon-Fano, Huffman
+
+-HA (Hirvola Archiver (?))
+ by: Harri Hirvola
+ V0.999b [Jan 1995]
+ adv:
+  free
+  with src
+ note: pres uses sliding window dictionary+arithmetic (ASC),
+  finite context model+arithmetic (HSC)
+
+-LGHA (Lyapko George & HA)
+ by: George Lyapko (Ukraine)
+ type: 386
+ V1.1g [Dec 1997]
+ features: X
+ note:
+  pres uses Sliding window dictionary+Arithmetic,
+   Finite contex model+Arithmetic
+  similar presed size with HA
+ EdH: dunno it's free or shareware
+
+-ARHANGEL (ARchive HAndler by GEorge Lyapko)
+ by: George Lyapko (Ukraine)
+ type: 386
+ compiler: bp v7.0
+ year: 1997-1999
+ V1.31 [Jul 1998]
+ V1.38 [Mar 1999]
+ V1.39a8 [1999]
+ V1.40a1
+  slower but better pres
+ adv: multimedia + other pres
+ disadv: shareware
+ note:
+  based on HA, add complicated multimedia pres
+   pres uses LZ77+arithmetic and finite context model+arithmetic
+   similar presed size with HA
+
+-ARQ
+ by: DC Micro Development
+ year: 1993-1997
+ v3.2 [Feb 1997]
+ features: E X
+ disadv: shareware
+---
+DISK COMPRESSOR
+---
+-Stacker
+ by: Stac Electronics
+
+-(Dbl/Double)Space or (Drv/Drive)Space
+ by: Microsoft
+ adv:
+  on msplus, ms adds compression agent to give higher compression on
+   DriveSpace
+ note:
+  stac sued microsoft & won $1m dollar because microsoft uses? stacker in
+   its doublespace. later microsoft uses incompatible? method & change the
+   name into drivespace
+---
+COMPRESSION LIBRARY
+---
+-ZLIB (Zip-LIB)
+ by: Mark Adler
+ v1.0.4 [1996?]
+
+-deflate
+ by: Jean-loup Gailly
+ year: 1995-1996
+ v1.0.4
+
+-aPLib (aPack Library)
+ by: Jibz aka Joergen Ibsen (Denmark)
+ v0.26 [2000]
+
+-LZO (Lempel-Ziv-Oberhumer)
+ by: Markus F.X.J. Oberhumer (Austria)
+ V1.04 [Mar 1998]
+ note:
+  predecessor of NRV
+  used in LZOP
+
+-NRV (Not Really Vanished)
+ by: Markus F.X.J. Oberhumer (Austria)
+ year: 1997-2000
+ v0.73 [Mar 2000]
+ v0.81 [Nov 2000]
+  little more pres
+  faster pres, also for best pres & big file
+ disadv: non-free
+ note:
+  successor of LZO
+  used in UPX (x presor)
+
+-UCL (Universal Coding (?) Library)
+ by: Markus F.X.J. Oberhumer (Austria)
+ year: 1999-2000
+ adv: free ver of NRV to support GPL
+ disadv: reduced ver of NRV
+
+-PKWARE
+
+-LZSS
+ by: Andrew Eigus aka Mr.Byte
+
+-LZH
+---
+EDDYHAWK CHOICE ON ARCHIVERS
+---
+-ACE V1.2b
+-RAR V2.50 & RAR32 V2.80b3
+-IMP V1.1b2
+-ERI32 V4.2fre
+---
+CONCLUDE
+---
+ LZ > arithmetic if presing binary data
+ arithmetic > LZ if presing text data
+

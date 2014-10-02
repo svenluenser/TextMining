@@ -1,0 +1,217 @@
+THE_URL:http://web.textfiles.com/computers/vendinfo.diz
+THE_TITLE:vendinfo.diz
++-------------------------------------------ÄÄÄÄÄÄÄÄ-----ÄÄÄÄÄÄÄÄ----+
+| This VENDINFO Product Information File contains both readable text |
+| and tools-accessible data about a product.  See the last text      |
+| section, below, for more information about VENDINFO and its tools. |
++--------------------------------------------------------------------+
+VENDINFO standard v1.03, produced by VendEdit v1.22, 1-Feb-1996
+
+===== Product Information ==============================
+   Product:             Strategies to Reduce College Costs--BOOK How to Maximize College Financial Aid
+   Version:             2.10
+   Version Date:        22-Jan-1996
+   Product Type:        Book, as in shareware book distributed electronically
+   Basic Distribution Policy (see License, below, for details):
+      Shareware, freely distributable by all channels
+
+   Product Description: Strategies to Reduce College Costs v2.0 con-
+                        tains concise $ saving financial aid facts.
+                        Learn how to: Est 96-7 aid, increase aid,play
+                        "What IF?" to test aid-increasing scenarios,
+                        answer aid form questions--a plan-ahead must-
+                        read self-help electronic book for parents
+                        and students. Strategies...covers aid info
+                        for both Public and Private colleges. By
+                        Sally Fesler, Think Ahead, Inc., 251
+                        Jefferson St.,MS-5A, Waldoboro,ME 04572 $9.95
+   Reason for version:  Updates--essential for maximizing college
+                        financial aid
+
+   Category:            Finances; Personal finances
+   Keywords:            college financial aid planning guidance
+   Required Packages:   STRATS21
+   This Package:        STRATS21
+   Registration Fee:    9.95 (U.S. Dollars)
+
+   Required Configuration
+      Processor Family: Intel 80x86 (minimum 80286 (AT))
+      Minimum OS:       MS-DOS 3.3
+      Standard RAM:     640K
+      Hard Drive Space: 200K
+      Required:
+         Floppy only
+         Monochrome monitor
+         Keyboard
+
+   Orders:
+      Address:          College Aid Calculator (tm)
+                        --our companion product--
+                        ---orders only--$49.95---
+                        Think Ahead, Inc.
+                        251 Jefferson St., MS-5A
+                        Waldoboro, ME 04572
+      Toll-Free Phone:  1-800-780-0513 X145
+      Phone:            1-207-737-2802
+      FAX:              1-800-780-0515
+      Internet:         CollegeAid@maine.com
+      Other E-mail:     http://www.maine.com/collegeaid
+
+   Support:
+      Address:          Think Ahead, Inc.
+                        P.O. Box 5A
+                        Dresden, Maine 04342
+      Phone:            1-207-737-2802
+      FAX:              1-207-737-2802
+      Internet:         CollegeAid@maine.com
+      Other E-mail:     http://www.maine.com/collegeaid
+
+
+===== Information for Users ("READ-ME") ================
+
+Welcome to "Strategies to Reduce College Costs." Strategies...
+provides $ saving financial aid facts. Learn how to: estimate  1996-7
+aid, increase aid, play "What IF ?" to test your aid-increasing
+scenarios, answer aid form questions. Strategies... is a plan-ahead,
+must-read self-help electronic book for parents and students. Strategies
+... covers aid information for both Public and Private colleges.
+We encourage you to load the book into your word processor and use it as
+your "workbook" as you research how to maximize your family's financial
+aid. See the Installation Instructions for how to load and use the
+Strategies... book file.
+
+Price $9.95. Think Ahead, Inc., 251 Jefferson St., MS-5A, Waldoboro,
+Maine 04572. Tel: 1-800-780-0513 ext. 145
+
+
+
+===== Packing List =====================================
+
+As released by the author or publisher, this package contained the
+following files in addition to this VENDINFO.DIZ:
+
+        Filename      Size     Date       Time     CRC32
+      READ_ME.1ST      101  27-Jan-1996  02:54p   EF25E8CA
+      READ_ME.BAT      460  22-Jan-1996  02:10a   B16C99FC
+      FILE_ID.DIZ      453  22-Jan-1996  02:10a   81EBB590
+       VENDOR.DOC      216  22-Jan-1996  02:10a   13796CEE
+     STRATS21.RTF   117570  26-Jan-1996  08:13p   538D55E9
+     STRATS21.TXT   112018  26-Jan-1996  08:25p   CCCADD63
+
+
+===== Installation =====================================
+
+                     INSTALLATION INSTRUCTIONS FOR
+          "STRATEGIES TO REDUCE COLLEGE COSTS" (STRATS21.ZIP)
+
+Strategies... is distributed in a compressed file, STRATS21.ZIP. To open
+that file, move it to the directory from which you will access it with
+your word processor. Then, go to that directory and use the un-zip
+utility provided by your bulletin board or CD-ROM to uncompress the file.
+
+Strategies to Reduce College Costs has been stored in Rich Text
+Format (RTF)--a Microsoft standard, which may be read by
+Microsoft Word and many other word processors. Boot your word
+processor, Choose File, Open, File Type: RTF or Rich Text
+Format. Then, select the directory where STRATS21.RTF has been
+installed, open it and proceed as instructed.
+
+If your word processor is not able to read the STRATS21.RTF
+file, you may use your word processor's ASCII file format reader
+to open STRATS21.TXT, which has also been included. This format
+does not retain all of the nice formatting codes that RTF
+handles, such as Font sizes, Bold, Underline and Italics.
+However, if this is your only choice, just use your word
+processor to add these attributes as you read. Good luck.
+
+For assistance: visit our home page at http:\\www.maine.com\collegeaid,
+e-mail us at CollegeAid@maine.com or write us at Think Ahead, Inc.,
+P.O. Box 5A, Dresden, ME 04342.
+
+
+
+===== Warranty =========================================
+
+Unconditional 30-day money-back guarantee.
+
+
+===== License for Use and Distribution =================
+
+This book may be distributed, copied, and reproduced in any medium, but
+only in its entirety, including all pages and the copyright notice. The
+news media may quote limited portions of it. Users are encouraged to
+load the book into their word processor and to use it as a basis for
+their research on college financial aid, editing it and adding to it as
+necessary for their own personal use, so long as it is not distributed in
+modified form.
+
+The attached VENDINFO data record is hereby incorporated by reference.
+Any distribution satisfying all the distribution requirements expressed
+in that data record is hereby authorized.
+
+
+===== About VENDINFO Files =============================
+
+Each VENDINFO.DIZ file contains extensive information about a product.
+This "human-readable" section is followed by a compressed data record
+useable by automated tools.  The data record allows BBSes and other
+distributors to automate package handling, and provides users with a
+wealth of product information.  VENDINFO tools (free viewer for users,
+free or inexpensive processors for distributors, editors for authors)
+are available from many sources, including the originators of VENDINFO:
+  Rams' Island Software    Voice: 303-841-2848  CompuServe: 76244,324
+  7644 E. Lakecliff Way      BBS: 303-841-6269     FidoNet: 1:104/333
+  Parker, CO 80134-5904 USA  FAX: 303-841-6269        RIME: 1235
+
+
+===== Compressed Data Record Follows ===================
+
+PK
+GA §ÕËÑ#        VENDDATA.n7:º*'
+
+
+
+('
+(
+]
+
+$$&
+M=
+}
+
+Ý
+-
+m
+
+:]
+
+
+=       =       =       M$$58\L'÷÷ç¡F=jä¼H!4I¸õ3yÁ)hÏ3»¼¤ð< X;&éyG`®A¼Â@NÓ{ÿ2Ö7üþþ¯^ÙÞÏ¿Ëò2nèã)RgX7Uè¢ì)
+ë¼ÑlÞ:íÓ¶îË/XëþWÚj4ÏØ?´jöõþ
+Ãz Ë¼ãý¶uÊøà2Sp¾n§À:± ;§´q&CÌW¾¡"ßé¹ä:ÿØÃû      þ°§ÙX&FýÌ}sÐjjë´o×z.Ê¶ZO9\ëkªvºÑþUTÑ
+©oÿê²DT¢Pj{ÿ£æy¢¿Oõ»ìÓ/¨½½~À®ü2ô·Ó§t©ÿß3öQd¾Ùºèt        ÷
+|³GÍý/ßÊ(vG§K¶¿a{Ó>®whcùCêÉÝî8ÿ*ün¿Þià=·µ¬Ûê;®i¾½çzAäVbXÅÆÅü´ÒVõ'õÛWõßd®Ó*](Ô>Oq;NëtÁ©pi*ÅªvB0©Ç®Ý¦cÇµþ\z
+8DT´¸á-Gí-Õÿ·õãÜzÖ½éõê>òrhêûJ]ãZßF©í¦½qPß×)óZèpuû       Zu#[?¯³/Kùç½aycûg×Ö)Ý_ýÕr«ýKn/3Søïäþv£¸ ýCÙúÍºãmG
+ö%ÅE¥?AÌVÌbY
+>¢ÕP4'4²ÓÕåAçÃþ(ÃÛ
+uñC5¼ÿ«°.ùWèNiLÛÒl¤Ø)wºæS>jÿ
+óä´]Mû"uy3DTX9rþÖ«ùñµn«8'Ïáìx?u]ÞVÿ}ÍÔGrß'ÿçW_
+ofËÉþÞ¥õÃnªÆÙ×kN¼ÿ¡<ôoþ©wLgÎn{ô¿¬éï÷{T}"ûößhÇ|][ûq¨UþÁ3·´}]ö¬å©æqÝj?û¥ô§ÖÖãgÇûÙS'ðíñn&ôt¾¨ôºMÛBwºÊaó'ý
+ãÀa?px~-ý5jNÁ%¿ÓMÌXí@rrq,ñ0"ÅÃtt;&3=ôwÑéÂøîÖéÂúîßèC}ùÀÈ±§Ë"§5¯}rDÞ^jø;2£Ý±ù)×¶;WÔnç-Ô÷¯.FÈløÓí?u/ë¹kòð<ò
+ôHØõµ;àðwé¯èkÆ´f*ùô>§²ãKÝÇ:¹oe½¾ÐrWb~² üaVk3×+cutÊu9mÁ÷:ÿ½uübk!»|"Ï@æÞÛ3¶^¿ÕÚïøpT:ú¾BDTÚ>=³-æt²:¾Cwg¨¯¯ò
+ü)'®ÆãÕ/l=ÞXû¤©pÆàÞ·5¸\â¿/[eÙ{-;~?ÇãadðwMÚæu)3ð²-ZJU5ô<Ý¦~\³*Xq~+cMs{Tî½{g`     û±oyp¼ð'(1aÎùQ~X±¿zz}ÿX¸
+Ç7á¾et¾íVË4gè-¿qÄj6¢XÍ£YÜó
+&èbqÖº](µØüB¨ñÅ¨þ1ëäB
+6ÈOõØhÐjB¢      %Éà> |ÑºÝ(ÍÐ¼_¹â*4U×|ÔöòLÌ
+UÝéª
+ì¦*,ÛZ¸B&&ÇD0ø$dèË@x¯ÑDüª:É24YR¨ÍÓÓêÂ)°ÆIàÆHáÏ°Ã?ÿúâÀ
+Q¸øXQá?£²Ö](<OCDÃ£BÛ$Äþ¦üâè² Ãm#Ü8ÓñÇ))õþÿgÈÆQÚ,:â¥±êKëº+Bï«
+qã¦¦¦¶tçq9"E°tå%hõBà¹ã¸B,â8ô¶ÃçÇúÃ`ô¥|Nôvð,@yDw6DDÂåÙÎ³d#d¹Þ4'=¤ôKE>¥£þ§À:Ò$]!,ëÌ[Í2µÈÌñÎ$×É¦ÂR´!ÉÏqI~êy
+ë(Csdi2b<Æî¨¾Ï|?l·ï÷¶[Ä Ê_£ áo6¥G³+ÎÑù¸ù        DTìF£¨¸$Öt'\¶³`£¦       ¦üü¼;Væ¶
+Y7þÊ0àRzÿU
+;
+ÏïÎí7³W üUx~|üöï+Và·e($è
+ÖÊiýèª¿ *Ð)°vÑ0!
+³4ÐIýOÕÃ w,ì/½Cs¸       áC:s¤Ýép|*Ü3;PY]NµÿXiû^ýWDTàÕx->PK
+
+GA §ÕËÑ#         VENDDATA.PK*ø

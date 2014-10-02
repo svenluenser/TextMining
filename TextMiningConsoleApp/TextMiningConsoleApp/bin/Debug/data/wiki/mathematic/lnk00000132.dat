@@ -1,0 +1,890 @@
+THE_URL:http://web.textfiles.com/computers/groups1.lst
+THE_TITLE:groups1.lst
+From newgroups-request@uunet.uu.net Tue Dec  3 15:38:56 EET 1996
+Article: 1719 of news.lists
+Path: verkko.uwasa.fi!news.csc.fi!news.eunet.fi!EU.net!howland.erols.net!feed1.news.erols.com!phase2.worl
+dnet.att.net!uunet!not-for-mail
+From: newgroups-request@uunet.uu.net (David C Lawrence)
+Newsgroups: news.lists,news.groups,news.announce.newgroups,news.answers
+Subject: List of Active Newsgroups (Part 1)
+Supersedes: <active-newsgroups1_848963756@uunet.uu.net>
+Followup-To: news.groups
+Date: 2 Dec 1996 13:51:11 -0500
+Organization: UUNET Technologies Inc, Falls Church, VA, USA
+Lines: 865
+Sender: tale@uunet.uu.net
+Approved: newgroups-request@uunet.uu.net
+Expires: 1 Feb 97 06:51:10 GMT
+Message-ID: <active-newsgroups1_849552670@uunet.uu.net>
+NNTP-Posting-Host: rodan.uu.net
+Summary: This contains the introduction, and the groups in comp, and humanities
+Xref: verkko.uwasa.fi news.lists:1719 news.groups:143055 news.announce.newgroups:4932 news.answers:72597
+
+Archive-name: active-newsgroups/part1
+Original-author: Gene Spafford <spaf@cs.purdue.edu>
+Comment: enhanced & edited until 5/93 by spaf@cs.purdue.edu (Gene Spafford)
+Last-change: 2 Dec 1996 by newgroups-request@uunet.uu.net (David C Lawrence)
+
+The following is a list of currently active USENET newsgroups as of
+2 Dec 1996.  This list does not include the gatewayed Internet newsgroups
+(see below).  The groups distributed worldwide are divided into eight
+broad classifications: "comp", "humanities", "misc", "news", "rec",
+"sci", "soc", and "talk".  Each of these classifications is organized
+into groups and subgroups according to topic.
+
+"comp"  Topics of interest to both computer professionals and
+        hobbyists, including topics in computer science, software
+        source, and information on hardware and software systems.
+
+"humanities"
+        Professional and amateur topics in the arts & humanities.
+
+"misc"  Groups addressing themes not easily classified under any of the
+        other headings or which incorporate themes from multiple
+        categories.
+
+"news"  Groups concerned with the news network and software themselves.
+
+"rec"   Groups oriented towards the arts, hobbies and recreational
+        activities.
+
+"sci"   Discussions marked by special and usually practical knowledge,
+        relating to research in or application of the established
+        sciences.
+
+"soc"   Groups primarily addressing social issues and socializing.
+
+"talk"  Groups largely debate-oriented and tending to feature long
+        discussions without resolution and without appreciable amounts
+        of generally useful information.
+
+These "world" newsgroups are (usually) circulated around the entire
+USENET -- this implies world-wide distribution.  Not all groups
+actually enjoy such wide distribution, however.  Some sites take only
+a selected subset of the more "technical" groups, and controversial
+"noise" groups are often not carried by many sites (these groups are
+often under the "talk" and "soc" classifications).  Many sites do not
+carry some or all of the comp.binaries groups.
+
+There are groups in other subcategories, but they are local: to
+institutions, to geographic regions, etc. and they are not listed
+here.  Note that these distribution categories can be used to restrict
+the propagation of news articles.  Currently, distributions include:
+        world           worldwide distribution (default)
+        can             limited (mostly) to Canada
+        eunet           limited (mostly) to European sites in EUNet
+        na              limited (mostly) to North America
+        usa             limited (mostly) to the United States
+There may be other regional and local distribution categories available
+at your site.  Most US states have distribution categories named after
+the two letter abbreviation for that state or category (e.g., "ga" for
+Georgia, "nj" for New Jersey). Please use an appropriate distribution
+category if your article is not likely to be of interest to USENET
+readers worldwide.
+
+Please notify me of any errors or changes to the information in
+this article.
+
+David Lawrence <newgroups-request@uunet.uu.net>
+----------------------------------------------------------------------
+Newsgroup               Description
+----------------------------------------------------------------------
+comp.admin.policy       Discussions of site administration policies.
+comp.ai                 Artificial intelligence discussions.
+comp.ai.alife           Research about artificial life.
+comp.ai.doc-analysis.misc       General document understanding technologies.
+comp.ai.doc-analysis.ocr        OCR research, algorithms and software.
+comp.ai.fuzzy           Fuzzy set theory, aka fuzzy logic.
+comp.ai.games           Artificial intelligence in games and game-playing.
+comp.ai.genetic         Genetic algorithms in computing.
+comp.ai.jair.announce   Announcements & abstracts of the Journal of AI Research. (Moderated)
+comp.ai.jair.papers     Papers published by the Journal of AI Research. (Moderated)
+comp.ai.nat-lang        Natural language processing by computers.
+comp.ai.neural-nets     All aspects of neural networks.
+comp.ai.nlang-know-rep  Natural Language and Knowledge Representation. (Moderated)
+comp.ai.philosophy      Philosophical aspects of Artificial Intelligence.
+comp.ai.shells          Expert systems and other artificial intelligence shells.
+comp.answers            Repository for periodic USENET articles. (Moderated)
+comp.apps.spreadsheets  Spreadsheets on various platforms.
+comp.arch               Computer architecture.
+comp.arch.arithmetic    Implementing arithmetic on computers/digital systems.
+comp.arch.bus.vmebus    Hardware and software for VMEbus Systems.
+comp.arch.embedded      Embedded computer systems topics.
+comp.arch.fpga          Field Programmable Gate Array based computing systems.
+comp.arch.storage       Storage system issues, both hardware and software.
+comp.archives           Descriptions of public access archives. (Moderated)
+comp.archives.admin     Issues relating to computer archive administration.
+comp.archives.ms-windows.announce       Announcements about Windows archives. (Moderated)
+comp.archives.ms-windows.discuss        Discussing Microsoft Windows archives.
+comp.archives.msdos.announce    Announcements about MSDOS archives. (Moderated)
+comp.archives.msdos.d   Discussion of materials available in MSDOS archives.
+comp.bbs.majorbbs       Support & discussion of The Major BBS from Galacticomm.
+comp.bbs.misc           All aspects of computer bulletin board systems.
+comp.bbs.tbbs           The Bread Board System bulletin board software.
+comp.bbs.tsx            TSX BBS discussions.
+comp.bbs.waffle         The Waffle BBS and USENET system on all platforms.
+comp.benchmarks         Discussion of benchmarking techniques and results.
+comp.binaries.acorn     Binary-only postings for Acorn machines. (Moderated)
+comp.binaries.amiga     Encoded public domain programs in binary. (Moderated)
+comp.binaries.apple2    Binary-only postings for the Apple II computer.
+comp.binaries.cbm       For the transfer of 8bit Commodore binaries. (Moderated)
+comp.binaries.geos      Binaries for the GEOS operating system. (Moderated)
+comp.binaries.ibm.pc    Binary-only postings for IBM PC/MS-DOS. (Moderated)
+comp.binaries.ibm.pc.d  Discussions about IBM/PC binary postings.
+comp.binaries.ibm.pc.wanted     Requests for IBM PC and compatible programs.
+comp.binaries.mac       Encoded Macintosh programs in binary. (Moderated)
+comp.binaries.ms-windows        Binary programs for Microsoft Windows. (Moderated)
+comp.binaries.newton    Apple Newton binaries, sources, books, etc. (Moderated)
+comp.binaries.os2       Binaries for use under the OS/2 ABI. (Moderated)
+comp.binaries.psion     Binaries for the range of Psion computers. (Moderated)
+comp.bugs.2bsd          Reports of UNIX* version 2BSD related bugs.
+comp.bugs.4bsd          Reports of UNIX version 4BSD related bugs.
+comp.bugs.4bsd.ucb-fixes        Bug reports/fixes for BSD Unix. (Moderated)
+comp.bugs.misc          General UNIX bug reports and fixes (incl V7, uucp).
+comp.bugs.sys5          Reports of USG (System III, V, etc.) bugs.
+comp.cad.autocad        AutoDesk's AutoCAD software.
+comp.cad.cadence        Users of Cadence Design Systems products.
+comp.cad.compass        Compass Design Automation EDA tools.
+comp.cad.i-deas         SDRC I-DEAS Masters Series software.
+comp.cad.microstation   MicroStation CAD software and related products.
+comp.cad.microstation.programmer        Developing software in Microstation CAD.
+comp.cad.pro-engineer   Parametric Technology's Pro/Engineer design package.
+comp.cad.synthesis      Research and production in the field of logic synthesis.
+comp.client-server      Topics relating to client/server technology.
+comp.cog-eng            Cognitive engineering.
+comp.compilers          Compiler construction, theory, etc. (Moderated)
+comp.compilers.tools.pccts      Construction of compilers and tools with PCCTS.
+comp.compression        Data compression algorithms and theory.
+comp.compression.research       Discussions about data compression research. (Moderated)
+comp.constraints        Constraint processing and related topics.
+comp.data.administration        Manage data as a corporate asset: stds & methds.
+comp.databases          Database and data management issues and theory.
+comp.databases.adabas   ADABAS Database topics in general.
+comp.databases.gupta    Gupta SQLWindows client-server development.
+comp.databases.ibm-db2  Problem resolution with DB2 database products.
+comp.databases.informix Informix database management software discussions.
+comp.databases.ingres   Issues relating to INGRES products.
+comp.databases.ms-access        MS Windows' relational database system, Access.
+comp.databases.ms-sqlserver     Microsoft's SQL Server and related products.
+comp.databases.object   Object-oriented paradigms in database systems.
+comp.databases.olap     Analytical Processing, Multidimensional DBMS, EIS, DSS.
+comp.databases.oracle   The SQL database products of the Oracle Corporation.
+comp.databases.oracle.marketplace       Oracle-related jobs, etc.
+comp.databases.oracle.misc      Oracle related topics.
+comp.databases.oracle.server    Oracle database administration/server topics.
+comp.databases.oracle.tools     Oracle software tools/applications.
+comp.databases.paradox  Borland's database for DOS & MS Windows.
+comp.databases.pick     Pick-like, post-relational, database systems.
+comp.databases.progress The Progress 4GL & RDBMS.
+comp.databases.rdb      The relational database engine RDB from DEC.
+comp.databases.sybase   Implementations of the SQL Server.
+comp.databases.theory   Discussing advances in database technology.
+comp.databases.visual-dbase     Database discussions using Visual dBASE.
+comp.databases.xbase.fox        Fox Software's xBase system and compatibles.
+comp.databases.xbase.misc       Discussion of xBase (dBASE-like) products.
+comp.dcom.cabling       Cabling selection, installation and use.
+comp.dcom.cell-relay    Forum for discussion of Cell Relay-based products.
+comp.dcom.fax           Fax hardware, software, and protocols.
+comp.dcom.frame-relay   Technology and issues regarding frame relay networks.
+comp.dcom.isdn          The Integrated Services Digital Network (ISDN).
+comp.dcom.lans.ethernet Discussions of the Ethernet/IEEE 802.3 protocols.
+comp.dcom.lans.fddi     Discussions of the FDDI protocol suite.
+comp.dcom.lans.misc     Local area network hardware and software.
+comp.dcom.lans.token-ring       Installing and using token ring networks.
+comp.dcom.modems        Data communications hardware and software.
+comp.dcom.net-analysis  Network Testing and Analysis Procedures and Results.
+comp.dcom.net-management        Network management methods and applications.
+comp.dcom.servers       Selecting and operating data communications servers.
+comp.dcom.sys.cisco     Info on Cisco routers and bridges.
+comp.dcom.sys.wellfleet Wellfleet bridge & router systems hardware & software.
+comp.dcom.telecom       Telecommunications digest. (Moderated)
+comp.dcom.telecom.tech  Discussion of technical aspects of telephony.
+comp.dcom.videoconf     Video conference technology and applications.
+comp.doc.management     Document Management technologies.
+comp.doc.techreports    Lists of technical reports. (Moderated)
+comp.dsp                Digital Signal Processing using computers.
+comp.editors            Topics related to computerized text editing.
+comp.edu                Computer science education.
+comp.edu.languages.natural      Computer assisted languages instruction issues.
+comp.emacs              EMACS editors of different flavors.
+comp.emacs.xemacs       Bug reports, questions and answers about XEmacs.
+comp.emulators.announce Emulator news, FAQs, announcements. (Moderated)
+comp.emulators.apple2   Emulators of Apple // systems.
+comp.emulators.cbm      Emulators of C-64, C-128, PET, and VIC-20 systems.
+comp.emulators.game-consoles    Emulators of game console systems.
+comp.emulators.mac.executor     ARDI's Mac emulator, Executor.
+comp.emulators.misc     Emulators of miscellaneous computer systems.
+comp.emulators.ms-windows.wine  A free MS-Windows emulator under X.
+comp.fonts              Typefonts -- design, conversion, use, etc.
+comp.graphics.algorithms        Algorithms used in producing computer graphics.
+comp.graphics.animation Technical aspects of computer animation.
+comp.graphics.api.inventor      Object-oriented 3D graphics in Inventor.
+comp.graphics.api.misc  Application Programmer Interface issues, methods.
+comp.graphics.api.opengl        The OpenGL 3D application programming interface.
+comp.graphics.api.pexlib        The PEXlib application programming interface.
+comp.graphics.apps.alias        3-D graphics software from Alias Research.
+comp.graphics.apps.avs  The Application Visualization System.
+comp.graphics.apps.data-explorer        IBM's Visualization Data Explorer (DX).
+comp.graphics.apps.freehand     Questions, answers, tips and suggestions.
+comp.graphics.apps.gnuplot      The gnuplot interactive function plotter.
+comp.graphics.apps.iris-explorer        The IRIS Explorer, aka MVE.
+comp.graphics.apps.lightwave    NewTek's Lightwave3D & related topics.
+comp.graphics.apps.pagemaker    Question, answers, tips and suggestions.
+comp.graphics.apps.photoshop    Adobe Photoshop techniques & help.
+comp.graphics.apps.softimage    Softimage applications and products.
+comp.graphics.apps.wavefront    Wavefront software products, problems, etc.
+comp.graphics.misc      Computer graphics miscellany.
+comp.graphics.packages.3dstudio Autodesk's 3D Studio software.
+comp.graphics.rendering.misc    Rendering comparisons, approaches, methods.
+comp.graphics.rendering.raytracing      Raytracing software, tools and methods.
+comp.graphics.rendering.renderman       RenderMan interface & shading language.
+comp.graphics.visualization     Info on scientific visualization.
+comp.groupware          Software & hardware for shared interactive environments.
+comp.groupware.groupwise        Novell's Groupwise product (Wordperfect Office).
+comp.groupware.lotus-notes.admin        Lotus Notes system administration.
+comp.groupware.lotus-notes.apps Application software for Lotus Notes.
+comp.groupware.lotus-notes.misc Lotus Notes related discussions.
+comp.groupware.lotus-notes.programmer   Programming for Lotus Notes.
+comp.home.automation    Home automation devices, setup, sources, etc.
+comp.home.misc          Media, technology and information in domestic spaces. (Moderated)
+comp.human-factors      Issues related to human-computer interaction (HCI).
+comp.infosystems        Any discussion about information systems.
+comp.infosystems.announce       Announcements of internet information services. (Moderated)
+comp.infosystems.gis    All aspects of Geographic Information Systems.
+comp.infosystems.gopher Discussion of the Gopher information service.
+comp.infosystems.harvest        Harvest information discovery and access system.
+comp.infosystems.hyperg The Hyper-G network hypermedia system and applications.
+comp.infosystems.interpedia     The Internet Encyclopedia.
+comp.infosystems.kiosks Informational and transactional kiosks. (Moderated)
+comp.infosystems.wais   The Z39.50-based WAIS full-text search system.
+comp.infosystems.www.advocacy   Comments and arguments over the best and worst.
+comp.infosystems.www.announce   World-Wide Web announcements. (Moderated)
+comp.infosystems.www.authoring.cgi      CGI Programming. (Moderated)
+comp.infosystems.www.authoring.html     Writing HTML for the Web.
+comp.infosystems.www.authoring.images   Using images, imagemaps on the Web.
+comp.infosystems.www.authoring.misc     Miscellaneous Web authoring issues.
+comp.infosystems.www.browsers.mac       Web browsers for the Macintosh platform.
+comp.infosystems.www.browsers.misc      Web browsers for other platforms.
+comp.infosystems.www.browsers.ms-windows        Web browsers for MS Windows.
+comp.infosystems.www.browsers.x Web browsers for the X-Window system.
+comp.infosystems.www.misc       Miscellaneous World Wide Web discussion.
+comp.infosystems.www.servers.mac        Web servers for the Macintosh platform.
+comp.infosystems.www.servers.misc       Web servers for other platforms.
+comp.infosystems.www.servers.ms-windows Web servers for MS Windows and NT.
+comp.infosystems.www.servers.unix       Web servers for UNIX platforms.
+comp.internet.library   Discussing electronic libraries. (Moderated)
+comp.internet.net-happenings    Announcements of network happenings. (Moderated)
+comp.ivideodisc         Interactive videodiscs -- uses, potential, etc.
+comp.lang.ada           Discussion about Ada*.
+comp.lang.apl           Discussion about APL.
+comp.lang.asm.x86       General 80x86 assembly language programming.
+comp.lang.awk           The AWK programming language.
+comp.lang.basic.misc    Other dialects and aspects of BASIC.
+comp.lang.basic.visual.3rdparty Add-ins for Visual Basic.
+comp.lang.basic.visual.announce Official information on Visual Basic. (Moderated)
+comp.lang.basic.visual.database Database aspects of Visual Basic.
+comp.lang.basic.visual.misc     Visual Basic in general.
+comp.lang.beta          The object-oriented programming language BETA.
+comp.lang.c             Discussion about C.
+comp.lang.c++           The object-oriented C++ language.
+comp.lang.c++.leda      All aspects of the LEDA library.
+comp.lang.c++.moderated Technical discussion of the C++ language. (Moderated)
+comp.lang.c.moderated   The C programming language. (Moderated)
+comp.lang.clarion       Technical discussion of Clarion programming.
+comp.lang.clipper       Clipper and Visual Objects programming languages.
+comp.lang.clos          Common Lisp Object System discussions.
+comp.lang.cobol         The COBOL language and software.
+comp.lang.dylan         For discussion of the Dylan language.
+comp.lang.eiffel        The object-oriented Eiffel language.
+comp.lang.forth         Discussion about Forth.
+comp.lang.fortran       Discussion about FORTRAN.
+comp.lang.functional    Discussion about functional languages.
+comp.lang.hermes        The Hermes language for distributed applications.
+comp.lang.idl-pvwave    IDL and PV-Wave language discussions.
+comp.lang.java.advocacy Support for and criticism of the Java System.
+comp.lang.java.announce Announcements re the Java System. (Moderated)
+comp.lang.java.api      The Java application programming interface.
+comp.lang.java.misc     Miscellaneous topics on using the Java System.
+comp.lang.java.programmer       Programming in the Java language.
+comp.lang.java.security Security issues raised by Java.
+comp.lang.java.setup    Setting up a Java browser.
+comp.lang.java.tech     Technical aspects of Java, its inner workings.
+comp.lang.javascript    Netscape Communications Corp.'s JavaScript language.
+comp.lang.lisp          Discussion about LISP.
+comp.lang.lisp.mcl      Discussing Apple's Macintosh Common Lisp.
+comp.lang.logo          The Logo teaching and learning language.
+comp.lang.misc          Different computer languages not specifically listed.
+comp.lang.ml            ML languages including Standard ML, CAML, Lazy ML, etc. (Moderated)
+comp.lang.modula2       Discussion about Modula-2.
+comp.lang.modula3       Discussion about the Modula-3 language.
+comp.lang.mumps         The M (MUMPS) language & technology, in general.
+comp.lang.oberon        The Oberon language and system.
+comp.lang.objective-c   The Objective-C language and environment.
+comp.lang.pascal.ansi-iso       Pascal according to ANSI and ISO standards.
+comp.lang.pascal.borland        Borland's Pascal.
+comp.lang.pascal.delphi.advocacy        Contentious issues related to Delphi.
+comp.lang.pascal.delphi.announce        Delphi related announcements. (Moderated)
+comp.lang.pascal.delphi.components.misc General component issues.
+comp.lang.pascal.delphi.components.usage        Using pre-written components.
+comp.lang.pascal.delphi.components.writing      Writing Delphi components.
+comp.lang.pascal.delphi.databases       Database aspects of Borland Delphi.
+comp.lang.pascal.delphi.misc    General issues with Borland Delphi.
+comp.lang.pascal.mac    Macintosh based Pascals.
+comp.lang.pascal.misc   Pascal in general and ungrouped Pascals.
+comp.lang.perl.announce Announcements about Perl. (Moderated)
+comp.lang.perl.misc     The Perl language in general.
+comp.lang.perl.modules  Use and development of Perl modules.
+comp.lang.perl.tk       Using Tk (and X) from Perl.
+comp.lang.pl1           PL/I language discussions.
+comp.lang.pop           Pop11 and the Plug user group.
+comp.lang.postscript    The PostScript Page Description Language.
+comp.lang.prograph      Prograph, a visual object-oriented dataflow language.
+comp.lang.prolog        Discussion about PROLOG.
+comp.lang.python        The Python computer language.
+comp.lang.sather        The object-oriented computer language Sather.
+comp.lang.scheme        The Scheme Programming language.
+comp.lang.scheme.scsh   SCSH - the Scheme Shell.
+comp.lang.sigplan       Info & announcements from ACM SIGPLAN. (Moderated)
+comp.lang.smalltalk     Discussion about Smalltalk 80.
+comp.lang.tcl           The Tcl programming language and related tools.
+comp.lang.tcl.announce  Announcements about Tcl. (Moderated)
+comp.lang.verilog       Discussing Verilog and PLI.
+comp.lang.vhdl          VHSIC Hardware Description Language, IEEE 1076/87.
+comp.lang.visual        General discussion of visual programming languages. (Moderated)
+comp.lang.vrml          Virtual Reality Modeling Language discussion.
+comp.laser-printers     Laser printers, hardware & software. (Moderated)
+comp.lsi                Large scale integrated circuits.
+comp.lsi.testing        Testing of electronic circuits.
+comp.mail.elm           Discussion and fixes for the ELM mail system.
+comp.mail.eudora.mac    Eudora email software for Macintosh.
+comp.mail.eudora.ms-windows     Eudora email software for MS Windows.
+comp.mail.headers       Gatewayed from the Internet header-people list.
+comp.mail.list-admin.policy     Policy issues in running mailing lists.
+comp.mail.list-admin.software   Software used in the running of mailing lists.
+comp.mail.maps          Various maps, including UUCP maps. (Moderated)
+comp.mail.mh            The UCI version of the Rand Message Handling system.
+comp.mail.mime          Multipurpose Internet Mail Extensions of RFC 1341.
+comp.mail.misc          General discussions about computer mail.
+comp.mail.mush          The Mail User's Shell (MUSH).
+comp.mail.pine          The PINE mail user agent.
+comp.mail.sendmail      Configuring and using the BSD sendmail agent.
+comp.mail.smail         Administering & using the smail email transport system.
+comp.mail.uucp          Mail in the uucp network environment.
+comp.mail.zmail         The various Z-Mail products and their configurability.
+comp.misc               General topics about computers not covered elsewhere.
+comp.multimedia         Interactive multimedia technologies of all kinds.
+comp.music.midi         Computers as components in MIDI music systems.
+comp.music.misc         Miscellaneous use of computers in music.
+comp.music.research     The use of Computers in Music Research and Composition. (Moderated)
+comp.newprod            Announcements of new products of interest. (Moderated)
+comp.object             Object-oriented programming and languages.
+comp.object.corba       OMG CORBA standard.
+comp.object.logic       Integrating object-oriented and logic programming.
+comp.org.acm            Topics about the Association for Computing Machinery.
+comp.org.cpsr.announce  Computer Professionals for Social Responsibility. (Moderated)
+comp.org.cpsr.talk      Issues of computing and social responsibility.
+comp.org.decus          Digital Equipment Computer Users' Society newsgroup.
+comp.org.eff.news       News from the Electronic Frontier Foundation. (Moderated)
+comp.org.eff.talk       Discussion of EFF goals, strategies, etc.
+comp.org.fidonet        FidoNews digest, official news of FidoNet Assoc. (Moderated)
+comp.org.ieee           Issues and announcements about the IEEE & its members.
+comp.org.issnnet        The International Student Society for Neural Networks.
+comp.org.lisp-users     Association of Lisp Users related discussions.
+comp.org.sug            Talk about/for the The Sun User's Group.
+comp.org.team-os2       Users promoting the OS/2 operating system. (Moderated)
+comp.org.uniforum       UniForum Association activities.
+comp.org.usenix         USENIX Association events and announcements.
+comp.org.usenix.roomshare       Finding lodging during Usenix conferences.
+comp.org.user-groups.apcug      Association of Personal Computer User Groups.
+comp.org.user-groups.management Running a user group.
+comp.org.user-groups.meetings   Planning for user group meetings and events.
+comp.org.user-groups.misc       User group discussions in general.
+comp.org.user-groups.newsletters        User group newsletter Production.
+comp.os.chorus          CHORUS microkernel issues, research and developments.
+comp.os.coherent        Discussion and support of the Coherent operating system.
+comp.os.cpm             Discussion about the CP/M operating system.
+comp.os.geos            The GEOS operating system by GeoWorks for PC clones.
+comp.os.lantastic       The LANtastic network operating system.
+comp.os.linux.advocacy  Benefits of Linux compared to other operating systems.
+comp.os.linux.announce  Announcements important to the Linux community. (Moderated)
+comp.os.linux.answers   FAQs, How-To's, READMEs, etc. about Linux. (Moderated)
+comp.os.linux.development.apps  Writing Linux applications, porting to Linux.
+comp.os.linux.development.system        Linux kernels, device drivers, modules.
+comp.os.linux.hardware  Hardware compatibility with the Linux operating system.
+comp.os.linux.m68k      Linux operating system on 680x0 Amiga, Atari, VME.
+comp.os.linux.misc      Linux-specific topics not covered by other groups.
+comp.os.linux.networking        Networking and communications under Linux.
+comp.os.linux.setup     Linux installation and system administration.
+comp.os.linux.x         Linux X Window System servers, clients, libs and fonts.
+comp.os.lynx            Discussion of LynxOS and Lynx Real-Time Systems.
+comp.os.mach            The MACH OS from CMU & other places.
+comp.os.magic-cap       Everything about General Magic's Magic Cap OS.
+comp.os.minix           Discussion of Tanenbaum's MINIX system.
+comp.os.misc            General OS-oriented discussion not carried elsewhere.
+comp.os.ms-windows.advocacy     Speculation and debate about Microsoft Windows.
+comp.os.ms-windows.announce     Announcements relating to Windows. (Moderated)
+comp.os.ms-windows.apps.comm    MS-Windows communication applications.
+comp.os.ms-windows.apps.compatibility.win95     Running DOS&Win3 apps in Win95.
+comp.os.ms-windows.apps.financial       MS-Windows financial & tax software.
+comp.os.ms-windows.apps.misc    MS-Windows applications.
+comp.os.ms-windows.apps.utilities.win3x Utility/add-on programs for Win3.x.
+comp.os.ms-windows.apps.utilities.win95 Utility/add-on programs for Win95.
+comp.os.ms-windows.apps.winsock.mail    Winsock email applications.
+comp.os.ms-windows.apps.winsock.misc    Other Winsock applications.
+comp.os.ms-windows.apps.winsock.news    Winsock news applications.
+comp.os.ms-windows.apps.word-proc       MS-Windows word-processing applications.
+comp.os.ms-windows.misc General discussions about Windows issues.
+comp.os.ms-windows.networking.misc      Windows and other networks.
+comp.os.ms-windows.networking.ras       Windows RAS networking.
+comp.os.ms-windows.networking.tcp-ip    Windows and TCP/IP networking.
+comp.os.ms-windows.networking.win95     Win95 to Novell, TCP/IP, other nets.
+comp.os.ms-windows.networking.windows   Windows' built-in networking.
+comp.os.ms-windows.nt.admin.misc        Windows NT system administration.
+comp.os.ms-windows.nt.admin.networking  Windows NT network administration.
+comp.os.ms-windows.nt.admin.security    Windows NT Security topics.
+comp.os.ms-windows.nt.advocacy  Windows NT advocacy arguments.
+comp.os.ms-windows.nt.announce  Windows NT announcements. (Moderated)
+comp.os.ms-windows.nt.misc      General discussion about Windows NT.
+comp.os.ms-windows.nt.pre-release       Unreleased and beta Windows NT versions.
+comp.os.ms-windows.nt.setup.hardware    Windows NT hardware setup.
+comp.os.ms-windows.nt.setup.misc        Windows NT software setup.
+comp.os.ms-windows.nt.software.backoffice       Windows NT BackOffice.
+comp.os.ms-windows.nt.software.compatibility    Win NT software compatibility.
+comp.os.ms-windows.nt.software.services Windows NT system services software.
+comp.os.ms-windows.pre-release  Pre-release/beta versions of Windows.
+comp.os.ms-windows.programmer.controls  Controls, dialogs and VBXs.
+comp.os.ms-windows.programmer.graphics  GDI, graphics and printing.
+comp.os.ms-windows.programmer.memory    Memory management issues.
+comp.os.ms-windows.programmer.misc      Programming Microsoft Windows.
+comp.os.ms-windows.programmer.multimedia        Multimedia programming.
+comp.os.ms-windows.programmer.networks  Network programming.
+comp.os.ms-windows.programmer.nt.kernel-mode    Windows NT driver development.
+comp.os.ms-windows.programmer.ole       OLE2, COM and DDE programming.
+comp.os.ms-windows.programmer.tools.mfc MFC-based development for Windows.
+comp.os.ms-windows.programmer.tools.misc        Windows Development tools.
+comp.os.ms-windows.programmer.tools.owl OWL-based development for Windows.
+comp.os.ms-windows.programmer.tools.winsock     Winsock programming.
+comp.os.ms-windows.programmer.vxd       Windows VxD and driver development.
+comp.os.ms-windows.programmer.win32     32-bit Windows programming interfaces.
+comp.os.ms-windows.programmer.winhelp   WinHelp/Multimedia Viewer development.
+comp.os.ms-windows.setup.win3x  Setup, hardware, and driver issues in Win3.x.
+comp.os.ms-windows.setup.win95  Setup, hardware, and driver issues in Win95.
+comp.os.ms-windows.video        Video adapters and drivers for Windows.
+comp.os.ms-windows.win95.misc   Miscellaneous Topics about Windows 95.
+comp.os.ms-windows.win95.setup  Setup and Configuration of Windows 95.
+comp.os.msdos.apps      Discussion of applications that run under MS-DOS.
+comp.os.msdos.desqview  QuarterDeck's Desqview and related products.
+comp.os.msdos.djgpp     DOS GNU C/C++ applications and programming environment.
+comp.os.msdos.mail-news Administering mail & network news systems under MS-DOS.
+comp.os.msdos.misc      Miscellaneous topics about MS-DOS machines.
+comp.os.msdos.pcgeos    GeoWorks PC/GEOS and PC/GEOS-based packages.
+comp.os.msdos.programmer        Programming MS-DOS machines.
+comp.os.msdos.programmer.turbovision    Borland's text application libraries.
+comp.os.netware.announce        Netware announcements. (Moderated)
+comp.os.netware.connectivity    Connectivity products (TCP/IP, SAA, NFS, MAC).
+comp.os.netware.misc    General Netware topics.
+comp.os.netware.security        Netware Security issues.
+comp.os.os2.advocacy    Supporting and flaming OS/2.
+comp.os.os2.announce    Notable news and announcements related to OS/2. (Moderated)
+comp.os.os2.apps        Discussions of applications under OS/2.
+comp.os.os2.beta        All aspects of beta releases of OS/2 systems software.
+comp.os.os2.bugs        OS/2 system bug reports, fixes and work-arounds.
+comp.os.os2.comm        Modem/Fax hardware/drivers/apps/utils under OS/2.
+comp.os.os2.games       Running games under OS/2.
+comp.os.os2.mail-news   Mail and news apps/utils (on- & offline) under OS/2.
+comp.os.os2.marketplace Forsale/wanted; shopping; commercial ads; job postings.
+comp.os.os2.misc        Miscellaneous topics about the OS/2 system.
+comp.os.os2.moderated   OS/2 usage tips, info, discussion. (Moderated)
+comp.os.os2.multimedia  Multi-media on OS/2 systems.
+comp.os.os2.networking.misc     Miscellaneous networking issues of OS/2.
+comp.os.os2.networking.server   Administration of NetWare, Warp Server, etc.
+comp.os.os2.networking.tcp-ip   TCP/IP under OS/2.
+comp.os.os2.networking.www      World Wide Web (WWW) apps/utils under OS/2.
+comp.os.os2.programmer.misc     Programming OS/2 machines.
+comp.os.os2.programmer.oop      Programming system objects (SOM, WPS, etc).
+comp.os.os2.programmer.porting  Porting software to OS/2 machines.
+comp.os.os2.programmer.tools    Compilers, assemblers, interpreters under OS/2.
+comp.os.os2.scitech     Real-time, engineering/CAD, sciences, etc.
+comp.os.os2.setup.misc  Installing/configuring OS/2; misc. hardware/drivers.
+comp.os.os2.setup.storage       Disk/Tape/CD-ROM hardware/drivers under OS/2.
+comp.os.os2.setup.video Base video hardware/drivers under OS/2.
+comp.os.os2.utilities   General purpose utils (shells/backup/compression/etc).
+comp.os.os9             Discussions about the os9 operating system.
+comp.os.parix           Forum for users of the parallel operating system PARIX.
+comp.os.plan9           Plan 9 from Bell Labs. (Moderated)
+comp.os.qnx             Using and developing under the QNX operating system.
+comp.os.research        Operating systems and related areas. (Moderated)
+comp.os.vms             DEC's VAX* line of computers & VMS.
+comp.os.vxworks         The VxWorks real-time operating system.
+comp.os.xinu            The XINU operating system from Purdue (D. Comer).
+comp.parallel           Massively parallel hardware/software. (Moderated)
+comp.parallel.mpi       Message Passing Interface (MPI).
+comp.parallel.pvm       The PVM system of multi-computer parallelization.
+comp.patents            Discussing patents of computer technology. (Moderated)
+comp.periphs            Peripheral devices.
+comp.periphs.scsi       Discussion of SCSI-based peripheral devices.
+comp.programming        Programming issues that transcend languages and OSs.
+comp.programming.contests       Announcements & results of programming contests.
+comp.programming.literate       Knuth's "literate programming" method and tools.
+comp.programming.threads        All issues about multithreaded programming.
+comp.protocols.appletalk        Applebus hardware & software.
+comp.protocols.dicom    Digital Imaging and Communications in Medicine.
+comp.protocols.dns.bind Berkeley Internet Name Domain (BIND). (Moderated)
+comp.protocols.dns.ops  DNS operations (where not BIND specific). (Moderated)
+comp.protocols.dns.std  DNS standards activities, including IETF. (Moderated)
+comp.protocols.ibm      Networking with IBM mainframes.
+comp.protocols.iso      The ISO protocol stack.
+comp.protocols.kerberos The Kerberos authentication server.
+comp.protocols.kermit.announce  Kermit announcements. (Moderated)
+comp.protocols.kermit.misc      Kermit protocol and software.
+comp.protocols.misc     Various forms and types of protocol.
+comp.protocols.nfs      Discussion about the Network File System protocol.
+comp.protocols.ppp      Discussion of the Internet Point to Point Protocol.
+comp.protocols.smb      SMB file sharing protocol and Samba SMB server/client.
+comp.protocols.tcp-ip   TCP and IP network protocols.
+comp.protocols.tcp-ip.ibmpc     TCP/IP for IBM(-like) personal computers.
+comp.publish.cdrom.hardware     Hardware used in publishing with CD-ROM.
+comp.publish.cdrom.multimedia   Software for multimedia authoring & publishing.
+comp.publish.cdrom.software     Software used in publishing with CD-ROM.
+comp.publish.electronic.developer       Electronic publishing developer tools.
+comp.publish.electronic.end-user        Electronic publishing end-user tools.
+comp.publish.electronic.misc    General electronic publishing issues.
+comp.publish.prepress   Electronic prepress.
+comp.realtime           Issues related to real-time computing.
+comp.research.japan     The nature of research in Japan. (Moderated)
+comp.risks              Risks to the public from computers & users. (Moderated)
+comp.robotics.misc      All aspects of robots and their applications.
+comp.robotics.research  Academic, government & industry research in robotics. (Moderated)
+comp.security.firewalls Anything pertaining to network firewall security.
+comp.security.gss-api   Generic Security Service Application Program Interface.
+comp.security.misc      Security issues of computers and networks.
+comp.security.pgp.announce      New PGP versions, utils and such. (Moderated)
+comp.security.pgp.discuss       PGP and its implications.
+comp.security.pgp.resources     PGP related resources, information and more.
+comp.security.pgp.tech  Use of PGP, bug reports and help.
+comp.security.ssh       SSH secure remote login and tunneling tools.
+comp.security.unix      Discussion of Unix security.
+comp.simulation         Simulation methods, problems, uses. (Moderated)
+comp.society            The impact of technology on society. (Moderated)
+comp.society.cu-digest  The Computer Underground Digest. (Moderated)
+comp.society.development        Computer technology in developing countries.
+comp.society.folklore   Computer folklore & culture, past & present. (Moderated)
+comp.society.futures    Events in technology affecting future computing.
+comp.society.privacy    Effects of technology on privacy. (Moderated)
+comp.soft-sys.app-builder.appware       Novell's visual development environment.
+comp.soft-sys.app-builder.forte Discussion of Forte development software.
+comp.soft-sys.app-builder.uniface       Uniface Client/Server App Development.
+comp.soft-sys.dce       The Distributed Computing Environment (DCE).
+comp.soft-sys.khoros    The Khoros X11 visualization system.
+comp.soft-sys.math.mathematica  Mathematica discussion group. (Moderated)
+comp.soft-sys.matlab    The MathWorks calculation and visualization package.
+comp.soft-sys.middleware.opendoc        OpenDoc and its related technologies.
+comp.soft-sys.powerbuilder      Application development tools from PowerSoft.
+comp.soft-sys.ptolemy   The Ptolemy simulation/code generation environment.
+comp.soft-sys.sas       The SAS statistics package.
+comp.soft-sys.shazam    The SHAZAM econometrics computer program.
+comp.soft-sys.stat.spss The statistical program package SPSS.
+comp.soft-sys.stat.systat       The statistical program package SYSTAT.
+comp.software-eng       Software Engineering and related topics.
+comp.software.config-mgmt       Configuration management, tools and procedures.
+comp.software.international     Finding, using, & writing non-English software.
+comp.software.licensing Software licensing technology.
+comp.software.measurement       Discussions of software metrics.
+comp.software.testing   All aspects of testing computer systems.
+comp.software.year-2000 Year 2000 compliance: projects and issues.
+comp.sources.acorn      Source code-only postings for the Acorn. (Moderated)
+comp.sources.amiga      Source code-only postings for the Amiga. (Moderated)
+comp.sources.apple2     Source code and discussion for the Apple2. (Moderated)
+comp.sources.bugs       Bug reports, fixes, discussion for posted sources.
+comp.sources.d          For any discussion of source postings.
+comp.sources.delphi     Delphi and ObjectPascal source code. (Moderated)
+comp.sources.games      Postings of recreational software. (Moderated)
+comp.sources.games.bugs Bug reports and fixes for posted game software.
+comp.sources.hp48       Programs for the HP48 and HP28 calculators. (Moderated)
+comp.sources.mac        Software for the Apple Macintosh. (Moderated)
+comp.sources.misc       Posting of software. (Moderated)
+comp.sources.postscript Source code for programs written in PostScript. (Moderated)
+comp.sources.reviewed   Source code evaluated by peer review. (Moderated)
+comp.sources.sun        Software for Sun workstations. (Moderated)
+comp.sources.testers    Finding people to test software.
+comp.sources.unix       Postings of complete, UNIX-oriented sources. (Moderated)
+comp.sources.wanted     Requests for software and fixes.
+comp.sources.x          Software for the X Window System. (Moderated)
+comp.specification.larch        Larch family of formal specification languages.
+comp.specification.misc Formal specification methods in general.
+comp.specification.z    Discussion about the formal specification notation Z.
+comp.speech             Research & applications in speech science & technology.
+comp.std.c              Discussion about C language standards.
+comp.std.c++            Discussion about C++ language, library, standards. (Moderated)
+comp.std.internat       Discussion about international standards.
+comp.std.lisp           User group (ALU) supported standards. (Moderated)
+comp.std.misc           Discussion about various standards.
+comp.std.unix           Discussion for the P1003 committee on UNIX. (Moderated)
+comp.std.wireless       Examining standards for wireless network technology. (Moderated)
+comp.sw.components      Software components and related technology.
+comp.sys.3b1            Discussion and support of AT&T 7300/3B1/UnixPC.
+comp.sys.acorn.advocacy Why Acorn computers and programs are better.
+comp.sys.acorn.announce Announcements for Acorn and ARM users. (Moderated)
+comp.sys.acorn.apps     Acorn software applications.
+comp.sys.acorn.extra-cpu        Extra CPUs in Acorn computers.
+comp.sys.acorn.games    Discussion of games for Acorn machines.
+comp.sys.acorn.hardware Acorn hardware.
+comp.sys.acorn.misc     Acorn computing in general.
+comp.sys.acorn.networking       Networking of Acorn computers.
+comp.sys.acorn.programmer       Programming of Acorn computers.
+comp.sys.alliant        Info and discussion about Alliant computers.
+comp.sys.amiga.advocacy Why an Amiga is better than XYZ.
+comp.sys.amiga.announce Announcements about the Amiga. (Moderated)
+comp.sys.amiga.applications     Miscellaneous applications.
+comp.sys.amiga.audio    Music, MIDI, speech synthesis, other sounds.
+comp.sys.amiga.cd32     Technical and computing talk for Commodore Amiga CD32.
+comp.sys.amiga.datacomm Methods of getting bytes in and out.
+comp.sys.amiga.emulations       Various hardware & software emulators.
+comp.sys.amiga.games    Discussion of games for the Commodore Amiga.
+comp.sys.amiga.graphics Charts, graphs, pictures, etc.
+comp.sys.amiga.hardware Amiga computer hardware, Q&A, reviews, etc.
+comp.sys.amiga.introduction     Group for newcomers to Amigas.
+comp.sys.amiga.marketplace      Where to find it, prices, etc.
+comp.sys.amiga.misc     Discussions not falling in another Amiga group.
+comp.sys.amiga.multimedia       Animations, video, & multimedia.
+comp.sys.amiga.networking       Amiga networking software/hardware.
+comp.sys.amiga.programmer       Developers & hobbyists discuss code.
+comp.sys.amiga.reviews  Reviews of Amiga software, hardware. (Moderated)
+comp.sys.amiga.uucp     Amiga UUCP packages.
+comp.sys.amstrad.8bit   Amstrad CPC/PcW/GX4000 software/hardware.
+comp.sys.apollo         Apollo computer systems.
+comp.sys.apple2         Discussion about Apple II micros.
+comp.sys.apple2.comm    Apple II data communications.
+comp.sys.apple2.gno     The AppleIIgs GNO multitasking environment.
+comp.sys.apple2.marketplace     Buying, selling and trading Apple II equipment.
+comp.sys.apple2.programmer      Programming on the Apple II.
+comp.sys.apple2.usergroups      All about Apple II user groups.
+comp.sys.arm            The ARM processor architecture and support chips.
+comp.sys.atari.8bit     Discussion about 8 bit Atari micros.
+comp.sys.atari.advocacy Attacking and defending Atari computers.
+comp.sys.atari.announce Atari related hard/software announcements. (Moderated)
+comp.sys.atari.programmer       Programming on the Atari computer.
+comp.sys.atari.st       Discussion about 16 bit Atari micros.
+comp.sys.atari.st.tech  Technical discussions of Atari ST hard/software.
+comp.sys.att            Discussions about AT&T microcomputers.
+comp.sys.be             General topics related to BeBox computer.
+comp.sys.cbm            Discussion about Commodore micros.
+comp.sys.concurrent     The Concurrent/Masscomp line of computers. (Moderated)
+comp.sys.convex         Convex computer systems hardware and software.
+comp.sys.dec            Discussions about DEC computer systems.
+comp.sys.dec.micro      DEC Micros (Rainbow, Professional 350/380).
+comp.sys.encore         Encore's MultiMax computers.
+comp.sys.harris         Harris computer systems, especially real-time systems.
+comp.sys.hp.apps        Discussion of software and apps on all HP platforms.
+comp.sys.hp.hardware    Discussion of Hewlett Packard system hardware.
+comp.sys.hp.hpux        Issues pertaining to HP-UX & 9000 series computers.
+comp.sys.hp.misc        Issues not covered in any other comp.sys.hp.* group.
+comp.sys.hp.mpe         Issues pertaining to MPE & 3000 series computers.
+comp.sys.hp48           Hewlett-Packard's HP48 and HP28 calculators.
+comp.sys.ibm.as400.misc IBM AS/400 miscellaneous topics.
+comp.sys.ibm.pc.demos   Demonstration programs which showcase programmer skill.
+comp.sys.ibm.pc.digest  The IBM PC, PC-XT, and PC-AT. (Moderated)
+comp.sys.ibm.pc.games.action    Arcade-style games on PCs.
+comp.sys.ibm.pc.games.adventure Adventure (non-rpg) games on PCs.
+comp.sys.ibm.pc.games.announce  Announcements for all PC gamers. (Moderated)
+comp.sys.ibm.pc.games.flight-sim        Flight simulators on PCs.
+comp.sys.ibm.pc.games.marketplace       PC clone games wanted and for sale.
+comp.sys.ibm.pc.games.misc      Games not covered by other PC groups.
+comp.sys.ibm.pc.games.naval     PC computer games devoted to naval warfare.
+comp.sys.ibm.pc.games.rpg       Role-playing games on the PC.
+comp.sys.ibm.pc.games.sports    Discussion of sports games for the IBM PC.
+comp.sys.ibm.pc.games.strategic Strategy/planning games on PCs.
+comp.sys.ibm.pc.hardware.cd-rom CD-ROM drives and interfaces for the PC.
+comp.sys.ibm.pc.hardware.chips  Processor, cache, memory chips, etc.
+comp.sys.ibm.pc.hardware.comm   Modems & communication cards for the PC.
+comp.sys.ibm.pc.hardware.misc   Miscellaneous PC hardware topics.
+comp.sys.ibm.pc.hardware.networking     Network hardware & equipment for the PC.
+comp.sys.ibm.pc.hardware.storage        Hard drives & other PC storage devices.
+comp.sys.ibm.pc.hardware.systems        Whole IBM PC computer & clone systems.
+comp.sys.ibm.pc.hardware.video  Video cards & monitors for the PC.
+comp.sys.ibm.pc.misc    Discussion about IBM personal computers.
+comp.sys.ibm.pc.rt      Topics related to IBM's RT computer.
+comp.sys.ibm.pc.soundcard.advocacy      Advocacy for a particular soundcard.
+comp.sys.ibm.pc.soundcard.games Questions about using soundcards with games.
+comp.sys.ibm.pc.soundcard.misc  Soundcards in general.
+comp.sys.ibm.pc.soundcard.music Music and sound questions using soundcards.
+comp.sys.ibm.pc.soundcard.tech  Technical questions about pc soundcards.
+comp.sys.ibm.ps2.hardware       Microchannel hardware, any vendor.
+comp.sys.ibm.sys3x.misc IBM System/34, System/36, System/38 diverse topics.
+comp.sys.intel          Discussions about Intel systems and parts.
+comp.sys.intergraph     Intergraph hardware and software products.
+comp.sys.isis           The ISIS distributed system from Cornell.
+comp.sys.laptops        Laptop (portable) computers.
+comp.sys.m6809          Discussion about 6809's.
+comp.sys.m68k           Discussion about 68k's.
+comp.sys.m68k.pc        Discussion about 68k-based PCs. (Moderated)
+comp.sys.m88k           Discussion about 88k-based computers.
+comp.sys.mac.advocacy   The Macintosh computer family compared to others.
+comp.sys.mac.announce   Important notices for Macintosh users. (Moderated)
+comp.sys.mac.apps       Discussions of Macintosh applications.
+comp.sys.mac.comm       Discussion of Macintosh communications.
+comp.sys.mac.databases  Database systems for the Apple Macintosh.
+comp.sys.mac.digest     Apple Macintosh: info&uses, but no programs. (Moderated)
+comp.sys.mac.games.action       Action games for the Macintosh.
+comp.sys.mac.games.adventure    Adventure games for the Macintosh.
+comp.sys.mac.games.announce     Announcements for Mac gamers. (Moderated)
+comp.sys.mac.games.flight-sim   Flight simulator gameplay on the Mac.
+comp.sys.mac.games.marketplace  Macintosh games for sale and trade.
+comp.sys.mac.games.misc Macintosh games not covered in other groups.
+comp.sys.mac.games.strategic    Strategy/planning games on the Macintosh.
+comp.sys.mac.graphics   Macintosh graphics: paint, draw, 3D, CAD, animation.
+comp.sys.mac.hardware.misc      General Mac hardware topics not already covered.
+comp.sys.mac.hardware.storage   All forms of Mac storage hardware and media.
+comp.sys.mac.hardware.video     Video input and output hardware on the Mac.
+comp.sys.mac.hypercard  The Macintosh Hypercard: info & uses.
+comp.sys.mac.misc       General discussions about the Apple Macintosh.
+comp.sys.mac.oop.macapp3        Version 3 of the MacApp object oriented system.
+comp.sys.mac.oop.misc   Object oriented programming issues on the Mac.
+comp.sys.mac.oop.powerplant     Metrowerks' PowerPlant (CodeWarrior) Framework.
+comp.sys.mac.oop.tcl    Symantec's THINK Class Library for object programming.
+comp.sys.mac.portables  Discussion particular to laptop Macintoshes.
+comp.sys.mac.printing   All about printing hardware and software on the Mac.
+comp.sys.mac.programmer.codewarrior     Macintosh programming using CodeWarrior.
+comp.sys.mac.programmer.games   Macintosh game programming.
+comp.sys.mac.programmer.help    Help with Macintosh programming.
+comp.sys.mac.programmer.info    Frequently requested information. (Moderated)
+comp.sys.mac.programmer.misc    Other issues of Macintosh programming.
+comp.sys.mac.programmer.tools   Macintosh programming tools.
+comp.sys.mac.scitech    Using the Macintosh in scientific & technological work.
+comp.sys.mac.system     Discussions of Macintosh system software.
+comp.sys.mac.wanted     Postings of "I want XYZ for my Mac."
+comp.sys.mentor         Mentor Graphics products & the Silicon Compiler System.
+comp.sys.mips           Systems based on MIPS chips.
+comp.sys.misc           Discussion about computers of all kinds.
+comp.sys.msx            The MSX home computer system.
+comp.sys.ncr            Discussion about NCR computers.
+comp.sys.newton.announce        Newton information posts. (Moderated)
+comp.sys.newton.misc    Miscellaneous discussion about Newton systems.
+comp.sys.newton.programmer      Discussion of Newton software development.
+comp.sys.next.advocacy  The NeXT religion.
+comp.sys.next.announce  Announcements related to the NeXT computer system. (Moderated)
+comp.sys.next.bugs      Discussion and solutions for known NeXT bugs.
+comp.sys.next.hardware  Discussing the physical aspects of NeXT computers.
+comp.sys.next.marketplace       NeXT hardware, software and jobs.
+comp.sys.next.misc      General discussion about the NeXT computer system.
+comp.sys.next.programmer        NeXT related programming issues.
+comp.sys.next.software  Function, use and availability of NeXT programs.
+comp.sys.next.sysadmin  Discussions related to NeXT system administration.
+comp.sys.nsc.32k        National Semiconductor 32000 series chips.
+comp.sys.oric           Oric computers (Oric1, Atmos, Telestrat, et cetera).
+comp.sys.palmtops       Super-powered calculators in the palm of your hand.
+comp.sys.pen            Interacting with computers through pen gestures.
+comp.sys.powerpc.advocacy       Why the PowerPC is Good/Evil (delete one).
+comp.sys.powerpc.misc   Miscellaneous questions about PowerPC processors.
+comp.sys.powerpc.tech   Programming and architecture of PowerPC processors.
+comp.sys.prime          Prime Computer products.
+comp.sys.proteon        Proteon gateway products.
+comp.sys.psion.announce Announcements of Psion related products. (Moderated)
+comp.sys.psion.apps     Discussion about Psion specific programs.
+comp.sys.psion.marketplace      Buy and sell Psion computers and accessories.
+comp.sys.psion.misc     Discussion about miscellaneous Psion related topics.
+comp.sys.psion.programmer       Discussion about Psion programming.
+comp.sys.psion.reviews  Reviews about anything related to Psion computers. (Moderated)
+comp.sys.pyramid        Pyramid 90x computers.
+comp.sys.ridge          Ridge 32 computers and ROS.
+comp.sys.sequent        Sequent systems, (Balance and Symmetry).
+comp.sys.sgi.admin      System administration on Silicon Graphics's Irises.
+comp.sys.sgi.announce   Announcements for the SGI community. (Moderated)
+comp.sys.sgi.apps       Applications which run on the Iris.
+comp.sys.sgi.audio      Audio on SGI systems.
+comp.sys.sgi.bugs       Bugs found in the IRIX operating system.
+comp.sys.sgi.graphics   Graphics packages and issues on SGI machines.
+comp.sys.sgi.hardware   Base systems and peripherals for Iris computers.
+comp.sys.sgi.marketplace        SGI-specific for sale, wanted and jobs.
+comp.sys.sgi.misc       General discussion about Silicon Graphics's machines.
+comp.sys.sinclair       Sinclair computers, eg. the ZX81, Spectrum and QL.
+comp.sys.stratus        Stratus products, incl. System/88, CPS-32, VOS and FTX.
+comp.sys.sun.admin      Sun system administration issues and questions.
+comp.sys.sun.announce   Sun announcements and Sunergy mailings. (Moderated)
+comp.sys.sun.apps       Software applications for Sun computer systems.
+comp.sys.sun.hardware   Sun Microsystems hardware.
+comp.sys.sun.misc       Miscellaneous discussions about Sun products.
+comp.sys.sun.wanted     People looking for Sun products and support.
+comp.sys.tahoe          CCI 6/32, Harris HCX/7, & Sperry 7000 computers.
+comp.sys.tandy          Discussion about Tandy computers: new & old.
+comp.sys.ti             Discussion about Texas Instruments.
+comp.sys.transputer     The Transputer computer and OCCAM language.
+comp.sys.unisys         Sperry, Burroughs, Convergent and Unisys* systems.
+comp.sys.xerox          Xerox 1100 workstations and protocols.
+comp.sys.zenith.z100    The Zenith Z-100 (Heath H-100) family of computers.
+comp.terminals          All sorts of terminals.
+comp.text               Text processing issues and methods.
+comp.text.desktop       Technology & techniques of desktop publishing.
+comp.text.frame         Desktop publishing with FrameMaker.
+comp.text.interleaf     Applications and use of Interleaf software.
+comp.text.pdf           Adobe Acrobat and Portable Document Format technology.
+comp.text.sgml          ISO 8879 SGML, structured documents, markup languages.
+comp.text.tex           Discussion about the TeX and LaTeX systems & macros.
+comp.theory.info-retrieval      Information Retrieval topics. (Moderated)
+comp.unix.admin         Administering a Unix-based system.
+comp.unix.advocacy      Arguments for and against Unix and Unix versions.
+comp.unix.aix           IBM's version of UNIX.
+comp.unix.amiga         Minix, SYSV4 and other *nix on an Amiga.
+comp.unix.aux           The version of UNIX for Apple Macintosh II computers.
+comp.unix.bsd.386bsd.announce   Announcements pertaining to 386BSD. (Moderated)
+comp.unix.bsd.386bsd.misc       386BSD operating system.
+comp.unix.bsd.bsdi.announce     Announcements pertaining to BSD/OS. (Moderated)
+comp.unix.bsd.bsdi.misc BSD/OS operating system.
+comp.unix.bsd.freebsd.announce  Announcements pertaining to FreeBSD. (Moderated)
+comp.unix.bsd.freebsd.misc      FreeBSD operating system.
+comp.unix.bsd.misc      BSD operating systems.
+comp.unix.bsd.netbsd.announce   Announcements pertaining to NetBSD. (Moderated)
+comp.unix.bsd.netbsd.misc       NetBSD operating system.
+comp.unix.cde           The Common Desktop Environment.
+comp.unix.dos-under-unix        MS-DOS running under UNIX by whatever means.
+comp.unix.internals     Discussions on hacking UNIX internals.
+comp.unix.large         UNIX on mainframes and in large networks.
+comp.unix.machten       The MachTen operating system and related issues.
+comp.unix.misc          Various topics that don't fit other groups.
+comp.unix.osf.misc      Various aspects of Open Software Foundation products.
+comp.unix.osf.osf1      The Open Software Foundation's OSF/1.
+comp.unix.pc-clone.16bit        UNIX on 286 architectures.
+comp.unix.pc-clone.32bit        UNIX on 386 and 486 architectures.
+comp.unix.programmer    Q&A for people programming under Unix.
+comp.unix.questions     UNIX neophytes group.
+comp.unix.sco.announce  SCO and related product announcements. (Moderated)
+comp.unix.sco.misc      SCO Unix, Systems, and Environments.
+comp.unix.sco.programmer        Programming in and for SCO Environments.
+comp.unix.shell         Using and programming the Unix shell.
+comp.unix.sys3          System III UNIX discussions.
+comp.unix.sys5.misc     Versions of System V which predate Release 3.
+comp.unix.sys5.r3       Discussing System V Release 3.
+comp.unix.sys5.r4       Discussing System V Release 4.
+comp.unix.ultrix        Discussions about DEC's Ultrix.
+comp.unix.unixware.announce     Announcements related to UnixWare. (Moderated)
+comp.unix.unixware.misc Products of Novell's Unix Systems Group.
+comp.unix.user-friendly Discussion of UNIX user-friendliness.
+comp.unix.wizards       For only true Unix wizards. (Moderated)
+comp.unix.xenix.misc    General discussions regarding XENIX (except SCO).
+comp.unix.xenix.sco     XENIX versions from the Santa Cruz Operation.
+comp.virus              Computer viruses & security. (Moderated)
+comp.windows.garnet     The Garnet user interface development environment.
+comp.windows.interviews The InterViews object-oriented windowing system.
+comp.windows.misc       Various issues about windowing systems.
+comp.windows.news       The Network extensible Windowing System. (Moderated)
+comp.windows.open-look  Discussion about the Open Look GUI.
+comp.windows.suit       The SUIT user-interface toolkit.
+comp.windows.ui-builders.teleuse        Using/augmenting the TeleUSE UI Builder.
+comp.windows.ui-builders.uimx   Using and augmenting the UIM/X UI Builder.
+comp.windows.x          Discussion about the X Window System.
+comp.windows.x.announce X Window System announcements. (Moderated)
+comp.windows.x.apps     Getting and using, not programming, applications for X.
+comp.windows.x.i386unix The XFree86 window system and others.
+comp.windows.x.intrinsics       Discussion of the X toolkit.
+
+humanities.answers      Repository for periodic USENET articles. (Moderated)
+humanities.classics     Discussion of ancient Greece and Rome.
+humanities.design.misc  Theory, practice, history & aesthetic issues in design.
+humanities.language.sanskrit    The Sanskrit language and related topics.
+humanities.lit.authors.shakespeare      Poetry, plays, history of Shakespeare.
+humanities.misc         General topics in the arts & humanities.
+humanities.music.composers.wagner       The life and works of Richard Wagner.
+humanities.philosophy.objectivism       The ideas of Ayn Rand. (Moderated)
+
+
+

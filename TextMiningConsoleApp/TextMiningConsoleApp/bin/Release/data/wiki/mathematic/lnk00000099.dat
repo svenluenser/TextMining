@@ -1,0 +1,391 @@
+THE_URL:http://web.textfiles.com/computers/code.crunch
+THE_TITLE:code.crunch
+
+.............................................................................
+                        Code Cruncher (V1.0) Docs
+                         by Castellan  (4/22/88)
+.............................................................................
+
+This program allows you to get codes for Long distance services like MCI and
+Sprint.  I tried to keep the working of the program the free and loose to allow
+compatability with almost any service.  The program can also be used as a War
+Dialer which searches the local area for modems.  Simply leave the +, # and .'s
+out of the dialing string.  Example:  ATDT 775-xxxx.  With slight modifications
+the program can be used for many other applications along the same lines.
+
+First I'll give a basic rundown of the options from the main and modem menus,
+then I'll go into detail about the structure of the code and modifying it.
+There are a few general notes I'd like to mention before I get to the menu
+options:
+
+[Dialing String]
+
+The dialing string uses 4 symbols to represent different things.  They are:
+
++   - This is the long distance port (or extender).
+#   - This is the target (or number to be called).
+.   - This is used for a delay and automatically converted to a (,).  I did
+      this because of Applesoft's inability to except (,) in input
+      statements.
+x   - (Or X) This is replaced by a random number from 0 to 9 when dialing.
+
+Sample dialing string: ATDT+...1xxxx.# In the actual dialing string, this might
+produce something like:
+
+ATDT7430631,,,13825,2037979075
+    -------   ----- ----------
+    LD port   Code    Target
+
+The + is replaced by a port from the list you entered with the E command.  The #
+is replaced by a target randomly chosen from another list.  All (.)'s are
+replaced with (,) and a random number (0 to 9) is chosen for each x.
+
+[Defaults]
+
+Most of the defaults for the program are located around lines 100 to 200.  The
+one that everyone should change is the default for the filename of the setup
+file.  The original program has it set to CC.SETUP.  I would suggest using
+CC.<LD company name>.  Find the line that contains: <line number> FSETUP$ =
+"<filename>"and change the name in quotes ("") to the name you wish to use.  If
+you do not do this you will have to enter it every time you use the program or
+leave it as the current default.  All other defaults can be changed in the same
+way, but it should not be necessary because you can load in your own setup with
+the L command.
+
+[Status & Ctrl-C]
+
+The status indicator located on the fourth or fifth line to the right changeswh
+enever you enter a command from the main menu.  If you are not sure where you
+are look at the status line.  To return to the main menu from anywhere you
+canenter Ctrl-C (sometimes it may be neccessary to enter a return after Ctrl-C),
+but I would not suggest using this command if you don't have to.  The only place
+it is really neccesary is from the B command to stop dialing.
+
+[Main Menu Options]
+
+Most of the commands are self explanatory, but others need further explanation.
+So I have included a complete list of commands in the order they appear in the
+main menu except for the B and P commands which are last.
+
+  U = Update default dialing string: Used to change the dialing string which
+appears in the top line on the left.  See dialing string above for more
+information.
+
+  W = Write current setup to disk: This saves the current setup under the the
+name specified on the second line to the left.  All information will be saved
+including: prefix, area code, phone numbers, etc.
+
+  E = Enter phone numbers: Allows you to enter as many LD ports and targets as
+you want.   Be carful enetering the information as there is little error
+checking in this routine.  Just follow the prompts and you should have no
+trouble.  Be sure to use the W command to write the setup to disk and avoid
+having to retype the numbers with each run.  When entering the targets if you
+enter a number that is exactly 7 digits long, the default area code will be
+added to the begining of it.  If you do not want the area code added on you have
+several options: alter the program, use a Word processor to alter the setup
+file, or add a 0 onto the end of the number (It shouldn't effect anything).  I
+think the second choice is by far the easiest.
+
+  V = View Instructions: Simply tells you to read this file.  Some time I may
+add some quick instructions, which is why I put it in, in the first place.
+
+  L = Load setup: Loads the setup from disk.  Loads the filename specified on
+the second line to the left.
+
+  C = Catalog prefix: Catalogs the current prefix.  Use Ctrl-S to stop/start the
+scrolling.
+
+  F = File names: Used to change the filenames for the codes and setup.  Has
+minimal error checking: The first letter must be an alphabetic capital letter
+(therfore returns and spaces will not be excepted), allowing ASCII values 65 (A)
+through 90 (Z).
+
+  I = Display codes: Uses the filename on the second line to the right.  And
+displays this files contents.  Normally this file would contain codes, but it
+can contain anything.  Use Ctrl-S to stop/start the scrolling and be able to see
+the information.
+
+  A = Area code: Lets you change the default area code (See the E command).
+This routine will only except a 3 digit numerical entry whose first digit is not
+a 0 (all part of the error checking).
+
+  S = Set prefix: This will be the prodos pathname used to save or load
+anything.  The current prefix will be displayed on the first line to the right.
+
+  D = Dos command: Allows you to enter any dos command and executes it.  You can
+use it to delete code files once you have copied down the information to paper.
+If you don't delete the file each time the program finds another code it will
+append it on to the end of the file.  Type: D Delete <Code file-name>.
+
+Q = Quit: This exits the program, clears the screen, and returns the borders to
+normal.  You will be in ProDOS Applesoft basic with this program in memory.
+
+P = Preferences for modem: A sub menu that allows you to change certain modem
+parameters.
+
+M = Modem delay: The amount of time the modem should wait to detect a carrier
+before hanging up.
+
+S = Speaker (on/off): Allows you to turn the modems speaker on or off.
+
+D = Direct command to modem: This allows you to enter one command that will be
+issued to the modem when you begin dialing.
+
+B = Begin Dialing: You will be asked one question before the modem starts
+dialing - How many codes to try?  Enter a number and press return.  Press return
+all by itself to cancel. After this command the screen will display several
+stats: Codes Tried, Codes to try, Codes Found, Dialing status, and dialing
+string.
+
+Dialing status can be one of four things: Organizing (appears once when commands
+are sent to modem before each dialing sesion), Dialing (Sending the dialing
+string to the modem), Waiting (waiting for a connect), or Saving (The program
+has found a code and is saving it). Dialing string is the actual string sent to
+the modem.
+
+Ok, with those explanations you should have no problem using the program. Happy
+code hunting.
+
+[Modifying the program]
+
+I started using lots of REMs to make it easier to modify, but got tired of that
+quickly.
+
+After credits and basic screen setup in lines 5 to 100, there is a section for
+variable declarations lines 106 to 189.  Add any new variables here, and alter
+any defaults that appear.  Don't mess with the variables that you're not
+familiar with like the flags.
+
+Then we have some introductory notes at 200 to 280.  If you make any changes to
+the program you can note them here to supplement these docs.  Next comes the
+main menu (300-355) and statements to get your input.  Line 360 sends the input
+to a subroutine that uppercases it.  So if you add something that gets a single
+letter command assign it to I$ and gosub 5500 to uppercase it.
+
+Lines 380 to 899 are for a list of If statements that gosub some where for each
+command entered.  Look here to see where a particular command from the main menu
+will take you.
+
+Lines 1000 to 5000 are used to update the top of screen stats.  There is a gosub
+1000 at the end of any subroutine that might change these stats.
+
+At 10000 to 29900 is the core of the program.  This does the dialing and will be
+the biggest cause of compatibility problems between modems.  The original
+program was written on an Apple //c with 2400 baud Mercury modem.  Theoretically
+it should be compatible with any modem that uses the Hayes command set, but all
+modems have their slight differences, incompatibilities, and bugs.  I'll get
+back to this later.
+
+The preferences menu and routines are at 48000 through 49980.
+
+At 50000 we have the hit a key routine that simply prints "Hit a key" on the
+bottom line and waits for you to comply, then erases the message and homes the
+screen.
+
+55000 is branched to from the onerr in line 5, also note that line 7's poke
+cancels the onerr and was used for debugging.  When I was finished with it I
+placed a rem in front of the poke.  In line 55100 A = peek (222) returns a code
+for the error that occured, the lines after that check this code and act
+accordingly. The last statement of this routine returns you to the main menu
+(goto 300).
+
+The program ends at line 60000.
+
+Unless I missed any, all the peeks and pokes are followed by a Rem statement
+explaining its purpose.  Peeks 78 and 79 are used in generating a random number.
+
+There are many variables used in the program, and I'm going to list all the ones
+I can remember that are important and not obvious.
+
+
+CT = Codes tried
+
+CF = Code Found
+
+DS$ = Dialing status
+
+ST$ = Program status
+
+DE = Modem delay
+
+SP$ = Speaker staus (on/off)
+
+DC$ = Direct command? (Yes or no)
+
+If yes, DC$(2) = the command
+
+DI$ = Dialing string (the one displayed on the top line)
+
+NP = Number of LD ports
+
+NT = Number of targets
+
+DI$(2) = Backup dialing string (DI$), used in the update dialing string routine
+
+SC$ = Backup Prefix (PX$), used in the Set prefix routine
+
+Array [ NP$(1..NP) ] = The phone number for each port
+
+Array [ NT$(1..NT) ] = The phone number for each target
+
+NC = Number of codes to try
+
+RT = Random number used to randomly select a target
+
+PO$ = The port that will be used in the next dialing
+
+TA$ = The target that will be used in the next dialing
+
+DI$(3) = The dialing string that will be sent to the modem
+
+V = Used to produce about a 1 second delay allowing the phone line enough time
+to hang up.  You may want to increase or decrease the number used in this loop
+depending on your system.  Lines 10267, and 29175-29189.
+
+CN = Connect (1=yes,0=no)
+
+Z = Also used to produce a 1 second delay.  Lines 12010 and 12015
+
+DI = Length of DI$
+
+Array [ A$(1 to DI) ] = Each charcater in the dialing string (DI$)
+
+CN$ = Input from the modem
+
+A = The error code used in the Onerr routine
+
+That's most of them.  Next a breakdown of the different steps of the dialing
+procedure.
+
+The dialing procedure lives at lines 10000 - 29900.  There are several flags in
+the procedure that control when certain things are done (some sections of the
+program are only executed once and the flags make sure this happens).  The flags
+are numbered 1 through 10 [Flag(1) to Flag(10)], but not all the flags exist
+(for example there is no Flag(7) but there is a Flag(4)).  I'm not going to list
+the different flag functions because I don't remember what they're all used for
+and some are not be used at all (Yes, I know, very sloppy programing).
+
+You are given one prompt, "Enter the number of codes to try: ".  The number you
+enter is assigned to NC.  Then we gosub to 29000 which sets up the screen and
+sends a few commands to the modem.
+
+In this procedure we print some information to the screen, and send the
+following to the modem:
+
+ATE0     Tells the modem not to echo commands.  This is needed by my modem,
+other modems may dial without it.  This command can sometimes mess up the first
+dialing of that session.
+
+ATM0     Turns the modem's speaker off if SP$ = "OFF".  If you want to change
+the speakers status after you have begun dialing once, you will have to quit
+(the Q command), turn off the modem and restart the program (RUN).
+
+ATS7=DE  DE is a variable that holds the modems delay.  This command sets that
+delay.
+
+DC$(2)   This is the direct command if there is one.
+
+Next we return from the subroutine and begin a loop (this controls everything
+else in this routine).  The loop increments CT (See the variable list), finds
+PO$ and TA$, and resets DI$(3) to "".  Next we have a delay to allow the program
+to hang up from the last dialing, then we gosub 21000 which does the dialing
+using PO$ and TA$.  This routine gets CN$ (usually CONNECT or NO CARRIER) and
+sets CN to 1 if CN$ = CONNECT, then it returns CN to the loop.  After that the
+program checks two things: is CT > = NC (meaning the routine has reached the
+Number of codes to try and should stop), and is CN = 1 (a CONNECT). If CN does =
+1 the program gosubs to 12000.
+
+At 12000, the save code routine we start off by hanging up.  The program enters
+a PR#2, then waits about 1 second and sends +++, another 1 second delay and ATH
+is sent.  That should hang up the phone and a PR#0 is executed switching back to
+80 columns.  Now the program writes the dialing string (DI$(3)) to a text file
+and increments CF by 1.  CN is reset to 0.
+
+After returning from the Save routine (if CN = 1) we gosub to 29000 which
+updates the screen's stats.  A NEXT I is executed in line 10320, this for loop
+(with the for in line 10210) is used to select a LD port from the list you
+supplied with the E command.  When the loop is completed it goes to line 10325
+which restarts the loop with a goto 10210.  This countinues until CT > = NC.
+After CT reaches NC we return to the main menu, but ask for a key press before
+returning... allowing you to examine the final stats on screen.
+
+The next lines are subprocedures that were called from within the main dialing
+procedure above, and they were all explained up there also.  However The Update
+Code stats routine might need further explanation.
+
+Lines 29100 - 29170 are executed every time the B command is used.  They set up
+the screen with the starting stats and information.  Lines 29175 - 29190 are
+executed only the first time the B command is executed for that session with the
+program.  If you stop and rerun the program these lines will be executed again.
+If you turn off the modem, these commands will have to be sent again... so use
+the Q command to quit, then type RUN to start it up again.  Lines 29200 - 29250
+are executed after each dialing and they update CT, CF, NC, and DS$.
+
+The dialing procedure ends here at line 29900.
+
+[Trouble Shooting]
+
+If the program doesn't work when you first try it, there are several things you
+can check.  This isn't like the trouble shhoting sections you see in some
+manuals... ("Be sure the computer is turned on.")
+
+1.  Check all of the commands that appear in the program that are sent to the
+modem.  Just to make sure your modem uses them for the same purpose.  The
+commands
+are:
+
++++  Line 12010     - Escape characters, gets the modem ready recieve a command.
+
+ATH  Line 12015     - Hang up
+
+ATE0, ATS7, ATM0    - Explained above
+
+2.  Check the two delays in the program, and adjust them if necessary.  When in
+doubt make them longer... especially if you have a speed card, zip chip, or GS.
+
+Look in the variable list (V and Z) for more information.  Both delay's are
+aproximately 1 second long.  You can use the following program to figure out the
+delay, and use a watch or clock to time from the first set of beeps to the
+second:
+
+10 HOME:?:?:?
+20 ? "Begin Timing now.";chr$(7);chr$(7)
+30 FOR V = 1 to 24000 : NEXT V
+40 ? ch$(7);chr$(7);"Stop Timing now."
+50 Input "Enter the time: ";A
+60 A = 24000/A
+70 ? "Your system makes approximately ";A;" loops in one second."
+80 END
+
+3.  Try running the program without ATE0 (in line 29180).  Also try other
+commands: If you use ProTERM, write down the Init string it uses and replace the
+ATE0
+with that.  If it works then... you can get rid of one part of that init string
+at a time untill you narrow it down to the ones that are really needed.
+
+4.  If you have only 40 columns, you're going to have many a problem.  And I'm
+not going to try and anticipate the effects... so you're on your own.
+
+5.  Check the slot of your modem if it's not slot 2, change all PR#2's to
+PR#(whatever slot it is).  Speaking of PR# commands... I use a PR#0,A$C307,
+which changes PR#0 to the address for PR#3 but skips over some initializing
+commands which
+would clear the screen.
+
+6.  Finally, the most important one: Dip Switches.  Get into ProDOS applesoft.
+Enter PR#2 (or whatever slot your modem's in).  Then enter CTRL-A I (this lets
+you see what you are typing).  Now press Return and watch the lights on the
+modem , when you hit return the RD (Read data) and SD (Send Data) lights should
+flash. If they do not flash you can be pretty sure it has something to do with
+Dip Switches.  Turn the modem off and play with the switches, turn it on again
+and hit return again... watching the lights.  You'll have to countinue to play
+with these switches like this until you find a combination that works.  I know
+this can be difficult if you have a lot of switches, so use your manual to try
+and decide which switches might have an effect on it.
+
+Ok, that's about it.  If you make any substantial changes, I'd like to see what
+other people did with my program, you can reach me at USHA or TPH amoung other
+boards you might see me on.
+
+ -END-
+

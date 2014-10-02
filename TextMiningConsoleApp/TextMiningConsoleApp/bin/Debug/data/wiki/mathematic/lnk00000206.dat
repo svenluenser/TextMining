@@ -1,0 +1,536 @@
+THE_URL:http://web.textfiles.com/computers/vbox_410_tutorial.txt
+THE_TITLE:vbox_410_tutorial.txt
+VBox 4.10 Tutorial by BigMoM / ManiFest Destiny.
+
+;-----------------------------------------------------------------------
+;-----------------------------------------------------------------------
+A few word before we start:
+
+If you think this should be on your page too, you are welcome to ask me
+for at copy of it. The only thing I demand is, that it stays UNMODIFIED!
+
+If so, please write to bigmom_@hotmail.com
+Also, comments about this tutorial are welcome. No requests please.
+
+And one more thing.
+The strongest 'tool' (and the only one) we have is our knowledge when we
+do what we do best. Cracking and Reverse Engineering.
+
+Therefore I ask all of you to share what you know and support those who
+support you. C4N !. They share their knowledge, so please support them
+and share your knowledge as they do !                  / BigMoM
+;-----------------------------------------------------------------------
+;-----------------------------------------------------------------------
+
+First off all I want to say that this tutorial is not for beginners.
+It involves many different things like how to 'cheat the crc-checking',
+'in memory patching', and 'filemanipulation'. But I have tried to make
+it as easy to understand as possible. I hope it is ok this way.
+
+;------------------------------------------------------------------------
+Before I continue, I want to greet these cool people for their excelent
+tool ProcDump 1.20, wich was used to realize some parts of this crack.
+These are: G-RoM, Riz La+ and Stone. Thanks guys. Your tool is AWESOME !
+;------------------------------------------------------------------------
+Other used tools are SoftIce and W32Dasm.
+
+Also, greets fly out to Intern...      ( you know why... hehe )
+
+My target was a program called 'MidiSoft Desktop Sheet Music'.
+Lets begin with analyzing what we are dealing with here.
+
+After installing and starting the program, we are confronted with a
+trial dialog saying we have 30 days before this program expires.
+
+So I pressed the 'try' button to see how the program looked like,
+but I could not start it as it detects softice and other debuggers.
+A MessageBox appeared saying so !
+
+So I rebooted my computer without softice and it worked fine.
+Ok, after rebooting once again with softice, I wanted to stop the
+program when it displayed this trial dialog.
+
+After trying a few different breakpoints I found out that a
+bpx DialogBoxParamA did the job. Pressing F12 once then brings up
+the dialog. I then pressed the 'try' button, and then softice popped
+up again. I found myself in a dll called VBoxC403.dll
+
+This had me confused for a second, cause I knew that the version was
+4.10, and not 4.03. But as one can see, some files from the older
+versions are used.
+
+So I just kept on pressing F12 until I had left this VBoxC403.dll code.
+I ended up in another dll called VBoxT410.dll. I wanted to have a closer
+look at this file, so I decided to do a dead listing of it with w32dasm.
+
+After w32dasm was finished, I discovered, that this file was not the one
+initiating all, as it was encrypted. So I would have to leave this dll's
+code to see what code called it.
+
+So back to softice. Again, I used bpx DialogBoxParamA, and I pressed the
+'try' button again to get on in the code. But this time, I kept pressing
+F12 until I had left VBoxT410.dll.
+
+But, all I got was a messagebox saying something about tampering with files,
+and using debuggers while this program runs. So once again, I started the
+program, but this time, I put a bpx MessageBoxA and ran the program.
+
+And again, I stopped inside VBoxT410.dll. This gave me a hint, that this
+dll migth be the one to patch after all, since the decisions about letting
+the program run or not had to be in here, or, at least the checks had to be.
+
+So, once more, I put a bpx DialogBoxParamA and ran the program.
+I then pressed F12 until I was back in VBox410T.dll. I wrote down the
+addresses it stopped at each time I pressed F12.
+
+The reason for this is quite simple. I wanted to see from where the
+calls to the trial dialog where made, and where that MessageBox was
+called from. This would undoubtly give me more hints about where the
+final decisions about running the program or not where made.
+Ok, these where the addresses where it stopped after each time F12 was
+pressed:
+
+First stop was at address  070130F6
+Second stop was at address 07005FF3
+Third stop was at address  07006FCB <<<
+Fourth stop was at address 0701B5F2, but AFTER it had displayed this MsgBox.
+
+I also noted, that after the third stop, EAX was saved. I found out, that the
+return value in eax decided wether the program should run or not.
+EAX == 0 >> don't run.   EAX == 1 >> run program.
+That is: pressing 'try' returns a 1, and 'quit' returns a 0.
+
+So, the call just before 07006FCB would be my first choise off where to patch this
+dll. But I wanted to be sure. So, imho I only needed to know a few more things before
+I could decide where to patch it.
+
+1. where the time checking is done. (when the 30 day trial is over)
+2. how and where this dll gets decrypted before it is run.
+
+I put the time forward by a year to trigger the 'trial time out'
+So, again, I fired softice up with a bpx DialogBoxParamA, and ran the program.
+And I just kept pressing F12 once again. It stopped at the same places as it did
+before. This meant that the checking was done AFTER the first call at 07006FC6.
+We knew this because the 'try' button was grayed, so we could only press 'quit' !.
+And doing so we got a eax == 0 at 07006FCB, not acceptable.
+
+I wanted to make sure that this value is always a 1. So, at 07006FC6 it does this:
+call 07005CDE, this is 5 bytes, and I want to change this to mov eax, 00000001,
+wich is also 5 bytes. ( B8 01 00 00 00 )
+
+But how do we do this ? As mentioned, the file is crypted, and this brings us
+back to point 2 of my 'need to know' things :)
+
+So what we are going to do is to find out how and where it gets decrypted.
+But how do we do this ? For this, softice has some nice features to help us
+out here. What I talk about is bpmd W. But there is one problem we must
+keep in mind, the code selector ! We must be sure that this bpm is applied
+in the same memory area that the program actually uses, so how do we do this ?
+
+We use the loader that comes with softice !
+Start up the loader, and load Sheetmusic.exe with it. Press 'load module'.
+After the normal message about 'symbol translation/load', press yes, and
+softice breaks in the beginning of Sheetmusic.exe.
+This is where we apply the bpm. So I made a bpmd 07010000 W, and ran the program.
+
+It stopped at address 050168C3 inside a new dll called VBoxP410.dll, Interesting !
+Lets have a closer look at this new dll with w32dasm.
+
+And see, this time its NOT encrypted !. It looks like a normal 'data move routine'.
+So I pressed F12 once, and now we are getting somewhere.
+We where now looking at a loop calling this 'data move routine'. This had to be
+the decrypter and unpacker routine we wanted to find.
+
+This is what it looks like:
+
+:050048C0     push esi
+:050048C1     push edi
+:050048C2     mov esi, ecx
+:050048C4     xor edi, edi
+:050048C6     push 00000010
+:050048C8     mov word ptr [esi+08], di
+:050048CC     mov word ptr [esi+0A], di
+:050048D0     mov word ptr [esi+0C], di
+:050048D4     call 05003FA0
+:050048D9     mov eax, dword ptr [esi+00003414]
+:050048DF     mov word ptr [esi+0000340C], di
+:050048E6     cmp eax, edi
+:050048E8     mov word ptr [esi+0000340E], di
+:050048EF     je 05004941
+:050048F1     push ebx
+:050048F2     lea ebx, dword ptr [esi+00003438]
+
+:050048F8     mov edi, dword ptr [esi+00003414]
+:050048FE     cmp edi, 00002000
+:05004904     jbe 0500490B
+:05004906     mov edi, 00002000
+
+:0500490B     push ebx
+:0500490C     push edi
+:0500490D     mov ecx, esi
+:0500490F     call 050044F0
+:05004914     mov eax, dword ptr [esi+04]
+:05004917     and edi, 0000FFFF
+:0500491D     push edi
+:0500491E     push ebx
+:0500491F     push eax
+:05004920     call 05016890
+:05004925     mov ecx, dword ptr [esi+04] <<<<<<<<< we stop here after pressing F12
+:05004928     mov eax, dword ptr [esi+00003414]
+:0500492E     add esp, 0000000C
+:05004931     add ecx, edi
+:05004933     sub eax, edi
+:05004935     mov dword ptr [esi+04], ecx
+:05004938     mov dword ptr [esi+00003414], eax
+:0500493E     jne 050048F8
+:05004940     pop ebx
+
+:05004941     pop edi
+:05004942     pop esi
+:05004943     ret
+
+
+Note 050048FE to 0500490B: This looks like the program decrypts it in chunks of 2000h bytes.
+And, at 05004914 eax get the address that the next data will be written to.
+
+This is beginnig to look a little complex, aint it ? Anyway, it gets much worse :)
+But I will explain step by step.
+
+;--------------------------------------------------------------
+Before we continue we need to discuss a little about dll files.
+;--------------------------------------------------------------
+
+If you remember, the place to apply our main patch was not in this dll, but in VBoxT410.dll.
+So how do we do this ? We have to patch this dll to get to the other dll.
+Imho it would be the best if we had a modified copy of this routine somewhere else.
+So what we do is the following: we make this VBoxP410.dll bigger.
+
+And the best thing to do is to expand the last section in it, called '.reloc'
+Here a little data about this '.reloc' section from VBoxP410.dll:
+
+Raw Size: 02A00h bytes.
+Virtual size:  02826 bytes.
+Relative Virtal Address (RVA): 02D000h.
+Flags: 42000040h (very, very important !, I will explain that later)
+Offset in file: 027800h
+
+Dll Image Base: 05000000h
+Dll Image Size: 00030000h bytes.
+
+Lets do a little calculating: offset + size should be == filesize, since it is the last
+section of the file. So, 027800 + 02A00 = 02A200 bytes = 172.544 bytes. hmm...
+
+My dll was a little bigger than this: 172.592 bytes. So looking at the end of a file I
+found a few bytes that did not look like code. So I trunkated the file at 172.544 bytes
+and tested it. It worked fine for me. We also should be able to do this as it is not loaded
+into memory, cause the size of this last section does not include these few bytes.
+(Correct me on this if I'm wrong)
+
+If these bytes should be needed, the program would have to load them manually.
+Also, this could just be some crap that the linker put there when aligning the file.
+Who knows... Anyway, my dll worked fine after removing it, so lets move on.
+
+So what we do now is to add 1000h to 'Raw Size', 'Virtual Size', and 'dll image size'.
+This simply means that we have made the last section (.reloc) grow by 4 kb.
+But this is only in the header. So we still need to make it physically bigger.
+
+So now we apply 1000h bytes to the end off this dll with a hex/file editor.
+Should be no big deal. Now we should have a VBoxP410.dll that is about 4 kb bigger than
+the original. We are going to use this space for our work, and 4 kb is more than enough !
+
+Btw, now it would be good to test if this new dll actually works before we go on.
+Mine still works fine without any errors, and the size of my new dll is 176.640 bytes.
+
+Ok, now we have added 4 kb to the dll, but how do we find out where it gets loaded ?
+It goes like this: image base + rva of section + old size ! < size before changing it.
+This gives >>>>   '0500000h   +   0002D000   + 00002A00' == 0502FA00.
+
+We still need to do one more thing before we can put any code in there. And that is to
+modify the flags. 42000040h only allows reading. We change that to E2000040h.
+Now we can read/write data, and execute code in the last section.
+
+For those who want to know more about this, plz check out this url:
+http://www.microsoft.com/win32dev/base/pefile.htm
+
+;--------------------------------------------------------------
+Ok, lets get back to what we wanted to do.
+;--------------------------------------------------------------
+
+In order to apply a patch in VBox410T.dll, we need to redirect the decrypter routine in
+VBox410P.dll. So, I made a copy of that, and modified it to patch address 07006FC6h
+after it has been decrypted. Here is the listing of my new decrypter routine:
+
+;--------------------------------------------------------------------------------------------------------
+-----
+                push    esi
+                push    edi
+                mov     esi, ecx
+                xor     edi, edi
+                push    10h
+                mov     word ptr [esi+08h], di
+                mov     word ptr [esi+0Ah], di
+                mov     word ptr [esi+0Ch], di
+                call    dword ptr [@05003FA0]
+                mov     eax, dword ptr [esi+00003414h]
+                mov     word ptr [esi+0000340Ch], di
+                cmp     eax, edi
+                mov     word ptr [esi+0000340Eh], di
+                je      @05004941
+                push    ebx
+                lea     ebx, dword ptr [esi+00003438h]
+@050048F8:
+                mov     edi, dword ptr [esi+00003414h]
+                cmp     edi, 00002000h
+                jbe     @0500490B
+                mov     edi, 00002000h
+@0500490B:
+                push    ebx
+                push    edi
+                mov     ecx, esi
+                call    dword ptr [@050044F0]
+                mov     eax, dword ptr [esi+04h]
+                and     edi, 0000FFFFh
+                push    edi
+                push    ebx
+                push    eax
+                mov     [NextChunk], eax      <<<<<<<<< we save the next address that data will be writte
+n to
+                call    dword ptr [@05016890]
+
+                push    esi                   <<<<<<<<< here my modification begins
+                cmp     [AllReadyPatched], 0
+                jne     Continue
+
+                mov     esi, [NextChunk]
+                cmp     esi, 0702DF00h        <<<<<<<<< here I check if this address has just been decryp
+ted
+                jl      Continue
+
+                mov     esi, 0702DF00h
+                cmp     dword ptr [esi], 56D23353h <<<< I compare some data to make sure its correct
+                jne     Continue
+
+                mov     esi, 0702DF00h
+                mov     dword ptr [esi], 001B00E9h <<<< This is a patch that will be explained later.
+                mov     byte ptr [esi+4], 0FEh
+                mov     esi, 07006FC6h
+                mov     dword ptr [esi], 000001B8h <<<< This is our MOV EAX, 00000001 we want to apply
+                mov     byte ptr [esi+4], 000h         ;into VBoxT410.dll !
+
+                inc     dword ptr [AllReadyPatched] <<< Tell the decrypter that the patch has been done.
+
+Continue:                                              ;This way we make sure it only patches once.
+                pop     esi
+                mov     ecx, dword ptr [esi+04h]
+                mov     eax, dword ptr [esi+00003414h]
+                add     esp, 0000000Ch
+                add     ecx, edi
+                sub     eax, edi
+                mov     dword ptr [esi+04h], ecx
+                mov     dword ptr [esi+00003414h], eax
+                jne     @050048F8
+                pop     ebx
+@05004941:
+                pop edi
+                pop esi
+                ret
+        
+AllReadyPatched dd      0
+NextChunk       dd      0
+@05003FA0       dd      05003FA0h  ;these 3 dwords contain the addresses of the calls that are made
+@050044F0       dd      050044F0h  ;by this decrypter.
+@05016890       dd      05016890h
+;--------------------------------------------------------------------------------------------------------
+-----
+I assembled this to be at address 0502FA00h and put this code into our new dll.
+I then located this code in the in the file and patched it to jump to my code.
+
+But, I discovered very fast that this gave us new stuff to consider, as I could not start the program
+anymore. I got a messagebox saying 'VBox injection error'. First I thought, that I had made errors
+in my code, but I found out, that VBox410P.dll had crc-checking build into it.
+
+So now we had a new thing to deal with !. And how do we bypass this crc-checking ?. And where is it made
+?.
+
+Lets find out :)
+We use the same approach for this as we did to find out where the decryption routine was located.
+But this time we must use a bmp R. Lets fire up the loader, load the main exe file, and after softice sto
+ps,
+we make a bpmd 050048c0h R. Now press F5 to make to program run.
+
+Aha, the program stops at address 0501064A, and this looks real interesting !. Heres a short listing of i
+t:
+( To me this sure looks like it could be part of a crc checking routine, and it is ! )
+
+;--------------------------------------------------------------------------------------------------------
+-----
+:05010620     push ebx
+:05010621     xor edx, edx
+:05010623     push esi
+:05010624     push edi
+:05010625     mov esi, dword ptr [esp+14]
+:05010629     push ebp
+:0501062A     cmp esi, edx
+:0501062C     je 05010668
+:0501062E     mov edi, dword ptr [esp+14]
+:05010632     mov ecx, dword ptr [esp+1C]
+
+:05010636     lea eax, dword ptr [ecx+edx]
+:05010639     xor ebx, ebx
+:0501063B     add edi, 00000004
+:0501063E     add edx, 00000004
+:05010641     movzx ebp, byte ptr [eax]
+:05010644     shl ebp, 10
+:05010647     mov bl, byte ptr [eax+02]
+:0501064A     or ebx, ebp                    <<<<<< here softice stops :)
+:0501064C     movzx ebp, byte ptr [eax+01]
+:05010650     shl ebx, 08
+:05010653     mov al, byte ptr [eax+03]
+:05010656     shl ebp, 10
+:05010659     and eax, 000000FF
+:0501065E     or ebx, ebp
+:05010660     or ebx, eax
+:05010662     dec esi
+:05010663     mov dword ptr [edi-04], ebx
+:05010666     jne 05010636
+
+:05010668     pop ebp
+:05010669     pop edi
+:0501066A     pop esi
+:0501066B     pop ebx
+:0501066C     ret
+;--------------------------------------------------------------------------------------------------------
+-----
+This is getting funny, cause now we know that we cannot patch this dll either, unless we fool it
+to believe that the code has not been modified. But How ?????????????
+
+Now we have come to the tricky part of this tutorial: we remove our patches again !!!!
+Errr... I hear you say :). But please let me explain this before you stop reading and start to think
+that I am a complete idiot !, hehehe.... What we do is this:
+
+We make a copy of this routine like we did with the decrypter. And like the decrypter, this one gets
+modified too. But in a different way that one would believe !
+
+We then patch the crc code in the dll to point at our copy of the modified crc code.
+And this is how it all works when the program crc checks itself.
+
+Somewhere it makes a 'call 05010620' to get a crc value for a certain area of the code. As mentioned,
+this address was patched to point at our modified copy of it:
+;--------------------------------------------------------------------------------------------------------
+-----
+area_5: pop     dword ptr [ReturnAddr]          <<< VERY important.
+        push    esi                             --------------------------------- save esi
+        mov     esi, 050048C0h                  <<< first patch gets removed.
+        mov     dword ptr [esi], 0F18B5756h     <<< This is the jump to our modified decrypter
+        mov     byte ptr [esi+4], 033h
+        mov     esi, 05010620h
+        mov     dword ptr [esi], 056D23353h     <<< Second patch gets removed.
+        mov     byte ptr [esi+4], 057h          <<< This one is for the crc checking code
+        pop     esi                             --------------------------------- restore esi
+        call    crc_check                       >>> here we do the crc checking
+        push    esi                             --------------------------------- save esi
+
+        mov     esi, 050048C0h                  <<< Now we reapply the first patch again
+        mov     dword ptr [esi], 02B145E9h      <<< This is the jump to our modified decrypter
+        mov     byte ptr [esi+4], 000h
+        mov     esi, 05010620h                  <<< And we reapply the second patch again
+        mov     dword ptr [esi], 01F3DBE9h      <<< This is the jump to our modified decrypter
+        mov     byte ptr [esi+4], 000h
+        pop     esi                             --------------------------------- restore esi
+        push    dword ptr [ReturnAddr]          <<< VERY important.
+        ret
+
+ReturnAddr      dd      0
+;--------------------------------------------------------------------------------------------------------
+-----
+So what happens here ? While the crc checking is done, the code is unmodifed !
+After the crc checking is done, all the patches are reapplied.
+This way the program will never know that it has been patched !
+
+Please note that I pop and push the return address. This is done because the crc code uses
+some parameters that are passed to it on the stack. So it is VERY important that ESP has the
+correct value when it reaches our copy of the crc code.
+
+Btw. I could also just have called the original crc code as all patches are removed while it
+is done, but at that time I had allready build it into my dll, so I left it this way.
+
+So know we should have reached our goal: a universal VBox 4.10 patch. But...
+We have not. And can you guess why ???? Yes, I guess you can ! The dll we wanted to patch
+in the first place also crc checks itself !. So once more we are going to use our favorite
+tool softice to find out where this is done.
+
+We do precisly the same as we did to locate this crc code, but now we have to check in the
+memory area that VBoxT410.dll occupies after decryption >> 07000000 and above.
+Lets use a known address >> 07006FC4 !
+
+Fire up the loader, load the main exe file, and after softice stops, we make a bpmd 07006FC4 R.
+Now press F5 to make to program run. And it stops at this address >> 0702DF24.
+Hehe, one never stops to learn, cause this crc checking code is identical to that in VBoxP410.dll !
+
+This means, that we can use the copy of the crc code that we allready have !
+After modifying it a little we end up with this:
+
+;--------------------------------------------------------------------------------------------------------
+-----
+area_7: pop     dword ptr [ReturnAddr]          <<< VERY important.
+        push    esi                             --------------------------------- save esi
+        mov     esi, 0702DF00h                  <<< first patch gets removed.
+        mov     dword ptr [esi], 56D23353h      <<< This one is for the crc checking code
+        mov     byte ptr [esi+4], 57h
+        mov     esi, 07006FC6h                  <<< Second patch gets removed.
+
+        mov     dword ptr [esi], 0ffed13e8h     <<< This is our mov eax, 00000001
+        mov     byte ptr [esi+4], 0ffh
+        pop     esi                             --------------------------------- restore esi
+        call    crc_check                       >>> here we do the crc checking
+        push    esi                             --------------------------------- save esi
+        mov     esi, 0702DF00h                  <<< Now we reapply the first patch again
+        mov     dword ptr [esi], 001B00E9h      <<< This one is for the crc checking code
+        mov     byte ptr [esi+4], 0FEh
+        mov     esi, 07006FC6h                  <<< And we reapply the second patch again
+        mov     dword ptr [esi], 000001B8h      <<< This is our mov eax, 00000001
+        mov     byte ptr [esi+4], 000h
+        pop     esi                             --------------------------------- restore esi
+        push    dword ptr [ReturnAddr]          <<< VERY important.
+        ret
+
+ReturnAddr      dd      0
+;--------------------------------------------------------------------------------------------------------
+-----
+As you can see, this code is idential to the other one above, except for the patchdata that
+gets removed and reapplied.
+
+Btw, if you wonder why I gave those routines the names area_5 and area_7: its a reference to
+the memory that each dll uses. 5 >> 05000000, and 7 >> 07000000. (hehehe...)
+
+And after using the same principle on this crc checking code as we did on the other one,
+everything seemed to work perfectly. The only think remaining is to reboot cause it detects softice.
+So I reboot my computer without softice, and then I run the program.
+It started without any problems at all, and no trial dialog appears, nothing. It just worked flawlessly !
+
+Lets summarize this a little:
+All in all we now have 4 smaller subroutines.
+1.) A modyfied copy of the decrypter. 2.) A copy of the crc checking code.
+3 + 4.) Two small subroutines that remove all patches, calls the copy of the crc code, and reapply
+the patches again.
+
+There is only a few VERY important things to mention. I guess you do remember the part about the flags
+in our dll that we had to change. This MUST also be done in the first section called '.text'
+If we do NOT do this, we cannot write to the code in the 0500000 memory area.
+So we edit this value from 60000020h to E0000020h. Now writing to to the code is allowed :)
+
+The last thing I'll spend a few words on is the accessing of memory. You cannot always write or read
+directly from/to any memory you like. This is because the memory has flags a mentioned earlier.
+These flags are used to determine what is allowed in a memory area. If you had to access memory that
+does not allow direct access, you would have to use eg. ReadProcessmemory/WriteProcessmemory.
+You can read more about this in the win32.hlp file. It explains how it works.
+But, in this case we could write and read memory directly. This is because the flags allowed this.
+And why do we know that ???  Because the decrypter routine writes to the memory directly, the crc
+code reads directly from it, and last, our code uses the same memory, (same process).
+
+We have now reached our goal !
+And I guess that there is nothing else left to say about this crack. I hope you had as much fun
+reading this as I had when I made it !.
+
+Regards, BigMoM / ManiFest Destiny.
+

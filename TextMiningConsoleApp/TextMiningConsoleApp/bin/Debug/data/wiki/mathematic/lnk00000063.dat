@@ -1,0 +1,267 @@
+THE_URL:http://web.textfiles.com/computers/alt5.lst
+THE_TITLE:alt5.lst
+Date: 9 Aug 1996 22:11:43 -0400
+From: newgroups-request@uunet.uu.net (David C Lawrence)
+Newsgroups: news.lists,news.groups,news.announce.newgroups,news.answers
+Subject: Alternative Newsgroup Hierarchies (Part 5)
+
+Archive-name: alt-hierarchies/part5
+
+relcom
+------
+
+Relcom.* is the hierarchy of Russian-language newsgroups distributed
+mostly on the territory of the former Soviet Union (non-CIS countries
+included).  These groups are available in Europe and Northern America;
+due to the 8-bit encoding (KOI-8) of Cyrillic letters, minor software
+modifications may be required.
+
+Newsgroups under the hierarchy relcom.commerce contain classified
+advertisements and are relatively high-volume; the nature of the
+information distributed in those groups may contradict policy of some
+networks.  However, they may be valuable for researchers and
+businessmen interested in the first-hand information on the economics
+of FSU countries.
+
+Dmitri Martynoff <dmart@newcom.kiae.su> is the Relcom staff member
+responsible for netnews -- contact him for more information.
+
+relcom.accounting       Everything about book-keeping.
+relcom.ads              Non-commercial ads.
+relcom.advertising.theory       Theory of advertisement and Public Relations. (Moderated)
+relcom.answers          Periodic information and FAQs. (Moderated)
+relcom.archives         Messages about new items on archive sites.
+relcom.archives.d       Discussions on file servers, archives.
+relcom.arts.epic        Literary arts of epical kind (more then 10 Kbytes).
+relcom.arts.magick      Discussing Magick and related subjects.
+relcom.arts.obec.pactet FIDOnet area, literary arts, humor creation.
+relcom.arts.qwerty      Literary arts of small forms (less then 10 Kbytes).
+relcom.banktech         Discussions on banking technologies.
+relcom.bbs              BBS news.
+relcom.bbs.list         Ex-USSR BBS file lists. (Moderated)
+relcom.commerce.audio-video     Audio & video equipment.
+relcom.commerce.chemical        Chemical production.
+relcom.commerce.communications  Communications facilities, data channels.
+relcom.commerce.computers       Computer hardware.
+relcom.commerce.computers.ctrlsystems   Control and data gathering systems.
+relcom.commerce.construction    Construction materials and equipment.
+relcom.commerce.consume Cosmetics, parfumes, dresses, shoes.
+relcom.commerce.energy  Gas, coal, oil, fuel, generators, etc.
+relcom.commerce.estate  Real estate.
+relcom.commerce.food    Food.
+relcom.commerce.food.drinks     Spirits and soft drinks.
+relcom.commerce.food.sweet      Sweeties, sugar.
+relcom.commerce.household       All for house - furniture, freezers, ovens, etc.
+relcom.commerce.infoserv        Information services.
+relcom.commerce.jobs    Jobs offered/wantedy.
+relcom.commerce.machinery       Machinery, plant equipment.
+relcom.commerce.medicine        Medical services, equipment, drugs.
+relcom.commerce.mega.comp       "Mega Pro et Contra" bulletin, computer hardware. (Moderated)
+relcom.commerce.mega.tech       "Mega Pro et Contra" bulletin, other equipment. (Moderated)
+relcom.commerce.metals  Metals and metal products.
+relcom.commerce.money   Credits, deposits, currency.
+relcom.commerce.orgtech Office equipment.
+relcom.commerce.other   Miscelannia.
+relcom.commerce.publishing      Books, publishing services.
+relcom.commerce.raw-materials   Raw materials and semifinished items.
+relcom.commerce.reckoning       Barter, offsets, commodity credits, insolvency.
+relcom.commerce.software        Software.
+relcom.commerce.software.demo   Demo versions of commercial software.
+relcom.commerce.stocks  Stocks and bonds.
+relcom.commerce.talk    Discussions about commercial groups.
+relcom.commerce.tobacco Cigarettes and tobacco.
+relcom.commerce.tour    Tourism, leisure and entertainment opportunities.
+relcom.commerce.tradeserv       Services providing commercial activities.
+relcom.commerce.transport       Vehicles and spare parts.
+relcom.comp.animation   Discussions on computer animation programs.
+relcom.comp.binaries    Binary codes of freeware and shareware computer programs.
+relcom.comp.binaries.d  Discussions of binary codes.
+relcom.comp.clarion     CLARION database management system.
+relcom.comp.crosstools  Internetwork, crosstools for embedded systems.
+relcom.comp.dbms.clipper        Clipper database development system.
+relcom.comp.dbms.foxpro FoxPro database development system.
+relcom.comp.dbms.oracle Oracle database discussions.
+relcom.comp.dbms.vista  db_Vista discussions.
+relcom.comp.gis         Geographical information systems.
+relcom.comp.lang.basic  FIDOnet area, BASIC programming language.
+relcom.comp.lang.forth  Inter-network, Forth programming language.
+relcom.comp.lang.pascal Using of Pascal programming language.
+relcom.comp.lang.pascal.misc    Sources and materials, Pascal-kind languages.
+relcom.comp.law         Political and legal aspects of computers.
+relcom.comp.newmedia    Global networks as a new mass media. (Moderated)
+relcom.comp.os.cmp      FIDOnet area, comparison of various operating systems.
+relcom.comp.os.os2      FIDOnet area, OS/2 operating system.
+relcom.comp.os.os2.comm Communications and network under OS/2.
+relcom.comp.os.os2.drv  Device drivers for OS/2.
+relcom.comp.os.os2.faq.d        Discussions about FAQ on OS/2.
+relcom.comp.os.os2.marginal     Related topics on OS/2.
+relcom.comp.os.os2.prog Programming under OS/2.
+relcom.comp.os.os2.src  Sources related to OS/2.
+relcom.comp.os.os2.wanted       Programs for OS/2 offered/wanted.
+relcom.comp.os.vms      VMS operating system.
+relcom.comp.os.windows  FIDOnet area, MS-Windows operating system.
+relcom.comp.os.windows.nt       FIDOnet area, Windows NT operating system.
+relcom.comp.os.windows.prog     FIDOnet area, programming under MS-Windows.
+relcom.comp.security    Computer data security discussions.
+relcom.comp.software-eng        Inter-network, software engineering.
+relcom.comp.sources.d   Discussions on sources.
+relcom.comp.sources.misc        Software sources.
+relcom.comp.virus       Computer viruses.
+relcom.consumers        Consumer info on products and services. No ads.
+relcom.culture.underground      Culture, arts, ideology of the underground.
+relcom.currency         Exchange rates in CIS countries.
+relcom.ecology          Ecological discussions. (Moderated)
+relcom.education        Education discussions, from pre-school to higher.
+relcom.expo             Exhibitions and fairs announcements and reviews.
+relcom.fido.adinf.support       FIDOnet, antivirii by DialogueScience.
+relcom.fido.flirt       FIDOnet, just talking of love.
+relcom.fido.mo.phystech FIDOnet, about Moscow Institute of Physics & Technology.
+relcom.fido.mo.sails    FIDOnet, only sails here.
+relcom.fido.ru.acad     FIDOnet, AutoCAD, problems and solutions.
+relcom.fido.ru.baby     FIDOnet, all about children.
+relcom.fido.ru.fax      FIDOnet, discussions on faxes.
+relcom.fido.ru.hacker   FIDOnet, hackers and crackers (legal!).
+relcom.fido.ru.military Inter-network, army and it's history.
+relcom.fido.ru.modem    Inter-network discussion on modems.
+relcom.fido.ru.networks Inter-network discussion of global nets.
+relcom.fido.ru.notes    FIDOnet, about Lotus Notes.
+relcom.fido.ru.photo    FIDOnet, photography and related topics.
+relcom.fido.ru.rsbank   FIDOnet, discussion on "RS-Bank" software.
+relcom.fido.ru.strack   FIDOnet, digitized sound.
+relcom.fido.ru.unix     Inter-network challenge to OS Unix.
+relcom.fido.ru.yachting FIDOnet, everything about yachts and cutters.
+relcom.fido.su.astronomy        FIDOnet, problems of astronomy.  NO astrology!
+relcom.fido.su.books    FIDOnet, for book readers and lovers.
+relcom.fido.su.c-c++    FIDOnet, C & C++ language.
+relcom.fido.su.dbms     FIDOnet, database management systems.
+relcom.fido.su.dbms.borland     FIDOnet, about DBMS by Borland.
+relcom.fido.su.dbms.interbase   FIDOnet, Borland Interbase Workgroup Server.
+relcom.fido.su.dbms.sql FIDOnet, SQL language and servers.
+relcom.fido.su.forth    FIDOnet, Forth language.
+relcom.fido.su.general  FIDOnet, about everything except computers and commerce.
+relcom.fido.su.hardw    FIDOnet, computer hardware.
+relcom.fido.su.magic    FIDOnet, magic and occult sciences.
+relcom.fido.su.softw    FIDOnet, software in general.
+relcom.fido.su.tolkien  FIDOnet, creations of J.R.R Tolkien.
+relcom.fido.su.virus    FIDOnet, viruses and vaccines.
+relcom.games            Discussion of computer, deck and other games.
+relcom.games.pbem       Play by E-Mail games.
+relcom.glb              Life of sexual minorities.
+relcom.humor            Ha-ha-ha. Jokes, you know them, funny.
+relcom.humor.lus        Moderated humor and jokes. (Moderated)
+relcom.kids             About kids.
+relcom.lan              Inter-network discussion on local area networks.
+relcom.lan.prog         FIDOnet, programming for networks.
+relcom.lan.wanted       Programs for LAN wanted/offered.
+relcom.maps             Relcom maps.
+relcom.medicine.blood-service   Questions & problems of Russian Blood Service.
+relcom.msdos            MS-DOS software.
+relcom.music            Music lovers.
+relcom.netnews          Information about new network capabilities and services.
+relcom.netnews.big      General BIG articles.
+relcom.newusers         Q&A of new Relcom users.
+relcom.penpals          To find friends, colleagues, etc.
+relcom.politics         Political discussions.
+relcom.postmasters      For RELCOM postmasters, official. (Moderated)
+relcom.postmasters.d    Discussion of postmaster's troubles and bright ideas.
+relcom.radio            Radioelectronics, non-commercial.
+relcom.radio.diagrams   Diagrams and pictures for articles in relcom.radio.
+relcom.radio.ham        FIDOnet area, about Home Amateur Radio.
+relcom.rec.puzzles      Puzzles, interesting problems, logical games.
+relcom.rec.puzzles.aux  Auxiliary materials for relcom.rec.puzzles.
+relcom.rec.tourism      Hiking, sport tourism discussions.
+relcom.relarn.general   Academic subnet RELARN: general issues. (Moderated)
+relcom.relarn.science   Scientific publications and discussions. (Moderated)
+relcom.religion         Discussions on religions and related topics.
+relcom.sci.libraries    Discussion of libraries and related info. (Moderated)
+relcom.sci.philosophy   Philosophic discussions and related projects.
+relcom.talk             Unfettered talk.
+relcom.talk.sport       Questions and discussions on sport.
+relcom.tcpip            TCP/IP protocols and their implementation.
+relcom.technology       All about modern technologies and manufacturing.
+relcom.terms            Discussion of various terms and terminology.
+relcom.test             "Wow, does it really work?".
+relcom.wheels           Anything concerning auto/moto transport and sport.
+relcom.wtc              Commercial proposals of World Trade Centers. (Moderated)
+relcom.www.support      Computer support of WWW services, for professionals.
+relcom.www.users        WWW usage, announces of new services.
+relcom.x                X Windows discussion.
+
+u3b
+---
+
+Groups dealing with AT&T 3B{2,5,15,20,4000} computers -- everything
+except for the UNIX PC/3B1.  Both uunet and ames carry these groups.
+
+u3b.config              3B Distribution configuration.
+u3b.misc                3B Miscellaneous Discussions.
+u3b.sources             Sources for AT&T 3B systems.
+u3b.tech                3B Technical Discussions.
+u3b.test                3B Distribution Testing.
+
+vmsnet
+------
+
+This hierarchy is for topics of interest to VAX/VMS users (but not
+necessarily VMS-specific). These groups are a project of the VMSnet working
+group of the VAX SIG of the US Chapter of DECUS (the Digital Equipment
+Computer User's Society). They are carried by most major usenet news sites,
+and almost half of all netnews sites. To find a feed, contact the system
+managers of news sites near you, and/or post to a local or regional
+newsgroup and ask if anyone in the area is carrying the VMSnet newsgroups.
+
+If you have tried these alternatives and still can not find a site in your
+local area that carries the VMSnet groups, you can send mail to the VMSnet
+Network Coordinator, currently Charles T. Smith, Jr. <cts@dragon.com>, who
+will attempt to assist you in finding a feed for the groups. Alternatively,
+you can send mail to the VMSnet mailing list <vmsnet@drycas.club.cc.cmu.edu>,
+which is also gatewayed to the vmsnet.uucp newsgroup and ask for help.
+
+In either case, be sure to state where you are geographically, and what
+your constraints are. For instance, if you can only place local phone
+calls, be sure to say just what areas are a local call for you. Also
+describe your network connectivity (what networks you are on, your uucp
+neighbors, etc.).
+
+Here is a recent list of VMSnet newsgroups. NOTE: this is NOT the
+definitive list of VMSnet newsgroups. The current definitive list is always
+the most recent checkgroups posting in vmsnet.admin. It is posted monthly
+or whenever the set of newsgroups is changed.
+
+vmsnet.alpha            Alpha AXP architecture, systems, porting, etc.
+vmsnet.announce         General announcements of interest to all. (Moderated)
+vmsnet.announce.newusers        Orientation info for new users. (Moderated)
+vmsnet.decus.journal    The DECUServe Journal. (Moderated)
+vmsnet.decus.lugs       Discussion of DECUS Local User Groups and related issues.
+vmsnet.employment       Jobs sought/offered, workplace and employment issues. (Moderated)
+vmsnet.epsilon-cd       DEC's free, unsupported OpenVMS AXP CD.
+vmsnet.groups           Administration of the VMSnet newsgroups.
+vmsnet.infosystems.gopher       Gopher software for VMS, gateway w/VMSGopher-L.
+vmsnet.infosystems.misc Various infosystem software for VMS (WAIS, WWW, etc).
+vmsnet.internals        VMS internals, MACRO-32, Bliss, &c; gateway w/MACRO32.
+vmsnet.mail.misc        Other electronic mail software.
+vmsnet.mail.mx          MX email system, gatewayed to MX mailing list.
+vmsnet.mail.pmdf        PMDF email system, gatewayed to ipmdf mailing list.
+vmsnet.misc             General VMS topics not covered elsewhere.
+vmsnet.networks.desktop.misc    Other desktop integration software.
+vmsnet.networks.desktop.pathworks       DEC Pathworks desktop integration.
+vmsnet.networks.management.decmcc       DECmcc and related software.
+vmsnet.networks.management.misc Other network management solutions.
+vmsnet.networks.misc    General networking topics not covered elsewhere.
+vmsnet.networks.tcp-ip.cmu-tek  CMU-TEK TCP/IP package; gateway cmu-openvms-ip.
+vmsnet.networks.tcp-ip.misc     Other TCP/IP solutions for VMS.
+vmsnet.networks.tcp-ip.multinet TGV's Multinet TCP/IP, gateway w/info-multinet.
+vmsnet.networks.tcp-ip.tcpware  Process Software's TCPWARE TCP/IP software.
+vmsnet.networks.tcp-ip.ucx      DEC's VMS/Ultrix Connection (TCP/IP for VMS).
+vmsnet.networks.tcp-ip.wintcp   The Wollongong Group's WIN-TCP TCP/IP software.
+vmsnet.pdp-11           PDP-11 hardware and software, gatewayed to info-pdp11.
+vmsnet.sdk.openvms.fieldtest    ???
+vmsnet.sources          Source code postings ONLY. (Moderated)
+vmsnet.sources.d        Discussion about or requests for sources.
+vmsnet.sources.games    Recreational software postings.
+vmsnet.sysmgt           VMS system management.
+vmsnet.test             Test messages.
+vmsnet.tpu              TPU language and applications, gatewayed to info-tpu.
+vmsnet.uucp             DECUS uucp software, gatewayed to vmsnet mailing list.
+vmsnet.vms-posix        Discussion about VMS POSIX.
+

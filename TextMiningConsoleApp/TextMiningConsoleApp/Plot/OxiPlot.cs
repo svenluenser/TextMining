@@ -8,6 +8,7 @@ using OxyPlot;
 using System.IO;
 using OxyPlot.Series;
 using OxyPlot.Axes;
+using TextMiningConsoleApp.Util;
 
 namespace TextMiningConsoleApp.Plot
 {
@@ -41,6 +42,35 @@ namespace TextMiningConsoleApp.Plot
 
             return model;
         }
+
+        public PlotModel ColumnSeries(List<DocumentTermFrequencyVector> list)
+        {
+            var model = new PlotModel { Title = "Test" };
+            var yAxis = new LinearAxis { MinimumPadding = 0 };
+            var categoryAxis = new CategoryAxis {  MinorStep=250, MajorStep=100 };
+            model.Axes.Add(yAxis);
+            model.Axes.Add(categoryAxis);
+
+            foreach(DocumentTermFrequencyVector dvct in list)
+            {
+                 uint[] d = dvct.toArray();
+            
+                var series = new ColumnSeries();
+                int categoryIndex = 0;
+                foreach(uint v in d )
+                {
+                    categoryIndex++;
+                    series.Items.Add(new ColumnItem { CategoryIndex = categoryIndex, Value = v, Color = (dvct.Title.Contains("mathematic"))?OxyColors.LightSteelBlue : OxyColors.Olive });
+                }
+
+                model.Series.Add(series);
+            }
+            return model;
+        }
+
+     
+
+
         public void Export(PlotModel model, string name)
         {
             var filename = Path.Combine(outputDir, name + ".pdf");

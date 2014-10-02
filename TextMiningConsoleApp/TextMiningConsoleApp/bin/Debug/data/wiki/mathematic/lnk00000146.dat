@@ -1,0 +1,326 @@
+THE_URL:http://web.textfiles.com/computers/linux.gs.login
+THE_TITLE:linux.gs.login
+                How To Hook an Apple IIgs up to a Linux
+                  Machine via a Dedicated Serial Line
+
+                (Or, "Linux is Enslaved to my GS".)
+
+
+                           Devin Reade
+                       <gdr@trenco.gno.org>
+                           25 June 1998
+
+
+**************************************************************************
+* This document is Copyright 1998 by Devin Reade.  You may distribute it *
+* freely provided the document is unmodified, including this notice.     *
+* If you have any corrections, suggestions, or comments, please contact  *
+* the author at the address above.                                       *
+**************************************************************************
+
+
+Introduction
+============
+
+This is a set of instructions for connecting an Apple IIgs to a Linux box
+using a dedicated line (a straight cable, no modem).  This is of course
+suitable for when your GS and your Linux machines are colocated.
+
+While the hardware aspects of this document apply regardless of what kind
+of software you'll be running, the firmware/software configuration section
+assumes that you'll be running a terminal emulator (like ProTERM or
+Spectrum) on the GS, and logging into the Linux box with a normal UNIX
+login shell.  As information becomes available, I will add sections on
+configuring SLIP, PPP, and other protocols.
+
+There are a few of ways you can set up a serial line on a GS:  Use the
+built in modem port, the printer port, a Super Serial Card (SSC), other
+serial cards, and so forth.  Likewise, Linux can run on various kinds
+of hardware: x86 machines, Macs, DEC Alphas, maybe others.  There are
+also at least three distributions of Linux:  Slackware, Red Hat, and
+Debian.  This document explains one combination, which is the one that
+I have and have tested:
+
+        Apple IIgs using the built in modem port;
+        Slackware Linux on an x86.
+
+If you have information on other configurations, such as using a Super
+Serial Card, mklinux, or the Red Hat or Debian distributions, please let
+me know (at the address above) which instructions should change and which
+are still applicable.
+
+Hardware Requirements
+=====================
+
+In order to make this work, you need the following:
+
+  - An Apple IIgs
+
+  - a hardware handshake (HWHS) cable.  For details on how these
+    cables are wired and from where you can obtain them, please
+    see the FAQ for the USENET newsgroup comp.sys.apple2.  Some Mac
+    stores carry these, listed as "modem cables".  Make sure you don't
+    buy what's listed as a "printer cable"; the wiring may be different.
+
+  - A null-modem.  This usually looks like a DB-25 gender changer, except
+    that it has one male and one female end, rather than two of each.  It
+    should say "null modem" either on a sticker or embedded in the plastic.
+    If it does not, don't assume that it's a null modem.
+
+    Null modems provide cross-wiring for connecting a DTE to a DTE rather
+    than DTE to DCE. (ie: Computer to computer rather than computer to modem.)
+
+  - A linux machine.  x86 machines need to use the "good" UARTS
+    on their serial ports.  These are 16550A UARTS.  Newer systems
+    should have these UARTS, possibly built into the motherboard.
+    Older systems tend to use the 16450 or other (bad) UARTS.
+
+    You can determine what kind of UART you have by:
+        Linux - Use the command "dmesg | more".  You should see
+                a line near the top similar to:
+
+                     Serial driver version 4.13 with no serial options enabled
+                     tty00 at 0x03f8 (irq = 4) is a 16550A
+                     tty01 at 0x02f8 (irq = 3) is a 16550A
+                     tty02 at 0x03e8 (irq = 4) is a 16550A
+
+                Don't worry about the fact (for now) that IRQ 4 (or maybe 3)
+                is listed twice.
+
+        MS-DOS/Windows - Run the DOS command "msd".  Look at the output ...
+
+    If you don't have a 16550A, you really need to get one.  While some
+    people have had success with 16450 UARTS, this is really the exception
+    to the rule.
+
+    If you need to get a 16550A, there are many add-on boards that provide
+    them.  I've used the SIIG boards, which provide two 16550A ports.
+    (Some of the older boards provide one '550 and one '450.)  Make sure
+    you buy a board that can use a wide range of IRQ numbers, not just
+    IRQs 3 and 4.  Typical IRQs on the good boards can be set to 3, 4, 5,
+    9 (or 2), 11, and 12.
+
+  - Depending on your cards and cabling, you may require a DB-25 to DB-9
+    adapter to connect your HWHS cable to one of your
+
+Hardware Setup
+==============
+
+This step is pretty easy.
+
+Connect one end of the HWHS cable to the modem port of the GS.  Connect the
+other end to the null modem.  Connect the null modem to the target 16550A
+serial port on the linux box.
+
+Didn't I say it was easy?
+
+Depending on your setup, you may require one or more adapters.  If you
+use DB-25 extension cables, make sure that all 25 pins are wired straight
+through.  Using a multimeter to verify this can be tedious, but invaluable.
+A mulitmeter can also tell you if that overpriced HWHS cable you bought
+from Guido's Bargin Computers is really as advertised.
+
+Firmware/Software Configuration
+===============================
+
+Apple IIgs
+----------
+
+In the control panel, go to "Slots" and ensure that slot 2 is set to
+"Modem Port" (the default).  Save any change you made.
+
+Still in the control panel, go to "Modem Port".  All the settings should
+be set to the default value (the one with the check mark) except for the
+following two:
+        Buffering: Yes
+        Baud: 19200
+Save any changes you made.  Exit the control panel.  If you made changes,
+reboot your IIgs to make them effective.
+
+If you sometimes have a modem connected to your GS, and sometimes a direct
+line to your Linux box (such as if you have an A-B box on your serial line),
+then you will probably need to install two versions of your telecom
+software in different directories.  At least, I've found this to be necessary
+with ProTERM.  This is because the modem initialization string for a direct
+connection must be empty.  Therefore, in my program selector (ProSel), I
+have two entries, "ProTERM Direct" and "ProTERM Modem".
+
+To configure ProTERM (other than having an empty modem initialization
+string), you need to create a new system and do the following.  Other
+telecom programs would be similar:
+
+        - leave 'system number" (the phone number) blank; no dialing is
+          done on a dedicated line;
+        - set the connect parameters to 38400, 8N1, full duplex
+        - set terminal emulation to vt100
+
+Once you've got this configured and saved to disk, leave the GS for a
+while; you need to configure the Linux box before you go on.
+
+Linux
+-----
+
+  rc.serial
+  ---------
+    The first thing that has to happen under Linux is to configure your
+    serial port hardware.  This is done (under Slackware) by the script
+    /etc/rc.d/rc.serial, which is run at boot time.  There are two parts
+    to this:
+
+      - First, use setserial(8) to tell the kernel the UART type, port
+        address, and IRQ of the serial port to which your GS is attached.
+        Assuming that your GS is hooked up to your second serial port
+        (COM2 under MS-DOS, or /dev/cua1 for Linux), you should see a
+        command like the following in the rc.serial file:
+
+                /bin/setserial -b /dev/cua1 uart 16550A port 0x2F8 irq 3
+
+      - Second, you must set the port to hardware handshake mode.  You
+        should see a line in the rc.serial file similar to:
+
+                stty crtscts < /dev/cua1
+
+        Note the direction of the '<'; it is not a typo.
+
+    At this stage, you should have your hardware properly configured,
+    however there is no software using the port.
+
+  getty
+  -----
+    When a user is presented a "login:" prompt, the program that provides
+    this prompt is called a getty.  There are different varieties of getty
+    for Linux including agetty, mgetty, and getty_ps.  I use agetty, which
+    should be on your system as /sbin/agetty.  You can read about it in
+    the agetty(8) manual page.
+
+    When you're done your setup, agetty will be run automatically when
+    your system enters a multiuser networking mode.  However, debugging
+    is much easier if you leave automatic startup until you've determined
+    that agetty is working as expected.
+
+    Therefore, you should first attempt to run agetty manually from a root
+    window.  I recommend running it like this:
+
+        /sbin/agetty -h -L 38400 cua1 vt100
+
+    The manual page can tell you to what all the options and arguments refer,
+    but here is the short version:
+
+        -h      This tells the serial port that you will be using hardware
+                handshaking.  You'll need this if you're using anything
+                above 9600 bps.
+
+        -L      This tells getty to put the connection into "line local"
+                mode.  Although ProTERM and other programs are able to
+                detect loss of carrier from a modem, the wiring isn't in
+                place to do it correctly on a direct dialup connection.
+                Therefore the carrier detect (CD) signal is missing and
+                the Linux end will drop the connection at arbitrary times
+                (usually often).  Using the -L flag tells getty (and,
+                subsequently, login(8) and your login shell) to ignore
+                the lack of CD and leave your session connected.
+
+                *** SECURITY NOTE ***
+
+                The one thing you should be careful of here is that when
+                you are done with your UNIX shell, you should log out from
+                it.  If you merely quit your telecommunications program
+                or even shut off your GS, the shell will remain active.
+                When you next run your telecom program on that serial line,
+                you will still be logged in; you will not have to provide
+                a password.  This is a potential security hole (into your
+                Linux box) if your GS, Linux box, or the serial line
+                connecting the two is not secure.
+
+        38400   This is the speed at which you will be connected.  It should
+                match the speed to which you configured ProTERM (or whatever
+                telecom product you're using).  People have reported getting
+                speeds of 57600 to work, but I've not been able to reproduce
+                their results.  Try it at this speed, then if it works, you
+                can try to push it higher.  If you have problems connecting,
+                try dropping this value (and the one in your telecom
+                software) to 19200.
+
+        cua1    This is the device in /dev that corresponds to the serial
+                port you're using to communicate with the IIgs.  Notice
+                how it matches the device shown in the examples in the
+                section on the rc.serial files.  Coincidences are amazing,
+                aren't they?
+
+        vt100   This is the terminal emulation mode the tty will be in
+                initially when it is connected.  It should match the terminal
+                emulation you set in your telecom software.
+
+    Now that you've started getty, go back to your GS and attempt to "connect"
+    with your telecom program.  Under ProTERM this means to dial your new
+    system (as you set up above).  When the "dialing" completes (remember,
+    there is no number and no modem initialization string), you may still
+    have a blank screen.  Try hitting [return] once or twice.  You should
+    get a "login:" prompt.  Proceed with your login as is normal.
+
+    When you run getty manually from a root shell prompt, you will get *one*
+    instance of getty (naturally).  This means that once you log in then
+    log out, you will not get another login prompt.  If you fail to log in
+    correctly after three or four times, then the getty will also exit.
+    It's easy to tell when the getty (or login(8), or user shell) exits,
+    because you will get a prompt back in the root window from which you
+    started getty.
+
+    If you failed to get a login prompt, you'll have to start looking for
+    errors.  These may be printed in the root window from where you started
+    getty, or they may be in the system log files in /var/log (or /var/adm).
+    Check your communications parameters.  Check your cabling.  Good luck.
+
+  init
+  ----
+    Once you are able to start your getty from a root shell window, log
+    in, and exit, then it's time to set up your system to run getty
+    automatically.  This is done via the initd(8), or Initialization Daemon.
+
+    To have initd automatically start getty on your IIgs' connection,
+    you will need to edit the file /etc/inittab and add a line something
+    like this:
+
+        s3:12345:respawn:/sbin/agetty -L -h 38400 cua1 vt100
+
+    This line is delimited into fields by the ':' character.  As you can
+    see, the last field matches the command you entered at root's shell
+    prompt in the previous section.
+
+
+    The first field ("s3") is an arbitrary identifier; the only requirement
+    is that it is unique in the inittab file.  I selected "s3" because it
+    is the third entry in my file for serial lines.
+
+    The second field ("12345") is a list of run levels at which getty will
+    be active.  See the inittab(5) man page for a description of these
+    values.
+
+    The third field ("respawn") tells initd that getty will be restarted
+    any time it quits.  In the current context, this means that when a
+    user logs out (or fails to log in correctly), a new "login:" prompt
+    will come back after a moment.
+
+    After editing the /etc/inittab file, you have to get the initd to
+    reread it.  The brute force way of doing this is to reboot your
+    Linux machine.  The more elegant way is to send the initd process
+    a SIGHUP (hangup signal).  It is done by issuing the following
+    command as root:
+
+        kill -HUP 1
+
+    WARNING:    Assuming that the initd process is process number 1 works
+                on Linux machines and likely all other true UNIX variants,
+                however it is bad form to send signals to arbitary processes
+                without first checking that the process is the one you
+                want.  If you are being properly paranoid, you should
+                issue the following command (and look at the output) to
+                verify the PID of initd before you send it the signal:
+
+                        ps auxww | grep initd
+
+    At this point you should be able at any time to run your telecom
+    program on your GS and get a "login:" prompt from your Linux box.
+
+    Enjoy.
+

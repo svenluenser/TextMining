@@ -1,0 +1,3200 @@
+THE_URL:http://web.textfiles.com/computers/llaptop.txt
+THE_TITLE:llaptop.txt
+  Linux Laptop-HOWTO
+  Werner Heuser <wehe@snafu.de>
+  v1.3, 8 March 1999
+
+  Laptops are different from desktops/towers. They use certain hardware
+  such as PCMCIA cards, infrared ports, batteries, docking stations.
+  Often their hardware is more limited (e.g. disk space, CPU speed),
+  though the performance gap is becoming smaller. In many instances,
+  laptops can become a desktop replacement.  Hardware support for Linux
+  on laptops is sometimes more limited (e.g. graphic chips, internal
+  modems). Laptops often use specialized hardware, hence finding a
+  driver can be more difficult.  Laptops are often used in changing
+  environments, so there is a need for multiple configurations and addi
+  tional security strategies.  Though there are laptop related HOWTOs
+  available already, this HOWTO contains a concise survey of laptop
+  related documents. Also, laptop related Linux features, such as
+  installation methods for laptops (via PCMCIA, without CD drive, etc.),
+  laptop hardware features and configurations for different (network)
+  environments are described.
+  ______________________________________________________________________
+
+  Table of Contents
+
+  1. Preface
+
+  2. Copyright, Disclaimer and Trademarks
+
+  3. Which Laptop to Buy?
+
+     3.1 Introduction
+     3.2 Portables, Laptops/Notebooks, Sub/Mini-Notebooks, Palmtops, PDAs/HPCs
+        3.2.1 Portables
+        3.2.2 Laptops/Notebooks
+        3.2.3 Sub-Notebooks/Mini-Notebooks
+        3.2.4 Palmtops
+        3.2.5 Personal Digital Assistants (PDAs)/Handheld PCs (HPCs)
+        3.2.6 Cellular Phones, Calculators, Digital Cameras, Wearable Computing
+     3.3 Linux Features
+     3.4 Main Hardware Features
+        3.4.1 Weight
+        3.4.2 Display
+        3.4.3 Batteries
+        3.4.4 CPU
+           3.4.4.1 Supported CPU Families
+           3.4.4.2 Miscellaneous
+        3.4.5 Keyboard Quality
+        3.4.6 Price
+        3.4.7 Power Supply
+     3.5 Sources of More Information
+     3.6 Linux Compatibility Check
+        3.6.1 Related HOWTOs
+        3.6.2 Check Methods in General
+     3.7 Buying a Second Hand Laptop
+     3.8 No Hardware Recommendations
+     3.9 Laptop Distribution
+        3.9.1 Requirements
+        3.9.2 Recommendation
+
+  4. Installation Methods
+
+     4.1 Related HOWTOs
+     4.2 Introduction
+     4.3 From a Boot Floppy plus CD-ROM - The Usual Way
+     4.4 From a DOS or Windows Partition at the same Machine
+     4.5 From a Second Machine With a Micro Linux On a Floppy
+        4.5.1 Introduction
+        4.5.2 Prerequisites
+        4.5.3 Source Machine
+        4.5.4 Destination Machine
+        4.5.5 Configuration of the Source Machine after the Transfer
+        4.5.6 Miscellaneous
+     4.6 From a Second Machine With a 2.5" Hard Disk Adapter
+     4.7 From a PCMCIA Device
+     4.8 From a Parallel Port Device (ZIP Drive, CD Drive)
+
+  5. Hardware In Detail
+
+     5.1 PCMCIA Controller
+        5.1.1 Linux Compatibility Check
+        5.1.2 Related HOWTOs
+        5.1.3 PCMCIA Configuration - Survey
+           5.1.3.1 Software
+           5.1.3.2 PCMCIA Controller
+           5.1.3.3 PCMCIA Card
+     5.2 Infrared Port
+        5.2.1 Linux Compatibility Check
+           5.2.1.1 SIR
+           5.2.1.2 FIR
+           5.2.1.3 Hardware Survey
+        5.2.2 Related HOWTOs
+        5.2.3 IrDA Configuration - Survey
+           5.2.3.1 IrDA
+              5.2.3.1.1 Kernel
+              5.2.3.1.2 Software
+              5.2.3.1.3 Hardware
+           5.2.3.2 Linux Remote Control - LiRC
+     5.3 Graphic Chip
+        5.3.1 Linux Compatibility Check
+           5.3.1.1 Video Mode
+           5.3.1.2 Text Mode
+        5.3.2 Related HOWTOs
+        5.3.3 Survey X-Servers
+        5.3.4 Resources
+        5.3.5 External Monitor
+        5.3.6 Miscellaneous
+     5.4 Sound
+        5.4.1 Linux Compatibility Check
+        5.4.2 Related HOWTOs
+        5.4.3 Survey Sound Drivers
+     5.5 Keyboard
+        5.5.1 Linux Compatibility Check
+        5.5.2 Second Keyboard
+     5.6 Mice and their Relatives
+        5.6.1 Linux Compatibility Check
+        5.6.2 Related HOWTOs
+        5.6.3 Mice Species
+        5.6.4 Resources
+        5.6.5 External Mouse
+     5.7 Advanced Power Managment (APM)
+        5.7.1 Linux Compatibility Check
+        5.7.2 Introduction
+        5.7.3 Caveats
+        5.7.4 Troubleshooting
+     5.8 Batteries
+     5.9 USB
+     5.10 Memory
+     5.11 Plug-and-Play Devices (PnP)
+     5.12 Docking Station / Port Replicator
+        5.12.1 Definitions
+        5.12.2 Other Solutions
+        5.12.3 Connection Methods
+     5.13 Network Connections
+        5.13.1 Related HOWTOs
+        5.13.2 Connection Methods
+           5.13.2.1 PCMCIA Network Card
+           5.13.2.2 Serial Null Modem Cable
+           5.13.2.3 Parallel Port NIC (Pocket Adaptor)
+           5.13.2.4 Parallel "Null" Modem Cable
+           5.13.2.5 Docking Station NIC
+     5.14 Modem
+     5.15 SCSI
+        5.15.1 Hardware Compatibility Check
+        5.15.2 Related HOWTOs
+        5.15.3 Survey
+     5.16 Floppy Drive
+        5.16.1 Linux Compatibility Check
+     5.17 CD Drive
+     5.18 Harddisk
+        5.18.1 Linux Compatibility Check
+        5.18.2 Miscellaneaous
+     5.19 ZV Port
+     5.20 Accessories
+        5.20.1 PCMCIA Cards
+           5.20.1.1 Card Families
+           5.20.1.2 Linux Compatibility Check
+        5.20.2 Printers
+        5.20.3 Power and Phone Plugs, Power Supply
+        5.20.4 Bags and Suitcases
+
+  6. Different Environments - On the Road
+
+     6.1 Related HOWTOs
+     6.2 Configuration Tools
+        6.2.1 NetEnv
+        6.2.2 Mobile IP
+           6.2.2.1 Resources
+        6.2.3 DHCP/BootP
+        6.2.4 PPPD Options
+        6.2.5 (TT
+        6.2.6 PCMCIA - Schemes
+        6.2.7 Bootloaders
+           6.2.7.1 LILO
+           6.2.7.2 Other Bootloaders
+        6.2.8 X-Windows
+        6.2.9 More Info
+     6.3 Data Transport Between Different Machines
+        6.3.1 Hardware
+        6.3.2 Software
+           6.3.2.1 Source Code Control System (SCCS)
+           6.3.2.2 CODA Filesystem
+           6.3.2.3 WWWsync
+     6.4 Security in Different Environments
+        6.4.1 Introduction
+        6.4.2 Means of Security
+     6.5 Dealing with Down Times (Cron Jobs)
+
+  7. Other Resources
+
+  8. Repairing the Hardware
+
+  9. Solutions with Laptops
+
+     9.1 Introduction
+     9.2 Mobile Network Analyzer
+     9.3 Mobile Router
+     9.4 Hacking and Cracking Networks
+     9.5 Lectures
+     9.6 Mobile Data Collecting
+        9.6.1 Related HOWTOs
+        9.6.2 Applications
+     9.7 Mobile Office
+     9.8 Connection to Digital Camera
+     9.9 Connection to QuickCam (Video)
+     9.10 Connection to Television Set
+     9.11 Connection to Cellular Phone
+     9.12 Connection to Global Positioning System (GPS)
+     9.13 Connection via Amateur Radio (HAM)
+     9.14 Satellite Watching
+
+  10. Other Operating Systems
+
+     10.1 DOS/Windows9x/NT
+        10.1.1 Introduction
+        10.1.2 DOS Tools to Repartition a Hard Disk
+        10.1.3 Caveats
+        10.1.4 Multi Boot
+        10.1.5 Partition Sharing
+     10.2 BSD Unix
+
+  11. ToDo
+
+  12. Revision History
+
+  13. Credits
+
+  14. Appendix A - Survey about Micro Linuxes
+
+  15. Appendix B - Dealing with Limited Resources or Tuning the System
+
+     15.1 Related HOWTOs
+     15.2 Introduction
+     15.3 Small Space
+        15.3.1 Introduction
+        15.3.2 Techniques
+     15.4 Harddisk Speed
+     15.5 Small Memory
+        15.5.1 Related HOWTOs
+        15.5.2 Techniques
+     15.6 Low CPU Speed
+     15.7 Power Saving Techniques
+     15.8 Kernel
+        15.8.1 Related HOWTOs
+     15.9 Tiny Applications and Distributions
+
+  ______________________________________________________________________
+
+  1.  Preface
+
+  Life is the first gift, love is the second, and understanding is the
+  third. -- Marge Piercy
+
+  People like either laptops or desktops. I like to work with laptops
+  rather than with desktops. I like Linux too. My first HOWTO is the
+  Linux/IR-HOWTO about infrared support for Linux. Also I have written
+  some pages about Linux with certain laptops: Olivetti Echos 133 DM
+  (together with Kurt Saetzler), HP OmniBook 800CT, HP OmniBook 3100
+  (together with Friedhelm Kueck) and COMPAQ Armada 1592 DT. But I don't
+  claim to be a laptop guru, I just had the opportunity to install Linux
+  on some laptops and I simply want to share the information I
+  collected.
+
+  This document isn't ready yet. If you like to write a chapter or even
+  a smaller part by yourself, please feel free to contact me. Also your
+  suggestions and recommendations are welcome. But please don't expect
+  me to solve your laptop related problems. Please read all according
+  manual pages, HOWTOs and WWW sites first, than contact the other
+  resources mentioned below.
+
+  Many times I have mentioned MetaLab formerly known as SunSite. This
+  site carries a heavy load, so do yourself a favor, use one of its
+  mirrors http://metalab.unc.edu/pub/Linux/MIRRORS.html .
+
+  For Debian/GNU Linux the mirror URLs are organized in this scheme
+  http://www.<country code, e.g. uk>.debian.org .
+
+  Since I don't own a non-Intel based machine, this HOWTO might not
+  contain all the details for non-Intel systems or may contain
+  inaccuracies. Sorry.
+
+  This text is included in the LINUX DOCUMENTATION PROJECT
+  http://metalab.unc.edu/LDP .
+
+  The latest version of this document is available in HTML format at
+  http://www.snafu.de/~wehe/index_li.html .
+
+  Richard Worwood mirrors this HOWTO at
+  http://www.felch01.demon.co.uk/Links/links.html .
+
+  A similar HOWTO written in french by Lionel "Trollhunter" you may find
+  at http://www.ie2.u-psud.fr/~bouchpan .
+
+  Werner Heuser <wehe@snafu.de>
+
+  2.  Copyright, Disclaimer and Trademarks
+
+  Copyright © 1999 by Werner Heuser. This document may be distributed
+  under the terms set forth in the LDP license at
+  http://metalab.unc.edu/LDP/COPYRIGHT.html .
+
+  This is free documentation. It is distributed in the hope that it will
+  be useful, but without any warranty. The information in this document
+  is correct to the best of my knowledge, but there's a always a chance
+  I've made some mistakes, so don't follow everything too blindly,
+  especially if it seems wrong. Nothing here should have a detrimental
+  effect on your computer, but just in case I take no responsibility for
+  any damages incurred from the use of the information contained herein.
+
+  Some laptop manufacturers don't like to see a broken laptop with an
+  operating system other than the one shipped with it, and may reload
+  MS-Windows if you complain of a hardware problem. They may even
+  declare the warranty void. Though IMHO this isn't legal or at least
+  not fair. Always have a backup of both the original configuration and
+  your Linux installation if you have to get your laptop repaired.
+
+  Though I hope trademarks will be superfluous sometimes (you may see
+  what I mean at Open Source Definition
+  http://www.opensource.org/osd.html) : If certain words are trademarks,
+  the context should make it clear to whom they belong. For example "MS
+  Windows NT" implies that "Windows NT" belongs to Microsoft (MS). Mac
+  is by Apple Computer. Trademarks belong to their respective owners.
+
+  3.  Which Laptop to Buy?
+
+  3.1.  Introduction
+
+  Portable computers may be divided into different categories. This is a
+  subjective decision, but I try to do so. My groupings roughly follow
+  the generally accepted marketing categories. The criteria could be:
+
+  1. Weight: Often expressed in terms like Portables, Laptops/Notebooks,
+     Sub/Mini-Notebooks, Palmtops/PDAs. There is no standard method to
+     define the weight of a laptop, therefore the data provided by the
+     manufacturers (and which are given below) have to be considered as
+     approximations. The question is how the power supply (wether
+     external or internal) or swappable parts like CD and floppy drive,
+     are included in the weight.
+
+  2. Supported Operations Systems: proprietary versus open
+
+  3. Price: NoName versus Brand
+
+  4. Hardware Features: display size, harddisk size, CPU speed, battery
+     type, etc.
+
+  5. Linux Support: graphic chip, sound card, infrared controller
+     (IrDA), internal modem, etc.
+
+  3.2.  Portables, Laptops/Notebooks, Sub/Mini-Notebooks, Palmtops,
+  PDAs/HPCs
+
+  3.2.1.  Portables
+
+  Weight greater than 4.0 kg (9 lbs). Features like a PC, but in a
+  smaller box and with LCD display. Examples: lunchbox or ruggedized
+  laptops (e.g., http://www.bsicomputer.com/)
+
+  3.2.2.  Laptops/Notebooks
+
+  Weight between 1.7 and 4.0 kg (4 to 9 lbs). Features custom hardware
+  and usually a special CPU. Examples: HP OmniBook 3100, COMPAQ Armada
+  1592DT. The terms laptop and notebook seem equivalent to me.
+
+  3.2.3.  Sub-Notebooks/Mini-Notebooks
+
+  Weight between 1.3 and 1.7 kg (3 to 4 lbs). Features: external floppy
+  drive, external CD drive. Examples: HP OmniBook 800CT, Toshiba
+  Libretto 100, COMPAQ Aero, SONY VAIO 505.
+
+  3.2.4.  Palmtops
+
+  Weight between 0.7 and 1.3 kg (1.5 to 3 lbs). Features: proprietary
+  commercial operating systems. Examples: HP200LX.
+
+  3.2.5.  Personal Digital Assistants (PDAs)/Handheld PCs (HPCs)
+
+  Weight below 0.7 kg (1.5 lbs). Features: proprietary commercial
+  operating systems and often non-Intel CPU (PalmOS, EPOC32, GEOS,
+  Windows CE). Examples: Newton Message Pad, Palm III (former Pilot),
+  Psion Series 5, CASIO Z-7000. Palmtops and PDAs are currently not
+  covered in this HOWTO. Anyway it may be useful therefore too. There is
+  also a PalmOS-HOWTO (former Pilot-HOWTO) by David H. Silber and the
+  Newton and Linux Mini-HOWTO
+  http://privat.swol.de/ReinholdSchoeb/Newton/Newton_and_Linux-mini-
+  HOWTO.html  . I just include some links, most of them are from Kenneth
+  E. Harker's page http://www.cs.utexas.edu/users/kharker/linux-laptop/
+  :
+
+  1. Newtl: Newton/Linux Communications System Newtl allows a Linux
+     machine to communicate with a Newton PDA. Automatically send e-
+     mail, print, and fax outboxes through your Linux machine, and more.
+
+  2. PilotLink and XCoPilot PilotLink is an utility that performs data
+     transfers from 3com PalmPilot handheld computers to your Linux
+     machine. XCoPilot is an emulator of the PalmPilot operating system
+     that runs under Linux.
+
+  3. PalmVNC PalmVNC is an implementation of the Virtual Network Client
+     architecture that will allow you to use a Linux or other UNIX
+     machine to put up a (tiny) X Window on a 3COM PalmPilot.
+
+  4. PDAs and infrared remote control, see Hiromu Okada
+     http://hp.vector.co.jp/authors/VA005810/remocon/remocone.htm
+
+  5. AFAIK you can run Linux on the IBM PC110 (a tiny PC handheld that's
+     no longer manufactured). There's a HOWTO on it running around
+     somewhere but I don't have an URL.
+
+  6. For more information on Virtual Network Computing (VNC), see
+     http://http://www.uk.research.att.com/vnc/ .
+
+  7. There is also Handheld Systems(TM) On-line Archives at
+     http://www.cdpubs.com/hhsys/archives.html .and a search engine
+     about palmtop related topics at http://www.palmtop.net/ .
+
+  3.2.6.  Cellular Phones, Calculators, Digital Cameras, Wearable Com
+  puting
+
+  These devices are not covered in this text. For general information
+  about Embedded Systems, see  http://www.embedded.com . For Linux
+  information, see ELKS  http://www.linux.org.uk/ELKS-Home/index.html
+  and the uCLinux project at  http://ryeham.ee.ryerson.ca/uClinux  .
+  Also related to this topic but not covered yet seems wearable
+  computing, see  http://lcs.www.media.mit.edu/projects/wearables/ for
+  further information.
+
+  3.3.  Linux Features
+
+  Due to a lack of support by some hardware manufacturers, not every
+  feature of a laptop is always supported or fully operational. The main
+  devices which may cause trouble are: graphic chip, IrDA port, sound
+  card, PCMCIA controller , PnP devices and internal modem. Please try
+  to get as much information about these topics before buying a laptop.
+  But often it isn't quite easy to get the necessary information.
+  Sometimes even the specifications or the hotline of the manufacturer
+  aren't able to provide the information. Therefore I have included a
+  Linux Compatibility Check chapter in the Hardware In Detail sections
+  below.
+
+  Depending on your needs, you might investigate one of the vendors that
+  provide laptops pre-loaded with Linux. By purchasing a pre-loaded
+  Linux laptop, much of the guesswork and time spent downloading
+  additional packages could be avoided.
+
+  3.4.  Main Hardware Features
+
+  Besides its Linux features, there often are some main features which
+  have to be considered when buying a laptop. For Linux features please
+  see the Hardware In Detail section below.
+
+  3.4.1.  Weight
+
+  Don't underestimate the weight of a laptop. This weight is mainly
+  influenced by:
+
+  1. screen size
+
+  2. battery type
+
+  3. internal components, such as CD drive, floppy drive
+
+  4. power supply
+
+  3.4.2.  Display
+
+  Laptops come with one of two types of displays: active matrix (TFT)
+  and passive matrix (DSTN). Active matrix displays have better color
+  and contrast, but usually cost more and use more power.  Also consider
+  the screen size. Laptops may be purchased with screens up to 15". A
+  bigger screen weighs more, costs more, and is harder to carry, but is
+  good for a portable desktop replacement.
+
+  3.4.3.  Batteries
+
+  The available battery types are Lithium Ion (LiIon), Nickel Metal
+  Hybrid ( NiMh) and Nickel Cadmium (NiCd).
+
+  LiIon batteries are the most expensive ones but a lot lighter than
+  NiCd for the same energy content, and have minimal -- but present --
+  memory effects. NiMH is better than NiCd, but still rather heavy and
+  does suffer some (although less than NiCd) memory effects.
+
+  Unfortenately most laptops come with a proprietary battery size. So
+  they are not interchangeable between different models.
+
+  3.4.4.  CPU
+
+  3.4.4.1.  Supported CPU Families
+
+  For details about systems which are supported by the Linux Kernel, see
+  the Linux FAQ  http://www.cl.cam.ac.uk/users/iwj10/linux-faq/ .
+
+  1. i286: Linux doesn't support this CPU family yet. But there are some
+     efforts at ELKS http://www.linux.org.uk/ELKS-Home/index.html.
+     Unfortunately this project seems on halt. But if you like, you may
+     use Minix  http://www.cs.vu.nl/~ast/minix.html  one of the
+     predecessors of Linux. Minix supports 8088 to 286 with as little as
+     640K memory.
+
+  2. i386: This covers PCs based on Intel-compatible processors,
+     including Intel's 386, 486, Pentium, Pentium Pro and Pentium II,
+     and compatible processors by AMD, Cyrix and others. Most of the
+     currently available laptops use Intel compatible CPUs and have
+     quite good Linux support.
+
+  3. m68k: This covers Amigas and Ataris having a Motorola 680x0
+     processor for x>=2; with MMU. AFAIK there is no laptop with such a
+     CPU. But I'm not sure weither the early Mac laptops are falling
+     into this category. Early PowerBooks did indeed have m68k chips in
+     them. I think the DuoBook was what they were called. Not sure if
+     they are Linux capable or not.
+
+  4. Alpha, Sparc, Sparc64, PowerPC, Arm and Hurd-i386 architectures:
+     These are currently under construction. AFAIK there are only the
+     Tadpole SPARC and ALPHA laptops, and some other ALPHA laptops
+     available. For a current survey look at Kenneth E. Harker's Linux
+     on Laptops without x86 Family Processors at
+     http://www.cs.utexas.edu/users/kharker/linux-laptop/non-intel.html
+     .
+
+  3.4.4.2.  Miscellaneous
+
+  At higher speed, a CPU consumes more power and generates more heat.
+  Therefore, in many laptops a special low-power CMOS CPU is used.
+  Usually, this special CPU doesn't use as much power as a similar
+  processor used in a desktop. These special CPUs are also more
+  expensive. As a side effect you may find that laptops with a desktop
+  CPU often have a fan which seems quite loud.
+
+  3.4.5.  Keyboard Quality
+
+  Though you might use your desktop computer to do longer writings, a
+  good keyboard can save you some headaches and finger-aches. Look
+  especially for the location of special keys like: <ESC>, <TAB>,
+  <Pos1>, <End>, <PageDown>, <PageUp> and the cursor keys.
+
+  3.4.6.  Price
+
+  Laptops are quite expensive if you compare them with desktops. So you
+  may decide between a brand or no-name product. Though I would like to
+  encourage you to take a no-name product, there are some caveats. I
+  have experienced that laptops break often, so you are better off, when
+  you have an after sales warranty, which is usually only offered with
+  brand products. Or you may decide to take a second hand machine. When
+  I tried this, I discovered that the laptop market is changing quite
+  often.  A new generation is released approximately every three months
+  (compared by CPU speed, harddisk capacity, screen size etc.). So
+  laptops become old very quick. But this scheme often isn't followed by
+  the prices for second hand laptops. They seem too expensive to me.
+  Anyway if you plan on purchasing a second hand machine, review my
+  recommendations on checking the machine. For German readers there is
+  an online market place at http://www.hardware.de, which offers a good
+  survey about current prices for second hand machines.
+
+  3.4.7.  Power Supply
+
+  If you travel abroad pay attention to the voltage levels which are
+  supported by the power supply.
+
+  3.5.  Sources of More Information
+
+  Specifications and manufacturer support often are not helpful.
+  Therefore you should retrieve information from other sources too:
+
+  1. Highly recommended is the survey by Kenneth E. Harker
+     http://www.cs.utexas.edu/users/kharker/linux-laptop/ .
+
+  2. ftp://tsx-11.mit.edu/pub/linux/packages/laptops/ .
+
+  3. Hardware-HOWTO
+
+  4. open hardware - The Open Hardware Certification Program
+     http://www.debian.org/OpenHardware/
+
+  5. HARDWARE.doa.org - dedicated to the hardware aspects of (Linux)
+     computing  http://hardware.doa.org/
+
+  6. How to Build a PC FAQ - excellent hardware overview by Billy Newsom
+     http://www.motherboards.org/build.html
+
+  7. Last but not least the WWW itself.
+
+  3.6.  Linux Compatibility Check
+
+  3.6.1.  Related HOWTOs
+
+  1. Hardware-HOWTO
+
+  2. Kernel-HOWTO
+
+  3. PCMCIA-HOWTO
+
+  4. PCI-HOWTO
+
+  5. Plug-and-Play-mini-HOWTO
+
+  3.6.2.  Check Methods in General
+
+  If you can't find the necessary information through the above
+  mentioned sources, you are on your own. Luckily, Linux provides many
+  means to help. For details see the Hardware on Detail section below.
+  In general you may use:
+
+  1. First of all the kernel itself. Look up what kind of hardware is
+     detected by the kernel. You get this information during boot time
+     or usually by dmesg or by looking into /var/log/messages.
+
+  2. If your kernel supports the /proc file system you may get detailed
+     information about PCI devices by cat /proc/pci Please read the
+     kernel documentation pci.txt. You may get further information about
+     unknown PCI devices at the database from Craig Hart at
+     http://members.hyperlink.net.au/~chart. From 2.1.82 kernels on you
+     may use the lspci command from the pci-utils package.
+
+  3. To retrieve information about Plug-and-Play (PNP) devices use
+     isapnp-tools .
+
+  4. Use scsi_info by David Hinds for SCSI devices or scsiinfo.
+
+  If you don't want to install a complete Linux you may retrieve this
+  information by using a micro Linux ( see appendix A). The package
+  muLinux provides even a small systest program and TomsRtBt comes with
+  memtest. To use memtest you have to copy it on a floppy dd
+  if=/usr/lib/memtest of=/dev/fd0 and to reboot from this floppy.
+
+  If your laptop came with Windows, you may determine a lot of hardware
+  settings from the installation. Boot into DOS or Windows to get the
+  information you need.
+
+  Using Windows9x/NT to get hardware settings, basically boot Windows,
+  then Start -> Settings -> Control Panel -> System -> Device Manager
+  and write down everything, or make a hardcopy from the display using
+  the <PRINT> key, plus keep a log of settings, hardware, memory, etc.
+
+  Using MS-DOS and Windows3.1x you can use the command msd, which is an
+  akronym for MicroSoft Diagnostics. Or you might try one of the
+  numerous DOS shareware utilities: CHECK-IT, DR.HARD and others.
+
+  3.7.  Buying a Second Hand Laptop
+
+  Some recommendations to check an used laptop, before buying it:
+
+  1. Review the surface of the case for visible damages.
+
+  2. Check the display for pixel faults. Maybe it's useful to take a
+     magnifying glass therefore.
+
+  3. Do an IO stress-test, .e.g. with the tool bonnie.
+
+  4. You may use memtest and crashme to achieve a memory test.
+
+  5. Do a CPU stress test, e.g. with the tool Byte or by compiling a
+     kernel.
+
+  6. Check the floppy drive by formatting a floppy.
+
+  7. Check the CD drive by reading a CD.
+
+  8. To check the battery seems difficult, because it needs some time:
+     one charge and one work cycle.
+
+  9. To check the surface of the harddisk you may take e2fsck. There is
+     also a Linux tool dosfsck or the other fsck tools.
+
+  10.
+     To test the entire disk (non-destructively), time it for
+     performance, and determine its size, as root do: time dd
+     if=/dev/hda of=/dev/null bs=1024k .
+
+  11.
+     Check wether the machine seems stolen. There is at least one
+     database about stolen laptops in the WWW. But I have lost the URL.
+
+  AFAIK there is no Linux tool like the DOS tools CHECK-IT, DR. HARD,
+  SYSDIAG and others. These tools include many of the tests in one
+  integrated suite. One of the best IMHO is the tool PC Diagnostics 95
+  made by Craig Hart http://members.hyperlink.net.au/~chart . Despite
+  the 95 in its name it's plain DOS, tiny (76KB programm and 199KB data)
+  reliable and free. Unfortenately it contains no check for the IrDA
+  port.
+
+  Please note this quotation from the disclaimer: "This program is
+  written with the target audience being a trained, experienced
+  technician. It is NOT designed to be used by those ignorant of
+  computer servicing. Displays are not pretty but functional.
+  Information is not explained since we are not trying to educate. This
+  software should be considered to be just like any other tool in a
+  tech's toolbox. It is to be applied with care, in the right situation,
+  in order to find answers to specific problems. If you are an end user
+  who is less than confident of dealing with computer hardware, this is
+  probably not a program for you."
+
+  3.8.  No Hardware Recommendations
+
+  It's difficult to give any recommendations for a certain laptop model
+  in general. Your personal needs have to be taken into account. Also
+  the market is changing very quickly. I guess every three months a new
+  generation of laptops (according to harddisk space, CPU speed, display
+  size, etc.) comes into the market. So I don't give any model or brand
+  specific recommendations.
+
+  3.9.  Laptop Distribution
+
+  3.9.1.  Requirements
+
+  From the Battery-HOWTO I got this recommendation (modified by WH):
+
+  A Message to Linux Distributors
+
+  If you happen to be a Linux distributor, thank you for reading all
+  this. Laptops are becoming more and more popular, but still most Linux
+  distributions are not very well prepared for portable computing.
+  Please make this section of this document obsolete, and make a few
+  changes in your distribution.
+
+  The installation routine should include a configuration, optimized for
+  laptops. The minimal install is often not lean enough. There are a lot
+  of things that a laptop user does not need on the road. Just a few
+  examples. There is no need for three different versions of vi (as
+  found in Suse Linux). Most portable systems do not need printing
+  support (they will never be connected to a printer, printing is
+  usually done with the desktop system at home). Quite a few laptops do
+  not need any network support at all.
+
+  Don't forget to describe laptop-specific installation problems, e. g.
+  how to install your distribution without a cd-rom drive or how to
+  setup the plip network driver.
+
+  Add better power management and seamless PCMCIA support to your
+  distribution. Add a recompiled kernel and an alternative set of PCMCIA
+  drivers with apm support that the user can install on demand. Include
+  a precompiled apmd package with your distribution.
+
+  Add support for dynamically switching network configurations. Most
+  Linux laptops travel between locations with different network settings
+  (e. g. the network at home, the network at the office and the network
+  at the university) and have to change the network ID very often.
+  Changing a Linux system's network ID is a pain with most
+  distributions.
+
+  Add a convenient PPP dialer with an address book, that does not try to
+  start multiple copies of the PPP daemon if you click on the button
+  twice (e.g., the RedHat usernet tool). It would be nice to have the
+  PPP dialer also display the connection speed and some statistics. One
+  nice command line dialer that autodetects modems and PPP services is
+  wvdial from Worldvisions http://www.worldvisions.ca/wvdial/.
+
+  3.9.2.  Recommendation
+
+  IMHO the Debian/GNU Linux http://www.debian.org has most of the
+  desired features for a laptop installation. The distribution has a
+  quite flexible installation tool. The installation process is well
+  documented, especially concerning the methods which are useful at
+  laptops. All the binaries are tiny, because they are stripped. And
+  besides Debian/GNU Linux is free. Though other distributions are also
+  worth to try them.
+
+  4.  Installation Methods
+
+  4.1.  Related HOWTOs
+
+  1. CDROM-HOWTO
+
+  2. Config-HOWTO
+
+  3. Diskless-mini-HOWTO
+
+  4. Installation-HOWTO
+
+  5. Pre-Installation-Checklist-mini-HOWTO
+
+  6. Update-mini-HOWTO
+
+  7. Hard-Disk-Upgrade-mini-HOWTO
+
+  8. Installation and getting started by Matt Welsh and others available
+     at the LINUX DOCUMENTATION PROJECT http://metalab.unc.edu/LDP
+
+  9. Installing Debian Linux 2.1 For x86 by Bruce Perens, Sven Rudolph,
+     Igor Grobman, James Treacy, Adam P. Harris
+     ftp://ftp.debian.org/debian/dists/slink/main/disks-
+     i386/current/install.html
+
+  10.
+     Install-From-Zip-mini-HOWTO
+
+  11.
+     ZIP-Drive-mini-HOWTO
+
+  4.2.  Introduction
+
+  From the Battery-HOWTO:"Installing and using Linux on a laptop is
+  usually no problem at all, so go ahead and give it a try. Unlike some
+  other operating systems, Linux still supports and runs well on even
+  very old hardware, so you might give your outdated portable a new
+  purpose in life by installing Linux on it."
+
+  One of the great benefits of Linux are its numerous and flexible
+  installation features, which I don't want to describe in detail.
+  Instead I try to focus on laptop specific methods, which are necessary
+  only in certain circumstances.
+
+  Most current distributions support installation methods which are
+  useful for laptops, including installation from CD-ROM, via PCMCIA and
+  NFS (or maybe SMB). Please see the documents which are provided with
+  these distributions for further details or take a look at the above
+  mentioned manuals and HOWTOs.
+
+  4.3.  From a Boot Floppy plus CD-ROM - The Usual Way
+
+  With modern laptops, the usual Linux installation (one Boot Floppy,
+  one Support Floppy, one Packages CD-ROM) should be no problem, if
+  there is are floppy drive and a CD-ROM drive available. Though with
+  certain laptops you might get trouble if you can not simultaneously
+  use the floppy drive and CD-ROM drive , or if the floppy drive is only
+  available as a PCMCIA device, as with the Toshiba Libretto 100. Some
+  laptops support also booting and therefore installation completely
+  from a CD drive, as reported for the SONY VAIO in the VAIO-HOWTO.
+  Note: Check the BIOS for the CD boot option and make sure your Linux
+  distribution comes on a bootable CD.
+
+  Certain laptops will only boot zImage kernels. bzImage kernels won't
+  work. This is a known problem with the IBM Thinkpad 600 and Toshiba
+  Tecra series, for instance. Some distributions provide certain boot
+  floppies for these machines or for machines with limited memory
+  resources, Debian/GNU Linux http://www.debian.org for instance.
+
+  4.4.  From a DOS or Windows Partition at the same Machine
+
+  This is a short description of how to install from a CD-ROM under DOS
+  without using boot or supplemental floppy diskettes. This is
+  especially useful for notebooks with swappable floppy and CD-ROM
+  components (if both are mutually exclusive) or if they are only
+  available as PCMCIA devices. I have taken this method from "Installing
+  Debian GNU/Linux 2.1 For Intel x86 - Chapter 5 Methods for Installing
+  Debian" http://www.debian.org :
+
+  1. Get the following files from your nearest Debian FTP mirror and put
+     them into a directory on your DOS partition: resc1440.bin
+     drv1440.bin base2_1.tgz root.bin linux install.bat and loadlin.exe.
+
+  2. Boot into DOS (not Windows) without any drivers being loaded. To do
+     this, you have to press <F8> at exactly the right moment.
+
+  3. Execute install.bat from that directory in DOS.
+
+  4. Reboot the system and install the rest of the distribution, you may
+     now use all the advanced features such as PCMCIA, PPP and others.
+
+  This should work for other distributions with similar changes. For
+  RedHat see How to Install from CD-ROM without Boot and Supplemental
+  Disks .
+
+  Some new laptops may be able to boot a Linux distribution on a
+  bootable CD-ROM (e.g., RedHat). This would allow installation without
+  a floppy disk drive.
+
+  4.5.  From a Second Machine With a Micro Linux On a Floppy
+
+  4.5.1.  Introduction
+
+  Because of their small or non-existent footprint, micro-Linuxes are
+  especially suited to run on laptops -- particularly if you use a
+  company-provided laptop running Windows9x/NT. Or for installation
+  purposes using another non Linux machine. There are several micro
+  Linux distributions out there that boot from one or two floppies and
+  run off a ramdisk. See appendix A for a listing of distributions.
+
+  I tried the following with muLinux to clone my HP OmniBook 800 to a
+  COMPAQ Armada 1592DT. Thanks to Michele Andreoli, maintainer of
+  muLinux for his support. Since muLinux doesn't support PCMCIA yet, you
+  may use TomsRtBt instead. In turn TomsRtBt doesn't support PPP but
+  provides slip. I have described how to copy an already existing
+  partition, but it might be also possible to achieve a customized
+  installation. Note: Usually you would try to achieve an installation
+  via NFS, which is supported by many distributions. Or if your sources
+  are not at a Linux machine you might try SMB, which is also supported
+  by muLinux .
+
+  4.5.2.  Prerequisites
+
+  You need two machines equipped with Linux. With the laptop
+  (client/destination) on which you want to install Linux use the
+  muLinux floppy. The other machine (server/source) may be a usual Linux
+  box or also using muLinux. Though its low transfer rate I use a serial
+  null modem cable because its cheap. You may apply the according method
+  using a PCMCIA network card and a crossover network cable or a HUB, or
+  a parallel "null modem" cable and PLIP. As the basic protocol I used
+  PPP, but you may also use SLIP. For the data-transfer I used nc, you
+  may use ftp, tftp, rsh, ssh, dd, rcp, kermit, NFS, SMB and others.
+
+  Basic requirements are:
+
+  1. A good knowledge about using Linux. You have to know exactly what
+     you are doing, if not you might end destroying former
+     installations.
+  2. A nullmodem serial cable.
+
+  4.5.3.  Source Machine
+
+  At your source machine issue the following commands (attention: IP
+  address, port number, partition and tty are just examples!):
+
+  1. Edit /etc/ppp/options, it should contain only:
+
+     ___________________________________________________________________
+     /dev/ttyS0
+     115200
+     passive
+     ___________________________________________________________________
+
+  2. With muLinux versions 3.x you may even use the convenient command
+     setup -f ppp .
+
+  3. Start PPP: pppd .
+
+  4. Configure the PPP network device: ifconfig ppp0 192.168.0.1 .
+
+  5. Add the default route: route add default gw 192.168.0.1 .
+
+  6. Check the network connection: ping 192.168.0.2, though the
+     destination machine isn't up yet.
+
+  7. Start the transfer from another console, remember <LEFT-ALT><Fx>:
+     cat /dev/hda2 | gzip -c | nc -l -p 5555 .
+
+  8. After the transfer (there are no more harddisk writings) stop the
+     ping: killall ping .
+
+  4.5.4.  Destination Machine
+
+  At the destination machine issue:
+
+  1. Edit /etc/ppp/options, it should contain only:
+
+     ___________________________________________________________________
+     /dev/ttyS0
+     115200
+     passive
+     ___________________________________________________________________
+
+  2. With muLinux versions 3.x you may even use the convenient command
+     setup -f ppp .
+
+  3. Start PPP: pppd .
+
+  4. Configure the PPP network device: ifconfig ppp0 192.168.0.2 .
+
+  5. Add the default route: route add default gw 192.168.0.2 .
+
+  6. Check the network connection, by pinging to the source machine:
+     ping 192.168.0.1 .
+
+  7. Change to another console and get the data from the server: nc
+     192.168.0.1 5555 | gzip -dc >/dev/hda4 .
+
+  8. 400 MB may take app. 6 hours, but YMMV.
+
+  9. Stop the transfer, when it is finished with: <CTL><C> .
+
+  10.
+     After the transfer is completed, stop the ping: killall ping .
+
+  4.5.5.  Configuration of the Source Machine after the Transfer
+
+  1. Edit /etc/fstab .
+
+  2. Edit /etc/lilo.conf and /etc/lilo.msg and start lilo .
+
+  3. Set the new root device to the kernel: rdev image root_device .
+
+  4.5.6.  Miscellaneous
+
+  1. bzip2 didn't work, probably because I wasn't able to make it read
+     from stdin .
+
+  2. Since rshd, sshd, ftpd daemons are not available with muLinux you
+     have to build your own daemon with nc, as described above.
+
+  3. I had to set up both PPP sides very quick or the connection broke,
+     I don't know why.
+
+  4. Speed optimization has to be done, asyncmap 0 or local?
+
+  5. I checked this only with a destination partition greater than the
+     source partition. Please check dd instead of cat therefore.
+
+  6. Don't mount the destination partition.
+
+  4.6.  From a Second Machine With a 2.5" Hard Disk Adapter
+
+  From Adam Sulmicki adam@cfar.unc.edu I got this hint: Most but not all
+  harddisks in laptops are removable, but this might be not an easy
+  task. You could just buy one of those cheap 2.5" IDE
+  converters/adapters which allow you to connect this harddisk
+  temporarily to a PC with IDE subsystem, and install Linux as usual
+  using that PC. You may do so using the harddisk as the first IDE drive
+  or besides as the second IDE drive. But than you need to be sure that
+  lilo writes to the right partition. Also you have to make sure that
+  you use the same translation style as your laptop is going to use
+  (i.e. LBA vs. LARGE vs. CHS ). You find additional information in the
+  Hard-Disk-Upgrade-mini-HOWTO. You might copy an existing partition,
+  but it is also possible to achieve a customized installation.
+
+  4.7.  From a PCMCIA Device
+
+  Since I don't have a laptop which comes with a PCMCIA floppy drive
+  (for instance Toshiba Libretto 100), I couldn't check this method.
+  Please see the chapter Booting from a PCMCIA Device in the PCMCIA-
+  HOWTO. Also I couldn't check whether booting from a PCMCIA harddisk is
+  possible.
+  Anyway, when you are able to boot from a floppy and the laptop
+  provides a PCMCIA slot, it should be possible to use different PCMCIA
+  cards to connect to another machine, to an external SCSI device,
+  different external CD and ZIP drives and others. Usually these methods
+  are described in the documentation which is provided with the
+  distribution.
+
+  4.8.  From a Parallel Port Device (ZIP Drive, CD Drive)
+
+  I couldn't check this method by myself, because I don't have such a
+  device. Please check the according Install-From-Zip-mini-HOWTO and CD-
+  HOWTO. Also I don't know how much these installation methods are
+  supported by the Linux distributions or the micro Linuxes. I suppose
+  you have to fiddle around a bit to get this working.
+
+  5.  Hardware In Detail
+
+  5.1.  PCMCIA Controller
+
+  5.1.1.  Linux Compatibility Check
+
+  With the probe command, which is included in the PCMCIA-CS package by
+  David Hinds you can get the type of the PCMCIA controller. Often this
+  shows also up with cat /proc/pci .
+
+  5.1.2.  Related HOWTOs
+
+  1. PCMCIA-HOWTO
+
+  5.1.3.  PCMCIA Configuration - Survey
+
+  In the mailing lists where I'm a member, the question "How can I set
+  up PCMCIA support, after the Linux installation?" comes up sometimes.
+  Therefore I try to give a short survey. But the authoritative source
+  for the latest information about the PCMCIA Card Services for Linux,
+  including documentation, files, and generic PCMCIA information is the
+  Linux PCMCIA Information Page . For problems with PCMCIA and APM see
+  the APM chapter.
+
+  5.1.3.1.  Software
+
+  1. Read the PCMCIA HOWTO, usually included in the PCMCIA-CS package.
+
+  2. Install the newest available PCMCIA-CS package, if you take a rpm
+     or deb package it is quite easy.
+
+  3. If necessary, install a new kernel. Note: With 2.2.x kernels PCMCIA
+     kernel support seems no longer necessary. I had no time to look
+     this up yet. Please read the according documents.
+
+  4. Make sure your kernel has module support and PCMCIA support enabled
+     (and often APM support)
+
+  5. Make sure your kernel also includes support for the cards you want
+     to use, e.g. network support for a NIC card, serial support for a
+     modem card, SCSI support for a SCSI card and so on.
+  5.1.3.2.  PCMCIA Controller
+
+  1. Use the probe command to get information whether your PCMCIA
+     controller is detected or not.
+
+  2. Edit the file /etc/sysconfig/pcmcia. It should include PCMCIA=y and
+     the type of your PCMCIA controller, e.g. PCIC=i82365.
+
+  3. Start the PCMCIA services typically via /etc/init.d/pcmcia start.
+     If you get two high beeps, everything should be fine.
+
+  4. If something doesn't work, check the messages in /var/log/messages
+     .
+
+  5.1.3.3.  PCMCIA Card
+
+  1. Check your card with cardctl ident .
+
+  2. If your card is not in /etc/pcmcia/config, edit this file
+     accordingly.
+
+  3. If you use X, you can use cardinfo to insert, suspend, or restart a
+     PCMCIA card via a nice graphical interface.
+
+  5.2.  Infrared Port
+
+  5.2.1.  Linux Compatibility Check
+
+  To get the IrDA port of your laptop working with Linux/IrDA you may
+  use StandardInfraRed (SIR) or FastInfraRed (FIR).
+
+  5.2.1.1.  SIR
+
+  Up to 115.200bps, the infrared port emulates a serial port like the
+  16550A UART. This will be detected by the kernel serial driver at boot
+  time, or when you load the serial module. If infrared support is
+  enabled in the BIOS, for most laptops you will get a kernel message
+  like:
+
+  ______________________________________________________________________
+  Serial driver version 4.25 with no serial options enabled
+  ttyS00 at 0x03f8 (irq = 4) is a 16550A     #first serial port /dev/ttyS0
+  ttyS01 at 0x3000 (irq = 10) is a 16550A    #e.g. infrared port
+  ttyS02 at 0x0300 (irq = 3) is a 16550A     #e.g. PCMCIA modem port
+  ______________________________________________________________________
+
+  5.2.1.2.  FIR
+
+  If you want to use up to 4Mbps, your machine has to be equipped with a
+  certain FIR chip. You need a certain Linux/IrDA driver to support this
+  chip. Therefore you need exact information about the FIR chip. You may
+  get this information in one of the following ways:
+
+  1. Read the specification of the machine, though it is very rare that
+     you will find enough and reliable information there.
+
+  2. Try to find out wether the FIR chip is a PCI device. Do a cat
+     /proc/pci . The according files for 2.2.x kernels are in
+     /proc/bus/pci . Though often the PCI information is incomplete. You
+     may find the latest information about PCI devices and vendor
+     numbers in the kernel documentation usually in
+     /usr/src/linux/Documentation or at the page of Craig Hart
+     http://members.hyperlink.net.au/~chart . From kernel 2.1.82 on, you
+     may use lspci from the pci-utils package, too.
+
+  3. Use the DOS tool CTPCI330.EXE provided in ZIP format by the German
+     computer magazine CT  http://www.heise.de/ct/ftp/pci.shtml . The
+     information provided by this program is sometimes better than that
+     provided by the Linux tools.
+
+  4. Try to get information about Plug-and-Play (PnP) devices. Though I
+     didn't use them for this purpose yet, the isapnp tools, could be
+     useful.
+
+  5. If you have installed the Linux/IrDA software load the FIR modules
+     and watch the output of dmesg, whether FIR is detected or not.
+
+  6. Another way how to figure it out explained by Thomas Davis
+     (modified by WH): "Dig through the FTP site of the vendor, find the
+     Windows9x FIR drivers, and they have (for a SMC chip):
+
+     ___________________________________________________________________
+     -rw-rw-r--   1 ratbert  ratbert       743 Apr  3  1997 smcirlap.inf
+     -rw-rw-r--   1 ratbert  ratbert     17021 Mar 24  1997 smcirlap.vxd
+     -rw-rw-r--   1 ratbert  ratbert      1903 Jul 18  1997 smcser.inf
+     -rw-rw-r--   1 ratbert  ratbert     31350 Jun  7  1997 smcser.vxd
+     ___________________________________________________________________
+
+  If in doubt, always look for the .inf/.vxd drivers for Windows95. Win
+  dows95 doesn't ship with _ANY_ FIR drivers. (they are all third party,
+  mostly from Counterpoint, who was assimilated by ESI)."
+
+  7. Also Thomas Davis found a package of small DOS utilities made by
+     SMC. Look at http://www.smsc.com/ftppub/chips/appnote/ir_utils.zip
+     . The package contains FINDCHIP.EXE. And includes a FIRSETUP.EXE
+     utility that is supposed to be able to set all values except the
+     chip address. Furthermore it contains BIOSDUMP.EXE, which produces
+     this output:
+
+     Example 1 (from a COMPAQ Armada 1592DT)
+
+     ___________________________________________________________________
+          In current devNode:
+                Size      = 78
+                Handle    = 14
+                ID        = 0x1105D041 = 'PNP0511' -- Generic IrDA SIR
+                Types:  Base = 0x07, Sub = 0x00,  Interface = 0x02
+                     Comm. Device, RS-232, 16550-compatible
+                Attribute = 0x80
+                     CAN be disabled
+                     CAN be configured
+                     BOTH Static & Dynamic configuration
+           Allocated Resource Descriptor Block TAG's:
+                TAG=0x47, Length=7 I/O Tag, 16-bit Decode
+                                        Min=0x03E8, Max=0x03E8
+                                        Align=0x00, Range=0x08
+                TAG=0x22, Length=2 IRQ Tag, Mask=0x0010
+                TAG=0x79, Length=1 END Tag, Data=0x2F
+     ___________________________________________________________________
+
+  Result 1:
+
+  Irq Tag, Mask (bit mapped - ) = 0x0010 = 0000 0000 0000 0001 0000 so,
+  it's IRQ 4. (start at 0, count up ..), so this is a SIR only device,
+  at IRQ=4, IO=x03e8.
+
+  Example 2 (from an unknown machine)
+
+  ______________________________________________________________________
+       In current devNode:
+            Size      = 529
+            Handle    = 14
+            ID        = 0x10F0A34D = 'SMCF010' -- SMC IrCC
+            Types:  Base = 0x07, Sub = 0x00,  Interface = 0x02
+                 Comm. Device, RS-232, 16550-compatible
+            Attribute = 0x80
+                 CAN be disabled
+                 CAN be configured
+                 BOTH Static & Dynamic configuration
+
+       Allocated Resource Descriptor Block TAG's:
+            TAG=0x47, Length=7 I/O Tag, 16-bit Decode
+                                    Min=0x02F8, Max=0x02F8
+                                    Align=0x00, Range=0x08
+            TAG=0x22, Length=2 IRQ Tag, Mask=0x0008
+            TAG=0x47, Length=7 I/O Tag, 16-bit Decode
+                                    Min=0x02E8, Max=0x02E8
+                                    Align=0x00, Range=0x08
+            TAG=0x2A, Length=2 DMA Tag, Mask=0x02, Info=0x08
+            TAG=0x79, Length=1 END Tag, Data=0x00
+  ______________________________________________________________________
+
+  Result 2:
+
+  a) it's a SMC IrCC chip
+
+  b) one portion is at 0x02f8, has an io-extent of 8 bytes; irq = 3
+
+  c) another portion is at 0x02e8, io-extent of 8 bytes; dma = 1 (0x02
+  =0000 0010)
+
+  Thomas Davis has placed some device information at
+  http://www.jps.net/tadavis/irda/devids.txt .
+
+  WARNING: The package is not intended for the end user, and some of the
+  utilities could be harmful. The only documentation in the package is
+  in M$ Word format. Linux users may read this with catdoc, available at
+  http://www.fe.msk.ru/~vitus/catdoc/ .
+
+  8. Use the Device Manager of Windows9x/NT.
+
+  9. You may also use the hardware surveys mentioned below.
+
+  10.
+     And as a last ressort, you may even open the laptop and look at the
+     writings at the chipsets themselfs.
+
+  5.2.1.3.  Hardware Survey
+
+  I have made a hardware survey at
+  http:/www.snafu.de/~wehe/ir_misc.html. This list also contains
+  information about infrared capable devices which are not mentioned
+  here (mice, printers, remote control, transceivers, etc.).
+
+  To make this list more valuable, it is necessary to collect more
+  information about the infrared devices in different hardware. You can
+  help by sending me a short e-mail containing the exact name of the
+  hardware you have and which type of infrared controller is used.
+
+  Please let me know also how well Linux/IrDA worked (at which tty, port
+  and interrupt it works and the corresponding infrared device, e.g.
+  printer, cellular phone).
+
+  Also you can help by contributing detailed technological information
+  about some infrared devices, which is necessary for the development of
+  drivers for Linux.
+
+  5.2.2.  Related HOWTOs
+
+  1. Linux/IR-HOWTO
+
+  5.2.3.  IrDA Configuration - Survey
+
+  5.2.3.1.  IrDA
+
+  The Linux infrared support is still experimental, but rapidly
+  improving. I try to describe the installation in a short survey.
+  Please read my Linux/IR-HOWTO http://www.snafu.de/~wehe/index_li.html
+  for detailed information.
+
+  5.2.3.1.1.  Kernel
+
+  1. Get a 2.2.x kernel.
+
+  2. Compile it with all IrDA options enabled.
+
+  3. Also enable experimental, sysctl, serial and network support.
+
+  5.2.3.1.2.  Software
+
+  1. Get the Linux/IrDA software irda-utils at The Linux IrDA Project .
+
+  2. Untar the package.
+
+  3. Do a make depend; make all; make install
+
+  5.2.3.1.3.  Hardware
+
+  1. Enable the IrDA support in the BIOS.
+
+  2. Check for SIR or FIR support, as described above.
+
+  3. Start the Linux/IrDA service with irmanager -d 1 .
+
+  4. Watch the kernel output with dmesg .
+
+  5.2.3.2.  Linux Remote Control - LiRC
+
+  Linux Remote Control http://fsinfo.cs.uni-sb.de/~columbus/lirc/ is
+  maintained by Christoph Bartelmus. "Lirc is a package that supports
+  receiving and sending IR signals of the most common IR remote
+  controls. It contains a device driver for hardware connected to the
+  serial port, a daemon that decodes and sends IR signals using this
+  device driver, a mouse daemon that translates IR signals to mouse
+  movements and a couple of user programs that allow to control your
+  computer with a remote control." I don't have valid information about
+  how much infrared remote control is working with laptop infrared
+  devices.
+
+  5.3.  Graphic Chip
+
+  5.3.1.  Linux Compatibility Check
+
+  5.3.1.1.  Video Mode
+
+  The tool SuperProbe is part of XFree86 and is able to check many
+  graphic chips. Please read the documentation carefully, because it
+  might crash your hardware. From man SuperProbe:
+
+  "SuperProbe is a a program that will attempt to determine the type of
+  video hardware installed in an EISA/ISA/VLB-bus system by checking for
+  known registers in various combinations at various locations
+  (MicroChannel and PCI machines may not be fully supported; many work
+  with the use of the -no_bios option). This is an error-prone process,
+  especially on Unix (which usually has a lot more esoteric hardware
+  installed than MS-DOS system do), so SuperProbe may likely need help
+  from the user.
+
+  ...
+
+  At this time, SuperProbe can identify MDA, Hercules, CGA, MCGA, EGA,
+  VGA, and an entire horde of SVGA chipsets (see the -info option,
+  below). It can also identify several HiColor/True-color RAMDACs in use
+  on SVGA boards, and the amount of video memory installed (for many
+  chipsets). It can identify 8514/A and some derivatives, but not XGA,
+  or PGC (although the author intends to add those capabilities). Nor
+  can it identify other esoteric video hardware (like Targa, TIGA, or
+  Microfield boards).":
+
+  For testing reasons start the X server with X 2> <error.msg>. And try
+  to change the resolution by typing <CTL><ALT><+> or <CTL><ALT><->.
+  Note: the + or - sign have to be taken from the numeric pad, which can
+  be emulated at the letter pad by some laptops.
+
+  5.3.1.2.  Text Mode
+
+  Just watch the display and determine if it works properly. If not, try
+  to enable different video modes at startup time. Setting up X can
+  sometimes be an exercise in trial and error.
+
+  5.3.2.  Related HOWTOs
+
+  1. XFree86-HOWTO
+
+  2. XFree86-Video-Timings-HOWTO
+
+  3. XFree86-XInside-HOWTO
+
+  4. X-Big-Cursor-mini-HOWTO (useful when running X on a notebook with
+     low contrast LCD)
+
+  5. Keyboard-and-Console-HOWTO
+
+  6. vesafb-mini-HOWTO
+
+  5.3.3.  Survey X-Servers
+
+  You might discover that some features of your laptop are not supported
+  by XFree86, e.g. high resolutions, accelerated X or an external
+  monitor. Therefor I give a survey of available X servers.
+
+  1. XFree86 http://www.xfree86.org
+
+  2. Xinside aka AcceleratedX http://www.xig.com , commercial
+
+  3. SciTech http://www.scitechsoft.com , commercial
+
+  4. VESA Frame-Buffer-Device, available with 2.2.x kernels and XFree86
+     3.3.2
+
+  5.3.4.  Resources
+
+  You may find a survey about X windows resources at Kenneth E. Harker's
+  page http://www.cs.utexas.edu/users/kharker/linux-laptop/.
+
+  5.3.5.  External Monitor
+
+  There are several different methods to activate support for an
+  external monitor: as a BIOS option or during runtime with a keystroke
+  e.g. <Fn>+<F4>. Maybe you have to edit /etc/XF86Config by configuring
+  int_disp and ext_disp. If you can't get this to work with XFree, try a
+  demo version of the commercial X servers mentioned above. Also check
+  with the RedHat and SuSE WWW sites as they may have new, binary-only,
+  X servers that may work with your laptop.
+
+  5.3.6.  Miscellaneous
+
+  Sometimes you may encounter a display not working properly in text
+  mode. Currently I don't have any recommendations, please see Keyboard-
+  Console-HOWTO.
+
+  Take care of the backlight AFAIK this device can only bear a limited
+  number of uptime circles. So avoid using screensavers too much.
+
+  For problems with X windows and APM please see the APM chapter.
+
+  5.4.  Sound
+
+  5.4.1.  Linux Compatibility Check
+
+  The only way I know to check this, is to compile the different sound
+  drivers into the kernel and check whether they are detected or not.
+  The best way to do so, is to compile them as modules because it's
+  easier to load different parameters such as interrupts and IO ports
+  than. For the new 2.2.x kernels, read the
+  /usr/src/linux/Documentation/sound/Introduction document by Wade
+  Hampton. This document may help you get started with sound. Also, you
+  might try one of the commercial sound drivers mentionend below.
+
+  5.4.2.  Related HOWTOs
+
+  1. Sound-HOWTO
+
+  2. Visual-Bell-mini-HOWTO
+
+  5.4.3.  Survey Sound Drivers
+
+  Many new laptops come with 16-bit sound. But MWave and some other
+  sound technologies won't work or are very hard to get working, e.g.
+  booting to DOS, loading a driver, then using the soundcard as a
+  standard SB-PRO. So you might need a commercial sound driver. With the
+  recent announcement of Linux support by IBM, it would be GREAT if IBM
+  supported the MWave under Linux (hint, hint...). As a last ressort you
+  may try the speaker module pcsnd, which tries to emulate a soundcard.
+
+  1. Kernel Sound Driver by Hannu Savolainen
+
+  2. ALSA Advanced Linux Sound Architecture , commercial or at least
+     non-GPL (since I found a Debian/GNU Linux package I'm not sure
+     anymore, about the commercial status)
+
+  3. OSS UNIX Sound System Lite / OSS, commercial or at least non-GPL
+     (since the 2.2.x kernels I'm not sure about the commercial status),
+     also available from http://www.opensound.com .
+
+  5.5.  Keyboard
+
+  5.5.1.  Linux Compatibility Check
+
+  Usually there are no problems with Linux and the keyboard. Though
+  there are two minor caveats: First the setleds program might not work.
+  Second the key mapping might not fit your needs. Some Unix users and
+  vi users expect to find the <CONTROL> key to the left of the <A> key.
+  Many PC-type keyboards have the <CAPS-LOCK> key there. You may use
+  xmodmap or loadkeys to re-map the keyboard. Some laptops (e.g.,
+  Toshiba) allow you to swap the <CAPS-LOCK> and <CONTROL> keys. Mark
+  Alexander offered this solution in the linux-laptop mailing list: On
+  RedHat, it's a one-line patch to /usr/lib/kbd/keytables/us.map , or
+  whatever file is referenced in /etc/sysconfig/keyboard:
+
+  ______________________________________________________________________
+  *** us.map~     Tue Oct 31 14:00:07 1995
+  --- us.map      Thu Aug 28 13:36:03 1997
+  ***************
+  *** 113,119 ****
+    keycode  57 = space            space
+          control keycode  57 = nul
+          alt     keycode  57 = Meta_space
+  ! keycode  58 = Caps_Lock
+    keycode  59 = F1               F11              Console_13
+          control keycode  59 = F1
+          alt     keycode  59 = Console_1
+  --- 113,119 ----
+    keycode  57 = space            space
+          control keycode  57 = nul
+          alt     keycode  57 = Meta_space
+  ! keycode  58 = Control
+    keycode  59 = F1               F11              Console_13
+          control keycode  59 = F1
+          alt     keycode  59 = Console_1
+  ______________________________________________________________________
+
+  5.5.2.  Second Keyboard
+
+  A second keyboard can be attached using the PS/2 port (I don't know
+  whether this is possible via the serial port). Also there is one
+  laptop with a detachable keyboard the Siemens Scenic Mobile 800. This
+  machine uses an infrared connection to the keyboard, but I don't know
+  whether this works with Linux. WARNING: Don't plug the external
+  keyboard in while the laptop is booted, or plug the mouse in the
+  keyboard port and the keyboard in the mouse port. On a Toshiba, this
+  caused one user to have to completely shutdown the laptop, remove the
+  keyboard/mouse, and do a cold reboot.
+
+  5.6.  Mice and their Relatives
+
+  5.6.1.  Linux Compatibility Check
+
+  You may check your mouse with the mev command from the GPM package.
+
+  5.6.2.  Related HOWTOs
+
+  1. 3-Button-Mouse-mini-HOWTO for serial mice
+
+  2. Bus-Mouse-HOWTO
+
+  3. Kernel-HOWTO
+
+  5.6.3.  Mice Species
+
+  1. Trackpad, Touchpad, used with the majority of current laptops
+
+  2. Trackball, e.g. COMPAQ LTE
+
+  3. Pop-up-Mouse, e.g. HP OmniBook 800
+
+  4. Trackpoint, Mouse-Pin, e.g. IBM ThinkPad and Toshiba
+
+  5. 3 Button Mice, e.g. IBM Thinkpads at least the 600s. I have heard
+     rumor about a 3 button mouse for Texas Instruments Travelmates, but
+     couldn't verify this yet.
+
+     Most of the mice used in laptops are PS/2 mice (actually I don't
+     know one with another mouse protocol). You may communicate with the
+     PS/2 mouse through /dev/psaux or /dev/psmouse. If you use X windows
+     this device and the protocol has to be set in /etc/XF86Config, too.
+     In earlier releases, sometimes the GPM mouse manager and X windows
+     had trouble sharing a mouse when enabled at the same time. But
+     AFAIK this is no problem anymore for the latest versions.
+
+  5.6.4.  Resources
+
+  Synaptics Touchpad Linux Driver The Synaptics touchpad is a pointing
+  device used in notebooks by Acer, Compaq, Dell, Gateway, Olivetti,
+  Texas Instruments, Winbook, and others.
+
+  Linux Compaq Concerto Pen Driver The latest version of the Linux
+  Compaq Concerto Pen Driver is available from its author's home page.
+
+  5.6.5.  External Mouse
+
+  For better handling, e.g. with a 3 button mouse you may use an
+  external mouse. This usually a serial mouse or a PS/2 mouse, according
+  to the port your laptop offers. Usually this is no problem.
+
+  WARNING: Don't plug in the external mouse while powered up. If you
+  have separate mouse and keyboard ports, make sure you plug the mouse
+  in the mouse port and the keyboard in the keyboard port. If you don't,
+  you may have to do a hard reboot of the laptop to get it to recover.
+
+  5.7.  Advanced Power Managment (APM)
+
+  5.7.1.  Linux Compatibility Check
+
+  From the Battery-Powered-mini-HOWTO " .. for APM to work on any
+  notebook or energy-conscious desktop, the system BIOS ROM in the
+  machine must support the APM standard. Furthermore, for APM to work
+  with the Linux operating system, the system BIOS ROM must support
+  either the 1.0 or 1.1 version of the APM standard, and it must also
+  support 32-bit protected mode connections. A system that supports APM
+  1.1 is preferred, as it provides more features that the device driver
+  and supporting utilities can take advantage of."
+
+  You may get information about the APM version with the dmesg command
+  and in the /proc/apm file.
+
+  5.7.2.  Introduction
+
+  APM support consists of two parts: kernel support and user-land
+  support.
+
+  For kernel support, enable the parameters in the corresponding kernel
+  section. AFAIK not all features work with laptops. AFAIK the feature
+  CONFIG_APM_POWER_OFF works with most laptops.
+
+  The utilities for userland support may be found at
+  http://worldvisions.ca/~apenwarr/apmd/. APMD is a set of programs that
+  control the Advanced Power Management system found in most modern
+  laptop computers. If you run a 2.2.x kernel and want to experiment,
+  Gabor Kuti <seasons@falcon.sch.bme.hu> has made a kernel patch that
+  allows you to hibernate any Linux system to disk, even if your
+  computers APM BIOS doesn't support it directly. IMHO you don't need
+  this features if your laptop provides a function key to invoke suspend
+  mode directly.
+
+  When you first install Linux, you will probably have to recompile the
+  kernel. The kernel that came with your distribution probably does not
+  have APM enabled.
+
+  Please see the Battery Powered Linux Mini-HOWTO by Hanno Mueller
+  <hanno@lava.de>  http://www.lava.de/~hanno/ and the page of Kenneth E.
+  Harker http://www.cs.utexas.edu/users/kharker/linux-laptop/ for
+  detailed information.
+
+  Richard Gooch wrote: I'have had a look at the beta version of apmd,
+  and I still don't like it, because:
+
+  ·  Only supports one command to run at suspend time.
+
+  ·  Doesn't distinguish between user and system suspends.
+
+  ·  doesn't provide a way to disable policy (the sync(); sleep(0) ;
+     sync(); sleep(1); sequence)
+
+  ·  Does not document extra features.
+
+  ·  And I'm not sure that what we want is a single super daemon. A
+     collection of smaller daemons might be better, since it allows
+     people to pick and choose. A super daemon is bloat for those who
+     only want one small feature.
+
+  Though this topic was discussed controversly Richard Gooch has put
+  together a package suspendd at http://www.atnf.csiro.au/~rgooch/linux/
+  .
+
+  Also, have a look at apmcd (apm based crontab) at
+  ftp.binary9.net/pub/linux/apmcd-1.15.tar.gz . A tool made by Nicolas
+  J. Leon <nicholas@binary9.net>  http://mrnick.binary9.net/.
+
+  Note: I didn't check wether this features are merged into one package
+  (apmd eventually) already.
+
+  5.7.3.  Caveats
+
+  If you have another operating system preinstalled or use another
+  operating system at the same disk, make sure there is no "hibernation"
+  or "suspend" tool installed, which could severely interfere with
+  Linux, e.g. it might use disk space which is occupied by Linux or vice
+  versa.
+
+  5.7.4.  Troubleshooting
+
+  If your machine worked with 2.0.x kernels but not with the 2.2.x
+  series, take this advice from Klaus Franken kfr@klaus.franken.de :
+  "The default changed in 2.2. Search in the init-scripts for halt and
+  change it to halt -p or poweroff. See man halt , if you don't have
+  this option you need a newer version of halt." You may find it in the
+  SysVinit package.
+
+  PCMCIA Card Services and Advanced Power Management (from the PCMCIA-
+  HOWTO):
+
+  "Card Services can be compiled with support for APM (Advanced Power
+  Management) if you've configured your kernel with APM support. ...
+  The PCMCIA modules will automatically be configured for APM if a
+  compatible version is detected on your system. Whether or not APM is
+  configured, you can use cardctl suspend before suspending your laptop,
+  and cardctl resume after resuming, to cleanly shut down and restart
+  your PCMCIA cards.  This will not work with a modem that is in use,
+  because the serial driver isn't able to save and restore the modem
+  operating parameters. APM seems to be unstable on some systems. If you
+  experience trouble with APM and PCMCIA on your system, try to narrow
+  down the problem to one package or the other before reporting a bug.
+  Some drivers, notably the PCMCIA SCSI drivers, cannot recover from a
+  suspend/resume cycle.  When using a PCMCIA SCSI card, always use
+  cardctl eject prior to suspending the system."
+
+  Sometimes X windows and APM don't work smoothly together, the machine
+  might even hang. A recommendation from Steve Rader: Some linux systems
+  have their X server hang when doing apm -s. Folks with this affliction
+  might want switch to the console virtual terminal then suspend chvt 1;
+  apm -s as root, or, more appropiately.sudo chvt 1; sudo apm -s. I have
+  these commands in a script, say, my-suspend and then do xapmload
+  --click-command my-suspend .
+
+  On some new machines (for instance HP Omnibook 4150 - 366 MHz model)
+  when accessing /proc/apm, you may get a kernel fault: general
+  protection fault: f000. Stephen Rothwell
+  <Stephen.Rothwell@canb.auug.org.au> http://www.canb.auug.org.au/~sfr/
+  explaines: "This is your APM BIOS attempting to use a real mode
+  segment while in protected mode, i.e. it is a bug in your BIOS. .. We
+  have seen a few of these recently, except all the others are in the
+  power off code in the BIOS wher we can work around it by returning to
+  real mode before attempting to power off. Here we cannot do this."
+
+   apmd-rhcn-2.4phil-1 by RedHat ftp://rhcn.redhat.com/pub/rhcn/
+  contains an unofficial patch for shutting down the PCMCIA sockets
+  before a suspend and patches for multiple batteries.
+
+  5.8.  Batteries
+
+  For information about available battery types, take a look at the
+  Hardware Features chapter above.
+
+  Please see Battery Powered Linux Mini-HOWTO by Hanno Mueller
+  <hanno@lava.de>  http://www.lava.de/~hanno/ for detailed information.
+  Stephen Rothwell http://www.canb.auug.org.au/~sfr/ is currently
+  integrating a patch that will add multiple battery support to the
+  kernel APM.
+
+  From the mobile-update page (modified by WH): Discharge the battery.
+  If your battery runs only for about 20 minutes, you probably suffer
+  from memory effects. Most laptops do not discharge the battery
+  properly. With low powered devices like old computer fans they can be
+  discharged completely. This removes memory effects. You should do so
+  even with LiIon batteries, though they don't suffer much from memory
+  effext (the manual of an IBM Thinkpad says to cycle the batteries
+  through a full charge/discharge cycle 3 times every few months or so).
+
+  WARNING: Try this at your own risk! Make sure the voltage of the fans
+  is compatible to your battery. It works for me.
+
+  In the US, this company has most batteries for anything and can
+  rebuild many that are no longer manufactured: Batteries Plus, 2045
+  Pleasant Hill Road, Duluth, GA 30096 +1 770 495 1644.
+
+  5.9.  USB
+
+  Newer laptops come with the UniversalSerialBus. I haven't tried it on
+  any of my systems because I don't have any USB devices.
+
+  Visit http://peloncho.fis.ucm.es/~inaky/uusbd-www/ for the USB Linux
+  home page.
+
+  5.10.  Memory
+
+  Unfortenately most laptops come with a proprietary memory chips. So
+  they are not interchangeable between different models.
+
+  5.11.  Plug-and-Play Devices (PnP)
+
+  The Plug and Play driver project for Linux is a project to create
+  support within the Linux kernel (see Linux.Org for more information)
+  for handling Plug and Play (and other semi-PnP) devices in a clean,
+  consistent way. It aims to allow a driver of any type of hardware to
+  have this hardware configured by the PnP driver in the kernel. This
+  driver is then notified when the device is reconfigured, or even
+  removed from the system, so as to allow for graceful action in these
+  circumstances http://www.io.com/~cdb/mirrors/lpsg/pnp-linux.html .
+
+  ISA PnP tools is another useful package.
+
+  And there is a project at RedHat
+  http://www.redhat.com/pnp/overview.html .
+
+  5.12.  Docking Station / Port Replicator
+
+  5.12.1.  Definitions
+
+  First some definitions. There is a difference between docking station
+  and port replicator.
+
+  I use the term docking station for a box which contains slots to put
+  some interface cards in, and space to put a harddisk, etc. in. This
+  box can be permanently connected to a PC. A port replicator is just a
+  copy of the laptop ports which may be connected permanently to a PC.
+
+  5.12.2.  Other Solutions
+
+  I don't use a docking station. They seem really expensive and I can't
+  see any usefulness. OK you have to mess up with some more cables, but
+  is it worth so much money? Docking stations are useful in an office
+  environment when you have a permanent network connection, or need the
+  docking station's SCSI adaptor (e.g., for a CD-R). Also all docking
+  stations I know are proprietary models, so if you change your laptop
+  you have to change this device, too.
+
+  I would prefer to buy a PC instead and connect it via network to the
+  laptop.
+
+  Or use an external display, which usually works well as described
+  above, and an external keyboard and mouse. If your laptop supports an
+  extra PS/2 port you may use a cheap solution a Y cable, which connects
+  the PS/2 port to an external keyboard and an external monitor. Note:
+  Your laptop probably has support for the Y cable feature, e.g. the
+  COMPAQ Armada 1592DT.
+
+  5.12.3.  Connection Methods
+
+  AFAIK there are three solutions to connect a laptop to a docking
+  station:
+
+  1. SCSI port
+
+  2. parallel port
+
+  3. (proprietary) docking port
+
+  From Martin J. Evans martin@mjedev.demon.co.uk  "The main problem with
+  docking stations is getting the operating system to detect you are
+  docked. Fortunately, if you configure your kernel with the /proc file
+  system (does anyone not do this?) you can examine the devices
+  available and thus detect a docked state. With this in mind a few
+  simple scripts is all you need to get your machine configured
+  correctly in a docked state.
+
+  You may want to build support for the docking station hardware as
+  modules instead of putting it directly into the kernel. This will save
+  space in your kernel but your choice probably largely depends on how
+  often you are docked.
+
+  1) Supporting additional disks on the docking station SCSI card
+
+  To my mind the best way of doing this is to:
+
+  1. Either build support for the SCSI card into the kernel or build it
+     as a module.
+
+  2. Put the mount points into /etc/fstab but use the "noauto" flag to
+     prevent them from being mounted automatically with the mount -a
+     flag. In this way, when you are docked you can explicitly mount the
+     partitions off any disk connected to the docking station SCSI card.
+
+  2) Supporting additional network adaptors in the docking station
+
+  You can use a similar method to that outlined above for the graphics
+  card. Check the /proc filesystem in your rc scripts to see if you are
+  docked and then set up your network connections appropriately. "
+
+  Once you determine this information, you may use a script, similar to
+  the following example, to configure the connection to your docking
+  station at startup. The script is provided by Friedhelm Kueck:
+
+  ______________________________________________________________________
+  # check, if Laptop is in docking-station (4 PCMCIA slots available)
+  # or if it is standalone (2 slots available)
+  # Start after cardmgr has started
+  #
+  # Friedhelm Kueck mailto:fk@impress.de
+  # 08-Sep-1998
+  #
+  # Find No. of Sockets
+  SOCKETS=`tail -1 /var/run/stab | cut -d ":" -f 1`
+
+  case "$SOCKETS" in
+
+  "Socket 3")
+  echo Laptop is in Dockingstation ...
+  echo Disabeling internal LCD Display for X11
+  echo
+  cp /etc/XF86Config_extern /etc/XF86Config
+  #
+  # Setup of PCMCIA Network Interface after start of cardmge
+  #
+  echo
+  echo "Setting up eth0 for use at Network ..."
+  echo
+  /sbin/ifconfig eth0 10.1.9.5 netmask 255.255.0.0 broadcast 10.1.255.255
+  /sbin/route add -net 10.1.0.0 gw 10.1.9.5
+  /sbin/route add default gw 10.1.10.1
+  ;;
+
+  "Socket 1")
+  echo Laptop is standalone
+  echo Disabling external Monitor for X11
+  cp /etc/XF86Config_intern /etc/XF86Config
+  echo
+  echo Network device NOT setup
+  ;;
+  esac
+  ______________________________________________________________________
+
+  5.13.  Network Connections
+
+  5.13.1.  Related HOWTOs
+
+  1. PLIP-mini-HOWTO
+
+  2. NET-3-HOWTO
+
+  3. Ethernet-HOWTO
+
+  4. Term-Firewall-mini-HOWTO
+
+  5.13.2.  Connection Methods
+
+  5.13.2.1.  PCMCIA Network Card
+
+  If your laptop supports PCMCIA this is the easiest and fastest way to
+  get network support. Make sure your card is supported before buying
+  one.
+
+  5.13.2.2.  Serial Null Modem Cable
+
+  Probably the cheapest way to connect your laptop to another computer,
+  but quite slow. You may use PPP or SLIP to start the connection.
+
+  5.13.2.3.  Parallel Port NIC (Pocket Adaptor)
+
+  Accton Pocket Ethernet and Linux This ethernet adaptor uses a parallel
+  port and delivers approximately 110k Bytes/s throughput for those
+  notebooks that do not have PCMCIA slots.
+
+  Linux and Linksys Ethernet Adaptors A short note on the use of the
+  Linksys parallel-port ethernet adaptor under Linux. This is a widely
+  available networking adaptor that doesn't require a PCMCIA slot.
+
+  5.13.2.4.  Parallel "Null" Modem Cable
+
+  Offers more speed than a serial connection. Some laptops use chipsets
+  that will not work with PLIP. Please see PLIP-HOWTO for details.
+
+  5.13.2.5.  Docking Station NIC
+
+  I don't have experience with a NIC in a docking station yet.
+
+  5.14.  Modem
+
+  There are three kinds of modems available: internal, PCMCIA card or
+  external serial port modems. But some internal modems will NOT work
+  with Linux such as the MWave modems (IBM) or if the laptop has a
+  WinModem. This is caused by non-standard hardware. So you have to use
+  either a PCMCIA card modem or an external modem.
+
+  Quotation from the Kernel-FAQ: "9.Why aren't WinModems supported?
+  (REG, quoting Edward S. Marshall) The problem is the lack of
+  specifications for this hardware. Most companies producing so-called
+  WinModems refuse to provide specifications which would allow non-
+  Microsoft operating systems to use them. The basic issue is that they
+  don't work like a traditional modem; they don't have a DSP, and make
+  the CPU do all the work. Hence, you can't talk to them like a
+  traditional modem, and you -need- to run the modem driver as a
+  realtime task, or you'll have serious data loss issues under any kind
+  of load. They're simply a poor design."
+
+  WARNING: Pay attention to the different kinds of phone lines: analog
+  and ISDN. You can't connect an analog modem to an ISDN port and vice
+  versa. Though there might be hybrid modems available. Connecting to
+  the wrong port may even destroy your modem. Trick: If you are looking
+  for an analog phone port in an office building which is usually wired
+  with ISDN, take a look at the fax lines, they are often analog lines.
+
+  For tracking the packets on PPP you may use pppstats. Or pload this
+  provides a graphical view of the traffic (in and out) of the PPP
+  connection. It is based on athena widgets hence is very portable. It
+  also uses very little CPU time. The home of pload is
+  http://www.engr.utk.edu/~mdsmith/pload/ .
+
+  5.15.  SCSI
+
+  5.15.1.  Hardware Compatibility Check
+
+  If unsure about the right SCSI support, compile a kernel with all
+  available SCSI drivers as modules. Load each module step by step until
+  you get the right one.
+
+  5.15.2.  Related HOWTOs
+
+  1. SCSI-HOWTO
+
+  5.15.3.  Survey
+
+  AFAIK there is no laptop yet with a SCSI harddisk. Though there are
+  two models with a built in SCSI port: Texas Instruments TI 4000 and HP
+  OmniBook 800. For other models, if you need SCSI support you may get
+  it by using a SCSI-PCMCIA card or via a SCSI adapter in a docking
+  station.
+
+  5.16.  Floppy Drive
+
+  5.16.1.  Linux Compatibility Check
+
+  Usually there are no problems connecting a floppy drive to a Linux
+  laptop. But with a laptop floppy drive you may sometimes not be able
+  to use every feature. I encountered the superformat command (from the
+  fdutils package) couldn't format more than 1.44MB with my HP OmniBook
+  800. You may also have difficulty when the the floppy drive and CD
+  drive are mutually exclusive, or when the floppy drive is a PCMCIA
+  device (as with the Toshiba Libretto 100). With older laptops, there
+  might be a minor problem if they use a 720K drive. AFAIK all
+  distributions come with support for 1.44M (and sometimes 1.2M)
+  floppies only. Though it's possible to install Linux anyway. Please
+  see Installation chapter. Please see kernel documentation for boot
+  time parameters concerning certain laptop floppy drives, for instance
+  IBM ThinkPad. Or man bootparam .
+
+  5.17.  CD Drive
+
+  Most notebooks today come with CD drives. If floppy and CD drive are
+  swappable they are usually mutually exclusive. Sometimes they come as
+  PCMCIA devices. Or as SCSI device (HP OmniBook 800). AFAIK there are
+  discmans available which have a port to connect them to a computer or
+  even a SCSI port. I found an article published by Ziff-Davis
+  Publishing Company (September 1996 issue, but missed to note the URL)
+  written by Mitt Jones: "Portable PC Card CD-ROM drives transform
+  laptops into mobile multimedia machines", which listed: Altec Lansing
+  AMC2000 Portable Multimedia CD-ROM Center; Axonix ProMedia 6XR; CMS
+  PlatinumPortable; EXP CDS420 Multimedia Kit; H45 QuickPCMCIA CD;
+  Liberty 115CD; Panasonic KXL-D740; Sony PRD-250WN CD-ROM Discman.
+
+  5.18.  Harddisk
+
+  5.18.1.  Linux Compatibility Check
+
+  Useful programms are hdparm, dmesg, fsck and fdisk .
+
+  5.18.2.  Miscellaneaous
+
+  Be careful when using your laptop abroad. I have heard about some
+  destroyed harddisks due to a magnetic field emitted from the magnetic-
+  holds at the backresttable of the seats in a german railway waggon.
+
+  Though I am quite satisfied with the quality of the harddisk in my
+  laptop, when I removed it from the case I unintendedly dropped it, I
+  recommend to be very careful.
+
+  5.19.  ZV Port
+
+  Some laptops come with a ZV port. Since I don't have a laptop with a
+  ZV video port yet, I can provide only some URLs:  http://www.thp.uni-
+  koeln.de/~rjkm/linux/bttv.html  (driver)  http://www.mathematik.uni-
+  kl.de/~wenk/xwintv.html  (tvviewer). Alternatively to the ZV port you
+  might use the USB port.
+
+  5.20.  Accessories
+
+  5.20.1.  PCMCIA Cards
+
+  5.20.1.1.  Card Families
+
+  1. Ethernet adapter
+
+  2. Token Ring adapter
+
+  3. Ethernet + Modem / GSM
+
+  4. Fax-Modem / GSM adapter
+
+  5. SCSI adapter
+
+  6. I/O cards: RS232, LPT, RS422, RS485, GamePort, IrDA, Radio, Video
+
+  7. SmartCard reader, see Project Muscle - "Movement for the Use of
+     Smart Cards in a Linux Environment"
+     http://www.linuxnet.com/smartcard/index.html
+
+  8. Memory cards
+
+  9. harddisks
+
+  10.
+     2.5" harddisk adapters
+
+  For desktops there are PCMCIA slots for ISA and PCI bus available.
+
+  Source: http://www.lapshop.de
+
+  5.20.1.2.  Linux Compatibility Check
+
+  With the command cardctl ident you may get information about your
+  card. Put this information into /etc/pcmcia/config if necessary. But
+  this may not be enough to get the card to work, but works sometimes
+  for no-name network cards or modem cards. If you get a card to work
+  please don't forget to announce this to the developer of the PCMCIA-CS
+  package David Hinds
+  http://hyper.stanford.edu/HyperNews/get/pcmcia/home.html .
+
+  5.20.2.  Printers
+
+  Survey about small mobile printers:
+
+  1. CANON: BJC-80
+
+  2. CANON: BJ-30
+
+  3. HP: DeskJet 340Cbi. This is a small, portable, low-duty-cycle
+     printer. It prints either black, or color (3 color). I have had
+     some problems with it loading paper. Overall, the small size and
+     portability make it a nice unit for use with laptops. I use the HP
+     500/500C driver with Linux.
+
+  4. Olivetti: JP-90
+
+  AFAIK only the HP and the BJC-80 machine have an infrared port. Pay
+  attention to the supplied voltage of the power supply if you plan to
+  travel abroad. Source: http://www.lapshop.de
+
+  5.20.3.  Power and Phone Plugs, Power Supply
+
+  When travelling abroad you might consider to take a set of different
+  power and phone plugs with you. Also, it's useful if you can change
+  the input voltage of the power supply, for instance from 110V in the
+  US to 220V in germany. There might be even power supplies for 12V
+  batteries from cars.
+
+  5.20.4.  Bags and Suitcases
+
+  You probably wonder, why I include this topic here. But shortly after
+  using my COMPAQ Armada 1592DT I recognized that the rear side of the
+  machine (where the ports are arranged) was slightly damaged. Though I
+  have taken much care when transporting the laptop, this was caused by
+  putting the bag on the floor. It seems that the laptop has so much
+  weight, that it bounces inside the bag on its own rear side. So I
+  decided to put a soft pad into the bag before loading the laptop. A
+  good bag is highly recommended if you take your laptop on trips, or
+  take it home every night.
+
+  6.  Different Environments - On the Road
+
+  6.1.  Related HOWTOs
+
+  1. Security-HOWTO
+
+  2. Multiboot-with-LILO-mini-HOWTO
+
+  3. Ethernet-HOWTO
+
+  4. NET-3-HOWTO
+
+  5. Offline-Mailing-mini-HOWTO
+
+  6. Plip-mini-HOWTO
+
+  7. Slip-PPP-Emulator-mini-HOWTO
+
+  6.2.  Configuration Tools
+
+  6.2.1.  NetEnv
+
+  Do you use your laptop in different network environments? At home? In
+  the office? At a customers site?
+
+  If yes, the small package "netenv" might be useful for you. When
+  booting your laptop it provides you with a simple interface from which
+  you can choose the current network environment. The first time in a
+  new environment, you can enter the basic data and save it for later
+  reuse.
+
+  Netenv sets up a file containing variable assignments which describe
+  the current environment. This can be used by the PCMCIA setup scheme,
+  e.g. like the one that comes with Debian/GNU Linux and perhaps others.
+
+  The netenv data can be used for things like:
+
+  1. Network Device: Configure the network device for different
+     environments.
+
+  2. Choose a proper XF86Config: Think of using your laptop standalone
+     with touchpad vs. connected to a CRT monitor along with an external
+     mouse. For example, a wheel mouse could be used when docked, but
+     the driver is not compatible with the normal trackpoint or
+     touchpad.
+
+  3. Windowmanager: You can set up your windowmanager according to the
+     current location of your machine.
+
+  4. Printing Environment: The netenv data can easily be used to set up
+     the printing environment.
+
+  Netenv is available as Debian/GNU Linux package as well as tarball. It
+  depends on dialog(1) for the menu system. It is developed by Gerd
+  Bavendiek bav@rw.sni.de you may get it at http://www.uni-
+  bielefeld.de/~portgym/net/netenv.html .
+
+  6.2.2.  Mobile IP
+
+  Mobile IP allows a portable computer access to the Internet from
+  different networks without changing its IP address.
+
+  6.2.2.1.  Resources
+
+  1. Linux Mobile-IP
+
+  2. Linux Mobile IP from HP Labs Bristol by Manuel Rodríguez
+
+  3. MosquitoNet Mobile IP
+
+  4. Mobile IP at NUS
+
+  5. Linux Mobile-IP
+
+  6. Bay Area Research Wireless Access Network (BARWAN)
+
+  Sources: Kenneth E. Harker and Dag Brattli
+
+  6.2.3.  DHCP/BootP
+
+  DHCP and BootP are also useful for working in different environments.
+  Please see the DHCP-HOWTO and BootP-HOWTO.
+
+  6.2.4.  PPPD Options
+
+  The pppd command can be configured via several different files: pppd
+  file /etc/ppp/<your_options> .
+
+  6.2.5.  /etc/init.d
+
+  You may even choose to do your configuration by editing the
+  /etc/init.d files manually.
+
+  6.2.6.  PCMCIA - Schemes
+
+  How can I have separate PCMCIA device setups for home and work? This
+  is fairly easy using PCMCIA scheme support. Use two configuration
+  schemes, called home and work. For details please read the according
+  chapter in the PCMCIA-HOWTO by David Hinds.
+
+  6.2.7.  Bootloaders
+
+  6.2.7.1.  LILO
+
+  From http://www.mjedev.demon.co.uk/index.html <Martin J. Evans
+  martin@mjedev.demon.co.uk> I have taken this recommendation: The first
+  point to note is that init will take any arguments of the form
+  name=value as environment variable assignments if they are not
+  recognized as something else. This means you can set environment
+  variables from the LILO boot prompt before your rc scripts run. I set
+  the LOCATION environment variable depending on where I am when I boot
+  Linux. e.g.
+
+  ______________________________________________________________________
+  LILO: linux LOCATION=home
+  ______________________________________________________________________
+
+  Or
+
+  ______________________________________________________________________
+  LILO: linux LOCATION=work
+  ______________________________________________________________________
+
+  Or simply
+
+  ______________________________________________________________________
+  LILO: linux
+  ______________________________________________________________________
+
+  where failing to set LOCATION means the same as LOCATION=home (i.e. my
+  default). Instead of typing LOCATION=place each time you boot you can
+  add an entry to your /etc/lilo.conf file and use the append instruc
+  tion. e.g.
+
+  ______________________________________________________________________
+  # Linux bootable partition for booting Linux at home
+  #
+  image = /vmlinuz
+  root = /dev/hda3
+  label = linux
+  read-only
+  # Linux bootable partition config ends
+  #
+  # Linux bootable partition for booting Linux at work
+  #
+  image = /vmlinuz
+  root = /dev/hda3
+  label = work
+  read-only
+  append="LOCATION=work"
+  # Linux bootable partition config ends
+  ______________________________________________________________________
+
+  With the example above you can use "linux" for booting at home and
+  "work" for booting at work.
+
+  Armed with the facility above, you can now edit the relevant rc
+  scripts to test ENVIRONMENT before running ifconfig, setting up route
+  etc.
+
+  6.2.7.2.  Other Bootloaders
+
+  There are several other bootloaders which are often overlooked.
+  Besides LILO, have a look at loadlin, CHooseOS (CHOS) (not GPL), GRand
+  Unified Bootloader (GRUB), System Commander and take a look at
+  ftp://metalab.unc.edu/pub/Linux/system/boot/loaders/. The NT boot
+  loader or OS/2 boot loader may even be used.
+
+  6.2.8.  X-Windows
+
+  From Steve <steve@cygnet.co.uk> I got a configuration for X windows
+  with an external monitor: Note that I have introduced a neat trick!
+  For my nice 17" monitor I start X with no options and get the default
+  16-bit 1152x864 display - but when using the LCD screen I specify a
+  15-bit display (startx -- -bpp 15) and get the correct 800x600
+  resolution automatically. This saves having to have two XConfig files.
+
+  6.2.9.  More Info
+
+  Using a Laptop in Different Environments by Gerd Bavendiek . This
+  article appeared in the August, 1997 issue of the Linux Gazette. This
+  is an excellent, short technical article describing an easy way to
+  setup your Linux notebook to boot into different network and printing
+  configurations, especially useful for those who use their machines at
+  home as well as other locations such as in the office, at school, or
+  at a customer site.
+
+  6.3.  Data Transport Between Different Machines
+
+  I don't have experience with this topic yet. So just a survey about
+  some means of data transport and maintaining data consistency between
+  different machines.
+
+  6.3.1.  Hardware
+
+  1. external harddisks
+
+  2. ZIP drive
+
+  Wade Hampton wrote: "You may use MS-DOS formatted ZIP and floppy discs
+  for data transfer. You may be able to also use LS120. If you have
+  SCSI, you could use JAZ, MO or possibly DVD-RAM (any SCSI disc that
+  you could write to). I have the internal ZIP for my Toshiba 700CT. It
+  works great (I use automount to mount it). I use VFAT on the ZIP disks
+  so I can move them to Windows boxes, Linux boxes, NT, give them to
+  coworkers, etc. One problem, I must SHUTDOWN to swap the internal CD
+  with the ZIP."
+
+  6.3.2.  Software
+
+  6.3.2.1.  Source Code Control System (SCCS)
+
+  Currently I had no time to check a SCCS system, such as RVS or CVS for
+  this purpose.
+
+  6.3.2.2.  CODA Filesystem
+
+  The Coda File System is a descendant of the Andrew File System. Like
+  AFS, Coda offers location-transparent access to a shared Unix file
+  name-space that is mapped on to a collection of dedicated file
+  servers. But Coda represents a substantial improvement over AFS
+  because it offers considerably higher availability in the face of
+  server and network failures. The improvement in availability is
+  achieved using the complementary techniques of server replication and
+  disconnected operation. Disconnected operation proven especially
+  valuable in supporting portable computers  http://www.coda.cs.cmu.edu/
+  .
+
+  6.3.2.3.  WWWsync
+
+  This is a program written in Perl that will update your web pages by
+  ftp from your local pages. This was originally written for updating
+  Demon home-pages, but will work with other providers which provide
+  direct FTP access to your web pages. I didn't check this for laptop
+  purposes yet. You may get the program at
+  http://www.alfie.demon.co.uk/wwwsync/ .
+
+  6.4.  Security in Different Environments
+
+  6.4.1.  Introduction
+
+  I am not a computer security expert. Please read the Security-HOWTO
+  for more information. I just collected some information below. Note,
+  these means are just small steps to additional security, though I
+  recommend that you use them.
+
+  6.4.2.  Means of Security
+
+  1. Kennsington Lock: AFAIK proprietary lock solution with different
+     laptops http://www.kennsington.com
+
+  2. SmartCards: by DESKO  http://www.desko.de  are not available for
+     Linux yet. The only available laptop with a SmartCard builtin is
+     the Siemens Scenic Mobile 800.
+
+  3. User passwords: can be easily bypassed if the intruder gets
+     physical access to your machine
+
+  4. BIOS passwords: are also easily crackable, though sometimes harder
+     than with desktops
+
+  5. Name plates: to reduce the possibility of theft, you may want to
+     have a nameplate made and affixed to the cover of the laptop. A
+     nice one will cost you about $12, and can be made by any good
+     trophy shop. They'll glue it on for you too. You could use double-
+     sided tape instead, but glue is more permanent. You may even make
+     an engravement into the laptop cover.
+
+  6. Boot loader: a boot loader may be used to put your name and phone
+     number (or whatever text you choose) into the boot sequence before
+     the operating system is loaded. This provides a label that can't be
+     removed by editing files or even doing a simple format of the
+     harddisk.
+
+  7. Antivirus policy: I have seen an antivir RPM somewhere. Check the
+     BIOS for an option to disable writing at the boot sector.
+
+  8. Database of stolen laptops: Just in case, there is at least one
+     database of stolen laptops in the WWW, which is free of charge, but
+     I have lost the URL.
+
+  9. Laptop as a security risk itself: Since a laptop can easily be used
+     to intrude a network, it seems a good policy to ask the system
+     administrator for permission before connecting a laptop to a
+     network.
+
+  10.
+     Secure Protocol: When connecting to a remote server always use a
+     secure protocol.
+
+  6.5.  Dealing with Down Times (Cron Jobs)
+
+  A cron-like program that doesn't go by time: anacron (like
+  "anac(h)ronistic") is a periodic command scheduler. It executes
+  commands at intervals specified in days. Unlike cron, it does not
+  assume that the system is running continuously. It can therefore be
+  used to control the execution of daily, weekly and monthly jobs (or
+  anything with a period of n days), on systems that don't run 24 hours
+  a day. When installed and configured properly, anacron will make sure
+  that the commands are run at the specified intervals as closely as
+  machine-uptime permits.
+  hc-cron This program is a modified version of Paul Vixie's
+  <paul@vixie.com> widely used cron daemon. Like the original program it
+  runs specified jobs at periodic intervals. However, the original crond
+  relies on the computer running continuously, otherwise jobs will be
+  missed. This problem is addressed by hc-cron, that is indended for use
+  on home-computers that are typically turned off several times a day;
+  hc-cron will remember the time when it was shut down and catch up jobs
+  that have occurred during down time when it is started again. Felix
+  Braun <fbraun@atdot.org> is the author of the programm, it is
+  available at http://metalab.unc.edu /pub/Linux/system/daemons/cron .
+
+  7.  Other Resources
+
+  Kenneth E. Harker maintains a quite valuable database at
+  http://www.cs.utexas.edu/users/kharker/linux-laptop/ . Please have a
+  look at his site to get current information about laptop related
+  mailing lists, newsgroups, magazines and newsletters, WWW sites and a
+  big database about many different laptop pages.
+
+  To join the Linux-Laptop-Mailing-List write a mail to
+  <majordomo@vger.rutgers.edu> with subscribe linux-laptop in the
+  subject. You will get a confirmation message than, which you have to
+  reply accordingly.
+
+  There is now a debian-laptop mailing list. Any questions or
+  discussions concerning running the Debian/GNU Linux operating
+  system(s) on laptops are welcome. Send mail to <debian-laptop-
+  request@lists.debian.org> with a subject of subscribe. Or visit
+  thehttp://www.debian.org site and use the online form.
+
+  8.  Repairing the Hardware
+
+  There are several different reasons that could make it necessary to
+  open the case of a laptop.
+
+  1. repairing broken hardware
+
+  2. get some hardware info, which isn't available otherwise
+
+  3. remove the speakers (speakerrektomie, as described in Visual-Bell-
+     mini-HOWTO)
+
+  4. install overdrive for CPU
+
+  5. change BIOS battery
+
+  6. upgrade harddisk
+
+  7. upgrade memory
+
+  Repairing a laptop can be quite expensive if you don't have a
+  manufacturer's warranty. Sometimes professional support is bad. But
+  opening a laptop case can be difficult. Often the procedures to
+  upgrade the memory and the harddisk are described in the manual. For
+  further details, you should try to get the maintainance/technical
+  manual. Just be extremely careful and make notes as to where each
+  screw goes. You must get most of them back in the right hole or you
+  could ruin the machine by damaging the system board. Also after you
+  get all the screws to an assembly out (some will be hidden) the parts
+  are usually held together with plastic clips molded in, so you still
+  must exercise care to separate them. Sometimes you need certain tools,
+  for instance TORX screw drivers or a solder kit. Good luck.
+
+  I found two books about PC hardware which contained a dedicated
+  chapter about laptops:
+
+  ·  Scott Mueller: Upgrading and Repairing PCs. QUE Corporation.
+
+  ·  Marc Misani: The Complete Hardware Upgrade and Maintainance Guide.
+
+  Both books don't know about Linux and both are quite short about
+  laptops. The book by Marc Minasi provides a little more information
+  about laptops.
+
+  WARNING: Usually laptop manufacturers declare the warranty to be void
+  if the case was opened by people other than their own staff.
+
+  9.  Solutions with Laptops
+
+  9.1.  Introduction
+
+  The power and capabilities of laptops are sometimes limited as
+  described above. But in turn, they have a feature which desktops don't
+  have, their mobility. I try to give a survey about applications which
+  make sense in connection with laptops. Since I couldn't try all of
+  them, there is currently little documentation. If you can provide
+  further material, please contact me.
+
+  9.2.  Mobile Network Analyzer
+
+  I'm not an expert in this field, so I just mention the tools I know.
+  Please check also for other applications. Besides the usual tools
+  tcpdump, netcat, there are two applications I know, which may be used
+  to analyze network traffic:
+
+  The Multi Router Traffic Grapher (MRTG) is a tool to monitor the
+  traffic load on network-links. MRTG generates HTML pages containing
+  GIF images which provide a LIVE visual representation of this traffic.
+  Check  http://www.ee.ethz.ch/stats/mrtg/ for an example. MRTG is based
+  on Perl and C and works under UNIX and Windows NT.
+
+  The CMU-SNMP package, is designed to configure and analyze the SNMP
+  protocol  http://www.gaertner.de/snmp/ .
+
+  9.3.  Mobile Router
+
+  Though designed to work from a single floppy, the Linux Router Project
+  (LRP) , seems useful in combination with a laptop, too.
+
+  9.4.  Hacking and Cracking Networks
+
+  When thinking about the powers of laptops, hacking and cracking
+  networks comes easy into mind. Though I don't want to handle this
+  topic here, but instead recommend the Security-HOWTO.
+
+  9.5.  Lectures
+
+  If you are giving lectures, readings or presentations in different
+  places, a laptop might suit your needs. You can combine it with an
+  overhead display, a beamer or a second monitor. For a second monitor
+  or a beamer make sure it is supported by your laptop. BTW though
+  Microsoft's PowerPoint is often used for such things, there are also
+  Linux solutions. See the software maps at KDE (K-Office)
+  http://www.kde.org and GNOME http://www.gnome.org/ . Or the commercial
+  packages Applixware
+  http://www.applix.com/appware/linux/slideshow/gfx011.html and
+  Staroffice
+  http://vesta.astro.amu.edu.pl/Library/Linux/LinFocus/May1998/article15.html.
+  MagicPoint or mgp, is an X11-based presentation tool. The home page is
+  http://www.Mew.org/mgp  or ftp://ftp.Mew.org/pub/MagicPoint/ or
+  http://jiji.mew.org/mgp/ .
+
+  9.6.  Mobile Data Collecting
+
+  9.6.1.  Related HOWTOs
+
+  1. Coffee-mini-HOWTO
+
+  2. AX-25-HOWTO
+
+  3. HAM-HOWTO
+
+  4. Serial-HOWTO
+
+  5. Serial-Programming-HOWTO
+
+  9.6.2.  Applications
+
+  A Linux laptop can be used to collect data outside an office, e.g.
+  geodesy data, sales data, network checks, patient data in a hospital
+  and others. There is support for wireless data connections via
+  cellular phone modems and amateur radio. I am not sure whether PCMCIA
+  radio cards are supported, see Aironet Wireless Communications
+  http://www.aironet.com/. There are also laptops available with cases
+  build for a rugged environment (even waterproof laptops).
+
+  9.7.  Mobile Office
+
+  With KDE http://www.kde.org (K-Office), GNOME, http://www.gnome.org/
+  and the commercial products WordPerfect, Staroffice and Applixware
+  http://www.applix.com/ Linux has more and more business software
+  applications.  With the corresponding hardware, e.g. a portable
+  printer and a cellular phone which connects to your laptop, you will
+  have a very nice mobile office.
+
+  9.8.  Connection to Digital Camera
+
+  AFAIK there are currently three methods to connect a digital camera to
+  a laptop: the infrared port (IrDA), serial port and maybe USB. There
+  are also some auxiliary programs for conversion of pictures, etc.
+
+  9.9.  Connection to QuickCam (Video)
+
+  AFAIK there are currently two methods to connect a video camera to a
+  laptop: a ZV port and maybe USB, but I don't know how this works with
+  Linux. I have heard rumors about using a sound card for video data
+  transfer to a Linux box, see http://worldvisions.ca/~apenwarr/ . I
+  have heard rumors about a Linux-QuickCam-mini-HOWTO, but couldn't find
+  a reliable URL yet. Check the sane package which is build for scanner
+  support, this should contain support for still-grabbers as well.
+  9.10.  Connection to Television Set
+
+  If you have a ZV port in the laptop, it should be easy to connect it
+  to a TV set, using either NSCA or PAL, but I don't know whether either
+  works with Linux.
+
+  9.11.  Connection to Cellular Phone
+
+  AFAIK there are two methods to connect a cellular phone to a laptop:
+  via the infrared port (IrDA) or via the serial port. See the
+  Linux/IrDA project for the current status of IrDA connections. AFAIK
+  only the Ericsson SH888, the Nokia 8110 provide infrared support.
+
+  9.12.  Connection to Global Positioning System (GPS)
+
+  From the Hardware-HOWTO I know there is Trimble Mobile GPS available.
+  You may also connect a GPS via a serial port. Most GPS receivers have
+  a data port and can connect to a PC with a special serial cable.
+
+  9.13.  Connection via Amateur Radio (HAM)
+
+  AFAIK laptops are used in HAM contests. Please see HAM-HOWTO.
+
+  9.14.  Satellite Watching
+
+  Together with an antenna and software like seesat or sattrack you can
+  use a laptop to locate a satellite for visual observation. You could
+  also use xephem on a laptop when stargazing.
+
+  10.  Other Operating Systems
+
+  10.1.  DOS/Windows9x/NT
+
+  10.1.1.  Introduction
+
+  Unfortunately, there are a few reasons which might make it necessary
+  to put DOS/Windows and Linux together on one laptop. Often the support
+  for the flash ROM of PCMCIA cards and modems is not available for
+  Linux, or you have to retrieve hardware information, which is not
+  visible with Linux, due to a lack of support by some hardware
+  manufacturers. I'm not sure wether this tasks can be achieved under an
+  emulation like DOS-EMU or WINE.
+
+  If you want Linux with X, Netscape, etc., and Windows95, things will
+  be tight in a 1GB harddisk. Though I do so with a 810MB disk.
+
+  10.1.2.  DOS Tools to Repartition a Hard Disk
+
+  Often you get a preinstalled version of Windows on your laptop. If you
+  just want to shrink the Windows partition, you need a tool to resize
+  the partition. Or you can remove the partition first, repartition,
+  then reinstall. Most of the following information I found at the page
+  of Michael Egan <Michael.Egan@sonoma.edu> at
+  http://libweb.sonoma.edu/mike/fujitsu/ .
+
+  A well known and reliable, but commercial product is Partition Magic
+  http://www.powerquest.com/product/pm/index.html from Power Quest.
+
+  Many people have used FIPS 15c (which may support FAT-32)
+  http://bmrc.berkeley.edu/people/chaffee/fips/fips.html for
+  repartitioning FAT partition sizes.) Also, another version from a
+  different source is FIPS 2.0 (claims to support FAT-32)
+  http://www.igd.fhg.de/~aschaefe/fips/ for repartitioning FAT partition
+  sizes.)
+
+  One more "newer" utility for repartitioning and resizing FAT
+  partitions is Ranish Partition Manager/Utility (FAT-32 support is
+  claimed for this as well, Linux support is taken into account.)
+  http://www.users.intercom.com/~ranish/part/ .
+
+  Something was recently published on the <linux-
+  kernel@vger.rutgers.edu> mailing list about a partition recovery
+  program. I have not used this, nor examined it, nor read much about it
+  (except for the HTML page.) It may be useful to some of you if you
+  have problems with FIPS, Ranish Partition Manager/Utility or Partition
+  Magic destroying your partition information. You can find information
+  on this partition-fixer named "fixdisktable" at
+  http://bmrc.berkeley.edu/people/chaffee/fat32.html . It is quite a
+  ways down in that page. Or look for it via ftp in
+  ftp://bmrc.berkeley.edu/pub/linux/rescue/ and locate the latest
+  "fixdisktable" in that ftp directory. (Source and binary dist should
+  be available.)
+
+  10.1.3.  Caveats
+
+  Before repartitioning your harddisk take care about the disk layout.
+  Especially look for hidden disk space or certain partitions used for
+  suspend to disk or hibernation mode. Some laptops come with a
+  partition which contains some BIOS programs (e.g. COMPAQ Armada
+  1592DT). Search the manual carefully for tools like PHDISK.EXE,
+  Suspend to Disk, Diagnostic TOOLS.
+
+  10.1.4.  Multi Boot
+
+  Please see the Different Environments chapter, for information about
+  booting different operating systems from the same harddisk.
+
+  10.1.5.  Partition Sharing
+
+  You may share your swap space between Linux and Windows. Please see
+  "Dealing with Limited Resources" section. Also with Linux you can
+  mount any kind of Windows partition. The other way round there should
+  be also some tools, but I don't have an URL yet.
+
+  Also you can mount DOS drives of the type msdos, vfat and even
+  compressed drives (Drivespace, etc.). For long file names use vfat and
+  if you like autoconversion ( a nice feature for text files), you may
+  do so by using the conv=auto option. I have used this in my
+  /etc/fstab, but be aware this might cause some strange behaviour
+  sometimes, look at the kernel docs for further details.
+
+  ______________________________________________________________________
+  /dev/hda8    /dos/d    vfat    user,exec,nosuid,nodev,conv=auto    0    2
+  ______________________________________________________________________
+
+  10.2.  BSD Unix
+
+  1. PicoBSD is a one floppy version of FreeBSD 3.0-current, which in
+     its different variations allows you to have secure dialup access,
+     small diskless router or even a dial-in server. And all this on
+     only one standard 1.44MB floppy. It runs on a minimum 386SX CPU
+     with 8MB of RAM (no HDD required!). You probably may also use it to
+     install BSD on a laptop as described with micro Linuxes above. You
+     get PicoBSD at  http://www.freebsd.org/~picobsd/
+
+  2. PAO: FreeBSD Mobile Computing Package FreeBSD is a version of the
+     UNIX operating system that runs on PC hardware. It uses a different
+     set of support for PCMCIA devices, APM, and other mobility related
+     issues.
+
+  3. The CMU Monarch Project Implementations of Mobile-IPv4 and Mobile-
+     IPv6 for FreeBSD
+
+  4. XF86Config Archive. A database of XF86Config files used by Linux
+     and FreeBSD users. If you need an XF86Config file for your notebook
+     or laptop, check out this site. (Some documents available in
+     Japanese only.)
+
+  5. AFAIK there is no IrDA support yet.
+
+  11.  ToDo
+
+  1. mention the corresponding kernel options in the Linux Compatibility
+     Check sections
+
+  2. write more Hardware sections
+
+  12.  Revision History
+
+  v0.1 13 January 1999, first draft
+
+  v0.2 15 January 1999, minor changes
+
+  v0.3 28 January 1999, APM chapter started, minor changes
+
+  v0.4 8 February, APM chapter rewritten, removed some lint
+
+  v0.5 17 February 1999, added small USB chapter, added Dealing with
+  Limited Resources chapter, added Solutions with Laptops chapter, minor
+  editorial changes, released draft to the public
+
+  v1.0 19 February 1999, added Sound and Keyboard chapter, minor
+  changes, release to the LDP
+
+  v1.1 28 February 1999, spelling, grammar, style checked and many
+  additional information added by W. Wade Hampton, added CD Drive,
+  Harddisk and Kernel chapters, many minor changes
+
+  v1.2 5 March 1999, added Debian-Laptop-Mailing-List, added information
+  about apmcd and suspendd to APM chapter, changed some URLs, minor
+  changes
+
+  v1.3 8 March 1999, minor changes
+
+  13.  Credits
+
+  I would like to thank the many people who assisted with corrections
+  and suggestions. Their contributions have made this work far better
+  than I could ever have done alone. Especially I would like to thank:
+
+  ·  First of all Kenneth E. Harker kharker@cs.utexas.edu, from his page
+     at http://www.cs.utexas.edu/users/kharker/linux-laptop/ I have
+     included much material into this HOWTO, but didn't always quote him
+     verbatim.
+
+  ·  The other HOWTO authors.
+
+  ·  The members of the Linux/IrDA Project.
+
+  ·  The members of the Linux Laptop Mailing List.
+
+  ·  The visitors and contributors of my Linux Laptop Pages.
+
+  ·  David Hinds maintainer of the PCMCIA-CS package.
+
+  ·  Frank Schneider SPATZ1@T-ONLINE.DE
+
+  ·  Stefan Martig martig@iamexwi.unibe.ch
+
+  ·  Michele Andreoli maintainer of muLinux
+
+  ·  Klaus Franken kfr@klaus.franken.de
+
+  ·  W. Wade, Hampton whampton@staffnet.com, did much of spell, grammar
+     and style checking and added many valuable information
+
+  ·  Anderson MacKay mackay@rice.edu, gave many different detailed
+     recommendations
+
+  ·  Shaleh shaleh@livenet.net
+
+  ·  Bob Toxen spre@lugs.ch
+
+  ·  Peter Sprenger spre@lugs.ch
+
+  ·  Felix Braun fbraun@atdot.org
+
+  ·  Steve Rader rader@wiscnet.net
+
+  ·  Richard Worwood richard@felch01.demon.co.uk
+
+  ·  Sorry, but probably I have forgotten to mention everybody who
+     helped.
+
+  14.  Appendix A - Survey about Micro Linuxes
+
+  Because of their small or non-existent footprint, micro-Linuxes are
+  especially suited to run on laptops -- particularly if you use a
+  company-provided laptop running Windows9x/NT. Or for installation
+  purposes using another non Linux machine. There are several micro
+  Linux distributions out there that boot from one or two floppies and
+  run off a ramdisk.
+
+  See  http://www.linuxhq.com  or
+  http://www.txdirect.net/users/mdfranz/tinux.html  for details. You may
+  find a FAQ and a mailing list about boot-floppies at
+  http://os.inf.tu-dresden.de/~sr1/boot-floppies/faq.html . Also a
+  BootDisk-HOWTO is available. Thanks to Matthew D. Franz maintainer of
+  Trinux for this tips and collecting most of the following URLs.
+
+  1. MuLinux  http://www4.pisoft.it/~andreoli/mulinux.html by Michele
+     Andreoli
+
+  2. tomsrtbt  http://www.toms.net/~toehser/rb/ "The most Linux on one
+     floppy. (distribution or panic disk)." by Tom Oehser
+
+  3. Trinux  http://www.trinux.org  "A Linux Security Toolkit" by
+     Matthew D. Franz
+
+  4. LRP "Linux Router Project" http://www.psychosis.com/linux-router/
+
+  5. hal91 http://home.sol.no/~okolaas/hal91.html
+
+  6. floppyfw http://www.zelow.no/floppyfw/ by Thomas Lundquist
+
+  7. minilinux  http://alberti.crs4.it/softw are/mini-linux/ (seems no
+     more valid) or  http://www.kiarchive.ru/pub/linux/mini-linux/
+
+  8. monkey  http://www.spsselib.hiedu.cz/monkey/docs/english.htm
+
+  9. DLX http://www.wu-wien.ac.at/usr/h93/h9301726/dlx.html by Erich
+     Boem
+
+  10.
+     C-RAMDISK  http://metalab.unc.edu/pub/Linux/kernel/images/
+
+  11.
+     BABEL  http://celsius-software.hypermart.net/babel/ "A mini-
+     distribution to run games"
+
+  12.
+     Xdenu  http://xdenu.tcm.hut.fi/
+
+  13.
+     LOAF  http://www.ecks.org/loaf/
+
+  14.
+     pocket-linux  http://pocket-linux.coven.vmh.net/
+
+  15.
+     FLUF  http://www.upce.cz/~kolo/fluf.htm
+
+  16.
+     YARD  http://www.croftj.net/~fawcett/yard/
+
+  17.
+     TLinux  http://members.xoom.com/ror4/tlinux/
+
+  18.
+     ODL  http://linux.apostols.org/guru/wen/
+
+  19.
+     SmallLinux by Steven Gibson  http://smalllinux.netpedia.net/ Three
+     disk micro-distribution of Linux and utilities. Based on kernel
+     1.2.11. Root disk is ext2 format and has fdisk and mkfs.ext2 so
+     that a harddisk install can be done. Useful to boot up on old
+     machines with less than 4MB of RAM.
+
+  20.
+     cLIeNUX by Rick Hohensee client-use-oriented Linux distribution
+     ftp://ftp.blueznet.com /pub/colorg
+
+  21.
+     linux-lite by Paul Gortmaker for very small systems with less than
+     2MB RAM and 10MB harddisk space (1.x.x kernel)
+     http://metalab.unc.edu/pub/Linux/kernel
+
+  22.
+     See also the packages at MetaLab formerly known as SunSite
+     http://metalab.unc.edu/pub/Linux/system/recovery/!INDEX.html  and
+     the Boot-Disk-HOWTO
+
+  23.
+     You may also consider some of the boot floppies provided by various
+     distributions falling into this category, e.g. the boot/rescue
+     floppy of Debian/GNU Linux.
+
+  24.
+     If you like to build your own flavour of a boot floppy you may do
+     so manually, as described in the BootDisk-HOWTO or using some
+     helper tools, for instance mkrboot (provided at least as a
+     Debian/GNU Linux package) or pcinitrd, which is part of the PCMCIA-
+     CS package by David Hinds.
+
+  25.
+     Also you might try to build your Linux system on a ZIP drive. This
+     is described in the ZIP-Install-mini-HOWTO.
+
+  15.  Appendix B - Dealing with Limited Resources or Tuning the System
+
+  15.1.  Related HOWTOs
+
+  1. LBX-HOWTO
+
+  2. Small-Memory-HOWTO
+
+  15.2.  Introduction
+
+  As mentioned in the introduction laptops sometimes have less resources
+  if you compare them to desktops. To deal with limited space, memory,
+  CPU speed and battery power, I have written this chapter.
+
+  15.3.  Small Space
+
+  15.3.1.  Introduction
+
+  There are different types of techniques to gain more disk space, such
+  as sharing of space, freeing unused or redundant space, filesystem
+  tuning and compression. Note: some of these techniques use memory
+  instead of space. As you will see, there are many small steps
+  necessary to free some space.
+
+  15.3.2.  Techniques
+
+  1. Stripping: Though many distributions come with stripped binaries
+     today it is useful to check this. For details see man strip. To
+     find every unstripped file you can use the file command or more
+     convenient the tool findstrip. Attention: don't strip libraries,
+     sometimes the wrong symbols are removed due to a bad programming
+     technique.
+
+  2. Perforation: zum(1)reads a file list on stdin and attempts to
+     perforate these files. Perforation means, that series of null bytes
+     are replaced by lseek, thus giving the file system a chance of not
+     allocating real disk space for those bytes. Example: find . -type f
+     | xargs zum
+
+  3. Remove Odd Files and Duplicates: Check your system for core files,
+     emacs recovery files <#FILE#> vi recovery files <FILE>.swp, RPM
+     recovery files <FILE>.rpmorig and patch recovery files. Find
+     duplicates, you may try finddup. Choose a system to name your
+     backup, temporary and test files, e.g. with a signature at the end.
+
+  4. Clean Temporary Files: , e.g. /tmp, there is even a tool tmpwatch.
+
+  5. Shorten the Log Files: usually the files in /var/log.
+
+  6. Remove Files: Remove files which are not "necessary" under all
+     circumstances such as man pages, documentation /usr/doc and sources
+     e.g. /usr/src .
+
+  7. Filesystem: Choose a filesystem which treats disk space
+     economically e.g. rsfs. Tune your filesystem e.g. tune2fs. Choose
+     an appropriate partition and block size.
+
+  8. Reduce Kernel Size: Either by using only the necessary kernel
+     features and/or making a compressed kernel image bzImage.
+
+  9. Compression: I didn't check this but AFAIK you may compress your
+     filesystem with gzip and decompress it on the fly. Alternatively
+     you may choose to compress only certain files. You can even execute
+     compressed files with zexec
+
+  10.
+     Compressed Filesystems:
+
+     - For e2fs filesystems there is a compression version available
+     e2compr.
+
+     - DMSDOS which enables your machine to access Windows95 compressed
+     drives (drivespace, doublestacker). If you don't need DOS/Windows95
+     compatibility, i.e. if you want to compress Linux-only data, this
+     is really discouraged by the author of the program.
+
+  11.
+     Partition Sharing: You may share swap-space (see Swap-Space-HOWTO)
+     or data partitions between different OS (see mount). For mounting
+     MS-DOS Windows95 compressed drives (doublespace, drivespace) you
+     may use dmsdos
+     http://metalab.unc.edu/pub/Linux/system/filesystems/dosfs/.
+
+  12.
+     Libraries: Take another (older) library, for instance libc5 , this
+     library seems to be smaller than libc6 aka glibc2 .
+
+  13.
+     Kernel: If your needs are fitted with an older kernel version, you
+     can save some space.
+
+  14.
+     GUI: Avoid as much Graphical User Interface (GUI) as possible.
+
+  15.
+     Tiny Distributions: There are some distributions available which
+     fit from one 3.5" floppy to 10MB disk space and fit for small
+     memories, too. See appendix A and below.
+
+  16.
+     External Storage Devices (Hard Disks, ZIP Drives, NFS, SAMBA):
+     Since many notebooks may be limited in their expandability, using
+     the parallel port is an attractive option. There are external
+     harddisks and ZIP Drives available. Usually they are also
+     connectable via PCMCIA. Another way is using the resources of
+     another machine through NFS or SAMBA etc.
+
+  15.4.  Harddisk Speed
+
+  Use the tool hdparm to set up better harddisk performance. Though I
+  have seen laptop disk enabled with striping, I can't see a reason to
+  do so, because IMHO aka RAID0 striping needs at least to different
+  disks to increase performance.
+
+  15.5.  Small Memory
+
+  15.5.1.  Related HOWTOs
+
+  1. Small-Memory-mini-HOWTO by Todd Burgess <tburgess@uoguelph.ca >
+     http://eddie.cis.uoguelph.ca/~tburgess
+
+  2. Modules-mini-HOWTO
+
+  3. Kerneld-mini-HOWTO
+
+  15.5.2.  Techniques
+
+  Check the memory usage with free and top.
+
+  Mergemem Project . Many programs contain memory areas of the same
+  content that remain undetected by the operating system. Typically,
+  these areas contain data that have been generated on startup and
+  remain unchanged for longer periods. With mergemem such areas are
+  detected and shared. The sharing is performed on the operating system
+  level and is invisible to the user level programs. mergemem is
+  particularily useful if you run many instances of interpreters and
+  emulators (like Java or Prolog) that keep their code in private data
+  areas. But also other programs can take advantage albeit to a lesser
+  degree.
+
+  You may also reduce the kernel size as much as possible by removing
+  any feature which is not necessary for your needs and by modularizing
+  the kernel as much as possible.
+
+  Also you may shutdown every service or daemon which is not needed,
+  e.g. lpd, mountd, nfsd and close some virtual consoles. Please see
+  Small-Memory-mini-HOWTO for details.
+
+  And of coarse use swap space, when possible.
+
+  If possible you use the resources of another machine, for instance
+  with X, VNC or even telnet. For more information on Virtual Network
+  Computing (VNC), see http://http://www.uk.research.att.com/vnc/ .
+
+  15.6.  Low CPU Speed
+
+  You may want to overdrive the CPU speed but this can damage your
+  hardware and I don't have experience with it. For some examples look
+  at Adorable Toshiba Libretto - Overclocking
+  http://www.cerfnet.com/~adorable/libretto.html.
+
+  15.7.  Power Saving Techniques
+
+  1. If you don't need infrared support, disable it in the BIOS or
+     shutdown the IrDA device driver. There are also some IrDA features
+     of the kernel which are useful for saving power.
+
+  2. PCMCIA services consume much power, so shut them down if you don't
+     need them.
+
+  3. I'm not sure to which extend the backlight consumes power. WARNING:
+     AFAIK this device can only bear a limited number of uptime circles.
+     So avoid using screensavers AFAIK this device can only bear a
+     limited number of uptime circles. So avoid using screensavers too
+     much.
+
+  4. For some examples to build batteries with increased uptime up to 8
+     hours look at Adorable Toshiba Libretto
+     http://www.cerfnet.com/~adorable/libretto.html.
+
+  5. For information about APM look at the APM chapter above.
+
+  6. A hacked rclock . Booker C. Bense has hacked the rclock program to
+     include a simple battery power meter on the clock face.
+
+  7. xbatstat. A battery level status checker for Linux and X.
+
+  8. hdparm hdparm is a Linux IDE disk utility that lets you set spin-
+     down timeouts and other disk parameters. It works also for some
+     SCSI features.
+
+  9. Mobile Update Daemon  This is a drop-in replacement for the
+     standard update daemon, mobile-update minimizes disk spin ups and
+     reduces disk uptime. It flushes buffers only when other disk
+     activity is present. To ensure a consistent file system call sync
+     manually. Otherwise files may be lost on power failure. mobile-
+     update does not use APM. So it works also on older systems.
+
+  10.
+     Toshiba Linux Utilities  This is a set of Linux utilities for
+     controlling the fan, supervisor passwords, and hot key functions of
+     Toshiba Pentium notebooks. There is a KDE package Klibreta, too.
+
+  11.
+     At Kenneth E. Harker's page there is a recommendation for LCDproc
+     LCDProc . "LCDproc is a small piece of software that will enable
+     your Linux box to display live system information on a 20x4 line
+     backlit LCD display. This program shows, among other things,
+     battery status on notebooks." I tried this package and found that
+     it connects only to the external Matrix-Orbital 20x4 LCD display
+     http://www.matrix-orbital.com/, which is a LCD display connected to
+     a serial port. I can't see any use for a laptop yet.
+
+  12.
+     Diald: Dial Daemon  . The Diald daemon provides on demand Internet
+     connectivity using the SLIP or PPP protocols. Diald can
+     automatically dial in to a remote host when needed or bring down
+     dial-up connections that are inactive.
+
+  13.
+     KDE http://www.kde.org provides KAPM, Kbatmon and Kcmlaptop.
+     Written by Paul Campbell kcmlaptop is a set of KDE control panels
+     that implements laptop computer support functions, it includes a
+     dockable battery status monitor for laptops - in short a little
+     icon in the KDE status bar that shows how much battery time you
+     have left. It also will warn you when power is getting low and
+     allows you to configure power saving options.
+
+     Similar packages you may find at the GNOME project
+     http://www.gnome.org/ . See the software maps at both sites.
+
+  14.
+     Please see Battery Powered Linux Mini-HOWTO by Hanno Mueller,
+     hanno@lava.de http://www.lava.de/~hanno/ for more information.
+
+  15.8.  Kernel
+
+  15.8.1.  Related HOWTOs
+
+  ·  Kernel-HOWTO
+
+  ·  BootPrompt-HOWTO
+
+  Many kernel features are related to laptops. For instance APM, IrDA,
+  PCMCIA and some options for certain laptops, e.g. IBM ThinkPads. In
+  some distributions they not configured. And the kernel is usually
+  bigger than necessary. So it's seems a good idea to customize the
+  kernel. Though this task might seem difficult for the beginner it is
+  highly recommended. Since this involves dangerous operations you need
+  to be careful. But, if you can install a better kernel successfully,
+  you've earned your intermediate Linux sysadmin merit badge. - Since
+  this topic is already covered in other documents I want handle this
+  here.
+
+  15.9.  Tiny Applications and Distributions
+
+  A small collection yet, but I'm looking for more information.
+
+  1. BOA - HTTP server.
+
+  2. Pygmy - HTTP server.
+
+  3. MGR - a graphical windows system, which uses much less resources
+     than X.
+
+  4. LBX - Low Bandwidth X.
+
+  5. blackbox - X11 window manager 204K.
+
+  6. linux-lite - distribution based on a 1.x.x kernel for systems with
+     only 2MB memory and 10MB harddisk. URL see above.
+
+  7. smallLinux -  http://smalllinux.netpedia.net/ . Three disk micro-
+     distribution of Linux and utilities. Based on kernel 1.2.11. Root
+     disk is ext2 format and has fdisk and mkfs.ext2 so that a harddisk
+     install can be done. Useful to boot up on old machines with less
+     than 4MB of RAM.
+  8. cLIeNUX - client-use-oriented Linux distribution.
+
+  9. minix - not a Linux but a UNIX useful for very small systems, such
+     as 286 CPU and 640K RAM http://www.cs.vu.nl/~ast/minix.html . There
+     is even X support named mini-x by David I. Bell
+     ftp://ftp.linux.org.uk/pub/linux/alan/ .
+
+  10.
+     screen - tiny but powerful console manager.
+
+  11.
+     ash - tiny shell.
+
+  12.
+     tinyirc - a small IRC client.
+
+
+
+

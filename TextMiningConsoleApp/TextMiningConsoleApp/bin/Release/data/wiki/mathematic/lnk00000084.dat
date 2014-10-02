@@ -1,0 +1,70 @@
+THE_URL:http://web.textfiles.com/computers/c4n-dropit.txt
+THE_TITLE:c4n-dropit.txt
+                The Solution for the App of the Week 08/17 - Dropit v 1.0
+                                         by YOSHi
+
+Some people didnt understand how to do this one, so I figured this could very well help them
+learn how to crack this awkward (and easy) protection. I will do this in steps for no apparent
+reason besides to give the reader motion sickness and possibly go color blind.
+
+Step One: run the program a few times.... the only 'protection' is in the beginning, with the
+delayed serial / nag screen
+
+Step Two: enter a dummy serial and press "OK", notice how it doesnt say if its good or bad? Maybe
+its because you've got the right serial!!!! No, its not actually :) Just getting your hopes up.
+
+Step Three: restart the program, and the nag is still there. Time to do something about it. BPX
+getdlgitemtexta (function to get a line of text)
+
+Step Four: now that you're in the code, press "f11" to let the program read your serial. Now do a
+"s 0 l ffffffff 'yourserial'" and bpm on it, if you have Soft-ice 3 or greater you can do this by
+typing "bpm " in the command line, then right clicking on the address, then selecting "Cut+Paste"
+and if not, you've got a lot of typing to do
+
+Step five: trace through some of the calls that follow, you should see a call to
+"writeprivateprofilestringa". Now you know what is used to write it, you know what is used to
+read it too.
+
+Step Six: exit the program, and "bpx getprivateprofilestringa". you can use the symbol loader or
+not, I usually never use it.
+
+Step Seven: Soft-Ice breaks at your bpx... press F11 to let it read your code. You will see that
+you are in mfc40.dll (how? see the part that says "mfc40"? :)
+
+Step Eight: search on your reg code. bpm on all occurances.
+
+Step Nine: trace into the next call using "t"... this is "the" call, as you will see it contains
+a compare to the reg code and your code.
+
+Step Ten: make sure you have all your bpms set, and dont set any if the offset it above 8000000,
+its windows temporary memory area
+
+Step Eleven: press F5 or G or X or Control+d to exit softice... you will see something like the
+following:
+Mov esi, yourcode
+Mov edi, blankarea
+cmp esi, edi
+its looking to see you there is no code... btw all of the conditional jumps that follow will not
+lead anywhere... anyway, keep tracing until you see the "movsb"... your code will be copied to
+the area specified in edi, or, the blank area.
+
+Step Twelve: Bpm on that, and then f5 or whatever you use :) to exit Soft-Ice. You should see
+something like the following:
+mov ah, [edi]
+mov al, [esi]
+cmp al, ah
+Check out the esi and edi.... one should be your regcode, one should be the REAL regcode which
+coincidentally is "donuts".
+
+Step Thirteen: Restart the program, and enter "donuts" as your code. Now you are a registered
+user for life :)
+
+Step Fourteen: if you are not already connected to the internet, do so, and if so, open up mirc
+or ircii or bitchx or whatever client you use, connect to an EfNet server and come into
+#cracking4newbies and tell us all about it. You are welcome to come in anytime, any day.
+Hopefully, the next week there should be a new app of the week, and if anyone has any problems,
+me and the rest of the MexElite team would be glad to help - its what were there for :)
+
+Greets: blorght, FaNt0m, _CbD_, nIabI, joesephCo, drlan, KrAzY_N, ^pain^, mornings, and Manson69
+
+                                          -YOSHi[me/c4n 97]

@@ -1,0 +1,96 @@
+THE_URL:http://web.textfiles.com/computers/EDDYHAWK/chipset.txt
+THE_TITLE:chipset.txt
+EddyHawk's Info List
+---
+Motherboard Chipsets
+---
+Athlon/Duron chipset
+---
+-AMD
+ AMD750
+ AMD760
+  DDR-SDRAM support
+  faster than VIA's KT266
+ AMD762
+  MPS
+
+-ALI
+ Magik1
+  DDR-SDRAM
+  mediocre performance
+
+-VIA
+ KX133
+  SlotA
+  support for 100Mhz (DDRed: 200Mhz) FSB
+ KT133
+  KX133 with SocketA
+ KT133A
+  support for 133Mhz (DDRed: 266Mhz) FSB
+  very reliable & frequently used
+ KT266
+  DDR-SDRAM support
+  lack of performance
+ KT266A
+  significantly improved performance from KT266
+  currently the fastest Athlon chipset
+ ?
+  166Mhz DDR (333Mhz) SDRAM
+  AGP8x
+  PCI X
+  Southbridge (VT8235)
+   USB v2.0
+   FireWire
+
+-SiS
+ 735
+  release: May 2001
+  DDR-SDRAM
+  faster than VIA's KT266
+
+-NVidia
+ n'Force
+  release: Oct 2001
+  100Mhz AGP bus instead of normal 66Mhz (= normal AGP6x)
+  IGP (Integrated Graphic Processor)
+   integrated GeForce2 MX
+   DASP (Dynamic Adaptive Speculative Pre-Processor)
+    8-way set associative prefetch cache
+    but it reduces AthlonXP (Palomino) hw data prefetch
+  MCP (Media & Communication Processor)
+   integrated Ethernet controller
+   outfitted with very powerful APU (Audio Processing Unit), a licensed implementation of Parthus's Media
+Stream DSP, to support realtime Dolby Digital Encoding
+  IGP & MCP is connected through implementation of AMD's Hyper Transport
+  220
+  220-D
+  420
+   dual-channel DDR-SDRAM (TwinBank memory controller), transfer rate: 4.2Gb/sec
+   VIA's KT266A rival
+  420-D
+   Dobly Digital encoding is enabled
+---
+Pentium 4 chipset
+---
+-Intel
+ i850
+  RDRAM
+
+-VIA
+ P4X266
+  DDR-SDRAM
+  close performance to D850
+ P4X333
+
+-SiS
+ 645
+  release: Oct? 2001
+  166Mhz DDR (333Mhz)
+---
+Misc
+---
+Motherboard chipset has 2 parts:
+-Northbridge
+ Controll cpu, memory, data bus
+-Southbridge (handling media peripherals)
+ Hardisk controller

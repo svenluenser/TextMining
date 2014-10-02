@@ -1,0 +1,331 @@
+THE_URL:http://web.textfiles.com/computers/bburn1.txt
+THE_TITLE:bburn1.txt
+                                     Introducing into the world of cracking
+                                         A beginners tutorial written by ByteBurn
+
+Intro:
+
+What is cracking?
+Cracking is how i like to say a art a xpression.Everyone can handle it.But not everyone can do the best o
+f it.If you like to crack you`ll see that it isnt easy to understand at first but after recieving some ex
+perience and knowledge it is incredible.If you have learned the real cracking you arent only a cracker.Yo
+u are more then a cracker.With the art of cracking you`ll gain more knowledge about your PC the programms
+ you running on it and how they work.You`ll understand how a programm works and how to manipulate it that
+ it can be usefull for you.And it dont mean that it`s illegal.
+Offcourse it`s not 100% legal but it can be usefull for you in your later life.You have experience about
+the ASM-Code understand the function of programms and other applications and maybe it bring you up to a p
+rogrammer?Who knows.But at first you`ve to learn it step by step.I`ll help you with my tutorials and i ho
+pe you understand the way how i explain it.Excuse my english i know its not the best but i`ll do my best.
+
+Step one:
+
+What do we need to crack?May i need some knowledge about assembler or anything else?
+No.I made this tutorial for all the beginners in the net who dont understand anything about
+ASM-Code or the internal function of applications.Like you and everyone else i also started with cracking
+ some time ago.And it tooks much of my life time to what i know today about cracking.
+I think there are many tutorials which are good and i dont wanna say anything against them.
+But i think the most tutorials are quick written memory killer with which you cant do anything.
+I always had the problem that i dont understand what they mean.Like what is a nop or what mean the je,eax
+,jump signs.What they mean with jump to badboy and replace the jump if not equal with the jump if equal c
+ommand.All these things and many more makes me sometimes worry about what i want to learn.I thought that
+i`ll gave up and forget the thing with cracking.But everytime if i do that some time later i cant and hav
+e to learn the way of cracking.Yes sometimes you`ll think oh man what do you mean it doesnt work!But dont
+ give up.Everyone passed this point of time and you`re not the first and will not be the last one.You hav
+e to learn again and again.And then at any time you`ll see that it was good what you`re doing all the tim
+e and you`ll be proud about it.
+
+The software we`ll need:
+
+At first the only thing we`ll need is W32Dasm8.9 (a Windows disassembler) and HIEW (its a good Hex-Editor
+ i think it`ll be the best for you at first).Thats all.In the following tutorials (i hope there`ll be any
+ of me) i`ll explain how to work with soft-ice and how to handle the asm-code.But at first you need as a
+beginning cracker only the two things.
+
+Some knowledge at first:
+
+As you know its not very easy to handle all the asm-codes and i think you dont know much about them.So i`
+ll explain the most needed commands.
+There we have to know that every two numbers in asm-code are representing one byte.
+Like the number 75564345 = 4bytes.The 75 is one byte the 56 is one byte the 43 is one and the 45 is one b
+yte.So we have 4 bytes leading the command at this point.If we want to replace them later we now know tha
+t we have to replace always two numbers with two other numbers.Like the 75 (in hexadezimal it stand for j
+ne.Jne means jump if not equal) we can change to 74 (in hexadezimal it stand for je.Je means jump if equa
+l).This in most of times is enough to crack a game or to register a programm so it`ll not say "sorry inva
+lid password" or something else (please dont think its so easy i take it as a very simply protection).Cau
+se if we change the value of 75 (jump if not equal [means that the application is checking something like
+ if there is a cd present in drive or is it the same password like saved in the programm and if it isnt r
+ight like there is no cd in drive or the password you entered is not valid it will jump to "BadBoy" and t
+he programm pop up you the error message] by the way "BadBoy" is in cracker language something like the o
+ne dude who call the error message)
+to 74 (jump if equal so the programm think there is a cd in drive or the password is valid and will jump
+to "GoodBoy".GoodBoy is the one who makes the way clear).You`ve to manipulate the application so it think
+ there is a cd present or password is valid and it continious with the programm.Remember that the exe run
+s up to down.So the commands which call the error messages are placed before the error messages.The only
+thing i mean is that if you found the error message (i`ll explain later how to do it) you have always loo
+k up in the asm-code not down.Its like you.If you read a book or a text you start on line one and read yo
+ur way down.The programm do the same.It checks from line one of the asm-code to the end of the code if th
+ere is all correct.And if it found at line 9 a error it jumps down to the "BadBoy".It cant jumps up cause
+ there he checked everything and there arent complications.So if you found the error message look up (bef
+ore it) and you`ll find the command which call the error message on the screen.Ok now some things about t
+he numbers and things you`ll see if you disassemble a exe (here are only the needfullest things you`ve to
+ know at this point of time):
+je (hexadezimal is 74) = Jump if equal
+jne (hexadezimal is 75) = Jump if not equal
+nop (hexadezimal is 90) = No operation
+call (no random hexadezimal) = call a operation
+jmp (no random hexadezimal) = jump to string/operation
+This are the five basics we`ll need at first.The other i`ll explain in later tutorials when you gain more
+ experience in asm-code.
+Ok now we`ll take a look what does they do in a asm-code string.
+
+Je (Jump if equal) jumps to a operation if he found what he check.
+Example:
+The game need a cd to start the main game.So the "jump if equal" je command check if there is a cd in dri
+ve.If there is a cd in drive he`ll continous and give a information away to the commands after him.Thats
+a equal operation.The cd was found (equal) and it continous in asm-code (jump if equal).
+
+Jne (Jump if not equal) jumps to a operation (most times BadBoys that mean,to the error message you`ll re
+cieve on your screen) if he dont found what he check.
+Example:
+The game need a cd to start the main game.So the "jump if not equal"jne command check if there is a cd pr
+esent in drive.If not he`ll jump to a "BadBoy" and you`ll recieve the error message on screen like "Canno
+t find CD in drive.Please insert CD and click on OK."
+Thats a "jump if not equal"operation.The check failed (cause he dont find a CD in drive) and he jump to t
+he "BadBoy" and the "BadBoy" end the load process and let the error message be shown on your screen.
+
+Nop (no operation) a nop command kill the current operation like checking after CD in drive or checking i
+f password valid.
+Example:
+The game need a cd to start the main game.Its like before cause you set the nop command.
+You can replace the jne/je/call/jmp commands with a nop command.The nop will then disable the jne/je/call
+/jmp command this mean that the programm dont check if a cd is present in drive and continous in asm-code
+.The game run (you can do that but its also a style for simply cd protections).
+
+Call (Call a operation) a call command do what his name say.He call a command what can be a error message
+,a nag screen...This you can disable with a nop command.
+Example:
+I dont know what i can say more.
+
+Jmp (Jump to a string/operation) a jmp command is like a call (not the same but...you can say it is) he d
+ont call commands but jump to them.
+Example:
+The jmp jumps to a string/operation which will call a error message or to a BadBoy...The jmp
+you can also disable with a nop command.
+
+I think thats all you`ve to know for now about the commands in asm-code.In this tutorial we`ll handle onl
+y with these few commands.Thats enough for you at first to crack simply protections (no matter if cd or p
+assword).
+
+About protection shemes:
+
+There are enough protection styles you`ve to learn about and to learn how to disable them.
+We have "normal" cd protections (a game is looking if there is a cd present if not it`ll not start the ga
+me),password protections (you`ve to enter a valid password [most times you find them in trial versions] i
+f you dont enter a valid password you cant register or start the application),
+time locks (most times in trial versions.You have some time to test a programm like three weeks and after
+ the time it wont start/show a error message/you`ve to enter a password to unlock it),and in unusually ti
+mes you`ve to get a unlock software from the programmer (the programm wont work without the +software of
+the distruber.This kind of protection is hard to find).Thats are the most usual protection shemes you`ll
+find on your way to a real cracker.
+The easyest protections for us to crack are windows error message boxes (i think so).
+Its a windows message box which will be shown on your screen with any text if you havent got a cd present
+ or a valid password.This kind of protections you can see in EA applications like NFS/Fifa Soccer/NHL....
+Its very easy to crack cause the only thing you`ve to do is to kill the window (most times with a nop com
+mand or change je to jne /jne to je).Also we can find this kind of protections at password locked applica
+tions.If you enter a invalid password you`ll recieve a windows message box too which include a text like
+"invalid password" or something else.Then we`ve ingame error messages which are harder to crack.Cause W32
+Dasm show you only the windows box messages and not the ingame messages.For this kind of protection we ne
+ed soft-ice debugger (i`ll explain in later tutorials how to use soft-ice).This kind of protection you ca
+n see in games like Commandos/Grand TheftAuto/Descent Freespace.And the timelock protections can be shown
+ to you as a windows box and as a "ingame" error message(i`ll call them NAG screens).Those kind of protec
+tion you can see in Paint Shop Pro.
+In this tutorial i`ll show you how to disable the windows message boxes with W32Dasm version 8.9 and with
+ Hiew.We`ll crack WinRAR and WinRAR95 (may be a game too like Anno1602 or anything else i dont know how m
+uch time i`ll get and if the tutorial wont be too long).
+
+Beginning with cracking:
+
+Now lets start with the main thing you want to learn.Cracking.I`ll show you now how to handle the basic c
+ommands of W32Dasm89 and Hiew.We`ll crack now WinRAR95.exe (we`ll make a full registered version of the t
+rial).At first we start the programm.We`re in.
+What can we see?At first we can see on top of the window "WinRAR (unregistered version)"
+Thats very good for us cause the "unregistered version" status behind the "WinRAR" tell us
+that it is unregistered and that it`ll be not shown if it registered.Now we click on "Options"
+and then on "Register".Now you can see a windows box (these kind of boxes i mean which are easy to crack
+for us).Now enter in the text boxes what you want like as a name "Test" and as a number "12345" and click
+ on ok.You`ll hear a sound and another windows box pops up which tell you "Registration Failed".Thats all
+ we want to know.Close WinRAR95 and go to your Ms-Dos box.Now in Norton Commander (you can use windows co
+mmander too) make from your WinRAR95.exe two copies.One of them named WinRAR95.w32 (for W32Dasm89) and on
+e named WinRAR95.exx (a saved copy if you change wrong bytes).
+Now i`ll exlpain why we do these copies.Its very easy.If you disassemble a exe like WinRAR95 and you`re w
+orking in W32Dasm89 you cant run the WinRAR95.exe as the same time in Hiew or in Windows Explorer.You mak
+e a second copy named WinRAR95.w32 (you can call it like you want no matter but its good that you see its
+ for W32Dasm89).This copy you`ll disassemble with W32Dasm89 and you can everytime start the original exe
+in Windows or change the bytes in Hiew.The second copy WinRAR95.exx is only a save recovery copy.If you c
+hange wrong bytes in Hiew or anything else so that it wont run you can rename the WinRAR95.exe with WinRA
+R95.exx.And try it again (remember its always "try and error" technique).Ok if you make the two copies st
+art W32Dasm89.Now click on the first button on the top (or click on Disassembler and then on "Open file t
+o disassemble".A window pops up and you can chose the file you want to be disassembled.
+Change your directory to your WinRAR directory and click on WinRAR95.w32.
+Now W32Dasm starting the disassembling process (if you have low system memory or low HD memory it`ll take
+ some time).You can always click on the button in the midle of the screen called "Cancel Disassembly" whi
+ch will abort the disassembling process.If the exe is disassembled it may be that you see no "normal" sig
+ns but WinDings written lines.
+Dont worry you can change your font.Click on "Disassembler" then on "Font" and at least on "Select Font".
+Now you can chose the font you`ll use in W32Dasm89.I think the best one is Arial.Change the font.Now you
+have your selected font present in W32Dasm89.Click a second time on "Disassembler" "Font" and then on "Sa
+ve default Font" (if you dont do that at your next disassembling file you`ve to change the font a second
+time).Now you see the asm-code.It will not tell you much cause you dont know what all the commands mean.N
+ow click on the button next to the "Print" button called "Strn Ref" (String Data References).A window pop
+s up.Now you can see all the error messages you can recieve from the exe.Do you remember what does WinRAR
+ said if you entered the wrong code?It said "Registration Failed".Now look at the text and search for the
+ message.Got it?Double click on it.In W32Dasm you`ll be warped to the position in the asm-code where it l
+et pops up the error message you`ll recieve on your screen when you entered the wrong code.
+If you make it right you`ve to look at a screen like this:
+
+:00413A8F 6A6A                       push 0000006A
+:00413A91 E863640000                 call 00419EF9
+:00413A96 59                        pop ecx
+:00413A97 50                        push eax
+:00413A98 FF7508                    push [ebp+08]
+
+*     R e f e r e n c e     T o :     U S E R 3 2 . M e s s a g e B o x A ,      O r d : 0 0 0 0 h
+                                                                                                  |
+:00413A9B E8120B0100        Call 004245B2
+:00413AA0 33C0              xor eax, eax
+:00413AA2 A358674200         mov dword ptr [00425758], eax
+:00413AA7 A338564200         mov dword ptr [00425638], eax
+:00413AAC A34C564200         mov dword ptr [0042564C], eax
+:00413AB1 EB56              jmp 00413B09
+
+* Referenced by a (U)nconditional or (C)onditional Jump at Adress:     <---------This is our one
+|:00413A82(C)
+|
+
+* P o s s i b l e    S t r i n g D a t a    R e f    f r o m    D a t a   O b j     - > " Wi  n R A R "
+
+:00413AB3 68D86A4200           push 00426AD8
+:00413AB8 FF359C644200         push dword ptr [0042649C]
+
+*   R e f e r e n c e  T o :     U S E R 3 2 . S e t  Wi  n d o wT e x t A ,     O r  d :  0 0 0 0 h
+
+:00413ABE E86B0A0100          Call 0042452E
+
+* P o s s i b l e  R e f e r e n c e  t o  S t r i n g   R e s o u r c e  I D = 0 0 0 4 8 :   " n o r m a
+ l "
+
+:00413AC3 6A30               push 00000030
+
+* P o s s i b l e  R e f e r e n c e  t o  D i a l o g : A R C I N F O D L G ,  C O N T R O L _ I D :  0
+0 6 C ,       " "
+
+This asm-code you`ve to see on your screen if you doubleclick on "Registration Failed".
+Now you can remember what i said some lines before.The asm runs from top to bottem (i like call it T2B he
+he).That means that the jne/je we have to change is anywhere up.But who
+we know which it is?Now we can try to change everyone we see (like try and error) or we use the "Goto CD
+Loc" (Goto code location) button on the top.We click on it and a little window pop up.On bottem right of
+the window is a text box "Code Offset (Hex)".Now we take a look on the asm-code.We can see the line "* Re
+ferenced by a (U)nconditional or
+(C)onditional Jump At Adress:" then the line next where is the adress we have to know
+"|:00413A82 (C)".Thats the number we have to enter in the code location window its 00413A82.At this adres
+s we`ll find the jump which will send us every time to the error message if we enter the wrong code.Click
+ on ok in the code location window.
+Now you are anywhere up in the asm-code.The Bar is on the line which let us jump to the message.Its a jne
+ (jump if not equal).The Bar changed his color to green (he`ll do that only at jump/calls.Now look down o
+n the bottem of the screen.There is a line which looks like:
+
+Line:34985 Pg 467 of 998 Code Data @:00413A82 @Offset00013082h in File:Winrar95.w32
+
+The only thing what we`ve to remember is the number after the @Offset.Its 00013082 (the Bar have to be on
+ the jne).Write it down (you dont have to remember all the 000 its enough when you remember only 13082.Ok
+ now go to HIEW (you dont have to close W32Dasm).Its no matter which kind of exe you start (if H.exe or H
+95.exe).In HIEW (its like Norton Commander) you can trace through the directorys.Go to your WinRAR direct
+ory and click on your WinRAR95.exe.Hmm dont know what that is huh?Click on F4 (select mode window) and th
+en chose "decode".The screen change.You can now see all the jne/je/eax..commands
+and have to click on F5.On the top left corner you can now enter the @Offset number (you wrote it down a
+few seconds before).Here its no matter if you type the 000 or if you type only 13082.Type 13082.You are a
+t the jne command.Now click on F3 (edit).Now you`re able to change the value.Change it from 75(jne) to 74
+(je) and click on F9(update).Then click on F10.
+You have changed the value of jne.Now you can test if it work.Click on your WinRAR95.exe.
+The programm start.Now do the same like before.Go to registration and enter any name and code.Click on ok
+.What happens?No more error messages?A pop up window display that your registration was successfull.The m
+essage on the top next to WinRAR was killed (Unregistered Version) and you`re fully registered.Ok.That wa
+s the one way.But there is a second.Also we can kill the Unregistered status on the top of the window.We`
+ll do that now.
+Load your uncracked save copy of WinRAR95.If you start it you can see on the top a message which tells yo
+u that its a (unregistered version).Go to W32Dasm and load your WinRAR95.w32 file.Now click on String Dat
+a References Button.Look for "(unregistered version)" (it have to be exatly (unregistered version) cause
+there are two of them!).Do you found it?Doubleclick on it.You was warped to the point where is it.Its lik
+e before.You have to do the same thing like before.You see the "*Referenced by a (U)nconditional or (C)on
+ditional Jump At Adress:" line?Click on "Goto code location"button and enter the number.Its
+00418AAA  and click on ok.You was warped to the point which let the asm-code jump to the message if it is
+ not registered.Its also a jne (jump if not equal) command.Write down the @Offset number its 000180AA (yo
+u can leave the 000 alone).Go to HIEW, load your WinRAR95.exe, click on F4 (decode),  then on F5 (goto),
+enter 180AA and click on enter.
+You`re at the jne command.Change the value of jne to je (75 to 74) save it and leave HIEW.
+Remember that if you want to manipulate a exe like WinRAR you have to close winRAR on Windows desktop or
+you`ll recieve a message like "error only read mode".Now if you changed the value you can test if it work
+s.Start your WinRAR95.exe and you see that the message is no more.We killed it.Now you have no message on
+ the top and you can enter any name and code and it`ll unlock WinRAR95.The same way you`ve to do on norma
+l WinRAR.Everytime if you want to crack a simply protection you can use this way.Change jne/je to je/jne.
+Or to nop it.
+
+Remember the basics:
+
+You have to remember the basics.If you want to crack a game or a application start it and look which kind
+ of error message you recieve.If it is a Windows Message Box you can crack it with W32Dasm.If it is a ing
+ame error message you`ll better crack it with soft-ice debugger.
+Remember the error message and make to recovery files of the start.exe.One called *.exx (if you nop or ma
+nipulate anything wrong so it wont run or have any errors you can rename it with the original exx file) a
+nd one called *.w32 (this file is for W32Dasm you have to use it for disassembling it with Wdasm).Then go
+ to W32Dasm and disassemble the w32 file of your start.exe.If it is disassembled click on String Data Ref
+erences button and look out for the error message (you can also click on search and enter your keyword li
+ke sorry or unable...)
+you recieved on the screen.If you find it doubleclick on it.On the asm-code enter the *Referenced by a (U
+)nconditional or (C)onditional Jump At Adress: number in the Goto code location window.Once you was warpe
+d to the location write down the @Offset number (you can leave the 000).Start HIEW and load the exe.Click
+ on F4 goto decode.Click on F5 enter the @Offset number (no matter if you do that with the 000 or without
+ them).If you was warped to the place where is hidden the jne/je/jmp/nop you can change the jne to je or
+the je to jne or you can nop a jmp/call (you can also nop a je/jne command but before you do that try if
+it run with changing the value).Save it and leave HIEW.Start your programm and see if it works.If not you
+ make something wrong.Try to nop or change other values.If there is no Referenced by a (U)nconditional or
+ (C)onditional Jump At Adress: number you have to trace some lines up and look out for call/jmp/jne/je co
+mmands you can nop or change.
+
+How to nop:
+
+Now i`ll explain how to nop commands.Nop stand for "No Operation".If you get any call/jne/jmp/je command
+you can nop it.The rules for nop are:every two numbers are one byte.That means if we have a number like E
+8992344 we have there 4bytes which wanna be changed.E8 is one byte 99 is one byte 23 is one byte and 44 i
+s one byte.Replace the number with 90909090.If you do that in HIEW dont be worry when you enter the first
+ 90 that it flips one line down.Enter three 90 again and save it.Also you can nop a 7456 (je) with 9090
+or a 7589 (jne) with 9090.No matter if it is a jne/je/jmp/call.Sometimes you`ll see je/jne commands in nu
+mbers like F5848976 (i dont know if it is the correct command but i want to show you what to do if you se
+e anytime a long je/jne command like this) at this point you can change only the 84 after F5 (84 is like
+74 = je) to 85 and otherwise (85 to 84).What i`ll say is that you dont have to nop it.Most times you have
+ to nop call commands.Or jmp (jump)
+commands.
+
+Last words:
+
+Thats the end of my tutorial.I think i forget much of what i want to say but if i do i`ll say it in next
+tutorials.My next tutorials will contain how to handle soft-ice debugger / how to read the asm-code under
+ W32Dasm and get the valid code from it / how to get keys from programms with soft-ice / how to crack wit
+h soft-ice / explain more of asm-code and many more.I hope you enjoyed my tutorial i know it wasnt easy c
+ause my english is more then bad.I hope you now know a little bit more about cracking.And if you have som
+e questions or any ideas for my next tutorials what i can do better then please mail me at : ByteBurn@one
+cooldude.com
+You can reach me on IRC EFnet #DHR.I am not often online but when i am online i am always in the DHR chan
+nel which stand for Dephenderz/DephStarz.They are always looking for cracker/gfxA/coder and the other stu
+ff what can be usefull for a crew.So i hope we`ll meet at EFnet!My greetings goes to: Mues_Lee,NetLeaDer,
+ByteFaker,insEOK`98,_Anubis_, LordRaiden,scamp,KingR-TLF,Anne,Linda,Laurie to all cracking groups to ever
+y cracker and to every newbie who want to be a good cracker.AND THE DHR CREW!The tutorial was written in
+3hours (with brakes about some days)in this time i enjoyed the music of DJ Q-Bert
+the great privat tape of Hermann (Flying Steps B-Boy member) thanks for share it to me,Cold Cutz Crew Eli
+te DJ`s and the other East-Coast dudes who make the best music in da world.
+So i`ll end here crab any girl and do something fine hehe.Happy cracking peace out chill`in.
+Rock the Planet and be TRU 2 THE GAME!
+
+West Berlin City the 12/3/98
+
+

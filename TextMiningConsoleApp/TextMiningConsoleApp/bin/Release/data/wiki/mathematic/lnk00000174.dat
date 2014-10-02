@@ -1,0 +1,171 @@
+THE_URL:http://web.textfiles.com/computers/pwdump.txt
+THE_TITLE:pwdump.txt
+        Windows NT Password Dump Utility
+        --------------------------------
+
+This handy utility dumps the password database of an NT machine that
+is held in the NT registry (under
+HKEY_LOCAL_MACHINE\SECURITY\SAM\Domains\Account\Users) into a valid
+smbpasswd format file. This should be a help to Samba administrators
+who have a master password database on a Windows NT machine and need
+to keep this in sync with the smbpasswd file on their UNIX/Samba
+server.
+
+This utility dumps NT password entries in the format :
+
+<user>:<id>:<lanman pw>:<NT pw>:comment:homedir:
+
+Where <user> is the user-name on Windows NT, <id> is the Windows NT
+RID (relative ID) - the last 32 bit component of the Windows NT users
+SID, <lanman pw> is the users lanman password hash, <NT pw> is the
+users Windows NT (md4) password hash - note that if the user has no
+password these will be dumped as the string 'NO PASSWORD*****', if the
+account is disabled or invalid these are dumped as 32 '*'
+characters. The comment is a concatenation of the users full name on
+Windows NT and the description field in the Windows NT user-manager
+program. The homedir cannot contain ':' characters unfortunately, as
+these are used as field separators in the smbpasswd file (as per
+UNIX), all ':' characters after drive letters are dumped as '_'
+characters.
+
+How to use pwdump
+-----------------
+
+Only as a suggestion, I would recommend dumping your NT machines
+account database and then creating regular UNIX users (in /etc/passwd)
+with the same UNIX account numbers as their NT RID - this will make
+replicating the smbpasswd file much easier later on. These /etc/passwd
+accounts may have disabled password entries, prohibiting the NT users
+from logging onto the UNIX box via telnet (this is similar to removing
+the 'log on locally' right on an NT server). This will not prohibit
+them from using the Samba box as a server via Samba though. The
+created smbpasswd file may then be copied to the
+$SAMBA/private/smbpasswd file (where $SAMBA is the base directory you
+installed Samba into). If Samba is set up for user level security and
+encrypted passwords (set :
+
+security = user encrypted passwords = yes
+
+in your smb.conf file) then Windows NT / 95 users who have logged on
+to the NT domain will be able to transparently access the resources on
+the Samba box as their correct UNIX user id's (the ones you originally
+created). You can then set up a 'AT' job on your NT server to
+periodically dump your NT password database into a new smbpasswd file
+and copy it over (securely somehow) to the Samba server to keep the
+password databases on the two machines in sync.
+
+The pwdump.exe utility can take a \\machine name as argument, it will
+then proceed to dump the password database from that machine instead
+of the local machine, if it has sufficient privillages to do so. By
+default it will dump the password database of the local machine.
+
+NOTE: The passwords dumped by this utility are 'plain-text equivalent'
+in the CIFS protocol and *MUST* be protected. The UNIX security on the
+smbpasswd file *MUST* be set to (owner root, permissions rw------- -
+ie. read/write owner, no access to anyone else).
+
+
+Future Enhancements
+-------------------
+
+As this code decrypts the obfuscication step in the NT password
+database it may be reversed, allowing a lanman and md4 hash to be
+written into the NT registry for a user account. This would allow a
+UNIX/Samba box to be the master repository for user account details,
+and the account passwords to be replicated and 'brute forced' into the
+NT password database, bypassing the rather baroque NT API mechanisms.
+
+This code doesn't attempt to do this however, this is left as an
+'exercise to the reader' (or an enterprising university somewhere :-).
+
+
+How it works
+------------
+
+This utility takes great pains to maintain NT security as it wanders
+through the NT SAM areas of the registry. It will not even run is you
+are not running as Administrator. Firstly it goes through and adds the
+'minimum necessary change' (see Asimov's 'the End of Eternity' :-) to
+allow the program to read the password entries. It dumps the users
+entries (see the code for details) and then goes back through the
+registry restoring the security on all the keys it touched. I have
+tested this code on NT Server/Workstation 4.0 and NT 3.51 and have
+never had problems, but as always, this code has *NO GUARANTEE*
+associated.
+
+Source code
+-----------
+
+The source code for this utility may be found in
+
+ftp://samba.anu.edu.au/pub/samba/pwdump/pwdump.c
+
+Note that this code needs a DES library to compile. The one I used in
+development is Eric Young's excellent DES library found at :
+
+ftp://ftp.psy.uq.oz.au/pub/Crypto/DES/libdes-4.01.tar.gz
+
+which compiles fine under Windows NT. I used Microsoft Visual C++ 4.x
+as the compile environment. The code pwdump.exe is provided for people
+who do not have a compiler and is a binary of the program for x86 NT
+machines (are there any other kind :-).
+
+Please report all bugs to :
+
+Jeremy Allison,
+jra@cygnus.com
+
+                libdes, Version 4.01 13-Jan-97
+
+                Copyright (c) 1997, Eric Young
+                          All rights reserved.
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms specified in COPYRIGHT.
+
+--
+The primary ftp site for this library is
+ftp://ftp.psy.uq.oz.au/pub/Crypto/DES/libdes-x.xx.tar.gz
+libdes is now also shipped with SSLeay.  Primary ftp site of
+ftp://ftp.psy.uq.oz.au/pub/Crypto/SSL/SSLeay-x.x.x.tar.gz
+
+The best way to build this library is to build it as part of SSLeay.
+
+This kit builds a DES encryption library and a DES encryption program.
+It supports ecb, cbc, ofb, cfb, triple ecb, triple cbc, triple ofb,
+triple cfb, desx, and MIT's pcbc encryption modes and also has a fast
+implementation of crypt(3).
+It contains support routines to read keys from a terminal,
+generate a random key, generate a key from an arbitrary length string,
+read/write encrypted data from/to a file descriptor.
+
+The implementation was written so as to conform with the manual entry
+for the des_crypt(3) library routines from MIT's project Athena.
+
+destest should be run after compilation to test the des routines.
+rpw should be run after compilation to test the read password routines.
+The des program is a replacement for the sun des command.  I believe it
+conforms to the sun version.
+
+The Imakefile is setup for use in the kerberos distribution.
+
+These routines are best compiled with gcc or any other good
+optimising compiler.
+Just turn you optimiser up to the highest settings and run destest
+after the build to make sure everything works.
+
+I believe these routines are close to the fastest and most portable DES
+routines that use small lookup tables (4.5k) that are publicly available.
+The fcrypt routine is faster than ufc's fcrypt (when compiling with
+gcc2 -O2) on the sparc 2 (1410 vs 1270) but is not so good on other machines
+(on a sun3/260 168 vs 336).  It is a function of CPU on chip cache size.
+[ 10-Jan-97 and a function of an incorrect speed testing program in
+  ufc which gave much better test figures that reality ].
+
+It is worth noting that on sparc and Alpha CPUs, performance of the DES
+library can vary by upto %10 due to the positioning of files after application
+linkage.
+
+Eric Young (eay@mincom.oz.au)
+
+

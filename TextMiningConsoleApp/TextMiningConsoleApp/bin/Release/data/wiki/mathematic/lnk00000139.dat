@@ -1,0 +1,507 @@
+THE_URL:http://web.textfiles.com/computers/iconed
+THE_TITLE:iconed
+                                  IconEd 1.3
+
+                       Copyright (c) 1988, Paul Elseth
+                  Documentation version 11/23/88 (4th draft)
+
+
+
+IconEd is a shareware program for creating and editing Apple IIGS icons.
+With IconEd, you can change the appearance of icons, change the names of their
+files, and tell the Finder where to find the application that created a
+particular document file.  You can also add icons to and remove icons from
+existing icon files, as well as copy icons between files.  In short, IconEd is
+a complete icon maintenance utility.
+
+                             --------------------
+
+Please note that IconEd is _shareware_, not public domain.  You are welcome and
+encouraged to give copies away to anyone and everyone.  If after using IconEd
+for a trial period you find is useful, you should send in the shareware fee
+of $15 (see below).  If you do not want to pay the shareware fee, you should
+stop using IconEd.
+
+-- Any commercial distribution of IconEd is expressly forbidden without
+-- prior written permission from the author.
+
+I plan frequent and substantial improvements (and bug fixes), so registering
+would definately be to your advantage.
+
+Here is the shareware deal:
+  When you send your $15, I will send you back a 3.5" disk with the latest
+  version of IconEd, plus the next update free.  After you register your
+  copy of IconEd with me, you may use any future updates free.  Updates
+  ordered directly from me will cost five dollars or three dollars plus a
+  blank disk.
+
+  Send your $15 to:
+              Paul Elseth
+              2739 Fairview Ct SE
+              Rochester, MN 55901
+
+CompuServe:   73457,226
+       BIX:   pelseth
+      ALPE:   PElseth
+
+
+NOTE: Apple IIGS, GS/OS and Finder are trademarks of Apple Computer, Inc.
+
+                             --------------------
+
+
+
+                                MENU REFERENCE
+                                --------------
+
+APPLE Menu
+
+  About IconEd...
+    gives the version number and brief shareware information about this
+    copy if IconEd.
+
+
+FILE Menu
+
+  New
+    Use New to create a new file of icons.  A new icon window will appear,
+    titled "Untitled.0n", without any icons in it.  You may copy icons from
+    other icon windows, or create new icons from scratch.
+
+  Open
+    Use Open to load an existing icon file from disk.  Icon files are usually
+    stored in the folder called ICONS in the main directory of a disk.  There
+    must be a file called FINDER.ICONS in the ICONS folder on the boot disk.
+    In addition, any disk can contain a folder called ICONS containing
+    additional icons (see ICONS AND THE FINDER below).  IconEd can handle any
+    number of icon files open simultaneously.
+
+  Close
+    Close closes the front window.  If the front window is an icon file
+    window and changes have been made to that file, you will be asked if you
+    want to save the changes (just like selecting Save from the FILE menu).
+
+  Save
+    Saves the front icon file using it's current name.  If you originally
+    loaded this file from disk, it will be saved in the file it was loaded
+    from.  If this is a new icon file, you will be given a chance to indicate
+    where you want the file save (just like using Save as... from the FILE
+    menu).  If you've moved the icons in the window, the new positions are
+    not saved with the file, however, the current order of the icons _is_
+    saved.
+
+  Save as...
+    Similar to Save, but allows you to change the files name, and select
+    where to save the file.  If you want to Finder to use the icons in the
+    current file, save it in the ICONS folder on the boot disk (or in the
+    ICONS folder on another disk).
+
+  Save as source...
+    Saves the front icon file as an APW ASM65816 source file.  This option
+    can be used to generate source code for icons to be included in a pro-
+    gram.
+
+  Quit
+    Use quit to leave IconEd.  If you have any changed icon windows open on
+    the desktop, you will be asked if you want to save them before quitting.
+
+
+EDIT Menu
+
+  Undo
+    Undo will cancel the last change editing change made in the Fat Pixels
+    window.
+
+  Cut
+    Cut will copy the first selected icon in the front window to the clipboard
+    and remove the icon from the window.  Cut will allow icon images to be
+    "exported" into any program that supports the graphic clipboard.
+
+  Copy
+    Copy copies the first selected icon in the front window to the clipboard
+    without removing it from the window.  Copy will allow icon images to be
+    "exported" into any program that supports the graphic clipboard.
+
+  Paste
+    Paste will copy a previously cut or copied icon from the clipboard to the
+    front icon window.  Paste also allows graphics to be "imported" from any
+    program that properly supports the graphical clipboard, such as Deluxe
+    Paint II.  Note that icons in IconEd use 640 mode (with dithered colors).
+    If you copy an icon from a program in 320 mode, you may end up with an
+    icon of only the left have of what you intended.  If this happens, either
+    convert the original to 640 mode, or cut a section twice as wide as the
+    intended icon.  I am looking into this, and will hopefully come up with
+    a better solution soon.
+
+  Clear
+    Clear removes the first selected icon without copying it to the clipboard.
+
+  Revert
+    Similar to Undo, but more extreme.  Revert changes the icon being editing
+    in Fat Pixels back to it's original form.
+
+
+SPECIAL Menu
+
+  Cleanup
+    Cleanup repositions the icons in the front window in the current order
+    (which can be changed by dragging the icons in the window - see
+    REORDERING ICONS below).
+
+  Select all
+    Select all selects all of the icons in the front icon window.
+
+  Add new icon
+    Use Add new icon to create a new icon in the front icon window.  Add new
+    icon creates a generic document icon which can be edited to your liking.
+
+  Fat pixels
+    Use Fat Pixels to edit the first selected icon in the front icon window.
+    This option will bring up the Fat Pixels window which allows you to change
+    the appearance of the icon.
+
+  Edit attributes...
+    Edit attributes allows you to change the filename, file type, aux type,
+    and application pathname associated with the currently selected icon.
+
+  Colored mask
+    The colored mask option allows color in the icon mask.  This provides for
+    "special effects" when the icon is selected.  Experiment.
+
+  Copy icon to mask
+    Copies all the pixels in the icon image to the icon mask in the Fat Pixels
+    window.  All colors except white are copied as black.
+
+  Copy mask to icon
+    Copies all the pixels in the icon mask to the icon image in the Fat Pixels
+    window.
+
+  Fill image
+    Fills the icon image in the Fat Pixels window with the currently selected
+    color.
+
+  Fill mask
+    Sets the icon mask in the Fat Pixels window to all black pixels.
+    (If Colored mask option is selected, Fill mask will set the icon mask
+    to the current color.)
+
+  Clear mask
+    Clears the icon mask in the Fat Pixels window to all white pixels.
+    (If Colored mask option is selected, Clear mask will clear the icon
+    mask to all black pixels.)
+
+
+VIEW Menu
+
+  by icon
+    Displays all of the icons in the front icon window in their large icon
+    form.
+    If the Fat Pixels window is currently in front, displays the large icon
+    for editing.
+
+  by small icon
+    Displays all of the icons in the front icon window in their small icon
+    form.
+    If the Fat Pixels window is currently in front, displays the small icon
+    for editing.
+
+  by name
+    Displays the filename associated with each icon beneath the icons in the
+    icon windows.
+
+  by application
+    Displays the application pathname associated with each icon beneath the
+    icons in the icon windows.
+
+
+COLORS Menu
+
+  The colors menu allows you to select the current color for editing icons
+  in the Fat Pixels window.  This menu is only active when the Fat Pixels
+  window is in front.
+  For convenience in selecting colors, the Colors menu can be "torn-off",
+  and placed anywhere on the screen.  To tear off the Colors menu, pull it
+  down, and hold the mouse button down while dragging the mouse off the
+  menu proper.  An outline of the menu will follow the cursor around the
+  screen - just like moving a window.  When the mouse button is released, the
+  Colors menu will be placed at the current point on the screen.  The torn-off
+  Colors menu can be moved or closed just like a window.  The torn-off menu
+  is only active when the Fat Pixels window is current (the menu's title bar
+  will be gray, instead of white).
+
+
+
+                          ICON FILE WINDOW REFERENCE
+                          --------------------------
+
+Icons may be selected by clicking on them with the mouse.  Icons turn black to
+show that they are currently selected.  A group of icons may also be selected
+together.  To select a group of icons, press the mouse button and drag.  A
+gray rectangle outline will stretch out with the mouse.  Any icons within the
+rectangle will be selected.
+
+Icons may be reordered by dragging them in the window.  Although the new order
+will be maintained, the exact new location is _not_ saved with the icon file.
+
+If an icon or group of icons is dragged into another icon window, those icons
+are copied to that file.
+
+Double-clicking on an icon allows you to edit that icon in the Fat Pixels
+window.
+
+
+
+                             FAT PIXELS REFERENCE
+                             --------------------
+
+The Fat Pixels window is used to change the appearance of an icon.  Each pixel
+in the icon is "blown-up" to four times it's normal size in the Fat Pixels
+window.
+
+An icon is made up of two parts: the icon image, and the icon mask. The icon's
+image defines the colors of the icon, while the mask generally defines it's
+shape.  When the Finder draws an icon on the screen, the image is "masked"
+against the icon mask.  Every black pixel in the mask allows the corresponding
+image pixel to be displayed, while the white pixels in the mask allow the
+background to show through.  The icon image may be editing using all sixteen
+colors, while the mask normally may only be black and white.
+
+If the Colored mask option is selected, masks may also consist of all sixteen
+colors.  With colored masks, white pixels allow the corresponding image pixel
+to be displayed, while black mask pixels allow the background to show through.
+This is the reverse of when Colored mask is off.  The purpose of colored masks
+is to allow a selected or "open" icon to be colored also.  Experiment with
+colored masks, and watch the sample icons to see what happens.  Note that to
+prevent confusion, you should generally not switch Colored mask mode between
+on and off repeatedly during an edit session.
+
+To the right of the icon mask is the actual icon as it would appear in the
+Finder, shown normal, selected, and open - on both on white and colored
+backgrounds.
+
+Beneath the icon image is shown the current height and width of the icon.
+
+On the lower-right corner of the icon image is a small square - the icon "grow
+box".  Dragging the grow box will change the size of the icon, similar
+to the grow box on a regular window.  If an icon is intended to be used with
+the Finder, the large icon should be around 16x16 pixels.  The small icon
+cannot be resized - it is always 8x8 pixels.
+
+Colors for editing the icon image can be selected from the Colors menu.  For
+convenience, the colors menu can be "torn-off" and placed near the Fat Pixels
+window.  A color can also be "picked-up" from a color in the image by holding
+the "apple" key while clicking on a pixel.  If you change a pixel by mistake,
+clicking on it a second time will change the pixel color back.
+
+Clicking on a pixel in the icon mask simply toggles the color of the clicked-
+on pixel.  You cannot "pick" colors from the icon mask unless Colored mask is
+on.  If Colored mask is ON, the mask pixels work just like the image pixels.
+
+At the top of the Fat Pixels window (in the "Infobar"), IconEd displays the
+location (offset) of the pixel under the cursor in either the image or the
+mask.  This will make it easier to align parts of the mask to the correspon-
+ding parts of the image.
+
+The icon being edited can also be "shifted".  Holding down the shift key while
+the cursor is in the image area changes the cursor to the "shift cursor" which
+appears as arrows pointing in all four directions.  Clicking on the image
+with the shift key down and dragging allows you to move the icon image around.
+When you release the mouse button, the image and mask will be shifted to the
+new location (the image and mask can only be shifted together).
+
+
+
+                          ICON ATTRIBUTES REFERENCE
+                          -------------------------
+
+Every icon dealt with by the Finder has associated with it four attributes:
+file name, file type, auxiliary type, and application pathname.  These four
+attributes help the Finder to match files with their icons.
+
+Document icons will generally use only the file type, aux type, and application
+pathname.  Application icons will generally use the file name and type.
+
+Name to match:
+  The file name of the icon matches the name of the file the icon belongs to.
+  The "*" character can be used as a wildcard character to match "don't-care"
+  sequences of characters.  For example:
+         ICONED        will match only a file called ICONED
+         *.ICONS       will match any file with a name ending in ".ICONS"
+         *             will match any filename
+
+File type to match:
+  The file type matches the type of the file the icon belongs to.  A file
+  type of $0000 matches any file type.  The file type can either be selected
+  from the list provided or entered, if it does not appear in the type list.
+  The filetype can also match hardware devices.  Appendix B contains a list
+  of file types and devices currently included in the IconEd list.
+
+Aux type to match:
+  The aux type matches the auxiliary filetype of the file the icon belongs to.
+  An aux type of $0000 matches any aux type.
+
+Application pathname:
+  This field is used by document icons only.  When a document is opened from
+  the Finder, the Finder attempts to run the application that created the
+  document.  The application pathname associated with the icon tells the Finder
+  what program to launch.  This field must contain the _full_ pathname of the
+  application.
+
+  The pathname cannot include a wildcard character.  If the first character
+  of the application pathname is a "*", it is taken to symbolize the boot
+  disk.  You should always indicate the boot disk with "*/" rather than it's
+  literal name.
+
+
+
+                             ICONS AND THE FINDER
+                             --------------------
+
+The Apple IIGS Finder gets it's icons from the files in the ICONS subdirectory
+on any disk.  The icons can be in any file with a type of $CA (ICN) in the
+ICONS subdirectory.  The only required icon file is the file called
+FINDER.ICONS in the ICONS subdirectory on the boot disk.  This file contains
+the generic icons and icons for disks and disk devices.  When the finder
+searches for an icon to match a particular file, it searches through all the
+icon files found, searching FINDER.ICONS last, so the icons in FINDER.ICONS
+are used only if another match is not found.  You should normally not add any
+new icons to FINDER.ICONS.  When you create new icons for files and documents,
+it is best to put them in another file, leaving FINDER.ICONS uncluttered, and
+used only for generic icons.
+
+Any time a new disk is inserted into a drive, the FINDER checks for an ICONS
+subdirectory on that disk, and loads any icon files it finds there.  Most
+application disks will have an ICONS subdirectory containing a file with
+the icons that are specific for that application.
+
+When a document is opened from the Finder, it tries to run the document's
+application from the application pathname associated with the document's icon.
+This means that if you move or rename an application, it's document icon must
+be changed to reflect the new pathname.
+
+
+
+                               REORDERING ICONS
+                               ----------------
+
+New in version 1.3 of IconEd, the icons in an individual icon file can be
+reordered.  When an icon is dragged to a different position within it's window
+IconEd reorders the icons internally to reflect the new order.  The first icon
+in the file is always in the upper-left corner, while the last icon is always
+in the lower-right corner.  If things become somewhat muddled, selecting
+Cleanup from the Special menu will redisplay all the icons in the current
+order.
+
+Reordering icons can be useful since when the Finder is searching for an icon
+for a particular file, it searches only until the first matching icon is
+found.  Therefore, the most general icons (such as the generic file icon)
+must appear last in each icon file.  For example, the icon for IconEd
+(name = "ICONED*") must appear before the generic GS/OS application icon
+(name = "*") otherwise when the FINDER is looking for an icon for ICONED, it
+will stop when it finds the generic GS/OS application icon, and use it.
+
+Note that since the FINDER.ICONS file is always last in the list, generic
+type icons should generally be in FINDER.ICONS.
+
+
+
+                       Appendix A: ICON FILE STRUCTURE
+                       -------------------------------
+
+This is a brief description of the format of an icon file on the disk.  Fields
+used by the Finder internally are filled with zeroes in the disk file.
+
+ICONBLK (icon file):
+         IBlkNext      LONG             ;used internally by the Finder
+         IBlkID        WORD             ;ID number for this ICONBLK ($0001)
+         IBlkPath      LONG             ;used internally by the Finder
+         IBlkName      BYTE[16]         ;used internally by the Finder
+         IBlkIcons     ICONDATA[n]      ;list of icon records
+
+ICONDATA (icon record):
+         iDataLen      WORD             ;length of the record (0 terminates list)
+         iDataPath     BYTE[64]         ;application pathname
+         iDataName     BYTE[16]         ;file name associated with this icon
+         iDataType     WORD             ;file type associated with this icon
+         iDataAux      WORD             ;aux type associated with this icon
+         iDataBig      ICON             ;icon image data
+         iDataSmall    ICON             ;small icon image data
+
+ICON (icon record - see QDAux chapter in ToolBox Ref II for more info):
+         imType        WORD             ;flags
+         imSize        WORD             ;size (bytes) of icon image
+         imHite        WORD             ;hite (pixels) of icon image
+         imWidth       WORD             ;width (pixels) of icon image, (4 bits/pixel)
+         imImage       BYTE[imSize]     ;icon image
+         imMask        BYTE[imSize]     ;icon mask
+
+
+
+                      Appendix B: FILE AND DEVICE TYPES
+                      ---------------------------------
+
+This appendix lists the filetypes and device types currently known by IconEd,
+and has been newly updated for GS/OS.
+
+    Files                                     Devices
+Type     Name                              Type     Name
+------------------------------------      -----------------------------------
+$0001    Bad Blocks           (BAD)        $FFF1     SCSI partition
+$0004    ASCII Text           (TXT)        $FFF2     CD-ROM partition
+$0006    Binary Data          (BIN)        $FFF3     HD partition
+$0008    Double Hi-Res        (FOT)        $FFF4     Network (generic)
+$000B    Word Proc file       (WPF)        $FFF5     File Server
+$000F    Folder               (DIR)        $FFF6     SCSI (generic)
+$0019    AppleWorks DB        (ADB)        $FFF7     Tape Drive
+$001A    AppleWorks WP        (AWP)        $FFF8     CD-ROM disk
+$001B    AppleWorks SS        (ASP)        $FFF9     5.25" drive
+$0050    Word Processor                    $FFFA     RAM disk
+$0051    Spreadsheet                       $FFFB     3.5" disk
+$0052    Data Base                         $FFFC     5.25" disk
+$0053    Object Graphics                   $FFFD     Hard Drive
+$0054    Desktop Publishing                $FFFE     Full Trash
+$0055    Hypermedia                        $FFFF     Empty Trash
+$0056    Educational data
+$0057    Stationery
+$0058    Help file
+$0059    Communications
+$005A    Configuration
+$00AB    GS BASIC Program
+$00AC    GS BASIC Tools
+$00AD    GS BASIC Data
+$00B0    APW Source           (SRC)
+$00B1    APW Object           (OBJ)
+$00B2    APW Library          (LIB)
+$00B3    GS Application       (S16)
+$00B4    Run-time Library     (RTL)
+$00B5    Shell Application    (EXE)
+$00B6    Permanent Init       (STR)
+$00B7    Temporary Init       (TIF)
+$00B8    New Desk Accessory   (NDA)
+$00B9    Classic Desk Acc     (CDA)
+$00BA    Toolset              (TOL)
+$00BB    Device Driver        (DVR)
+$00BC    Generic load file
+$00BD    File System Trans    (FST)
+$00BF    Sound file
+$00C0    SHR Screen           (PNT)
+$00C1    SHR Picture          (PIC)
+$00C8    Font                 (FNT)
+$00C9    Finder Data
+$00CA    Icons                (ICN)
+$00D5    Music Sequence
+$00D6    Instrument
+$00D7    MIDI file
+$00E0    Telecom data         (TEL)
+$00E2    AppleTalk File
+$00EF    Pascal partition
+$00F0    Basic command        (CMD)
+$00F8    Merlin Link          (LNK)
+$00F9    System file
+$00FA    Integer Basic Program
+$00FB    Integer Basic Vars
+$00FC    Applesoft Program    (BAS)
+$00FD    Applesoft Vars       (VAR)
+$00FE    Relocatable Obj      (REL)
+$00FF    ProDOS 8 Application (SYS)
+
