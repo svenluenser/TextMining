@@ -21,7 +21,37 @@ namespace TextMiningConsoleApp.Plot
             this.outputDir = outputDir;
         }
 
-        public PlotModel BarSeries(uint[] data)
+
+
+        public PlotModel ScatterPlot2d(double[,] data)
+        {
+            var model = new PlotModel();
+            //var yAxis = new LinearAxis { MinimumPadding = 0 };
+            //var xAxis = new LinearAxis{  };
+            //model.Axes.Add(yAxis);
+            //model.Axes.Add(xAxis);
+
+            var series = new ScatterSeries {  MarkerSize = 2, MarkerType = MarkerType.Circle, MarkerFill= OxyColors.Orange };
+            for(int i=0; i < 100; i++)
+            {
+                Console.WriteLine(data[i, 0] + " " + data[i, 1]);
+                series.Points.Add(new ScatterPoint(data[i, 0], data[i, 1]));
+                
+            }
+            model.Series.Add(series);
+            Console.WriteLine("--------------------------------");
+            var series1 = new ScatterSeries { MarkerSize = 2, MarkerType = MarkerType.Triangle, MarkerFill = OxyColors.LightSteelBlue };
+            for (int i = 100; i < data.GetLength(0); i++)
+            {
+                Console.WriteLine(data[i, 0] + " " + data[i, 1]);
+                series1.Points.Add(new ScatterPoint(data[i, 0], data[i, 1]));
+
+            }
+            model.Series.Add(series1);
+            return model;
+        }
+
+        public PlotModel LineSeries(double[] data)
         {
             var model = new PlotModel
             {
@@ -36,14 +66,14 @@ namespace TextMiningConsoleApp.Plot
                 i++;
             }
 
-            var yAxis = new LinearAxis(AxisPosition.Left, 0) { MajorGridlineStyle = LineStyle.Solid, MinorGridlineStyle = LineStyle.Dot, Title = "freq" };
+            var yAxis = new LogarithmicAxis(AxisPosition.Left) { MajorGridlineStyle = LineStyle.Solid, MinorGridlineStyle = LineStyle.Dot, Title = "freq"  };
             model.Axes.Add(yAxis);
             model.Series.Add(series);
 
             return model;
         }
 
-        public PlotModel ColumnSeries(List<DocumentTermFrequencyVector> list)
+        public PlotModel ColumnSeries(List<DocTermFeatures> list)
         {
             var model = new PlotModel { Title = "Test" };
             var yAxis = new LinearAxis { MinimumPadding = 0 };
@@ -51,16 +81,19 @@ namespace TextMiningConsoleApp.Plot
             model.Axes.Add(yAxis);
             model.Axes.Add(categoryAxis);
 
-            foreach(DocumentTermFrequencyVector dvct in list)
+            foreach(DocTermFeatures dvct in list)
             {
-                 uint[] d = dvct.toArray();
+                 double[] d = dvct.toArray();
             
+                string title="";
+                if (dvct.GetType() == typeof(DocTermFeatures))
+                    title = (dvct as DocTermFeatures).Title;
                 var series = new ColumnSeries();
                 int categoryIndex = 0;
                 foreach(uint v in d )
                 {
                     categoryIndex++;
-                    series.Items.Add(new ColumnItem { CategoryIndex = categoryIndex, Value = v, Color = (dvct.Title.Contains("mathematic"))?OxyColors.LightSteelBlue : OxyColors.Olive });
+                    series.Items.Add(new ColumnItem { CategoryIndex = categoryIndex, Value = v });
                 }
 
                 model.Series.Add(series);

@@ -64,8 +64,10 @@ namespace TextMiningConsoleApp.Lucene
               
             var writer = new IndexWriter(directory, analyzer, recreate, IndexWriter.MaxFieldLength.LIMITED);
 
+            // writes the docs to the index
             loadToIndex(writer, docs);
 
+            // reorganise the index for optimisation
             writer.Optimize();
             writer.Dispose();
            
@@ -74,25 +76,33 @@ namespace TextMiningConsoleApp.Lucene
   
         private void loadToIndex(IndexWriter writer, ICollection<Document> docs)
         {
-            // all test data for author aristotle
             foreach (Document d in docs)
             {
                 writer.AddDocument(d);
             }
         }
 
-
-        public static ICollection<Document> LoadTextFilesFromDirectory(string path)
+        /// <summary>
+        /// Load a complete directory content into the Lucene datastructure
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="label">Data label / category</param>
+        /// <returns>Collection of Lucene documents</returns>
+        public static ICollection<Document> LoadTextFilesFromDirectory(string path, string label)
         {
             LinkedList<Document> list = new LinkedList<Document>();
             foreach (string s in System.IO.Directory.GetFiles(path))
             {
-                Console.WriteLine("reading file :" + s);
+                Console.WriteLine("loading file :" + s);
 
                 string text = readFromFile(s);
 
                 Document doc = new Document();
+                // reference to the file
                 doc.Add(new Field("filepath", s, Field.Store.YES, Field.Index.NO));
+                // topic of the data
+                doc.Add(new Field("label", label, Field.Store.YES, Field.Index.NO));
+                // document content
                 doc.Add(new Field("content", text, Field.Store.YES, Field.Index.ANALYZED, Field.TermVector.YES));
 
                 list.AddLast(doc);
@@ -102,6 +112,11 @@ namespace TextMiningConsoleApp.Lucene
 
         }
 
+        /// <summary>
+        /// Reads the content of a file.
+        /// </summary>
+        /// <param name="file">Filepath + filename + extension</param>
+        /// <returns></returns>
         private static string readFromFile(string file)
         {
             TextReader reader = new StreamReader(file);
@@ -113,7 +128,6 @@ namespace TextMiningConsoleApp.Lucene
 
             return text;
         }
-
 
 
         public TextReader Stopwords

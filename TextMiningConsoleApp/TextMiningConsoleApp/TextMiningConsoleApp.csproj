@@ -46,6 +46,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>TextMiningConsoleApp.PCA.KernelPCA</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
@@ -88,10 +91,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Lucene\LuceneIndex.cs" />
+    <Compile Include="PrincipleComponentAnalysis\KernelPCA.cs" />
+    <Compile Include="PrincipleComponentAnalysis\PCA.cs" />
     <Compile Include="Plot\OxiPlot.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\DocTermFeatures.cs" />
     <Compile Include="Util\DocumentTermFrequencyVector.cs" />
+    <Compile Include="Util\FeatureMatrix.cs" />
+    <Compile Include="Util\FeatureVector.cs" />
     <Compile Include="Util\TermFrequencyVector.cs" />
   </ItemGroup>
   <ItemGroup>
