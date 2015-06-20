@@ -10,6 +10,8 @@ using TextMiningConsoleApp.Lucene;
 using TextMiningConsoleApp.Util;
 using TextMiningConsoleApp.Plot;
 using TextMiningConsoleApp.PrincipleComponentAnalysis;
+using System.Windows.Forms;
+using MathNet.Numerics.LinearAlgebra;
 
 namespace TextMiningConsoleApp
 {
@@ -65,6 +67,7 @@ namespace TextMiningConsoleApp
                 {
                     ITermFreqVector vct = indexReader.GetTermFreqVector(i, "content");
                     if (vct == null) continue;
+                    
                     string[] terms = vct.GetTerms();
                     var doc = new DocTermFeatures(indexReader.Document(i).Get("filepath"), indexReader.Document(i).Get("label"), features);
 
@@ -89,6 +92,7 @@ namespace TextMiningConsoleApp
             {
                 ITermFreqVector vct = indexReader.GetTermFreqVector(i, "content");
                 if (vct == null) continue;
+               
                 string[] terms = vct.GetTerms();
                 var doc = new DocTermFeatures(indexReader.Document(i).Get("filepath"), indexReader.Document(i).Get("label"), features);
 
@@ -100,19 +104,21 @@ namespace TextMiningConsoleApp
                         doc[t] += vct.GetTermFrequencies()[a];
                 }
                 docTermFrequencies.Add(doc);
+               
             }
 
             return docTermFrequencies;
         }
 
         static void Main(string[] args)
-        {
-            LuceneIndex index = new LuceneIndex(getProjectPath()+"/SmallSportLuceneIndex", new StreamReader(getProjectPath()+"/data/stopwords_en.txt"));
-            //AddDocumentsToIndex(getProjectPath() + "/" + "data/wiki/biology", "biology", index, true);
-            //AddDocumentsToIndex(getProjectPath() + "/" + "data/wiki/mathematic", "math", index, false);
+        {//MatheSpd
+            LuceneIndex index = new LuceneIndex(getProjectPath()+"/AuthorLuceneIndex", new StreamReader(getProjectPath()+"/data/stopwords_en.txt"));
+            //AddDocumentsToIndex(getProjectPath() + "/" + "data/mathematik.de", "mathe", index, true);
+            //AddDocumentsToIndex(getProjectPath() + "/" + "data/spd.de", "spd", index, false);
 
 
-
+            //AddDocumentsToIndex(getProjectPath() + "/" + "data/aristotele", "arsitotele", index, true);
+            //AddDocumentsToIndex(getProjectPath() + "/" + "data/shakespeare", "shakespeare", index, false);
 
             Console.WriteLine("Calc Global terms");
            FeatureVector<string> globalTerms = getGlobalTermFrequenciesFromIndex(index);
@@ -126,28 +132,34 @@ namespace TextMiningConsoleApp
 
             globalTerms.SortByValue(false);
             double[] d = globalTerms.toArray();
-            plot.Export(plot.LineSeries(d), "GlobalTermFrequency");
+
+            int lowClip = 100;
+            int highClip = 2000;
+
+            var plotZipf = plot.LineSeries(d, lowClip, highClip);
+            plot.Export(plotZipf, "GlobalTermFrequency");
             // get the most significant terms for the hole document collection
-            globalTerms.ClipByValue(100,1000 );
+            globalTerms.ClipByValue(lowClip, highClip);
 
 
             // get the features (bestterms) for every document (its the fingerprint of the document)
             List<DocTermFeatures> list = getKeyTermFrequenciesFromIndex(index, globalTerms.GetKeysOfFeatures());
 
-            List<DocTermFeatures> sl = list.Skip(90).Take(20).ToList();
-            plot.Export(plot.ColumnSeries(sl), "Hist");
-            foreach (DocTermFeatures dl in sl)
-            {
-                Console.WriteLine(dl.ToString());
-                Console.ReadLine();
-            }
+            //List<DocTermFeatures> sl = list.Take(6).ToList();
+            //plot.Export(plot.ColumnSeries(sl), "Hist");
+            //foreach (DocTermFeatures dl in sl)
+            //{
+            //    Console.Write(" " + dl.ToString());
+            //    Console.ReadLine();
+            //}
 
             // build FeatureMatrix
             FeatureMatrix fm = new FeatureMatrix(list);
+            Console.WriteLine(fm.ToString());
 
             //KernelPCA pca = new KernelPCA(fm.Matrix);
             PCA pca = new PCA(fm.Matrix);
-            double[,] pca_result = pca.Compute();
+            double[,] pca_result = pca.Compute(2);
          
             Console.WriteLine("done");
     
@@ -156,12 +168,29 @@ namespace TextMiningConsoleApp
              d = globalTerms.toArray();
             plot.Export(plot.LineSeries(d), "BestTermFrequency");
 
-            
+            var plotmodel = plot.ScatterPlot2d(pca_result);
+            plot.Export(plotmodel, "PCA-Result");
 
 
-            plot.Export(plot.ScatterPlot2d(pca_result), "PCA-Result");
+            Matrix<double> m = Matrix<double>.Build.DenseOfArray(pca_result).Transpose();
+            ICA ica = new ICA(m.ToArray(), pca.getPrincipalEigenValues(2));
 
+            double[,] ic = ica.Compute();
             Console.ReadLine();
+            for (int i = 0; i < ic.GetLength(0); i++)
+            {
+                for (int j = 0; j < ic.GetLength(1); j++)
+                    Console.Write(ic[i, j].ToString("#00.00") + " ");
+                Console.WriteLine();
+            }
+
+
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1(plotmodel));
+            Application.Run(new Form1(plotZipf));
+            
+            
         }
     }
 }

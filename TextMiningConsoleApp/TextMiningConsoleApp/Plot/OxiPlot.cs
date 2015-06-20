@@ -31,8 +31,8 @@ namespace TextMiningConsoleApp.Plot
             //model.Axes.Add(yAxis);
             //model.Axes.Add(xAxis);
 
-            var series = new ScatterSeries {  MarkerSize = 2, MarkerType = MarkerType.Circle, MarkerFill= OxyColors.Orange };
-            for(int i=0; i < 100; i++)
+            var series = new ScatterSeries {  MarkerSize = 5, MarkerType = MarkerType.Circle, MarkerFill= OxyColors.Orange };
+            for(int i=0; i < data.GetLength(0)/2; i++)
             {
                 Console.WriteLine(data[i, 0] + " " + data[i, 1]);
                 series.Points.Add(new ScatterPoint(data[i, 0], data[i, 1]));
@@ -40,8 +40,8 @@ namespace TextMiningConsoleApp.Plot
             }
             model.Series.Add(series);
             Console.WriteLine("--------------------------------");
-            var series1 = new ScatterSeries { MarkerSize = 2, MarkerType = MarkerType.Triangle, MarkerFill = OxyColors.LightSteelBlue };
-            for (int i = 100; i < data.GetLength(0); i++)
+            var series1 = new ScatterSeries { MarkerSize = 5, MarkerType = MarkerType.Triangle, MarkerFill = OxyColors.LightSteelBlue };
+            for (int i = data.GetLength(0)/2; i < data.GetLength(0); i++)
             {
                 Console.WriteLine(data[i, 0] + " " + data[i, 1]);
                 series1.Points.Add(new ScatterPoint(data[i, 0], data[i, 1]));
@@ -49,6 +49,22 @@ namespace TextMiningConsoleApp.Plot
             }
             model.Series.Add(series1);
             return model;
+        }
+
+
+        public PlotModel LineSeries(double[] data, int low, int high)
+        {
+            var plot = LineSeries(data);
+            var slow = new LineSeries { Color = OxyColors.LawnGreen };
+            slow.Points.Add(new DataPoint { X = 0, Y = low });
+            slow.Points.Add(new DataPoint { X = 1000, Y = low });
+            var shigh = new LineSeries{Color = OxyColors.LightBlue};
+            shigh.Points.Add(new DataPoint { X = 0, Y = high });
+            shigh.Points.Add(new DataPoint { X =1000, Y = high });
+            plot.Series.Add(slow);
+            plot.Series.Add(shigh);
+
+            return plot;
         }
 
         public PlotModel LineSeries(double[] data)
@@ -66,7 +82,7 @@ namespace TextMiningConsoleApp.Plot
                 i++;
             }
 
-            var yAxis = new LogarithmicAxis(AxisPosition.Left) { MajorGridlineStyle = LineStyle.Solid, MinorGridlineStyle = LineStyle.Dot, Title = "freq"  };
+            var yAxis = new LinearAxis();//new LogarithmicAxis(AxisPosition.Left) { MajorGridlineStyle = LineStyle.Solid, MinorGridlineStyle = LineStyle.Dot, Title = "freq"  };
             model.Axes.Add(yAxis);
             model.Series.Add(series);
 

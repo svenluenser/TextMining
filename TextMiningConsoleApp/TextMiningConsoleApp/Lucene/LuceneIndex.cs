@@ -53,8 +53,9 @@ namespace TextMiningConsoleApp.Lucene
             Analyzer analyzer;
             if(stopwords != null)
             {
+                Console.WriteLine("USE STOPWORDS");
                 // load stopwords from file
-                analyzer = new StandardAnalyzer(Version.LUCENE_30, stopwords);
+                analyzer = new SimpleAnalyzer();//new StandardAnalyzer(Version.LUCENE_30, stopwords); //StandardTokenizer
             }
             else
             {
