@@ -554,6 +554,12 @@
             </summary>
             <value>The shape.</value>
         </member>
+        <member name="P:OxyPlot.Annotations.PointAnnotation.CustomOutline">
+            <summary>
+            Gets or sets a custom polygon outline for the point marker. Set <see cref="P:OxyPlot.Annotations.PointAnnotation.Shape"/> to <see cref="F:OxyPlot.MarkerType.Custom"/> to use this property.
+            </summary>
+            <value>A polyline. The default is <c>null</c>.</value>
+        </member>
         <member name="T:OxyPlot.DelegateViewCommand`1">
             <summary>
             Provides a <see cref="T:OxyPlot.IViewCommand"/> implemented by a delegate.
@@ -2134,7 +2140,7 @@
         </member>
         <member name="T:OxyPlot.LibraryDoc">
             <summary>
-            The OxyPlot solution provides plotting functionality for Windows store apps, WPF, Windows forms, Silverlight and Mono based applications.
+            The OxyPlot solution provides plotting functionality for Windows store apps, WPF, Windows forms, Silverlight and Xamarin based applications.
             </summary>
         </member>
         <member name="T:OxyPlot.NamespaceDoc">
@@ -3138,6 +3144,13 @@
             <param name="p0">The first point that the new rectangle must contain.</param>
             <param name="p1">The second point that the new rectangle must contain.</param>
         </member>
+        <member name="M:OxyPlot.OxyRect.#ctor(OxyPlot.ScreenPoint,OxyPlot.OxySize)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OxyPlot.OxyRect"/> struct by location and size.
+            </summary>
+            <param name="p0">The location.</param>
+            <param name="size">The size.</param>
+        </member>
         <member name="M:OxyPlot.OxyRect.Create(System.Double,System.Double,System.Double,System.Double)">
             <summary>
             Creates a rectangle from the specified corner coordinates.
@@ -3168,6 +3181,16 @@
             Returns a <see cref="T:System.String"/> that represents this instance.
             </summary>
             <returns>A <see cref="T:System.String"/> that represents this instance.</returns>
+        </member>
+        <member name="M:OxyPlot.OxyRect.ToString(System.String,System.IFormatProvider)">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <param name="format">The format.</param>
+            <param name="formatProvider">The format provider.</param>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
         </member>
         <member name="P:OxyPlot.OxyRect.Bottom">
             <summary>
@@ -3233,6 +3256,16 @@
             Returns a <see cref="T:System.String"/> that represents this instance.
             </summary>
             <returns>A <see cref="T:System.String"/> that represents this instance.</returns>
+        </member>
+        <member name="M:OxyPlot.OxySize.ToString(System.String,System.IFormatProvider)">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <param name="format">The format.</param>
+            <param name="formatProvider">The format provider.</param>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
         </member>
         <member name="P:OxyPlot.OxySize.Height">
             <summary>
@@ -5200,6 +5233,46 @@
             <param name="fill">The fill.</param>
             <param name="stroke">The stroke.</param>
             <param name="thickness">The thickness.</param>
+        </member>
+        <member name="M:OxyPlot.RenderingExtensions.DrawCircle(OxyPlot.IRenderContext,System.Double,System.Double,System.Double,OxyPlot.OxyColor,OxyPlot.OxyColor,System.Double)">
+            <summary>
+            Draws a circle at the specified position.
+            </summary>
+            <param name="rc">The render context.</param>
+            <param name="x">The center x-coordinate.</param>
+            <param name="y">The center y-coordinate.</param>
+            <param name="r">The radius.</param>
+            <param name="fill">The fill color.</param>
+            <param name="stroke">The stroke color.</param>
+            <param name="thickness">The thickness.</param>
+        </member>
+        <member name="M:OxyPlot.RenderingExtensions.DrawCircle(OxyPlot.IRenderContext,OxyPlot.ScreenPoint,System.Double,OxyPlot.OxyColor,OxyPlot.OxyColor,System.Double)">
+            <summary>
+            Draws a circle at the specified position.
+            </summary>
+            <param name="rc">The render context.</param>
+            <param name="center">The center.</param>
+            <param name="r">The radius.</param>
+            <param name="fill">The fill color.</param>
+            <param name="stroke">The stroke color.</param>
+            <param name="thickness">The thickness.</param>
+        </member>
+        <member name="M:OxyPlot.RenderingExtensions.FillCircle(OxyPlot.IRenderContext,OxyPlot.ScreenPoint,System.Double,OxyPlot.OxyColor)">
+            <summary>
+            Fills a circle at the specified position.
+            </summary>
+            <param name="rc">The render context.</param>
+            <param name="center">The center.</param>
+            <param name="r">The radius.</param>
+            <param name="fill">The fill color.</param>
+        </member>
+        <member name="M:OxyPlot.RenderingExtensions.FillRectangle(OxyPlot.IRenderContext,OxyPlot.OxyRect,OxyPlot.OxyColor)">
+            <summary>
+            Fills a rectangle at the specified position.
+            </summary>
+            <param name="rc">The render context.</param>
+            <param name="rectangle">The rectangle.</param>
+            <param name="fill">The fill color.</param>
         </member>
         <member name="M:OxyPlot.RenderingExtensions.DrawRectangleAsPolygon(OxyPlot.IRenderContext,OxyPlot.OxyRect,OxyPlot.OxyColor,OxyPlot.OxyColor,OxyPlot.OxyThickness)">
             <summary>
@@ -7983,7 +8056,7 @@
             <summary>
             Gets or sets the custom marker outline polygon. Set <see cref="P:OxyPlot.Series.ScatterSeries`1.MarkerType"/> to <see cref="T:MarkerType.Custom"/> to use this.
             </summary>
-            <value>The outline. The default is <c>null</c>.</value>
+            <value>A polyline. The default is <c>null</c>.</value>
         </member>
         <member name="P:OxyPlot.Series.ScatterSeries`1.MarkerSize">
             <summary>
@@ -8119,21 +8192,66 @@
             Gets or sets the minimum size (relative to <see cref="P:OxyPlot.Series.ScatterSeries`1.MarkerSize"/>) of the error bars to be shown. 
             </summary>
         </member>
-        <member name="T:OxyPlot.AxisUtilities">
+        <member name="T:OxyPlot.ArrayExtensions">
             <summary>
-            Provides utility methods for axes.
+            Provides useful extension methods for arrays.
             </summary>
         </member>
-        <member name="M:OxyPlot.AxisUtilities.CreateTickValues(System.Double,System.Double,System.Double,System.Int32)">
+        <member name="M:OxyPlot.ArrayExtensions.Max2D(System.Double[0:,0:])">
             <summary>
-            Creates tick values at the specified interval.
+            Finds the maximum value in the specified 2D array (NaN values not included).
             </summary>
-            <param name="from">The start value.</param>
-            <param name="to">The end value.</param>
-            <param name="step">The interval.</param>
-            <param name="maxTicks">The maximum number of ticks (optional). The default value is 1000.</param>
-            <returns>A sequence of values.</returns>
-            <exception cref="T:System.ArgumentException">Step cannot be zero or negative.;step</exception>
+            <param name="array">The array.</param>
+            <returns>The maximum value.</returns>
+        </member>
+        <member name="M:OxyPlot.ArrayExtensions.Min2D(System.Double[0:,0:],System.Boolean)">
+            <summary>
+            Finds the minimum value in the specified 2D array.
+            </summary>
+            <param name="array">The array.</param>
+            <param name="excludeNaN">Exclude NaN values if set to <c>true</c>.</param>
+            <returns>The minimum value.</returns>
+        </member>
+        <member name="T:OxyPlot.HashCodeBuilder">
+            <summary>
+            Provides functionality to calculate hash codes.
+            </summary>
+        </member>
+        <member name="M:OxyPlot.HashCodeBuilder.GetHashCode(System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Calculates a hash code for the specified sequence of items.
+            </summary>
+            <param name="items">A sequence of items.</param>
+            <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
+        </member>
+        <member name="T:OxyPlot.ReflectionPath">
+            <summary>
+            Provides functionality to reflect a path of properties.
+            </summary>
+        </member>
+        <member name="F:OxyPlot.ReflectionPath.items">
+            <summary>
+            The path items.
+            </summary>
+        </member>
+        <member name="F:OxyPlot.ReflectionPath.infos">
+            <summary>
+            The property metadata.
+            </summary>
+        </member>
+        <member name="M:OxyPlot.ReflectionPath.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OxyPlot.ReflectionPath"/> class.
+            </summary>
+            <param name="path">The reflection path.</param>
+        </member>
+        <member name="M:OxyPlot.ReflectionPath.GetValue(System.Object)">
+            <summary>
+            Gets the value for the specified instance.
+            </summary>
+            <param name="instance">The instance.</param>
+            <returns>The value.</returns>
+            <exception cref="T:System.InvalidOperationException">Could not find property.</exception>
         </member>
         <member name="T:OxyPlot.XmlWriterBase">
             <summary>
@@ -8387,7 +8505,7 @@
         </member>
         <member name="T:OxyPlot.StreamExtensions">
             <summary>
-            Implements <see cref="T:System.IO.Stream"/> extension methods.
+            Provides useful extension methods for streams.
             </summary>
         </member>
         <member name="M:OxyPlot.StreamExtensions.CopyTo(System.IO.Stream,System.IO.Stream)">
@@ -8421,14 +8539,6 @@
             <c>{PropertyName:Formatstring}</c>.
             E.g. if you have a "Value" property in your item's class, use <c>"{Value:0.00}"</c> to output the value with two digits.
             Note that this formatting is using reflection and does not have the same performance as string.Format.</remarks>
-        </member>
-        <member name="M:OxyPlot.StringHelper.CreateValidFileName(System.String,System.String)">
-            <summary>
-            Creates a valid file name.
-            </summary>
-            <param name="title">The title.</param>
-            <param name="extension">The extension.</param>
-            <returns>A file name.</returns>
         </member>
         <member name="T:OxyPlot.FractionHelper">
             <summary>
@@ -8464,12 +8574,12 @@
             <param name="y">The y.</param>
             <returns>The greatest common factor.</returns>
         </member>
-        <member name="T:OxyPlot.ArrayHelper">
+        <member name="T:OxyPlot.ArrayBuilder">
             <summary>
-            Provides utility methods for vector generation.
+            Provides functionality to build arrays.
             </summary>
         </member>
-        <member name="M:OxyPlot.ArrayHelper.CreateVector(System.Double,System.Double,System.Int32)">
+        <member name="M:OxyPlot.ArrayBuilder.CreateVector(System.Double,System.Double,System.Int32)">
             <summary>
             Creates a vector.
             </summary>
@@ -8478,7 +8588,7 @@
             <param name="n">The number of steps.</param>
             <returns>A vector.</returns>
         </member>
-        <member name="M:OxyPlot.ArrayHelper.CreateVector(System.Double,System.Double,System.Double)">
+        <member name="M:OxyPlot.ArrayBuilder.CreateVector(System.Double,System.Double,System.Double)">
             <summary>
             Creates a vector.
             </summary>
@@ -8487,7 +8597,7 @@
             <param name="dx">The step size.</param>
             <returns>A vector.</returns>
         </member>
-        <member name="M:OxyPlot.ArrayHelper.Evaluate(System.Func{System.Double,System.Double,System.Double},System.Double[],System.Double[])">
+        <member name="M:OxyPlot.ArrayBuilder.Evaluate(System.Func{System.Double,System.Double,System.Double},System.Double[],System.Double[])">
             <summary>
             Evaluates the specified function.
             </summary>
@@ -8496,48 +8606,26 @@
             <param name="y">The y values.</param>
             <returns>Array of evaluations. The value of f(x_i,y_j) will be placed at index [i, j].</returns>
         </member>
-        <member name="M:OxyPlot.ArrayHelper.Fill(System.Double[],System.Double)">
+        <member name="M:OxyPlot.ArrayBuilder.Fill(System.Double[],System.Double)">
             <summary>
             Fills the array with the specified value.
             </summary>
-            <param name="array">The array.</param>
+            <param name="array">The array to fill.</param>
             <param name="value">The value.</param>
         </member>
-        <member name="M:OxyPlot.ArrayHelper.Fill2D(System.Double[0:,0:],System.Double)">
+        <member name="M:OxyPlot.ArrayBuilder.Fill2D(System.Double[0:,0:],System.Double)">
             <summary>
             Fills the two-dimensional array with the specified value.
             </summary>
             <param name="array">The two-dimensional array.</param>
             <param name="value">The value.</param>
         </member>
-        <member name="M:OxyPlot.ArrayHelper.Max2D(System.Double[0:,0:])">
+        <member name="T:OxyPlot.ReflectionExtensions">
             <summary>
-            Finds the maximum value in the specified 2D array (NaN values not included).
-            </summary>
-            <param name="array">The array.</param>
-            <returns>The maximum value.</returns>
-        </member>
-        <member name="M:OxyPlot.ArrayHelper.Min2D(System.Double[0:,0:],System.Boolean)">
-            <summary>
-            Finds the minimum value in the specified 2D array.
-            </summary>
-            <param name="array">The array.</param>
-            <param name="excludeNaN">Exclude NaN values if set to <c>true</c>.</param>
-            <returns>The minimum value.</returns>
-        </member>
-        <member name="M:OxyPlot.ArrayHelper.GetHashCode(System.Collections.Generic.IEnumerable{System.Object})">
-            <summary>
-            Calculates a hash code for the specified sequence of items.
-            </summary>
-            <param name="items">A sequence of items.</param>
-            <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
-        </member>
-        <member name="T:OxyPlot.ReflectionHelper">
-            <summary>
-            Provides utility methods reflection based support methods.
+            Provides extension methods based on reflection.
             </summary>
         </member>
-        <member name="M:OxyPlot.ReflectionHelper.FillList``1(System.Collections.Generic.List{``0},System.Collections.IEnumerable,System.String)">
+        <member name="M:OxyPlot.ReflectionExtensions.AddRange``1(System.Collections.Generic.List{``0},System.Collections.IEnumerable,System.String)">
             <summary>
             Fills a target by the specified property of a source target/enumerable.
             </summary>
@@ -8547,7 +8635,7 @@
             <param name="propertyName">The property name.</param>
             <exception cref="T:System.InvalidOperationException">Could not find property.</exception>
         </member>
-        <member name="M:OxyPlot.ReflectionHelper.FillList(System.Collections.Generic.List{OxyPlot.DataPoint},System.Collections.IEnumerable,System.String,System.String)">
+        <member name="M:OxyPlot.ReflectionExtensions.AddRange(System.Collections.Generic.List{OxyPlot.DataPoint},System.Collections.IEnumerable,System.String,System.String)">
             <summary>
             Adds data points from the specified source to the specified destination.
             </summary>
@@ -10050,7 +10138,7 @@
         </member>
         <member name="T:OxyPlot.Annotations.NamespaceDoc">
             <summary>
-            The OxyPlot.Axes namespace contains the annotations and related types.
+            The OxyPlot.Annotations namespace contains the annotations and related types.
             </summary>
         </member>
         <member name="T:OxyPlot.Annotations.RectangleAnnotation">
@@ -11084,6 +11172,17 @@
             <summary>
             Initializes a new instance of the <see cref="T:OxyPlot.Axes.Axis"/> class.
             </summary>
+        </member>
+        <member name="M:OxyPlot.Axes.Axis.CreateTickValues(System.Double,System.Double,System.Double,System.Int32)">
+            <summary>
+            Creates tick values at the specified interval.
+            </summary>
+            <param name="from">The start value.</param>
+            <param name="to">The end value.</param>
+            <param name="step">The interval.</param>
+            <param name="maxTicks">The maximum number of ticks (optional). The default value is 1000.</param>
+            <returns>A sequence of values.</returns>
+            <exception cref="T:System.ArgumentException">Step cannot be zero or negative.;step</exception>
         </member>
         <member name="M:OxyPlot.Axes.Axis.ToDouble(System.Object)">
             <summary>
@@ -14619,6 +14718,12 @@
             <value>The type of the outliers.</value>
             <remarks>MarkerType.Custom is currently not supported.</remarks>
         </member>
+        <member name="P:OxyPlot.Series.BoxPlotSeries.OutlierOutline">
+            <summary>
+            Gets or sets the a custom polygon outline for the outlier markers. Set <see cref="P:OxyPlot.Series.BoxPlotSeries.OutlierType"/> to <see cref="F:OxyPlot.MarkerType.Custom"/> to use this property.
+            </summary>
+            <value>A polyline. The default is <c>null</c>.</value>
+        </member>
         <member name="P:OxyPlot.Series.BoxPlotSeries.ShowBox">
             <summary>
             Gets or sets a value indicating whether to show the boxes.
@@ -17582,10 +17687,9 @@
         </member>
         <member name="P:OxyPlot.Series.LineSeries.MarkerOutline">
             <summary>
-            Gets or sets the marker outline polygon.
-            If this property is set, the MarkerType will not be used.
+            Gets or sets the a custom polygon outline for the markers. Set <see cref="P:OxyPlot.Series.LineSeries.MarkerType"/> to <see cref="F:OxyPlot.MarkerType.Custom"/> to use this property.
             </summary>
-            <value>The marker outline.</value>
+            <value>A polyline. The default is <c>null</c>.</value>
         </member>
         <member name="P:OxyPlot.Series.LineSeries.MarkerResolution">
             <summary>

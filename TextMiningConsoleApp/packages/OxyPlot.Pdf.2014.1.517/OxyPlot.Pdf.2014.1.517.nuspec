@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>OxyPlot.Pdf</id>
-    <version>2014.1.491</version>
+    <version>2014.1.517</version>
     <authors>Oystein Bjorke</authors>
     <owners>Oystein Bjorke</owners>
     <licenseUrl>https://raw.githubusercontent.com/oxyplot/oxyplot/master/LICENSE</licenseUrl>
@@ -13,7 +13,8 @@
     <releaseNotes />
     <tags>pdf plotting plot charting chart</tags>
     <dependencies>
-      <dependency id="OxyPlot.Core" version="[2014.1.491]" />
+      <dependency id="OxyPlot.Core" version="[2014.1.517]" />
+      <dependency id="PDFsharp-MigraDoc-GDI" />
     </dependencies>
   </metadata>
 </package>
